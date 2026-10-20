@@ -34,10 +34,10 @@ make lift        refresh the corpus and the pins from cert-machine (read-only)  
 ```
 claimbox/grammar.py        the shapes and the refusals (prose and LaTeX normalised first)
 claimbox/translate.py      shape + page + bytes (+ decider, record) → the object; the quote found, the array decoded
-claimbox/readers/          structural readers of real sources: registry.py (the optimization-constants registry's pages)
+claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (the platform's records)
 claimbox/__main__.py       the command line
-corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs)
-records/                   calibration.json, coverage.json — written by `make test WRITE=1`, compared by `make test`
+corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), einstein-arena-jobs.json (read, 30 jobs)
+records/                   calibration.json, coverage.json (make test WRITE=1); einstein-arena-run.json + einstein-arena/ (the batch's --record and objects)
 tests/battery.py           the gate
 tools/lift.py              the lift from cert-machine and the drift check
 ```

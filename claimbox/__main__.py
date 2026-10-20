@@ -4,7 +4,8 @@
   translate --claim "<claim>" --source P --data P   the predicate JSON (cert-machine's claimbox object), or REFUSED
             [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals]
             [--reading epistemic] [--id ID] [--out FILE] [--check]
-  batch jobs.json --out DIR [--check]              one object per job (the fields of translate, in JSON)
+  batch jobs.json --out DIR [--check] [--record F]  one object per job (the fields of translate, in JSON); --record writes the run's summary
+  read einstein-arena [--out jobs.json]            the jobs a structural reader makes from a pinned source (cert-machine's corpus)
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -16,6 +17,7 @@ import sys
 
 from . import grammar, translate as T
 from .grammar import Refusal
+from .readers import einsteinarena
 
 ROOT = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
 
@@ -45,7 +47,20 @@ def main(argv=None):
     b.add_argument('jobs')
     b.add_argument('--out', required=True)
     b.add_argument('--check', action='store_true')
+    b.add_argument('--record')
+    rd = sub.add_parser('read')
+    rd.add_argument('source', choices=['einstein-arena'])
+    rd.add_argument('--out')
     a = ap.parse_args(argv)
+    if a.cmd == 'read':
+        js = einsteinarena.jobs(ROOT)
+        out = json.dumps({'what': 'translation jobs read from ' + a.source + ' by claimbox.readers.' + a.source.replace('-', '') + ' (cert-machine\'s pinned corpus)', 'jobs': js}, indent=1, ensure_ascii=False) + '\n'
+        if a.out:
+            open(a.out, 'w', encoding='utf-8').write(out)
+            print('written ' + a.out + ': ' + str(len(js)) + ' jobs')
+        else:
+            sys.stdout.write(out)
+        return 0
     if a.cmd == 'shape':
         try:
             sh = grammar.parse(a.claim)
@@ -75,20 +90,47 @@ def main(argv=None):
         jobs = json.load(open(a.jobs, encoding='utf-8'))
         os.makedirs(a.out, exist_ok=True)
         bad = 0
+        rows = []
         for j in jobs['jobs'] if isinstance(jobs, dict) else jobs:
+            row = {'id': j.get('id'), 'claim': j.get('claim'), 'source': j.get('source')}
+            if j.get('skipped'):
+                row['skipped'] = j['skipped']
+                rows.append(row)
+                print('SKIPPED   ' + str(j.get('id')) + '  ' + j['skipped'])
+                continue
             try:
                 obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), record=j.get('record'), reading=j.get('reading', 'universal'),
                                   name=j.get('name'), elements=j.get('elements'), obj_id=j.get('id'), what=j.get('what'))
             except Refusal as e:
                 bad += 1
+                row['refused'] = e.rule + ': ' + e.msg
+                rows.append(row)
                 print('REFUSED   ' + str(j.get('id')) + '  ' + e.rule + ': ' + e.msg)
                 continue
             p = os.path.join(a.out, obj['id'] + '.json')
             with open(p, 'w', encoding='utf-8') as f:
                 json.dump(obj, f, indent=1, ensure_ascii=False)
                 f.write('\n')
-            line = ('  cert-machine: ' + T.check_with_cert_machine(obj, ROOT)) if a.check else ''
+            row['object'] = os.path.relpath(p, os.getcwd())
+            row['pin'] = obj['domain']['pin']['sha256']
+            row['predicate'] = [{'rel': q['rel'], 'printed': q.get('printed'), 'c': q.get('c')} for q in obj['predicate']]
+            line = ''
+            if a.check:
+                import time
+                t0 = time.time()
+                cm = T.check_with_cert_machine(obj, ROOT)
+                row['certMachine'] = cm[:200]
+                row['certMachineSeconds'] = round(time.time() - t0, 1)
+                line = '  cert-machine: ' + cm[:120]
+            rows.append(row)
             print('written   ' + obj['id'] + line)
+        if a.record:
+            rec = {'what': 'A run of the claim-machine over the jobs in ' + a.jobs + ': for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine\'s checker said of the object (when --check ran).',
+                   'jobs': len(rows), 'written': sum(1 for r in rows if 'object' in r), 'refused': sum(1 for r in rows if 'refused' in r), 'skipped': sum(1 for r in rows if 'skipped' in r), 'rows': rows}
+            with open(a.record, 'w', encoding='utf-8') as f:
+                json.dump(rec, f, indent=1, ensure_ascii=False)
+                f.write('\n')
+            print('record ' + a.record + ': ' + str(rec['written']) + ' written, ' + str(rec['refused']) + ' refused, ' + str(rec['skipped']) + ' skipped')
         return 1 if bad else 0
     ap.print_help()
     return 2

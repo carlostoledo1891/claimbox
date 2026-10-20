@@ -84,15 +84,18 @@ def select_array(doc):
                 break
         if ok and isinstance(cur, list) and cur:
             return key, cur
-    if isinstance(doc, dict):
-        best = None
-        for k, v in doc.items():
-            if isinstance(v, list) and v and (best is None or len(v) > len(best[1])):
-                best = (k, v)
-        if best:
-            return best
-    if isinstance(doc, list) and doc:
-        return '', doc
+    # else the largest array anywhere in the document, by its dotted path (the platform's records keep the object under "data")
+    best = [None, None]
+
+    def walk(x, path):
+        if isinstance(x, list) and x and (best[1] is None or len(x) > len(best[1])):
+            best[0], best[1] = path, x
+        if isinstance(x, dict):
+            for k, v in x.items():
+                walk(v, (path + '.' + k) if path else k)
+    walk(doc, '')
+    if best[1] is not None:
+        return best[0], best[1]
     raise Refusal('data', 'no array in the published bytes')
 
 
@@ -174,9 +177,7 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         if primitive:
             raise
         kind, shp, sizes = 'records', ['n'], {'n': len(arr)}   # structured entries, read by the named decider
-    if elements:
-        if kind == 'records':
-            raise Refusal('data', 'the entries are structured records; no element reading applies')
+    if elements and kind != 'records':   # a reading of JSON numbers; structured records are the named decider's to read
         if elements == 'decimals' and kind != 'doubles':
             raise Refusal('data', 'decimals is a reading of JSON numbers; these are ' + kind)
         kind = elements

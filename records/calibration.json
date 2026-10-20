@@ -8,35 +8,35 @@
    "claim": "C_1a <= 1.5027434868",
    "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1a.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-1a-atris  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
+   "certMachine": "ADMITTED  optq-1a-atris  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   },
   {
    "id": "optq-1a-agentdiscover",
    "claim": "C_1a <= 1.5027435320",
    "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1a.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-1a-agentdiscover  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is no"
+   "certMachine": "ADMITTED  optq-1a-agentdiscover  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   },
   {
    "id": "optq-1b-atris",
    "claim": "C_1b <= 0.3808585504",
    "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1b.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-1b-atris  [CERTIFIED]  0.002 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
+   "certMachine": "ADMITTED  optq-1b-atris  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   },
   {
    "id": "optq-1b-codexprolong",
    "claim": "C_1b <= 0.3808585749",
    "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1b.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-1b-codexprolong  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not t"
+   "certMachine": "ADMITTED  optq-1b-codexprolong  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   },
   {
    "id": "optq-1c-rozetyp",
    "claim": "$C\\_{1c} \\geq 0.4103287*$",
    "source": "corpus/optconst-queue/next-2026-10-18/upstream/README.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-1c-rozetyp  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
+   "certMachine": "ADMITTED  optq-1c-rozetyp  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   },
   {
    "id": "optq-1c-rozetyp-k3072",
@@ -50,28 +50,28 @@
    "claim": "$C_{1d} \\leq 1.463071582607559*$",
    "source": "corpus/optconst-queue/next-2026-10-18/upstream/README.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-1d-cert2026  [REFUTED]  from the object: REFUTED value 203922416068388266356544188634…  0.504 s  note: the file name is not the id"
+   "certMachine": "ADMITTED  optq-1d-cert2026  [REFUTED]  from the object: REFUTED value 203922416068388266356544188634…  note: the file name is not the id"
   },
   {
    "id": "optq-86-pinho",
    "claim": "$C_{86} \\leq 1.8117251*$",
    "source": "corpus/optconst-queue/c86-2026-10-19/upstream/README.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-86-pinho  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
+   "certMachine": "ADMITTED  optq-86-pinho  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   },
   {
    "id": "optq-82-pinho",
    "claim": "$C_{82} < 0.2534449*$",
    "source": "corpus/optconst-queue/c82-2026-10-19/upstream/README.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-82-pinho  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the record's claim prints the"
+   "certMachine": "ADMITTED  optq-82-pinho  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the record's claim prints the relati"
   },
   {
    "id": "optq-82-epi",
    "claim": "C_82 <= 0.2535744749068227",
    "source": "corpus/optconst-queue/c82-2026-10-19/upstream/82a.md",
    "bearingAgrees": true,
-   "certMachine": "ADMITTED  optq-82-epi  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
+   "certMachine": "ADMITTED  optq-82-epi  [CERTIFIED]  note: predicate[0] not decided from the object: a transcendental or named head  note: the file name is not the id"
   }
  ]
 }

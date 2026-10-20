@@ -20,7 +20,7 @@ MIT"""
 import re
 from fractions import Fraction
 
-NUMBER = r'-?\d+(?:\.\d+)?'
+NUMBER = r'-?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?'
 RATIONAL = r'-?\d+(?:/[1-9]\d*)?'
 REL = r'(<=|>=|<|>|=)'
 NAME = r"(C\*|C_\d+[a-z]?|K\(\d+\)|R\([^)]*\)|[A-Za-z][A-Za-z0-9_'₀-₉⁺⁻]*(?:\([^)]*\))?)"
@@ -54,9 +54,10 @@ def exact(printed):
 
 
 def box(printed):
-    """the box the printed digits allow: half a unit of the last digit either way"""
-    d = len(printed.split('.')[1]) if '.' in printed else 0
-    half = Fraction(5, 10 ** (d + 1))
+    """the box the printed digits allow: half a unit of the last printed digit either way (an exponent shifts the unit)"""
+    mant, _, exp = printed.lower().partition('e')
+    d = len(mant.split('.')[1]) if '.' in mant else 0
+    half = Fraction(5, 10 ** (d + 1)) * (Fraction(10) ** int(exp) if exp else 1)
     p = Fraction(printed)
     return [p - half, p + half]
 

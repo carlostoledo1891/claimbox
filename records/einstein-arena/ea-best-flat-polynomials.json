@@ -1,0 +1,46 @@
+{
+ "id": "ea-best-flat-polynomials",
+ "text": "the object is a feasible solution of \"Flat Polynomials (degree 69)\" and the platform's score of it is 1.2807274949642549 (minimize)",
+ "source": {
+  "what": "EinsteinArena's API record of the best solution of \"Flat Polynomials (degree 69)\", pinned by cert-machine (corpus/einstein-arena/best-12.json)",
+  "path": "corpus/einstein-arena/best-12.json",
+  "sha256": "772b895b2cb8b9511dc0b57f1508aeb7b66ce480b2a633bfe04140cd956793d2",
+  "quote": "{\"id\":2475,\"agentName\":\"white\",\"score\":1.2807274949642549,\"createdAt\":\"2026-08-10T15:46:24.526Z\",\"data\":{\"coefficients\":[-1,1,-1,1,-1,1,-1,1,-1,1,1,1,1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,1,1,-1,-1,1,1,-1,-1,1,-1,1,1,-1,1,1,-1,-1,1,1,1,1,1,1,-1,-1,1,1,1,1,1,-1,-1,1,1,1,-1,-1,1,-1,1,1,-1,1,-1,1,1,-1]}}"
+ },
+ "reading": "universal",
+ "domain": {
+  "kind": "finite",
+  "pin": {
+   "path": "corpus/einstein-arena/best-12.json",
+   "sha256": "772b895b2cb8b9511dc0b57f1508aeb7b66ce480b2a633bfe04140cd956793d2"
+  },
+  "decoder": "the array at data.coefficients: 70 values, each JSON number as the double it denotes, exactly",
+  "count": 70,
+  "variable": "f"
+ },
+ "predicate": [
+  {
+   "g": {
+    "named": "the platform's score of the published object, as the claimant defines it",
+    "where": "tools/run-mc100-einstein.js",
+    "args": [
+     "f"
+    ]
+   },
+   "rel": "in",
+   "printed": "1.2807274949642549",
+   "c": [
+    "25614549899285097/20000000000000000",
+    "25614549899285099/20000000000000000"
+   ]
+  }
+ ],
+ "reference": "the printed 1.2807274949642549 is the box its digits allow; the object is read as each JSON number as the double it denotes, exactly",
+ "hypotheses": [
+  "the printed number is a rounding of the quantity: it is read as the box its digits allow, half a unit of the last digit either way"
+ ],
+ "falsifier": [
+  "the quantity computed exactly lies outside [25614549899285097/20000000000000000, 25614549899285099/20000000000000000]",
+  "the pinned file does not hash to 772b895b…"
+ ]
+}

@@ -18,6 +18,7 @@ usage: python3 tests/battery.py           exit 0 iff every check passes and ever
 """
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -145,7 +146,7 @@ for j in CAL['jobs']:
     line = T.check_with_cert_machine(obj, ROOT)
     exp = j['expect'].split()
     ok(line.startswith(exp[0]) and all(w in line for w in exp[1:]), j['id'] + ': cert-machine\'s checker says ' + j['expect'], line[:100])
-    cal_rows.append({'id': j['id'], 'claim': claim, 'source': source, 'bearingAgrees': same, 'certMachine': line[:160]})
+    cal_rows.append({'id': j['id'], 'claim': claim, 'source': source, 'bearingAgrees': same, 'certMachine': re.sub(r'\s+\d+(?:\.\d+)? s\b', '', line)[:160]})
 cal_rec = {'what': 'The translator against the ten hand-written claimbox objects of cert-machine: for each claim, the sentence the translator read (a README line, or a constants-page row turned into a sentence by the registry reader), whether its object agrees with the hand-written one on every decision-bearing field, and what cert-machine\'s checker said of it.',
            'agree': sum(1 for r in cal_rows if r['bearingAgrees']), 'of': len(cal_rows), 'rows': cal_rows}
 cp = os.path.join(REPO, 'records', 'calibration.json')
@@ -178,6 +179,41 @@ if WRITE:
 elif os.path.exists(vp):
     old = json.load(open(vp, encoding='utf-8'))
     ok(old['rows'] == cov_rec['rows'], 'coverage: identical to records/coverage.json')
+
+# ---- 3b · the EinsteinArena reader and the first end-to-end run -----------------------------------------------------
+from claimbox.readers import einsteinarena  # noqa: E402
+ea_jobs = einsteinarena.jobs(ROOT)
+reg = {r['id']: r['claim'] for r in corpus['rows']}
+present = [j for j in ea_jobs if j.get('claim') and ('mc100-' + j['id']) in reg]
+same_sentence = [j['id'] for j in present if reg['mc100-' + j['id']] == j['claim']]
+ok(len(present) >= 8 and len(same_sentence) == len(present), 'reader: the sentence read off each platform record equals the register\'s claim, word for word, on every register row from the platform', str(len(same_sentence)) + '/' + str(len(present)))
+run_path = os.path.join(REPO, 'records', 'einstein-arena-run.json')
+if os.path.exists(run_path):
+    run = json.load(open(run_path, encoding='utf-8'))
+    by = {r['id']: r for r in run['rows']}
+    ok(set(by) == set(j['id'] for j in ea_jobs), 'run: the jobs read today are the jobs of the record', str(len(ea_jobs)))
+    FULL = os.environ.get('CLAIMBOX_FULL') == '1'
+    notrun = []
+    agree = 0
+    for j in ea_jobs:
+        r = by.get(j['id'])
+        if not r or j.get('skipped'):
+            continue
+        try:
+            obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), elements=j.get('elements'), obj_id=j['id'], what=j.get('what'))
+            now = {'pin': obj['domain']['pin']['sha256'], 'predicate': [{'rel': q['rel'], 'printed': q.get('printed'), 'c': q.get('c')} for q in obj['predicate']]}
+            agree += (now == {'pin': r.get('pin'), 'predicate': r.get('predicate')})
+            if 'certMachine' in r and (r.get('certMachineSeconds', 99) < 5 or FULL):
+                line = T.check_with_cert_machine(obj, ROOT)
+                ok(line.split('  ')[0] == r['certMachine'].split('  ')[0] and ('from the object' in line) == ('from the object' in r['certMachine']), j['id'] + ': cert-machine says today what the record says', line[:70])
+            elif 'certMachine' in r:
+                notrun.append(j['id'] + ' (' + str(r.get('certMachineSeconds')) + ' s on record)')
+        except Refusal as e:
+            agree += (r.get('refused', '').split(':')[0] == e.rule)
+    ok(agree == run['written'] + run['refused'], 'run: every job translates (or is refused) today exactly as records/einstein-arena-run.json says', str(agree) + '/' + str(run['written'] + run['refused']))
+    ok(run['written'] == 11 and run['refused'] == 18 and run['skipped'] == 1, 'run: 11 objects written and admitted, 18 refused with the rule named (17 need a decider cert-machine does not have, 1 holds no array), 1 gzipped record skipped', json.dumps({k: run[k] for k in ('written', 'refused', 'skipped')}))
+    if notrun:
+        print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
 
 # ---- 4 · drift ----------------------------------------------------------------------------------------------------------
 d = subprocess.run([sys.executable, os.path.join(REPO, 'tools', 'lift.py'), '--check'], capture_output=True, text=True)

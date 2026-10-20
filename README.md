@@ -15,7 +15,12 @@ with the rule named: an asymptotic claim, an unbounded quantifier, an approximat
 number the source does not print, bytes that do not decode, a quantity with no decider. Every refusal is planted in
 the battery and must fire.
 
+The first end-to-end run, over EinsteinArena's 30 pinned best solutions with no human typing anything: 11 objects written and
+admitted by cert-machine (one, K(11) ≥ 594, decided from the bytes alone), 18 refused with the rule named, 1 skipped
+(records/einstein-arena-run.json).
+
 ```
+python3 -m claimbox read einstein-arena --out jobs.json && python3 -m claimbox batch jobs.json --out out --check
 python3 -m claimbox shape "C_1d <= 1.463071582607559"
 python3 -m claimbox translate --claim '$C_{1d} \leq 1.463071582607559*$' \
     --source corpus/optconst-queue/next-2026-10-18/upstream/README.md \
