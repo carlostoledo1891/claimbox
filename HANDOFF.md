@@ -7,6 +7,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 [ human or AI text ]  →  [ claimbox: grammar + translate ]  →  [ predicate JSON ]  →  [ cert-machine decides ]
 ```
 
+## What the next chat must know (carried over from the cert-machine chat of 2026-10-20, where this project was born)
+
+- The operator's rule, in their words: build what is asked, never substitute a design. The first attempt at this project
+  was a format and a checker inside cert-machine, argued into place over the translator the operator had asked for; it
+  was rejected twice. claimbox is the translator. cert-machine is the receiver, read-only from here.
+- The reading of a claimant's bytes is a choice that changes exact answers: EinsteinArena's 605-vector record counts
+  9,510 violating pairs under the decimal digits printed and 9,480 under the doubles they denote. Every object states
+  its reading (`elements`); a reader states the platform's.
+- A bar nobody printed is not a claim; a quantity with no decider is refused, never guessed; a refusal names its rule and
+  has a planted red control. Grammar extensions are measured on the register corpus, never chased.
+- There is no local Lean on this Mac any more (the toolchains and builds were deleted 2026-10-20 to free disk); kernel
+  work runs on cert-machine's hosted-runner workflows.
+- Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
+
 ## TASKS BACKLOG (updated 2026-10-20 night, the first handoff)
 
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),

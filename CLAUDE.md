@@ -28,6 +28,21 @@ make lift        refresh the corpus and the pins from cert-machine (read-only)  
    printed are different numbers (cert-machine's 605 case: 9,480 vs 9,510 violating pairs). The decoder and the
    reference state which reading the object uses.
 5. **Keep it lean.** One folder per concern; no records that nothing reads; delete what is unused.
+6. **Build what is asked.** The operator, 2026-10-20: "when I ask for something, I want that something, not other
+   something." When the operator specifies a design, build that; raise a concern once, in a sentence, then build it as
+   asked. This project exists because the first attempt substituted a design (a format and checker inside cert-machine)
+   for the one asked for (the translator); it was rejected twice.
+
+## The two projects
+
+cert-machine (`~/Projects/cert-machine`, github.com/carlostoledo1891/cert-machine) and claimbox are a pair and will
+keep seeing each other. claimbox is the PRODUCER of claimbox objects; cert-machine's `instruments/claimbox` is the
+RECEIVER: the object format (SCHEMA.md there), the two checkers, the exact decider, the ten hand-written objects this
+project calibrates against. From here cert-machine is read-only and is only run as a subprocess (`--check`);
+`PROVENANCE.json` pins the files read there and `make drift` sees a change. A change the translator needs on the
+receiver side (the format, a checker rule) is made in a cert-machine chat first, then `make lift` here. Chats about the
+translator, the readers, the grammar or the recall open this folder; chats about the format, the checkers or the
+pinned corpora open cert-machine. Each repository's HANDOFF.md is its state; read both when a task touches both.
 
 ## Layout
 
