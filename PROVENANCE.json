@@ -1,0 +1,23 @@
+{
+ "what": "cert-machine files claimbox reads in place (read-only), pinned by sha256; corpus/register-sentences.json is the one copy made",
+ "certMachine": "/Users/carlostoledo/Projects/cert-machine",
+ "pins": {
+  "instruments/claimbox/check.py": "484748d8f782ccc6a32f631cfb2648a380c332383876aed40b9709a88fb67d4d",
+  "instruments/claimbox/check.js": "f790ae3bfce276cf5c5222addd3e52675886f6db4c419c617d3996b3b2b9b442",
+  "instruments/claimbox/SCHEMA.md": "888c110762010f416768c75fe4b8cbb28b848f0f792914d1f17e86d704fe049c",
+  "certs/claims-ledger.json": "270094aa3c9218fa000654ae3020d388e3821b845e76647da9d429f095cd77ff",
+  "instruments/claimbox/claims/optq-1a-atris.json": "81aa154aa98190b5382b18576b8bc189136fd67d7803a3659bb396abdb67aed1",
+  "instruments/claimbox/claims/optq-1a-agentdiscover.json": "e3716f8a0b4d40218c411daa801e867cf58308e08f284a7af9107186e4a1a316",
+  "instruments/claimbox/claims/optq-1b-atris.json": "51cd0bbb7d02a9ebb779374da226906bd9ff56edb845c2310be207abf564148b",
+  "instruments/claimbox/claims/optq-1b-codexprolong.json": "e67f7055bc0d1f8b5ae33c3efb9949a613ceb03e14519a24c905f5f51375fe75",
+  "instruments/claimbox/claims/optq-1c-rozetyp.json": "7af44ea6d7d4e009a42122f1af8e2a9a362d42b4757d422dbd8cb83fa843b547",
+  "instruments/claimbox/claims/optq-1c-rozetyp-k3072.json": "66b38d4843e3c923699d90b0c985f4db487e756cb7ef52fa5396e82799dda396",
+  "instruments/claimbox/claims/optq-1d-cert2026.json": "037d993408f1cc4a1e5e0400e49549b99645138d16c2d6af96dbff440a810c6d",
+  "instruments/claimbox/claims/optq-86-pinho.json": "5045d2d604ffe3b1f7628f8e3493693270f828af45989d3b496638361d96e4d0",
+  "instruments/claimbox/claims/optq-82-pinho.json": "12548045a503ec847dee7a7447ba6171d7c0ff3597c4f5e03d1e2f80becc83a6",
+  "instruments/claimbox/claims/optq-82-epi.json": "ead9dbcd5615c43bfd22e2fcc2d3780ad6eaa07353bf3abacf5824d20740e399"
+ },
+ "corpus": {
+  "register-sentences.json": "7bec137a001bca3ca9af437a7cd79315b7c563ccee377989bb4d3b634431bdc4"
+ }
+}
