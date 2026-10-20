@@ -1,7 +1,7 @@
 {
  "what": "Planted-defect recall of the pipeline claimbox -> cert-machine: a defect planted in the input must come out as a refusal with its rule, or as a changed decision. Each row: the plant, the job, what was planted, the unplanted outcome, the planted outcome, caught or missed.",
- "plants": 38,
- "caught": 38,
+ "plants": 41,
+ "caught": 41,
  "missed": [],
  "rows": [
   {
@@ -515,6 +515,48 @@
    "unplanted": [
     "checked",
     "ADMITTED "
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "rank+1",
+   "job": "ae-nb-2x4x5-r32",
+   "planted": "Rank-32 -> Rank-33",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "wrong-bytes",
+   "job": "ae-nb-2x4x5-r32",
+   "planted": "the notebook -> another file as the bytes",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "REFUSED record-pin-mismatch"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "count+1",
+   "job": "ae-kissing-d11-593",
+   "planted": "K(11) >= 593 -> 594",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED"
    ],
    "planted_outcome": [
     "refused",

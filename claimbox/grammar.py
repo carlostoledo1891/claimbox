@@ -37,7 +37,10 @@ class Refusal(Exception):
 def normalise(text):
     t = text.strip()
     t = re.sub(r'\$+', '', t)
-    t = t.replace('\\_', '_').replace('\\leq', '<=').replace('\\le ', '<= ').replace('\\geq', '>=').replace('\\ge ', '>= ')
+    t = re.sub(r'\\[()]', '', t)                                   # LaTeX inline-math delimiters \( \)
+    t = t.replace('\\_', '_')
+    t = re.sub(r'\\(leq|le)(?![a-z])', '<=', t)
+    t = re.sub(r'\\(geq|ge)(?![a-z])', '>=', t)
     t = t.replace('\\lt', '<').replace('\\gt', '>').replace('≤', '<=').replace('≥', '>=').replace('⩽', '<=').replace('⩾', '>=')
     t = re.sub(r'C_\{(\d+[a-z]?)\}', r'C_\1', t)
     t = re.sub(r'C\{(\d+[a-z]?)\}', r'C_\1', t)

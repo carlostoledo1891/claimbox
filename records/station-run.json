@@ -1,0 +1,57 @@
+{
+ "what": "A run of the claim-machine over the jobs in corpus/station-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
+ "jobs": 8,
+ "written": 0,
+ "refused": 6,
+ "skipped": 2,
+ "rows": [
+  {
+   "id": "station-difference_bases",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Difference bases* problem.",
+   "source": "corpus/station-v2/difference_bases/README.md",
+   "refused": "no-quantity: no printed quantity in the claim"
+  },
+  {
+   "id": "station-erdos_minimum_overlap",
+   "claim": null,
+   "source": "corpus/station-v2/erdos_minimum_overlap/README.md",
+   "skipped": "no data file in the folder"
+  },
+  {
+   "id": "station-finite_kakeya",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Finite-field Kakeya* problem.",
+   "source": "corpus/station-v2/finite_kakeya/README.md",
+   "refused": "no-quantity: no printed quantity in the claim"
+  },
+  {
+   "id": "station-flat_autoconvolution",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Flat autoconvolution* problem.",
+   "source": "corpus/station-v2/flat_autoconvolution/README.md",
+   "refused": "no-quantity: no printed quantity in the claim"
+  },
+  {
+   "id": "station-jacobian",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Jacobian Conjecture* problem.",
+   "source": "corpus/station-v2/jacobian/README.md",
+   "refused": "no-quantity: no printed quantity in the claim"
+  },
+  {
+   "id": "station-kakeya_needle",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Discretized Kakeya needle* problem.",
+   "source": "corpus/station-v2/kakeya_needle/README.md",
+   "refused": "no-quantity: no printed quantity in the claim"
+  },
+  {
+   "id": "station-peak_autoconvolution",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Peak autoconvolution* problem.",
+   "source": "corpus/station-v2/peak_autoconvolution/README.md",
+   "refused": "no-quantity: no printed quantity in the claim"
+  },
+  {
+   "id": "station-sign_uncertainty",
+   "claim": null,
+   "source": "corpus/station-v2/sign_uncertainty/README.md",
+   "skipped": "no data file in the folder"
+  }
+ ]
+}

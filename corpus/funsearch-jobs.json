@@ -1,0 +1,25 @@
+{
+ "what": "translation jobs read from funsearch by claimbox.readers.funsearch (cert-machine's pinned corpus)",
+ "jobs": [
+  {
+   "id": "funsearch-admissible_set-admissible_set_n12_w7_size792",
+   "skipped": "the pinned corpus holds the bytes (admissible_set_n12_w7_size792.txt) and no claimant text stating the claim; a file name is not a printed claim",
+   "source": "corpus/funsearch/admissible_set/admissible_set_n12_w7_size792.txt"
+  },
+  {
+   "id": "funsearch-admissible_set-admissible_set_n15_w10_size3003",
+   "skipped": "the pinned corpus holds the bytes (admissible_set_n15_w10_size3003.txt) and no claimant text stating the claim; a file name is not a printed claim",
+   "source": "corpus/funsearch/admissible_set/admissible_set_n15_w10_size3003.txt"
+  },
+  {
+   "id": "funsearch-cap_set-n8_size512",
+   "skipped": "the pinned corpus holds the bytes (n8_size512.txt) and no claimant text stating the claim; a file name is not a printed claim",
+   "source": "corpus/funsearch/cap_set/n8_size512.txt"
+  },
+  {
+   "id": "funsearch-cyclic_graphs-nodes11_n4_size754",
+   "skipped": "the pinned corpus holds the bytes (nodes11_n4_size754.txt) and no claimant text stating the claim; a file name is not a printed claim",
+   "source": "corpus/funsearch/cyclic_graphs/nodes11_n4_size754.txt"
+  }
+ ]
+}

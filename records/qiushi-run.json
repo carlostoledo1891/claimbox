@@ -1,0 +1,21 @@
+{
+ "what": "A run of the claim-machine over the jobs in corpus/qiushi-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
+ "jobs": 2,
+ "written": 0,
+ "refused": 1,
+ "skipped": 1,
+ "rows": [
+  {
+   "id": "qiushi-d25",
+   "claim": "\\(K(25)\\ge197580\\)",
+   "source": "corpus/kissing/wave/qiushi/constructions/d25/README.md",
+   "refused": "count: the claim says 197580 points, the published bytes hold 25"
+  },
+  {
+   "id": "qiushi-d27",
+   "claim": null,
+   "source": "corpus/kissing/wave/qiushi/constructions/d27/README.md",
+   "skipped": "the README states no Result line"
+  }
+ ]
+}

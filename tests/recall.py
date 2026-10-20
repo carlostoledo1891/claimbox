@@ -119,6 +119,22 @@ def main(argv):
             return 'K(11) >= 594 -> 595'
         plant('count+1', kiss, countup)
 
+        # the notebook's claims: a rank one above the heading (the source does not print it), the notebook swapped for other bytes
+        ae = json.load(open(os.path.join(REPO, 'corpus', 'alphaevolve-jobs.json'), encoding='utf-8'))['jobs']
+        dec = next(j for j in ae if j['id'] == 'ae-nb-2x4x5-r32')
+        def rankup(j):
+            j['claim'] = j['claim'].replace('Rank-32', 'Rank-33').replace('rank 32', 'rank 33')
+            return 'Rank-32 -> Rank-33'
+        plant('rank+1', dec, rankup)
+        def nbswap(j):
+            j['data'] = 'corpus/optconst-queue/next-2026-10-18/pr-224/construction.json'
+            return 'the notebook -> another file as the bytes'
+        plant('wrong-bytes', dec, nbswap)
+        ae593 = next(j for j in ae if j['id'] == 'ae-kissing-d11-593')
+        def count593(j):
+            j['claim'] = j['claim'].replace('593', '594')
+            return 'K(11) >= 593 -> 594'
+        plant('count+1', ae593, count593)
         # score-edit goes through the READER: a copy of the platform corpus with the 594 record's score 0 -> 0.5 must yield no kissing claim
         from claimbox.readers import einsteinarena
         cdir = os.path.join(tmp, 'corpus', 'einstein-arena')

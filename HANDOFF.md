@@ -12,8 +12,8 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
      calibration, its register's 132 claim sentences are the coverage corpus, its checker is the gate (a subprocess; no code
-     shared; cert-machine read-only). `make test`: 71 checks, 26 red controls all firing, 38/38 planted defects caught (the heavy kissing decision is recorded, not re-run; CLAIMBOX_FULL=1 re-runs it). Local git only; the GitHub push and the
-     repository's visibility are the operator's.
+     shared; cert-machine read-only). `make test`: 103 checks, 26 red controls all firing, 41/41 planted defects caught (the heavy kissing decision is recorded, not re-run; CLAIMBOX_FULL=1 re-runs it). Public at github.com/carlostoledo1891/claimbox
+     (MIT) since 2026-10-20 night, on the operator's word.
   ★ WHAT WORKS: `python3 -m claimbox shape "<claim>"` (the shape, or REFUSED with the rule); `translate --claim … --source P --data P
      [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals] [--reading epistemic] [--check]`
      (the object; --check hands it to cert-machine's checker); `batch jobs.json --out DIR`; the registry reader (a constants-page row
@@ -72,6 +72,22 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      20 s. records/alphaevolve-run.json + records/alphaevolve/. The reader's sentences equal the register's on all 15 pool rows. The
      grammar's decomposition shape now carries its heading as the quote key (a shape without a printed number is quoted by its key);
      the object handed to cert-machine is named by its id.
+  ★ THREE MORE READERS, AND WHAT THEY MEASURED (2026-10-20 night, "Proceed all"): claimbox/readers/qiushi.py (the Qiushi Engine's
+     kissing release, constructions/d<dim>/README.md "**Result:** \(K(25)\ge197580\)" — the grammar now reads \( \) and \ge without a
+     space): the d25 claim READ and REFUSED on the count — the release publishes repair-points.json, a repair of another repository's
+     configuration (25 coordinates), not the 197,580 points, so the bytes the claim is about are not in the release; d27 states no
+     Result line (skipped). station.py (the Station's artifact folders): the READMEs describe folders and name notebooks and state
+     no claim with a quantity — 6 refused "no printed quantity", 2 folders without a data file skipped; the claims live in the paper.
+     funsearch.py (four construction files): the pinned corpus holds bytes and no claimant text, so every file is skipped — a file name
+     is not a printed claim. All three runs are records (records/<source>-run.json) and battery checks. THE MEASUREMENT ACROSS THE
+     FIVE SOURCES: the registry and EinsteinArena and AlphaEvolve print their claims beside their bytes and translate (10/10, 11/30
+     with 17 wanting a decider, 17/17); the Qiushi release, the Station and FunSearch pin bytes without the sentence or the sentence
+     without the bytes, and the claim-machine says so rather than supply either. RECALL extended to the notebook: a rank one above
+     the heading (refused "source"), the notebook swapped for other bytes (record-pin-mismatch), K(11) >= 594 against the 593 prose
+     (refused "source") — 41/41 plants caught. THE PLATFORM'S SCORING DEFINITIONS, LOOKED FOR: the API's problem endpoint is 404 and
+     the problem page (einsteinarena.com/problems/thomson-problem) prints "minimize" and no formula; the 17 scores stay refused for
+     want of a decider, honestly. PUBLISHED: github.com/carlostoledo1891/claimbox, public, MIT, on the operator's "you can push when
+     needed". `make test`: 103 checks, 26 reds, 41/41 plants, green.
   ◆ NOT DONE, AND WHY: the platform's own scoring functions as expressions (Thomson, Tammes, Heilbronn, …). problems.json carries only
      the direction and the tolerance, not the definition; writing a score function from memory would be a guess, which this program
      does not make. Pin the platform's problem pages (their statements of the score) first; then write each function once.
@@ -81,8 +97,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         minimum distance, Heilbronn's minimum area, the difference-bases count);
      1. more primitive functionals written once: C_1a / C_1b (the step-function autocorrelation and the minimum-overlap value), the
         tensor identity (needs a three-array data block on the receiver side: cert-machine's format holds one array per object);
-     2. (done: readers for the registry, EinsteinArena and AlphaEvolve) — next sources: the Qiushi kissing release (corpus/kissing/wave),
-        the Station's artifacts (corpus/station-v2), FunSearch's constructions; each reader turns a source into (sentence, quote, data);
+     2. (done: readers for the registry, EinsteinArena, AlphaEvolve, the Qiushi release, the Station, FunSearch) — for the last three
+        the corpus itself is what is missing: pin the Qiushi full point sets (the .cache sections), the Station's paper, FunSearch's
+        README, and the readers will have sentences and bytes to pair;
      3. the readings: --elements decimals vs doubles is the operator's choice today; a reader of a platform should say which reading
         the platform uses (EinsteinArena parses doubles; cert-machine's mc100 run read decimal digits: 9,480 vs 9,510 pairs);
      4. (done: the recall above; extend it with each new reader);

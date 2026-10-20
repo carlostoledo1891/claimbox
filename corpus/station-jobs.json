@@ -1,0 +1,57 @@
+{
+ "what": "translation jobs read from station by claimbox.readers.station (cert-machine's pinned corpus)",
+ "jobs": [
+  {
+   "id": "station-difference_bases",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Difference bases* problem.",
+   "source": "corpus/station-v2/difference_bases/README.md",
+   "data": "corpus/station-v2/difference_bases/construction_metadata.json",
+   "what": "the Station's artifact folder difference_bases: its README's first sentence and its first data file (construction_metadata.json)"
+  },
+  {
+   "id": "station-erdos_minimum_overlap",
+   "skipped": "no data file in the folder",
+   "source": "corpus/station-v2/erdos_minimum_overlap/README.md"
+  },
+  {
+   "id": "station-finite_kakeya",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Finite-field Kakeya* problem.",
+   "source": "corpus/station-v2/finite_kakeya/README.md",
+   "data": "corpus/station-v2/finite_kakeya/kakeya_F3_d3_13.npy",
+   "what": "the Station's artifact folder finite_kakeya: its README's first sentence and its first data file (kakeya_F3_d3_13.npy)"
+  },
+  {
+   "id": "station-flat_autoconvolution",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Flat autoconvolution* problem.",
+   "source": "corpus/station-v2/flat_autoconvolution/README.md",
+   "data": "corpus/station-v2/flat_autoconvolution/autocorr_6-3_weights.npy",
+   "what": "the Station's artifact folder flat_autoconvolution: its README's first sentence and its first data file (autocorr_6-3_weights.npy)"
+  },
+  {
+   "id": "station-jacobian",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Jacobian Conjecture* problem.",
+   "source": "corpus/station-v2/jacobian/README.md",
+   "data": "corpus/station-v2/jacobian/construction.json",
+   "what": "the Station's artifact folder jacobian: its README's first sentence and its first data file (construction.json)"
+  },
+  {
+   "id": "station-kakeya_needle",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Discretized Kakeya needle* problem.",
+   "source": "corpus/station-v2/kakeya_needle/README.md",
+   "data": "corpus/station-v2/kakeya_needle/construction_metadata.json",
+   "what": "the Station's artifact folder kakeya_needle: its README's first sentence and its first data file (construction_metadata.json)"
+  },
+  {
+   "id": "station-peak_autoconvolution",
+   "claim": "This folder contains the accompanying proofs, data, and additional results for the *Peak autoconvolution* problem.",
+   "source": "corpus/station-v2/peak_autoconvolution/README.md",
+   "data": "corpus/station-v2/peak_autoconvolution/autocorr_6-2_weights.npy",
+   "what": "the Station's artifact folder peak_autoconvolution: its README's first sentence and its first data file (autocorr_6-2_weights.npy)"
+  },
+  {
+   "id": "station-sign_uncertainty",
+   "skipped": "no data file in the folder",
+   "source": "corpus/station-v2/sign_uncertainty/README.md"
+  }
+ ]
+}

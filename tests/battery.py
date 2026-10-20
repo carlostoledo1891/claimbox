@@ -181,7 +181,7 @@ elif os.path.exists(vp):
     ok(old['rows'] == cov_rec['rows'], 'coverage: identical to records/coverage.json')
 
 # ---- 3b · the readers and the end-to-end runs ------------------------------------------------------------------------
-from claimbox.readers import einsteinarena, alphaevolve  # noqa: E402
+from claimbox.readers import einsteinarena, alphaevolve, qiushi, station, funsearch  # noqa: E402
 reg = {r['id']: r['claim'] for r in corpus['rows']}
 FULL = os.environ.get('CLAIMBOX_FULL') == '1'
 notrun = []
@@ -222,6 +222,12 @@ run_check('einstein-arena', einsteinarena.jobs(ROOT), 'mc100-', {'present': 8, '
           'words': '11 objects written and admitted, 18 refused with the rule named (17 need a decider cert-machine does not have, 1 holds no array), 1 gzipped record skipped'})
 run_check('alphaevolve', alphaevolve.jobs(ROOT), 'mc100-', {'present': 15, 'run': {'written': 17, 'refused': 0, 'skipped': 0},
           'words': '17 objects written and admitted: 15 decompositions attached to their records, the rank-48 <4,4,4> unattached, K(11) >= 593 decided from the bytes'})
+run_check('qiushi', qiushi.jobs(ROOT), 'kiss-', {'present': 0, 'run': {'written': 0, 'refused': 1, 'skipped': 0 + 1},
+          'words': 'the d25 Result line read (K(25) >= 197580) and REFUSED on the count — the release publishes a repair of another repository\'s configuration, 25 coordinates, not the 197,580 points; d27 states no Result line'})
+run_check('station', station.jobs(ROOT), 'mc100-st-', {'present': 0, 'run': {'written': 0, 'refused': 6, 'skipped': 2},
+          'words': 'the Station\'s artifact READMEs state no claim with a quantity (6 refused no-quantity; 2 folders without a data file skipped): the claims live in the paper, not in the artifacts'})
+run_check('funsearch', funsearch.jobs(ROOT), 'mc100-fs-', {'present': 0, 'run': {'written': 0, 'refused': 0, 'skipped': 4},
+          'words': 'four construction files and no claimant text in the pinned corpus: every file skipped, a file name is not a printed claim'})
 if notrun:
     print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
 

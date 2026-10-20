@@ -1,0 +1,33 @@
+{
+ "what": "A run of the claim-machine over the jobs in corpus/funsearch-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
+ "jobs": 4,
+ "written": 0,
+ "refused": 0,
+ "skipped": 4,
+ "rows": [
+  {
+   "id": "funsearch-admissible_set-admissible_set_n12_w7_size792",
+   "claim": null,
+   "source": "corpus/funsearch/admissible_set/admissible_set_n12_w7_size792.txt",
+   "skipped": "the pinned corpus holds the bytes (admissible_set_n12_w7_size792.txt) and no claimant text stating the claim; a file name is not a printed claim"
+  },
+  {
+   "id": "funsearch-admissible_set-admissible_set_n15_w10_size3003",
+   "claim": null,
+   "source": "corpus/funsearch/admissible_set/admissible_set_n15_w10_size3003.txt",
+   "skipped": "the pinned corpus holds the bytes (admissible_set_n15_w10_size3003.txt) and no claimant text stating the claim; a file name is not a printed claim"
+  },
+  {
+   "id": "funsearch-cap_set-n8_size512",
+   "claim": null,
+   "source": "corpus/funsearch/cap_set/n8_size512.txt",
+   "skipped": "the pinned corpus holds the bytes (n8_size512.txt) and no claimant text stating the claim; a file name is not a printed claim"
+  },
+  {
+   "id": "funsearch-cyclic_graphs-nodes11_n4_size754",
+   "claim": null,
+   "source": "corpus/funsearch/cyclic_graphs/nodes11_n4_size754.txt",
+   "skipped": "the pinned corpus holds the bytes (nodes11_n4_size754.txt) and no claimant text stating the claim; a file name is not a printed claim"
+  }
+ ]
+}
