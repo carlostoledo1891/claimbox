@@ -38,6 +38,6 @@ claimbox/readers/          structural readers of real sources: registry.py (the 
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), einstein-arena-jobs.json (read, 30 jobs)
 records/                   calibration.json, coverage.json (make test WRITE=1); einstein-arena-run.json + einstein-arena/ (the batch's --record and objects)
-tests/battery.py           the gate
+tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json)
 tools/lift.py              the lift from cert-machine and the drift check
 ```

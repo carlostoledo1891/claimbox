@@ -295,10 +295,10 @@
   {
    "id": "ea-kissing-kissing-number-d11",
    "claim": "K(11) >= 594",
-   "source": "corpus/einstein-arena/best-6.json",
+   "source": "corpus/einstein-arena/problems.json",
    "data": "corpus/einstein-arena/best-6.json",
    "elements": "doubles",
-   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 11 (n=594)\", pinned by cert-machine (corpus/einstein-arena/best-6.json) — the platform's score of 0 is its statement that the object is a kissing configuration",
+   "what": "EinsteinArena problem \"Kissing Number in Dimension 11 (n=594)\" (problems.json), whose best solution (corpus/einstein-arena/best-6.json) the platform scores 0: its statement that the object is a kissing configuration of 594",
    "problem": "kissing-number-d11",
    "score": "0"
   },

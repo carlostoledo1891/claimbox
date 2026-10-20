@@ -17,7 +17,8 @@ the battery and must fire.
 
 The first end-to-end run, over EinsteinArena's 30 pinned best solutions with no human typing anything: 11 objects written and
 admitted by cert-machine (one, K(11) ≥ 594, decided from the bytes alone), 18 refused with the rule named, 1 skipped
-(records/einstein-arena-run.json).
+(records/einstein-arena-run.json). Planted defects in the input — a bar moved by one unit, a relation flipped, another
+constant's name, another claimant's bytes, a count off by one, an edited score — 38 of 38 caught (records/recall.json).
 
 ```
 python3 -m claimbox read einstein-arena --out jobs.json && python3 -m claimbox batch jobs.json --out out --check

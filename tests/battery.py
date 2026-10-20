@@ -73,7 +73,7 @@ for s, rule in ABSURD:
 tmp = tempfile.mkdtemp(prefix='claimbox-battery-')
 try:
     good_src = os.path.join(tmp, 'page.md')
-    open(good_src, 'w').write('The claim: $C_{1d} \\leq 1.463071582607559*$ appears here.\n')
+    open(good_src, 'w').write('The claim: $C_{1d} \\leq 1.463071582607559*$ appears here.\nAlso: $C_7 \\leq 1.463071582607559$ and K(2) >= 4 and K(2) >= 3 and K(3) >= 3.\n')
     bad_src = os.path.join(tmp, 'other.md')
     open(bad_src, 'w').write('nothing printed here\n')
     json.dump({'values': [0.1, 0.2, 0.3]}, open(os.path.join(tmp, 'small.json'), 'w'))
@@ -214,6 +214,11 @@ if os.path.exists(run_path):
     ok(run['written'] == 11 and run['refused'] == 18 and run['skipped'] == 1, 'run: 11 objects written and admitted, 18 refused with the rule named (17 need a decider cert-machine does not have, 1 holds no array), 1 gzipped record skipped', json.dumps({k: run[k] for k in ('written', 'refused', 'skipped')}))
     if notrun:
         print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
+
+# ---- 3c · planted-defect recall of the whole pipeline ----------------------------------------------------------------
+rc = subprocess.run([sys.executable, os.path.join(HERE, 'recall.py')], capture_output=True, text=True, timeout=1800)
+last = [l for l in rc.stdout.strip().split('\n') if l.strip()][-1] if rc.stdout.strip() else rc.stderr.strip()[-120:]
+ok(rc.returncode == 0, 'recall: every planted defect caught, identical to records/recall.json', last[:120])
 
 # ---- 4 · drift ----------------------------------------------------------------------------------------------------------
 d = subprocess.run([sys.executable, os.path.join(REPO, 'tools', 'lift.py'), '--check'], capture_output=True, text=True)

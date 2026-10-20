@@ -184,7 +184,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file nam",
+   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file n",
    "certMachineSeconds": 0.0
   },
   {
@@ -300,7 +300,7 @@
   {
    "id": "ea-kissing-kissing-number-d11",
    "claim": "K(11) >= 594",
-   "source": "corpus/einstein-arena/best-6.json",
+   "source": "corpus/einstein-arena/problems.json",
    "object": "records/einstein-arena/ea-kissing-kissing-number-d11.json",
    "pin": "4ff52e989f3ef0b9c3f3d97ef078c6201eb4fda73eecc1bb09163094b43f27c0",
    "predicate": [
@@ -310,8 +310,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  24.71 s  note: no record attached  note: the file name is not the id",
-   "certMachineSeconds": 24.7
+   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  24.52 s  note: no record attached  note: the file name is not the id",
+   "certMachineSeconds": 24.6
   },
   {
    "id": "ea-best-prime-number-theorem",

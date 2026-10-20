@@ -58,7 +58,8 @@ def find_quote(source_path, printed, name=None):
     """the first line printing the number (preferring one that also names the quantity); None if absent"""
     with open(source_path, 'rb') as f:
         text = f.read().decode('utf-8', 'replace')
-    lines = [ln for ln in text.split('\n') if printed in ln]
+    tok = re.compile(r'(?<![\d.])' + re.escape(printed) + r'(?![\d])')
+    lines = [ln for ln in text.split('\n') if tok.search(ln)]
     if not lines:
         return None
     if name:
@@ -158,6 +159,35 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     quote = find_quote(sp, printed, shape.get('name')) if printed else None
     if printed and quote is None:
         raise Refusal('source', 'the source does not print ' + printed)
+    if quote is not None and shape.get('rel') not in (None, 'in'):
+        # the line that prints the bar must print the claim's relation and name too — a bar with another relation or
+        # another quantity's name beside it is somebody else's claim
+        q = grammar.normalise(quote)
+        q = re.sub(r'(\d)\*(?![A-Za-z(])', r'\1', q)
+        rels = set(re.findall(r'(?<![<>=!])(<=|>=|<|>)(?!=)', q))
+        if rels and grammar.REL_WORD.get(next(iter(rels))) != shape['rel'] and len(rels) == 1:
+            raise Refusal('source', 'the source prints the bar with the relation ' + next(iter(rels)) + ', the claim says ' + rel_text(shape['rel']))
+        names = set(re.findall(r'\bC_\d+[a-z]?\b', q))
+        if names and re.match(r'^C_\d+[a-z]?$', str(shape.get('name') or '')) and shape['name'] not in names:
+            raise Refusal('source', 'the line printing the bar names ' + ', '.join(sorted(names)) + ', the claim says ' + shape['name'])
+    if printed and re.match(r'^C_\d+[a-z]?$', str(shape.get('name') or '')):
+        # the bar must be printed beside the claim's constant where it is printed beside any: a README's line names the constant
+        with open(sp, 'rb') as f:
+            doc_lines = f.read().decode('utf-8', 'replace').split('\n')
+        tok = re.compile(r'(?<![\d.])' + re.escape(printed) + r'(?![\d])')
+        near = set()
+        for ln in doc_lines:
+            if tok.search(ln):
+                near |= set(re.findall(r'\bC_\d+[a-z]?\b', grammar.normalise(ln)))
+        if near and shape['name'] not in near:
+            raise Refusal('source', 'the source prints ' + printed + ' beside ' + ', '.join(sorted(near)) + ', not beside ' + shape['name'])
+    if re.match(r'^C_\d+[a-z]?$', str(shape.get('name') or '')):
+        # the source as a whole must name the claim's constant: a constants page names its own, a README names them all
+        with open(sp, 'rb') as f:
+            doc = grammar.normalise(f.read().decode('utf-8', 'replace'))
+        doc_names = set(re.findall(r'\bC_\d+[a-z]?\b', doc))
+        if doc_names and shape['name'] not in doc_names:
+            raise Refusal('source', 'the source never names ' + shape['name'] + ' (it names ' + ', '.join(sorted(doc_names)[:4]) + ('…' if len(doc_names) > 4 else '') + ')')
     if not printed:
         quote = find_quote(sp, str(shape.get('n', '')), shape.get('name')) or find_quote(sp, shape.get('name') or '', None)
         if quote is None:

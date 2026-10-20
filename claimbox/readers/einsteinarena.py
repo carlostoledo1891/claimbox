@@ -58,6 +58,7 @@ def jobs(root, corpus='corpus/einstein-arena'):
                     'problem': p['slug'], 'score': score})
         km = KISSING_TITLE.match(p['title'])
         if km and score == '0':
-            out.append({'id': 'ea-kissing-' + p['slug'], 'claim': 'K(' + km.group(1) + ') >= ' + km.group(2), 'source': rel, 'data': rel, 'elements': 'doubles',
-                        'what': what + ' — the platform\'s score of 0 is its statement that the object is a kissing configuration', 'problem': p['slug'], 'score': score})
+            out.append({'id': 'ea-kissing-' + p['slug'], 'claim': 'K(' + km.group(1) + ') >= ' + km.group(2), 'source': corpus + '/problems.json', 'data': rel, 'elements': 'doubles',
+                        'what': 'EinsteinArena problem "' + p['title'] + '" (problems.json), whose best solution (' + rel + ') the platform scores 0: its statement that the object is a kissing configuration of ' + km.group(2),
+                        'problem': p['slug'], 'score': score})
     return out

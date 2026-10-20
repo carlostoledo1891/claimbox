@@ -12,7 +12,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
      calibration, its register's 132 claim sentences are the coverage corpus, its checker is the gate (a subprocess; no code
-     shared; cert-machine read-only). `make test`: green, 26 red controls all firing (the heavy kissing decision is recorded, not re-run; CLAIMBOX_FULL=1 re-runs it). Local git only; the GitHub push and the
+     shared; cert-machine read-only). `make test`: 71 checks, 26 red controls all firing, 38/38 planted defects caught (the heavy kissing decision is recorded, not re-run; CLAIMBOX_FULL=1 re-runs it). Local git only; the GitHub push and the
      repository's visibility are the operator's.
   ★ WHAT WORKS: `python3 -m claimbox shape "<claim>"` (the shape, or REFUSED with the rule); `translate --claim … --source P --data P
      [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals] [--reading epistemic] [--check]`
@@ -46,6 +46,24 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      array finder now takes the largest array at any depth (the platform keeps the object under "data"), and an element-reading hint
      applies to numbers only (structured records are the decider's to read). The grammar reads exponents (1e-05 is a printed number;
      the box it allows shifts with the exponent).
+  ★ PLANTED-DEFECT RECALL OF THE WHOLE PIPELINE (2026-10-20 night, "continue"): tests/recall.py plants a defect in the INPUT — the
+     sentence, the page or the bytes — and requires claimbox to refuse with its rule or cert-machine's checker to refuse or change its
+     decision; never a quiet object. 38 plants on the nine admitted calibration jobs and the platform's 594 record: the bar moved by one
+     unit in its last printed digit (9: all refused "source" — the page does not print that bar), the relation flipped (9: refused
+     "source" where the line prints the relation, else cert-machine's record-decision-mismatch), another constant's name in the
+     sentence (9), the claimant's bytes swapped for another claimant's file (9: cert-machine's new record-pin-mismatch, or "count"
+     where the functional is written for the file's size), a kissing count one above the vectors (1: "source"), the platform's score
+     edited in its record (1: the READER emits no kissing claim of a record scored 0.5). 38/38 CAUGHT; records/recall.json; a battery
+     check. THREE RULES THE PLANTS FORCED, all in translate.py: the printed number must be a standalone token of the source line, not
+     a substring of another number; the line that prints the bar must print the claim's relation and, where it prints any constant's
+     name, the claim's; and the bar must be printed beside the claim's constant wherever the source prints it beside any, and the
+     source as a whole must name the constant. And ONE ON THE RECEIVER (cert-machine instruments/claimbox, both checkers, a red):
+     an object whose pin is not the bytes the record decided is refused, record-pin-mismatch — before it, swapped bytes passed on the
+     bar alone. The 594 kissing claim's source is now the problem's title in problems.json (the record's score 0 is the reason the
+     reader makes the claim), not a line of coordinates that happened to contain 594. `make test`: 71 checks, 26 reds, green.
+  ◆ NOT DONE, AND WHY: the platform's own scoring functions as expressions (Thomson, Tammes, Heilbronn, …). problems.json carries only
+     the direction and the tolerance, not the definition; writing a score function from memory would be a guess, which this program
+     does not make. Pin the platform's problem pages (their statements of the score) first; then write each function once.
   ◆ NEXT, none started:
      0. the platform problems refused for want of a decider: each needs cert-machine to grow one (its side), or the platform's own
         scoring function written once as a primitive expression here where it is finite arithmetic (Thomson's energy, Tammes's
@@ -57,8 +75,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         files; each reader turns a source into (sentence, quote, data) so the translator needs nothing typed;
      3. the readings: --elements decimals vs doubles is the operator's choice today; a reader of a platform should say which reading
         the platform uses (EinsteinArena parses doubles; cert-machine's mc100 run read decimal digits: 9,480 vs 9,510 pairs);
-     4. planted-defect recall of the whole pipeline: a sentence with a bar moved one unit, a relation flipped, a pin to the wrong file —
-        the object must come out REFUSED or the verdict must flip (cert-machine's recall method, applied here);
+     4. (done: the recall above; extend it with each new reader);
      5. the grammar's gaps on this register are listed in records/coverage.json; extend only for a claim shape that exists, with a
         red control for its refusal.
 
