@@ -1,0 +1,281 @@
+{
+ "what": "A run of the claim-machine over the jobs in corpus/alphaevolve-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
+ "jobs": 17,
+ "written": 17,
+ "refused": 0,
+ "skipped": 0,
+ "rows": [
+  {
+   "id": "ae-nb-2x4x5-r32",
+   "claim": "the notebook's \"Rank-32 decomposition of <2,4,5> over 0.5*Z\" is a decomposition of that tensor of rank 32 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-2x4x5-r32.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-2x4x5-r32  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-2x4x7-r45",
+   "claim": "the notebook's \"Rank-45 decomposition of <2,4,7> over Z\" is a decomposition of that tensor of rank 45 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-2x4x7-r45.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-2x4x8-r51",
+   "claim": "the notebook's \"Rank-51 decomposition of <2,4,8> over Z\" is a decomposition of that tensor of rank 51 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-2x4x8-r51.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-2x4x8-r51  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-2x5x6-r47",
+   "claim": "the notebook's \"Rank-47 decomposition of <2,5,6> over Z\" is a decomposition of that tensor of rank 47 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-2x5x6-r47.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-2x5x6-r47  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-3x3x3-r23",
+   "claim": "the notebook's \"Rank-23 decomposition of <3,3,3> over Z\" is a decomposition of that tensor of rank 23 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-3x3x3-r23.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-3x4x6-r54",
+   "claim": "the notebook's \"Rank-54 decomposition of <3,4,6> over 0.5*Z\" is a decomposition of that tensor of rank 54 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-3x4x6-r54.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-3x4x6-r54  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-3x4x7-r63",
+   "claim": "the notebook's \"Rank-63 decomposition of <3,4,7> over 0.5*C\" is a decomposition of that tensor of rank 63 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-3x4x7-r63.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-3x4x7-r63  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-3x4x8-r74",
+   "claim": "the notebook's \"Rank-74 decomposition of <3,4,8> over Z\" is a decomposition of that tensor of rank 74 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-3x4x8-r74.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-3x4x8-r74  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-3x5x6-r68",
+   "claim": "the notebook's \"Rank-68 decomposition of <3,5,6> over Z\" is a decomposition of that tensor of rank 68 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-3x5x6-r68.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-3x5x6-r68  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-3x5x7-r80",
+   "claim": "the notebook's \"Rank-80 decomposition of <3,5,7> over Z\" is a decomposition of that tensor of rank 80 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-3x5x7-r80.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-3x5x7-r80  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-4x4x4-r48",
+   "claim": "the notebook's \"Rank-48 decomposition of <4,4,4> over 0.5*C\" is a decomposition of that tensor of rank 48 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-4x4x4-r48.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-4x4x4-r48  []  0.002 s  note: no record attached: a proposal, undecided",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-4x4x8-r96",
+   "claim": "the notebook's \"Rank-96 decomposition of <4,4,8> over 0.5*C\" is a decomposition of that tensor of rank 96 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-4x4x8-r96.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-4x4x8-r96  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-4x4x5-r61",
+   "claim": "the notebook's \"Rank-61 decomposition of <4,4,5> over Z\" is a decomposition of that tensor of rank 61 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-4x4x5-r61.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-4x4x5-r61  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-4x4x7-r85",
+   "claim": "the notebook's \"Rank-85 decomposition of <4,4,7> over Z\" is a decomposition of that tensor of rank 85 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-4x4x7-r85.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-4x4x7-r85  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-4x5x6-r90",
+   "claim": "the notebook's \"Rank-90 decomposition of <4,5,6> over Z\" is a decomposition of that tensor of rank 90 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-4x5x6-r90.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-nb-5x5x5-r93",
+   "claim": "the notebook's \"Rank-93 decomposition of <5,5,5> over Z\" is a decomposition of that tensor of rank 93 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-nb-5x5x5-r93.json",
+   "pin": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+   "predicate": [
+    {
+     "rel": "holds",
+     "printed": null,
+     "c": null
+    }
+   ],
+   "certMachine": "ADMITTED  ae-nb-5x5x5-r93  [CERTIFIED]  0.006 s",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "ae-kissing-d11-593",
+   "claim": "K(11) >= 593",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "object": "records/alphaevolve/ae-kissing-d11-593.json",
+   "pin": "71e5919df80dedf1c7d9d24130b9020700541582512c676d4edbddf215125610",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  ae-kissing-d11-593  [CERTIFIED]  from the object: CERTIFIED  20.189 s",
+   "certMachineSeconds": 20.2
+  }
+ ]
+}

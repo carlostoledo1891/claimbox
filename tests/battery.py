@@ -180,27 +180,31 @@ elif os.path.exists(vp):
     old = json.load(open(vp, encoding='utf-8'))
     ok(old['rows'] == cov_rec['rows'], 'coverage: identical to records/coverage.json')
 
-# ---- 3b · the EinsteinArena reader and the first end-to-end run -----------------------------------------------------
-from claimbox.readers import einsteinarena  # noqa: E402
-ea_jobs = einsteinarena.jobs(ROOT)
+# ---- 3b · the readers and the end-to-end runs ------------------------------------------------------------------------
+from claimbox.readers import einsteinarena, alphaevolve  # noqa: E402
 reg = {r['id']: r['claim'] for r in corpus['rows']}
-present = [j for j in ea_jobs if j.get('claim') and ('mc100-' + j['id']) in reg]
-same_sentence = [j['id'] for j in present if reg['mc100-' + j['id']] == j['claim']]
-ok(len(present) >= 8 and len(same_sentence) == len(present), 'reader: the sentence read off each platform record equals the register\'s claim, word for word, on every register row from the platform', str(len(same_sentence)) + '/' + str(len(present)))
-run_path = os.path.join(REPO, 'records', 'einstein-arena-run.json')
-if os.path.exists(run_path):
+FULL = os.environ.get('CLAIMBOX_FULL') == '1'
+notrun = []
+
+
+def run_check(name, jobs_, prefix, counts):
+    present = [j for j in jobs_ if j.get('claim') and (prefix + j['id']) in reg]
+    same = [j['id'] for j in present if reg[prefix + j['id']] == j['claim']]
+    ok(len(present) >= counts['present'] and len(same) == len(present), name + ': the sentence read off each record equals the register\'s claim, word for word, on every register row from the source', str(len(same)) + '/' + str(len(present)))
+    run_path = os.path.join(REPO, 'records', name + '-run.json')
+    if not os.path.exists(run_path):
+        ok(False, name + ': records/' + name + '-run.json exists')
+        return
     run = json.load(open(run_path, encoding='utf-8'))
     by = {r['id']: r for r in run['rows']}
-    ok(set(by) == set(j['id'] for j in ea_jobs), 'run: the jobs read today are the jobs of the record', str(len(ea_jobs)))
-    FULL = os.environ.get('CLAIMBOX_FULL') == '1'
-    notrun = []
+    ok(set(by) == set(j['id'] for j in jobs_), name + ': the jobs read today are the jobs of the record', str(len(jobs_)))
     agree = 0
-    for j in ea_jobs:
+    for j in jobs_:
         r = by.get(j['id'])
         if not r or j.get('skipped'):
             continue
         try:
-            obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), elements=j.get('elements'), obj_id=j['id'], what=j.get('what'))
+            obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), record=j.get('record'), elements=j.get('elements'), obj_id=j['id'], what=j.get('what'))
             now = {'pin': obj['domain']['pin']['sha256'], 'predicate': [{'rel': q['rel'], 'printed': q.get('printed'), 'c': q.get('c')} for q in obj['predicate']]}
             agree += (now == {'pin': r.get('pin'), 'predicate': r.get('predicate')})
             if 'certMachine' in r and (r.get('certMachineSeconds', 99) < 5 or FULL):
@@ -210,10 +214,16 @@ if os.path.exists(run_path):
                 notrun.append(j['id'] + ' (' + str(r.get('certMachineSeconds')) + ' s on record)')
         except Refusal as e:
             agree += (r.get('refused', '').split(':')[0] == e.rule)
-    ok(agree == run['written'] + run['refused'], 'run: every job translates (or is refused) today exactly as records/einstein-arena-run.json says', str(agree) + '/' + str(run['written'] + run['refused']))
-    ok(run['written'] == 11 and run['refused'] == 18 and run['skipped'] == 1, 'run: 11 objects written and admitted, 18 refused with the rule named (17 need a decider cert-machine does not have, 1 holds no array), 1 gzipped record skipped', json.dumps({k: run[k] for k in ('written', 'refused', 'skipped')}))
-    if notrun:
-        print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
+    ok(agree == run['written'] + run['refused'], name + ': every job translates (or is refused) today exactly as the record says', str(agree) + '/' + str(run['written'] + run['refused']))
+    ok(all(run[k] == v for k, v in counts['run'].items()), name + ': ' + counts['words'], json.dumps({k: run[k] for k in ('written', 'refused', 'skipped')}))
+
+
+run_check('einstein-arena', einsteinarena.jobs(ROOT), 'mc100-', {'present': 8, 'run': {'written': 11, 'refused': 18, 'skipped': 1},
+          'words': '11 objects written and admitted, 18 refused with the rule named (17 need a decider cert-machine does not have, 1 holds no array), 1 gzipped record skipped'})
+run_check('alphaevolve', alphaevolve.jobs(ROOT), 'mc100-', {'present': 15, 'run': {'written': 17, 'refused': 0, 'skipped': 0},
+          'words': '17 objects written and admitted: 15 decompositions attached to their records, the rank-48 <4,4,4> unattached, K(11) >= 593 decided from the bytes'})
+if notrun:
+    print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
 
 # ---- 3c · planted-defect recall of the whole pipeline ----------------------------------------------------------------
 rc = subprocess.run([sys.executable, os.path.join(HERE, 'recall.py')], capture_output=True, text=True, timeout=1800)

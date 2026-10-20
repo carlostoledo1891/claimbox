@@ -17,11 +17,12 @@ the battery and must fire.
 
 The first end-to-end run, over EinsteinArena's 30 pinned best solutions with no human typing anything: 11 objects written and
 admitted by cert-machine (one, K(11) ≥ 594, decided from the bytes alone), 18 refused with the rule named, 1 skipped
-(records/einstein-arena-run.json). Planted defects in the input — a bar moved by one unit, a relation flipped, another
+(records/einstein-arena-run.json); over AlphaEvolve's results notebook, 17 of 17 (records/alphaevolve-run.json). Planted defects in the input — a bar moved by one unit, a relation flipped, another
 constant's name, another claimant's bytes, a count off by one, an edited score — 38 of 38 caught (records/recall.json).
 
 ```
 python3 -m claimbox read einstein-arena --out jobs.json && python3 -m claimbox batch jobs.json --out out --check
+python3 -m claimbox read alphaevolve --out jobs.json && python3 -m claimbox batch jobs.json --out out --check
 python3 -m claimbox shape "C_1d <= 1.463071582607559"
 python3 -m claimbox translate --claim '$C_{1d} \leq 1.463071582607559*$' \
     --source corpus/optconst-queue/next-2026-10-18/upstream/README.md \

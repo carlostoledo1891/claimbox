@@ -5,7 +5,7 @@
             [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals]
             [--reading epistemic] [--id ID] [--out FILE] [--check]
   batch jobs.json --out DIR [--check] [--record F]  one object per job (the fields of translate, in JSON); --record writes the run's summary
-  read einstein-arena [--out jobs.json]            the jobs a structural reader makes from a pinned source (cert-machine's corpus)
+  read einstein-arena|alphaevolve [--out jobs.json]   the jobs a structural reader makes from a pinned source (cert-machine's corpus)
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -17,7 +17,7 @@ import sys
 
 from . import grammar, translate as T
 from .grammar import Refusal
-from .readers import einsteinarena
+from .readers import einsteinarena, alphaevolve
 
 ROOT = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
 
@@ -49,11 +49,11 @@ def main(argv=None):
     b.add_argument('--check', action='store_true')
     b.add_argument('--record')
     rd = sub.add_parser('read')
-    rd.add_argument('source', choices=['einstein-arena'])
+    rd.add_argument('source', choices=['einstein-arena', 'alphaevolve'])
     rd.add_argument('--out')
     a = ap.parse_args(argv)
     if a.cmd == 'read':
-        js = einsteinarena.jobs(ROOT)
+        js = einsteinarena.jobs(ROOT) if a.source == 'einstein-arena' else alphaevolve.jobs(ROOT)
         out = json.dumps({'what': 'translation jobs read from ' + a.source + ' by claimbox.readers.' + a.source.replace('-', '') + ' (cert-machine\'s pinned corpus)', 'jobs': js}, indent=1, ensure_ascii=False) + '\n'
         if a.out:
             open(a.out, 'w', encoding='utf-8').write(out)

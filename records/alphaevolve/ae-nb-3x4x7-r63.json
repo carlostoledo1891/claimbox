@@ -1,0 +1,47 @@
+{
+ "id": "ae-nb-3x4x7-r63",
+ "text": "the notebook's \"Rank-63 decomposition of <3,4,7> over 0.5*C\" is a decomposition of that tensor of rank 63 over that ring",
+ "source": {
+  "what": "AlphaEvolve's results notebook, cell 23 (the heading) and cell 24 (the Data cell with the factors as Python literals)",
+  "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+  "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+  "quote": "\"##Rank-63 decomposition of <3,4,7> over 0.5*C\""
+ },
+ "reading": "universal",
+ "domain": {
+  "kind": "finite",
+  "pin": {
+   "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+  },
+  "decoder": "the array at cells: 128 values, structured entries, read by the named decider",
+  "count": 128,
+  "variable": "f"
+ },
+ "predicate": [
+  {
+   "g": {
+    "named": "every tensor-identity equation of the ⟨3,4,7⟩ matrix-multiplication tensor over 0.5*C at rank 63, exactly",
+    "where": "tools/run-mc100-tensors.js",
+    "args": [
+     "f"
+    ]
+   },
+   "rel": "holds"
+  }
+ ],
+ "reference": "no bar: the identity holds or it does not; the factors are read as structured entries, read by the named decider",
+ "hypotheses": [
+  "a decomposition of the tensor with r terms is an algorithm in r multiplications for every pair of matrices of those sizes"
+ ],
+ "falsifier": [
+  "one tensor-identity equation fails on the pinned factors",
+  "the pinned file does not hash to 2cce2543…"
+ ],
+ "record": {
+  "path": "certs/mc100-alphaevolve-nb-matmul.json",
+  "row": "ae-nb-3x4x7-r63",
+  "value": null,
+  "verdict": "CERTIFIED"
+ }
+}

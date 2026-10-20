@@ -189,9 +189,17 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         if doc_names and shape['name'] not in doc_names:
             raise Refusal('source', 'the source never names ' + shape['name'] + ' (it names ' + ', '.join(sorted(doc_names)[:4]) + ('…' if len(doc_names) > 4 else '') + ')')
     if not printed:
-        quote = find_quote(sp, str(shape.get('n', '')), shape.get('name')) or find_quote(sp, shape.get('name') or '', None)
+        key = shape.get('key') or (str(shape['n']) if shape.get('n') else None) or shape.get('name')
+        if not key:
+            raise Refusal('source', 'the claim has no printed number and no key to find in the source')
+        with open(sp, 'rb') as f:
+            text = f.read().decode('utf-8', 'replace')
+        hit = [ln for ln in text.split('\n') if key in ln]
+        quote = hit[0].strip() if hit else None
         if quote is None:
-            raise Refusal('source', 'the source does not print the claim')
+            raise Refusal('source', 'the source does not print the claim (' + key + ')')
+        if len(quote) > 400:
+            quote = quote[max(0, quote.find(key) - 60):quote.find(key) + len(key) + 60]
 
     with open(dp, 'rb') as f:
         try:
@@ -277,11 +285,13 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
 
 def check_with_cert_machine(obj, root):
     """hand the object to cert-machine's checker (a subprocess, no code shared) and return its line"""
-    fd, tmp = tempfile.mkstemp(prefix='claimbox-', suffix='.json')
-    with os.fdopen(fd, 'w', encoding='utf-8') as f:
+    d = tempfile.mkdtemp(prefix='claimbox-')
+    tmp = os.path.join(d, re.sub(r'[^A-Za-z0-9_.-]', '-', str(obj.get('id') or 'object')) + '.json')   # named by its id, as the checker expects
+    with open(tmp, 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False)
     try:
         r = subprocess.run(['python3', os.path.join(root, 'instruments', 'claimbox', 'check.py'), tmp], capture_output=True, text=True, timeout=1800)
         return (r.stdout or r.stderr).strip().split('\n')[-1]
     finally:
         os.remove(tmp)
+        os.rmdir(d)

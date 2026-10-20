@@ -21,7 +21,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-erdos-min-overlap  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name is ",
+   "certMachine": "ADMITTED  ea-best-erdos-min-overlap  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -52,7 +52,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-flat-polynomials  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name is n",
+   "certMachine": "ADMITTED  ea-best-flat-polynomials  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -71,7 +71,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-edges-vs-triangles  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name is",
+   "certMachine": "ADMITTED  ea-best-edges-vs-triangles  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -102,7 +102,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-circles-rectangle  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name is ",
+   "certMachine": "ADMITTED  ea-best-circles-rectangle  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -127,7 +127,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-first-autocorrelation-inequality  []  0.002 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: ",
+   "certMachine": "ADMITTED  ea-best-first-autocorrelation-inequality  []  0.002 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -146,7 +146,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d12  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name is",
+   "certMachine": "ADMITTED  ea-best-kissing-number-d12  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -165,7 +165,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d11-605  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file nam",
+   "certMachine": "ADMITTED  ea-best-kissing-number-d11-605  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -184,7 +184,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file n",
+   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -275,7 +275,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name",
+   "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -294,7 +294,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d11  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided  note: the file name is",
+   "certMachine": "ADMITTED  ea-best-kissing-number-d11  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -310,8 +310,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  24.52 s  note: no record attached  note: the file name is not the id",
-   "certMachineSeconds": 24.6
+   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  24.447 s  note: no record attached",
+   "certMachineSeconds": 24.5
   },
   {
    "id": "ea-best-prime-number-theorem",

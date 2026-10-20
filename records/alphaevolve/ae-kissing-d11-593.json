@@ -1,0 +1,178 @@
+{
+ "id": "ae-kissing-d11-593",
+ "text": "K(11) >= 593",
+ "source": {
+  "what": "AlphaEvolve's results notebook, section B.11 (cell 112), whose Data cell holds the vectors; the bytes are cert-machine's extraction of that cell (corpus/kissing/alphaevolve-d11-593.json), which names the cell and the upstream digest",
+  "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+  "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff",
+  "quote": "\"For $d=11$, the best known lower bound was 592 ([Ganzhinov (2022)](https://www.arxiv.org/abs/2207.08266)), and AlphaEvolve improved this to 593.\\n\","
+ },
+ "reading": "universal",
+ "domain": {
+  "kind": "finite",
+  "pin": {
+   "path": "corpus/kissing/alphaevolve-d11-593.json",
+   "sha256": "71e5919df80dedf1c7d9d24130b9020700541582512c676d4edbddf215125610"
+  },
+  "decoder": "the array at vectors: 593 rows of 11, each JSON integer exactly",
+  "count": 593,
+  "variable": "f",
+  "data": {
+   "select": "vectors",
+   "elements": "integers",
+   "shape": [
+    "n",
+    "d"
+   ]
+  }
+ },
+ "predicate": [
+  {
+   "forall": [
+    [
+     "i",
+     "0",
+     [
+      "Subtract",
+      "n",
+      "2"
+     ]
+    ],
+    [
+     "j",
+     [
+      "Add",
+      "i",
+      "1"
+     ],
+     [
+      "Subtract",
+      "n",
+      "1"
+     ]
+    ]
+   ],
+   "g": [
+    "Subtract",
+    [
+     "Multiply",
+     "4",
+     [
+      "Multiply",
+      [
+       "Sum",
+       "k",
+       "0",
+       [
+        "Subtract",
+        "d",
+        "1"
+       ],
+       [
+        "Multiply",
+        [
+         "Index",
+         "f",
+         "i",
+         "k"
+        ],
+        [
+         "Index",
+         "f",
+         "j",
+         "k"
+        ]
+       ]
+      ],
+      [
+       "Abs",
+       [
+        "Sum",
+        "k",
+        "0",
+        [
+         "Subtract",
+         "d",
+         "1"
+        ],
+        [
+         "Multiply",
+         [
+          "Index",
+          "f",
+          "i",
+          "k"
+         ],
+         [
+          "Index",
+          "f",
+          "j",
+          "k"
+         ]
+        ]
+       ]
+      ]
+     ]
+    ],
+    [
+     "Multiply",
+     [
+      "Sum",
+      "k",
+      "0",
+      [
+       "Subtract",
+       "d",
+       "1"
+      ],
+      [
+       "Square",
+       [
+        "Index",
+        "f",
+        "i",
+        "k"
+       ]
+      ]
+     ],
+     [
+      "Sum",
+      "k",
+      "0",
+      [
+       "Subtract",
+       "d",
+       "1"
+      ],
+      [
+       "Square",
+       [
+        "Index",
+        "f",
+        "j",
+        "k"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "rel": "le",
+   "c": "0"
+  }
+ ],
+ "reference": "no bar is printed: the zero of the structural inequality; the claim is the count, 593 directions pairwise at least 60 degrees apart, decided from the bytes read as each JSON integer exactly",
+ "hypotheses": [
+  "two directions u, v are at least 60 degrees apart iff <u, v> <= |u||v|/2, i.e. p <= 0 or 4p^2 <= |u|^2|v|^2, the one inequality 4·p·|p| <= |u|^2 |v|^2 (p = <u, v>)",
+  "n directions pairwise at least 60 degrees apart are a kissing configuration of n"
+ ],
+ "falsifier": [
+  "some pair of the pinned vectors has 4·p·|p| > |u|^2 |v|^2",
+  "the pinned file does not hash to 71e5919d…"
+ ],
+ "record": {
+  "path": "certs/kissing-ledger.json",
+  "row": "alphaevolve-593",
+  "value": null,
+  "verdict": "CERTIFIED"
+ }
+}

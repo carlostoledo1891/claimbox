@@ -1,0 +1,237 @@
+{
+ "what": "translation jobs read from alphaevolve by claimbox.readers.alphaevolve (cert-machine's pinned corpus)",
+ "jobs": [
+  {
+   "id": "ae-nb-2x4x5-r32",
+   "claim": "the notebook's \"Rank-32 decomposition of <2,4,5> over 0.5*Z\" is a decomposition of that tensor of rank 32 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 5 (the heading) and cell 6 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-2x4x5-r32",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-2x4x7-r45",
+   "claim": "the notebook's \"Rank-45 decomposition of <2,4,7> over Z\" is a decomposition of that tensor of rank 45 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 8 (the heading) and cell 9 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-2x4x7-r45",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-2x4x8-r51",
+   "claim": "the notebook's \"Rank-51 decomposition of <2,4,8> over Z\" is a decomposition of that tensor of rank 51 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 11 (the heading) and cell 12 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-2x4x8-r51",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-2x5x6-r47",
+   "claim": "the notebook's \"Rank-47 decomposition of <2,5,6> over Z\" is a decomposition of that tensor of rank 47 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 14 (the heading) and cell 15 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-2x5x6-r47",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-3x3x3-r23",
+   "claim": "the notebook's \"Rank-23 decomposition of <3,3,3> over Z\" is a decomposition of that tensor of rank 23 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 17 (the heading) and cell 18 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-3x3x3-r23",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-3x4x6-r54",
+   "claim": "the notebook's \"Rank-54 decomposition of <3,4,6> over 0.5*Z\" is a decomposition of that tensor of rank 54 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 20 (the heading) and cell 21 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-3x4x6-r54",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-3x4x7-r63",
+   "claim": "the notebook's \"Rank-63 decomposition of <3,4,7> over 0.5*C\" is a decomposition of that tensor of rank 63 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 23 (the heading) and cell 24 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-3x4x7-r63",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-3x4x8-r74",
+   "claim": "the notebook's \"Rank-74 decomposition of <3,4,8> over Z\" is a decomposition of that tensor of rank 74 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 26 (the heading) and cell 27 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-3x4x8-r74",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-3x5x6-r68",
+   "claim": "the notebook's \"Rank-68 decomposition of <3,5,6> over Z\" is a decomposition of that tensor of rank 68 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 29 (the heading) and cell 30 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-3x5x6-r68",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-3x5x7-r80",
+   "claim": "the notebook's \"Rank-80 decomposition of <3,5,7> over Z\" is a decomposition of that tensor of rank 80 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 32 (the heading) and cell 33 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-3x5x7-r80",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-4x4x4-r48",
+   "claim": "the notebook's \"Rank-48 decomposition of <4,4,4> over 0.5*C\" is a decomposition of that tensor of rank 48 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 35 (the heading) and cell 36 (the Data cell with the factors as Python literals)"
+  },
+  {
+   "id": "ae-nb-4x4x8-r96",
+   "claim": "the notebook's \"Rank-96 decomposition of <4,4,8> over 0.5*C\" is a decomposition of that tensor of rank 96 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 38: This decomposition can be obtained by doubling the rank-48 decomposition of <4,4,4> provided above.",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-4x4x8-r96",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-4x4x5-r61",
+   "claim": "the notebook's \"Rank-61 decomposition of <4,4,5> over Z\" is a decomposition of that tensor of rank 61 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 40 (the heading) and cell 41 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-4x4x5-r61",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-4x4x7-r85",
+   "claim": "the notebook's \"Rank-85 decomposition of <4,4,7> over Z\" is a decomposition of that tensor of rank 85 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 43 (the heading) and cell 44 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-4x4x7-r85",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-4x5x6-r90",
+   "claim": "the notebook's \"Rank-90 decomposition of <4,5,6> over Z\" is a decomposition of that tensor of rank 90 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 46 (the heading) and cell 47 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-4x5x6-r90",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-nb-5x5x5-r93",
+   "claim": "the notebook's \"Rank-93 decomposition of <5,5,5> over Z\" is a decomposition of that tensor of rank 93 over that ring",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "decider": "tools/run-mc100-tensors.js",
+   "what": "AlphaEvolve's results notebook, cell 49 (the heading) and cell 50 (the Data cell with the factors as Python literals)",
+   "record": {
+    "path": "certs/mc100-alphaevolve-nb-matmul.json",
+    "row": "ae-nb-5x5x5-r93",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  },
+  {
+   "id": "ae-kissing-d11-593",
+   "claim": "K(11) >= 593",
+   "source": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+   "data": "corpus/kissing/alphaevolve-d11-593.json",
+   "elements": "integers",
+   "what": "AlphaEvolve's results notebook, section B.11 (cell 112), whose Data cell holds the vectors; the bytes are cert-machine's extraction of that cell (corpus/kissing/alphaevolve-d11-593.json), which names the cell and the upstream digest",
+   "record": {
+    "path": "certs/kissing-ledger.json",
+    "row": "alphaevolve-593",
+    "value": null,
+    "verdict": "CERTIFIED"
+   }
+  }
+ ]
+}

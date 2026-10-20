@@ -120,10 +120,12 @@ def parse(text):
     # decomposition
     m = re.search(r'(\d+)×(\d+)×(\d+) matrix multiplication in (\d+) multiplications over ' + RING, t)
     if m:
-        return {'family': 'decomposition', 'dims': [int(m.group(1)), int(m.group(2)), int(m.group(3))], 'rank': int(m.group(4)), 'ring': m.group(5), 'starred': starred, 'text': t}
+        return {'family': 'decomposition', 'dims': [int(m.group(1)), int(m.group(2)), int(m.group(3))], 'rank': int(m.group(4)), 'ring': m.group(5), 'starred': starred, 'text': t,
+                'key': m.group(1) + '×' + m.group(2) + '×' + m.group(3)}
     m = re.search(r'Rank-(\d+) decomposition of [⟨<](\d+),(\d+),(\d+)[⟩>] over ' + RING, t)
     if m:
-        return {'family': 'decomposition', 'dims': [int(m.group(2)), int(m.group(3)), int(m.group(4))], 'rank': int(m.group(1)), 'ring': m.group(5), 'starred': starred, 'text': t}
+        return {'family': 'decomposition', 'dims': [int(m.group(2)), int(m.group(3)), int(m.group(4))], 'rank': int(m.group(1)), 'ring': m.group(5), 'starred': starred, 'text': t,
+                'key': 'Rank-' + m.group(1) + ' decomposition of <' + m.group(2) + ',' + m.group(3) + ',' + m.group(4) + '> over ' + m.group(5)}
     m = re.search(r'decomposition of the [⟨<](\d+),(\d+),(\d+)[⟩>] (?:matrix-multiplication )?tensor(?: over ' + RING + r')?', t)
     if m:
         return {'family': 'decomposition', 'dims': [int(m.group(1)), int(m.group(2)), int(m.group(3))], 'rank': None, 'ring': m.group(4) or 'Q', 'starred': starred, 'text': t,

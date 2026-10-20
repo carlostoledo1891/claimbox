@@ -61,6 +61,17 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      an object whose pin is not the bytes the record decided is refused, record-pin-mismatch — before it, swapped bytes passed on the
      bar alone. The 594 kissing claim's source is now the problem's title in problems.json (the record's score 0 is the reason the
      reader makes the claim), not a line of coordinates that happened to contain 594. `make test`: 71 checks, 26 reds, green.
+  ★ THE ALPHAEVOLVE NOTEBOOK READER AND THE SECOND RUN (2026-10-20 night, "continue"): claimbox/readers/alphaevolve.py reads
+     cert-machine's pinned results notebook (corpus/sources/alphaevolve_mathematical_results.ipynb): each Part-A heading "Rank-r
+     decomposition of <n,m,p> over RING" becomes the register's sentence for it (the data pin is the notebook, whose Data cell holds
+     the factors as Python literals that cert-machine's tools/run-mc100-tensors.js reads — this reader evaluates no Python), attached
+     to the pool's record row ae-nb-<n>x<m>x<p>-r<r> where one exists; the B.11 prose "AlphaEvolve improved this to 593" becomes
+     K(11) >= 593 over cert-machine's pinned extraction of the cell's vectors. THE RUN: 17 jobs, 17 WRITTEN AND ADMITTED, 0 refused —
+     15 decompositions with the records' CERTIFIED, the rank-48 <4,4,4> unattached (its record is the Strassen certificate, a
+     different shape; a proposal, undecided), and K(11) >= 593 DECIDED FROM THE BYTES by cert-machine's exact evaluator, CERTIFIED,
+     20 s. records/alphaevolve-run.json + records/alphaevolve/. The reader's sentences equal the register's on all 15 pool rows. The
+     grammar's decomposition shape now carries its heading as the quote key (a shape without a printed number is quoted by its key);
+     the object handed to cert-machine is named by its id.
   ◆ NOT DONE, AND WHY: the platform's own scoring functions as expressions (Thomson, Tammes, Heilbronn, …). problems.json carries only
      the direction and the tolerance, not the definition; writing a score function from memory would be a guess, which this program
      does not make. Pin the platform's problem pages (their statements of the score) first; then write each function once.
@@ -70,9 +81,8 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         minimum distance, Heilbronn's minimum area, the difference-bases count);
      1. more primitive functionals written once: C_1a / C_1b (the step-function autocorrelation and the minimum-overlap value), the
         tensor identity (needs a three-array data block on the receiver side: cert-machine's format holds one array per object);
-     2. more structural readers of real sources, like readers/registry.py: EinsteinArena's API records (the problem, the score, the
-        vectors in one JSON), AlphaEvolve's results notebook (markdown cells with the claim, code cells with the array), the kissing
-        files; each reader turns a source into (sentence, quote, data) so the translator needs nothing typed;
+     2. (done: readers for the registry, EinsteinArena and AlphaEvolve) — next sources: the Qiushi kissing release (corpus/kissing/wave),
+        the Station's artifacts (corpus/station-v2), FunSearch's constructions; each reader turns a source into (sentence, quote, data);
      3. the readings: --elements decimals vs doubles is the operator's choice today; a reader of a platform should say which reading
         the platform uses (EinsteinArena parses doubles; cert-machine's mc100 run read decimal digits: 9,480 vs 9,510 pairs);
      4. (done: the recall above; extend it with each new reader);
