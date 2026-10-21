@@ -21,7 +21,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-21, the third handoff: the receiver's two changes lifted and used)
+## TASKS BACKLOG (updated 2026-10-21, the fourth handoff: the queue checked against the receiver; (c) narrowed and measured, the ask written)
 
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
@@ -32,6 +32,21 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them). Coverage 97/132. Public at github.com/carlostoledo1891/claimbox (MIT) since 2026-10-20 night,
      on the operator's word.
+  ★ THE QUEUE, CHECKED (2026-10-21, the fourth session, "continue the queued tasks"): every NEXT item waits on the receiver, and
+     cert-machine has made none of (c)–(f) — its one commit since 40833648 is its self-audit (2311ac2c), which changed
+     tools/run-mc100-einstein.js (an object that is not n vectors in R^d is now REFUSED); the ten objects naming it are still
+     admitted with their words, `make test` 129/129, 33/33 reds, 56/56, drift 15/15 + 29/29. FOUND: the Qiushi table rows need no
+     new decider — certs/kissing-wave.json ALREADY decided every cached file (qiushi-32…39, 43, 45 WITNESSED, every pair by the exact
+     test p ≤ 0 or 4p² ≤ AB; tools/run-kissing-configs.py, run-kissing-config38.py, run-kissing-sections.py; 49–55 WITNESSED on a
+     pod from bytes not on this disk). MEASURED with the receiver's checker on a hand-built d32 object (scratchpad only: holds, the
+     named kissing predicate, the wave row attached): REFUSED record-verdict-word ('WITNESSED' is the wave's grammar, not the three);
+     on a copy of the wave with WITNESSED read as CERTIFIED: ADMITTED — and ALSO ADMITTED with the pin swapped to configuration33
+     under row qiushi-32, and with the count one above the rows: the wave row's pins are under `bytes` (file name → sha256), not
+     `sha256`, so record-pin-mismatch never fires, and nothing holds the count to the rows the record decided. So (c) for the kissing
+     table is three checker rules, (c1) below. FOUND ON THE WAY, (g): check.py follows an absolute source/record path out of the
+     repository (os.path.join drops the root) and admits; check.js refuses it (pin-unresolved, record-missing) — the two checkers
+     disagree; both follow a `../` path out. THE ASK for (c1) and (g), paste-ready, was handed to the operator in the session's
+     closing message; nothing in cert-machine was touched.
   ★ WHAT WORKS: `python3 -m claimbox shape "<claim>"` (the shape, or REFUSED with the rule); `translate --claim … --source P --data P
      [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals] [--reading epistemic] [--check]`
      (the object; --check hands it to cert-machine's checker); `batch jobs.json --out DIR`; the registry reader (a constants-page row
@@ -218,12 +233,21 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      sorting network, the snake, the two-deletion code) — and the first autocorrelation's 65,536 values (the receiver's exact evaluator is
      quadratic; its decider stays named); the tensor identity (the three-array block).
   ◆ WHAT THE RECEIVER NEEDS (each a cert-machine chat, then `make lift` here): (a) DONE, cert-machine 5ac157ce — the `in` box with the
-     platform's declared resolution; (b) DONE, 40833648 — record.predicate; both used here (★ above). Open: (c) decoders for bytes that are not JSON — gzip int8/int64 rows (Qiushi), .npy/.npz (the Station), text rows (FunSearch) —
-     and the kissing decider as a named route for configurations beyond the pairwise evaluator; (d) deciders for the square-root and
+     platform's declared resolution; (b) DONE, 40833648 — record.predicate; both used here (★ above). Open: (c1) ASKED 2026-10-21,
+     the kissing route through certs/kissing-wave.json, measured (★ THE QUEUE, CHECKED): R1 the wave's word read through one declared
+     map (the register's easota map, WITNESSED → CERTIFIED; every other wave word refused as today), R2 a row's `bytes` map held to the
+     object's pin by file name (record-pin-mismatch), R3 the object's count held to the row's engine.n; greens and reds named in the
+     ask; (g) ASKED, the two checkers' paths: absolute and `../` paths out of the repository, one word for both; (c) the rest —
+     decoders for bytes that are not JSON, .npy/.npz (the Station), text rows (FunSearch), needed only once something is decided
+     from such bytes by the checker itself; (d) deciders for the square-root and
      algorithmic platform scores (the mc100 run's own `undecided` list); (e) the three-array data block for tensor identities;
      (f) pins of the Station's paper and FunSearch's paper (the sentences), and the Qiushi complete configurations in the repository.
   ◆ NEXT, none started:
-     0. after (c): the Qiushi table rows decided by the receiver's kissing decider; the Station's and FunSearch's bytes read;
+     0. after (c1): `make lift`; the Qiushi reader decodes the gzip rows itself (standard library) to hold the claim's count and the
+        columns to the bytes, then writes 10 objects (32–39, 43, 45: holds, the named kissing predicate, `where` the tool that decided
+        the row, the wave row attached); 49–55 stay refused "not on disk", d25 and d27 stay refused (the wave decided them from
+        several files — another repository's arrays and the claimant's repair — and a domain pins one: (e)); recall plants: the
+        pin swapped, another dimension's row, the count one above. After (c) and (f): the Station's and FunSearch's bytes read;
      1. after (d): the 13 platform scores above through the receiver's deciders as named functions, as the mc100 rows are today;
      2. the first autocorrelation from the bytes needs a faster exact route on the receiver (its evaluator interprets the expression;
         65,536 values are 4·10⁹ exact products) — a receiver item, not a translator one;
