@@ -66,7 +66,8 @@ def main(argv=None):
     if a.cmd == 'shape':
         try:
             sh = grammar.parse(a.claim)
-            sh['c'] = str(sh['c']) if not isinstance(sh.get('c'), list) else [str(x) for x in sh['c']]
+            if 'c' in sh:   # a decomposition prints no bar
+                sh['c'] = str(sh['c']) if not isinstance(sh['c'], list) else [str(x) for x in sh['c']]
             print(json.dumps(sh, ensure_ascii=False))
             return 0
         except Refusal as e:

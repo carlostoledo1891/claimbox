@@ -73,7 +73,20 @@ for s, rule in ABSURD:
     except Refusal as e:
         red(e.rule == rule, 'grammar: ' + repr(s[:50]) + ' -> ' + rule, e.rule + ': ' + e.msg[:60])
 
-tmp = tempfile.mkdtemp(prefix='claimbox-battery-')
+# the command line prints every shape the grammar admits, a decomposition (no printed bar) included
+SHAPES = [('C_1d <= 1.463071582607559', 'bound'), ('K(32) >= 347,584', 'kissing'),
+          ('Rank-48 decomposition of <4,4,4> over Z', 'decomposition'), ('4×4×4 matrix multiplication in 48 multiplications over Q', 'decomposition'),
+          ('a decomposition of the <2,2,2> tensor over Z', 'decomposition')]
+printed = []
+for s, fam in SHAPES:
+    r = subprocess.run([sys.executable, '-m', 'claimbox', 'shape', s], cwd=REPO, capture_output=True, text=True)
+    try:
+        printed.append(r.returncode == 0 and json.loads(r.stdout)['family'] == fam)
+    except ValueError:
+        printed.append(False)
+ok(all(printed), 'shape: the command line prints each admitted shape, a decomposition with no bar included', str(sum(printed)) + '/' + str(len(SHAPES)))
+
+tmp =tempfile.mkdtemp(prefix='claimbox-battery-')
 try:
     good_src = os.path.join(tmp, 'page.md')
     open(good_src, 'w').write('The claim: $C_{1d} \\leq 1.463071582607559*$ appears here.\nAlso: $C_7 \\leq 1.463071582607559$ and K(2) >= 4 and K(2) >= 3 and K(3) >= 3.\n')

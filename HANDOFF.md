@@ -28,7 +28,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      calibration, its register's 132 claim sentences are the coverage corpus, its checker is the gate (a subprocess; no code
      shared; cert-machine read-only). THE SECOND SESSION (2026-10-20/21, "proceed the next steps") worked the backlog below in order
      (★ THE NEXT STEPS, TAKEN). THE THIRD SESSION (2026-10-21) lifted the receiver's two changes and used them (★ THE RECEIVER'S TWO
-     CHANGES, USED). `make test`: 129 checks, 33 red controls all firing, 56/56 planted defects caught (the heavy
+     CHANGES, USED). `make test`: 130 checks (the 130th, 2026-10-21: `shape` prints a decomposition, which has no bar — it raised KeyError before), 33 red controls all firing, 56/56 planted defects caught (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them). Coverage 97/132. Public at github.com/carlostoledo1891/claimbox (MIT) since 2026-10-20 night,
      on the operator's word.
