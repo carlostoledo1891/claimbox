@@ -6,152 +6,151 @@
    "claim": "the object is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and the platform's score of it is 0.3808585748578584 (minimize)",
    "source": "corpus/einstein-arena/best-1.json",
    "data": "corpus/einstein-arena/best-1.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Erdős Minimum Overlap (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-1.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Erdős Minimum Overlap (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-1.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `sequence_array = np.array(sequence, dtype=np.float64)`)",
    "problem": "erdos-min-overlap",
-   "score": "0.3808585748578584"
+   "score": "0.3808585748578584",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-thomson-problem",
    "claim": "the object is a feasible solution of \"Thomson Problem (n = 282)\" and the platform's score of it is 37147.29441846226 (minimize)",
    "source": "corpus/einstein-arena/best-10.json",
    "data": "corpus/einstein-arena/best-10.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Thomson Problem (n = 282)\", pinned by cert-machine (corpus/einstein-arena/best-10.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Thomson Problem (n = 282)\", pinned by cert-machine (corpus/einstein-arena/best-10.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `vectors = np.array(data[\"vectors\"], dtype=np.float64)`)",
    "problem": "thomson-problem",
-   "score": "37147.29441846226"
+   "score": "37147.29441846226",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-tammes-problem",
    "claim": "the object is a feasible solution of \"Tammes Problem (n = 50)\" and the platform's score of it is 0.5633081876528571 (maximize)",
    "source": "corpus/einstein-arena/best-11.json",
    "data": "corpus/einstein-arena/best-11.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Tammes Problem (n = 50)\", pinned by cert-machine (corpus/einstein-arena/best-11.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Tammes Problem (n = 50)\", pinned by cert-machine (corpus/einstein-arena/best-11.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `vectors = np.array(data[\"vectors\"], dtype=np.float64)`)",
    "problem": "tammes-problem",
-   "score": "0.5633081876528571"
+   "score": "0.5633081876528571",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-flat-polynomials",
    "claim": "the object is a feasible solution of \"Flat Polynomials (degree 69)\" and the platform's score of it is 1.2807274949642549 (minimize)",
    "source": "corpus/einstein-arena/best-12.json",
    "data": "corpus/einstein-arena/best-12.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Flat Polynomials (degree 69)\", pinned by cert-machine (corpus/einstein-arena/best-12.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Flat Polynomials (degree 69)\", pinned by cert-machine (corpus/einstein-arena/best-12.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `coefficients = np.array(data[\"coefficients\"], dtype=np.float64)`)",
    "problem": "flat-polynomials",
-   "score": "1.2807274949642549"
+   "score": "1.2807274949642549",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-edges-vs-triangles",
    "claim": "the object is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and the platform's score of it is -0.7117091757692579 (maximize)",
    "source": "corpus/einstein-arena/best-13.json",
    "data": "corpus/einstein-arena/best-13.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Edges vs Triangles (Minimal Triangle Density)\", pinned by cert-machine (corpus/einstein-arena/best-13.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Edges vs Triangles (Minimal Triangle Density)\", pinned by cert-machine (corpus/einstein-arena/best-13.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `A = np.array(A, dtype=np.float64)`)",
    "problem": "edges-vs-triangles",
-   "score": "-0.7117091757692579"
+   "score": "-0.7117091757692579",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-circle-packing",
    "claim": "the object is a feasible solution of \"Circle Packing in a Square\" and the platform's score of it is 2.6359830849176076 (maximize)",
    "source": "corpus/einstein-arena/best-14.json",
    "data": "corpus/einstein-arena/best-14.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Circle Packing in a Square\", pinned by cert-machine (corpus/einstein-arena/best-14.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Circle Packing in a Square\", pinned by cert-machine (corpus/einstein-arena/best-14.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `circles = np.array(data[\"circles\"], dtype=np.float64)`)",
    "problem": "circle-packing",
-   "score": "2.6359830849176076"
+   "score": "2.6359830849176076",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-heilbronn-triangles",
    "claim": "the object is a feasible solution of \"Heilbronn Problem for Triangles (n = 11)\" and the platform's score of it is 0.036529889880030156 (maximize)",
    "source": "corpus/einstein-arena/best-15.json",
    "data": "corpus/einstein-arena/best-15.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Heilbronn Problem for Triangles (n = 11)\", pinned by cert-machine (corpus/einstein-arena/best-15.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Heilbronn Problem for Triangles (n = 11)\", pinned by cert-machine (corpus/einstein-arena/best-15.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `points = np.array(data[\"points\"], dtype=np.float64)`)",
    "problem": "heilbronn-triangles",
-   "score": "0.036529889880030156"
+   "score": "0.036529889880030156",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-circles-rectangle",
    "claim": "the object is a feasible solution of \"Circles in a Rectangle (n = 21)\" and the platform's score of it is 2.3658323759098576 (maximize)",
    "source": "corpus/einstein-arena/best-18.json",
    "data": "corpus/einstein-arena/best-18.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Circles in a Rectangle (n = 21)\", pinned by cert-machine (corpus/einstein-arena/best-18.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Circles in a Rectangle (n = 21)\", pinned by cert-machine (corpus/einstein-arena/best-18.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `circles = np.array(data[\"circles\"], dtype=np.float64)`)",
    "problem": "circles-rectangle",
-   "score": "2.3658323759098576"
+   "score": "2.3658323759098576",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-difference-bases",
    "claim": "the object is a feasible solution of \"Difference Bases\" and the platform's score of it is 2.639027469506608 (minimize)",
    "source": "corpus/einstein-arena/best-19.json",
    "data": "corpus/einstein-arena/best-19.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Difference Bases\", pinned by cert-machine (corpus/einstein-arena/best-19.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Difference Bases\", pinned by cert-machine (corpus/einstein-arena/best-19.json); the platform reads each entry as an integer (its verifier, pinned here: `B = sorted(set(int(x) for x in B_list))`)",
    "problem": "difference-bases",
-   "score": "2.639027469506608"
+   "score": "2.639027469506608",
+   "elements": "integers"
   },
   {
    "id": "ea-best-first-autocorrelation-inequality",
    "claim": "the object is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and the platform's score of it is 1.5027436492326165 (minimize)",
    "source": "corpus/einstein-arena/best-2.json",
    "data": "corpus/einstein-arena/best-2.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"First Autocorrelation Inequality (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-2.json)",
+   "what": "EinsteinArena's API record of the best solution of \"First Autocorrelation Inequality (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-2.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `f = np.array(values, dtype=np.float64)`)",
    "problem": "first-autocorrelation-inequality",
-   "score": "1.5027436492326165"
+   "score": "1.5027436492326165",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-kissing-number-d12",
    "claim": "the object is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and the platform's score of it is 2 (minimize)",
    "source": "corpus/einstein-arena/best-22.json",
    "data": "corpus/einstein-arena/best-22.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 12 (n=841)\", pinned by cert-machine (corpus/einstein-arena/best-22.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 12 (n=841)\", pinned by cert-machine (corpus/einstein-arena/best-22.json); the platform reads each entry as the decimal digits of its text (its verifier, pinned here: `return Decimal(str(x))`)",
    "problem": "kissing-number-d12",
-   "score": "2"
+   "score": "2",
+   "elements": "decimals"
   },
   {
    "id": "ea-best-kissing-number-d11-605",
    "claim": "the object is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and the platform's score of it is 1.7102381876301676 (minimize)",
    "source": "corpus/einstein-arena/best-24.json",
    "data": "corpus/einstein-arena/best-24.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 11 (n=605)\", pinned by cert-machine (corpus/einstein-arena/best-24.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 11 (n=605)\", pinned by cert-machine (corpus/einstein-arena/best-24.json); the platform reads each entry as the decimal digits of its text (its verifier, pinned here: `return Decimal(str(x))`)",
    "problem": "kissing-number-d11-605",
-   "score": "1.7102381876301676"
+   "score": "1.7102381876301676",
+   "elements": "decimals"
   },
   {
    "id": "ea-best-kissing-number-d12-842",
    "claim": "the object is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and the platform's score of it is 0.5469062458557645 (minimize)",
    "source": "corpus/einstein-arena/best-25.json",
    "data": "corpus/einstein-arena/best-25.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 12 (n=842)\", pinned by cert-machine (corpus/einstein-arena/best-25.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 12 (n=842)\", pinned by cert-machine (corpus/einstein-arena/best-25.json); the platform reads each entry as the decimal digits of its text (its verifier, pinned here: `return Decimal(str(x))`)",
    "problem": "kissing-number-d12-842",
-   "score": "0.5469062458557645"
+   "score": "0.5469062458557645",
+   "elements": "decimals"
   },
   {
    "id": "ea-best-kakeya-needle-128",
    "claim": "the object is a feasible solution of \"Discretized Kakeya Needle (n = 128)\" and the platform's score of it is 0.10679779034341574 (minimize)",
    "source": "corpus/einstein-arena/best-26.json",
    "data": "corpus/einstein-arena/best-26.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Discretized Kakeya Needle (n = 128)\", pinned by cert-machine (corpus/einstein-arena/best-26.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Discretized Kakeya Needle (n = 128)\", pinned by cert-machine (corpus/einstein-arena/best-26.json); the platform reads each entry as a string the receiver's format has no reading for (left to a named decider) (its verifier, pinned here: `val = Fraction(int(digits), 10 ** len(fracpart))`)",
    "problem": "kakeya-needle-128",
    "score": "0.10679779034341574"
   },
@@ -160,33 +159,33 @@
    "claim": "the object is a feasible solution of \"Hadamard Maximal Determinant (order 51)\" and the platform's score of it is 43.301336781918444 (maximize)",
    "source": "corpus/einstein-arena/best-27.json",
    "data": "corpus/einstein-arena/best-27.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Hadamard Maximal Determinant (order 51)\", pinned by cert-machine (corpus/einstein-arena/best-27.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Hadamard Maximal Determinant (order 51)\", pinned by cert-machine (corpus/einstein-arena/best-27.json); the platform reads each entry as an integer (its verifier, pinned here: `if isinstance(v, bool) or not isinstance(v, int):`)",
    "problem": "hadamard-det-51",
-   "score": "43.301336781918444"
+   "score": "43.301336781918444",
+   "elements": "integers"
   },
   {
    "id": "ea-best-sorting-network-16",
    "claim": "the object is a feasible solution of \"Sorting Network (16 inputs)\" and the platform's score of it is 60 (minimize)",
    "source": "corpus/einstein-arena/best-28.json",
    "data": "corpus/einstein-arena/best-28.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Sorting Network (16 inputs)\", pinned by cert-machine (corpus/einstein-arena/best-28.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Sorting Network (16 inputs)\", pinned by cert-machine (corpus/einstein-arena/best-28.json); the platform reads each entry as an integer (its verifier, pinned here: `if isinstance(i, bool) or isinstance(j, bool) or not isinstance(i, int) or not isinstance(j, int):`)",
    "problem": "sorting-network-16",
-   "score": "60"
+   "score": "60",
+   "elements": "integers"
   },
   {
    "id": "ea-best-shannon-capacity-c7-5",
    "claim": "the object is a feasible solution of \"Shannon Capacity of the 7-Cycle (Fifth Power)\" and the platform's score of it is 367 (maximize)",
    "source": "corpus/einstein-arena/best-29.json",
    "data": "corpus/einstein-arena/best-29.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Shannon Capacity of the 7-Cycle (Fifth Power)\", pinned by cert-machine (corpus/einstein-arena/best-29.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Shannon Capacity of the 7-Cycle (Fifth Power)\", pinned by cert-machine (corpus/einstein-arena/best-29.json); the platform reads each entry as an integer (its verifier, pinned here: `if any(isinstance(x, bool) or not isinstance(x, int) or not 0 <= x <= 6 for x in word):`)",
    "problem": "shannon-capacity-c7-5",
-   "score": "367"
+   "score": "367",
+   "elements": "integers"
   },
   {
    "id": "ea-best-second-autocorrelation-inequality",
@@ -198,53 +197,52 @@
    "claim": "the object is a feasible solution of \"Ring Loading Problem (15 pairs)\" and the platform's score of it is 1.125 (maximize)",
    "source": "corpus/einstein-arena/best-30.json",
    "data": "corpus/einstein-arena/best-30.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Ring Loading Problem (15 pairs)\", pinned by cert-machine (corpus/einstein-arena/best-30.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Ring Loading Problem (15 pairs)\", pinned by cert-machine (corpus/einstein-arena/best-30.json); the platform reads each entry as an exact rational from its string (its verifier, pinned here: `result = Fraction(value)`)",
    "problem": "ring-loading-15",
-   "score": "1.125"
+   "score": "1.125",
+   "elements": "rationals"
   },
   {
    "id": "ea-best-spencer-discrepancy",
    "claim": "the object is a feasible solution of \"Spencer Discrepancy Constant\" and the platform's score of it is 1.697749375254331 (maximize)",
    "source": "corpus/einstein-arena/best-31.json",
    "data": "corpus/einstein-arena/best-31.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Spencer Discrepancy Constant\", pinned by cert-machine (corpus/einstein-arena/best-31.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Spencer Discrepancy Constant\", pinned by cert-machine (corpus/einstein-arena/best-31.json); the platform reads each entry as an integer (its verifier, pinned here: `if isinstance(value, bool) or not isinstance(value, int) or value not in (-1, 1):`)",
    "problem": "spencer-discrepancy",
-   "score": "1.697749375254331"
+   "score": "1.697749375254331",
+   "elements": "integers"
   },
   {
    "id": "ea-best-sidon-45-set",
    "claim": "the object is a feasible solution of \"Sidon Subsets of (4,5)-Sets\" and the platform's score of it is 0.5714285714285714 (minimize)",
    "source": "corpus/einstein-arena/best-32.json",
    "data": "corpus/einstein-arena/best-32.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Sidon Subsets of (4,5)-Sets\", pinned by cert-machine (corpus/einstein-arena/best-32.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Sidon Subsets of (4,5)-Sets\", pinned by cert-machine (corpus/einstein-arena/best-32.json); the platform reads each entry as an integer (its verifier, pinned here: `or not isinstance(x, int)`)",
    "problem": "sidon-45-set",
-   "score": "0.5714285714285714"
+   "score": "0.5714285714285714",
+   "elements": "integers"
   },
   {
    "id": "ea-best-no-three-in-line-75",
    "claim": "the object is a feasible solution of \"No-Three-in-Line (75 × 75 grid)\" and the platform's score of it is 148 (maximize)",
    "source": "corpus/einstein-arena/best-33.json",
    "data": "corpus/einstein-arena/best-33.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"No-Three-in-Line (75 × 75 grid)\", pinned by cert-machine (corpus/einstein-arena/best-33.json)",
+   "what": "EinsteinArena's API record of the best solution of \"No-Three-in-Line (75 × 75 grid)\", pinned by cert-machine (corpus/einstein-arena/best-33.json); the platform reads each entry as an integer (its verifier, pinned here: `or not isinstance(x, int)`)",
    "problem": "no-three-in-line-75",
-   "score": "148"
+   "score": "148",
+   "elements": "integers"
   },
   {
    "id": "ea-best-two-deletion-code-16",
    "claim": "the object is a feasible solution of \"Two-Deletion-Correcting Code (length 16)\" and the platform's score of it is 211 (maximize)",
    "source": "corpus/einstein-arena/best-34.json",
    "data": "corpus/einstein-arena/best-34.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Two-Deletion-Correcting Code (length 16)\", pinned by cert-machine (corpus/einstein-arena/best-34.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Two-Deletion-Correcting Code (length 16)\", pinned by cert-machine (corpus/einstein-arena/best-34.json); the platform reads each entry as a string the receiver's format has no reading for (left to a named decider) (its verifier, pinned here: `not isinstance(word, str)`)",
    "problem": "two-deletion-code-16",
    "score": "211"
   },
@@ -253,52 +251,52 @@
    "claim": "the object is a feasible solution of \"Snake-in-the-Box (13-dimensional hypercube)\" and the platform's score of it is 2934 (maximize)",
    "source": "corpus/einstein-arena/best-35.json",
    "data": "corpus/einstein-arena/best-35.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Snake-in-the-Box (13-dimensional hypercube)\", pinned by cert-machine (corpus/einstein-arena/best-35.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Snake-in-the-Box (13-dimensional hypercube)\", pinned by cert-machine (corpus/einstein-arena/best-35.json); the platform reads each entry as an integer (its verifier, pinned here: `if isinstance(action, bool) or not isinstance(action, int):`)",
    "problem": "snake-in-the-box-13",
-   "score": "2934"
+   "score": "2934",
+   "elements": "integers"
   },
   {
    "id": "ea-best-third-autocorrelation-inequality",
    "claim": "the object is a feasible solution of \"Third Autocorrelation Inequality (Upper Bound)\" and the platform's score of it is 1.4508066395052834 (minimize)",
    "source": "corpus/einstein-arena/best-4.json",
    "data": "corpus/einstein-arena/best-4.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Third Autocorrelation Inequality (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-4.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Third Autocorrelation Inequality (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-4.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `f = np.array(values, dtype=np.float64)`)",
    "problem": "third-autocorrelation-inequality",
-   "score": "1.4508066395052834"
+   "score": "1.4508066395052834",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-min-distance-ratio-2d",
    "claim": "the object is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and the platform's score of it is 12.889229907717521 (minimize)",
    "source": "corpus/einstein-arena/best-5.json",
    "data": "corpus/einstein-arena/best-5.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\", pinned by cert-machine (corpus/einstein-arena/best-5.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\", pinned by cert-machine (corpus/einstein-arena/best-5.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `vectors = np.array(data[\"vectors\"], dtype=np.float64)`)",
    "problem": "min-distance-ratio-2d",
-   "score": "12.889229907717521"
+   "score": "12.889229907717521",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-kissing-number-d11",
    "claim": "the object is a feasible solution of \"Kissing Number in Dimension 11 (n=594)\" and the platform's score of it is 0 (minimize)",
    "source": "corpus/einstein-arena/best-6.json",
    "data": "corpus/einstein-arena/best-6.json",
-   "elements": "doubles",
    "decider": "tools/run-mc100-einstein.js",
-   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 11 (n=594)\", pinned by cert-machine (corpus/einstein-arena/best-6.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Kissing Number in Dimension 11 (n=594)\", pinned by cert-machine (corpus/einstein-arena/best-6.json); the platform reads each entry as the decimal digits of its text (its verifier, pinned here: `return Decimal(str(x))`)",
    "problem": "kissing-number-d11",
-   "score": "0"
+   "score": "0",
+   "elements": "decimals"
   },
   {
    "id": "ea-kissing-kissing-number-d11",
    "claim": "K(11) >= 594",
    "source": "corpus/einstein-arena/problems.json",
    "data": "corpus/einstein-arena/best-6.json",
-   "elements": "doubles",
-   "what": "EinsteinArena problem \"Kissing Number in Dimension 11 (n=594)\" (problems.json), whose best solution (corpus/einstein-arena/best-6.json) the platform scores 0: its statement that the object is a kissing configuration of 594",
+   "elements": "decimals",
+   "what": "EinsteinArena problem \"Kissing Number in Dimension 11 (n=594)\" (problems.json), whose best solution (corpus/einstein-arena/best-6.json) the platform scores 0: its statement that the object is a kissing configuration of 594; the platform reads each entry as the decimal digits of its text (its verifier, pinned here: `return Decimal(str(x))`)",
    "problem": "kissing-number-d11",
    "score": "0"
   },
@@ -307,22 +305,22 @@
    "claim": "the object is a feasible solution of \"The Prime Number Theorem\" and the platform's score of it is 0.9976572852677297 (maximize)",
    "source": "corpus/einstein-arena/best-7.json",
    "data": "corpus/einstein-arena/best-7.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"The Prime Number Theorem\", pinned by cert-machine (corpus/einstein-arena/best-7.json)",
+   "what": "EinsteinArena's API record of the best solution of \"The Prime Number Theorem\", pinned by cert-machine (corpus/einstein-arena/best-7.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `pf = {int(k): np.clip(float(v), -10, 10) for k, v in raw.items()}`)",
    "problem": "prime-number-theorem",
-   "score": "0.9976572852677297"
+   "score": "0.9976572852677297",
+   "elements": "doubles"
   },
   {
    "id": "ea-best-uncertainty-principle",
    "claim": "the object is a feasible solution of \"Uncertainty Principle (Upper Bound)\" and the platform's score of it is 0.3130922465438896 (minimize)",
    "source": "corpus/einstein-arena/best-9.json",
    "data": "corpus/einstein-arena/best-9.json",
-   "elements": "doubles",
    "decider": null,
-   "what": "EinsteinArena's API record of the best solution of \"Uncertainty Principle (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-9.json)",
+   "what": "EinsteinArena's API record of the best solution of \"Uncertainty Principle (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-9.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `zs = [float(z) for z in zs]`)",
    "problem": "uncertainty-principle",
-   "score": "0.3130922465438896"
+   "score": "0.3130922465438896",
+   "elements": "doubles"
   }
  ]
 }

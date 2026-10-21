@@ -10,7 +10,10 @@ THE GRAMMAR, in the order it is tried:
   value-compare    NAME = NUMBER… REL NUMBER   Area(E) = 0.1091479892... < 0.1148103258186177
   digits           NAME published as NUMBER    a constant to its printed digits (the box the digits allow)
   decomposition    a×b×c matrix multiplication in r multiplications over RING · Rank-r decomposition of <a,b,c> over RING
-  score            n OBJECTS … : QUANTITY = NUMBER · "the platform's score of it is NUMBER"
+  score            n OBJECTS … : QUANTITY = NUMBER · "the platform's score of it is NUMBER" (the quoted problem title kept)
+                   · n unit hexagons inside a hexagon of side NUMBER …: score = the outer side
+  kissing          K(d) >= n, the count also as a human prints it with digit groups (K(25) >= 197,580); a malformed group
+                   (5,94) is refused, never read as a smaller count
   identity         det J = RATIONAL             an exact value claimed for a named quantity
   otherwise        REFUSED: prose — no claim shape in the grammar
 
@@ -93,6 +96,15 @@ def parse(text):
     if len(rels) >= 2 and not re.search(r'=\s*' + NUMBER + r'\s*(\.\.\.|…)?\s*(<=|>=|<|>)', t):
         raise Refusal('ambiguous', 'two relations in one claim: ' + ' and '.join(rels[:2]))
 
+    # a kissing count printed with digit groups: K(25) >= 197,580 — the printed form is kept for the quote; a malformed
+    # group (K(11) >= 5,94) is refused rather than read as the count before the comma
+    m = re.match(r'^K\((\d+)\)\s*(>=|=|>)\s*(\d[\d,]*\d)(?![\d,])', t)
+    if m and ',' in m.group(3):
+        if not re.match(r'^\d{1,3}(?:,\d{3})+$', m.group(3)):
+            raise Refusal('kissing-count', 'a count with a malformed digit group: ' + m.group(3))
+        n = int(m.group(3).replace(',', ''))
+        return {'family': 'kissing', 'name': 'K(' + m.group(1) + ')', 'rel': REL_WORD['>=' if m.group(2) == '=' else m.group(2)], 'printed': m.group(3), 'c': Fraction(n),
+                'dim': int(m.group(1)), 'n': n, 'starred': starred, 'text': t}
     # value-compare: NAME = NUMBER… REL NUMBER
     m = re.search(r'^' + NAME + r'\s*=\s*(' + NUMBER + r')\s*(?:\.\.\.|…)?\s*(<=|>=|<|>)\s*(' + NUMBER + r')', t)
     if m:
@@ -137,9 +149,16 @@ def parse(text):
     m = re.search(r':\s*(upper|lower) bound (' + NUMBER + r')\s*$', t)
     if m:
         return {'family': 'bound', 'name': t.split(':')[0].strip(), 'rel': 'le' if m.group(1) == 'upper' else 'ge', 'printed': m.group(2), 'c': exact(m.group(2)), 'starred': starred, 'text': t}
+    m = re.search(r'^(\d+) unit ([a-z]+) inside an? [a-z]+ of side (' + NUMBER + r')(?![\d.]).*:\s*score = the outer side$', t)
+    if m:
+        return {'family': 'score', 'n': int(m.group(1)), 'kind': m.group(2), 'name': 'the outer side', 'rel': 'in', 'printed': m.group(3), 'c': box(m.group(3)), 'starred': starred, 'text': t}
     m = re.search(r"score of it is (" + NUMBER + r")", t)
     if m:
-        return {'family': 'score', 'name': 'the platform\'s score', 'rel': 'in', 'printed': m.group(1), 'c': box(m.group(1)), 'starred': starred, 'text': t}
+        out = {'family': 'score', 'name': 'the platform\'s score', 'rel': 'in', 'printed': m.group(1), 'c': box(m.group(1)), 'starred': starred, 'text': t}
+        title = re.search(r'solution of "([^"]+)"', t)
+        if title:
+            out['problem'] = title.group(1)
+        return out
     m = re.search(r'^(\d+|n = \d+) ([a-z]+)\b(.*?):\s*(.+?)\s*=\s*(' + NUMBER + r')\s*$', t)
     if m:
         return {'family': 'score', 'n': int(re.sub(r'\D', '', m.group(1))), 'kind': m.group(2), 'name': m.group(4).strip(), 'rel': 'in', 'printed': m.group(5), 'c': box(m.group(5)),

@@ -1,0 +1,10 @@
+{
+ "what": "Decisions from the bytes alone: claims whose functional this program writes once as a primitive expression (claimbox/translate.py PRIMITIVE), handed to cert-machine's checker with the record that decided them, so that the checker compares the expression's exact value with the record's digit for digit (record-value-mismatch otherwise). The registry's C_1b row for the EinsteinArena best (3,584 heights, the platform's record) is the one of the four C_1a/C_1b rows small enough for the receiver's quadratic evaluator; the three 65,536- and 114,688-cell rows stay with the receiver's decider (stepfun-exact.js, the calibration). Paths are relative to cert-machine's root.",
+ "jobs": [
+  {"id": "prim-1b-codexprolong", "claim": "C_1b <= 0.3808585749",
+   "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1b.md",
+   "data": "corpus/einstein-arena/best-1.json",
+   "record": {"path": "certs/stepfun-replay.json", "row": "1b-codexprolong", "value": "js.value", "verdict": "CERTIFIED"},
+   "what": "the optimization-constants registry's constants page 1b.md (the row $0.3808585749$* [EA2026]), pinned by cert-machine 2026-10-18; the bytes are EinsteinArena's record of solution 2507 (CodexProLong), 3,584 heights read as doubles, rescaled in the expression to mass 1 as the registry's replay did"}
+ ]
+}

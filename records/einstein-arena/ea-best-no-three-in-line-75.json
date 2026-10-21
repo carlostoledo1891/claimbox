@@ -1,0 +1,233 @@
+{
+ "id": "ea-best-no-three-in-line-75",
+ "text": "the object is a feasible solution of \"No-Three-in-Line (75 × 75 grid)\" and the platform's score of it is 148 (maximize)",
+ "source": {
+  "what": "EinsteinArena's API record of the best solution of \"No-Three-in-Line (75 × 75 grid)\", pinned by cert-machine (corpus/einstein-arena/best-33.json); the platform reads each entry as an integer (its verifier, pinned here: `or not isinstance(x, int)`)",
+  "path": "corpus/einstein-arena/best-33.json",
+  "sha256": "b3d56aea63aed5565ebb8bf34facfa31dc01cc64467d9029fc2e8ea1662342ec",
+  "quote": "{\"id\":2577,\"agentName\":\"Thomas-Prellberg\",\"score\":148,\"createdAt\":\"2026-09-13T17:47:30.312Z\",\"data\":{\"points\":[[25,0],[45,0],[44,1],[54,1],[22,2],[40,2],[15,3],[69,3],[3,4],[18,4],[30,5],[50,5],[36,6],[46,6],[40,7],[50,7],[19,8],[55,8],[11,9],[53,9],[37,10],[44,10],[32,11],[64,11],[21,12],[25,12],[14,13],[27,13],[51,14],[60,14],[42,15],[70,15],[16,16],[57,16],[39,17],[53,17],[8,18],[69,18],[1,19],[65,19],[9,20],[17,20],[45,21],[61,21],[14,22],[71,22],[5,23],[7,23],[26,24],[30,24],[61,25],[73,25],[34,26],[49,26],[6,27],[60,27],[0,28],[21,28],[1,29],[10,29],[49,30],[68,30],[15,31],[38,31],[35,32],[62,32],[2,33],[7,33],[17,34],[47,34],[31,35],[41,35],[10,36],[67,36],[6,37],[63,37],[32,38],[42,38],[26,39],[56,39],[66,40],[71,40],[11,41],[38,41],[35,42],[58,42],[5,43],[24,43],[63,44],[72,44],[52,45],[73,45],[13,46],[67,46],[24,47],[39,47],[0,48],[12,48],[43,49],[47,49],[66,50],[68,50],[2,51],[59,51],[12,52],[28,52],[56,53],[64,53],[8,54],[72,54],[4,55],[65,55],[20,56],[34,56],[16,57],[57,57],[3,58],[31,58],[13,59],[22,59],[46,60],[59,60],[48,61],[52,61],[9,62],[41,62],[29,63],[36,63],[20,64],[62,64],[18,65],[54,65],[23,66],[33,66],[27,67],[37,67],[23,68],[43,68],[55,69],[70,69],[4,70],[58,70],[33,71],[51,71],[19,72],[29,72],[28,73],[48,73]]}}"
+ },
+ "reading": "universal",
+ "domain": {
+  "kind": "finite",
+  "pin": {
+   "path": "corpus/einstein-arena/best-33.json",
+   "sha256": "b3d56aea63aed5565ebb8bf34facfa31dc01cc64467d9029fc2e8ea1662342ec"
+  },
+  "decoder": "the array at data.points: 148 rows of 2, each JSON integer exactly",
+  "count": 148,
+  "variable": "f",
+  "data": {
+   "select": "data.points",
+   "elements": "integers",
+   "shape": [
+    "n",
+    "d"
+   ]
+  }
+ },
+ "predicate": [
+  {
+   "g": "n",
+   "rel": "in",
+   "printed": "148",
+   "c": [
+    "295/2",
+    "297/2"
+   ]
+  },
+  {
+   "forall": [
+    [
+     "i",
+     "0",
+     [
+      "Subtract",
+      "n",
+      "3"
+     ]
+    ],
+    [
+     "j",
+     [
+      "Add",
+      "i",
+      "1"
+     ],
+     [
+      "Subtract",
+      "n",
+      "2"
+     ]
+    ],
+    [
+     "k",
+     [
+      "Add",
+      "j",
+      "1"
+     ],
+     [
+      "Subtract",
+      "n",
+      "1"
+     ]
+    ]
+   ],
+   "g": [
+    "Subtract",
+    [
+     "Abs",
+     [
+      "Subtract",
+      [
+       "Multiply",
+       [
+        "Subtract",
+        [
+         "Index",
+         "f",
+         "j",
+         "0"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "0"
+        ]
+       ],
+       [
+        "Subtract",
+        [
+         "Index",
+         "f",
+         "k",
+         "1"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "1"
+        ]
+       ]
+      ],
+      [
+       "Multiply",
+       [
+        "Subtract",
+        [
+         "Index",
+         "f",
+         "j",
+         "1"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "1"
+        ]
+       ],
+       [
+        "Subtract",
+        [
+         "Index",
+         "f",
+         "k",
+         "0"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "0"
+        ]
+       ]
+      ]
+     ]
+    ],
+    "1"
+   ],
+   "rel": "ge",
+   "c": "0"
+  },
+  {
+   "g": [
+    "MinOver",
+    "i",
+    "0",
+    [
+     "Subtract",
+     "n",
+     "1"
+    ],
+    [
+     "MinOver",
+     "c",
+     "0",
+     [
+      "Subtract",
+      "d",
+      "1"
+     ],
+     [
+      "Index",
+      "f",
+      "i",
+      "c"
+     ]
+    ]
+   ],
+   "rel": "ge",
+   "c": "0"
+  },
+  {
+   "g": [
+    "Subtract",
+    "74",
+    [
+     "MaxOver",
+     "i",
+     "0",
+     [
+      "Subtract",
+      "n",
+      "1"
+     ],
+     [
+      "MaxOver",
+      "c",
+      "0",
+      [
+       "Subtract",
+       "d",
+       "1"
+      ],
+      [
+       "Index",
+       "f",
+       "i",
+       "c"
+      ]
+     ]
+    ]
+   ],
+   "rel": "ge",
+   "c": "0"
+  }
+ ],
+ "reference": "the printed 148 is the box its digits allow, and the quantity is the integer count n, so the box holds it exactly or not at all; feasibility is decided from the bytes by the platform's own conditions, written as exact inequalities; the points are read as each JSON integer exactly",
+ "hypotheses": [
+  "the platform's own verifier for \"No-Three-in-Line (75×75 grid)\" (github.com/vinid/einstein-arena, web/src/lib/problems/no-three-in-line-75.ts at 9cd6fbfb, sha256 522a24b1925e…, pinned here at corpus/platform/einstein-arena/no-three-in-line-75_9cd6fbfb.ts) scores a submission as the number of points with no three on a line in the 75 × 75 grid once every constraint holds; its constraints are written here as the exact inequalities below",
+  "three grid points are collinear iff (x_2 - x_1)(y_3 - y_1) - (y_2 - y_1)(x_3 - x_1) = 0; for integer coordinates a non-zero determinant is at least 1 in absolute value, so |det| - 1 >= 0 is the exact condition; coincident points make every triple containing them collinear, so the inequality also forces distinctness; the score is the number of points, an integer, which the box of its printed digits holds exactly or not at all"
+ ],
+ "falsifier": [
+  "the count of points is not 148",
+  "the pinned points violate: no three points are collinear: the exact integer determinant of every triple is non-zero",
+  "the pinned points violate: every coordinate is at least 0",
+  "the pinned points violate: every coordinate is at most 74",
+  "the pinned file does not hash to b3d56aea…"
+ ]
+}

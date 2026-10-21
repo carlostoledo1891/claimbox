@@ -1,0 +1,25 @@
+{
+ "what": "A run of the claim-machine over the jobs in corpus/primitive-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
+ "jobs": 1,
+ "written": 1,
+ "refused": 0,
+ "skipped": 0,
+ "rows": [
+  {
+   "id": "prim-1b-codexprolong",
+   "claim": "C_1b <= 0.3808585749",
+   "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1b.md",
+   "object": "records/primitive/prim-1b-codexprolong.json",
+   "pin": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0.3808585749",
+     "c": "3808585749/10000000000"
+    }
+   ],
+   "certMachine": "ADMITTED  prim-1b-codexprolong  [CERTIFIED]  from the object: CERTIFIED value 786138150670075354476385813552…  382.274 s",
+   "certMachineSeconds": 382.3
+  }
+ ]
+}

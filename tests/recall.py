@@ -8,8 +8,10 @@ THE PLANTS, each on real jobs (the calibration jobs and the platform's kissing r
   rel-flip    the relation flipped in the sentence (<= to >=, < to >)
   name-swap   another constant's name in the sentence (C_1a's bar claimed for C_1b)
   wrong-bytes the claimant's bytes replaced by another claimant's file (the page and the sentence unchanged)
-  count+1     a kissing count one above the vectors in the file
+  count+1     a kissing count one above the vectors in the file; a platform count one above the rows
   score-edit  the platform's printed score altered in a copy of its record (the sentence keeps the real one)
+  row-edit    one row of a platform record altered in a copy so that the platform's own condition fails (two adjacent
+              words; three collinear points) — the sentence and the printed score unchanged; the decision must change
 
 usage: python3 tests/recall.py [--write]      records/recall.json; --write (re)writes it, otherwise compares
 """
@@ -43,6 +45,15 @@ def bump_last_digit(printed):
     return s + (('e' + exp) if exp else '')
 
 
+def parse_line(line):
+    """cert-machine's line reduced to its word, its refusal kind, the record's word and the decision from the object"""
+    parts = line.split()
+    seg = re.search(r'from the object: (.*?)(?:\s+\d+(?:\.\d+)? s\b|$)', line)
+    words = re.findall(r'\b(CERTIFIED|REFUTED|REFUSED)\b', seg.group(1)) if seg else []   # one word per predicate, in order
+    return parts[0] + (' ' + parts[2].rstrip(':') if parts[0] == 'REFUSED' and len(parts) > 2 else '') + (' ' + ' '.join(re.findall(r'\[([^\]]*)\]', line)[:1]) if parts[0] == 'ADMITTED' else '') \
+        + (' from the object: ' + '·'.join(words) if words else '')
+
+
 def outcome(job, root=ROOT):
     """('refused', rule) from claimbox, or ('checked', the first two words of cert-machine's line)"""
     try:
@@ -50,9 +61,18 @@ def outcome(job, root=ROOT):
                           elements=job.get('elements'), obj_id=job.get('id'))
     except Refusal as e:
         return ['refused', e.rule]
-    line = T.check_with_cert_machine(obj, root)
-    parts = line.split()
-    return ['checked', parts[0] + (' ' + parts[2].rstrip(':') if parts[0] == 'REFUSED' and len(parts) > 2 else '') + (' ' + ' '.join(re.findall(r'\[([^\]]*)\]', line)[:1]) if parts[0] == 'ADMITTED' else '')]
+    return ['checked', parse_line(T.check_with_cert_machine(obj, root))]
+
+
+def recorded(job_id):
+    """the unplanted outcome of a heavy decision (5 s or more on record), read from its run record instead of re-run"""
+    for fn in os.listdir(os.path.join(REPO, 'records')):
+        if not fn.endswith('-run.json'):
+            continue
+        for r in json.load(open(os.path.join(REPO, 'records', fn), encoding='utf-8')).get('rows', []):
+            if r.get('id') == job_id and 'certMachine' in r and r.get('certMachineSeconds', 0) >= 5:
+                return ['checked', parse_line(r['certMachine'])]
+    return None
 
 
 def main(argv):
@@ -71,10 +91,14 @@ def main(argv):
     tmp = tempfile.mkdtemp(prefix='claimbox-recall-')
     rows = []
     try:
+        truths = {}
+
         def plant(kind, base, mutate):
             j = json.loads(json.dumps(base))
             note = mutate(j)
-            truth = outcome(base)
+            if base['id'] not in truths:
+                truths[base['id']] = recorded(base['id']) or outcome(base)
+            truth = truths[base['id']]
             got = outcome(j)
             caught = got[0] == 'refused' or (got[0] == 'checked' and got != truth)
             rows.append({'plant': kind, 'job': base['id'], 'planted': note, 'unplanted': truth, 'planted_outcome': got, 'caught': caught})
@@ -110,7 +134,10 @@ def main(argv):
                 plant('name-swap', base, swap)
 
             def wrong(j):
-                j['data'] = 'corpus/optconst-queue/next-2026-10-18/rozetyp/previous/certificate_K3072.json' if 'K3072' not in j['data'] else 'corpus/optconst-queue/next-2026-10-18/pr-224/construction.json'
+                if not j.get('decider'):   # the primitive route evaluates the functional on whatever cells it is given: another claimant's small file
+                    j['data'] = 'corpus/einstein-arena/best-15.json'
+                else:
+                    j['data'] = 'corpus/optconst-queue/next-2026-10-18/rozetyp/previous/certificate_K3072.json' if 'K3072' not in j['data'] else 'corpus/optconst-queue/next-2026-10-18/pr-224/construction.json'
                 return 'bytes -> ' + os.path.basename(j['data'])
             plant('wrong-bytes', base, wrong)
 
@@ -135,6 +162,53 @@ def main(argv):
             j['claim'] = j['claim'].replace('593', '594')
             return 'K(11) >= 593 -> 594'
         plant('count+1', ae593, count593)
+        # the two platform scores decided from the bytes: the count one above the rows (the record prints no such number), and one
+        # row edited in a copy of the record so that the platform's own condition fails — the sentence and the score unchanged
+        def copy_record(j, edit, name):
+            src = os.path.join(ROOT, j['source'])
+            doc = json.load(open(src, encoding='utf-8'))
+            edit(doc)
+            cp = os.path.join(tmp, name)
+            with open(cp, 'w', encoding='utf-8') as f:
+                json.dump(doc, f, separators=(',', ':'), ensure_ascii=False)
+            j['source'] = j['data'] = os.path.relpath(cp, ROOT)
+        sh = next(j for j in ea if j['id'] == 'ea-best-shannon-capacity-c7-5')
+        def shcount(j):
+            j['claim'] = j['claim'].replace('367', '368')
+            return 'score 367 -> 368'
+        plant('count+1', sh, shcount)
+        def shword(j):
+            def edit(doc):
+                w = list(doc['data']['words'][0])
+                w[4] = (w[4] + 1) % 7
+                doc['data']['words'][1] = w   # adjacent to word 0 in every coordinate
+            copy_record(j, edit, 'best-29-edited.json')
+            return 'word 1 -> word 0 with its last coordinate + 1 (adjacent)'
+        plant('row-edit', sh, shword)
+        n3 = next(j for j in ea if j['id'] == 'ea-best-no-three-in-line-75')
+        def n3count(j):
+            j['claim'] = j['claim'].replace('148', '149')
+            return 'score 148 -> 149'
+        plant('count+1', n3, n3count)
+        def n3point(j):
+            def edit(doc):
+                pts = doc['data']['points']
+                p0, p1 = pts[0], pts[1]
+                q = [2 * p1[0] - p0[0], 2 * p1[1] - p0[1]]
+                pts[2] = q if all(0 <= c <= 74 for c in q) else list(p1)   # collinear with points 0 and 1 (or coincident with 1)
+            copy_record(j, edit, 'best-33-edited.json')
+            return 'point 2 -> on the line through points 0 and 1'
+        plant('row-edit', n3, n3point)
+        # the primitive C_1b job: the bar moved (the page does not print it); another claimant's small file as the bytes
+        prim = json.load(open(os.path.join(REPO, 'corpus', 'primitive-jobs.json'), encoding='utf-8'))['jobs'][0]
+        def primbump(j):
+            j['claim'] = j['claim'].replace('0.3808585749', '0.3808585750')
+            return 'bar 0.3808585749 -> 0.3808585750'
+        plant('bar+1', prim, primbump)
+        def primwrong(j):
+            j['data'] = 'corpus/einstein-arena/best-15.json'
+            return 'bytes -> best-15.json (11 points in the plane)'
+        plant('wrong-bytes', prim, primwrong)
         # score-edit goes through the READER: a copy of the platform corpus with the 594 record's score 0 -> 0.5 must yield no kissing claim
         from claimbox.readers import einsteinarena
         cdir = os.path.join(tmp, 'corpus', 'einstein-arena')

@@ -8,6 +8,7 @@ python3 -m claimbox shape "<claim>"                              the claim's sha
 python3 -m claimbox translate --claim "…" --source P --data P …   the predicate JSON; --check hands it to cert-machine
 make test        the gate: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its register
 make lift        refresh the corpus and the pins from cert-machine (read-only)      make drift   re-hash the pins
+make platform    re-fetch EinsteinArena's problem definitions at the pinned commit (corpus/platform/einstein-arena)
 ```
 
 ```
@@ -48,11 +49,14 @@ pinned corpora open cert-machine. Each repository's HANDOFF.md is its state; rea
 
 ```
 claimbox/grammar.py        the shapes and the refusals (prose and LaTeX normalised first)
-claimbox/translate.py      shape + page + bytes (+ decider, record) → the object; the quote found, the array decoded
-claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py, alphaevolve.py, qiushi.py, station.py, funsearch.py
+claimbox/translate.py      shape + page + bytes (+ decider, record) → the object; the quote found, the array decoded; the functionals
+                           written once (PRIMITIVE: C_1a, C_1b, C_1d) and the platform scores written once (PLATFORM: two of EinsteinArena's)
+claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (with the reading each
+                           verifier makes of the bytes), alphaevolve.py, qiushi.py, station.py, funsearch.py
 claimbox/__main__.py       the command line
-corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), <source>-jobs.json (read)
+corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
+                           platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json)
 records/                   calibration.json, coverage.json, recall.json; <source>-run.json + <source>/ (each batch's --record and objects)
 tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json)
-tools/lift.py              the lift from cert-machine and the drift check
+tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins (fetch, --check)
 ```

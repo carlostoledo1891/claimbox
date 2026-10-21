@@ -9,6 +9,9 @@ lift:
 	@$(PY) tools/lift.py
 
 drift:
-	@$(PY) tools/lift.py --check
+	@$(PY) tools/lift.py --check && $(PY) tools/platform.py --check
 
-.PHONY: test lift drift
+platform:
+	@$(PY) tools/platform.py
+
+.PHONY: test lift drift platform

@@ -1,19 +1,19 @@
 {
  "what": "The grammar over the 132 claim sentences of cert-machine's register: the shape each takes, or the rule that refuses it. A measurement of what a standard-library grammar covers, not a target; a refusal is the grammar saying so.",
  "sentences": 132,
- "shaped": 95,
- "refused": 37,
+ "shaped": 97,
+ "refused": 35,
  "byFamily": {
   "digits": 1,
   "kissing": 10,
   "decomposition": 45,
   "identity": 12,
   "bound": 15,
-  "score": 12
+  "score": 14
  },
  "byRefusal": {
   "no-quantity": 22,
-  "prose": 13,
+  "prose": 11,
   "asymptotic": 2
  },
  "rows": [
@@ -321,11 +321,17 @@
   },
   {
    "id": "ea-hexagons-alphaevolve_2025",
-   "refused": "prose"
+   "shape": "score",
+   "name": "the outer side",
+   "rel": "in",
+   "printed": "3.9419123"
   },
   {
    "id": "ea-hexagons-ours_2026",
-   "refused": "prose"
+   "shape": "score",
+   "name": "the outer side",
+   "rel": "in",
+   "printed": "3.9416523"
   },
   {
    "id": "ecbench-counts",

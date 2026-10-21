@@ -1,7 +1,7 @@
 {
  "what": "Planted-defect recall of the pipeline claimbox -> cert-machine: a defect planted in the input must come out as a refusal with its rule, or as a changed decision. Each row: the plant, the job, what was planted, the unplanted outcome, the planted outcome, caught or missed.",
- "plants": 41,
- "caught": 41,
+ "plants": 47,
+ "caught": 47,
  "missed": [],
  "rows": [
   {
@@ -290,7 +290,7 @@
    "planted": "bar 1.463071582607559 -> 1.463071582607560",
    "unplanted": [
     "checked",
-    "ADMITTED REFUTED"
+    "ADMITTED REFUTED from the object: REFUTED"
    ],
    "planted_outcome": [
     "refused",
@@ -304,7 +304,7 @@
    "planted": "\\leq -> \\geq",
    "unplanted": [
     "checked",
-    "ADMITTED REFUTED"
+    "ADMITTED REFUTED from the object: REFUTED"
    ],
    "planted_outcome": [
     "refused",
@@ -318,7 +318,7 @@
    "planted": "C_1d -> C_1b",
    "unplanted": [
     "checked",
-    "ADMITTED REFUTED"
+    "ADMITTED REFUTED from the object: REFUTED"
    ],
    "planted_outcome": [
     "refused",
@@ -329,10 +329,10 @@
   {
    "plant": "wrong-bytes",
    "job": "optq-1d-cert2026",
-   "planted": "bytes -> certificate_K3072.json",
+   "planted": "bytes -> best-15.json",
    "unplanted": [
     "checked",
-    "ADMITTED REFUTED"
+    "ADMITTED REFUTED from the object: REFUTED"
    ],
    "planted_outcome": [
     "refused",
@@ -514,7 +514,7 @@
    "planted": "K(11) >= 594 -> 595",
    "unplanted": [
     "checked",
-    "ADMITTED "
+    "ADMITTED  from the object: CERTIFIED"
    ],
    "planted_outcome": [
     "refused",
@@ -556,11 +556,95 @@
    "planted": "K(11) >= 593 -> 594",
    "unplanted": [
     "checked",
-    "ADMITTED CERTIFIED"
+    "ADMITTED CERTIFIED from the object: CERTIFIED"
    ],
    "planted_outcome": [
     "refused",
     "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "count+1",
+   "job": "ea-best-shannon-capacity-c7-5",
+   "planted": "score 367 -> 368",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "row-edit",
+   "job": "ea-best-shannon-capacity-c7-5",
+   "planted": "word 1 -> word 0 with its last coordinate + 1 (adjacent)",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·REFUTED·CERTIFIED·CERTIFIED"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "count+1",
+   "job": "ea-best-no-three-in-line-75",
+   "planted": "score 148 -> 149",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "row-edit",
+   "job": "ea-best-no-three-in-line-75",
+   "planted": "point 2 -> on the line through points 0 and 1",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·REFUTED·CERTIFIED·CERTIFIED"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "bar+1",
+   "job": "prim-1b-codexprolong",
+   "planted": "bar 0.3808585749 -> 0.3808585750",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED from the object: CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "wrong-bytes",
+   "job": "prim-1b-codexprolong",
+   "planted": "bytes -> best-15.json (11 points in the plane)",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED from the object: CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "count"
    ],
    "caught": true
   },

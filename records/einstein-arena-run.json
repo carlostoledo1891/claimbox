@@ -1,8 +1,8 @@
 {
  "what": "A run of the claim-machine over the jobs in corpus/einstein-arena-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
  "jobs": 30,
- "written": 11,
- "refused": 18,
+ "written": 13,
+ "refused": 16,
  "skipped": 1,
  "rows": [
   {
@@ -184,7 +184,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.0
   },
   {
@@ -209,7 +209,35 @@
    "id": "ea-best-shannon-capacity-c7-5",
    "claim": "the object is a feasible solution of \"Shannon Capacity of the 7-Cycle (Fifth Power)\" and the platform's score of it is 367 (maximize)",
    "source": "corpus/einstein-arena/best-29.json",
-   "refused": "decider: the quantity \"the platform's score\" has no primitive expression here: a decider path is needed, and none was given"
+   "object": "records/einstein-arena/ea-best-shannon-capacity-c7-5.json",
+   "pin": "59b31ea158c0beaf7437071240e9c1c78befcaf6517317b840e7d517ae3bc0d5",
+   "predicate": [
+    {
+     "rel": "in",
+     "printed": "367",
+     "c": [
+      "733/2",
+      "735/2"
+     ]
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  ea-best-shannon-capacity-c7-5  []  from the object: CERTIFIED value 367 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 0  3.528 s  note: no record attached",
+   "certMachineSeconds": 3.6
   },
   {
    "id": "ea-best-second-autocorrelation-inequality",
@@ -239,7 +267,35 @@
    "id": "ea-best-no-three-in-line-75",
    "claim": "the object is a feasible solution of \"No-Three-in-Line (75 × 75 grid)\" and the platform's score of it is 148 (maximize)",
    "source": "corpus/einstein-arena/best-33.json",
-   "refused": "decider: the quantity \"the platform's score\" has no primitive expression here: a decider path is needed, and none was given"
+   "object": "records/einstein-arena/ea-best-no-three-in-line-75.json",
+   "pin": "b3d56aea63aed5565ebb8bf34facfa31dc01cc64467d9029fc2e8ea1662342ec",
+   "predicate": [
+    {
+     "rel": "in",
+     "printed": "148",
+     "c": [
+      "295/2",
+      "297/2"
+     ]
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  ea-best-no-three-in-line-75  []  from the object: CERTIFIED value 148 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 1  9.981 s  note: no record attached",
+   "certMachineSeconds": 10.0
   },
   {
    "id": "ea-best-two-deletion-code-16",
@@ -310,8 +366,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  24.447 s  note: no record attached",
-   "certMachineSeconds": 24.5
+   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  25.213 s  note: no record attached",
+   "certMachineSeconds": 25.3
   },
   {
    "id": "ea-best-prime-number-theorem",

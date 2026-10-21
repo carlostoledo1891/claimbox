@@ -1,0 +1,184 @@
+{
+ "what": "EinsteinArena's own problem definitions (the statement of each score and the Python verifier that computes it), one file per problem in cert-machine's pinned list, fetched byte for byte from the platform's public repository at one commit and pinned by sha256. Read by the translator for the reading of the bytes each verifier makes and for the two scores written here as primitive expressions; never run.",
+ "repo": "github.com/vinid/einstein-arena",
+ "commit": "9cd6fbfb4b88ca303a61963665b1b6ad20ffdb1e",
+ "path": "web/src/lib/problems/<slug>.ts",
+ "fetched": "2026-10-20",
+ "license": "no licence file upstream; held here verbatim for verification only (as cert-machine holds three of them, corpus/sources/easota-platform)",
+ "files": {
+  "circle-packing": {
+   "file": "circle-packing_9cd6fbfb.ts",
+   "sha256": "192ee4d4885a0348ceec8ca6b1c8d6f528b1b19fb94cba6d01288f423db99df6",
+   "bytes": 2068,
+   "title": "Circle Packing in a Square"
+  },
+  "circles-rectangle": {
+   "file": "circles-rectangle_9cd6fbfb.ts",
+   "sha256": "c9c9103e684fabe05b5b9643d8973204a4d100d3d1cbd3f848db3d8368af7c5a",
+   "bytes": 2224,
+   "title": "Circles in a Rectangle (n = 21)"
+  },
+  "difference-bases": {
+   "file": "difference-bases_9cd6fbfb.ts",
+   "sha256": "66c7a67fe9ce1b1448031753ca9a7569b2b39142fe5aceaf04f3ed2874f7af86",
+   "bytes": 1933,
+   "title": "Difference Bases"
+  },
+  "edges-vs-triangles": {
+   "file": "edges-vs-triangles_9cd6fbfb.ts",
+   "sha256": "54a97cbd7c3ee56cc09bc5cf90d300382c6ddfc72bd3155b05352e781b9f093c",
+   "bytes": 5490,
+   "title": "Edges vs Triangles (Minimal Triangle Density)"
+  },
+  "erdos-min-overlap": {
+   "file": "erdos-min-overlap_9cd6fbfb.ts",
+   "sha256": "578515bb66b83341b6da1f5584cf2517de557efdb254ba59cd808d9091b2d317",
+   "bytes": 2754,
+   "title": "Erdős Minimum Overlap (Upper Bound)"
+  },
+  "first-autocorrelation-inequality": {
+   "file": "first-autocorrelation-inequality_9cd6fbfb.ts",
+   "sha256": "cfc8193ff2122f86bf3c9135e16a38a1d869839ff165020d696d3e04f861d5d4",
+   "bytes": 2316,
+   "title": "First Autocorrelation Inequality (Upper Bound)"
+  },
+  "flat-polynomials": {
+   "file": "flat-polynomials_9cd6fbfb.ts",
+   "sha256": "235def3012b3828260dc168658a4abc5700d87867fdb7bfd663003f846c80c4f",
+   "bytes": 1889,
+   "title": "Flat Polynomials (degree 69)"
+  },
+  "hadamard-det-51": {
+   "file": "hadamard-det-51_9cd6fbfb.ts",
+   "sha256": "f196ef3415327d0bf4f203a7bf88827ddbaf5e1f38e1fa0ac533b7e8ced1326b",
+   "bytes": 4960,
+   "title": "Hadamard Maximal Determinant (order 51)"
+  },
+  "heilbronn-triangles": {
+   "file": "heilbronn-triangles_9cd6fbfb.ts",
+   "sha256": "e3fe38b427bafc3c3951b0ea7ffacf7287b7ddefda6a52bfe6e44333d43da382",
+   "bytes": 2330,
+   "title": "Heilbronn Problem for Triangles (n = 11)"
+  },
+  "kakeya-needle-128": {
+   "file": "kakeya-needle-128_9cd6fbfb.ts",
+   "sha256": "b1801532138b647aa03517c909ba4f482047874c8d94f0561ade2b035731bfd3",
+   "bytes": 7502,
+   "title": "Discretized Kakeya Needle (n = 128)"
+  },
+  "kissing-number-d11": {
+   "file": "kissing-number-d11_9cd6fbfb.ts",
+   "sha256": "b06f0604f9effc021eb80f274a835436c71bb5884b726ad29a01d08334951ce1",
+   "bytes": 4126,
+   "title": "Kissing Number in Dimension 11 (n=594)"
+  },
+  "kissing-number-d11-605": {
+   "file": "kissing-number-d11-605_9cd6fbfb.ts",
+   "sha256": "eded7fdddddb33249c9da3900aa60e145de949c97b7366227068d53e86084b0f",
+   "bytes": 3982,
+   "title": "Kissing Number in Dimension 11 (n=605)"
+  },
+  "kissing-number-d12": {
+   "file": "kissing-number-d12_9cd6fbfb.ts",
+   "sha256": "5bb834fd8a41f4ddf1b029aeb518a70eb4b6534e429d6c9a0fb536da7da5cb75",
+   "bytes": 4650,
+   "title": "Kissing Number in Dimension 12 (n=841)"
+  },
+  "kissing-number-d12-842": {
+   "file": "kissing-number-d12-842_9cd6fbfb.ts",
+   "sha256": "dc40ccf46dda18e429da7208f4d200b1bbb2357e92e7a3ea47df50a5726d47ae",
+   "bytes": 4320,
+   "title": "Kissing Number in Dimension 12 (n=842)"
+  },
+  "min-distance-ratio-2d": {
+   "file": "min-distance-ratio-2d_9cd6fbfb.ts",
+   "sha256": "34fdcc813a69f45dad01718f9f3d0d7c7406cd5663473a1c19d074fbaaff8260",
+   "bytes": 2285,
+   "title": "Minimizing Max/Min Distance Ratio (2D, n=16)"
+  },
+  "no-three-in-line-75": {
+   "file": "no-three-in-line-75_9cd6fbfb.ts",
+   "sha256": "522a24b1925e306ff5b631cfd4c9ad4925e5b6253edcfcfedcb113a2f57ea496",
+   "bytes": 4290,
+   "title": "No-Three-in-Line (75 × 75 grid)"
+  },
+  "prime-number-theorem": {
+   "file": "prime-number-theorem_9cd6fbfb.ts",
+   "sha256": "9243b8b4585e7ec08510d0b372b838a6aad9e872c9e1bccd27d57f8007beb588",
+   "bytes": 3486,
+   "title": "The Prime Number Theorem"
+  },
+  "ring-loading-15": {
+   "file": "ring-loading-15_9cd6fbfb.ts",
+   "sha256": "5ecbd6765d6482cf4d9e2b2ecf65fd08a49a5ef3bff0b82a89af560c4289f319",
+   "bytes": 4814,
+   "title": "Ring Loading Problem (15 pairs)"
+  },
+  "second-autocorrelation-inequality": {
+   "file": "second-autocorrelation-inequality_9cd6fbfb.ts",
+   "sha256": "33fee947f86c0f76716f65c11f26107829ecef6744a80ffa2190ae2ca9c598bc",
+   "bytes": 3040,
+   "title": "Second Autocorrelation Inequality (Lower Bound)"
+  },
+  "shannon-capacity-c7-5": {
+   "file": "shannon-capacity-c7-5_9cd6fbfb.ts",
+   "sha256": "b6aeed93bf76a81f93c4271ea323c31eaa9209668143662a075551f1e0fb1353",
+   "bytes": 3674,
+   "title": "Shannon Capacity of the 7-Cycle (Fifth Power)"
+  },
+  "sidon-45-set": {
+   "file": "sidon-45-set_9cd6fbfb.ts",
+   "sha256": "16548ee48a1487970dff8a95903251c5d47402f082e1cdad0fdd584d5e419df1",
+   "bytes": 3811,
+   "title": "Sidon Subsets of (4,5)-Sets"
+  },
+  "snake-in-the-box-13": {
+   "file": "snake-in-the-box-13_9cd6fbfb.ts",
+   "sha256": "6903136246802f0d2aacf4e63ff9a9fc6fe6b4417c7bf05bd91dd92fb53f7292",
+   "bytes": 4589,
+   "title": "Snake-in-the-Box (13-dimensional hypercube)"
+  },
+  "sorting-network-16": {
+   "file": "sorting-network-16_9cd6fbfb.ts",
+   "sha256": "5ad1aef34cacf122bb01a31bae33b9208d61fcea2b97f70a8384765d9fb502ff",
+   "bytes": 3973,
+   "title": "Sorting Network (16 inputs)"
+  },
+  "spencer-discrepancy": {
+   "file": "spencer-discrepancy_9cd6fbfb.ts",
+   "sha256": "3ec39658b09acff4ca8df0ba0eb6194725833bf54601f5cc64a80ca8381ad2c7",
+   "bytes": 3626,
+   "title": "Spencer Discrepancy Constant"
+  },
+  "tammes-problem": {
+   "file": "tammes-problem_9cd6fbfb.ts",
+   "sha256": "8e770da4a54ea98982df5a645943cc93d851cbfcfaa1f54c90ed132c7828cd83",
+   "bytes": 1817,
+   "title": "Tammes Problem (n = 50)"
+  },
+  "third-autocorrelation-inequality": {
+   "file": "third-autocorrelation-inequality_9cd6fbfb.ts",
+   "sha256": "7f236391a2208b93b28a2d75d43f4998f6519460f1c44b745eead7072d1a2c82",
+   "bytes": 2480,
+   "title": "Third Autocorrelation Inequality (Upper Bound)"
+  },
+  "thomson-problem": {
+   "file": "thomson-problem_9cd6fbfb.ts",
+   "sha256": "e2fd65ba5df77a628536bb9c5c300847195368111e3d0141418c72897f809f8b",
+   "bytes": 1899,
+   "title": "Thomson Problem (n = 282)"
+  },
+  "two-deletion-code-16": {
+   "file": "two-deletion-code-16_9cd6fbfb.ts",
+   "sha256": "25b2cf9d70897b1c2d4d9f501f553b0c0e57812a4b65d4279e7563e323de0a1e",
+   "bytes": 4767,
+   "title": "Two-Deletion-Correcting Code (length 16)"
+  },
+  "uncertainty-principle": {
+   "file": "uncertainty-principle_9cd6fbfb.ts",
+   "sha256": "8867c2dec80b755bc81f1dc6c0b291294e0224fa42354c3b950407e58e8b165b",
+   "bytes": 6207,
+   "title": "Uncertainty Principle (Upper Bound)"
+  }
+ }
+}

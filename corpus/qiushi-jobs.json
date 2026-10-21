@@ -10,9 +10,148 @@
    "what": "the Qiushi Engine release, constructions/d25/README.md (the Result line) and repair-points.json (the published bytes: a repair of another repository's configuration, not the full point set)"
   },
   {
-   "id": "qiushi-d27",
-   "skipped": "the README states no Result line",
-   "source": "corpus/kissing/wave/qiushi/constructions/d27/README.md"
+   "id": "qiushi-table-d27",
+   "claim": "K(27) >= 201,567",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/qiushi/constructions/d27/data/heads27_Y.npy",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 27) and the first of the generator arrays the release publishes for this dimension (constructions/d27/data), not the point set"
+  },
+  {
+   "id": "qiushi-table-d32",
+   "claim": "K(32) >= 347,584",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration32.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 32) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d33",
+   "claim": "K(33) >= 363,968",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration33.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 33) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d34",
+   "claim": "K(34) >= 384,196",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration34.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 34) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d35",
+   "claim": "K(35) >= 409,676",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration35.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 35) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d36",
+   "claim": "K(36) >= 484,760",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration36.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 36) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d37",
+   "claim": "K(37) >= 498,024",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration37.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 37) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d38",
+   "claim": "K(38) >= 591,900",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration38.i64.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 38) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int64 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d39",
+   "claim": "K(39) >= 763,668",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration39.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 39) and the complete configuration the claimant released on 2026-10-12 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d43",
+   "claim": "K(43) >= 2,553,792",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-sections/section43.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 43) and the complete section the claimant released on 2026-10-11 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d45",
+   "claim": "K(45) >= 7,380,090",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-sections/section45.i8.gz",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 45) and the complete section the claimant released on 2026-10-11 (gzip-compressed int8 rows), cached by cert-machine under corpus/kissing/wave/.cache and pinned by hash in its manifest"
+  },
+  {
+   "id": "qiushi-table-d49",
+   "claim": "K(49) >= 52,430,156",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration49.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 49) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
+  },
+  {
+   "id": "qiushi-table-d50",
+   "claim": "K(50) >= 52,458,468",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration50.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 50) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
+  },
+  {
+   "id": "qiushi-table-d51",
+   "claim": "K(51) >= 52,500,930",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration51.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 51) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
+  },
+  {
+   "id": "qiushi-table-d52",
+   "claim": "K(52) >= 52,585,772",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration52.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 52) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
+  },
+  {
+   "id": "qiushi-table-d53",
+   "claim": "K(53) >= 52,698,696",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration53.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 53) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
+  },
+  {
+   "id": "qiushi-table-d54",
+   "claim": "K(54) >= 52,923,774",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration54.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 54) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
+  },
+  {
+   "id": "qiushi-table-d55",
+   "claim": "K(55) >= 53,301,140",
+   "source": "corpus/kissing/wave/qiushi/README.md",
+   "data": "corpus/kissing/wave/.cache/qiushi-configs/configuration55.i8",
+   "elements": "integers",
+   "what": "the Qiushi Engine release's results table (README.md, the row for dimension 55) and the complete configuration as the claimant's 2026-10-12 manifest names it (raw int8, 52 million rows), pinned by hash there and not on disk here"
   }
  ]
 }
