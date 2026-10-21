@@ -21,14 +21,15 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-21, the fourth handoff: the queue checked against the receiver; (c) narrowed and measured, the ask written)
+## TASKS BACKLOG (updated 2026-10-21, the fourth handoff: the queue checked against the receiver, (c) narrowed, measured and asked; `shape` fixed; two explainer pages; nine named-decider objects found standing undecided)
 
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
      calibration, its register's 132 claim sentences are the coverage corpus, its checker is the gate (a subprocess; no code
      shared; cert-machine read-only). THE SECOND SESSION (2026-10-20/21, "proceed the next steps") worked the backlog below in order
      (★ THE NEXT STEPS, TAKEN). THE THIRD SESSION (2026-10-21) lifted the receiver's two changes and used them (★ THE RECEIVER'S TWO
-     CHANGES, USED). `make test`: 130 checks (the 130th, 2026-10-21: `shape` prints a decomposition, which has no bar — it raised KeyError before), 33 red controls all firing, 56/56 planted defects caught (the heavy
+     CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
+     explainer pages (★ THE EXPLAINER PAGES). `make test`: 130 checks (the 130th, 2026-10-21: `shape` prints a decomposition, which has no bar — it raised KeyError before), 33 red controls all firing, 56/56 planted defects caught (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them). Coverage 97/132. Public at github.com/carlostoledo1891/claimbox (MIT) since 2026-10-20 night,
      on the operator's word.
@@ -47,15 +48,33 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      repository (os.path.join drops the root) and admits; check.js refuses it (pin-unresolved, record-missing) — the two checkers
      disagree; both follow a `../` path out. THE ASK for (c1) and (g), paste-ready, was handed to the operator in the session's
      closing message; nothing in cert-machine was touched.
+  ★ THE EXPLAINER PAGES (2026-10-21, the fourth session, on the operator's questions — how claimbox works for a common person, its
+     UI, its input language, its documentation, a refiner). Two private claude.ai artifacts, the operator's to share: the plain guide
+     https://claude.ai/artifact/RKVGA35Ai1pZAeLFv5VyER, and the same reviewed in cert-machine's HOUSE STYLE
+     https://claude.ai/artifact/RCGkZxYudyfDXLmWF5HTyN — the house style is cert-machine's design/tokens.js and the report shell its
+     builds emit (one dark theme, grayscale, Inter + JetBrains Mono, verdicts by weight and shape; design/DESIGN.md's token table is
+     stale, tokens.js is the source), written by hand from the tokens because the page lives outside cert-machine's build. The files
+     are in that session's scratchpad, not in this repository. THE ANSWERS, as the pages give them: no graphical UI — the four
+     commands, an AI uses them exactly as a person does; the input is three things (sentence, source, data) and the sentence must
+     match one of the closed shapes; documentation is README, grammar.py's header (the input language's specification) and the
+     receiver's SCHEMA.md — A USER GUIDE DOES NOT EXIST (how to phrase a claim, which files, each refusal and its fix); A REFINER IS NOT
+     BUILT AND NOT PLANNED: one that rewrites claims would break rule 1 (extract, never infer); an advisory one that shows the nearest
+     shapes and what is missing, never changing what is checked, would fit — the operator's decision, not taken. FOUND IN THE REVIEW,
+     a correction to how this file read: of EinsteinArena's 15 admitted objects, 6 are DECIDED from the bytes (K(11) ≥ 594 and the five
+     platform scores) and 9 name tools/run-mc100-einstein.js with NO RECORD ATTACHED, so the checker admits them as proposals,
+     undecided (NEXT 0); of AlphaEvolve's 17, 16 are decided and the rank-48 <4,4,4> is a proposal. Ten claims in all are decided
+     from the bytes alone. FIXED: `python3 -m claimbox shape` raised KeyError on a decomposition (it printed the bar unconditionally;
+     a decomposition has none); translate and batch were unaffected; a battery check over five shapes, FAIL 2/5 before, 5/5 after
+     (f209ad0).
   ★ WHAT WORKS: `python3 -m claimbox shape "<claim>"` (the shape, or REFUSED with the rule); `translate --claim … --source P --data P
      [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals] [--reading epistemic] [--check]`
      (the object; --check hands it to cert-machine's checker); `batch jobs.json --out DIR`; the registry reader (a constants-page row
      under "Known upper/lower bounds" → a sentence). CALIBRATION 10/10: every decision-bearing field of the ten hand-written objects
      reproduced from the registry's own text, and cert-machine's checker says the expected word (nine ADMITTED; k3072 REFUSED
-     record-bar-mismatch, the claimant's eleven-digit print the record did not decide). COVERAGE 95/132: decomposition 45, bound 15,
-     score 12, identity 12, kissing 10, digits 1; refused 37: no printed quantity 22 (the counterexample and manuscript rows, which
-     print no number), prose 13 (the aggregate rows, two polynomial-map rows with "three zeros", the hexagon rows whose score is "the
-     outer side", the D12 lift), asymptotic 2 (the two Ramsey rows). A measurement; a refusal is the grammar saying so.
+     record-bar-mismatch, the claimant's eleven-digit print the record did not decide). COVERAGE 97/132: decomposition 45, bound 15,
+     score 14, identity 12, kissing 10, digits 1; refused 35: no printed quantity 22 (the counterexample and manuscript rows, which
+     print no number), prose 11 (the aggregate rows, two polynomial-map rows with "three zeros", the D12 lift), asymptotic 2 (the two
+     Ramsey rows). A measurement; a refusal is the grammar saying so.
   ★ WHAT THE TRANSLATOR DECIDES FROM THE BYTES, through cert-machine: a kissing claim (the one pairwise inequality over the decoded
      vectors; the green control: three vectors in R^2, CERTIFIED by cert-machine from the object) and C_1d (its functional written once
      as an expression; the value equals cert-machine's record digit for digit). Every other quantity is a NAMED function that needs a
@@ -243,16 +262,24 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      algorithmic platform scores (the mc100 run's own `undecided` list); (e) the three-array data block for tensor identities;
      (f) pins of the Station's paper and FunSearch's paper (the sentences), and the Qiushi complete configurations in the repository.
   ◆ NEXT, none started:
-     0. after (c1): `make lift`; the Qiushi reader decodes the gzip rows itself (standard library) to hold the claim's count and the
+     0. NO RECEIVER CHANGE NEEDED, UNTRIED: attach cert-machine's mc100 rows to the nine EinsteinArena objects that name its decider —
+        certs/mc100-einstein-arena.json carries rows under the same ids with sha256: eight CERTIFIED (first autocorrelation,
+        min-distance ratio, flat polynomials, edges vs triangles, the four kissing rows), erdos-min-overlap REPAIRED (not one of the
+        three words: it stays a proposal, or the receiver maps it). The reader would set record {path, row, value: null, verdict}; run
+        --check before believing it (the `in` box of a float-printed score, the bar read off the row's claim string, the pin). Then
+        recall plants (another problem's row, the bytes swapped) and the run record re-written; the explainer pages' counts follow.
+     0b. after (c1): `make lift`; the Qiushi reader decodes the gzip rows itself (standard library) to hold the claim's count and the
         columns to the bytes, then writes 10 objects (32–39, 43, 45: holds, the named kissing predicate, `where` the tool that decided
         the row, the wave row attached); 49–55 stay refused "not on disk", d25 and d27 stay refused (the wave decided them from
         several files — another repository's arrays and the claimant's repair — and a domain pins one: (e)); recall plants: the
         pin swapped, another dimension's row, the count one above. After (c) and (f): the Station's and FunSearch's bytes read;
-     1. after (d): the 13 platform scores above through the receiver's deciders as named functions, as the mc100 rows are today;
+     1. after (d): the 13 platform scores above through the receiver's deciders as named functions with their records attached (NEXT 0 is the same move for the nine already written);
      2. the first autocorrelation from the bytes needs a faster exact route on the receiver (its evaluator interprets the expression;
         65,536 values are 4·10⁹ exact products) — a receiver item, not a translator one;
      3. the grammar's gaps on this register are listed in records/coverage.json; extend only for a claim shape that exists, with a
         red control for its refusal (none of the 35 is a shape today).
+     4. the operator's to decide, asked 2026-10-21: a user guide (how to phrase a claim, which files, each refusal and its fix), and
+        whether an advisory refiner is wanted (★ THE EXPLAINER PAGES); neither is started.
 
 ## The rules that bind here
 
