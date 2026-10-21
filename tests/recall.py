@@ -11,7 +11,10 @@ THE PLANTS, each on real jobs (the calibration jobs and the platform's kissing r
   count+1     a kissing count one above the vectors in the file; a platform count one above the rows
   score-edit  the platform's printed score altered in a copy of its record (the sentence keeps the real one)
   row-edit    one row of a platform record altered in a copy so that the platform's own condition fails (two adjacent
-              words; three collinear points) — the sentence and the printed score unchanged; the decision must change
+              words; three collinear points; a circle outside the square; two coincident circles) — the sentence and the
+              printed score unchanged; the decision must change
+  score-edit  (the resolution) the platform's float64 score moved by three times its declared resolution in a copy of the
+              record, the sentence following — the exact sum is then outside the resolution box; the decision must change
 
 usage: python3 tests/recall.py [--write]      records/recall.json; --write (re)writes it, otherwise compares
 """
@@ -164,6 +167,8 @@ def main(argv):
         plant('count+1', ae593, count593)
         # the two platform scores decided from the bytes: the count one above the rows (the record prints no such number), and one
         # row edited in a copy of the record so that the platform's own condition fails — the sentence and the score unchanged
+        shutil.copy(os.path.join(ROOT, 'corpus', 'einstein-arena', 'problems.json'), tmp)   # beside the copies, as in the platform's corpus
+
         def copy_record(j, edit, name):
             src = os.path.join(ROOT, j['source'])
             doc = json.load(open(src, encoding='utf-8'))
@@ -171,6 +176,13 @@ def main(argv):
             cp = os.path.join(tmp, name)
             with open(cp, 'w', encoding='utf-8') as f:
                 json.dump(doc, f, separators=(',', ':'), ensure_ascii=False)
+            j['source'] = j['data'] = os.path.relpath(cp, ROOT)
+
+        def copy_raw(j, old, new, name):
+            raw = open(os.path.join(ROOT, j['source']), 'rb').read().decode('utf-8')
+            assert raw.count(old) == 1
+            cp = os.path.join(tmp, name)
+            open(cp, 'w', encoding='utf-8').write(raw.replace(old, new))
             j['source'] = j['data'] = os.path.relpath(cp, ROOT)
         sh = next(j for j in ea if j['id'] == 'ea-best-shannon-capacity-c7-5')
         def shcount(j):
@@ -199,16 +211,48 @@ def main(argv):
             copy_record(j, edit, 'best-33-edited.json')
             return 'point 2 -> on the line through points 0 and 1'
         plant('row-edit', n3, n3point)
-        # the primitive C_1b job: the bar moved (the page does not print it); another claimant's small file as the bytes
-        prim = json.load(open(os.path.join(REPO, 'corpus', 'primitive-jobs.json'), encoding='utf-8'))['jobs'][0]
-        def primbump(j):
-            j['claim'] = j['claim'].replace('0.3808585749', '0.3808585750')
-            return 'bar 0.3808585749 -> 0.3808585750'
-        plant('bar+1', prim, primbump)
-        def primwrong(j):
+        # the three float-printed scores inside the platform's resolution: a circle moved outside the square, two circles made
+        # coincident (the sentence and the score unchanged), the score moved by three times the resolution with the sentence following
+        cp26 = next(j for j in ea if j['id'] == 'ea-best-circle-packing')
+        def outside(j):
+            def edit(doc):
+                doc['data']['circles'][0][0] = -0.5
+            copy_record(j, edit, 'best-14-edited.json')
+            return 'circle 0 -> x = -0.5, outside the square'
+        plant('row-edit', cp26, outside)
+        def scoreoff(j):
+            copy_raw(j, '"score":2.6359830849176076', '"score":2.6359830852176076', 'best-14-score.json')
+            j['claim'] = j['claim'].replace('2.6359830849176076', '2.6359830852176076')
+            return 'the printed score 2.6359830849176076 -> 2.6359830852176076 (+3e-10, three resolutions), the sentence following'
+        plant('score-edit', cp26, scoreoff)
+        cr21 = next(j for j in ea if j['id'] == 'ea-best-circles-rectangle')
+        def coincide(j):
+            def edit(doc):
+                c = doc['data']['circles']
+                c[1][0], c[1][1] = c[0][0], c[0][1]
+            copy_record(j, edit, 'best-18-edited.json')
+            return 'circle 1 -> centred on circle 0 (overlapping)'
+        plant('row-edit', cr21, coincide)
+        third = next(j for j in ea if j['id'] == 'ea-best-third-autocorrelation-inequality')
+        def thirdbump(j):
+            j['claim'] = j['claim'].replace('1.4508066395052834', '1.4508066395052835')
+            return 'score 1.4508066395052834 -> 1.4508066395052835'
+        plant('bar+1', third, thirdbump)
+        def thirdwrong(j):
             j['data'] = 'corpus/einstein-arena/best-15.json'
             return 'bytes -> best-15.json (11 points in the plane)'
-        plant('wrong-bytes', prim, primwrong)
+        plant('wrong-bytes', third, thirdwrong)
+        # the primitive jobs (C_1b, C_1c): the bar moved by one unit (the page does not print it); another claimant's small file as the bytes
+        for prim in json.load(open(os.path.join(REPO, 'corpus', 'primitive-jobs.json'), encoding='utf-8'))['jobs']:
+            pm = re.search(r'\d+\.\d+', prim['claim']).group(0)
+            def primbump(j, pm=pm):
+                j['claim'] = j['claim'].replace(pm, bump_last_digit(pm))
+                return 'bar ' + pm + ' -> ' + bump_last_digit(pm)
+            plant('bar+1', prim, primbump)
+            def primwrong(j):
+                j['data'] = 'corpus/einstein-arena/best-15.json'
+                return 'bytes -> best-15.json (11 points in the plane)'
+            plant('wrong-bytes', prim, primwrong)
         # score-edit goes through the READER: a copy of the platform corpus with the 594 record's score 0 -> 0.5 must yield no kissing claim
         from claimbox.readers import einsteinarena
         cdir = os.path.join(tmp, 'corpus', 'einstein-arena')

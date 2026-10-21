@@ -16,31 +16,293 @@
   },
   "decoder": "the array at data.circles: 21 rows of 3, each JSON number as the double it denotes, exactly",
   "count": 21,
-  "variable": "f"
+  "variable": "f",
+  "data": {
+   "select": "data.circles",
+   "elements": "doubles",
+   "shape": [
+    "n",
+    "d"
+   ]
+  }
  },
  "predicate": [
   {
-   "g": {
-    "named": "the platform's score of the published object, as the claimant defines it",
-    "where": "tools/run-mc100-einstein.js",
-    "args": [
-     "f"
+   "g": [
+    "Sum",
+    "i",
+    "0",
+    [
+     "Subtract",
+     "n",
+     "1"
+    ],
+    [
+     "Index",
+     "f",
+     "i",
+     "2"
     ]
-   },
+   ],
    "rel": "in",
    "printed": "2.3658323759098576",
    "c": [
-    "47316647518197151/20000000000000000",
-    "47316647518197153/20000000000000000"
-   ]
+    "1478645234881161/625000000000000",
+    "1478645235006161/625000000000000"
+   ],
+   "box": {
+    "kind": "resolution",
+    "key": "minImprovement",
+    "halfWidth": "1/10000000000",
+    "source": {
+     "path": "corpus/einstein-arena/problems.json",
+     "sha256": "cc2b707bd244f24543646f3299a07c063a46920b3caed5e281fa4db0ea9b81f7",
+     "quote": "\"slug\":\"circles-rectangle\",\"title\":\"Circles in a Rectangle (n = 21)\",\"scoring\":\"maximize\",\"minImprovement\":1e-10"
+    }
+   },
+   "note": "the box is the printed score ± the platform's declared resolution for the problem (its minImprovement 1e-10, quoted from problems.json), not the half-unit box of the printed digits: the print is a float64 evaluation, and the exact value of the same arithmetic over the same doubles need not lie within half a unit of its last digit"
+  },
+  {
+   "g": [
+    "MinOver",
+    "i",
+    "0",
+    [
+     "Subtract",
+     "n",
+     "1"
+    ],
+    [
+     "Index",
+     "f",
+     "i",
+     "2"
+    ]
+   ],
+   "rel": "gt",
+   "c": "0",
+   "note": "every radius is positive"
+  },
+  {
+   "g": [
+    "Subtract",
+    [
+     "Add",
+     [
+      "Subtract",
+      [
+       "MaxOver",
+       "i",
+       "0",
+       [
+        "Subtract",
+        "n",
+        "1"
+       ],
+       [
+        "Add",
+        [
+         "Index",
+         "f",
+         "i",
+         "0"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "2"
+        ]
+       ]
+      ],
+      [
+       "MinOver",
+       "i",
+       "0",
+       [
+        "Subtract",
+        "n",
+        "1"
+       ],
+       [
+        "Subtract",
+        [
+         "Index",
+         "f",
+         "i",
+         "0"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "2"
+        ]
+       ]
+      ]
+     ],
+     [
+      "Subtract",
+      [
+       "MaxOver",
+       "i",
+       "0",
+       [
+        "Subtract",
+        "n",
+        "1"
+       ],
+       [
+        "Add",
+        [
+         "Index",
+         "f",
+         "i",
+         "1"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "2"
+        ]
+       ]
+      ],
+      [
+       "MinOver",
+       "i",
+       "0",
+       [
+        "Subtract",
+        "n",
+        "1"
+       ],
+       [
+        "Subtract",
+        [
+         "Index",
+         "f",
+         "i",
+         "1"
+        ],
+        [
+         "Index",
+         "f",
+         "i",
+         "2"
+        ]
+       ]
+      ]
+     ]
+    ],
+    "2"
+   ],
+   "rel": "le",
+   "c": "0",
+   "note": "the bounding box has w + h <= 2, w = max(x + r) - min(x - r), h = max(y + r) - min(y - r)"
+  },
+  {
+   "forall": [
+    [
+     "i",
+     "0",
+     [
+      "Subtract",
+      "n",
+      "2"
+     ]
+    ],
+    [
+     "j",
+     [
+      "Add",
+      "i",
+      "1"
+     ],
+     [
+      "Subtract",
+      "n",
+      "1"
+     ]
+    ]
+   ],
+   "g": [
+    "Subtract",
+    [
+     "Square",
+     [
+      "Add",
+      [
+       "Index",
+       "f",
+       "i",
+       "2"
+      ],
+      [
+       "Index",
+       "f",
+       "j",
+       "2"
+      ]
+     ]
+    ],
+    [
+     "Add",
+     [
+      "Square",
+      [
+       "Subtract",
+       [
+        "Index",
+        "f",
+        "i",
+        "0"
+       ],
+       [
+        "Index",
+        "f",
+        "j",
+        "0"
+       ]
+      ]
+     ],
+     [
+      "Square",
+      [
+       "Subtract",
+       [
+        "Index",
+        "f",
+        "i",
+        "1"
+       ],
+       [
+        "Index",
+        "f",
+        "j",
+        "1"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "rel": "le",
+   "c": "0",
+   "note": "no two circles overlap: (r_i + r_j)^2 <= |c_i - c_j|^2 over every pair"
   }
  ],
- "reference": "the printed 2.3658323759098576 is the box its digits allow; the object is read as each JSON number as the double it denotes, exactly",
+ "reference": "the printed 2.3658323759098576 is the platform's float64 score, read as the exact decimal and boxed by the platform's declared resolution 1e-10 either side (its minImprovement for \"Circles in a Rectangle (n = 21)\", quoted from the pinned problems.json); the quantity is the sum of the radii Σ r_i of 21 disjoint circles whose bounding box has w + h <= 2, computed exactly from the pinned bytes by the expression itself; feasibility is decided from the bytes by the platform's own conditions, written as exact inequalities; the circles are read as each JSON number as the double it denotes, exactly",
  "hypotheses": [
-  "the printed number is a rounding of the quantity: it is read as the box its digits allow, half a unit of the last digit either way"
+  "the platform's own verifier for \"Circles in a Rectangle (n = 21)\" (github.com/vinid/einstein-arena, web/src/lib/problems/circles-rectangle.ts at 9cd6fbfb, sha256 c9c9103e684f…, pinned here at corpus/platform/einstein-arena/circles-rectangle_9cd6fbfb.ts) scores a submission as the sum of the radii Σ r_i of 21 disjoint circles whose bounding box has w + h <= 2 once every constraint holds; its constraints are written here as the exact inequalities below",
+  "the platform computes the bounding box's width w = max(x_i + r_i) - min(x_i - r_i) and height h = max(y_i + r_i) - min(y_i - r_i) exactly (Fraction over the doubles) and requires w + h <= 2 and every r_i > 0; disjointness, r_i + r_j <= |c_i - c_j| on every pair, it tests in float64 through a square root, written here as (r_i + r_j)^2 <= |c_i - c_j|^2, exact for positive radii; the score Σ r_i is a float64 sum, boxed by the platform's declared resolution",
+  "the platform prints its score as a float64 evaluation of the same arithmetic over the same doubles; the exact value and the print agree within the platform's own resolution for the problem, its minImprovement, when they agree at all — which is what the resolution box decides (the register's agreement rule for these rows); a value outside the box is a finding, not a reason to widen it"
  ],
  "falsifier": [
-  "the quantity computed exactly lies outside [47316647518197151/20000000000000000, 47316647518197153/20000000000000000]",
-  "the pinned file does not hash to b38b6610…"
+  "the exact the sum of the radii Σ r_i of 21 disjoint circles whose bounding box has w + h <= 2 of the pinned circles lies outside [1478645234881161/625000000000000, 1478645235006161/625000000000000]",
+  "the pinned circles violate: every radius is positive",
+  "the pinned circles violate: the bounding box has w + h <= 2, w = max(x + r) - min(x - r), h = max(y + r) - min(y - r)",
+  "the pinned circles violate: no two circles overlap: (r_i + r_j)^2 <= |c_i - c_j|^2 over every pair",
+  "the pinned file does not hash to b38b6610…",
+  "problems.json does not hash to cc2b707b…, or no longer prints minImprovement 1e-10 for circles-rectangle"
  ]
 }

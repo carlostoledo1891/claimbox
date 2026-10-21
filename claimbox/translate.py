@@ -11,20 +11,23 @@ WHAT IT EXTRACTS, AND WHAT IT REFUSES TO INVENT
                  shape and count decoded, never typed
   the predicate  from the shape: a bar as the exact rational of its digits; a printed value as the box its digits allow;
                  a kissing claim as the one pairwise inequality over the decoded vectors (decided from the bytes alone);
-                 a constant whose functional this program knows (C_1a, C_1b, C_1d — the registry's step-function
+                 a constant whose functional this program knows (C_1a, C_1b, C_1c, C_1d — the registry's step-function
                  constants, PRIMITIVE below) as that expression over the cells, when no decider is named; a platform
-                 score whose verifier is finite integer arithmetic (PLATFORM below: two of EinsteinArena's problems,
-                 written from the platform's own pinned verifier) as the count and the feasibility inequalities; every
-                 other quantity as a NAMED function that needs a decider path — given none, refused ("needs a decider"),
-                 never guessed. A decider named with --decider always wins: the quantity is then the decider's.
+                 score whose verifier is finite arithmetic over the bytes (PLATFORM below: five of EinsteinArena's
+                 problems, written from the platform's own pinned verifier) as the score expression and the feasibility
+                 inequalities — an integer count in the box its digits allow, a float-printed score in the box of the
+                 platform's DECLARED RESOLUTION (its minImprovement, quoted from the pinned problems.json beside the
+                 record, as the receiver's `box` block states it); every other quantity as a NAMED function that needs
+                 a decider path — given none, refused ("needs a decider"), never guessed. A decider named with --decider
+                 always wins: the quantity is then the decider's.
   the reading    universal unless told epistemic; the reading of the bytes (doubles, the printed decimal digits,
                  integers, p/q strings) stated in the decoder and the reference, because two readings of one JSON number
                  are different numbers (cert-machine's 605 case)
 The receiver's exact evaluator is quadratic in the array for the autocorrelation functionals: 3,584 cells decide in
-minutes, 65,536 would not; the receiver's own deciders take those (name them with --decider). Beside a record, the
-receiver holds every predicate to the record's one value, so a functional's admissibility inequalities (f >= 0, the
-rescaled h <= 1) are written as predicates only when no record is attached; with one, they are the record decider's
-check, stated in the hypotheses and the falsifier.
+minutes, 16,384 in the hour, 65,536 would not; the receiver's own deciders take those (name them with --decider).
+Beside a record, the admissibility inequalities of a functional (f >= 0, the rescaled h <= 1) are written as
+predicates too, and the record names predicate 0 as the one it decided (the receiver's record.predicate, 2026-10-21);
+the other predicates are decided from the bytes.
 MIT"""
 import hashlib
 import json
@@ -68,6 +71,11 @@ PRIMITIVE = {
              'value': 'the minimum-overlap value sup_x ∫ h(t) (1 - h)(x + t) dt of the rescaled step function',
              'reduction': 'h is the step function with n equal cells of width 2/n on [0, 2], 0 <= h <= 1, rescaled by s = (n/2) / Σ h so that ∫ h = 1 (the registry\'s normalisation; the identity when Σ h is n/2 already); g = 1 - h on [0, 2] and 0 outside; ∫ h(t) g(x + t) dt is piecewise linear in x with knots at multiples of 2/n (two step functions on one grid), so its sup is attained at a knot: (2/n) · max_m Σ_i (s h_i)(1 - s h_{i+m}) over -(n-1) <= m <= n-1 and the i with both indices in range — written here as max_k [Σh · P_k - (n/2) · R_k] / (Σ h)^2 with P_k = Σ_i h_i and R_k = Σ_i h_i h_{i+m} over those i, k = m + n - 1',
              'definition': 'C_1b is the largest constant with sup_x ∫ f(t) g(x + t) dt >= C_1b for every admissible pair (f, g: [-1, 1] -> [0, 1], f + g = 1, ∫ f = 1), so any one admissible h gives C_1b <= its value (the registry\'s definition, read)'},
+    'C_1c': {'g': lambda K: ['Divide', ['Multiply', str(K), ['MinOver', 'k', '0', str(K), ['Sum', 'i', '0', ['Subtract', N1, 'k'], ['Multiply', IDX('i'), IDX(['Add', 'i', 'k'])]]]], ['Square', TOTAL]],
+             'structural': [{'what': 'w >= 0 on every cell', 'g': MIN_F, 'rel': 'ge', 'c': '0'}],
+             'value': 'the Barnard–Steinerberger lower-bound functional K · min_{0<=k<=K} Σ_i w_i w_{i+k} / (Σ w_i)^2 of the step function',
+             'reduction': 'f = Σ w_i 1_[i/K, (i+1)/K) is the non-negative step function with n cells of width 1/K, K read from the certificate\'s own K field and written into the expression as a literal; its autocorrelation ∫ f(x) f(x+t) dx is linear between consecutive multiples of 1/K, so its minimum over 0 <= t <= 1 is attained at some t = k/K, 0 <= k <= K, where it equals (1/K) Σ_i w_i w_{i+k} (the sum over the i with i + k < n, empty — zero — when k >= n); ∫ f = Σ w_i / K; the functional is K · min_k Σ_i w_i w_{i+k} / (Σ w_i)^2 (the claimant\'s and the registry\'s reduction, read)',
+             'definition': 'C_1c is the smallest constant with min_{0<=t<=1} ∫ f(x) f(x+t) dx <= C_1c (∫ f)^2 for every non-negative f, so any one non-negative step function gives C_1c >= its functional (the registry\'s definition, read)'},
     'C_1d': {'g': ['Divide', ['Multiply', ['Multiply', '2', 'n'], ['MaxOver', 'k', '0', LAST_K, ['Abs', S_k]]], ['Square', TOTAL]],
              'structural': [],
              'value': 'the signed autocorrelation ratio max_t |(f*f)(t)| / (∫ f)^2 of the step function',
@@ -75,26 +83,39 @@ PRIMITIVE = {
              'definition': 'any signed step function f with ∫ f ≠ 0 gives C_1d <= its ratio (the registry\'s definition, read)'},
 }
 
-# ---- the platform scores whose verifier is finite integer arithmetic, written once from the platform's own pinned
-# verifier (corpus/platform/einstein-arena, tools/platform.py); keyed by the problem title as the claim prints it --------
+# ---- the platform scores whose verifier is finite arithmetic over the bytes, written once from the platform's own pinned
+# verifier (corpus/platform/einstein-arena, tools/platform.py); keyed by the problem title as the claim prints it. `g` is the
+# score; `n` a count the problem fixes (None: the decoded count); `resolution` True where the score is a float64 print and the
+# `in` box is the platform's declared resolution (minImprovement, quoted from problems.json), False where it is an integer count
+# in the box its digits allow. NOT here, and why: the first autocorrelation (65,536 values: the receiver's evaluator is
+# quadratic; its decider stays named) and the second (no best solution pinned); the square-root and algorithmic scores need the
+# receiver's deciders ----------------------------------------------------------------------------------------------------
 ABSDIFF = ['Abs', ['Subtract', IDX('i', 'k'), IDX('j', 'k')]]
 DET = ['Subtract', ['Multiply', ['Subtract', IDX('j', '0'), IDX('i', '0')], ['Subtract', IDX('k', '1'), IDX('i', '1')]],
                    ['Multiply', ['Subtract', IDX('j', '1'), IDX('i', '1')], ['Subtract', IDX('k', '0'), IDX('i', '0')]]]
 COORD_MIN = ['MinOver', 'i', '0', N1, ['MinOver', 'c', '0', ['Subtract', 'd', '1'], IDX('i', 'c')]]
 COORD_MAX = ['MaxOver', 'i', '0', N1, ['MaxOver', 'c', '0', ['Subtract', 'd', '1'], IDX('i', 'c')]]
+PAIRS = [['i', '0', ['Subtract', 'n', '2']], ['j', ['Add', 'i', '1'], N1]]
+EACH = [['i', '0', N1]]
+X, Y, RAD = IDX('i', '0'), IDX('i', '1'), IDX('i', '2')                                   # a circle's row [x, y, r]
+SUM_R = ['Sum', 'i', '0', N1, RAD]
+NON_OVERLAP = {'what': 'no two circles overlap: (r_i + r_j)^2 <= |c_i - c_j|^2 over every pair', 'forall': PAIRS,
+               'g': ['Subtract', ['Square', ['Add', RAD, IDX('j', '2')]], ['Add', ['Square', ['Subtract', X, IDX('j', '0')]], ['Square', ['Subtract', Y, IDX('j', '1')]]]], 'rel': 'le', 'c': '0'}
+WIDTH = ['Subtract', ['MaxOver', 'i', '0', N1, ['Add', X, RAD]], ['MinOver', 'i', '0', N1, ['Subtract', X, RAD]]]
+HEIGHT = ['Subtract', ['MaxOver', 'i', '0', N1, ['Add', Y, RAD]], ['MinOver', 'i', '0', N1, ['Subtract', Y, RAD]]]
+DX = ['Divide', '1', ['Multiply', '2', 'n']]
 PLATFORM = {
     'Shannon Capacity of the 7-Cycle (Fifth Power)': {
-        'slug': 'shannon-capacity-c7-5', 'd': 5, 'rows': 'words',
+        'slug': 'shannon-capacity-c7-5', 'elements': 'integers', 'd': 5, 'n': None, 'rows': 'words', 'g': 'n', 'resolution': False,
         'score': 'the number of words of an independent set in the fifth strong power of the 7-cycle',
         'structural': [
-            {'what': 'every pair of words is non-adjacent in the fifth strong power of C_7: some coordinate differs by 2, 3, 4 or 5 (mod 7)',
-             'forall': [['i', '0', ['Subtract', 'n', '2']], ['j', ['Add', 'i', '1'], N1]],
+            {'what': 'every pair of words is non-adjacent in the fifth strong power of C_7: some coordinate differs by 2, 3, 4 or 5 (mod 7)', 'forall': PAIRS,
              'g': ['MaxOver', 'k', '0', '4', ['Multiply', ['Subtract', ABSDIFF, '2'], ['Subtract', '5', ABSDIFF]]], 'rel': 'ge', 'c': '0'},
             {'what': 'every coordinate is at least 0', 'g': COORD_MIN, 'rel': 'ge', 'c': '0'},
             {'what': 'every coordinate is at most 6', 'g': ['Subtract', '6', COORD_MAX], 'rel': 'ge', 'c': '0'}],
         'reduction': 'two words x, y in Z_7^5 are adjacent iff x_k - y_k ∈ {0, 1, 6} (mod 7) for every k, i.e. |x_k - y_k| ∈ {0, 1, 6} for coordinates in 0..6; they are non-adjacent iff some k has |x_k - y_k| ∈ {2, 3, 4, 5}, i.e. (|x_k - y_k| - 2)(5 - |x_k - y_k|) >= 0; identical words are adjacent, so the inequality also forces distinctness; the score is the number of words, an integer, which the box of its printed digits holds exactly or not at all'},
     'No-Three-in-Line (75 × 75 grid)': {
-        'slug': 'no-three-in-line-75', 'd': 2, 'rows': 'points',
+        'slug': 'no-three-in-line-75', 'elements': 'integers', 'd': 2, 'n': None, 'rows': 'points', 'g': 'n', 'resolution': False,
         'score': 'the number of points with no three on a line in the 75 × 75 grid',
         'structural': [
             {'what': 'no three points are collinear: the exact integer determinant of every triple is non-zero',
@@ -103,6 +124,31 @@ PLATFORM = {
             {'what': 'every coordinate is at least 0', 'g': COORD_MIN, 'rel': 'ge', 'c': '0'},
             {'what': 'every coordinate is at most 74', 'g': ['Subtract', '74', COORD_MAX], 'rel': 'ge', 'c': '0'}],
         'reduction': 'three grid points are collinear iff (x_2 - x_1)(y_3 - y_1) - (y_2 - y_1)(x_3 - x_1) = 0; for integer coordinates a non-zero determinant is at least 1 in absolute value, so |det| - 1 >= 0 is the exact condition; coincident points make every triple containing them collinear, so the inequality also forces distinctness; the score is the number of points, an integer, which the box of its printed digits holds exactly or not at all'},
+    'Circle Packing in a Square': {
+        'slug': 'circle-packing', 'elements': 'doubles', 'd': 3, 'n': 26, 'rows': 'circles', 'g': SUM_R, 'resolution': True,
+        'score': 'the sum of the radii Σ r_i of 26 circles packed in the unit square',
+        'structural': [
+            {'what': 'every radius is non-negative', 'g': ['MinOver', 'i', '0', N1, RAD], 'rel': 'ge', 'c': '0'},
+            {'what': 'containment: r <= x', 'forall': EACH, 'g': ['Subtract', RAD, X], 'rel': 'le', 'c': '0'},
+            {'what': 'containment: x <= 1 - r', 'forall': EACH, 'g': ['Subtract', ['Add', X, RAD], '1'], 'rel': 'le', 'c': '0'},
+            {'what': 'containment: r <= y', 'forall': EACH, 'g': ['Subtract', RAD, Y], 'rel': 'le', 'c': '0'},
+            {'what': 'containment: y <= 1 - r', 'forall': EACH, 'g': ['Subtract', ['Add', Y, RAD], '1'], 'rel': 'le', 'c': '0'},
+            NON_OVERLAP],
+        'reduction': 'the platform requires r_i >= 0, r_i <= x_i <= 1 - r_i and r_i <= y_i <= 1 - r_i on every circle, and r_i + r_j <= |c_i - c_j| on every pair, the last in float64 through a square root; for non-negative radii that pair condition is equivalent to (r_i + r_j)^2 <= |c_i - c_j|^2, exact over the doubles; the score Σ r_i is a float64 sum whose exact value over the same doubles need not lie within half a unit of its 17th printed digit, so its box is the platform\'s declared resolution'},
+    'Circles in a Rectangle (n = 21)': {
+        'slug': 'circles-rectangle', 'elements': 'doubles', 'd': 3, 'n': 21, 'rows': 'circles', 'g': SUM_R, 'resolution': True,
+        'score': 'the sum of the radii Σ r_i of 21 disjoint circles whose bounding box has w + h <= 2',
+        'structural': [
+            {'what': 'every radius is positive', 'g': ['MinOver', 'i', '0', N1, RAD], 'rel': 'gt', 'c': '0'},
+            {'what': 'the bounding box has w + h <= 2, w = max(x + r) - min(x - r), h = max(y + r) - min(y - r)', 'g': ['Subtract', ['Add', WIDTH, HEIGHT], '2'], 'rel': 'le', 'c': '0'},
+            NON_OVERLAP],
+        'reduction': 'the platform computes the bounding box\'s width w = max(x_i + r_i) - min(x_i - r_i) and height h = max(y_i + r_i) - min(y_i - r_i) exactly (Fraction over the doubles) and requires w + h <= 2 and every r_i > 0; disjointness, r_i + r_j <= |c_i - c_j| on every pair, it tests in float64 through a square root, written here as (r_i + r_j)^2 <= |c_i - c_j|^2, exact for positive radii; the score Σ r_i is a float64 sum, boxed by the platform\'s declared resolution'},
+    'Third Autocorrelation Inequality (Upper Bound)': {
+        'slug': 'third-autocorrelation-inequality', 'elements': 'doubles', 'd': None, 'n': None, 'rows': 'values', 'resolution': True,
+        'g': ['Divide', ['Multiply', ['Multiply', '2', 'n'], ['Abs', ['MaxOver', 'k', '0', LAST_K, S_k]]], ['Square', TOTAL]],
+        'score': 'the ratio |max(convolve(f, f) · dx)| / (Σ f · dx)^2 of the signed step function, dx = 1/(2n)',
+        'structural': [{'what': 'the integral is not close to zero: (Σ f · dx)^2 >= 1e-9, read as the rational 1/10^9', 'g': ['Subtract', ['Square', ['Multiply', TOTAL, DX]], '1/1000000000'], 'rel': 'ge', 'c': '0'}],
+        'reduction': 'the platform computes C = |max(convolve(f, f) · dx)| / (Σ f · dx)^2 with dx = 0.5/n in float64, and convolve(f, f)[k] = Σ_{i+j=k} f_i f_j, so exactly C = 2n · |max_k Σ_{i+j=k} f_i f_j| / (Σ f_i)^2 — the absolute value of the maximum, as the platform takes it, not the maximum of the absolute values (the registry\'s C_1d); the platform rejects a function whose (Σ f · dx)^2 is below 1e-9, read here as the rational 1/10^9; the score is a float64 evaluation, boxed by the platform\'s declared resolution'},
 }
 PLATFORM_BY_TITLE = {grammar.normalise(k): v for k, v in PLATFORM.items()}
 
@@ -220,8 +266,29 @@ def rel_text(rel):
 
 
 def structural(entries):
-    """the structural inequalities of a table entry as predicates (the zero of each is the bar; no printed number)"""
-    return [{k: v for k, v in s.items() if k != 'what'} for s in entries]
+    """the structural inequalities of a table entry as predicates (the zero of each is the bar; no printed number; the statement kept as the note)"""
+    return [dict({k: v for k, v in s.items() if k != 'what'}, note=s['what']) for s in entries]
+
+
+def resolution_box(root, data, slug, title, p):
+    """the platform's declared resolution for a problem, quoted from the problems.json beside the record (the receiver's `box` block):
+    (box, lo, hi, the resolution as printed) — the box is the printed score p ± minImprovement"""
+    pj = os.path.join(os.path.dirname(data), 'problems.json')
+    pjp = os.path.join(root, pj)
+    if not os.path.isfile(pjp):
+        raise Refusal('resolution', 'the platform\'s problems.json is not beside the record (' + pj + '): its declared resolution for "' + title + '" cannot be quoted')
+    with open(pjp, 'rb') as f:
+        raw = f.read().decode('utf-8', 'replace')
+    at = raw.find('"slug":"' + slug + '"')
+    m = re.compile(r'"minImprovement"\s*:\s*(' + grammar.NUMBER + r')').search(raw, at) if at >= 0 else None
+    quote = raw[at:m.end()] if m else ''
+    if not m or quote.count('"slug"') != 1 or quote.count('"minImprovement"') != 1:
+        raise Refusal('resolution', 'problems.json does not print a minImprovement in the entry of ' + slug)
+    hw = Fraction(m.group(1))
+    if hw <= 0:
+        raise Refusal('resolution', 'the platform declares no resolution for "' + title + '" (minImprovement ' + m.group(1) + '): the half-unit box of the printed digits would apply, and a float64 score need not satisfy it')
+    box = {'kind': 'resolution', 'key': 'minImprovement', 'halfWidth': str(hw), 'source': {'path': pj, 'sha256': sha256(pjp), 'quote': quote}}
+    return box, p - hw, p + hw, m.group(1)
 
 
 def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None):
@@ -332,34 +399,58 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         if 'd' in sizes:
             raise Refusal('count', shape['name'] + '\'s functional is written for a one-dimensional array of cell values; the bytes hold rows of ' + str(sizes['d']))
         domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
-        preds.append({'g': t['g'], 'rel': shape['rel'], 'printed': printed, 'c': str(shape['c'])})
+        g = t['g']
+        if callable(g):   # the functional has a parameter the certificate prints beside the cells (C_1c's K), written as a literal
+            K = doc.get('K') if isinstance(doc, dict) else None
+            if isinstance(K, bool) or not isinstance(K, int) or K < 1:
+                raise Refusal('data', shape['name'] + '\'s functional needs the certificate\'s K (the cells per unit), and the bytes do not print it as a positive integer')
+            g = g(K)
+            domain['decoder'] += '; K = ' + str(K) + ', the certificate\'s own field, written into the expression as a literal'
+        preds.append({'g': g, 'rel': shape['rel'], 'printed': printed, 'c': str(shape['c'])})
+        preds += structural(t['structural'])
         hyps += [t['reduction'], t['definition']]
         if record and t['structural']:
-            # the receiver holds every predicate of an object to its record's one value, so the admissibility inequalities
-            # are not written as predicates beside a record: they are the record decider's check, stated and falsifiable
-            hyps.append('the cells are admissible (' + '; '.join(s['what'] for s in t['structural']) + '): checked by the record\'s decider, not written as predicates here because the receiver compares every predicate with the record\'s one value')
-        else:
-            preds += structural(t['structural'])
+            # beside a record, the record names predicate 0 as the one it decided (the receiver's record.predicate); the
+            # admissibility inequalities stand beside it and are decided from the bytes
+            record = dict(record, predicate=0)
+            hyps.append('the cells are admissible (' + '; '.join(s['what'] for s in t['structural']) + '): the structural predicates beside the record, decided from the bytes; the record names predicate 0 as the one it decided')
         fals = ['the expression evaluated exactly on the pinned values violates ' + shape['name'] + ' ' + rel_text(shape['rel']) + ' ' + printed] + \
                ['the pinned values violate: ' + s['what'] for s in t['structural']] + [hashed]
         ref = 'the bar is the printed decimal taken exactly (' + str(shape['c']) + '); the value is ' + t['value'] + ', computed from the pinned bytes by the expression itself, read as ' + how_read
     elif platform is not None:
         t = platform
-        if kind != 'integers' or sizes.get('d') != t['d']:
-            raise Refusal('count', 'the platform\'s "' + shape['problem'] + '" takes ' + t['rows'] + ' of ' + str(t['d']) + ' integers; the bytes hold ' +
-                          (str(count) + ' rows of ' + str(sizes['d']) if 'd' in sizes else str(count) + ' values') + ' read as ' + kind)
+        title = shape['problem']
+        held = (str(count) + ' rows of ' + str(sizes['d']) if 'd' in sizes else str(count) + ' values') + ' read as ' + kind
+        if kind != t['elements'] or sizes.get('d') != t['d']:
+            raise Refusal('count', 'the platform\'s "' + title + '" takes ' + t['rows'] + (' of ' + str(t['d']) + ' ' + t['elements'] if t['d'] else ' as ' + t['elements']) + '; the bytes hold ' + held)
+        if t['n'] and count != t['n']:
+            raise Refusal('count', 'the platform\'s "' + title + '" takes exactly ' + str(t['n']) + ' ' + t['rows'] + '; the bytes hold ' + str(count))
         pin = platform_pin(t['slug'])
         if pin is None:
-            raise Refusal('decider', 'the platform\'s verifier for "' + shape['problem'] + '" is not pinned here (tools/platform.py)')
+            raise Refusal('decider', 'the platform\'s verifier for "' + title + '" is not pinned here (tools/platform.py)')
         domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
-        lo, hi = shape['c']
-        preds.append({'g': 'n', 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]})
+        if t['resolution']:
+            box, lo, hi, res = resolution_box(root, data, t['slug'], title, grammar.exact(printed))
+            preds.append({'g': t['g'], 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)], 'box': box,
+                          'note': 'the box is the printed score ± the platform\'s declared resolution for the problem (its minImprovement ' + res + ', quoted from problems.json), not the half-unit box of the printed digits: the print is a float64 evaluation, and the exact value of the same arithmetic over the same doubles need not lie within half a unit of its last digit'})
+        else:
+            lo, hi = shape['c']
+            preds.append({'g': t['g'], 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]})
         preds += structural(t['structural'])
-        hyps.append('the platform\'s own verifier for "' + shape['problem'] + '" (' + pin['repo'] + ', ' + pin['path'] + ' at ' + pin['commit'][:8] + ', sha256 ' + pin['sha256'][:12] +
+        hyps.append('the platform\'s own verifier for "' + title + '" (' + pin['repo'] + ', ' + pin['path'] + ' at ' + pin['commit'][:8] + ', sha256 ' + pin['sha256'][:12] +
                     '…, pinned here at ' + pin['file'] + ') scores a submission as ' + t['score'] + ' once every constraint holds; its constraints are written here as the exact inequalities below')
         hyps.append(t['reduction'])
-        fals = ['the count of ' + t['rows'] + ' is not ' + printed] + ['the pinned ' + t['rows'] + ' violate: ' + s['what'] for s in t['structural']] + [hashed]
-        ref = 'the printed ' + printed + ' is the box its digits allow, and the quantity is the integer count n, so the box holds it exactly or not at all; feasibility is decided from the bytes by the platform\'s own conditions, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
+        if t['resolution']:
+            hyps.append('the platform prints its score as a float64 evaluation of the same arithmetic over the same doubles; the exact value and the print agree within the platform\'s own resolution for the problem, its minImprovement, when they agree at all — which is what the resolution box decides (the register\'s agreement rule for these rows); a value outside the box is a finding, not a reason to widen it')
+            fals = ['the exact ' + t['score'] + ' of the pinned ' + t['rows'] + ' lies outside [' + str(lo) + ', ' + str(hi) + ']']
+        else:
+            fals = ['the count of ' + t['rows'] + ' is not ' + printed]
+        fals += ['the pinned ' + t['rows'] + ' violate: ' + s['what'] for s in t['structural']] + [hashed]
+        if t['resolution']:
+            fals.append('problems.json does not hash to ' + box['source']['sha256'][:8] + '…, or no longer prints minImprovement ' + res + ' for ' + t['slug'])
+            ref = 'the printed ' + printed + ' is the platform\'s float64 score, read as the exact decimal and boxed by the platform\'s declared resolution ' + res + ' either side (its minImprovement for "' + title + '", quoted from the pinned problems.json); the quantity is ' + t['score'] + ', computed exactly from the pinned bytes by the expression itself; feasibility is decided from the bytes by the platform\'s own conditions, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
+        else:
+            ref = 'the printed ' + printed + ' is the box its digits allow, and the quantity is the integer count n, so the box holds it exactly or not at all; feasibility is decided from the bytes by the platform\'s own conditions, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
     else:
         if not decider:
             raise Refusal('decider', 'the quantity "' + str(shape.get('name') or fam) + '" has no primitive expression here: a decider path is needed, and none was given')
@@ -402,7 +493,7 @@ def check_with_cert_machine(obj, root):
     with open(tmp, 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False)
     try:
-        r = subprocess.run(['python3', os.path.join(root, 'instruments', 'claimbox', 'check.py'), tmp], capture_output=True, text=True, timeout=3600)
+        r = subprocess.run(['python3', os.path.join(root, 'instruments', 'claimbox', 'check.py'), tmp], capture_output=True, text=True, timeout=4 * 3600)
         return (r.stdout or r.stderr).strip().split('\n')[-1]
     finally:
         os.remove(tmp)

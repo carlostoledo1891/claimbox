@@ -1,0 +1,127 @@
+{
+ "id": "prim-1c-rozetyp-k3072",
+ "text": "C ≥ 0.41030211724",
+ "source": {
+  "what": "the claimant's README (rozetyp/barnard-steinerberger-lower-bound, pinned by cert-machine 2026-10-18), the line \"An earlier certificate (K = 3072, C ≥ 0.41030211724) is kept in previous/certificate_K3072.json\"; the bytes are that certificate, 3,584 non-negative integer weights with K = 3072; no record: the registry replay decided this certificate at the seven-digit bar 0.4103021 (its row 1c-rozetyp-k3072), not at the README's eleven-digit print, which the expression decides here as it stands",
+  "path": "corpus/optconst-queue/next-2026-10-18/rozetyp/README.md",
+  "sha256": "cf8c2e87183005967040b3f0dbb3f9bc9fd1029c28cb14fda4c5a89dad2e0d37",
+  "quote": "An earlier certificate (K = 3072, C ≥ 0.41030211724) is kept in `previous/certificate_K3072.json`, SHA-256 `788527a6237837e8d5d441cfab3f8b39080165fc207ae6a69678cc5f3a0fdf58`."
+ },
+ "reading": "universal",
+ "domain": {
+  "kind": "finite",
+  "pin": {
+   "path": "corpus/optconst-queue/next-2026-10-18/rozetyp/previous/certificate_K3072.json",
+   "sha256": "788527a6237837e8d5d441cfab3f8b39080165fc207ae6a69678cc5f3a0fdf58"
+  },
+  "decoder": "the array at weights_int: 3584 values, each JSON integer exactly; K = 3072, the certificate's own field, written into the expression as a literal",
+  "count": 3584,
+  "variable": "f",
+  "data": {
+   "select": "weights_int",
+   "elements": "integers",
+   "shape": [
+    "n"
+   ]
+  }
+ },
+ "predicate": [
+  {
+   "g": [
+    "Divide",
+    [
+     "Multiply",
+     "3072",
+     [
+      "MinOver",
+      "k",
+      "0",
+      "3072",
+      [
+       "Sum",
+       "i",
+       "0",
+       [
+        "Subtract",
+        [
+         "Subtract",
+         "n",
+         "1"
+        ],
+        "k"
+       ],
+       [
+        "Multiply",
+        [
+         "Index",
+         "f",
+         "i"
+        ],
+        [
+         "Index",
+         "f",
+         [
+          "Add",
+          "i",
+          "k"
+         ]
+        ]
+       ]
+      ]
+     ]
+    ],
+    [
+     "Square",
+     [
+      "Sum",
+      "i",
+      "0",
+      [
+       "Subtract",
+       "n",
+       "1"
+      ],
+      [
+       "Index",
+       "f",
+       "i"
+      ]
+     ]
+    ]
+   ],
+   "rel": "ge",
+   "printed": "0.41030211724",
+   "c": "10257552931/25000000000"
+  },
+  {
+   "g": [
+    "MinOver",
+    "i",
+    "0",
+    [
+     "Subtract",
+     "n",
+     "1"
+    ],
+    [
+     "Index",
+     "f",
+     "i"
+    ]
+   ],
+   "rel": "ge",
+   "c": "0",
+   "note": "w >= 0 on every cell"
+  }
+ ],
+ "reference": "the bar is the printed decimal taken exactly (10257552931/25000000000); the value is the Barnard–Steinerberger lower-bound functional K · min_{0<=k<=K} Σ_i w_i w_{i+k} / (Σ w_i)^2 of the step function, computed from the pinned bytes by the expression itself, read as each JSON integer exactly",
+ "hypotheses": [
+  "f = Σ w_i 1_[i/K, (i+1)/K) is the non-negative step function with n cells of width 1/K, K read from the certificate's own K field and written into the expression as a literal; its autocorrelation ∫ f(x) f(x+t) dx is linear between consecutive multiples of 1/K, so its minimum over 0 <= t <= 1 is attained at some t = k/K, 0 <= k <= K, where it equals (1/K) Σ_i w_i w_{i+k} (the sum over the i with i + k < n, empty — zero — when k >= n); ∫ f = Σ w_i / K; the functional is K · min_k Σ_i w_i w_{i+k} / (Σ w_i)^2 (the claimant's and the registry's reduction, read)",
+  "C_1c is the smallest constant with min_{0<=t<=1} ∫ f(x) f(x+t) dx <= C_1c (∫ f)^2 for every non-negative f, so any one non-negative step function gives C_1c >= its functional (the registry's definition, read)"
+ ],
+ "falsifier": [
+  "the expression evaluated exactly on the pinned values violates C_1c >= 0.41030211724",
+  "the pinned values violate: w >= 0 on every cell",
+  "the pinned file does not hash to 788527a6…"
+ ]
+}

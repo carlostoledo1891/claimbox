@@ -151,7 +151,8 @@
     "1"
    ],
    "rel": "ge",
-   "c": "0"
+   "c": "0",
+   "note": "no three points are collinear: the exact integer determinant of every triple is non-zero"
   },
   {
    "g": [
@@ -181,7 +182,8 @@
     ]
    ],
    "rel": "ge",
-   "c": "0"
+   "c": "0",
+   "note": "every coordinate is at least 0"
   },
   {
    "g": [
@@ -215,7 +217,8 @@
     ]
    ],
    "rel": "ge",
-   "c": "0"
+   "c": "0",
+   "note": "every coordinate is at most 74"
   }
  ],
  "reference": "the printed 148 is the box its digits allow, and the quantity is the integer count n, so the box holds it exactly or not at all; feasibility is decided from the bytes by the platform's own conditions, written as exact inequalities; the points are read as each JSON integer exactly",

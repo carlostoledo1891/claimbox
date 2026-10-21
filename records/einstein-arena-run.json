@@ -1,8 +1,8 @@
 {
  "what": "A run of the claim-machine over the jobs in corpus/einstein-arena-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
  "jobs": 30,
- "written": 13,
- "refused": 16,
+ "written": 15,
+ "refused": 14,
  "skipped": 1,
  "rows": [
   {
@@ -22,7 +22,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-erdos-min-overlap  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-thomson-problem",
@@ -53,7 +53,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-flat-polynomials  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-edges-vs-triangles",
@@ -72,13 +72,56 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-edges-vs-triangles  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-circle-packing",
    "claim": "the object is a feasible solution of \"Circle Packing in a Square\" and the platform's score of it is 2.6359830849176076 (maximize)",
    "source": "corpus/einstein-arena/best-14.json",
-   "refused": "decider: the quantity \"the platform's score\" has no primitive expression here: a decider path is needed, and none was given"
+   "object": "records/einstein-arena/ea-best-circle-packing.json",
+   "pin": "55db2c8bfde3a9adc39828b0162982c1bf9230fcafbc1693a29076f3811898cb",
+   "predicate": [
+    {
+     "rel": "in",
+     "printed": "2.6359830849176076",
+     "c": [
+      "6589957712044019/2500000000000000",
+      "6589957712544019/2500000000000000"
+     ]
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  ea-best-circle-packing  []  from the object: CERTIFIED value 189942599023837833/72057594037… · CERTIFIED value 2492496546109449/3602879701896… · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · REFUTED (witness {\"i\": 1, \"j\": 13}, 3 violating)  0.012 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-10  note: no record at",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-heilbronn-triangles",
@@ -97,13 +140,28 @@
      "rel": "in",
      "printed": "2.3658323759098576",
      "c": [
-      "47316647518197151/20000000000000000",
-      "47316647518197153/20000000000000000"
+      "1478645234881161/625000000000000",
+      "1478645235006161/625000000000000"
      ]
+    },
+    {
+     "rel": "gt",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-circles-rectangle  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachine": "ADMITTED  ea-best-circles-rectangle  []  from the object: CERTIFIED value 85238094452549551/360287970189… · CERTIFIED value 2692846334979835/3602879701896… · CERTIFIED value -24871/36028797018963968 · CERTIFIED  0.011 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-10  note: no record attached",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-difference-bases",
@@ -127,8 +185,8 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-first-autocorrelation-inequality  []  0.002 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachine": "ADMITTED  ea-best-first-autocorrelation-inequality  []  0.003 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-kissing-number-d12",
@@ -147,7 +205,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-kissing-number-d12  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-kissing-number-d11-605",
@@ -166,7 +224,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-kissing-number-d11-605  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-kissing-number-d12-842",
@@ -185,7 +243,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-kakeya-needle-128",
@@ -236,8 +294,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-shannon-capacity-c7-5  []  from the object: CERTIFIED value 367 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 0  3.528 s  note: no record attached",
-   "certMachineSeconds": 3.6
+   "certMachine": "ADMITTED  ea-best-shannon-capacity-c7-5  []  from the object: CERTIFIED value 367 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 0  4.749 s  note: no record attached",
+   "certMachineSeconds": 4.8
   },
   {
    "id": "ea-best-second-autocorrelation-inequality",
@@ -294,8 +352,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-no-three-in-line-75  []  from the object: CERTIFIED value 148 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 1  9.981 s  note: no record attached",
-   "certMachineSeconds": 10.0
+   "certMachine": "ADMITTED  ea-best-no-three-in-line-75  []  from the object: CERTIFIED value 148 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 1  13.653 s  note: no record attached",
+   "certMachineSeconds": 13.7
   },
   {
    "id": "ea-best-two-deletion-code-16",
@@ -313,7 +371,25 @@
    "id": "ea-best-third-autocorrelation-inequality",
    "claim": "the object is a feasible solution of \"Third Autocorrelation Inequality (Upper Bound)\" and the platform's score of it is 1.4508066395052834 (minimize)",
    "source": "corpus/einstein-arena/best-4.json",
-   "refused": "decider: the quantity \"the platform's score\" has no primitive expression here: a decider path is needed, and none was given"
+   "object": "records/einstein-arena/ea-best-third-autocorrelation-inequality.json",
+   "pin": "fcb94502274522cbaa5f954066b35e411f1a3b785238e28b1e1b7d1ae9fab169",
+   "predicate": [
+    {
+     "rel": "in",
+     "printed": "1.4508066395052834",
+     "c": [
+      "7253983197526417/5000000000000000",
+      "7254083197526417/5000000000000000"
+     ]
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  ea-best-third-autocorrelation-inequality  []  from the object: CERTIFIED value 315957707030701161231684717233… · CERTIFIED value 425352956949761163472382904805…  1863.585 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.00001  note: no record attached",
+   "certMachineSeconds": 1863.6
   },
   {
    "id": "ea-best-min-distance-ratio-2d",
@@ -332,7 +408,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-kissing-number-d11",
@@ -366,8 +442,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  25.213 s  note: no record attached",
-   "certMachineSeconds": 25.3
+   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  26.052 s  note: no record attached",
+   "certMachineSeconds": 26.2
   },
   {
    "id": "ea-best-prime-number-theorem",

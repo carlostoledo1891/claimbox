@@ -21,15 +21,16 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-21 early, the second handoff: "proceed the next steps")
+## TASKS BACKLOG (updated 2026-10-21, the third handoff: the receiver's two changes lifted and used)
 
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
      calibration, its register's 132 claim sentences are the coverage corpus, its checker is the gate (a subprocess; no code
      shared; cert-machine read-only). THE SECOND SESSION (2026-10-20/21, "proceed the next steps") worked the backlog below in order
-     (★ THE NEXT STEPS, TAKEN). `make test`: 119 checks, 29 red controls all firing, 47/47 planted defects caught (the heavy
-     decisions — K(11) ≥ 594 at 25 s, C_1b from the bytes at 382 s, the 148-point grid at 10 s — are recorded, not re-run;
-     CLAIMBOX_FULL=1 re-runs them). Coverage 97/132. Public at github.com/carlostoledo1891/claimbox (MIT) since 2026-10-20 night,
+     (★ THE NEXT STEPS, TAKEN). THE THIRD SESSION (2026-10-21) lifted the receiver's two changes and used them (★ THE RECEIVER'S TWO
+     CHANGES, USED). `make test`: 129 checks, 33 red controls all firing, 56/56 planted defects caught (the heavy
+     decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
+     are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them). Coverage 97/132. Public at github.com/carlostoledo1891/claimbox (MIT) since 2026-10-20 night,
      on the operator's word.
   ★ WHAT WORKS: `python3 -m claimbox shape "<claim>"` (the shape, or REFUSED with the rule); `translate --claim … --source P --data P
      [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals] [--reading epistemic] [--check]`
@@ -105,6 +106,47 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      the problem page (einsteinarena.com/problems/thomson-problem) prints "minimize" and no formula; the 17 scores stay refused for
      want of a decider, honestly. PUBLISHED: github.com/carlostoledo1891/claimbox, public, MIT, on the operator's "you can push when
      needed". `make test`: 103 checks, 26 reds, 41/41 plants, green.
+  ★ THE RECEIVER'S TWO CHANGES, USED (2026-10-21, the third session, on the cert-machine chat's reply "Both receiver changes are in …
+     run make lift"): cert-machine 5ac157ce — an `in` box with the platform's declared resolution, predicate[i].box = {kind: resolution,
+     key: minImprovement, halfWidth, source: {path, sha256, quote}}, c = printed ± halfWidth, both checkers — and 40833648 — record.predicate,
+     the record names the predicate it decided; absent, every predicate is held to the record's one value as before. `make lift`: the
+     three drifted pins (check.py, check.js, SCHEMA.md) refreshed; the ten hand-written objects unchanged, calibration 10/10 as before.
+     0. THE FLOAT-PRINTED SCORES, WRITTEN ONCE (translate.py PLATFORM, `resolution: True`): circle packing (26 circles: Σ r_i; r ≥ 0;
+        containment r ≤ x ≤ 1 − r, r ≤ y ≤ 1 − r; non-overlap (r_i + r_j)² ≤ |c_i − c_j|² over every pair), circles in a rectangle (21:
+        Σ r_i; r > 0; w + h ≤ 2 with w, h as MaxOver − MinOver; non-overlap), the third autocorrelation (16,384 values: 2n · |max_k Σ_{i+j=k}
+        f_i f_j| / (Σ f)² — the absolute value of the maximum, as the platform takes it, not the registry's C_1d — and the platform's
+        guard (Σ f · dx)² ≥ 1e-9). THE BOX: the translator finds problems.json beside the record, quotes the problem's entry through its
+        minImprovement byte for byte and writes the receiver's box block (c = the printed decimal ± the resolution); a record with no
+        problems.json beside it, or a platform declaring minImprovement 0 for a float-printed score, is REFUSED "resolution" (two reds);
+        the count a problem fixes (26, 21) is held ("count", a red). The reader names cert-machine's decider only where the translator has
+        no expression for the title. THE RUN (records/einstein-arena-run.json): 15 WRITTEN AND ADMITTED, 14 refused, 1 skipped. Circle
+        packing: Σ r_i CERTIFIED (the exact sum 7.9e-16 below the print — inside the resolution box, outside the half-unit box), r ≥ 0 and
+        containment CERTIFIED, NON-OVERLAP REFUTED: pairs (1, 13), (9, 21), (19, 22) overlap by ~1e-18 in squared distance, float64
+        tangencies the platform's verifier admits and the exact inequality does not — the receiver's own green object found the same;
+        recorded as found, the box not widened. Circles in a rectangle: CERTIFIED ×4 (Σ r_i 8.8e-16 above the print, inside the box;
+        w + h − 2 = −24871/2⁵⁵), decided from the bytes where before it went through the named decider. The third autocorrelation:
+        CERTIFIED ×2 — the exact ratio inside the resolution box (minImprovement 1e-5; the float check puts the print 1.8e-14 off the exact value) and the platform's guard satisfied (1864 s in the receiver's Python evaluator — the one heavy platform decision, recorded, not re-run by the battery).
+        NOT WRITTEN, and why: the first autocorrelation (65,536 values; the receiver's evaluator is quadratic, hours; its decider stays
+        named), the second (no best solution pinned), the 13 square-root and algorithmic scores (the receiver's deciders). THE GREEN in
+        the battery: a synthetic packing of 26 circles of radius 0.05, exact Σ r = 1.3000000000000000721…, printed 1.30000000001: CERTIFIED
+        inside the resolution 1e-10 where the half-unit box of its digits (5e-12) would have refuted it; printed 1.3000000003: REFUTED —
+        the box is the platform's, never wider.
+     1. THE INEQUALITIES BESIDE THE RECORD; C_1c WRITTEN ONCE. With a record attached, the admissibility inequalities are predicates again
+        and the record names predicate 0 (the translator sets record.predicate only when it writes structural predicates beside the record;
+        the ten hand-written objects keep no index — optq-86-pinho's predicate 0 is a holds). C_1b on the 3,584 heights: ADMITTED,
+        CERTIFIED ×3, the value the record's digit for digit, 262 s. C_1c (PRIMITIVE): K · min_{0≤k≤K} Σ_i w_i w_{i+k} / (Σ w_i)², K read
+        from the certificate's own K field and written into the expression as a literal (bytes without K are REFUSED "data", a red); the
+        green: (1, 1, 1, 1) with K = 2 has exactly 2 · min(4, 3, 2) / 16 = 1/4 (C_1c ≥ 0.25 CERTIFIED, ≥ 0.3 REFUTED). THE REAL ONES
+        (records/primitive-run.json, 3 written): the registry's row C_1c ≥ 0.4103287 on rozetyp's 6,148 weights, K = 6144, the replay's
+        record attached and naming predicate 0 — ADMITTED, CERTIFIED ×2, the value 21072342208353792/51354782902387969 equal to the
+        record's digit for digit, 79 s; and the claimant's earlier certificate (3,584 weights, K = 3072) under the eleven-digit bound its
+        README prints, C ≥ 0.41030211724, no record — REFUTED FROM THE BYTES: the exact value is 0.410302117239969943…, 3e-14 BELOW the
+        print, whose last digit was rounded up; a lower bound rounded up is not a lower bound. (The registry replay decided that certificate
+        at seven digits, 0.4103021, CERTIFIED; the hand-written k3072 object is REFUSED record-bar-mismatch for the same print.) 27 s.
+     RECALL: 56 plants, all caught. New: a circle moved outside the square (containment flips to REFUTED), two circles made coincident
+        (non-overlap flips), the platform's score moved by three resolutions with the sentence following (the score predicate flips),
+        the third autocorrelation's score moved by one unit and its bytes swapped, the C_1c jobs' bars moved and bytes swapped (refused
+        "source", "count": the page prints no such bar; 11 points in the plane are not cells). `make test`: 129 checks, 33 reds all firing, green.
   ★ THE NEXT STEPS, TAKEN (2026-10-20/21, "proceed the next steps" — the first handoff's items 0–5, in order; everything here is
      measured by the battery and recorded):
      0. THE PLATFORM'S SCORES. The platform's definitions are public: vinid/einstein-arena, web/src/lib/problems/<slug>.ts, each with
@@ -171,21 +213,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         3.9419123, no overlaps, all inside: score = the outer side" → score, the outer side, the box of 3.9419123); coverage 95 → 97
         of 132 (prose 13 → 11), the diff read: exactly the two rows. The remaining 35 refusals stand: 22 print no number, 11 are
         prose (aggregates, the polynomial maps' "three zeros", the Station's D12 lift), 2 asymptotic.
-  ◆ NOT DONE, AND WHY: the 15 platform scores above — each needs the receiver (a decider for the square roots and the algorithms; the
-     resolution box for the float-printed finite ones); the tensor identity (the three-array block); C_1c's functional (K · min_k Σ
-     w_i w_{i+k} / (Σ w)², a lower bound; the rozetyp certificate holds 3,584 integer weights — minutes in the receiver's evaluator;
-     not asked by the first handoff, so not written).
-  ◆ WHAT THE RECEIVER NEEDS (each a cert-machine chat, then `make lift` here): (a) an `in` relation whose box is the platform's declared
-     resolution, with its source; (b) a record that names the predicate it decided, so admissibility inequalities can stand beside
-     it; (c) decoders for bytes that are not JSON — gzip int8/int64 rows (Qiushi), .npy/.npz (the Station), text rows (FunSearch) —
+  ◆ NOT DONE, AND WHY: 13 platform scores — each needs a receiver decider (square roots and transcendentals: Thomson, Tammes, Heilbronn,
+     Spencer, Hadamard, the flat polynomials, the uncertainty principle; algorithms: difference bases, Kakeya, ring loading, Sidon, the
+     sorting network, the snake, the two-deletion code) — and the first autocorrelation's 65,536 values (the receiver's exact evaluator is
+     quadratic; its decider stays named); the tensor identity (the three-array block).
+  ◆ WHAT THE RECEIVER NEEDS (each a cert-machine chat, then `make lift` here): (a) DONE, cert-machine 5ac157ce — the `in` box with the
+     platform's declared resolution; (b) DONE, 40833648 — record.predicate; both used here (★ above). Open: (c) decoders for bytes that are not JSON — gzip int8/int64 rows (Qiushi), .npy/.npz (the Station), text rows (FunSearch) —
      and the kissing decider as a named route for configurations beyond the pairwise evaluator; (d) deciders for the square-root and
      algorithmic platform scores (the mc100 run's own `undecided` list); (e) the three-array data block for tensor identities;
      (f) pins of the Station's paper and FunSearch's paper (the sentences), and the Qiushi complete configurations in the repository.
   ◆ NEXT, none started:
-     0. after (a): circle packing, circles in a rectangle and the autocorrelation ratios written once (their constraints are already
-        exact: squared distances, containment, w + h ≤ 2 as MaxOver/MinOver);
-     1. after (b): the admissibility inequalities written as predicates beside the record too; C_1c written once with a green;
-     2. after (c): the Qiushi table rows decided by the receiver's kissing decider; the Station's and FunSearch's bytes read;
+     0. after (c): the Qiushi table rows decided by the receiver's kissing decider; the Station's and FunSearch's bytes read;
+     1. after (d): the 13 platform scores above through the receiver's deciders as named functions, as the mc100 rows are today;
+     2. the first autocorrelation from the bytes needs a faster exact route on the receiver (its evaluator interprets the expression;
+        65,536 values are 4·10⁹ exact products) — a receiver item, not a translator one;
      3. the grammar's gaps on this register are listed in records/coverage.json; extend only for a claim shape that exists, with a
         red control for its refusal (none of the 35 is a shape today).
 

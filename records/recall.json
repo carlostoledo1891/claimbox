@@ -1,7 +1,7 @@
 {
  "what": "Planted-defect recall of the pipeline claimbox -> cert-machine: a defect planted in the input must come out as a refusal with its rule, or as a changed decision. Each row: the plant, the job, what was planted, the unplanted outcome, the planted outcome, caught or missed.",
- "plants": 47,
- "caught": 47,
+ "plants": 56,
+ "caught": 56,
  "missed": [],
  "rows": [
   {
@@ -621,12 +621,82 @@
    "caught": true
   },
   {
+   "plant": "row-edit",
+   "job": "ea-best-circle-packing",
+   "planted": "circle 0 -> x = -0.5, outside the square",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·REFUTED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·REFUTED·CERTIFIED·CERTIFIED·CERTIFIED·REFUTED"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "score-edit",
+   "job": "ea-best-circle-packing",
+   "planted": "the printed score 2.6359830849176076 -> 2.6359830852176076 (+3e-10, three resolutions), the sentence following",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·REFUTED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "ADMITTED  from the object: REFUTED·CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED·REFUTED"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "row-edit",
+   "job": "ea-best-circles-rectangle",
+   "planted": "circle 1 -> centred on circle 0 (overlapping)",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED·CERTIFIED·REFUTED"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "bar+1",
+   "job": "ea-best-third-autocorrelation-inequality",
+   "planted": "score 1.4508066395052834 -> 1.4508066395052835",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "wrong-bytes",
+   "job": "ea-best-third-autocorrelation-inequality",
+   "planted": "bytes -> best-15.json (11 points in the plane)",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "count"
+   ],
+   "caught": true
+  },
+  {
    "plant": "bar+1",
    "job": "prim-1b-codexprolong",
    "planted": "bar 0.3808585749 -> 0.3808585750",
    "unplanted": [
     "checked",
-    "ADMITTED CERTIFIED from the object: CERTIFIED"
+    "ADMITTED CERTIFIED · CERTIFIED · CERTIFIED from the object: CERTIFIED·CERTIFIED·CERTIFIED"
    ],
    "planted_outcome": [
     "refused",
@@ -640,7 +710,63 @@
    "planted": "bytes -> best-15.json (11 points in the plane)",
    "unplanted": [
     "checked",
-    "ADMITTED CERTIFIED from the object: CERTIFIED"
+    "ADMITTED CERTIFIED · CERTIFIED · CERTIFIED from the object: CERTIFIED·CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "count"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "bar+1",
+   "job": "prim-1c-rozetyp",
+   "planted": "bar 0.4103287 -> 0.4103288",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED · CERTIFIED from the object: CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "wrong-bytes",
+   "job": "prim-1c-rozetyp",
+   "planted": "bytes -> best-15.json (11 points in the plane)",
+   "unplanted": [
+    "checked",
+    "ADMITTED CERTIFIED · CERTIFIED from the object: CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "count"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "bar+1",
+   "job": "prim-1c-rozetyp-k3072",
+   "planted": "bar 0.41030211724 -> 0.41030211725",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: REFUTED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "refused",
+    "source"
+   ],
+   "caught": true
+  },
+  {
+   "plant": "wrong-bytes",
+   "job": "prim-1c-rozetyp-k3072",
+   "planted": "bytes -> best-15.json (11 points in the plane)",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: REFUTED·CERTIFIED"
    ],
    "planted_outcome": [
     "refused",

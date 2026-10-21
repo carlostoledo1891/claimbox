@@ -83,7 +83,7 @@
    "claim": "the object is a feasible solution of \"Circles in a Rectangle (n = 21)\" and the platform's score of it is 2.3658323759098576 (maximize)",
    "source": "corpus/einstein-arena/best-18.json",
    "data": "corpus/einstein-arena/best-18.json",
-   "decider": "tools/run-mc100-einstein.js",
+   "decider": null,
    "what": "EinsteinArena's API record of the best solution of \"Circles in a Rectangle (n = 21)\", pinned by cert-machine (corpus/einstein-arena/best-18.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `circles = np.array(data[\"circles\"], dtype=np.float64)`)",
    "problem": "circles-rectangle",
    "score": "2.3658323759098576",

@@ -115,7 +115,8 @@
     ]
    ],
    "rel": "ge",
-   "c": "0"
+   "c": "0",
+   "note": "every pair of words is non-adjacent in the fifth strong power of C_7: some coordinate differs by 2, 3, 4 or 5 (mod 7)"
   },
   {
    "g": [
@@ -145,7 +146,8 @@
     ]
    ],
    "rel": "ge",
-   "c": "0"
+   "c": "0",
+   "note": "every coordinate is at least 0"
   },
   {
    "g": [
@@ -179,7 +181,8 @@
     ]
    ],
    "rel": "ge",
-   "c": "0"
+   "c": "0",
+   "note": "every coordinate is at most 6"
   }
  ],
  "reference": "the printed 367 is the box its digits allow, and the quantity is the integer count n, so the box holds it exactly or not at all; feasibility is decided from the bytes by the platform's own conditions, written as exact inequalities; the words are read as each JSON integer exactly",

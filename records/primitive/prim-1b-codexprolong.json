@@ -200,13 +200,83 @@
    "rel": "le",
    "printed": "0.3808585749",
    "c": "3808585749/10000000000"
+  },
+  {
+   "g": [
+    "MinOver",
+    "i",
+    "0",
+    [
+     "Subtract",
+     "n",
+     "1"
+    ],
+    [
+     "Index",
+     "f",
+     "i"
+    ]
+   ],
+   "rel": "ge",
+   "c": "0",
+   "note": "h >= 0 on every cell"
+  },
+  {
+   "g": [
+    "Subtract",
+    [
+     "Multiply",
+     [
+      "Divide",
+      [
+       "Divide",
+       "n",
+       "2"
+      ],
+      [
+       "Sum",
+       "i",
+       "0",
+       [
+        "Subtract",
+        "n",
+        "1"
+       ],
+       [
+        "Index",
+        "f",
+        "i"
+       ]
+      ]
+     ],
+     [
+      "MaxOver",
+      "i",
+      "0",
+      [
+       "Subtract",
+       "n",
+       "1"
+      ],
+      [
+       "Index",
+       "f",
+       "i"
+      ]
+     ]
+    ],
+    "1"
+   ],
+   "rel": "le",
+   "c": "0",
+   "note": "the rescaled h <= 1 on every cell"
   }
  ],
  "reference": "the bar is the printed decimal taken exactly (3808585749/10000000000); the value is the minimum-overlap value sup_x ∫ h(t) (1 - h)(x + t) dt of the rescaled step function, computed from the pinned bytes by the expression itself, read as each JSON number as the double it denotes, exactly",
  "hypotheses": [
   "h is the step function with n equal cells of width 2/n on [0, 2], 0 <= h <= 1, rescaled by s = (n/2) / Σ h so that ∫ h = 1 (the registry's normalisation; the identity when Σ h is n/2 already); g = 1 - h on [0, 2] and 0 outside; ∫ h(t) g(x + t) dt is piecewise linear in x with knots at multiples of 2/n (two step functions on one grid), so its sup is attained at a knot: (2/n) · max_m Σ_i (s h_i)(1 - s h_{i+m}) over -(n-1) <= m <= n-1 and the i with both indices in range — written here as max_k [Σh · P_k - (n/2) · R_k] / (Σ h)^2 with P_k = Σ_i h_i and R_k = Σ_i h_i h_{i+m} over those i, k = m + n - 1",
   "C_1b is the largest constant with sup_x ∫ f(t) g(x + t) dt >= C_1b for every admissible pair (f, g: [-1, 1] -> [0, 1], f + g = 1, ∫ f = 1), so any one admissible h gives C_1b <= its value (the registry's definition, read)",
-  "the cells are admissible (h >= 0 on every cell; the rescaled h <= 1 on every cell): checked by the record's decider, not written as predicates here because the receiver compares every predicate with the record's one value"
+  "the cells are admissible (h >= 0 on every cell; the rescaled h <= 1 on every cell): the structural predicates beside the record, decided from the bytes; the record names predicate 0 as the one it decided"
  ],
  "falsifier": [
   "the expression evaluated exactly on the pinned values violates C_1b <= 0.3808585749",
@@ -218,6 +288,7 @@
   "path": "certs/stepfun-replay.json",
   "row": "1b-codexprolong",
   "value": "js.value",
-  "verdict": "CERTIFIED"
+  "verdict": "CERTIFIED",
+  "predicate": 0
  }
 }

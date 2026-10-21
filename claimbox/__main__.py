@@ -121,7 +121,7 @@ def main(argv=None):
                 import time
                 t0 = time.time()
                 cm = T.check_with_cert_machine(obj, ROOT)
-                row['certMachine'] = cm[:200]
+                row['certMachine'] = cm[:400]   # the whole decision line, every predicate's word included
                 row['certMachineSeconds'] = round(time.time() - t0, 1)
                 line = '  cert-machine: ' + cm[:120]
             rows.append(row)

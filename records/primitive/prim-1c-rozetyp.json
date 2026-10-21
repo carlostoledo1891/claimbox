@@ -1,0 +1,135 @@
+{
+ "id": "prim-1c-rozetyp",
+ "text": "$C\\_{1c} \\geq 0.4103287*$",
+ "source": {
+  "what": "the optimization-constants registry (teorth/optimizationproblems) at 46dbf036, the README pinned by cert-machine 2026-10-18 (the row $C\\_{1c} \\geq 0.4103287*$, rozetyp [R2026]); the bytes are the claimant's certificate.json, 6,148 non-negative integer weights with K = 6144",
+  "path": "corpus/optconst-queue/next-2026-10-18/upstream/README.md",
+  "sha256": "2364c27121c08724869e42d785b113cba915c747d2592b052c9c1e785e9d3eea",
+  "quote": "- [1c](https://teorth.github.io/optimizationproblems/constants/1c.html) **new constant; improved lower bound (unverified):** $C\\_{1c} \\geq 0.4103287*$ by [rozetyp](https://github.com/rozetyp/barnard-steinerberger-lower-bound), 2 Oct 2026 (previously $0.37$ by Barnard–Steinerberger)."
+ },
+ "reading": "universal",
+ "domain": {
+  "kind": "finite",
+  "pin": {
+   "path": "corpus/optconst-queue/next-2026-10-18/rozetyp/certificate.json",
+   "sha256": "62ac49ddbbfc9aa1053406363d9df9c912022ab85b72a447cf73c94bb9c1fd0e"
+  },
+  "decoder": "the array at weights_int: 6148 values, each JSON integer exactly; K = 6144, the certificate's own field, written into the expression as a literal",
+  "count": 6148,
+  "variable": "f",
+  "data": {
+   "select": "weights_int",
+   "elements": "integers",
+   "shape": [
+    "n"
+   ]
+  }
+ },
+ "predicate": [
+  {
+   "g": [
+    "Divide",
+    [
+     "Multiply",
+     "6144",
+     [
+      "MinOver",
+      "k",
+      "0",
+      "6144",
+      [
+       "Sum",
+       "i",
+       "0",
+       [
+        "Subtract",
+        [
+         "Subtract",
+         "n",
+         "1"
+        ],
+        "k"
+       ],
+       [
+        "Multiply",
+        [
+         "Index",
+         "f",
+         "i"
+        ],
+        [
+         "Index",
+         "f",
+         [
+          "Add",
+          "i",
+          "k"
+         ]
+        ]
+       ]
+      ]
+     ]
+    ],
+    [
+     "Square",
+     [
+      "Sum",
+      "i",
+      "0",
+      [
+       "Subtract",
+       "n",
+       "1"
+      ],
+      [
+       "Index",
+       "f",
+       "i"
+      ]
+     ]
+    ]
+   ],
+   "rel": "ge",
+   "printed": "0.4103287",
+   "c": "4103287/10000000"
+  },
+  {
+   "g": [
+    "MinOver",
+    "i",
+    "0",
+    [
+     "Subtract",
+     "n",
+     "1"
+    ],
+    [
+     "Index",
+     "f",
+     "i"
+    ]
+   ],
+   "rel": "ge",
+   "c": "0",
+   "note": "w >= 0 on every cell"
+  }
+ ],
+ "reference": "the bar is the printed decimal taken exactly (4103287/10000000); the value is the Barnard–Steinerberger lower-bound functional K · min_{0<=k<=K} Σ_i w_i w_{i+k} / (Σ w_i)^2 of the step function, computed from the pinned bytes by the expression itself, read as each JSON integer exactly; the source marks the bound with an asterisk (unverified there)",
+ "hypotheses": [
+  "f = Σ w_i 1_[i/K, (i+1)/K) is the non-negative step function with n cells of width 1/K, K read from the certificate's own K field and written into the expression as a literal; its autocorrelation ∫ f(x) f(x+t) dx is linear between consecutive multiples of 1/K, so its minimum over 0 <= t <= 1 is attained at some t = k/K, 0 <= k <= K, where it equals (1/K) Σ_i w_i w_{i+k} (the sum over the i with i + k < n, empty — zero — when k >= n); ∫ f = Σ w_i / K; the functional is K · min_k Σ_i w_i w_{i+k} / (Σ w_i)^2 (the claimant's and the registry's reduction, read)",
+  "C_1c is the smallest constant with min_{0<=t<=1} ∫ f(x) f(x+t) dx <= C_1c (∫ f)^2 for every non-negative f, so any one non-negative step function gives C_1c >= its functional (the registry's definition, read)",
+  "the cells are admissible (w >= 0 on every cell): the structural predicates beside the record, decided from the bytes; the record names predicate 0 as the one it decided"
+ ],
+ "falsifier": [
+  "the expression evaluated exactly on the pinned values violates C_1c >= 0.4103287",
+  "the pinned values violate: w >= 0 on every cell",
+  "the pinned file does not hash to 62ac49dd…"
+ ],
+ "record": {
+  "path": "certs/autocorr-replay.json",
+  "row": "1c-rozetyp",
+  "value": "js.value",
+  "verdict": "CERTIFIED",
+  "predicate": 0
+ }
+}

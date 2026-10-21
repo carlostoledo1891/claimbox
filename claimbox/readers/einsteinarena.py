@@ -5,9 +5,10 @@ data.vectors, data.words, …).
 
 What the reader emits, per record, is what the platform DECLARES and nothing more:
   the score claim     'the object is a feasible solution of "<title>" and the platform's score of it is <score> (<scoring>)'
-                      — the sentence cert-machine's register uses for these rows; a named decider is needed (cert-machine's
-                      tools/run-mc100-einstein.js decides the problems it knows), except where the translator writes the
-                      platform's own verifier as exact predicates (two problems whose score is an integer count)
+                      — the sentence cert-machine's register uses for these rows; where the translator writes the platform's
+                      own verifier as exact predicates (translate.PLATFORM: two integer counts, three float-printed finite
+                      scores boxed by the platform's declared resolution) the score is decided from the bytes; otherwise
+                      cert-machine's decider is named where it has one (tools/run-mc100-einstein.js), else the job is refused
   the kissing claim   'K(d) >= n', only when the platform's score is exactly 0 on a kissing problem — a zero penalty is the
                       platform's own statement that the object is a kissing configuration; decided from the bytes alone
   the reading         which reading of the bytes the PLATFORM makes, per problem, read off the platform's own verifier
@@ -21,6 +22,8 @@ Standard library only. MIT"""
 import json
 import os
 import re
+
+from .. import grammar, translate
 
 KISSING_TITLE = re.compile(r'^Kissing Number in Dimension (\d+) \(n=(\d+)\)$')
 DECIDER = 'tools/run-mc100-einstein.js'   # cert-machine's decider for the platform's scores, where it has one
@@ -103,8 +106,9 @@ def jobs(root, corpus='corpus/einstein-arena'):
         scoring = p.get('scoring') or p.get('direction') or 'score'
         elements = (READING.get(p['slug']) or (None, None))[0]
         what = 'EinsteinArena\'s API record of the best solution of "' + p['title'] + '", pinned by cert-machine (' + rel + ')' + reading_note(p['slug'])
+        written_here = grammar.normalise(p['title']) in translate.PLATFORM_BY_TITLE   # the translator writes the platform's verifier: no decider named
         job = {'id': 'ea-best-' + p['slug'], 'claim': 'the object is a feasible solution of "' + p['title'] + '" and the platform\'s score of it is ' + score + ' (' + scoring + ')',
-               'source': rel, 'data': rel, 'decider': DECIDER if p['slug'] in DECIDED_SLUGS else None, 'what': what, 'problem': p['slug'], 'score': score}
+               'source': rel, 'data': rel, 'decider': DECIDER if p['slug'] in DECIDED_SLUGS and not written_here else None, 'what': what, 'problem': p['slug'], 'score': score}
         if elements:
             job['elements'] = elements
         out.append(job)

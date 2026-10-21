@@ -50,7 +50,9 @@ pinned corpora open cert-machine. Each repository's HANDOFF.md is its state; rea
 ```
 claimbox/grammar.py        the shapes and the refusals (prose and LaTeX normalised first)
 claimbox/translate.py      shape + page + bytes (+ decider, record) → the object; the quote found, the array decoded; the functionals
-                           written once (PRIMITIVE: C_1a, C_1b, C_1d) and the platform scores written once (PLATFORM: two of EinsteinArena's)
+                           written once (PRIMITIVE: C_1a, C_1b, C_1c, C_1d; beside a record, the record names predicate 0) and the platform
+                           scores written once (PLATFORM: five of EinsteinArena's — two integer counts in the half-unit box, three
+                           float-printed scores in the box of the platform's declared resolution, quoted from problems.json)
 claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (with the reading each
                            verifier makes of the bytes), alphaevolve.py, qiushi.py, station.py, funsearch.py
 claimbox/__main__.py       the command line

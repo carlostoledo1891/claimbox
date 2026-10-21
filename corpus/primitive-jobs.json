@@ -1,10 +1,39 @@
 {
- "what": "Decisions from the bytes alone: claims whose functional this program writes once as a primitive expression (claimbox/translate.py PRIMITIVE), handed to cert-machine's checker with the record that decided them, so that the checker compares the expression's exact value with the record's digit for digit (record-value-mismatch otherwise). The registry's C_1b row for the EinsteinArena best (3,584 heights, the platform's record) is the one of the four C_1a/C_1b rows small enough for the receiver's quadratic evaluator; the three 65,536- and 114,688-cell rows stay with the receiver's decider (stepfun-exact.js, the calibration). Paths are relative to cert-machine's root.",
+ "what": "Decisions from the bytes alone: claims whose functional this program writes once as a primitive expression (claimbox/translate.py PRIMITIVE), handed to cert-machine's checker — with the record that decided them where the registry has one, so that the checker compares the expression's exact value with the record's digit for digit (record-value-mismatch otherwise), the record naming predicate 0 and the admissibility inequalities decided beside it. The registry's C_1b row for the EinsteinArena best (3,584 heights, the platform's record) is the one of the four C_1a/C_1b rows small enough for the receiver's quadratic evaluator; the three 65,536- and 114,688-cell rows stay with the receiver's decider (stepfun-exact.js, the calibration). C_1c: the registry's row (rozetyp's certificate, 6,148 integer weights, K = 6144, the record attached) and the claimant's earlier certificate (3,584 weights, K = 3072) under the eleven-digit bound its README prints — no record, because the registry replay decided that certificate at seven digits (0.4103021), not at the README's print; the expression decides the print as it stands. Paths are relative to cert-machine's root.",
  "jobs": [
-  {"id": "prim-1b-codexprolong", "claim": "C_1b <= 0.3808585749",
+  {
+   "id": "prim-1b-codexprolong",
+   "claim": "C_1b <= 0.3808585749",
    "source": "corpus/optconst-queue/registry-2026-10-18b/upstream/constants/1b.md",
    "data": "corpus/einstein-arena/best-1.json",
-   "record": {"path": "certs/stepfun-replay.json", "row": "1b-codexprolong", "value": "js.value", "verdict": "CERTIFIED"},
-   "what": "the optimization-constants registry's constants page 1b.md (the row $0.3808585749$* [EA2026]), pinned by cert-machine 2026-10-18; the bytes are EinsteinArena's record of solution 2507 (CodexProLong), 3,584 heights read as doubles, rescaled in the expression to mass 1 as the registry's replay did"}
+   "record": {
+    "path": "certs/stepfun-replay.json",
+    "row": "1b-codexprolong",
+    "value": "js.value",
+    "verdict": "CERTIFIED"
+   },
+   "what": "the optimization-constants registry's constants page 1b.md (the row $0.3808585749$* [EA2026]), pinned by cert-machine 2026-10-18; the bytes are EinsteinArena's record of solution 2507 (CodexProLong), 3,584 heights read as doubles, rescaled in the expression to mass 1 as the registry's replay did"
+  },
+  {
+   "id": "prim-1c-rozetyp",
+   "claim": "$C\\_{1c} \\geq 0.4103287*$",
+   "source": "corpus/optconst-queue/next-2026-10-18/upstream/README.md",
+   "data": "corpus/optconst-queue/next-2026-10-18/rozetyp/certificate.json",
+   "record": {
+    "path": "certs/autocorr-replay.json",
+    "row": "1c-rozetyp",
+    "value": "js.value",
+    "verdict": "CERTIFIED"
+   },
+   "what": "the optimization-constants registry (teorth/optimizationproblems) at 46dbf036, the README pinned by cert-machine 2026-10-18 (the row $C\\_{1c} \\geq 0.4103287*$, rozetyp [R2026]); the bytes are the claimant's certificate.json, 6,148 non-negative integer weights with K = 6144"
+  },
+  {
+   "id": "prim-1c-rozetyp-k3072",
+   "claim": "C ≥ 0.41030211724",
+   "name": "C_1c",
+   "source": "corpus/optconst-queue/next-2026-10-18/rozetyp/README.md",
+   "data": "corpus/optconst-queue/next-2026-10-18/rozetyp/previous/certificate_K3072.json",
+   "what": "the claimant's README (rozetyp/barnard-steinerberger-lower-bound, pinned by cert-machine 2026-10-18), the line \"An earlier certificate (K = 3072, C ≥ 0.41030211724) is kept in previous/certificate_K3072.json\"; the bytes are that certificate, 3,584 non-negative integer weights with K = 3072; no record: the registry replay decided this certificate at the seven-digit bar 0.4103021 (its row 1c-rozetyp-k3072), not at the README's eleven-digit print, which the expression decides here as it stands"
+  }
  ]
 }
