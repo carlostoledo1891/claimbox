@@ -64,7 +64,16 @@ gave an ellipsis print the rounding box, cert-machine refuted the true 0.7532960
 right about the arithmetic — an ellipsis is a truncation, [p, p + unit), and the grammar now says so. From the enclosures
 themselves: every band row contains the exact CUE value j·K/256 (124 at the upper end, 131 at the lower), so the 256-periodic
 law sits on the CUE values, not merely within 3·10⁻⁴⁰ of them — CERTIFIED over the 255 rows; and the paper's arithmetic on its
-ceiling (within 0.016 of 2/3; below 0.6819 at window norm 8.2; the coefficient 2.55·10⁻⁶) CERTIFIED from the file's own p₀.
+ceiling (within 0.016 of 2/3; below 0.6819 at window norm 8.2; the coefficient 2.55·10⁻⁶) CERTIFIED from the file's own p₀. The ξ′
+constants of the paper's Remark 7.1 (at least 0.85838 of the zeros of ξ′ simple and on the line, 0.92919 distinct; 0.86864 and
+0.93432 with the quartic window), which Lean proves from a certificate of rationals, were re-derived from their definitions with
+exact fractions — the diagonal density's coefficients 2·4^{k+1}·k!/(2k+2)!, nine terms and the tail, the window integrals, the
+quartic window's degree-9 autocorrelation by independent polynomial arithmetic — and every closed form the Lean prints came out
+equal: five identities, the four eight-digit constants and the paper's four prints CERTIFIED, a control one unit above REFUTED
+(records/riemann-math-run.json, 22 claims). The 11/12 manuscript the mathematicians are reading, extracted with pdftotext, prints
+no decimal constant at all: a proof for human readers with no finite layer. An exploration in floats of the paper's bandwidth-one
+programme at small N (tools/ceiling_lp.py) gives 0.7134, 0.7073, 0.7053 on the half-integer grid for N = 4, 6, 8 — far above the
+256-law's 0.6818, with algebraic weights (2 − √2 at N = 8), so the authors' law lives on finer or structured positions.
 
 ```
 python3 -m claimbox read zeta23 --out jobs.json && python3 -m claimbox batch jobs.json --out out --check     # the Riemann story's certificate

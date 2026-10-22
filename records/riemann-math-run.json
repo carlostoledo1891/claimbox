@@ -1,7 +1,7 @@
 {
  "what": "A run of the claim-machine over the jobs in corpus/riemann-math-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
- "jobs": 8,
- "written": 8,
+ "jobs": 22,
+ "written": 22,
  "refused": 0,
  "skipped": 0,
  "rows": [
@@ -34,8 +34,8 @@
      "c": "37664803/50000000"
     }
    ],
-   "certMachine": "ADMITTED  math-cmt-ge  []  from the object: CERTIFIED value 114440642422208910934/15191987…  0.002 s  note: no record attached",
-   "certMachineSeconds": 0.2
+   "certMachine": "ADMITTED  math-cmt-ge  []  from the object: CERTIFIED value 114440642422208910934/15191987…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "math-mt-distinct-0.8362",
@@ -61,7 +61,7 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  math-mt-distinct-0.8362  []  from the object: REFUTED value 191402054980668331519/22888128… · REFUTED value 5036896183701798199/6023191706…  0.002 s  note: no record attached",
+   "certMachine": "ADMITTED  math-mt-distinct-0.8362  []  from the object: REFUTED value 191402054980668331519/22888128… · REFUTED value 5036896183701798199/6023191706…  0.001 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -152,7 +152,291 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  math-c256  []  from the object: CERTIFIED value -10549999999999999999999999999…  0.003 s  note: no record attached",
+   "certMachine": "ADMITTED  math-c256  []  from the object: CERTIFIED value -10549999999999999999999999999…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-J-flat",
+   "claim": "J_flat = 12517210259/88388425125",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-J-flat.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-J-flat  []  from the object: CERTIFIED value 0  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-kappa-flat",
+   "claim": "kappa9_flat = 100905635384/88388425125",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-kappa-flat.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-kappa-flat  []  from the object: CERTIFIED value 0  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-eps9",
+   "claim": "eps9 = 1024/2990212875",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-eps9.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-eps9  []  from the object: CERTIFIED value 0  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-J-quartic",
+   "claim": "J_quartic = 29965280330934234270211/285991090937677125000000",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-J-quartic.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-J-quartic  []  from the object: CERTIFIED value 0 · CERTIFIED value 0 · CERTIFIED value 0  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-kappa-quartic",
+   "claim": "kappa9_quartic = 277244140547469154168336/245053976636191319722125",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-kappa-quartic.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-kappa-quartic  []  from the object: CERTIFIED value 0 · CERTIFIED value 0 · CERTIFIED value 0  0.003 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-P-flat-8",
+   "claim": "P_flat ≥ 0.85838371",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-P-flat-8.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.85838371",
+     "c": "85838371/100000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-P-flat-8  []  from the object: CERTIFIED value 16008819950038/18649957701375  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-D-flat-8",
+   "claim": "D_flat ≥ 0.92919185",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-D-flat-8.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.92919185",
+     "c": "18583837/20000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-D-flat-8  []  from the object: CERTIFIED value 34658777651413/37299915402750  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-P-quartic-8",
+   "claim": "P_quartic ≥ 0.86864017",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-P-quartic-8.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.86864017",
+     "c": "86864017/100000000"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-P-quartic-8  []  from the object: CERTIFIED value 44914246778076124754447678/517… · CERTIFIED value 0 · CERTIFIED value 0  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-D-quartic-8",
+   "claim": "D_quartic ≥ 0.93432008",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-D-quartic-8.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.93432008",
+     "c": "11679001/12500000"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-D-quartic-8  []  from the object: CERTIFIED value 96620635848312493215816053/103… · CERTIFIED value 0 · CERTIFIED value 0  0.004 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-P-flat-5",
+   "claim": "P_flat ≥ 0.85838",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-P-flat-5.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.85838",
+     "c": "42919/50000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-P-flat-5  []  from the object: CERTIFIED value 16008819950038/18649957701375  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-D-flat-5",
+   "claim": "D_flat ≥ 0.92919",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-D-flat-5.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.92919",
+     "c": "92919/100000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-D-flat-5  []  from the object: CERTIFIED value 34658777651413/37299915402750  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-P-quartic-5",
+   "claim": "P_quartic ≥ 0.86864",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-P-quartic-5.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.86864",
+     "c": "5429/6250"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-P-quartic-5  []  from the object: CERTIFIED value 44914246778076124754447678/517… · CERTIFIED value 0 · CERTIFIED value 0  0.004 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-D-quartic-5",
+   "claim": "D_quartic ≥ 0.93432",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-D-quartic-5.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.93432",
+     "c": "11679/12500"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-D-quartic-5  []  from the object: CERTIFIED value 96620635848312493215816053/103… · CERTIFIED value 0 · CERTIFIED value 0  0.004 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-xi-P-flat-false",
+   "claim": "P_flat ≥ 0.85838372",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-xi-P-flat-false.json",
+   "pin": "628c9fa416ef4a6d4d48a34b2da2f3feea2ca11539144cb7d28e193a3539f017",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.85838372",
+     "c": "21459593/25000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-xi-P-flat-false  []  from the object: REFUTED value 16008819950038/18649957701375  0.002 s  note: no record attached",
    "certMachineSeconds": 0.1
   }
  ]

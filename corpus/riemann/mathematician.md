@@ -80,3 +80,71 @@ and the decimal constant of ceiling_law256_decimal, c_256 := 1/(6·256²) + τ/5
 rounded coefficient 2.55·10⁻⁶:
 
 c_256 ≤ 2.55·10⁻⁶
+
+## 4. The ξ′ constants are rational arithmetic too, and re-derive exactly
+
+The paper's Remark 7.1 states that at least 0.85838 of the zeros of ξ′ are simple and on the critical line and at least
+0.92919 are distinct (flat window), 0.86864 and 0.93432 with the quartic window v(s) = 1 − (7/100)(2s)² − (51/200)(2s)⁴.
+The formalization proves eight-digit versions (Zeta23/XiPrime/Certificate/AtOne.lean: 0.85838371, 0.92919185, 0.86864017,
+0.93432008) from a certificate whose every number is rational: the diagonal density D₁(s) = s − 4s² + Σ_{k≥0} a_k s^{2k+3}
+with a_k = 2·4^{k+1}·k!/(2k+2)! (Lemma 7.1), truncated at nine terms with the tail ε₉ = a_9·231/211 (the coefficient
+ratio is at most 20/231 from k = 9 on), the window integral J(v) = 2∫₀¹ D1trunc9(r)·vConv(r) dr with vConv the window's
+autocorrelation, κ₉(v) = (∫v² + J(v))/(∫v)², and the proportions 2 − κ₉ − ε₉ and 3/2 − (κ₉ + ε₉)/2. I re-derived every
+number from those definitions with exact fractions, including the quartic window's degree-9 autocorrelation polynomial by
+my own polynomial arithmetic, and each equals the Lean's computer-algebra-generated closed form. The certificate is
+zeta23/xi-certificate.json. The identities, as the Lean files print them:
+
+J_flat = 12517210259/88388425125
+kappa9_flat = 100905635384/88388425125
+eps9 = 1024/2990212875
+J_quartic = 29965280330934234270211/285991090937677125000000
+kappa9_quartic = 277244140547469154168336/245053976636191319722125
+
+the Lean's eight-digit constants (the margins are 3.6·10⁻⁹ and 6.8·10⁻⁹):
+
+P_flat ≥ 0.85838371
+D_flat ≥ 0.92919185
+P_quartic ≥ 0.86864017
+D_quartic ≥ 0.93432008
+
+the paper's five-digit prints:
+
+P_flat ≥ 0.85838
+D_flat ≥ 0.92919
+P_quartic ≥ 0.86864
+D_quartic ≥ 0.93432
+
+and a control one unit of the eighth digit above the exact value P_flat = 16008819950038/18649957701375 = 0.8583837135…:
+
+P_flat ≥ 0.85838372
+
+A first pass of mine took "D1trunc 9" as ten terms (k = 0..9) and reproduced none of the printed rationals; nine terms
+(k = 0..8, the tail from k = 9 matching ε₉ = a_9·231/211) reproduce all of them. The machine's refusal to match was the
+correction.
+
+## 5. The paper the mathematicians are reading has no finite numerical layer
+
+The operator placed the 11/12 manuscript (paper2.pdf, 784,503 bytes, sha256 f919b57829b178c8e60e7c17b018cf773e7907cf64
+2ef5a3347d8a826e8dbf18 — byte for byte the release's pinned file) and the release's overview.pdf in Downloads; pdftotext
+26.07.0 extracted 3,073 lines. The paper states 34 numbered theorems, lemmas, propositions and corollaries and prints no
+decimal constant at all: every number of the form d.dd is an equation label or a DOI, and the one occurrence of
+"numerical" is a reference title. Nothing in it is a claim the pipeline can touch; it is a proof for human readers,
+exactly as the video says, and the quasi-Riemann statement itself stands only in the 7/8 manuscript's Lean files.
+
+## 6. An exploration: the bandwidth-one programme at small N
+
+Floats, not a certificate (the script is tools/ceiling_lp.py). A law on N-periodic marked configurations — marks 1 and 2
+on the grid (1/q)·Z_N, marks summing to N — minimising the expected simple-point fraction subject to the CUE band
+constraints E[S(j)] = j/N for 0 < j < N, with S(j) = (1/N)|Σ_i m_i e(j x_i/N)|², configurations up to translation and
+reflection, solved by a dense two-phase simplex. On the integer grid (q = 1) the programme is infeasible at N = 4, 6, 8.
+On the half-integer grid (q = 2) the optimum is 0.713388 at N = 4, 0.707336 at N = 6 and 0.705267 at N = 8, falling with
+N but far above the N = 256 law's 0.6818287. Finer grids lower it further: at N = 4, 0.708333 (q = 3), 0.704798 (q = 4),
+0.701828 (q = 6); at N = 6, 0.700966 (q = 3), 0.697554 (q = 4). So the authors' law lives on fine or structured rational
+positions, as its header says, and the values move towards its 0.6818 in both N and q. The optimal laws have one shape
+throughout: the rigid lattice of N simple points at unit spacing — whose form factor vanishes on the whole band — carries
+the largest weight (0.59 to 0.69), and a few configurations of double points, whose form factors are large at a few
+frequencies, are mixed in to lift the average onto the CUE values j/N exactly. On the half-integer grid the simple points
+sit on one parity class and the doubles on the other, and the leading weight at N = 8 is 0.5858 = 2 − √2 to four digits —
+the weights are algebraic, as the cosines in the constraints make them, which is why no law of this programme can be a
+claimbox object until the receiver decides over Cos or over a cyclotomic field. Past N = 8 the enumeration of
+configurations must give way to column generation.

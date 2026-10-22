@@ -31,7 +31,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
      explainer pages (★ THE EXPLAINER PAGES). THE FIFTH SESSION (2026-10-22) put the claim-machine to the Riemann-hypothesis story on
      the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST), then made its own claims as the mathematician (★ THE MATHEMATICIAN'S
-     CLAIMS). `make test`: 193 checks, 44 red controls all firing, 56/56 planted defects
+     CLAIMS). `make test`: 204 checks, 44 red controls all firing, 56/56 planted defects
      caught on the earlier corpora and 782/782 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them and the full recall). Coverage 97/132 on the register (unchanged by the
@@ -115,11 +115,32 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      within 3·10⁻⁴⁰ of them; hence D(1) = S(256)/256 − 1/512 and 256·S(256) = 54126.59434047636552400011418632126843044…. (5) THE PAPER'S
      CEILING ARITHMETIC from the file's own p₀: |p₀ − 2/3| ≤ 0.016 (0.0151620207…), B(8.2) := p₀ + 2.55·10⁻⁶·8.2 ≤ 0.6819 (0.68184954…),
      c_256 := 1/(6·256²) + τ/512 ≤ 2.55·10⁻⁶ — CERTIFIED. The recall at scale re-run: 782/782 caught (the series digits plant now caught;
-     a closed-form digits plant on the paper's claim undecided, recorded), 511/511 controls. make test 193 checks, 44 reds. NOT DONE,
-     PROMISING: the ξ′ constants 0.85838/0.92919 (flat window) and 0.86864/0.93432 (quartic) — Lean proves them from certificates
-     (Zeta23/XiPrime/Certificate/{Poly,D1,AtOne}.lean, CertificateFn.lean: "certified ε-free decimals"); if that arithmetic is rational,
-     the same exact route decides them from a certificate; the bandwidth-one programme itself (the law) at small N by an exact simplex, a
-     reproduction of the unpublished computation and the road to the ceiling's limit ("approximately 0.682"); the authors' law file.
+     a closed-form digits plant on the paper's claim undecided, recorded), 511/511 controls. (6) THE ξ′ CONSTANTS ARE RATIONAL ARITHMETIC,
+     AND RE-DERIVE EXACTLY (mathematician.md §4, zeta23/xi-certificate.json, 14 more jobs): Lean proves 0.85838371, 0.92919185 (flat window)
+     and 0.86864017, 0.93432008 (quartic) from a certificate whose every number is rational — D₁(s) = s − 4s² + Σ a_k s^{2k+3}, a_k =
+     2·4^{k+1}·k!/(2k+2)!, nine terms (k = 0..8), the tail ε₉ = a_9·231/211, J(v) = 2∫₀¹ D1trunc9·vConv, κ₉ = (∫v² + J)/(∫v)², the
+     proportions 2 − κ₉ − ε₉ and 3/2 − (κ₉ + ε₉)/2. I re-derived every number from those definitions in Fractions, the quartic window's
+     degree-9 autocorrelation polynomial by my own polynomial arithmetic included, and each equals the Lean's computer-algebra-generated
+     closed form: J_flat = 12517210259/88388425125, κ₉(flat) = 100905635384/88388425125, ε₉ = 1024/2990212875, J_quartic =
+     29965280330934234270211/285991090937677125000000, κ₉(quartic) = 277244140547469154168336/245053976636191319722125 — written once in
+     translate.py CERTIFICATE (xi-*; the quartic autocorrelation coefficients b_l are the certificate's rationals array, with b_0 = ∫v² and
+     Σ b_l = 0 as structural checks) and CERTIFIED by the receiver as identities, the four eight-digit constants and the paper's four
+     five-digit prints CERTIFIED (margins 3.6·10⁻⁹ and 6.8·10⁻⁹; P_flat = 16008819950038/18649957701375 exactly), the control one unit above
+     REFUTED. A first pass took "D1trunc 9" as ten terms and matched none of the rationals; nine terms match all — the machine's refusal
+     to match was the correction. (7) THE 11/12 MANUSCRIPT HAS NO FINITE NUMERICAL LAYER: the operator placed paper2.pdf (sha256 f919b578…,
+     byte for byte the release's pin) and overview.pdf in Downloads; pdftotext 26.07.0 (/opt/homebrew/bin): 34 numbered statements, no
+     decimal constant (every d.dd is an equation label or a DOI), "numerical" once in a reference title — a proof for human readers, as the
+     video says; not pinned (binary), recorded in mathematician.md §5. (8) AN EXPLORATION, FLOATS (tools/ceiling_lp.py, mathematician.md
+     §6): the bandwidth-one programme at small N — marks {1, 2} on the grid (1/q)Z_N, the CUE band constraints E[S(j)] = j/N, minimise the
+     simple-point fraction, a dense two-phase simplex over configurations up to symmetry. Integer grid: infeasible. Half-integer grid:
+     0.713388 (N = 4), 0.707336 (6), 0.705267 (8); finer grids lower it — N = 4: 0.708333 (q = 3), 0.704798 (q = 4), 0.701828 (q = 6);
+     N = 6: 0.700966 (q = 3), 0.697554 (q = 4) — moving towards the 256-law's 0.6818287 in both N and q, so the authors' law lives on fine
+     or structured rational positions. One shape throughout: the rigid unit-spaced lattice of simple points (form factor 0 on the band)
+     carries the largest weight (0.59–0.69) and a few double-point configurations lift the average onto j/N exactly; on the half-integer
+     grid simple points sit on one parity class and doubles on the other; the leading weight at N = 8 is 0.5858 = 2 − √2 to four digits,
+     so the weights are algebraic and no such law is a claimbox object until the receiver decides over Cos or a cyclotomic field. make test
+     204 checks, 44 reds. NOT DONE, PROMISING: a column-generation simplex past N = 8 (N = 8 at q = 3 was still enumerating at the
+     handoff), the exact value of the small-N optima in Q(√2), the authors' law file.
   ★ THE QUEUE, CHECKED (2026-10-21, the fourth session, "continue the queued tasks"): every NEXT item waits on the receiver, and
      cert-machine has made none of (c)–(f) — its one commit since 40833648 is its self-audit (2311ac2c), which changed
      tools/run-mc100-einstein.js (an object that is not n vectors in R^d is now REFUSED); the ten objects naming it are still
@@ -379,13 +400,13 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         translator writes such a bar into the expression with the zero as the bar, noted); (c′) a decoder for integer lists printed
         as Lean or text literals, so that an object pins the claimant's own file rather than the reader's JSON copy (today
         LawN256.encl.json names the Lean file's sha256 and the battery re-decodes it).
-     7. THE MATHEMATICIAN'S NEXT CLAIMS (★ THE MATHEMATICIAN'S CLAIMS, "not done, promising"): (i) the ξ′ constants through the Lean
-        certificate files — read Zeta23/XiPrime/Certificate/*.lean and CertificateFn.lean for the arithmetic behind 0.85838, 0.92919,
-        0.86864, 0.93432; if rational (polynomial integrals, a λ-certificate), a CERTIFICATE entry and a certificate file decide them
-        exactly; (ii) the bandwidth-one programme at small N: an exact simplex (Fractions, standard library) over N-periodic marked
-        configurations with marks {1, 2}, the form factor held to S(j) = j/N on the band, minimising the simple-point fraction — the
-        optimum 1 − a_N for N = 4, 6, 8, …, each law a JSON the pipeline certifies (the near-CUE rows, the fraction), and the trend
-        towards the paper's "approximately 0.682"; (iii) with the authors' law file, EnclOK itself (item 5).
+     7. THE MATHEMATICIAN'S NEXT CLAIMS (★ THE MATHEMATICIAN'S CLAIMS): (i) DONE — the ξ′ constants re-derived and decided (item (6)
+        there); (ii) the bandwidth-one programme: a column-generation simplex to pass N = 8, finer grids (q = 3, 4, 6), the exact optima
+        in Q(√2) (the N = 4 value 0.713388… and the weight 2 − √2 suggest closed forms), and whether any grid reaches the 256-law's
+        0.6818; a law with algebraic weights becomes a claimbox object only once the receiver decides over Cos or a cyclotomic field
+        (a receiver item beside (h)); (iii) with the authors' law file, EnclOK itself (item 5); (iv) the remaining printed constants of
+        the paper (the large-sieve 1.263…, the RH-conditional 0.85082…, the window norms behind "below 0.6819") — read their formulas
+        first; most will be integrals of transcendental windows, (h) territory.
 
 ## The rules that bind here
 

@@ -64,7 +64,8 @@ corpus/                    register-sentences.json (lifted), calibration.json (t
                            platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json),
                            riemann/ (the story's 25 pinned sources + the video's captions, PINS.json by tools/riemann.py; ai-phrasings.json,
                            ai-claims.md: AI-written inputs, not sources of truth; mathematician.md: the session's own claims with their
-                           derivations; zeta23/mt-series.json: the series certificate behind the exact Montgomery–Taylor decisions),
+                           derivations; zeta23/mt-series.json and zeta23/xi-certificate.json: the certificates behind the exact Montgomery–Taylor
+                           and ξ′ decisions),
                            riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
                            riemann-math-jobs.json (each claim with its expected outcome)
 records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json; <source>-run.json +
@@ -72,5 +73,6 @@ records/                   calibration.json, coverage.json, recall.json, riemann
 tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json); tests/riemann_recall.py the plants at scale on
                            the certificate, each expectation computed from the integers (records/riemann-recall.json; CLAIMBOX_FULL=1 all)
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the
-                           story's pins (fetch, --check)
+                           story's pins (fetch, --check); tools/ceiling_lp.py an exploration in floats of the paper's bandwidth-one programme
+                           at small N (not a certificate; its numbers are in mathematician.md §6)
 ```

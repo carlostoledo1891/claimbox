@@ -226,6 +226,51 @@ CERTIFICATE = {
              'value': 'the decimal constant c_256 := 1/(6·N²) + τ/(2N) of ceiling_law256_decimal, τ = tn/td as the file declares it',
              'reduction': 'exact rational arithmetic in N and τ as the file prints them', 'definition': 'the paper rounds this coefficient to 2.55·10⁻⁶ and the Lean file to 2.5431316·10⁻⁶ (§3 of the mathematician\'s claims)', 'structural': []},
 }
+# the ξ′ constants (corpus/riemann/mathematician.md §4; the certificate zeta23/xi-certificate.json): the diagonal density's coefficients
+# a_k = 2·4^{k+1}·k!/(2k+2)!, nine terms, the tail ε₉ = a_9·231/211, the window integrals J(v) = 2∫₀¹ D1trunc9·vConv, κ₉ = (∫v² + J)/(∫v)², and
+# the constants 2 − κ₉ − ε₉ and 3/2 − (κ₉ + ε₉)/2 — exact rationals, every head exact; the quartic window's autocorrelation coefficients b_l
+# are the array f of the certificate (rationals), v's coefficients and the two integrals literals from it
+A_K = lambda k: ['Divide', ['Multiply', '2', ['Multiply', ['Power', '4', ['Add', k, '1']], FACT(k)]], FACT(['Add', ['Multiply', '2', k], '2'])]   # k >= 1 (k! non-empty)
+A_0 = '4'
+TWO_K = lambda k: ['Multiply', '2', k]
+J_FLAT = ['Multiply', '2', ['Add', ['Add', ['Subtract', '1/6', '1/3'], '1/5'], ['Sum', 'k', '1', '8', ['Divide', A_K('k'), ['Multiply', ['Add', TWO_K('k'), '4'], ['Add', TWO_K('k'), '5']]]]]]
+KAPPA_FLAT = ['Add', '1', J_FLAT]
+EPS9 = ['Multiply', A_K('9'), '231/211']
+B_L = IDX('l')
+J_QUARTIC = lambda d: ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', N1, ['Multiply', B_L, ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
+                                                        ['Multiply', A_0, ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', 'l', '4']]]]],
+                                                ['Sum', 'k', '1', '8', ['Multiply', A_K('k'), ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
+INT_V = lambda d: ' + '.join(c + '/' + str(4 ** (i // 2) * (i + 1)) for i, c in enumerate(d['vQuartic']) if i % 2 == 0 and c != '0')
+def int_v(d):
+    return ['Add', ['Add', ['Divide', d['vQuartic'][0], '1'], ['Divide', d['vQuartic'][2], '12']], ['Divide', d['vQuartic'][4], '80']]          # ∫ s^{2m} = 1/(4^m (2m+1)): 1, 1/12, 1/80
+def int_v2(d):
+    c0, c2, c4 = d['vQuartic'][0], d['vQuartic'][2], d['vQuartic'][4]
+    terms = [['Multiply', c0, c0], ['Divide', ['Multiply', '2', ['Multiply', c0, c2]], '12'], ['Divide', ['Add', ['Multiply', c2, c2], ['Multiply', '2', ['Multiply', c0, c4]]], '80'],
+             ['Divide', ['Multiply', '2', ['Multiply', c2, c4]], '448'], ['Divide', ['Multiply', c4, c4], '2304']]                                   # degrees 0, 2, 4, 6, 8 → 1, 1/12, 1/80, 1/448, 1/2304
+    out = terms[0]
+    for t in terms[1:]:
+        out = ['Add', out, t]
+    return out
+KAPPA_QUARTIC = lambda d: ['Divide', ['Add', int_v2(d), J_QUARTIC(d)], ['Square', int_v(d)]]
+XI_DEF = ('the ξ′ certificate as Zeta23/XiPrime/Certificate/{D1,Poly,AtOne}.lean define it: D₁(s) = s − 4s² + Σ_{k≥0} a_k s^{2k+3} with a_k = 2·4^{k+1}·k!/(2k+2)! (the paper\'s Lemma 7.1), '
+          'truncated at nine terms (k = 0..8), the tail ε₉ = a_9·231/211 (a_{k+1}/a_k ≤ 20/231 from k = 9 on), J(v) = 2∫₀¹ D1trunc9(r)·vConv(r) dr, κ₉(v) = (∫v² + J(v))/(∫v)², and the '
+          'proportions 2 − κ₉ − ε₉ (simple and on the line) and 3/2 − (κ₉ + ε₉)/2 (distinct), each a lower bound because the tail is added on the side that makes 1/c larger — the definitions, read')
+XI_RED = 'exact rational arithmetic: ∫_{-1/2}^{1/2} s^{2m} ds = 1/(4^m (2m+1)), ∫₀¹ r^{d+l} dr = 1/(d+l+1); the flat window has vConv(r) = 1 − r and ∫v = ∫v² = 1; the quartic window\'s autocorrelation coefficients b_l are the certificate\'s bytes, v\'s coefficients and the two integrals its literals'
+XI_STRUCT = [{'what': 'the quartic autocorrelation at r = 0 is ∫v²: b_0 = ∫v², decided from the bytes', 'g': lambda d: ['Subtract', IDX('0'), int_v2(d)], 'rel': 'eq', 'c': '0'},
+             {'what': 'the quartic autocorrelation at r = 1 vanishes: Σ_l b_l = 0, decided from the bytes', 'g': lambda d: ['Sum', 'l', '0', N1, B_L], 'rel': 'eq', 'c': '0'}]
+def xi(keys, g, value, structural=()):
+    return {'keys': keys, 'needs': ('terms', 'vQuartic', 'vConvQuartic'), 'g': g if callable(g) else (lambda d, g=g: g), 'value': value, 'reduction': XI_RED, 'definition': XI_DEF, 'structural': list(structural)}
+CERTIFICATE.update({
+    'xi-J-flat': xi(('Jflat',), J_FLAT, 'J(flat) = 2∫₀¹ D1trunc9(r)(1 − r) dr, the flat window integral'),
+    'xi-kappa-flat': xi(('kappa9flat',), KAPPA_FLAT, 'κ₉(flat) = 1 + J(flat)'),
+    'xi-eps9': xi(('eps9',), EPS9, 'ε₉ = a_9·231/211, the certified tail of D₁ on [0, 1]'),
+    'xi-J-quartic': xi(('Jquartic',), J_QUARTIC, 'J(quartic) = 2∫₀¹ D1trunc9(r)·vConv(r) dr over the quartic window\'s autocorrelation coefficients', XI_STRUCT),
+    'xi-kappa-quartic': xi(('kappa9quartic',), KAPPA_QUARTIC, 'κ₉(quartic) = (∫v² + J(quartic))/(∫v)²', XI_STRUCT),
+    'xi-P-flat': xi(('Pflat',), ['Subtract', ['Subtract', '2', KAPPA_FLAT], EPS9], 'P_flat = 2 − κ₉(flat) − ε₉, the proportion of zeros of ξ′ simple and on the line, flat window'),
+    'xi-D-flat': xi(('Dflat',), ['Subtract', '3/2', ['Divide', ['Add', KAPPA_FLAT, EPS9], '2']], 'D_flat = 3/2 − (κ₉(flat) + ε₉)/2, the proportion of distinct zeros of ξ′, flat window'),
+    'xi-P-quartic': xi(('Pquartic',), lambda d: ['Subtract', ['Subtract', '2', KAPPA_QUARTIC(d)], EPS9], 'P_quartic = 2 − κ₉(quartic) − ε₉', XI_STRUCT),
+    'xi-D-quartic': xi(('Dquartic',), lambda d: ['Subtract', '3/2', ['Divide', ['Add', KAPPA_QUARTIC(d), EPS9], '2']], 'D_quartic = 3/2 − (κ₉(quartic) + ε₉)/2', XI_STRUCT),
+})
 CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
 
