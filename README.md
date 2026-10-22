@@ -35,7 +35,26 @@ the input — a bar moved by one unit, a relation flipped, another constant's na
 an edited score, a rank off by one, a row edited so that the platform's own condition fails, a score moved past the platform's
 resolution — 56 of 56 caught (records/recall.json).
 
+The claim-machine put to the 2026 Riemann-hypothesis story (2026-10-22; corpus/riemann, pinned by tools/riemann.py): OpenAI's
+quasi-Riemann manuscripts (a zero-free half-plane Re s > 7/8, Lean-checked; an 11/12 companion no machine checked), Alpöge and
+Furman's two-thirds theorem found by Claude, its Lean formalization zeta23, Anthropic's post and the video that reported the
+checking. Over the 65 sentences the sources print, the grammar reads 10 and refuses 55 with the rule named — every theorem is refused
+(prose, asymptotic, no quantity); what it reads is the finite layer underneath: the one numerical certificate of the formalization,
+whose displayed hypothesis EnclOK the Lean kernel does not check, and the constants printed to their digits. The certificate's 256
+integer enclosures, decoded from LawN256.lean, translate to three objects cert-machine decides from the bytes — the near-CUE rows
+|256·S(j) − j| ≤ 3·10⁻⁴⁰, the edge bound |D(1)| ≤ 0.82395317 and the rounded-up p₀ ≤ 0.6818287 — all CERTIFIED, the same integers
+Lean's kernel accepted: two checkers on one certificate. The hypothesis EnclOK itself is skipped: the law's bytes are not published.
+The four Montgomery–Taylor digits claims (c₁* = 0.7532960…, 2 − 1/c₁* = 0.67250…) are admitted and left undecided — a closed form
+over transcendental heads needs a decider the receiver does not have yet. Over eighty phrasings of the same claims an AI wrote as a
+claimant would, the grammar reads 3: a claim is read at the head of its sentence or not at all. Fifteen AI-written claims, some wrong
+on purpose, come out as a careful reader expects — the false REFUTED or refused with the rule, the true CERTIFIED (records/riemann-ai-run.json).
+Planted defects at scale on the certificate — every enclosure moved or widened, rows dropped or exchanged, the scale and the count
+edited, the bars moved in the sentence and in copies of the pages — 781 of 781 caught and 511 of 511 within-tolerance edits left
+undisturbed, each expectation computed by hand from the integers (records/riemann-recall.json). Found on the way and fixed: a
+rational after "=" was read as its numerator (F(3) = 22/7 as 22).
+
 ```
+python3 -m claimbox read zeta23 --out jobs.json && python3 -m claimbox batch jobs.json --out out --check     # the Riemann story's certificate
 python3 -m claimbox read einstein-arena --out jobs.json && python3 -m claimbox batch jobs.json --out out --check
 python3 -m claimbox batch corpus/primitive-jobs.json --out out --check          # C_1b and C_1c from the bytes, about ten minutes
 python3 -m claimbox read alphaevolve --out jobs.json && python3 -m claimbox batch jobs.json --out out --check
@@ -48,4 +67,4 @@ make test
 
 Paths are relative to cert-machine's root (`CERT_MACHINE`, default `~/Projects/cert-machine`), which is read-only
 here: its checker verifies what this program emits, its deciders decide, and no code is shared. `make platform` re-fetches
-the platform's definitions at the pinned commit; `make drift` re-hashes everything pinned.
+the platform's definitions at the pinned commit, `make riemann` the Riemann story's sources; `make drift` re-hashes everything pinned.

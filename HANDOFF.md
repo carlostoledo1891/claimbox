@@ -21,7 +21,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-21, the fourth handoff: the queue checked against the receiver, (c) narrowed, measured and asked; `shape` fixed; two explainer pages; nine named-decider objects found standing undecided)
+## TASKS BACKLOG (updated 2026-10-22, the fifth handoff: the claim-machine put to the 2026 Riemann-hypothesis story — the one finite certificate with published bytes decided from the bytes, the theorems refused, the AI phrasings measured, 781 plants caught; a grammar defect fixed)
 
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
@@ -29,10 +29,65 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      shared; cert-machine read-only). THE SECOND SESSION (2026-10-20/21, "proceed the next steps") worked the backlog below in order
      (★ THE NEXT STEPS, TAKEN). THE THIRD SESSION (2026-10-21) lifted the receiver's two changes and used them (★ THE RECEIVER'S TWO
      CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
-     explainer pages (★ THE EXPLAINER PAGES). `make test`: 130 checks (the 130th, 2026-10-21: `shape` prints a decomposition, which has no bar — it raised KeyError before), 33 red controls all firing, 56/56 planted defects caught (the heavy
+     explainer pages (★ THE EXPLAINER PAGES). THE FIFTH SESSION (2026-10-22) put the claim-machine to the Riemann-hypothesis story on
+     the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST). `make test`: 174 checks, 44 red controls all firing, 56/56 planted defects
+     caught on the earlier corpora and 781/781 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
-     are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them). Coverage 97/132. Public at github.com/carlostoledo1891/claimbox (MIT) since 2026-10-20 night,
-     on the operator's word.
+     are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them and the full recall). Coverage 97/132 on the register (unchanged by the
+     fifth session's grammar), 10/65 on the story's sentences, 3/80 on the AI phrasings. Public at github.com/carlostoledo1891/claimbox
+     (MIT) since 2026-10-20 night, on the operator's word.
+  ★ THE RIEMANN TEST (2026-10-22, the fifth session: "put claimbox at a test … the Riemann hypothesis … AI generated claims, claimbox,
+     cert-machine", the plan given, then "Proceed 1 to 4"). THE STORY: youtu.be/dsBXYAwQieI ("Mathematicians Checked the AI's Riemann
+     Breakthrough", channel Adem B10; its captions pasted by the operator, pinned) is openai/math family 003 — the quasi-Riemann
+     hypothesis, a zero-free half-plane Re s > 7/8 for every Dirichlet L-function (Sept 30, 199 pp, four Lean statements) and an 11/12
+     companion (Oct 5, 49 pp, no machine check, the one human-edited manuscript) that the mathematicians are reading (Radziwiłł, Sarnak,
+     Kontorovich). cert-machine had ALREADY audited that release (lanes K/S/F): the four statements CERTIFIED by two kernels; lane S
+     MATCHES, the 11/12 clause noted as covered only by implication ("a different proof is not a statement"); no finite core, so no
+     lane-F row — the paper the humans read holds nothing a checker can touch. The season's other result, Alpöge–Furman
+     arXiv:2608.13637v2 (found by Claude: ≥ 2/3 of the zeros simple and on the line, the Montgomery–Taylor constant 2 − c_MT^{-1} =
+     0.67250…) and its Lean formalization anthropics/zeta-23-lean carry THE ONE FINITE CERTIFICATE WITH PUBLISHED BYTES in the whole
+     story: the bandwidth-one ceiling's 256 integer enclosures (Zeta23/PairCeiling/LawN256.lean, scale K = 2^140, each one unit wide),
+     under the displayed hypothesis EnclOK that the Lean kernel does NOT check — computed outside Lean by 70-digit interval arithmetic
+     from a law file (cert_N256_blk_b128m.json, sha256 cc3de991…) the release does not publish ("available from the authors").
+     BUILT: tools/riemann.py (25 sources pinned — openai/math at 1581d4cb: the index with the abstracts, the scope note, the four
+     statements, three READMEs, the history; zeta-23-lean at e1a4e650: README, formalization.yaml, ChallengeDeps, Challenge, AUDIT, the
+     five PairCeiling files; the arXiv e-print; Anthropic's post as served; `make riemann`, in `make drift`); claimbox/readers/zeta23.py
+     (decodes the Lean file's integer literals into LawN256.encl.json beside it, naming the Lean file's sha256 — the receiver reads JSON
+     only — and emits 8 jobs); translate.py CERTIFICATE (the rows, the edge bound and p₀ over the decoded integers, N, K, τ written in
+     as literals; the Montgomery–Taylor constant as a closed form over Exp/Ln/Sin/Cos, √2 = exp(ln 2/2)); THE GRAMMAR, three shapes the
+     pinned sources print and nothing for a paraphrase: |EXPR| REL NUMBER, a trailing finite range ("(0 < j < 256)", "for $0<j<256$",
+     "for every integer j with 1 <= j <= 255") read as an inclusive integer range (a non-integer end refused unbounded, an empty range
+     refused), EXPR = NUMBER… (an ellipsis) as the box the digits allow where an exact "=" stays an identity, the number forms 3·10⁻⁴⁰,
+     3\cdot10^{-40}, 2.5431316·10⁻⁶, 3/10^40 kept as printed and read as the rationals they mean, HTML tags stripped like $, the minus
+     sign; FIXED, found on the first `shape` of the session: a rational after "=" was read as its numerator (F(3) = 22/7 came out as 22
+     — the bound regex with "=" fired before the identity branch and stopped at the slash; det J = 22/7 was safe only because of the
+     space), and a number followed by arithmetic now ends no claim (p₀ = 1 − a_N = p/q is refused, not read as p₀ = 1). The register's
+     coverage after all of it: 97/132, the diff read — 0 rows changed. THE RUN (records/riemann-run.json; check.py and check.js agree
+     on all seven): the near-CUE rows |256·S(j) − j| ≤ 3·10⁻⁴⁰ over the 255 held rows, with the decimal constant 1/(6·256²) + τ/512 <
+     2.5431316·10⁻⁶ beside them, the edge bound |D(1)| ≤ 0.82395317 and the paper's p₀ ≤ 0.6818287 against the exact rational the Lean
+     header prints — CERTIFIED FROM THE BYTES in milliseconds, the same integers Lean's kernel accepted (AUDIT.md: LawN256_check,
+     axioms [propext]): two checkers, one certificate; the four digits claims (c₁* = 0.7532960…, 2 − 1/c₁* = 0.67250…, (3 − 1/c₁*)/2 =
+     0.83625…, the paper's 2-c_{MT}^{-1}=0.67250\ldots) ADMITTED and not decided — transcendental heads, the receiver has no decider for
+     them; EnclOK SKIPPED: no bytes, no claim. A RECEIVER LIMIT MET: a printed bar is taken only as a plain decimal or integer (its DEC
+     and INT), so 3·10⁻⁴⁰ and 2.5431316e-6 are written into the expression and the zero is the bar, noted on the predicate.
+     COVERAGE (records/riemann-coverage.json): the 65 sentences the sources print (corpus/riemann-sentences.json, each byte for byte in
+     its file, tagged by author) — 10 read (the certificate's inequalities, the digits claims), 55 refused: every theorem (prose 43,
+     no-quantity 6, ambiguous 3, asymptotic 2, approximate 1); 80 AI phrasings of eight claims written by a fresh subagent with no sight
+     of the grammar (corpus/riemann/ai-phrasings.json) — 3 read, 77 refused: a claim is read at the head of its sentence or not at all;
+     a leading quantifier ("for all j with 0 < j < 256, |…| ≤ …"), a hedge ("we checked that"), a definition after a comma, a set
+     ({1, …, 255}) are refused — measured, not chased. THE FALSE-CLAIM BATTERY (corpus/riemann/ai-claims.md, 15 claims with their
+     expected words in corpus/riemann-ai-jobs.json, records/riemann-ai-run.json): the false REFUTED — |D(1)| ≤ 0.8239, |D(1)| <
+     0.82395316, the rows under 1e-40 (witness row 1, 255 violating), p₀ ≤ 0.68182, p₀ ≥ 0.6818287 — or refused with the rule (the range
+     narrowed or lengthened: count; D(1) without bars: decider; a hedge and the constant: prose); the true CERTIFIED (|D(1)| ≤ 0.824, the
+     rows under 2·10⁻⁴⁰, p₀ ≤ 0.6819); the wrong transcendental digit (c₁* = 0.7532961…) ADMITTED AND UNDECIDED — the gap, recorded.
+     RECALL AT SCALE (tests/riemann_recall.py → records/riemann-recall.json; CLAIMBOX_FULL=1 for every row, 99 s; the battery runs a
+     sample and holds it to the record): 781 plants caught (every enclosure moved by ±1 unit and widened by 1 and 2 units, rows dropped
+     and exchanged, K + 1, N − 1, the free row moved by 10³⁷, p₀ edited in the file, the bars moved in the sentence — refused source — and
+     in copies of the pages with the sentence following — REFUTED), 511 within-tolerance edits left CERTIFIED, 1 undecided as recorded;
+     EVERY EXPECTATION COMPUTED FROM THE INTEGERS BY HAND (an enclosure sits on one side of j·K/256, which side varies by row, and τ is
+     1.63 units of 256/K: a move away from j flips, a move towards it does not — the first draft assumed every shift flips, the first
+     sample showed half do not; that is what the controls are for). The objects' pins lead out of the receiver's tree
+     (../claimbox/corpus/riemann/…); both checkers follow such a path today — the (g) ask decides whether they should.
   ★ THE QUEUE, CHECKED (2026-10-21, the fourth session, "continue the queued tasks"): every NEXT item waits on the receiver, and
      cert-machine has made none of (c)–(f) — its one commit since 40833648 is its self-audit (2311ac2c), which changed
      tools/run-mc100-einstein.js (an object that is not n vectors in R^d is now REFUSED); the ten objects naming it are still
@@ -280,6 +335,18 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         red control for its refusal (none of the 35 is a shape today).
      4. the operator's to decide, asked 2026-10-21: a user guide (how to phrase a claim, which files, each refusal and its fix), and
         whether an advisory refiner is wanted (★ THE EXPLAINER PAGES); neither is started.
+     5. THE RIEMANN STORY'S REMAINDER (★ THE RIEMANN TEST), the operator's: (i) the law file behind EnclOK (cert_N256_blk_b128m.json,
+        sha256 cc3de991…) is "available from the authors" — with it, the one un-kernel-checked hypothesis of the formalization could be
+        re-derived by a second interval implementation on the receiver; asking for it is outreach and needs the operator's word;
+        (ii) phase 6 of the plan, AI-generated instance claims of RH-equivalent criteria (Robin, Lagarias, Farey, Mertens), not
+        started: Robin's needs (h) below, Farey and Mertens would be functionals written for synthetic claims — the operator's call.
+     6. THE RECEIVER ASKS FROM THE FIFTH SESSION, each a cert-machine chat then `make lift`: (h) a decider for claimbox objects whose
+        predicates are closed forms over the kernel's transcendental heads (Exp, Ln, Sin, Cos; Digamma(1) = −γ for e^γ), writing a
+        record — it decides the four Montgomery–Taylor digits claims here (and would have caught c₁* = 0.7532961…), and later Robin
+        and Lagarias instances; (p) a printed bar in the forms a·10^k, a\cdot10^{k}, a/10^k and a e k (today DEC and INT only: the
+        translator writes such a bar into the expression with the zero as the bar, noted); (c′) a decoder for integer lists printed
+        as Lean or text literals, so that an object pins the claimant's own file rather than the reader's JSON copy (today
+        LawN256.encl.json names the Lean file's sha256 and the battery re-decodes it).
 
 ## The rules that bind here
 

@@ -9,9 +9,12 @@ lift:
 	@$(PY) tools/lift.py
 
 drift:
-	@$(PY) tools/lift.py --check && $(PY) tools/platform.py --check
+	@$(PY) tools/lift.py --check && $(PY) tools/platform.py --check && $(PY) tools/riemann.py --check
 
 platform:
 	@$(PY) tools/platform.py
 
-.PHONY: test lift drift platform
+.PHONY: test lift drift platform riemann
+
+riemann:
+	@$(PY) tools/riemann.py

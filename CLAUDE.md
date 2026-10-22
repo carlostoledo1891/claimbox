@@ -9,6 +9,7 @@ python3 -m claimbox translate --claim "…" --source P --data P …   the predic
 make test        the gate: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its register
 make lift        refresh the corpus and the pins from cert-machine (read-only)      make drift   re-hash the pins
 make platform    re-fetch EinsteinArena's problem definitions at the pinned commit (corpus/platform/einstein-arena)
+make riemann     re-fetch the 2026 Riemann-hypothesis story's sources at their pinned commits (corpus/riemann)
 ```
 
 ```
@@ -50,15 +51,24 @@ pinned corpora open cert-machine. Each repository's HANDOFF.md is its state; rea
 ```
 claimbox/grammar.py        the shapes and the refusals (prose and LaTeX normalised first)
 claimbox/translate.py      shape + page + bytes (+ decider, record) → the object; the quote found, the array decoded; the functionals
-                           written once (PRIMITIVE: C_1a, C_1b, C_1c, C_1d; beside a record, the record names predicate 0) and the platform
+                           written once (PRIMITIVE: C_1a, C_1b, C_1c, C_1d; beside a record, the record names predicate 0), the platform
                            scores written once (PLATFORM: five of EinsteinArena's — two integer counts in the half-unit box, three
-                           float-printed scores in the box of the platform's declared resolution, quoted from problems.json)
+                           float-printed scores in the box of the platform's declared resolution, quoted from problems.json) and the
+                           Riemann story's certificate written once (CERTIFICATE: zeta23's near-CUE rows, edge bound and p₀ over the decoded
+                           enclosures; the Montgomery–Taylor constant as a closed form the receiver admits and cannot decide)
 claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (with the reading each
-                           verifier makes of the bytes), alphaevolve.py, qiushi.py, station.py, funsearch.py
+                           verifier makes of the bytes), alphaevolve.py, qiushi.py, station.py, funsearch.py, zeta23.py (LawN256.lean's
+                           integers decoded into JSON beside it, one job per claim the sources print; EnclOK skipped: bytes not published)
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
-                           platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json)
-records/                   calibration.json, coverage.json, recall.json; <source>-run.json + <source>/ (each batch's --record and objects)
-tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json)
-tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins (fetch, --check)
+                           platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json),
+                           riemann/ (the story's 25 pinned sources + the video's captions, PINS.json by tools/riemann.py; ai-phrasings.json,
+                           ai-claims.md: AI-written inputs, not sources of truth), riemann-sentences.json (65 sentences, each verbatim in
+                           its pinned file), riemann-jobs.json, riemann-ai-jobs.json (with each claim's expected outcome)
+records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json; <source>-run.json +
+                           <source>/ (each batch's --record and objects)
+tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json); tests/riemann_recall.py the plants at scale on
+                           the certificate, each expectation computed from the integers (records/riemann-recall.json; CLAIMBOX_FULL=1 all)
+tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the
+                           story's pins (fetch, --check)
 ```

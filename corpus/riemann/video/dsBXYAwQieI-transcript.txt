@@ -1,0 +1,440 @@
+The captions of https://youtu.be/dsBXYAwQieI — "Mathematicians Checked the AI's Riemann Breakthrough", channel Adem B10 —
+as the operator pasted them into the claimbox session of 2026-10-22 (YouTube's automatic captions: names are rendered as
+the captions render them). Not fetched; kept verbatim as pasted.
+
+0:00
+Two weeks ago, OpenAI's AI claimed a
+0:02
+piece of the Reman hypothesis. That same
+0:05
+night, the number theorist Alex
+0:07
+Conurvich was on a stage in New York,
+0:09
+and the question came up. How could a
+0:11
+machine have pulled this off? He hadn't
+0:13
+gone through the 200 pages yet, so he
+0:15
+made two guesses. It's entirely possible
+0:17
+that what it did is found some technique
+0:19
+in some area that no analytic number
+0:21
+theorist uh has any expertise in. It's
+0:24
+entirely possible that it came up with
+0:26
+really uh an idea for which we have no
+0:28
+precedent. Uh time will tell uh which of
+0:31
+those it is.
+0:32
+Well, time is told. This week, the
+0:34
+mathematicians who took the proof apart
+0:36
+gave their verdict. Maxim Rajiv at NYU
+0:40
+called what it means staggering. And he
+0:42
+also called the papers horribly written.
+0:44
+And two of the people checking it found
+0:46
+their own formula inside. So which guest
+0:49
+was right? Somebody else on that stage
+0:51
+had a third one. And by the end, you'll
+0:53
+see exactly where the machine's idea
+0:55
+came from. First, a quick reminder of
+The wall at 7/8
+0:58
+what we covered two weeks ago. Say you
+1:00
+draw a strip on the page from 0 to one.
+1:02
+The reman zeta function has infinitely
+1:05
+many zeros inside it. And where they sit
+1:07
+controls how the prime numbers are
+1:09
+spread out. Reman guessed in 1859 that
+1:12
+they all sit on one line right down the
+1:14
+middle at 1/2. And nobody has proved it
+1:17
+since. That's the Reman hypothesis. But
+1:20
+you can ask a much smaller question. Can
+1:22
+you at least build a straight wall
+1:24
+somewhere inside the strip? one that no
+1:26
+zero ever crosses. We've known since
+1:28
+1896 that the zeros never touch the edge
+1:31
+at one. And that alone gave us the prime
+1:33
+number theorem. But a straight wall, a
+1:36
+whole band with no zeros in it at all,
+1:38
+is something nobody could build. And
+1:40
+Contovich [snorts]
+1:41
+says his field used to joke about it. We
+1:44
+would [music] we would discuss how isn't
+1:45
+it embarrassing that we still can't get
+1:47
+uh anything nearly of that strength.
+1:50
+Open AI's model built that wall at 7/8.
+1:53
+So no zero ever sits to the right of it.
+1:56
+That's called the quasi reman
+1:57
+hypothesis. It's a weaker cousin of the
+2:00
+real thing because the wall is at 7/8
+2:02
+and not at 1/2. But the experts still
+2:04
+care about it a lot. Rajiv put it like
+2:07
+this. In a sense, the vast majority of
+2:09
+consequences of RH already follow from
+2:12
+quasi RH. If you want to see whether
+2:14
+anyone gets that wall all the way to one
+2:16
+half, subscribe because I'll cover it
+2:19
+when they do. Now, there's a detail in
+Two papers
+2:21
+this story that's easy to miss, which is
+2:23
+that OpenAI posted two versions of this
+2:26
+proof. The first one dated September
+2:28
+30th is 199 pages long, and it comes
+2:32
+with a version that a computer program
+2:33
+called Lean checked line by line. But
+2:36
+then a second one came almost a week
+2:38
+later. It's only 49 pages. It proves a
+2:41
+slightly weaker wall at 1112ths and no
+2:44
+computer has checked it. So which one
+2:46
+would you read if you were a
+2:47
+mathematician? On the night of the
+2:49
+release, the fields medalist Mjul
+2:51
+Bargava was reading out texts from
+2:53
+colleagues and the first impressions
+2:55
+were good.
+2:55
+Many mathematicians are writing these
+2:57
+papers are not actually written that
+2:59
+badly.
+3:00
+But two weeks later, Rajiv wasn't so
+3:02
+kind. He wrote that both papers are
+3:05
+horribly written in a way that would
+3:07
+lead to immediate rejection at any
+3:09
+mathematical journal. So the experts set
+3:11
+the long one aside and now they're
+3:13
+mostly studying the short one. And his
+3:15
+reason was about as simple as it gets.
+3:17
+It's shorter. That means we've got a
+3:19
+computer checking one proof and the
+3:21
+humans reading a different one. And the
+3:23
+short one has one more odd thing about
+3:25
+it. Out of all 722 papers Open AAI
+3:28
+released that night, it's the only one a
+3:31
+person edited. Quanta asked who and
+3:33
+OpenAI wouldn't say. All they said was
+3:36
+the paper is the result of work from
+3:38
+everyone at OpenAI. So after 2 weeks of
+3:40
+reading, is it right? The experts
+3:42
+largely agree that it is. Rajiv can now
+3:45
+sketch the whole argument in half a page
+3:47
+and other mathematicians have written
+3:49
+versions running 7 to 13 pages which
+3:52
+they're passing around privately. Peter
+3:54
+Sarnak at Princeton, one of the most
+3:56
+famous number theorists alive, has even
+3:58
+turned the course he's teaching this
+4:00
+semester into a course on this proof.
+Three guesses
+4:04
+So now we go back to that stage in New
+4:06
+York. Conto's first guess was that the
+4:08
+machine found a tool from some other
+4:10
+corner of math, one that no number
+4:12
+theorist knows. His second was a brand
+4:14
+new idea, something nobody had ever seen
+4:17
+before. And Steven Wolram, who built
+4:19
+Mathematica, had a third guess. And I
+4:21
+think a lot of what one's seeing is
+4:23
+results which come from picking
+4:25
+something from here, something from
+4:27
+there, something from there, and putting
+4:28
+them together.
+4:29
+So you've got three guesses. A tool from
+4:31
+a field number theorists don't know, a
+4:34
+brand new idea, or old pieces put
+4:36
+together in a new way. Before I tell
+4:37
+you, pick one.
+The family nobody found
+4:40
+The answer starts with Peter Sonak. For
+4:43
+decades, he's argued that you shouldn't
+4:45
+study the Zeta function on its own. You
+4:47
+should treat it as one member of a
+4:49
+family of related functions and prove
+4:51
+things about the whole family at once.
+4:53
+Think of a doctor trying to understand
+4:55
+one patient. Sometimes it's easier to
+4:57
+study the whole family because a pattern
+5:00
+you'd never see in one person shows up
+5:02
+when you line them all up side by side.
+5:04
+But nobody knew which family. As Michael
+5:07
+Rubenstein at Waterloo put it, it was
+5:09
+not clear exactly how to do so or which
+5:12
+family to consider. In 2002, Henrik
+5:14
+Avanettes at Rutkers worked through a
+5:16
+whole set of families, and he narrowly
+5:18
+missed the right one. The machine found
+5:20
+it. It's a family everybody had
+5:22
+overlooked, and building it takes some
+5:25
+obscure objects called metiplectic
+5:27
+forms. Alexander Dunn at Georgia Tech
+5:29
+has spent the last 5 years studying
+5:31
+them, and he told Quanta, "Nobody
+5:34
+expected this." And then there's the
+5:36
+formula. In 2021, Dunn and Rajiv proved
+5:39
+a formula together and it turned out to
+5:41
+be a key piece of the proof along with
+5:43
+work from lots of other mathematicians.
+5:45
+So, two of the people checking the proof
+5:47
+opened it up and found their own work
+5:49
+inside. But the strangest part is what
+5:51
+the machine believed. Number theorists
+5:54
+had convinced themselves that their own
+5:55
+tools weren't strong enough for this and
+5:57
+that it would take methods from a
+5:59
+completely different branch of number
+6:01
+theory. The machine didn't seem to share
+6:02
+that belief, so it just used the tools
+6:04
+they already had. Rajiv view's reaction
+6:07
+that was a pretty bold belief to have.
+6:10
+So which guess was right? Mostly the
+6:12
+third one. Dun calls the proof a
+6:15
+surprising synthesis of well-known
+6:17
+ideas. The pieces were old and the
+6:19
+metiplectic forms were obscure enough to
+6:21
+give Contovich's first guess a little
+6:23
+credit too. But a big part of it, Rajiv
+6:25
+says, was believing the old tools were
+6:27
+enough back when the experts were sure
+6:29
+they weren't. Now to be fair, we should
+The verdict
+6:32
+say it isn't finished. Sonach says he
+6:34
+won't call it a theorem until humans
+6:36
+have checked and understood every
+6:38
+detail. And Will Sin at Princeton thinks
+6:41
+that once the dust settles, we'll
+6:43
+probably feel just as far from the full
+6:45
+Reman hypothesis as we were before.
+6:47
+Although he says he isn't certain. So
+6:49
+what do I think? I think this one is
+6:51
+real, and I think it's the biggest thing
+6:53
+an AI has done in math so far. What gets
+6:56
+me is where the idea came from, because
+6:58
+the pieces were sitting in the experts
+7:00
+own papers, and it took a machine to put
+7:02
+them together. Rajiv says the general
+7:04
+feeling now is one of relief and Thomas
+7:08
+Bloom at Manchester pointed out that a
+7:10
+few weeks ago everyone would have called
+7:12
+this out of reach too at this point
+7:14
+nothing would surprise me but on that
+7:16
+same night Kontovich said this anytime
+7:19
+I've tried to sit down and and
+7:21
+articulate very carefully what it is
+7:23
+that I'm capable of that LLMs or AI
+7:25
+systems more generally will never be
+7:27
+able to do uh I fail at that exercise.
+7:30
+So here's my question for you. Can you
+7:32
+name one thing a mathematician does that
+7:34
+you're sure a machine never will? That's
+Outro
+7:37
+what I do here. AI gets credit for
+7:39
+something big and I go and check what it
+7:41
+actually did. If that's useful to you,
+7:43
+subscribe. I also send a free email
+7:46
+every [snorts] week about what AI did in
+7:48
+math and what still needs checking.
+7:50
+Links in the description. Thanks for
+7:52
+watching and see you next time.

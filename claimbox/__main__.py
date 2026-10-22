@@ -17,9 +17,9 @@ import sys
 
 from . import grammar, translate as T
 from .grammar import Refusal
-from .readers import einsteinarena, alphaevolve, qiushi, station, funsearch
+from .readers import einsteinarena, alphaevolve, qiushi, station, funsearch, zeta23
 
-READERS = {'einstein-arena': einsteinarena, 'alphaevolve': alphaevolve, 'qiushi': qiushi, 'station': station, 'funsearch': funsearch}
+READERS = {'einstein-arena': einsteinarena, 'alphaevolve': alphaevolve, 'qiushi': qiushi, 'station': station, 'funsearch': funsearch, 'zeta23': zeta23}
 
 ROOT = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
 

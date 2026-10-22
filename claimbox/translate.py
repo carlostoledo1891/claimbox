@@ -152,6 +152,61 @@ PLATFORM = {
 }
 PLATFORM_BY_TITLE = {grammar.normalise(k): v for k, v in PLATFORM.items()}
 
+# ---- the finite certificate of the 2026 Riemann-hypothesis story, written once (corpus/riemann, tools/riemann.py; the reader
+# claimbox/readers/zeta23.py decodes LawN256.lean's integers into LawN256.encl.json beside it): keyed by the quantity's name as the
+# claim prints it, normalised by ckey. The data entries read the decoded JSON — N, K, τ = tn/td, d₁ = dn/dd and p₀ written into
+# the expression as literals, the 256 enclosures as the array f (rows [lo, hi] of K·S(j)) — and are decided by the receiver from the
+# bytes. The constant entries are closed forms with no bytes: the Montgomery–Taylor constant over transcendental heads, which the
+# receiver admits and leaves to a decider it does not have. A claim's bar that is not a plain decimal or integer (3·10⁻⁴⁰, the only
+# forms the receiver takes a printed bar in being those) is written into the expression and the zero is the bar, noted. -----------
+SQRT2 = ['Exp', ['Divide', ['Ln', '2'], '2']]
+THETA = ['Divide', '1', SQRT2]
+TAN = ['Divide', ['Sin', THETA], ['Cos', THETA]]
+CMT = ['Divide', ['Multiply', SQRT2, TAN], ['Add', '1', ['Multiply', THETA, TAN]]]       # c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ), ϑ = 1/√2
+CMT_DEF = ('c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ) at ϑ = 1/√2, the Montgomery–Taylor constant as ChallengeDeps.lean defines cMT (the paper\'s c_MT^{-1} := 1/2 + (1/√2) cot(1/√2) is '
+           'its reciprocal), written here with √2 = exp(ln 2 / 2) and tan = sin/cos over the receiver\'s audited heads (the definition, read)')
+LO, HI = IDX('i', '0'), IDX('i', '1')
+SUM_LO, SUM_HI = ['Sum', 'i', '0', N1, LO], ['Sum', 'i', '0', N1, HI]
+TAU = lambda d: str(d['tn']) + '/' + str(d['td'])
+CERTIFICATE = {
+    'rows': {'keys': ('|256S(j)-j|',), 'needs': ('N', 'K', 'tn', 'td'), 'range': True, 'forall': [['i', '0', ['Subtract', 'n', '2']]],
+             'g': lambda d: ['Max', ['Abs', ['Subtract', ['Divide', ['Multiply', str(d['N']), LO], str(d['K'])], ['Add', 'i', '1']]],
+                                    ['Abs', ['Subtract', ['Divide', ['Multiply', str(d['N']), HI], str(d['K'])], ['Add', 'i', '1']]]],
+             'value': 'the larger deviation |N·S(j) − j| at the two ends of the enclosure of K·S(j), for every row j = 1..N−1 (the closed-band row j = N is free)',
+             'reduction': 'the enclosure lo_j <= K·S(j) <= hi_j puts N·S(j) between N·lo_j/K and N·hi_j/K, so |N·S(j) − j| <= τ holds for every S inside the enclosures iff both ends are within τ of j: '
+                          'max(|N·lo_j/K − j|, |N·hi_j/K − j|) <= τ, exact rational arithmetic over the integers the file prints, with N and K as the file prints them written into the expression; the row j = N is not held (NearCUE.lean: the closed-band row is free)',
+             'definition': 'the near-CUE rows of RowCert.lean, |N·S(j) − j| <= τ for 0 < j < N with τ = tn/td as the certificate declares it: what Lean kernel-checks (LawN256_check, decide +kernel) given the displayed hypothesis EnclOK, re-decided here from the same integers (read)',
+             'structural': [{'what': 'the decimal constant of ceiling_law256_decimal: 1/(6·N²) + τ/(2N) < 2.5431316·10⁻⁶, the bar written into the expression as 25431316/10^13',
+                             'g': lambda d: ['Subtract', ['Add', ['Divide', '1', ['Multiply', '6', ['Square', str(d['N'])]]], ['Divide', TAU(d), ['Multiply', '2', str(d['N'])]]], '25431316/10000000000000'], 'rel': 'lt', 'c': '0'}]},
+    'edge': {'keys': ('|D(1)|',), 'needs': ('N', 'K', 'dn', 'dd'),
+             'g': lambda d: ['Max', ['Abs', ['Subtract', ['Divide', ['Divide', SUM_LO, str(d['K'])], str(d['N'])], '1/2']], ['Abs', ['Subtract', ['Divide', ['Divide', SUM_HI, str(d['K'])], str(d['N'])], '1/2']]],
+             'value': 'the larger of |D(1)| at the two ends of the enclosures, D(1) = T_N/N − 1/2 with T_N = Σ_{j<=N} S(j) (all N rows, the closed-band row included)',
+             'reduction': 'D(1) = Σ_j S(j)/N − 1/2 is monotone in each S(j), so over all S inside the enclosures it ranges over [Σ lo_j/(K·N) − 1/2, Σ hi_j/(K·N) − 1/2], and |D(1)| <= d₁ for every such S iff both ends are within d₁ of 0: exact over the integers the file prints',
+             'definition': 'the edge bound of RowCert.lean, |D(1)| <= d₁ with d₁ = dn/dd as the certificate declares it: kernel-checked given EnclOK, re-decided here from the same integers (read)',
+             'structural': []},
+    'p0': {'keys': ('p0',), 'needs': ('p0',), 'g': lambda d: d['p0'],
+           'value': 'the law\'s simple-point fraction p₀ = 1 − a_N, the exact rational LawN256.lean\'s header prints, as a literal',
+           'reduction': 'the paper prints p₀ rounded up and the Lean file prints it exactly; the inequality between the two literals is decided, nothing else',
+           'definition': 'p₀ is the law\'s own number, the optimum of an exact-rational linear programme the release does not publish: what is decided is that the print is a rounding up of the exact rational the file states, not the rational itself (read)',
+           'structural': []},
+    'cmt': {'keys': ('c1*', 'cMT', 'c_MT'), 'constant': True, 'g': CMT, 'value': 'the Montgomery–Taylor constant c₁*', 'definition': CMT_DEF},
+    'mt-simple': {'keys': ('2-1/c1*', '2-cMT^-1'), 'constant': True, 'g': ['Subtract', '2', ['Divide', '1', CMT]],
+                  'value': 'the Montgomery–Taylor proportion of simple zeros on the critical line, 2 − 1/c₁*', 'definition': CMT_DEF},
+    'mt-distinct': {'keys': ('(3-1/c1*)/2', '12(3-cMT^-1)'), 'constant': True, 'g': ['Divide', ['Subtract', '3', ['Divide', '1', CMT]], '2'],
+                    'value': 'the Montgomery–Taylor proportion of distinct zeros, (3 − 1/c₁*)/2', 'definition': CMT_DEF},
+}
+CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
+PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
+
+
+def ckey(name):
+    """a quantity's name as the claim prints it, normalised for the CERTIFICATE lookup: LaTeX wrappers, braces, spaces, dots and
+    underscores dropped, the minus sign and subscript digits plain"""
+    k = str(name).replace('−', '-').replace('⁻¹', '^-1')
+    k = re.sub(r'\\(mathrm|tfrac|frac|,|;|!)', '', k)
+    k = re.sub(r'[{}\s·$\\_]', '', k)
+    return ''.join(str('₀₁₂₃₄₅₆₇₈₉'.index(ch)) if ch in '₀₁₂₃₄₅₆₇₈₉' else ch for ch in k)
+
 P_dot = ['Sum', 'k', '0', ['Subtract', 'd', '1'], ['Multiply', IDX('i', 'k'), IDX('j', 'k')]]
 N_i = ['Sum', 'k', '0', ['Subtract', 'd', '1'], ['Square', IDX('i', 'k')]]
 N_j = ['Sum', 'k', '0', ['Subtract', 'd', '1'], ['Square', IDX('j', 'k')]]
@@ -188,12 +243,21 @@ def find_quote(source_path, printed, name=None):
     lines = [ln for ln in text.split('\n') if tok.search(ln)]
     if not lines:
         return None
+    pick = lines[0]
     if name:
-        key = re.sub(r'[_{}\\$]', '', name)
+        key = re.sub(r'[_{}\\$\s]', '', grammar.normalise(name))
         for ln in lines:
-            if key in re.sub(r'[_{}\\$]', '', ln):
-                return ln.strip()
-    return lines[0].strip()
+            if key in re.sub(r'[_{}\\$\s]', '', grammar.normalise(ln)):
+                pick = ln
+                break
+    ln = pick.strip()
+    if len(ln) > 400:   # a paragraph-long line (a README): the window around the number, cut at spaces, still byte for byte in the source
+        at = tok.search(ln).start()
+        lo, hi = max(0, at - 160), min(len(ln), at + len(printed) + 160)
+        lo = ln.find(' ', lo) + 1 if lo > 0 and ' ' in ln[lo:at] else lo
+        hi = ln.rfind(' ', at, hi) if hi < len(ln) and ' ' in ln[at:hi] else hi
+        ln = ln[lo:hi].strip()
+    return ln
 
 
 def select_array(doc):
@@ -353,16 +417,32 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         if len(quote) > 400:
             quote = quote[max(0, quote.find(key) - 60):quote.find(key) + len(key) + 60]
 
+    fam = shape['family']
+    cert = CERTIFICATE_BY_KEY.get(ckey(shape.get('name'))) if fam in ('bound', 'digits', 'identity') and not decider else None
+    text = sentence.strip()
+    if cert is not None and cert.get('constant'):
+        # a closed form with no bytes: the pinned file is the one that defines it, nothing is decoded; the receiver admits the
+        # transcendental heads and leaves the decision to a decider with its interval kernel, which it does not have for these objects
+        domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'count': 1, 'variable': 'f',
+                  'decoder': 'no bytes are decoded: the quantity is ' + cert['value'] + ', the closed form the pinned file defines; the count is the one constant'}
+        pred = {'g': cert['g'], 'rel': shape['rel'], 'printed': printed, 'c': [str(x) for x in shape['c']] if isinstance(shape['c'], list) else str(shape['c'])}
+        hyps = [cert['definition']]
+        if shape['rel'] == 'in':
+            hyps.append('the printed number is the value cut off at its digits: it is read as the box the digits allow, half a unit of the last digit either way')
+        fals = ['the closed form, enclosed by the receiver\'s interval kernel, lies ' + ('outside the box' if shape['rel'] == 'in' else 'on the wrong side of ' + printed),
+                'the pinned file does not hash to ' + domain['pin']['sha256'][:8] + '…']
+        ref = ('the printed ' + printed + ' is ' + ('the box its digits allow' if shape['rel'] == 'in' else 'the bar taken exactly') + '; the quantity is ' + cert['value'] +
+               ', a closed form over transcendental heads (Exp, Ln, Sin, Cos): the receiver admits it and does not decide it from the object — its decision needs a decider with the interval kernel, which the receiver does not have for claimbox objects yet')
+        return assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, [pred], ref, hyps, fals, record)
     with open(dp, 'rb') as f:
         try:
             doc = json.loads(f.read().decode('utf-8'))
         except (ValueError, UnicodeDecodeError) as e:
             raise Refusal('data', 'the published bytes are not JSON: ' + str(e)[:60])
     select, arr = select_array(doc)
-    fam = shape['family']
     platform = PLATFORM_BY_TITLE.get(grammar.normalise(shape['problem'])) if fam == 'score' and shape.get('problem') and not decider else None
     known = fam == 'bound' and shape['name'] in PRIMITIVE and not decider
-    primitive = fam == 'kissing' or known or platform is not None
+    primitive = fam == 'kissing' or known or platform is not None or cert is not None
     try:
         kind, shp, sizes = inspect_array(arr)
     except Refusal:
@@ -380,10 +460,47 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
 
     domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'decoder': decoder, 'count': count, 'variable': 'f'}
     preds, hyps, fals, ref = [], [], [], ''
-    text = sentence.strip()
     hashed = 'the pinned file does not hash to ' + domain['pin']['sha256'][:8] + '…'
 
-    if fam == 'kissing':
+    if cert is not None:
+        # a finite certificate written once (CERTIFICATE): the decoded Lean integers, the claim's bar held to the certificate's own
+        if not isinstance(doc, dict) or any(k not in doc for k in cert['needs']):
+            raise Refusal('data', 'the bytes do not print the certificate\'s fields ' + ', '.join(cert['needs']) + ' (LawN256.encl.json, decoded from LawN256.lean)')
+        if cert.get('range'):
+            if kind != 'integers' or sizes.get('d') != 2:
+                raise Refusal('count', 'the certificate\'s rows are pairs of integers [lo, hi]; the bytes hold ' + str(count) + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values') + ' read as ' + kind)
+            if count != doc['N']:
+                raise Refusal('count', 'the certificate declares N = ' + str(doc['N']) + ' rows; the bytes hold ' + str(count))
+            rng = shape.get('range')
+            if not rng:
+                raise Refusal('count', 'the claim names no range of rows (the certificate holds 0 < j < ' + str(doc['N']) + ')')
+            if rng['lo'] != 1 or rng['hi'] != doc['N'] - 1:
+                raise Refusal('count', 'the claim\'s rows ' + rng['printed'] + ' are not the certificate\'s 0 < j < ' + str(doc['N']) + ' (' + str(count) + ' enclosures, the last row free)')
+        bar = None if isinstance(shape['c'], list) else Fraction(shape['c'])   # any bar the source prints: the bytes decide it
+        domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
+        lits = ', '.join(k + ' = ' + str(doc[k]) for k in cert['needs'] if k != 'K') + (', K = ' + str(doc['K'])[:6] + '… (' + str(len(str(doc['K']))) + ' digits)' if 'K' in cert['needs'] else '')
+        domain['decoder'] += '; ' + lits + ', the file\'s own fields, written into the expression as literals'
+        g = cert['g'](doc)
+        if shape['rel'] == 'in':
+            pred = {'g': g, 'rel': 'in', 'printed': printed, 'c': [str(x) for x in shape['c']]}
+        elif PLAIN_PRINTED.match(printed):
+            pred = {'g': g, 'rel': shape['rel'], 'printed': printed, 'c': str(bar)}
+        else:
+            # the receiver takes a printed bar only as a plain decimal or integer: the bar is written into the expression and the zero is the bar
+            flip = shape['rel'] in ('ge', 'gt')
+            pred = {'g': ['Subtract', str(bar), g] if flip else ['Subtract', g, str(bar)], 'rel': {'ge': 'le', 'gt': 'lt'}.get(shape['rel'], shape['rel']), 'c': '0',
+                    'note': 'the bar ' + printed + ' as the source prints it, written into the expression as the rational ' + str(bar) + ': the receiver reads a printed bar only as a plain decimal or integer, so the zero of the difference is the bar'}
+        if cert.get('forall'):
+            pred['forall'] = cert['forall']
+        preds.append(pred)
+        preds += structural([dict(s, g=s['g'](doc) if callable(s['g']) else s['g']) for s in cert['structural']])
+        hyps += [cert['reduction'], cert['definition']]
+        fals = ['the expression evaluated exactly on the pinned integers violates ' + shape['name'] + ' ' + rel_text(shape['rel']) + ' ' + printed] + \
+               ['the pinned integers violate: ' + s['what'] for s in cert['structural']] + [hashed]
+        ref = ('the bar is the printed ' + printed + ' taken exactly (' + str(bar if bar is not None else shape['c']) + '); the value is ' + cert['value'] +
+               ', computed from the pinned bytes by the expression itself, read as ' + how_read + '; the bytes are LawN256.lean\'s integer literals decoded into JSON by the reader (' +
+               str((doc.get('derivedFrom') or {}).get('path')) + ', sha256 ' + str((doc.get('derivedFrom') or {}).get('sha256', ''))[:12] + '…), the receiver reading JSON only')
+    elif fam == 'kissing':
         if shape['n'] != count:
             raise Refusal('count', 'the claim says ' + str(shape['n']) + ' points, the published bytes hold ' + str(count))
         if sizes.get('d') != shape['dim']:
@@ -475,9 +592,13 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             hyps.append('one admissible object gives the bound ' + str(shape.get('name')) + ' ' + rel_text(shape['rel']) + ' its value (the definition of the constant, read)')
             fals = ['the quantity computed exactly from the pinned bytes violates ' + str(shape.get('name')) + ' ' + rel_text(shape['rel']) + ' ' + printed, hashed]
             ref = 'the bar is the printed decimal taken exactly (' + str(shape['c']) + '); the object is read as ' + how_read
+    return assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record)
+
+
+def assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record):
+    """the object from its parts (the receiver's format, SCHEMA.md there)"""
     if shape.get('starred'):
         ref += '; the source marks the bound with an asterisk (unverified there)'
-
     obj = {'id': obj_id or re.sub(r'[^a-z0-9]+', '-', (shape.get('name') or fam).lower()).strip('-') + '-' + domain['pin']['sha256'][:8],
            'text': text, 'source': {'what': what or ('the page pinned at ' + source), 'path': source, 'sha256': sha256(sp), 'quote': quote},
            'reading': reading, 'domain': domain, 'predicate': preds, 'reference': ref, 'hypotheses': hyps, 'falsifier': fals}
