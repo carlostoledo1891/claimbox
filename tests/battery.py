@@ -315,7 +315,10 @@ run_check('riemann', zeta23.jobs(ROOT), 'none-', {'present': 0, 'run': {'written
           'words': 'the zeta23 certificate: the near-CUE rows (with the decimal constant beside them), the edge bound and the rounded-up p₀ DECIDED FROM THE BYTES by cert-machine, CERTIFIED — the same integers Lean kernel-checks; the four Montgomery–Taylor digits claims admitted and left undecided (transcendental heads); EnclOK skipped: the law\'s bytes are not published'})
 AIJ = json.load(open(os.path.join(REPO, 'corpus', 'riemann-ai-jobs.json'), encoding='utf-8'))['jobs']
 run_check('riemann-ai', AIJ, 'none-', {'present': 0, 'run': {'written': sum(1 for j in AIJ if not j['expect'].startswith('refused')), 'refused': sum(1 for j in AIJ if j['expect'].startswith('refused')), 'skipped': 0},
-          'words': 'fifteen AI-written claims about the same certificate: the false ones REFUTED or refused with the rule, the true ones CERTIFIED, the transcendental digits admitted and undecided'})
+          'words': 'fifteen AI-written claims about the same certificate: the false ones REFUTED or refused with the rule, the true ones CERTIFIED, the transcendental digits decided through the series certificate'})
+MATHJ = json.load(open(os.path.join(REPO, 'corpus', 'riemann-math-jobs.json'), encoding='utf-8'))['jobs']
+run_check('riemann-math', MATHJ, 'none-', {'present': 0, 'run': {'written': 8, 'refused': 0, 'skipped': 0},
+          'words': 'the mathematician\'s eight claims: c₁* bounded both sides and the paper\'s abstract\'s two four-digit prints decided through the series certificate (0.8362 REFUTED as a rounding — a truncation; 0.6725 CERTIFIED), the law\'s exact-CUE band rows, and the paper\'s arithmetic on the ceiling from the file\'s own p₀ — CERTIFIED'})
 if notrun:
     print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
 
@@ -368,22 +371,38 @@ audit = open(os.path.join(RDIR, 'zeta23', 'zeta23__AUDIT.md'), encoding='utf-8')
 rrun = {r['id']: r for r in json.load(open(os.path.join(REPO, 'records', 'riemann-run.json'), encoding='utf-8'))['rows']}
 ok("'Zeta23.PairCeiling.LawN256_check' depends on axioms: [propext]" in audit and 'from the object: CERTIFIED · CERTIFIED' in rrun['zeta23-rows'].get('certMachine', '') and 'from the object: CERTIFIED' in rrun['zeta23-edge'].get('certMachine', ''),
    'zeta23: the row certificate Lean kernel-checks (AUDIT.md: LawN256_check, axioms [propext]) is CERTIFIED by cert-machine from the same integers — two checkers, one certificate')
-ok(all('not decided from the object' in rrun[i].get('certMachine', '') and rrun[i]['certMachine'].startswith('ADMITTED') for i in ('zeta23-cmt', 'zeta23-mt-simple', 'zeta23-mt-distinct', 'af-mt-simple')),
-   'zeta23: the four Montgomery–Taylor digits claims are admitted and left undecided — the receiver has no decider for a transcendental closed form (its item (h))')
-# the false-claim battery: every AI-written claim comes out as a careful reader expects
-met, detail = 0, []
-for j in AIJ:
-    try:
-        obj = T.translate(j['claim'], ROOT, j['source'], j['data'], elements=j.get('elements'), obj_id=j['id'])
-        line = T.check_with_cert_machine(obj, ROOT)
-        words = re.findall(r'\b(CERTIFIED|REFUTED|REFUSED)\b', line.split('from the object:')[-1]) if 'from the object:' in line else []
-        got = ('undecided' if line.startswith('ADMITTED') and 'not decided from the object' in line else (words[0] if words else line.split()[0]))
-    except Refusal as e:
-        got = 'refused ' + e.rule
-    met += got == j['expect']
-    if got != j['expect']:
-        detail.append(j['id'] + ': expected ' + j['expect'] + ', got ' + got)
-ok(met == len(AIJ), 'riemann-ai: every AI-written claim comes out as expected — the false REFUTED or refused with the rule, the true CERTIFIED, the transcendental digits undecided', '; '.join(detail) or str(met) + '/' + str(len(AIJ)))
+ok('not decided from the object' in rrun['af-mt-simple'].get('certMachine', '') and rrun['af-mt-simple']['certMachine'].startswith('ADMITTED'),
+   'zeta23: the paper\'s Montgomery–Taylor digits claim on the closed-form route is admitted and left undecided — the receiver has no decider for a transcendental closed form (its item (h))')
+ok(all(re.findall(r'\b(CERTIFIED|REFUTED|REFUSED)\b', rrun[i].get('certMachine', '').split('from the object:')[-1])[:2] == ['CERTIFIED', 'CERTIFIED'] for i in ('zeta23-cmt', 'zeta23-mt-simple', 'zeta23-mt-distinct')),
+   'zeta23: the same three digits claims through the series certificate (c₁* = 2s/(2c + s), two rational partial sums) are DECIDED from the object, CERTIFIED — the transcendental reduced to rational arithmetic (mathematician.md §1)')
+# the two readings of a printed decimal: an ellipsis is a truncation, "published as" a rounding (the machine caught the first draft conflating them)
+ok(grammar.parse('c₁* = 0.7532960…')['c'] == [Fraction('0.7532960'), Fraction('0.7532961')] and grammar.parse('x, published as 0.8362')['c'] == [Fraction('0.83615'), Fraction('0.83625')],
+   'grammar: an ellipsis print is the truncation box [p, p + unit), a "published as" print the half-unit rounding box')
+# the false-claim battery and the mathematician's claims: every one comes out as a careful reader expects (REFUTED is the word of the object when any predicate is REFUTED)
+
+
+def expected_outcomes(jobs_):
+    met, detail = 0, []
+    for j in jobs_:
+        try:
+            obj = T.translate(j['claim'], ROOT, j['source'], j['data'], elements=j.get('elements'), obj_id=j['id'])
+            line = T.check_with_cert_machine(obj, ROOT)
+            words = re.findall(r'\b(CERTIFIED|REFUTED|REFUSED)\b', line.split('from the object:')[-1]) if 'from the object:' in line else []
+            got = 'undecided' if line.startswith('ADMITTED') and 'not decided from the object' in line else ('REFUTED' if 'REFUTED' in words else (words[0] if words else line.split()[0]))
+        except Refusal as e:
+            got = 'refused ' + e.rule
+        met += got == j['expect']
+        if got != j['expect']:
+            detail.append(j['id'] + ': expected ' + j['expect'] + ', got ' + got)
+    return met, detail
+
+
+met, detail = expected_outcomes(AIJ)
+ok(met == len(AIJ), 'riemann-ai: every AI-written claim comes out as expected — the false REFUTED or refused with the rule, the true CERTIFIED', '; '.join(detail) or str(met) + '/' + str(len(AIJ)))
+met, detail = expected_outcomes(MATHJ)
+ok(met == len(MATHJ), 'riemann-math: every claim of the mathematician comes out as expected — the series enclosures certified, the abstract\'s 0.8362 refuted as a rounding, the CUE rows and the ceiling arithmetic certified', '; '.join(detail) or str(met) + '/' + str(len(MATHJ)))
+mm = open(os.path.join(RDIR, 'mathematician.md'), encoding='utf-8').read()
+ok(all(j['claim'] in mm for j in MATHJ if j['source'].endswith('mathematician.md')), 'riemann-math: every claim whose source is the mathematician\'s write-up is printed there verbatim')
 
 # ---- 3c · planted-defect recall of the whole pipeline ----------------------------------------------------------------
 rc = subprocess.run([sys.executable, os.path.join(HERE, 'recall.py')], capture_output=True, text=True, timeout=1800)

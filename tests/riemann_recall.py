@@ -24,8 +24,9 @@ THE PLANTS (every row of the certificate under CLAIMBOX_FULL=1, a fixed sample o
                (refused "data")
   p0           the exact rational edited in the file (flips)
   digits       the Montgomery–Taylor constant's last printed digit changed in a copy of its file, the sentence following:
-               the receiver admits the object and does NOT decide it — the transcendental gap, recorded as such, not as
-               a catch (what a decider with the interval kernel would close)
+               through the series certificate (mathematician.md §1) the wrong digit is REFUTED — caught; through the
+               closed form (the paper's claim, kept on that route) the receiver admits and does NOT decide — the
+               transcendental gap, recorded as such, not as a catch
 
 usage: python3 tests/riemann_recall.py [--write]      records/riemann-recall.json; --write (re)writes it, otherwise compares
        CLAIMBOX_FULL=1 python3 tests/riemann_recall.py --write   every row (≈ 1,300 plants, minutes)
@@ -168,8 +169,10 @@ def main(argv):
         j['claim'] = p0_job['claim'].replace('0.6818287', '0.6818288')
         plant('sentence', 'sentence:p0:bar+1', j, j['claim'], 'caught')
         plant('page+bar', 'page+bar:p0:0.6818286', with_page(p0_job, 'p_0\\le0.6818287', 'p_0\\le0.6818286', 'paper-p0.tex'), 'the paper copied with p_0 <= 0.6818286, the sentence following', 'caught')
-        # the transcendental gap
-        plant('digits', 'digits:cmt:0.7532961', with_page(cmt_job, 'c₁* = 0.7532960…', 'c₁* = 0.7532961…', 'ChallengeDeps-cmt.lean'), 'ChallengeDeps.lean copied with the constant\'s last digit changed, the sentence following: the receiver admits and does not decide', 'undecided')
+        # the digits of the Montgomery–Taylor constant: through the series certificate a wrong last digit is REFUTED; through the closed form
+        # (the paper's claim, kept on that route) the receiver admits and does not decide — the gap, recorded
+        plant('digits', 'digits:cmt:0.7532961', with_page(cmt_job, 'c₁* = 0.7532960…', 'c₁* = 0.7532961…', 'ChallengeDeps-cmt.lean'), 'ChallengeDeps.lean copied with the constant\'s last digit changed, the sentence following: the series enclosure lies below the truncation box, REFUTED', 'caught')
+        plant('digits', 'digits:af-mt-simple:0.67251', with_page(jobs['af-mt-simple'], '0.67250\\ldots', '0.67251\\ldots', 'paper-mt.tex'), 'the paper copied with the proportion\'s last digit changed, the sentence following: the closed-form route — the receiver admits and does not decide', 'undecided')
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     caught = [r for r in rows if r['expect'] == 'caught']

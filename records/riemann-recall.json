@@ -1,8 +1,8 @@
 {
  "what": "Planted-defect recall at scale on zeta23's LawN256 certificate through claimbox -> cert-machine: a defect in the bytes, the sentence or the page must come out as a refusal with its rule or a changed decision; a widening within the tolerance must not change it (controls); a wrong transcendental digit is admitted and not decided (the receiver's gap, recorded). Each row: the plant, its key, what was planted, the expectation, the unplanted and planted outcomes, whether it came out as expected.",
  "full": true,
- "plants": 781,
- "caught": 781,
+ "plants": 782,
+ "caught": 782,
  "controls": 511,
  "controlsAsExpected": 511,
  "undecided": 1,
@@ -20685,7 +20685,23 @@
    "plant": "digits",
    "key": "digits:cmt:0.7532961",
    "job": "zeta23-cmt",
-   "planted": "ChallengeDeps.lean copied with the constant's last digit changed, the sentence following: the receiver admits and does not decide",
+   "planted": "ChallengeDeps.lean copied with the constant's last digit changed, the sentence following: the series enclosure lies below the truncation box, REFUTED",
+   "expect": "caught",
+   "unplanted": [
+    "checked",
+    "ADMITTED  from the object: CERTIFIED·CERTIFIED"
+   ],
+   "planted_outcome": [
+    "checked",
+    "ADMITTED  from the object: REFUTED·CERTIFIED"
+   ],
+   "asExpected": true
+  },
+  {
+   "plant": "digits",
+   "key": "digits:af-mt-simple:0.67251",
+   "job": "af-mt-simple",
+   "planted": "the paper copied with the proportion's last digit changed, the sentence following: the closed-form route — the receiver admits and does not decide",
    "expect": "undecided",
    "unplanted": [
     "checked",

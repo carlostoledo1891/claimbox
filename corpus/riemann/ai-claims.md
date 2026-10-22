@@ -26,9 +26,9 @@ p₀ ≤ 0.68182
 p₀ ≤ 0.6819
   the simple-point fraction with the relation the wrong way (false)
 p₀ ≥ 0.6818287
-  the Montgomery–Taylor constant with its last digit wrong (false; a transcendental the receiver cannot decide yet)
+  the Montgomery–Taylor constant with its last digit wrong (false; decided through the series certificate)
 c₁* = 0.7532961…
-  the proportion to four digits (true; undecided for the same reason)
+  the proportion to four digits (true; decided the same way)
 2 − 1/c₁* = 0.6725…
   the edge bound without the bars (a different quantity, no functional written for it)
 D(1) ≤ 0.82395317

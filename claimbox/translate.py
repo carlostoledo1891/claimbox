@@ -168,6 +168,18 @@ CMT_DEF = ('c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ) at ϑ = 1/√2, the Montgomery
 LO, HI = IDX('i', '0'), IDX('i', '1')
 SUM_LO, SUM_HI = ['Sum', 'i', '0', N1, LO], ['Sum', 'i', '0', N1, HI]
 TAU = lambda d: str(d['tn']) + '/' + str(d['td'])
+# the exact route to the Montgomery–Taylor constant (corpus/riemann/mathematician.md §1): with ϑ² = 1/2, sin ϑ = ϑ·s and cos ϑ = c for the
+# alternating rational series s = 1 + Σ_{k≥1} (−1)^k/(2^k (2k+1)!) and c = 1 + Σ_{k≥1} (−1)^k/(2^k (2k)!), so c₁* = 2s/(2c + s); for an even
+# truncation order K the partial sums bracket the limits, s_{K+1} <= s <= s_K and c_{K+1} <= c <= c_K — every head exact, no kernel
+FACT = lambda top: ['Product', 'm', '1', top, 'm']
+TERM = lambda top: ['Divide', ['Power', '-1', 'k'], ['Multiply', ['Power', '2', 'k'], FACT(top)]]
+S_PARTIAL = lambda K: ['Add', '1', ['Sum', 'k', '1', str(K), TERM(['Add', ['Multiply', '2', 'k'], '1'])]]
+C_PARTIAL = lambda K: ['Add', '1', ['Sum', 'k', '1', str(K), TERM(['Multiply', '2', 'k'])]]
+S_HI, S_LO, C_HI, C_LO = S_PARTIAL, lambda K: S_PARTIAL(K + 1), C_PARTIAL, lambda K: C_PARTIAL(K + 1)
+SERIES_HYPS = ['c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ) at ϑ = 1/√2 (ChallengeDeps.lean; the paper\'s c_MT^{-1} = 1/2 + (1/√2)·cot(1/√2) is its reciprocal) — the definition, read',
+               'with ϑ² = 1/2 the Maclaurin series give sin ϑ = ϑ·s and cos ϑ = c, s = 1 + Σ_{k≥1} (−1)^k/(2^k (2k+1)!), c = 1 + Σ_{k≥1} (−1)^k/(2^k (2k)!) — read; hence tan ϑ = ϑ·s/c and, since √2·ϑ = 1 and ϑ² = 1/2, c₁* = 2s/(2c + s), 1/c₁* = 1/2 + c/s, 2 − 1/c₁* = 3/2 − c/s, (3 − 1/c₁*)/2 = 5/4 − c/(2s) — algebra',
+               'the terms of both series alternate and decrease in absolute value (by a factor of at least 12 at every step), so for an even truncation order K the partial sums bracket the limits: s_{K+1} <= s <= s_K and c_{K+1} <= c <= c_K (the alternating-series bracket, read); 2s/(2c+s) increases in s and decreases in c on positive values, and so do 3/2 − c/s and 5/4 − c/(2s) in the matching directions, so the two expressions written here enclose the quantity',
+               'the claim holds when both ends of the enclosure satisfy it: both in the box the digits allow (a digits claim), or the relevant end on the right side of the bar (a bound)']
 CERTIFICATE = {
     'rows': {'keys': ('|256S(j)-j|',), 'needs': ('N', 'K', 'tn', 'td'), 'range': True, 'forall': [['i', '0', ['Subtract', 'n', '2']]],
              'g': lambda d: ['Max', ['Abs', ['Subtract', ['Divide', ['Multiply', str(d['N']), LO], str(d['K'])], ['Add', 'i', '1']]],
@@ -189,14 +201,50 @@ CERTIFICATE = {
            'reduction': 'the paper prints p₀ rounded up and the Lean file prints it exactly; the inequality between the two literals is decided, nothing else',
            'definition': 'p₀ is the law\'s own number, the optimum of an exact-rational linear programme the release does not publish: what is decided is that the print is a rounding up of the exact rational the file states, not the rational itself (read)',
            'structural': []},
-    'cmt': {'keys': ('c1*', 'cMT', 'c_MT'), 'constant': True, 'g': CMT, 'value': 'the Montgomery–Taylor constant c₁*', 'definition': CMT_DEF},
+    'cmt': {'keys': ('c1*', 'cMT', 'c_MT'), 'constant': True, 'g': CMT, 'value': 'the Montgomery–Taylor constant c₁*', 'definition': CMT_DEF,
+            'exact': lambda K: (['Divide', ['Multiply', '2', S_LO(K)], ['Add', ['Multiply', '2', C_HI(K)], S_LO(K)]], ['Divide', ['Multiply', '2', S_HI(K)], ['Add', ['Multiply', '2', C_LO(K)], S_HI(K)]])},
     'mt-simple': {'keys': ('2-1/c1*', '2-cMT^-1'), 'constant': True, 'g': ['Subtract', '2', ['Divide', '1', CMT]],
-                  'value': 'the Montgomery–Taylor proportion of simple zeros on the critical line, 2 − 1/c₁*', 'definition': CMT_DEF},
+                  'value': 'the Montgomery–Taylor proportion of simple zeros on the critical line, 2 − 1/c₁*', 'definition': CMT_DEF,
+                  'exact': lambda K: (['Subtract', '3/2', ['Divide', C_HI(K), S_LO(K)]], ['Subtract', '3/2', ['Divide', C_LO(K), S_HI(K)]])},
     'mt-distinct': {'keys': ('(3-1/c1*)/2', '12(3-cMT^-1)'), 'constant': True, 'g': ['Divide', ['Subtract', '3', ['Divide', '1', CMT]], '2'],
-                    'value': 'the Montgomery–Taylor proportion of distinct zeros, (3 − 1/c₁*)/2', 'definition': CMT_DEF},
+                    'value': 'the Montgomery–Taylor proportion of distinct zeros, (3 − 1/c₁*)/2', 'definition': CMT_DEF,
+                    'exact': lambda K: (['Subtract', '5/4', ['Divide', C_HI(K), ['Multiply', '2', S_LO(K)]]], ['Subtract', '5/4', ['Divide', C_LO(K), ['Multiply', '2', S_HI(K)]]])},
+    # the mathematician's claims (corpus/riemann/mathematician.md): the law is exactly CUE on the band; the paper's arithmetic on the ceiling
+    'cue': {'keys': ('|2jK/256-loj-hij|',), 'needs': ('N', 'K'), 'range': True, 'forall': [['i', '0', ['Subtract', 'n', '2']]],
+            'g': lambda d: ['Abs', ['Subtract', ['Divide', ['Multiply', ['Multiply', '2', ['Add', 'i', '1']], str(d['K'])], str(d['N'])], ['Add', LO, HI]]],
+            'value': 'the distance |2·j·K/N − lo_j − hi_j| between twice the CUE value j·K/N and the two ends of the enclosure of K·S(j), for every band row j = 1..N−1',
+            'reduction': 'j·K/N is an integer (K = 2^140, N = 256) and each enclosure is one unit wide, so the enclosure contains the CUE value j·K/N iff |2·j·K/N − lo_j − hi_j| <= 1; the predicate is exact integer arithmetic over the file\'s rows, with N and K as the file prints them',
+            'definition': 'the CUE form factor of an N-periodic configuration is S(j) = j/N on the band 0 < j < N; the claim is that every band enclosure of the law\'s form factor contains that value exactly — the law sits on the CUE values, not merely within 3·10⁻⁴⁰ of them (the mathematician\'s observation from the bytes, §2)',
+            'structural': []},
+    'p0-gap': {'keys': ('|p0-2/3|',), 'needs': ('p0',), 'g': lambda d: ['Abs', ['Subtract', d['p0'], '2/3']],
+               'value': 'the gap p₀ − 2/3 between the ceiling\'s simple-point fraction and the theorem\'s 2/3, p₀ the exact rational LawN256.lean prints',
+               'reduction': 'the paper says the 2/3 is within 0.016 of the ceiling of its own method; p₀ is the law\'s simple-point fraction as the file prints it, written in as a literal; the gap is exact', 'definition': 'the paper\'s sentence (§limits), read; p₀ the file\'s own number (§3 of the mathematician\'s claims)', 'structural': []},
+    'ceiling-8.2': {'keys': ('B(8.2)',), 'needs': ('p0',), 'g': lambda d: ['Add', d['p0'], '2091/100000000'],
+                    'value': 'B(8.2) := p₀ + 2.55·10⁻⁶·8.2, the paper\'s ceiling bound at the window norm 8.2 (2.55·10⁻⁶ × 8.2 = 2091/10^8 exactly)',
+                    'reduction': 'the paper says the bound p₀ + 2.55·10⁻⁶(|r′(1)| + ∫|r″|) is below 0.6819 for any window with |r′(1)| + ∫|r″| < 8.2; at the endpoint 8.2 it is p₀ + 2091/10^8, exact', 'definition': 'the paper\'s sentence (§limits), read; p₀ the file\'s own number (§3 of the mathematician\'s claims)', 'structural': []},
+    'c256': {'keys': ('c256',), 'needs': ('N', 'tn', 'td'), 'g': lambda d: ['Add', ['Divide', '1', ['Multiply', '6', ['Square', str(d['N'])]]], ['Divide', TAU(d), ['Multiply', '2', str(d['N'])]]],
+             'value': 'the decimal constant c_256 := 1/(6·N²) + τ/(2N) of ceiling_law256_decimal, τ = tn/td as the file declares it',
+             'reduction': 'exact rational arithmetic in N and τ as the file prints them', 'definition': 'the paper rounds this coefficient to 2.55·10⁻⁶ and the Lean file to 2.5431316·10⁻⁶ (§3 of the mathematician\'s claims)', 'structural': []},
 }
 CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
+
+
+def digits_preds(low, high, shape, printed, note_low='', note_high=''):
+    """the predicates of a digits claim on a quantity enclosed by [low, high] (one expression twice when exact): an ellipsis print is a
+    truncation, the value in [p, p + unit) — low >= p with p the printed bar, high < p + unit written structurally (the unit is not printed);
+    a rounded print is the half-unit box both ends must lie in"""
+    if shape.get('ellipsis'):
+        p, top = shape['c']
+        return [{'g': low, 'rel': 'ge', 'printed': printed, 'c': str(p), 'note': 'the print is cut off with an ellipsis: the expansion begins with these digits, so the quantity is at least ' + printed + (' — ' + note_low if note_low else '')},
+                {'g': ['Subtract', high, str(top)], 'rel': 'lt', 'c': '0', 'note': 'and below the next unit of the last printed digit, ' + str(top) + ' (the truncation box [' + printed + ', ' + str(top) + '), its upper end not printed)' + (' — ' + note_high if note_high else '')}]
+    cval = [str(x) for x in shape['c']]
+    out = [{'g': low, 'rel': 'in', 'printed': printed, 'c': cval}]
+    if note_low:
+        out[0]['note'] = note_low
+    if high is not low:
+        out.append({'g': high, 'rel': 'in', 'printed': printed, 'c': cval, 'note': note_high or 'the upper end'})
+    return out
 
 
 def ckey(name):
@@ -421,19 +469,52 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     cert = CERTIFICATE_BY_KEY.get(ckey(shape.get('name'))) if fam in ('bound', 'digits', 'identity') and not decider else None
     text = sentence.strip()
     if cert is not None and cert.get('constant'):
+        series = None
+        if cert.get('exact'):
+            try:
+                with open(dp, 'rb') as f:
+                    series = json.loads(f.read().decode('utf-8'))
+            except (ValueError, UnicodeDecodeError):
+                series = None
+            if not (isinstance(series, dict) and 'series' in series and 'K' in series):
+                series = None
+        if series is not None:
+            # the exact route: the constant enclosed by two rational partial sums of its series (the mathematician's reduction, read into the
+            # hypotheses), decided by the receiver's exact evaluator — no kernel; the pinned file is the certificate, its one datum K
+            K = series['K']
+            if isinstance(K, bool) or not isinstance(K, int) or K < 2 or K % 2:
+                raise Refusal('data', 'the series certificate\'s truncation order K must be an even integer >= 2 (the bracket is stated for even K); the file prints ' + str(K))
+            low, high = cert['exact'](K)
+            domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'count': 1, 'variable': 'f',
+                      'decoder': 'no array: the file is the series certificate and its one datum is the truncation order K = ' + str(K) + ', written into the expressions as a literal; the quantity is ' + cert['value'] + ', enclosed by two rational partial sums'}
+            cval = [str(x) for x in shape['c']] if isinstance(shape['c'], list) else str(shape['c'])
+            if shape['rel'] == 'in':
+                preds = digits_preds(low, high, shape, printed, 'the lower end of the enclosure, 2·s_{K+1}/(2·c_K + s_{K+1}) and its kin, K = ' + str(K), 'the upper end of the enclosure, K = ' + str(K))
+            elif shape['rel'] in ('le', 'lt'):
+                preds = [{'g': high, 'rel': shape['rel'], 'printed': printed, 'c': cval, 'note': 'the upper end of the enclosure, K = ' + str(K) + ': the bound holds for the quantity if it holds for the end above it'}]
+            elif shape['rel'] in ('ge', 'gt'):
+                preds = [{'g': low, 'rel': shape['rel'], 'printed': printed, 'c': cval, 'note': 'the lower end of the enclosure, K = ' + str(K) + ': the bound holds for the quantity if it holds for the end below it'}]
+            else:
+                raise Refusal('decider', 'an exact identity for a transcendental constant is not decidable from an enclosure: the claim must be a box (digits) or a bound')
+            hyps = SERIES_HYPS + [cert['definition']]
+            fals = ['an end of the enclosure lies ' + ('outside the box' if shape['rel'] == 'in' else 'on the wrong side of ' + printed) + ' (the quantity may still satisfy the claim if K is too small to separate — a refusal to decide, not a refutation of the quantity; a REFUTED here says the enclosure, hence the quantity when the enclosure is wholly outside, violates the claim)',
+                    'the pinned certificate does not hash to ' + domain['pin']['sha256'][:8] + '…']
+            ref = ('the printed ' + printed + ' is ' + ('the box its digits allow' if shape['rel'] == 'in' else 'the bar taken exactly') + '; the quantity is ' + cert['value'] +
+                   ', enclosed by two rational partial sums of its Maclaurin series at K = ' + str(K) + ' (width about 2·10⁻¹⁹ at K = 8) and decided by the receiver\'s exact evaluator — the kernel is not needed: the transcendental is reduced to rational arithmetic by the identities in the hypotheses')
+            return assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record)
         # a closed form with no bytes: the pinned file is the one that defines it, nothing is decoded; the receiver admits the
         # transcendental heads and leaves the decision to a decider with its interval kernel, which it does not have for these objects
         domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'count': 1, 'variable': 'f',
                   'decoder': 'no bytes are decoded: the quantity is ' + cert['value'] + ', the closed form the pinned file defines; the count is the one constant'}
-        pred = {'g': cert['g'], 'rel': shape['rel'], 'printed': printed, 'c': [str(x) for x in shape['c']] if isinstance(shape['c'], list) else str(shape['c'])}
+        preds = digits_preds(cert['g'], cert['g'], shape, printed) if shape['rel'] == 'in' else [{'g': cert['g'], 'rel': shape['rel'], 'printed': printed, 'c': str(shape['c'])}]
         hyps = [cert['definition']]
         if shape['rel'] == 'in':
-            hyps.append('the printed number is the value cut off at its digits: it is read as the box the digits allow, half a unit of the last digit either way')
+            hyps.append('the printed number is the value cut off at its digits (an ellipsis: the truncation box, from the digits to one unit above) or rounded to them (published as: half a unit either side)' if shape.get('ellipsis') else 'the printed number is a rounding of the quantity: it is read as the box the digits allow, half a unit of the last digit either way')
         fals = ['the closed form, enclosed by the receiver\'s interval kernel, lies ' + ('outside the box' if shape['rel'] == 'in' else 'on the wrong side of ' + printed),
                 'the pinned file does not hash to ' + domain['pin']['sha256'][:8] + '…']
         ref = ('the printed ' + printed + ' is ' + ('the box its digits allow' if shape['rel'] == 'in' else 'the bar taken exactly') + '; the quantity is ' + cert['value'] +
                ', a closed form over transcendental heads (Exp, Ln, Sin, Cos): the receiver admits it and does not decide it from the object — its decision needs a decider with the interval kernel, which the receiver does not have for claimbox objects yet')
-        return assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, [pred], ref, hyps, fals, record)
+        return assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record)
     with open(dp, 'rb') as f:
         try:
             doc = json.loads(f.read().decode('utf-8'))
@@ -582,8 +663,9 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         elif fam in ('digits', 'score'):
             named = str(shape.get('name')) + ' of the published object, as the claimant defines it'
             lo, hi = shape['c']
-            preds.append({'g': {'named': named, 'where': decider, 'args': ['f']}, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]})
-            hyps.append('the printed number is a rounding of the quantity: it is read as the box its digits allow, half a unit of the last digit either way')
+            g_named = {'named': named, 'where': decider, 'args': ['f']}
+            preds += digits_preds(g_named, g_named, shape, printed)
+            hyps.append('the printed number is cut off at its digits: the truncation box [' + printed + ', ' + str(hi) + ')' if shape.get('ellipsis') else 'the printed number is a rounding of the quantity: it is read as the box its digits allow, half a unit of the last digit either way')
             fals = ['the quantity computed exactly lies outside [' + str(lo) + ', ' + str(hi) + ']', hashed]
             ref = 'the printed ' + printed + ' is the box its digits allow; the object is read as ' + how_read
         else:

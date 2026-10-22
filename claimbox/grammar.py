@@ -11,7 +11,8 @@ THE GRAMMAR, in the order it is tried:
                    no bound), an approximation sign (≈, ~), two relations in one claim, no printed quantity at all
   abs-bound        |EXPR| REL NUMBER            |D(1)| <= 0.82395317 · |256·S(j) − j| <= 3·10⁻⁴⁰ (0 < j < 256)
   digits           EXPR = NUMBER…               c₁* = 0.7532960… · 2-c_{MT}^{-1}=0.67250\\ldots — a value printed to its
-                   digits and cut off: the box the digits allow; without the ellipsis "=" is an exact identity
+                   digits and CUT OFF: the truncation box [p, p + one unit of the last digit); without the ellipsis "=" is
+                   an exact identity, and "published as p" (below) is a ROUNDED print, half a unit either side
   bound            NAME REL NUMBER             C_1d <= 1.463071582607559 · $C_{82} < 0.2534449*$ · K(11) >= 604 · C* > 0.7
   value-compare    NAME = NUMBER… REL NUMBER   Area(E) = 0.1091479892... < 0.1148103258186177
   digits           NAME published as NUMBER    a constant to its printed digits (the box the digits allow)
@@ -94,12 +95,23 @@ def exact(printed):
 
 
 def box(printed):
-    """the box the printed digits allow: half a unit of the last printed digit either way (an exponent shifts the unit)"""
+    """the box a ROUNDED print allows: half a unit of the last printed digit either way (an exponent shifts the unit)"""
     mant, exp = parts(printed)
     d = len(mant.split('.')[1]) if '.' in mant else 0
     half = Fraction(5, 10 ** (d + 1)) * (Fraction(10) ** exp)
     p = exact(printed)
     return [p - half, p + half]
+
+
+def truncation_box(printed):
+    """the box a print CUT OFF with an ellipsis allows (0.7532960… means the expansion begins so): from the printed digits to one unit of
+    the last digit above them, [p, p + unit) — not half a unit either side; the two readings differ, and 2026-10-22 the machine caught the
+    first draft of this grammar giving an ellipsis the rounding box (it refuted the true 0.7532960… and certified a false 0.7532961…)"""
+    mant, exp = parts(printed)
+    d = len(mant.split('.')[1]) if '.' in mant else 0
+    unit = Fraction(1, 10 ** d) * (Fraction(10) ** exp)
+    p = exact(printed)
+    return [p, p + unit]
 
 
 REL_WORD = {'<=': 'le', '<': 'lt', '>=': 'ge', '>': 'gt', '=': 'eq'}
@@ -168,7 +180,7 @@ def parse(text):
         # the left side is an expression (2 − 1/c₁*, \tfrac12(3-c_{\mathrm{MT}}^{-1}), c₁*): a word of letters alone makes it prose
         if re.search(r'=\s*' + NUMBER + r'\s*(?:\.\.\.|…|\\ldots|\\dots)', t[m.end():]):
             raise Refusal('ambiguous', 'two values in one claim')
-        return out({'family': 'digits', 'name': m.group(1).strip(), 'rel': 'in', 'printed': m.group(2), 'c': box(m.group(2)), 'ellipsis': True})
+        return out({'family': 'digits', 'name': m.group(1).strip(), 'rel': 'in', 'printed': m.group(2), 'c': truncation_box(m.group(2)), 'ellipsis': True})
     # a kissing count printed with digit groups: K(25) >= 197,580 — the printed form is kept for the quote; a malformed
     # group (K(11) >= 5,94) is refused rather than read as the count before the comma
     m = re.match(r'^K\((\d+)\)\s*(>=|=|>)\s*(\d[\d,]*\d)(?![\d,])', t)

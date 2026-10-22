@@ -30,8 +30,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      (★ THE NEXT STEPS, TAKEN). THE THIRD SESSION (2026-10-21) lifted the receiver's two changes and used them (★ THE RECEIVER'S TWO
      CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
      explainer pages (★ THE EXPLAINER PAGES). THE FIFTH SESSION (2026-10-22) put the claim-machine to the Riemann-hypothesis story on
-     the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST). `make test`: 174 checks, 44 red controls all firing, 56/56 planted defects
-     caught on the earlier corpora and 781/781 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
+     the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST), then made its own claims as the mathematician (★ THE MATHEMATICIAN'S
+     CLAIMS). `make test`: 190 checks, 44 red controls all firing, 56/56 planted defects
+     caught on the earlier corpora and 782/782 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them and the full recall). Coverage 97/132 on the register (unchanged by the
      fifth session's grammar), 10/65 on the story's sentences, 3/80 on the AI phrasings. Public at github.com/carlostoledo1891/claimbox
@@ -88,6 +89,37 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      1.63 units of 256/K: a move away from j flips, a move towards it does not — the first draft assumed every shift flips, the first
      sample showed half do not; that is what the controls are for). The objects' pins lead out of the receiver's tree
      (../claimbox/corpus/riemann/…); both checkers follow such a path today — the (g) ask decides whether they should.
+  ★ THE MATHEMATICIAN'S CLAIMS (2026-10-22, later the same session, the operator: "build the claims and test them … The Mathematician is
+     you … find something new"). corpus/riemann/mathematician.md (my claims with their derivations, every claim a line the grammar reads),
+     corpus/riemann-math-jobs.json (each with the word I expected), records/riemann-math-run.json + records/riemann-math/ — 8 written, 8
+     as expected. FOUND: (1) THE MONTGOMERY–TAYLOR CONSTANT IS RATIONAL ARITHMETIC. c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ) at ϑ = 1/√2; with ϑ² = 1/2,
+     sin ϑ = ϑ·s and cos ϑ = c for the alternating rational series s = 1 + Σ_{k≥1} (−1)^k/(2^k (2k+1)!), c = 1 + Σ_{k≥1} (−1)^k/(2^k (2k)!),
+     so c₁* = 2s/(2c + s), 1/c₁* = 1/2 + c/s, 2 − 1/c₁* = 3/2 − c/s, (3 − 1/c₁*)/2 = 5/4 − c/(2s); the partial sums bracket the limits
+     (Leibniz, even K) and the monotonicity in s and c give an enclosure of width 2·10⁻¹⁹ at K = 8 in Sum, Product and Power — the
+     receiver's exact evaluator decides it, no kernel. The certificate zeta23/mt-series.json (its one datum K = 8); translate.py
+     CERTIFICATE 'exact' routes for cmt, mt-simple, mt-distinct, taken when the data file is a series certificate, the closed form kept
+     otherwise. RESULT: c₁* = 0.7532960…, 2 − 1/c₁* = 0.67250… and (3 − 1/c₁*)/2 = 0.83625… CERTIFIED from the object in milliseconds
+     (records/riemann-run.json; af-mt-simple kept on the closed form on purpose, undecided — the measurement of (h) stays); the AI's
+     wrong digit c₁* = 0.7532961… REFUTED (corpus/riemann-ai-jobs.json re-expected); my own bounds c₁* ≤ 0.75329607 and c₁* ≥ 0.75329606
+     CERTIFIED. (2) THE MACHINE CAUGHT ME. My grammar had given an ellipsis print the half-unit ROUNDING box; cert-machine then refuted the
+     true "c₁* = 0.7532960…" and certified the false "c₁* = 0.7532961…" — and was right, since c₁* = 0.75329606785…: a print cut off with an
+     ellipsis is a TRUNCATION, the value in [p, p + unit). grammar.truncation_box now reads an ellipsis so, grammar.box keeps the rounding
+     reading for "published as"; because the receiver's `in` takes only the half-unit box, the translator writes an ellipsis claim as two
+     predicates (low ≥ p with p the printed bar; high − (p + unit) < 0 structural, the unit not printed) — translate.digits_preds, on the
+     series route, the closed-form route and the named-decider route alike. (3) A PRINT FINDING. The paper's abstract prints "the constants
+     become 0.6725 and 0.8362" where its theorem prints 0.67250… and 0.83625…; the exact (3 − 1/c₁*)/2 = 0.836250351839705822… lies above
+     the rounding box of 0.8362 — a truncation (a rounding prints 0.8363); true as a lower bound on a proportion, REFUTED as a rounded
+     print ("(3 − 1/c₁*)/2, published as 0.8362"), its companion 0.6725 CERTIFIED. A finding about the print, not the theorem. (4) THE LAW
+     IS EXACTLY CUE ON THE BAND. Every band enclosure contains j·K/256 exactly — 124 rows at the upper end, 131 at the lower (counted from
+     the decoded JSON): |2·j·K/256 − lo_j − hi_j| ≤ 1 (0 < j < 256) CERTIFIED over the 255 rows; the law sits on the CUE values, not merely
+     within 3·10⁻⁴⁰ of them; hence D(1) = S(256)/256 − 1/512 and 256·S(256) = 54126.59434047636552400011418632126843044…. (5) THE PAPER'S
+     CEILING ARITHMETIC from the file's own p₀: |p₀ − 2/3| ≤ 0.016 (0.0151620207…), B(8.2) := p₀ + 2.55·10⁻⁶·8.2 ≤ 0.6819 (0.68184954…),
+     c_256 := 1/(6·256²) + τ/512 ≤ 2.55·10⁻⁶ — CERTIFIED. The recall at scale re-run: 782/782 caught (the series digits plant now caught;
+     a closed-form digits plant on the paper's claim undecided, recorded), 511/511 controls. make test 190 checks, 44 reds. NOT DONE,
+     PROMISING: the ξ′ constants 0.85838/0.92919 (flat window) and 0.86864/0.93432 (quartic) — Lean proves them from certificates
+     (Zeta23/XiPrime/Certificate/{Poly,D1,AtOne}.lean, CertificateFn.lean: "certified ε-free decimals"); if that arithmetic is rational,
+     the same exact route decides them from a certificate; the bandwidth-one programme itself (the law) at small N by an exact simplex, a
+     reproduction of the unpublished computation and the road to the ceiling's limit ("approximately 0.682"); the authors' law file.
   ★ THE QUEUE, CHECKED (2026-10-21, the fourth session, "continue the queued tasks"): every NEXT item waits on the receiver, and
      cert-machine has made none of (c)–(f) — its one commit since 40833648 is its self-audit (2311ac2c), which changed
      tools/run-mc100-einstein.js (an object that is not n vectors in R^d is now REFUSED); the ten objects naming it are still
@@ -347,6 +379,13 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
         translator writes such a bar into the expression with the zero as the bar, noted); (c′) a decoder for integer lists printed
         as Lean or text literals, so that an object pins the claimant's own file rather than the reader's JSON copy (today
         LawN256.encl.json names the Lean file's sha256 and the battery re-decodes it).
+     7. THE MATHEMATICIAN'S NEXT CLAIMS (★ THE MATHEMATICIAN'S CLAIMS, "not done, promising"): (i) the ξ′ constants through the Lean
+        certificate files — read Zeta23/XiPrime/Certificate/*.lean and CertificateFn.lean for the arithmetic behind 0.85838, 0.92919,
+        0.86864, 0.93432; if rational (polynomial integrals, a λ-certificate), a CERTIFICATE entry and a certificate file decide them
+        exactly; (ii) the bandwidth-one programme at small N: an exact simplex (Fractions, standard library) over N-periodic marked
+        configurations with marks {1, 2}, the form factor held to S(j) = j/N on the band, minimising the simple-point fraction — the
+        optimum 1 − a_N for N = 4, 6, 8, …, each law a JSON the pipeline certifies (the near-CUE rows, the fraction), and the trend
+        towards the paper's "approximately 0.682"; (iii) with the authors' law file, EnclOK itself (item 5).
 
 ## The rules that bind here
 

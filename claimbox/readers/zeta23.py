@@ -38,6 +38,7 @@ DEPS = 'zeta23/zeta23__ChallengeDeps.lean'
 YAML = 'zeta23/zeta23__formalization.yaml'
 PAPER = 'alpoge-furman/paper-v5-draft18.tex'
 ENCL = 'zeta23/LawN256.encl.json'
+SERIES = 'zeta23/mt-series.json'
 CERT_FILE = 'cert_N256_blk_b128m.json'
 
 
@@ -98,14 +99,14 @@ def jobs(root, corpus=CORPUS):
          'what': 'CeilingLaw256.lean\'s statement of the edge bound Lean kernel-checks downstream of EnclOK; the bytes: ' + what_law},
         {'id': 'zeta23-p0', 'claim': 'p_0\\le0.6818287', 'source': rel(root, PAPER), 'data': rel(root, ENCL), 'elements': 'integers',
          'what': 'the paper\'s rounded-up print of the law\'s simple-point fraction (arXiv:2608.13637v2, §limits), against the exact rational LawN256.lean\'s header prints'},
-        {'id': 'zeta23-cmt', 'claim': 'c₁* = 0.7532960…', 'source': rel(root, DEPS), 'data': rel(root, DEPS),
-         'what': 'ChallengeDeps.lean\'s docstring of cMT: the Montgomery–Taylor constant to its printed digits, a closed form over transcendental heads'},
-        {'id': 'zeta23-mt-simple', 'claim': '2 − 1/c₁* = 0.67250…', 'source': rel(root, YAML), 'data': rel(root, DEPS),
-         'what': 'formalization.yaml\'s abstract: the Montgomery–Taylor proportion of simple zeros on the line, to its printed digits'},
-        {'id': 'zeta23-mt-distinct', 'claim': '(3 − 1/c₁*)/2 = 0.83625…', 'source': rel(root, YAML), 'data': rel(root, DEPS),
-         'what': 'formalization.yaml\'s abstract: the Montgomery–Taylor proportion of distinct zeros, to its printed digits'},
+        {'id': 'zeta23-cmt', 'claim': 'c₁* = 0.7532960…', 'source': rel(root, DEPS), 'data': rel(root, SERIES),
+         'what': 'ChallengeDeps.lean\'s docstring of cMT: the Montgomery–Taylor constant to its printed digits, decided from the series certificate (mathematician.md §1: c₁* = 2s/(2c + s), two rational partial sums enclose it)'},
+        {'id': 'zeta23-mt-simple', 'claim': '2 − 1/c₁* = 0.67250…', 'source': rel(root, YAML), 'data': rel(root, SERIES),
+         'what': 'formalization.yaml\'s abstract: the Montgomery–Taylor proportion of simple zeros on the line, to its printed digits, decided from the series certificate'},
+        {'id': 'zeta23-mt-distinct', 'claim': '(3 − 1/c₁*)/2 = 0.83625…', 'source': rel(root, YAML), 'data': rel(root, SERIES),
+         'what': 'formalization.yaml\'s abstract: the Montgomery–Taylor proportion of distinct zeros, to its printed digits, decided from the series certificate'},
         {'id': 'af-mt-simple', 'claim': '$2-c_{\\mathrm{MT}}^{-1}=0.67250\\ldots$', 'source': rel(root, PAPER), 'data': rel(root, DEPS),
-         'what': 'the paper\'s main theorem (arXiv:2608.13637v2): the same proportion as the paper prints it, with c_MT^{-1} := 1/2 + (1/√2) cot(1/√2)'},
+         'what': 'the paper\'s main theorem (arXiv:2608.13637v2): the same proportion as the paper prints it, with c_MT^{-1} := 1/2 + (1/√2) cot(1/√2) — kept on the closed-form route on purpose: the receiver admits the transcendental heads and does not decide them (its item (h)); the three claims above show the exact route'},
         {'id': 'zeta23-enclok', 'source': rel(root, LAW),
          'skipped': 'the hypothesis EnclOK — that the law\'s form factor lies in the enclosures — is about the law itself (' + CERT_FILE + ', sha256 cc3de991…), which the release does not publish ("available from the authors"); no bytes, no claim'},
     ]

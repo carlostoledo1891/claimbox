@@ -23,7 +23,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  zeta23-rows  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.01 s  note: no record attached",
+   "certMachine": "ADMITTED  zeta23-rows  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.014 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -39,7 +39,7 @@
      "c": "82395317/100000000"
     }
    ],
-   "certMachine": "ADMITTED  zeta23-edge  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+   "certMachine": "ADMITTED  zeta23-edge  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.003 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -63,18 +63,20 @@
    "claim": "c₁* = 0.7532960…",
    "source": "../claimbox/corpus/riemann/zeta23/zeta23__ChallengeDeps.lean",
    "object": "records/riemann/zeta23-cmt.json",
-   "pin": "8f9a7e7bb313bbada77d0dd1b71a80bda1c0580b71ba1dd0020b438d63a318e0",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
    "predicate": [
     {
-     "rel": "in",
+     "rel": "ge",
      "printed": "0.7532960",
-     "c": [
-      "15065919/20000000",
-      "15065921/20000000"
-     ]
+     "c": "47081/62500"
+    },
+    {
+     "rel": "lt",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  zeta23-cmt  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachine": "ADMITTED  zeta23-cmt  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.003 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -82,37 +84,41 @@
    "claim": "2 − 1/c₁* = 0.67250…",
    "source": "../claimbox/corpus/riemann/zeta23/zeta23__formalization.yaml",
    "object": "records/riemann/zeta23-mt-simple.json",
-   "pin": "8f9a7e7bb313bbada77d0dd1b71a80bda1c0580b71ba1dd0020b438d63a318e0",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
    "predicate": [
     {
-     "rel": "in",
+     "rel": "ge",
      "printed": "0.67250",
-     "c": [
-      "134499/200000",
-      "134501/200000"
-     ]
+     "c": "269/400"
+    },
+    {
+     "rel": "lt",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  zeta23-mt-simple  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachine": "ADMITTED  zeta23-mt-simple  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "zeta23-mt-distinct",
    "claim": "(3 − 1/c₁*)/2 = 0.83625…",
    "source": "../claimbox/corpus/riemann/zeta23/zeta23__formalization.yaml",
    "object": "records/riemann/zeta23-mt-distinct.json",
-   "pin": "8f9a7e7bb313bbada77d0dd1b71a80bda1c0580b71ba1dd0020b438d63a318e0",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
    "predicate": [
     {
-     "rel": "in",
+     "rel": "ge",
      "printed": "0.83625",
-     "c": [
-      "167249/200000",
-      "167251/200000"
-     ]
+     "c": "669/800"
+    },
+    {
+     "rel": "lt",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  zeta23-mt-distinct  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachine": "ADMITTED  zeta23-mt-distinct  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.002 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -123,15 +129,17 @@
    "pin": "8f9a7e7bb313bbada77d0dd1b71a80bda1c0580b71ba1dd0020b438d63a318e0",
    "predicate": [
     {
-     "rel": "in",
+     "rel": "ge",
      "printed": "0.67250",
-     "c": [
-      "134499/200000",
-      "134501/200000"
-     ]
+     "c": "269/400"
+    },
+    {
+     "rel": "lt",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  af-mt-simple  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachine": "ADMITTED  af-mt-simple  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: predicate[1] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
    "certMachineSeconds": 0.1
   },
   {

@@ -53,6 +53,19 @@ edited, the bars moved in the sentence and in copies of the pages — 781 of 781
 undisturbed, each expectation computed by hand from the integers (records/riemann-recall.json). Found on the way and fixed: a
 rational after "=" was read as its numerator (F(3) = 22/7 as 22).
 
+Then the mathematician's own claims (corpus/riemann/mathematician.md, records/riemann-math-run.json). The Montgomery–Taylor
+constant c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ), ϑ = 1/√2, reduces to rational arithmetic — with ϑ² = 1/2, sin ϑ = ϑ·s and cos ϑ = c for
+two alternating rational series, so c₁* = 2s/(2c + s), and the partial sums bracket it — which makes the formalization's digits
+claims decidable by cert-machine's exact evaluator with no interval kernel: c₁* = 0.7532960…, 2 − 1/c₁* = 0.67250…, (3 − 1/c₁*)/2
+= 0.83625… CERTIFIED from a certificate whose one datum is the truncation order K = 8, and the AI's wrong last digit REFUTED. Two
+findings came with it. The paper's abstract prints 0.8362 for a constant equal to 0.83625035…, a truncation where a rounding
+prints 0.8363 (true as a lower bound, refuted as a rounded print). And the machine caught the mathematician: the first grammar
+gave an ellipsis print the rounding box, cert-machine refuted the true 0.7532960… and certified a false 0.7532961…, and it was
+right about the arithmetic — an ellipsis is a truncation, [p, p + unit), and the grammar now says so. From the enclosures
+themselves: every band row contains the exact CUE value j·K/256 (124 at the upper end, 131 at the lower), so the 256-periodic
+law sits on the CUE values, not merely within 3·10⁻⁴⁰ of them — CERTIFIED over the 255 rows; and the paper's arithmetic on its
+ceiling (within 0.016 of 2/3; below 0.6819 at window norm 8.2; the coefficient 2.55·10⁻⁶) CERTIFIED from the file's own p₀.
+
 ```
 python3 -m claimbox read zeta23 --out jobs.json && python3 -m claimbox batch jobs.json --out out --check     # the Riemann story's certificate
 python3 -m claimbox read einstein-arena --out jobs.json && python3 -m claimbox batch jobs.json --out out --check

@@ -63,8 +63,10 @@ claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
                            platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json),
                            riemann/ (the story's 25 pinned sources + the video's captions, PINS.json by tools/riemann.py; ai-phrasings.json,
-                           ai-claims.md: AI-written inputs, not sources of truth), riemann-sentences.json (65 sentences, each verbatim in
-                           its pinned file), riemann-jobs.json, riemann-ai-jobs.json (with each claim's expected outcome)
+                           ai-claims.md: AI-written inputs, not sources of truth; mathematician.md: the session's own claims with their
+                           derivations; zeta23/mt-series.json: the series certificate behind the exact Montgomery–Taylor decisions),
+                           riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
+                           riemann-math-jobs.json (each claim with its expected outcome)
 records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json; <source>-run.json +
                            <source>/ (each batch's --record and objects)
 tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json); tests/riemann_recall.py the plants at scale on

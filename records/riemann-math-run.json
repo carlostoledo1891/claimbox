@@ -1,0 +1,159 @@
+{
+ "what": "A run of the claim-machine over the jobs in corpus/riemann-math-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
+ "jobs": 8,
+ "written": 8,
+ "refused": 0,
+ "skipped": 0,
+ "rows": [
+  {
+   "id": "math-cmt-le",
+   "claim": "c₁* ≤ 0.75329607",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-cmt-le.json",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0.75329607",
+     "c": "75329607/100000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-cmt-le  []  from the object: CERTIFIED value 3011595853216023972/3997891375…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-cmt-ge",
+   "claim": "c₁* ≥ 0.75329606",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-cmt-ge.json",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.75329606",
+     "c": "37664803/50000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-cmt-ge  []  from the object: CERTIFIED value 114440642422208910934/15191987…  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.2
+  },
+  {
+   "id": "math-mt-distinct-0.8362",
+   "claim": "(3 − 1/c₁*)/2, published as 0.8362",
+   "source": "../claimbox/corpus/riemann/alpoge-furman/paper-v5-draft18.tex",
+   "object": "records/riemann-math/math-mt-distinct-0.8362.json",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
+   "predicate": [
+    {
+     "rel": "in",
+     "printed": "0.8362",
+     "c": [
+      "16723/20000",
+      "669/800"
+     ]
+    },
+    {
+     "rel": "in",
+     "printed": "0.8362",
+     "c": [
+      "16723/20000",
+      "669/800"
+     ]
+    }
+   ],
+   "certMachine": "ADMITTED  math-mt-distinct-0.8362  []  from the object: REFUTED value 191402054980668331519/22888128… · REFUTED value 5036896183701798199/6023191706…  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-mt-simple-0.6725",
+   "claim": "2 − 1/c₁*, published as 0.6725",
+   "source": "../claimbox/corpus/riemann/alpoge-furman/paper-v5-draft18.tex",
+   "object": "records/riemann-math/math-mt-simple-0.6725.json",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
+   "predicate": [
+    {
+     "rel": "in",
+     "printed": "0.6725",
+     "c": [
+      "13449/20000",
+      "13451/20000"
+     ]
+    },
+    {
+     "rel": "in",
+     "printed": "0.6725",
+     "c": [
+      "13449/20000",
+      "13451/20000"
+     ]
+    }
+   ],
+   "certMachine": "ADMITTED  math-mt-simple-0.6725  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value 2025300330485774227/3011595853…  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-cue-rows",
+   "claim": "|2·j·K/256 − lo_j − hi_j| ≤ 1 (0 < j < 256)",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-cue-rows.json",
+   "pin": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "1",
+     "c": "1"
+    }
+   ],
+   "certMachine": "ADMITTED  math-cue-rows  []  from the object: CERTIFIED  0.007 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-p0-gap",
+   "claim": "|p₀ − 2/3| ≤ 0.016",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-p0-gap.json",
+   "pin": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0.016",
+     "c": "2/125"
+    }
+   ],
+   "certMachine": "ADMITTED  math-p0-gap  []  from the object: CERTIFIED value 727776998263910764285690587448…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-ceiling-8.2",
+   "claim": "B(8.2) ≤ 0.6819",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-ceiling-8.2.json",
+   "pin": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0.6819",
+     "c": "6819/10000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-ceiling-8.2  []  from the object: CERTIFIED value 109095935594213035880952301958…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-c256",
+   "claim": "c_256 ≤ 2.55·10⁻⁶",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-c256.json",
+   "pin": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-c256  []  from the object: CERTIFIED value -10549999999999999999999999999…  0.003 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  }
+ ]
+}

@@ -18,7 +18,7 @@
      "c": "8239/10000"
     }
    ],
-   "certMachine": "ADMITTED  ai-edge-0.8239  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+   "certMachine": "ADMITTED  ai-edge-0.8239  []  from the object: REFUTED value 146998155940647117829503750779…  0.004 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -34,8 +34,8 @@
      "c": "103/125"
     }
    ],
-   "certMachine": "ADMITTED  ai-edge-0.824  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
-   "certMachineSeconds": 0.0
+   "certMachine": "ADMITTED  ai-edge-0.824  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.003 s  note: no record attached",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ai-edge-strict",
@@ -50,7 +50,7 @@
      "c": "20598829/25000000"
     }
    ],
-   "certMachine": "ADMITTED  ai-edge-strict  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+   "certMachine": "ADMITTED  ai-edge-strict  []  from the object: REFUTED value 146998155940647117829503750779…  0.004 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -71,7 +71,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ai-rows-2e-40  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached",
+   "certMachine": "ADMITTED  ai-rows-2e-40  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.013 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -92,7 +92,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ai-rows-1e-40  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached",
+   "certMachine": "ADMITTED  ai-rows-1e-40  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.015 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -120,8 +120,8 @@
      "c": "34091/50000"
     }
    ],
-   "certMachine": "ADMITTED  ai-p0-0.68182  []  from the object: REFUTED value 109092589994213035880952301958…  0.001 s  note: no record attached",
-   "certMachineSeconds": 0.0
+   "certMachine": "ADMITTED  ai-p0-0.68182  []  from the object: REFUTED value 109092589994213035880952301958…  0.002 s  note: no record attached",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ai-p0-0.6819",
@@ -136,7 +136,7 @@
      "c": "6819/10000"
     }
    ],
-   "certMachine": "ADMITTED  ai-p0-0.6819  []  from the object: CERTIFIED value 109092589994213035880952301958…  0.001 s  note: no record attached",
+   "certMachine": "ADMITTED  ai-p0-0.6819  []  from the object: CERTIFIED value 109092589994213035880952301958…  0.003 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -160,18 +160,20 @@
    "claim": "c₁* = 0.7532961…",
    "source": "../claimbox/corpus/riemann/ai-claims.md",
    "object": "records/riemann-ai/ai-cmt-digit.json",
-   "pin": "8f9a7e7bb313bbada77d0dd1b71a80bda1c0580b71ba1dd0020b438d63a318e0",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
    "predicate": [
     {
-     "rel": "in",
+     "rel": "ge",
      "printed": "0.7532961",
-     "c": [
-      "15065921/20000000",
-      "15065923/20000000"
-     ]
+     "c": "7532961/10000000"
+    },
+    {
+     "rel": "lt",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ai-cmt-digit  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachine": "ADMITTED  ai-cmt-digit  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -2641485377115879877/199894568…  0.004 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -179,18 +181,20 @@
    "claim": "2 − 1/c₁* = 0.6725…",
    "source": "../claimbox/corpus/riemann/ai-claims.md",
    "object": "records/riemann-ai/ai-mt-simple-4.json",
-   "pin": "8f9a7e7bb313bbada77d0dd1b71a80bda1c0580b71ba1dd0020b438d63a318e0",
+   "pin": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94",
    "predicate": [
     {
-     "rel": "in",
+     "rel": "ge",
      "printed": "0.6725",
-     "c": [
-      "13449/20000",
-      "13451/20000"
-     ]
+     "c": "269/400"
+    },
+    {
+     "rel": "lt",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ai-mt-simple-4  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachine": "ADMITTED  ai-mt-simple-4  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -373800484154370709/3764494816…  0.001 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
