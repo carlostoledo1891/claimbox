@@ -23,6 +23,13 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## TASKS BACKLOG (updated 2026-10-22, the fifth handoff: the claim-machine put to the 2026 Riemann-hypothesis story — the one finite certificate with published bytes decided from the bytes, the theorems refused, the AI phrasings measured, 781 plants caught; a grammar defect fixed)
 
+  ◆ AUTHORIZATION (the operator, 2026-10-22, the sixth session's close): THE CERT-MACHINE CHAT IS AUTHORIZED TO WORK ON THIS PROJECT —
+     the report, the paper and the outreach built from the Riemann test and the window search (★ THE RIEMANN TEST, ★ THE MATHEMATICIAN'S
+     CLAIMS, items (1)–(9) below; corpus/riemann/mathematician.md §1–§7; records/riemann-*-run.json). The briefing handed to that chat
+     is the claimbox chat's last message of 2026-10-22 (what was done, the outcomes, every path and number; no instructions on how to
+     write them — the evaluation is made there). THAT CHAT WILL UPDATE THIS HANDOFF WHEN IT IS DONE; the next claimbox chat reads this
+     file first and takes the cert-machine chat's entries as the state. The standing rule is unchanged in the other direction:
+     cert-machine stays read-only from here and is only run as a subprocess. HEAD at the handoff: 6c86705.
   ◆ STATE: BUILT 2026-10-20 night, on the operator's redirect ("I asked for one thing and I'm receiving another … redirect now"),
      in one session, from cert-machine's knowledge: its claimbox object format is the output, its ten hand-written objects are the
      calibration, its register's 132 claim sentences are the coverage corpus, its checker is the gate (a subprocess; no code
