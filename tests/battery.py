@@ -162,6 +162,15 @@ try:
     texpect('count', 'the near-CUE rows claimed with no range', claim='|256·S(j) − j| ≤ 3·10⁻⁴⁰', source=RREADME, data=RENCL, elements='integers')
     texpect('data', 'a certificate claim on bytes that print none of the certificate\'s fields', claim='|D(1)| ≤ 0.82395317', source=os.path.relpath(os.path.join(REPO, 'corpus', 'riemann', 'zeta23', 'zeta23__Zeta23__PairCeiling__CeilingLaw256.lean'), ROOT),
             data=os.path.relpath(os.path.join(tmp, 'three.json'), ROOT))
+    # the window search (mathematician.md §7): a window certificate that is not even, and one truncated at ten terms, are refused before any object is written
+    W6 = json.load(open(os.path.join(REPO, 'corpus', 'riemann', 'zeta23', 'xi-w6.json'), encoding='utf-8'))
+    MMATH = os.path.relpath(os.path.join(REPO, 'corpus', 'riemann', 'mathematician.md'), ROOT)
+    for d_, edit in (('odd', lambda w: w.__setitem__('window', w['window'][:1] + ['1/10'] + w['window'][2:])), ('ten', lambda w: w.__setitem__('terms', 10))):
+        w = dict(W6)
+        edit(w)
+        open(os.path.join(tmp, 'xi-' + d_ + '.json'), 'w', encoding='utf-8').write(json.dumps(w, ensure_ascii=False))
+    texpect('data', 'a window certificate whose window is not even (a coefficient of s)', claim='P_w6 ≥ 0.86864115', source=MMATH, data=os.path.relpath(os.path.join(tmp, 'xi-odd.json'), ROOT), elements='rationals')
+    texpect('data', 'a window certificate truncating D₁ at ten terms', claim='P_w6 ≥ 0.86864115', source=MMATH, data=os.path.relpath(os.path.join(tmp, 'xi-ten.json'), ROOT), elements='rationals')
 
     # a GREEN control: the synthetic three vectors in R^2 are a kissing configuration of 3 (they are not: (1,0) and (0,1) are 90° apart, fine; (1,0) and (-1,0) 180°) — decided by cert-machine from the object
     obj = T.translate('K(2) >= 3', ROOT, os.path.relpath(good_src, ROOT), os.path.relpath(os.path.join(tmp, 'three.json'), ROOT), obj_id='synthetic-k2')
@@ -317,8 +326,8 @@ AIJ = json.load(open(os.path.join(REPO, 'corpus', 'riemann-ai-jobs.json'), encod
 run_check('riemann-ai', AIJ, 'none-', {'present': 0, 'run': {'written': sum(1 for j in AIJ if not j['expect'].startswith('refused')), 'refused': sum(1 for j in AIJ if j['expect'].startswith('refused')), 'skipped': 0},
           'words': 'fifteen AI-written claims about the same certificate: the false ones REFUTED or refused with the rule, the true ones CERTIFIED, the transcendental digits decided through the series certificate'})
 MATHJ = json.load(open(os.path.join(REPO, 'corpus', 'riemann-math-jobs.json'), encoding='utf-8'))['jobs']
-run_check('riemann-math', MATHJ, 'none-', {'present': 0, 'run': {'written': 22, 'refused': 0, 'skipped': 0},
-          'words': 'the mathematician\'s 22 claims: c₁* bounded both sides and the paper\'s abstract\'s two four-digit prints decided through the series certificate (0.8362 REFUTED as a rounding — a truncation; 0.6725 CERTIFIED), the law\'s exact-CUE band rows, the paper\'s arithmetic on the ceiling from the file\'s own p₀, and the ξ′ certificate\'s rational core re-derived from its definitions (five identities, the Lean\'s eight-digit constants, the paper\'s five-digit prints CERTIFIED; the control one unit above REFUTED)'})
+run_check('riemann-math', MATHJ, 'none-', {'present': 0, 'run': {'written': 37, 'refused': 0, 'skipped': 0},
+          'words': 'the mathematician\'s 37 claims: c₁* bounded both sides and the paper\'s abstract\'s two four-digit prints decided through the series certificate (0.8362 REFUTED as a rounding — a truncation; 0.6725 CERTIFIED), the law\'s exact-CUE band rows, the paper\'s arithmetic on the ceiling from the file\'s own p₀, and the ξ′ certificate\'s rational core re-derived from its definitions (five identities, the Lean\'s eight-digit constants, the paper\'s five-digit prints CERTIFIED; the control one unit above REFUTED), and the window search (the paper\'s quartic below its own family\'s optimum, the windows q4, w6 and the degree-20 minimiser certified with their hypotheses, the control one unit of the eighth digit too far REFUTED)'})
 if notrun:
     print('NOT RUN (recorded, not re-run; CLAIMBOX_FULL=1 re-runs them): ' + ', '.join(notrun))
 

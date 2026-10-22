@@ -148,3 +148,63 @@ sit on one parity class and the doubles on the other, and the leading weight at 
 the weights are algebraic, as the cosines in the constraints make them, which is why no law of this programme can be a
 claimbox object until the receiver decides over Cos or over a cyclotomic field. Past N = 8 the enumeration of
 configurations must give way to column generation.
+
+## 7. The window search: the paper's quartic is not the optimum of its own family, and the method saturates one unit of the sixth digit above it
+
+The ξ′ constants of §4 are 2 − κ₉(v) − ε₉ and 3/2 − (κ₉(v) + ε₉)/2 for an even window v > 0 on [−1/2, 1/2] with v ≤ 1
+(the paper's §2.2 hypotheses; Statement.lean's WindowProfile), and κ₉(v) = (∫v² + J(v))/(∫v)² with J(v) = 2∫₀¹ D1trunc9·(v ⋆ v).
+For a polynomial window v(s) = Σ c_i s^{2i} this is a Rayleigh quotient cᵀMc/(bᵀc)² — M_{ij} = ∫s^{2i+2j} + 2∫₀¹ D1trunc9·(s^{2i} ⋆ s^{2j}),
+b_i = ∫s^{2i} — whose minimiser over each degree is c ∝ M⁻¹b exactly, in rational arithmetic (tools/xi_window.py; its calibration
+reproduces every rational of §4). The paper prints the flat window and one quartic, v = 1 − (7/100)(2s)² − (51/200)(2s)⁴, and the
+formalization's Defs.lean says of it that "it saturates the numerically optimal window to 10⁻⁶". The exact minimisers:
+
+    degree 2    P = 0.868200285550    (a quadratic cannot reach the quartic)
+    degree 4    P = 0.868641059186    the paper's quartic: 0.868640173598 — its own family's optimum is 8.9·10⁻⁷ above it
+    degree 6    P = 0.868641158941
+    degree 8    P = 0.868641158957
+    degree 10, 12, 16, 20    P = 0.868641158957 (agreeing to twelve digits: the method's constant at λ = 1 is 0.8686411589568…)
+
+Every minimiser has c_i < 0 for i ≥ 1 and v(1/2) ≈ 0.671 > 0, so it is at most 1 on ℝ, decreasing in |s|, and positive on the
+interval: the paper's window hypotheses hold by inspection of the coefficients, and the tail bound ε₉ applies because v ⋆ v ≥ 0.
+The gap between the paper's window and the method's ceiling is 9.85·10⁻⁷ — the Lean comment is exact — and the printed five
+digits 0.86864 and 0.93432 do not move; the Lean's eight-digit constants 0.86864017 and 0.93432008 do. Three windows the
+mathematician writes, with coefficients rounded so that they print (zeta23/xi-q4.json, xi-w6.json, xi-o20.json):
+
+    q4:   v(s) = 1 − (179/625) s² − (10243/2500) s⁴                  (the degree-4 optimum rounded to 1/10000)
+    w6:   v(s) = 1 − (157/500) s² − (3763/1000) s⁴ − (122/125) s⁶     (the degree-6 optimum rounded to 1/1000)
+    o20:  the exact degree-20 minimiser, rationals with denominators of up to 211 digits
+
+The claims, each decided by cert-machine from the window's certificate — the paper's window below its own family's optimum:
+
+P_quartic ≤ 0.86864018
+P_q4 ≥ 0.86864105
+D_q4 ≥ 0.93432052
+
+the improved constants, one unit of the sixth digit above the Lean's, and a control one unit of the eighth digit too far:
+
+P_w6 ≥ 0.86864115
+D_w6 ≥ 0.93432057
+P_w6 ≥ 0.86864116
+
+the window hypotheses as the coefficients show them, and the exact κ₉:
+
+cmax_w6 ≤ 0
+w6(1/2) = 10737/16000
+cmax_q4 ≤ 0
+q4(1/2) = 26893/40000
+kappa9_w6 = 1811057962010301991562419298932/1600781683450427687806446724875
+
+and the method's constant bracketed to eleven digits by the degree-20 minimiser:
+
+P_o20 ≥ 0.86864115895
+P_o20 ≤ 0.86864115896
+D_o20 ≥ 0.93432057947
+cmax_o20 ≤ 0
+
+What this is and is not. It is a certified improvement of the formalization's constants for ξ′ — 0.86864017 → 0.86864115 simple
+and on the line, 0.93432008 → 0.93432057 distinct — by a window that satisfies the paper's hypotheses, with every number exact;
+and it is the exact value of what the window method can give at λ = 1 within even polynomial windows of degree ≤ 20. It is not
+a new digit in the paper's print, and the optimality within each degree is stated here from the linear algebra, not yet as an
+object the receiver decides (a stationarity-and-positivity certificate over M is the next claim). On the Lean side a new window
+needs the four lemma instances AtOne.lean proves for the quartic — its two integrals, the closed form of v ⋆ v, positivity — with
+new rationals and the same proofs.

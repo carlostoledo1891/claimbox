@@ -43,7 +43,7 @@ from .grammar import Refusal
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 PLATFORM_DIR = os.path.join('corpus', 'platform', 'einstein-arena')
 RAT = re.compile(r'^-?\d+(?:/[1-9]\d*)?$')
-ARRAY_KEYS = ('values', 'vectors', 'weights_int', 'weights', 'cells', 'points', 'heights', 'data.values', 'data.vectors', 'configs.0')
+ARRAY_KEYS = ('values', 'vectors', 'weights_int', 'weights', 'cells', 'points', 'heights', 'vConv', 'data.values', 'data.vectors', 'configs.0')
 
 # ---- the functionals this program knows, written once as primitive expressions over the published array -------------
 # (the definitions are the registry's; the expressions are decided by cert-machine's exact evaluator, which binds n to the
@@ -237,40 +237,69 @@ J_FLAT = ['Multiply', '2', ['Add', ['Add', ['Subtract', '1/6', '1/3'], '1/5'], [
 KAPPA_FLAT = ['Add', '1', J_FLAT]
 EPS9 = ['Multiply', A_K('9'), '231/211']
 B_L = IDX('l')
-J_QUARTIC = lambda d: ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', N1, ['Multiply', B_L, ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
+J_WINDOW = lambda d: ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', N1, ['Multiply', B_L, ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
                                                         ['Multiply', A_0, ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', 'l', '4']]]]],
                                                 ['Sum', 'k', '1', '8', ['Multiply', A_K('k'), ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
-INT_V = lambda d: ' + '.join(c + '/' + str(4 ** (i // 2) * (i + 1)) for i, c in enumerate(d['vQuartic']) if i % 2 == 0 and c != '0')
-def int_v(d):
-    return ['Add', ['Add', ['Divide', d['vQuartic'][0], '1'], ['Divide', d['vQuartic'][2], '12']], ['Divide', d['vQuartic'][4], '80']]          # ∫ s^{2m} = 1/(4^m (2m+1)): 1, 1/12, 1/80
-def int_v2(d):
-    c0, c2, c4 = d['vQuartic'][0], d['vQuartic'][2], d['vQuartic'][4]
-    terms = [['Multiply', c0, c0], ['Divide', ['Multiply', '2', ['Multiply', c0, c2]], '12'], ['Divide', ['Add', ['Multiply', c2, c2], ['Multiply', '2', ['Multiply', c0, c4]]], '80'],
-             ['Divide', ['Multiply', '2', ['Multiply', c2, c4]], '448'], ['Divide', ['Multiply', c4, c4], '2304']]                                   # degrees 0, 2, 4, 6, 8 → 1, 1/12, 1/80, 1/448, 1/2304
+# any even polynomial window v(s) = Σ_i c_i s^i (odd c_i zero) goes through one functional: ∫v = Σ_{i even} c_i/(2^i (i+1)) and
+# ∫v² = Σ_{i,j even} c_i c_j/(2^{i+j} (i+j+1)) from the window's coefficients, J over the autocorrelation coefficients b_l the certificate
+# prints (the array f), and for the paper's window hypotheses (even, positive on [−1/2, 1/2], at most 1): v(1/2) and the largest
+# coefficient after the first — c_i ≤ 0 for i ≥ 2 makes v ≤ 1 on ℝ and decreasing in |s|, so v ≥ v(1/2) on the interval
+def xi_window_coeffs(d):
+    """the window's coefficients as the certificate prints them; refuses a window that is not even, or a truncation other than nine terms"""
+    if d.get('terms') != 9:
+        raise Refusal('data', 'the certificate truncates D₁ at ' + str(d.get('terms')) + ' terms; the functional is written for nine (the tail ε₉ = a_9·231/211)')
+    cs = [str(c) for c in d['window']]
+    for i, c in enumerate(cs):
+        if i % 2 == 1 and c != '0':
+            raise Refusal('data', 'the window is not even: the coefficient of s^' + str(i) + ' is ' + c + ' (the paper fixes an even window)')
+    return cs
+def chain_add(terms):
     out = terms[0]
     for t in terms[1:]:
         out = ['Add', out, t]
     return out
-KAPPA_QUARTIC = lambda d: ['Divide', ['Add', int_v2(d), J_QUARTIC(d)], ['Square', int_v(d)]]
+def int_v(d):
+    return chain_add([['Divide', c, str(2 ** i * (i + 1))] for i, c in enumerate(xi_window_coeffs(d)) if i % 2 == 0 and c != '0'])      # ∫_{-1/2}^{1/2} s^i = 1/(2^i (i+1))
+def int_v2(d):
+    cs = xi_window_coeffs(d)
+    return chain_add([['Divide', ['Multiply', ci, cj], str(2 ** (i + j) * (i + j + 1))] for i, ci in enumerate(cs) for j, cj in enumerate(cs) if ci != '0' and cj != '0'])
+def v_half(d):
+    return chain_add([['Divide', c, str(2 ** i)] for i, c in enumerate(xi_window_coeffs(d)) if c != '0'])                              # v(1/2) = Σ c_i/2^i
+def c_max(d):
+    cs = [c for i, c in enumerate(xi_window_coeffs(d)) if i >= 2 and i % 2 == 0]
+    out = cs[0]
+    for c in cs[1:]:
+        out = ['Max', out, c]
+    return out
+KAPPA = lambda d: ['Divide', ['Add', int_v2(d), J_WINDOW(d)], ['Square', int_v(d)]]
 XI_DEF = ('the ξ′ certificate as Zeta23/XiPrime/Certificate/{D1,Poly,AtOne}.lean define it: D₁(s) = s − 4s² + Σ_{k≥0} a_k s^{2k+3} with a_k = 2·4^{k+1}·k!/(2k+2)! (the paper\'s Lemma 7.1), '
           'truncated at nine terms (k = 0..8), the tail ε₉ = a_9·231/211 (a_{k+1}/a_k ≤ 20/231 from k = 9 on), J(v) = 2∫₀¹ D1trunc9(r)·vConv(r) dr, κ₉(v) = (∫v² + J(v))/(∫v)², and the '
-          'proportions 2 − κ₉ − ε₉ (simple and on the line) and 3/2 − (κ₉ + ε₉)/2 (distinct), each a lower bound because the tail is added on the side that makes 1/c larger — the definitions, read')
-XI_RED = 'exact rational arithmetic: ∫_{-1/2}^{1/2} s^{2m} ds = 1/(4^m (2m+1)), ∫₀¹ r^{d+l} dr = 1/(d+l+1); the flat window has vConv(r) = 1 − r and ∫v = ∫v² = 1; the quartic window\'s autocorrelation coefficients b_l are the certificate\'s bytes, v\'s coefficients and the two integrals its literals'
-XI_STRUCT = [{'what': 'the quartic autocorrelation at r = 0 is ∫v²: b_0 = ∫v², decided from the bytes', 'g': lambda d: ['Subtract', IDX('0'), int_v2(d)], 'rel': 'eq', 'c': '0'},
-             {'what': 'the quartic autocorrelation at r = 1 vanishes: Σ_l b_l = 0, decided from the bytes', 'g': lambda d: ['Sum', 'l', '0', N1, B_L], 'rel': 'eq', 'c': '0'}]
+          'proportions 2 − κ₉ − ε₉ (simple and on the line) and 3/2 − (κ₉ + ε₉)/2 (distinct), each a lower bound because the tail is added on the side that makes 1/c larger — for any even '
+          'window v > 0 on [−1/2, 1/2] with v ≤ 1 (Statement.lean\'s WindowProfile), the paper\'s two and the mathematician\'s own — the definitions, read')
+XI_RED = 'exact rational arithmetic: ∫_{-1/2}^{1/2} s^{2m} ds = 1/(4^m (2m+1)), ∫₀¹ r^{d+l} dr = 1/(d+l+1); the flat window has vConv(r) = 1 − r and ∫v = ∫v² = 1; a polynomial window\'s autocorrelation coefficients b_l are the certificate\'s bytes, v\'s coefficients its literals'
+XI_STRUCT = [{'what': 'the autocorrelation at r = 0 is ∫v²: b_0 = ∫v², decided from the bytes', 'g': lambda d: ['Subtract', IDX('0'), int_v2(d)], 'rel': 'eq', 'c': '0'},
+             {'what': 'the autocorrelation at r = 1 vanishes: Σ_l b_l = 0, decided from the bytes', 'g': lambda d: ['Sum', 'l', '0', N1, B_L], 'rel': 'eq', 'c': '0'}]
 def xi(keys, g, value, structural=()):
-    return {'keys': keys, 'needs': ('terms', 'vQuartic', 'vConvQuartic'), 'g': g if callable(g) else (lambda d, g=g: g), 'value': value, 'reduction': XI_RED, 'definition': XI_DEF, 'structural': list(structural)}
+    return {'keys': keys, 'needs': ('terms', 'window', 'vConv'), 'g': g if callable(g) else (lambda d, g=g: g), 'value': value, 'reduction': XI_RED, 'definition': XI_DEF, 'structural': list(structural)}
+def xi_window(L, what):
+    """the six claims about one window labelled L: J_L, kappa9_L, P_L, D_L, cmax_L, L(1/2)"""
+    return {
+        'xi-J-' + L: xi(('J' + L,), J_WINDOW, 'J(' + L + ') = 2∫₀¹ D1trunc9(r)·vConv(r) dr over ' + what + ' window\'s autocorrelation coefficients', XI_STRUCT),
+        'xi-kappa-' + L: xi(('kappa9' + L,), KAPPA, 'κ₉(' + L + ') = (∫v² + J)/(∫v)², ' + what + ' window', XI_STRUCT),
+        'xi-P-' + L: xi(('P' + L,), lambda d: ['Subtract', ['Subtract', '2', KAPPA(d)], EPS9], 'P_' + L + ' = 2 − κ₉ − ε₉, the proportion of zeros of ξ′ simple and on the line, ' + what + ' window', XI_STRUCT),
+        'xi-D-' + L: xi(('D' + L,), lambda d: ['Subtract', '3/2', ['Divide', ['Add', KAPPA(d), EPS9], '2']], 'D_' + L + ' = 3/2 − (κ₉ + ε₉)/2, the proportion of distinct zeros of ξ′, ' + what + ' window', XI_STRUCT),
+        'xi-cmax-' + L: xi(('cmax' + L,), c_max, 'the largest coefficient of s², s⁴, … of ' + what + ' window: at most 0 makes v ≤ 1 on ℝ and decreasing in |s| (the paper\'s window hypotheses)'),
+        'xi-half-' + L: xi((L + '(1/2)',), v_half, 'v(1/2) of ' + what + ' window, its minimum on [−1/2, 1/2] when the coefficients after the first are at most 0: positive is the paper\'s hypothesis'),
+    }
 CERTIFICATE.update({
     'xi-J-flat': xi(('Jflat',), J_FLAT, 'J(flat) = 2∫₀¹ D1trunc9(r)(1 − r) dr, the flat window integral'),
     'xi-kappa-flat': xi(('kappa9flat',), KAPPA_FLAT, 'κ₉(flat) = 1 + J(flat)'),
     'xi-eps9': xi(('eps9',), EPS9, 'ε₉ = a_9·231/211, the certified tail of D₁ on [0, 1]'),
-    'xi-J-quartic': xi(('Jquartic',), J_QUARTIC, 'J(quartic) = 2∫₀¹ D1trunc9(r)·vConv(r) dr over the quartic window\'s autocorrelation coefficients', XI_STRUCT),
-    'xi-kappa-quartic': xi(('kappa9quartic',), KAPPA_QUARTIC, 'κ₉(quartic) = (∫v² + J(quartic))/(∫v)²', XI_STRUCT),
     'xi-P-flat': xi(('Pflat',), ['Subtract', ['Subtract', '2', KAPPA_FLAT], EPS9], 'P_flat = 2 − κ₉(flat) − ε₉, the proportion of zeros of ξ′ simple and on the line, flat window'),
     'xi-D-flat': xi(('Dflat',), ['Subtract', '3/2', ['Divide', ['Add', KAPPA_FLAT, EPS9], '2']], 'D_flat = 3/2 − (κ₉(flat) + ε₉)/2, the proportion of distinct zeros of ξ′, flat window'),
-    'xi-P-quartic': xi(('Pquartic',), lambda d: ['Subtract', ['Subtract', '2', KAPPA_QUARTIC(d)], EPS9], 'P_quartic = 2 − κ₉(quartic) − ε₉', XI_STRUCT),
-    'xi-D-quartic': xi(('Dquartic',), lambda d: ['Subtract', '3/2', ['Divide', ['Add', KAPPA_QUARTIC(d), EPS9], '2']], 'D_quartic = 3/2 − (κ₉(quartic) + ε₉)/2', XI_STRUCT),
 })
+for _L, _what in (('quartic', 'the paper\'s quartic'), ('q4', 'the degree-4 optimum\'s rounded'), ('w6', 'the degree-6 optimum\'s rounded'), ('o20', 'the exact degree-20 minimiser')):
+    CERTIFICATE.update(xi_window(_L, _what))
 CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
 

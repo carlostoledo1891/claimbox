@@ -31,7 +31,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
      explainer pages (★ THE EXPLAINER PAGES). THE FIFTH SESSION (2026-10-22) put the claim-machine to the Riemann-hypothesis story on
      the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST), then made its own claims as the mathematician (★ THE MATHEMATICIAN'S
-     CLAIMS). `make test`: 204 checks, 44 red controls all firing, 56/56 planted defects
+     CLAIMS). `make test`: 224 checks, 46 red controls all firing, 56/56 planted defects
      caught on the earlier corpora and 782/782 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them and the full recall). Coverage 97/132 on the register (unchanged by the
@@ -140,7 +140,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      grid simple points sit on one parity class and doubles on the other; the leading weight at N = 8 is 0.5858 = 2 − √2 to four digits,
      so the weights are algebraic and no such law is a claimbox object until the receiver decides over Cos or a cyclotomic field. make test
      204 checks, 44 reds. NOT DONE, PROMISING: a column-generation simplex past N = 8 (N = 8 at q = 3 was still enumerating at the
-     handoff), the exact value of the small-N optima in Q(√2), the authors' law file.
+     handoff), the exact value of the small-N optima in Q(√2), the authors' law file. (9) THE WINDOW SEARCH (2026-10-22, the sixth
+     session, "start 1" of ten claimbox-first chases — beat 0.86864): κ₉(v) is a Rayleigh quotient cᵀMc/(bᵀc)² over even polynomial
+     windows, minimised exactly at c ∝ M⁻¹b (tools/xi_window.py, stdlib fractions; --check reproduces every rational of §4). The paper's
+     quartic 1 − (7/100)(2s)² − (51/200)(2s)⁴ is 8.9·10⁻⁷ below its own family's optimum; from degree 6 on the optima agree to twelve
+     digits, P* = 0.868641158957, 9.85·10⁻⁷ above the paper's window — Defs.lean's "saturates the numerically optimal window to 10⁻⁶"
+     made exact. The translator's ξ′ functional generalised from the fixed quartic to any even window (keys window/vConv; nine terms
+     and evenness refused otherwise, two reds); three windows written (zeta23/xi-q4.json, xi-w6.json, xi-o20.json) and 15 claims added
+     (riemann-math-jobs.json: 37, all as expected): P_w6 ≥ 0.86864115 and D_w6 ≥ 0.93432057 CERTIFIED — the Lean's 0.86864017 and
+     0.93432008 moved one unit of the sixth digit — the control P_w6 ≥ 0.86864116 REFUTED, the window hypotheses decided from the
+     coefficients (cmax_w6 ≤ 0, w6(1/2) = 10737/16000), the paper's P_quartic ≤ 0.86864018 beside P_q4 ≥ 0.86864105, the degree-20
+     minimiser's P bracketed to eleven digits. make test 224 checks, 46 reds. NOT DONE, NEXT IN THIS CHASE: the optimality certificate
+     — stationarity Mc = μb and an LDLᵀ positivity certificate of M as one object the receiver decides, so that "no even window of
+     degree ≤ 2m beats P_m*" is CERTIFIED rather than stated; the Lean side (AtOne's four lemma instances for a new window) is the
+     authors'; the paper's five printed digits do not move.
   ★ THE QUEUE, CHECKED (2026-10-21, the fourth session, "continue the queued tasks"): every NEXT item waits on the receiver, and
      cert-machine has made none of (c)–(f) — its one commit since 40833648 is its self-audit (2311ac2c), which changed
      tools/run-mc100-einstein.js (an object that is not n vectors in R^d is now REFUSED); the ten objects naming it are still

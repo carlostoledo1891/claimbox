@@ -1,5 +1,5 @@
 {
- "what": "The mathematician's claims of the fifth session (corpus/riemann/mathematician.md): the Montgomery–Taylor constant and its two proportions decided by rational arithmetic through the series certificate (zeta23/mt-series.json), two bounds of my own on it, the paper's abstract's four-digit prints under the digits reading (one a truncation, refuted; one certified), the law's exact-CUE band rows from the enclosures, the paper's arithmetic on the ceiling from the file's own p₀, and the ξ′ certificate's rational core re-derived from its definitions (five identities, the Lean's eight-digit constants, the paper's five-digit prints, one false control) — each with the outcome I expect. Run: python3 -m claimbox batch corpus/riemann-math-jobs.json --out records/riemann-math --check --record records/riemann-math-run.json; the battery holds every outcome to its expectation.",
+ "what": "The mathematician's claims of the fifth session (corpus/riemann/mathematician.md): the Montgomery–Taylor constant and its two proportions decided by rational arithmetic through the series certificate (zeta23/mt-series.json), two bounds of my own on it, the paper's abstract's four-digit prints under the digits reading (one a truncation, refuted; one certified), the law's exact-CUE band rows from the enclosures, the paper's arithmetic on the ceiling from the file's own p₀, and the ξ′ certificate's rational core re-derived from its definitions (five identities, the Lean's eight-digit constants, the paper's five-digit prints, one false control), and the window search of §7 (the paper's quartic below its own family's optimum; the windows q4, w6 and the degree-20 minimiser with their constants, hypotheses and controls) — each with the outcome I expect. Run: python3 -m claimbox batch corpus/riemann-math-jobs.json --out records/riemann-math --check --record records/riemann-math-run.json; the battery holds every outcome to its expectation.",
  "jobs": [
   {
    "id": "math-cmt-le",
@@ -194,6 +194,141 @@
    "elements": "rationals",
    "expect": "REFUTED",
    "why": "one unit of the eighth digit above the exact value 0.8583837135…"
+  },
+  {
+   "id": "math-win-quartic-le",
+   "claim": "P_quartic ≤ 0.86864018",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-certificate.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "the paper's quartic window gives 0.868640173598…, below its own family's optimum 0.868641059186…"
+  },
+  {
+   "id": "math-win-q4-P",
+   "claim": "P_q4 ≥ 0.86864105",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-q4.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "the degree-4 optimum rounded to 1/10000: 0.868641059184…"
+  },
+  {
+   "id": "math-win-q4-D",
+   "claim": "D_q4 ≥ 0.93432052",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-q4.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "0.934320529592…"
+  },
+  {
+   "id": "math-win-w6-P",
+   "claim": "P_w6 ≥ 0.86864115",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-w6.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "the degree-6 optimum rounded to 1/1000: 0.868641158927…, one unit of the sixth digit above the Lean's 0.86864017; margin 8.9·10⁻⁹"
+  },
+  {
+   "id": "math-win-w6-D",
+   "claim": "D_w6 ≥ 0.93432057",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-w6.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "0.934320579464…, above the Lean's 0.93432008; margin 9.5·10⁻⁹"
+  },
+  {
+   "id": "math-win-w6-P-false",
+   "claim": "P_w6 ≥ 0.86864116",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-w6.json",
+   "elements": "rationals",
+   "expect": "REFUTED",
+   "why": "the control: one unit of the eighth digit above the exact value 0.868641158927…"
+  },
+  {
+   "id": "math-win-w6-cmax",
+   "claim": "cmax_w6 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-w6.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "every coefficient after the first is negative: v ≤ 1 on ℝ and decreasing in |s| (the paper's window hypotheses)"
+  },
+  {
+   "id": "math-win-w6-half",
+   "claim": "w6(1/2) = 10737/16000",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-w6.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "v(1/2) = 1 − 157/2000 − 3763/16000 − 122/8000 = 0.6710625 > 0: positive on the interval"
+  },
+  {
+   "id": "math-win-q4-cmax",
+   "claim": "cmax_q4 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-q4.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "both coefficients after the first are negative"
+  },
+  {
+   "id": "math-win-q4-half",
+   "claim": "q4(1/2) = 26893/40000",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-q4.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "v(1/2) = 0.672325 > 0"
+  },
+  {
+   "id": "math-win-w6-kappa",
+   "claim": "kappa9_w6 = 1811057962010301991562419298932/1600781683450427687806446724875",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-w6.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "κ₉(w6) exactly, (∫v² + J)/(∫v)² over the certificate's bytes"
+  },
+  {
+   "id": "math-win-o20-P-lo",
+   "claim": "P_o20 ≥ 0.86864115895",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-o20.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "the exact degree-20 minimiser: 0.868641158956885…"
+  },
+  {
+   "id": "math-win-o20-P-hi",
+   "claim": "P_o20 ≤ 0.86864115896",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-o20.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "the same value from above: the method's constant at λ = 1 bracketed to eleven digits"
+  },
+  {
+   "id": "math-win-o20-D",
+   "claim": "D_o20 ≥ 0.93432057947",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-o20.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "0.934320579478443…"
+  },
+  {
+   "id": "math-win-o20-cmax",
+   "claim": "cmax_o20 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "data": "../claimbox/corpus/riemann/zeta23/xi-o20.json",
+   "elements": "rationals",
+   "expect": "CERTIFIED",
+   "why": "the exact minimiser's coefficients after the first are all negative"
   }
  ]
 }
