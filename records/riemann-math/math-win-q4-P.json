@@ -4,7 +4,7 @@
  "source": {
   "what": "the page pinned at ../claimbox/corpus/riemann/mathematician.md",
   "path": "../claimbox/corpus/riemann/mathematician.md",
-  "sha256": "f79e385d1552e89df7f64a59385e92508832d6527fc4c45a461023f707129ccd",
+  "sha256": "5e2a3b022b41def6750401ffccbd1f0f8a5f5e9c05b8cf39d00fd8ca281e5429",
   "quote": "P_q4 ≥ 0.86864105"
  },
  "reading": "universal",
@@ -14,7 +14,7 @@
    "path": "../claimbox/corpus/riemann/zeta23/xi-q4.json",
    "sha256": "1258263ed99ee104eb6d6b434509614f00fb3fc1aed4fbcd802ac345a3d7fe2c"
   },
-  "decoder": "the array at vConv: 10 values, each p/q string as the rational it names; terms = 9, window = ['1', '0', '-179/625', '0', '-10243/2500'], vConv = ['435146839643/504000000000', '-723233449/1600000000', '-42013906643/21000000000', '379172341/100000000', '-5684363093/1500000000', '9586792/5859375', '0', '-1833497/82031250', '0', '-104919049/3937500000'], the file's own fields, written into the expression as literals",
+  "decoder": "the array at vConv: 10 values, each p/q string as the rational it names; terms = 9, window = 5 rows, vConv = 10 rows, the file's own fields, written into the expression as literals",
   "count": 10,
   "variable": "f",
   "data": {

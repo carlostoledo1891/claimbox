@@ -4,7 +4,7 @@
  "source": {
   "what": "the page pinned at ../claimbox/corpus/riemann/mathematician.md",
   "path": "../claimbox/corpus/riemann/mathematician.md",
-  "sha256": "f79e385d1552e89df7f64a59385e92508832d6527fc4c45a461023f707129ccd",
+  "sha256": "5e2a3b022b41def6750401ffccbd1f0f8a5f5e9c05b8cf39d00fd8ca281e5429",
   "quote": "P_flat ≥ 0.85838372"
  },
  "reading": "universal",
@@ -14,7 +14,7 @@
    "path": "../claimbox/corpus/riemann/zeta23/xi-certificate.json",
    "sha256": "e4d9d6c234ad35e858d1a579bb75ca67236ab9be702c39d136e4ce54d568c3c1"
   },
-  "decoder": "the array at vConv: 10 values, each p/q string as the rational it names; terms = 9, window = ['1', '0', '-7/25', '0', '-102/25'], vConv = ['518783/600000', '-729/1600', '-522523/262500', '7082/1875', '-47209/12500', '30551/18750', '0', '-68/3125', '0', '-578/21875'], the file's own fields, written into the expression as literals",
+  "decoder": "the array at vConv: 10 values, each p/q string as the rational it names; terms = 9, window = 5 rows, vConv = 10 rows, the file's own fields, written into the expression as literals",
   "count": 10,
   "variable": "f",
   "data": {

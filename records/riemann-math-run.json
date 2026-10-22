@@ -1,7 +1,7 @@
 {
  "what": "A run of the claim-machine over the jobs in corpus/riemann-math-jobs.json: for each, the sentence read, the object written (its pin and predicate) or the refusal, and what cert-machine's checker said of the object (when --check ran).",
- "jobs": 37,
- "written": 37,
+ "jobs": 51,
+ "written": 51,
  "refused": 0,
  "skipped": 0,
  "rows": [
@@ -310,7 +310,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  math-xi-P-quartic-8  []  from the object: CERTIFIED value 44914246778076124754447678/517… · CERTIFIED value 0 · CERTIFIED value 0  0.003 s  note: no record attached",
+   "certMachine": "ADMITTED  math-xi-P-quartic-8  []  from the object: CERTIFIED value 44914246778076124754447678/517… · CERTIFIED value 0 · CERTIFIED value 0  0.002 s  note: no record attached",
    "certMachineSeconds": 0.0
   },
   {
@@ -353,7 +353,7 @@
     }
    ],
    "certMachine": "ADMITTED  math-xi-P-flat-5  []  from the object: CERTIFIED value 16008819950038/18649957701375  0.001 s  note: no record attached",
-   "certMachineSeconds": 0.1
+   "certMachineSeconds": 0.0
   },
   {
    "id": "math-xi-D-flat-5",
@@ -566,7 +566,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  math-win-w6-D  []  from the object: CERTIFIED value 631161459972164105242688304732… · CERTIFIED value 0 · CERTIFIED value 0  0.004 s  note: no record attached",
+   "certMachine": "ADMITTED  math-win-w6-D  []  from the object: CERTIFIED value 631161459972164105242688304732… · CERTIFIED value 0 · CERTIFIED value 0  0.003 s  note: no record attached",
    "certMachineSeconds": 0.0
   },
   {
@@ -593,7 +593,7 @@
     }
    ],
    "certMachine": "ADMITTED  math-win-w6-P-false  []  from the object: REFUTED value 293396524764123863115528045783… · CERTIFIED value 0 · CERTIFIED value 0  0.003 s  note: no record attached",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "math-win-w6-cmax",
@@ -708,7 +708,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  math-win-o20-P-lo  []  from the object: CERTIFIED value 665042691318897735955140462827… · CERTIFIED value 0 · CERTIFIED value 0  0.036 s  note: no record attached",
+   "certMachine": "ADMITTED  math-win-o20-P-lo  []  from the object: CERTIFIED value 665042691318897735955140462827… · CERTIFIED value 0 · CERTIFIED value 0  0.035 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -734,7 +734,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  math-win-o20-P-hi  []  from the object: CERTIFIED value 665042691318897735955140462827… · CERTIFIED value 0 · CERTIFIED value 0  0.037 s  note: no record attached",
+   "certMachine": "ADMITTED  math-win-o20-P-hi  []  from the object: CERTIFIED value 665042691318897735955140462827… · CERTIFIED value 0 · CERTIFIED value 0  0.036 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -760,7 +760,7 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  math-win-o20-D  []  from the object: CERTIFIED value 143065537782516413370187956483… · CERTIFIED value 0 · CERTIFIED value 0  0.037 s  note: no record attached",
+   "certMachine": "ADMITTED  math-win-o20-D  []  from the object: CERTIFIED value 143065537782516413370187956483… · CERTIFIED value 0 · CERTIFIED value 0  0.036 s  note: no record attached",
    "certMachineSeconds": 0.1
   },
   {
@@ -777,6 +777,290 @@
     }
    ],
    "certMachine": "ADMITTED  math-win-o20-cmax  []  from the object: CERTIFIED value -24483718474308004902895313376…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "math-opt-res-opt20",
+   "claim": "res_opt20 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-res-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0",
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-res-opt20  []  from the object: CERTIFIED value 0 · CERTIFIED value 0 · CERTIFIED value 0  1.159 s  note: no record attached",
+   "certMachineSeconds": 1.2
+  },
+  {
+   "id": "math-opt-dmin-opt20",
+   "claim": "dmin_opt20 ≥ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-dmin-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0",
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-dmin-opt20  []  from the object: CERTIFIED value 0  0.014 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-dmin-pos-opt20",
+   "claim": "dmin_opt20 > 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-dmin-pos-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "gt",
+     "printed": "0",
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-dmin-pos-opt20  []  from the object: REFUTED value 0  0.014 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-gap-opt20",
+   "claim": "gap_opt20 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-gap-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0",
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-gap-opt20  []  from the object: CERTIFIED value 0 · CERTIFIED value 0 · CERTIFIED value 0  1.119 s  note: no record attached",
+   "certMachineSeconds": 1.2
+  },
+  {
+   "id": "math-opt-gap-neg-opt20",
+   "claim": "gap_opt20 < 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-gap-neg-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "lt",
+     "printed": "0",
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-gap-neg-opt20  []  from the object: REFUTED value 0 · CERTIFIED value 0 · CERTIFIED value 0  1.115 s  note: no record attached",
+   "certMachineSeconds": 1.2
+  },
+  {
+   "id": "math-opt-P-lo-opt20",
+   "claim": "Pstar_opt20 ≥ 0.86864115895",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-P-lo-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.86864115895",
+     "c": "17372823179/20000000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-P-lo-opt20  []  from the object: CERTIFIED value 665042691318897735955140462827…  0.014 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-P-hi-opt20",
+   "claim": "Pstar_opt20 ≤ 0.86864115896",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-P-hi-opt20.json",
+   "pin": "5316ebc863775436ba4bb6f030c455fbaeef092fca9942d7521bfe37ad437aa2",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0.86864115896",
+     "c": "10858014487/12500000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-P-hi-opt20  []  from the object: CERTIFIED value 665042691318897735955140462827…  0.014 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-res-opt6",
+   "claim": "res_opt6 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-res-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0",
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-res-opt6  []  from the object: CERTIFIED value 0 · CERTIFIED value 0 · CERTIFIED value 0  0.056 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-dmin-opt6",
+   "claim": "dmin_opt6 ≥ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-dmin-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0",
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-dmin-opt6  []  from the object: CERTIFIED value 0  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "math-opt-dmin-pos-opt6",
+   "claim": "dmin_opt6 > 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-dmin-pos-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "gt",
+     "printed": "0",
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-dmin-pos-opt6  []  from the object: REFUTED value 0  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "math-opt-gap-opt6",
+   "claim": "gap_opt6 ≤ 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-gap-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0",
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-gap-opt6  []  from the object: CERTIFIED value 0 · CERTIFIED value 0 · CERTIFIED value 0  0.055 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-gap-neg-opt6",
+   "claim": "gap_opt6 < 0",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-gap-neg-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "lt",
+     "printed": "0",
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "eq",
+     "printed": null,
+     "c": "0"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-gap-neg-opt6  []  from the object: REFUTED value 0 · CERTIFIED value 0 · CERTIFIED value 0  0.055 s  note: no record attached",
+   "certMachineSeconds": 0.1
+  },
+  {
+   "id": "math-opt-P-lo-opt6",
+   "claim": "Pstar_opt6 ≥ 0.86864115894",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-P-lo-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "ge",
+     "printed": "0.86864115894",
+     "c": "43432057947/50000000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-P-lo-opt6  []  from the object: CERTIFIED value 540253280049022675529623587293…  0.001 s  note: no record attached",
+   "certMachineSeconds": 0.0
+  },
+  {
+   "id": "math-opt-P-hi-opt6",
+   "claim": "Pstar_opt6 ≤ 0.86864115895",
+   "source": "../claimbox/corpus/riemann/mathematician.md",
+   "object": "records/riemann-math/math-opt-P-hi-opt6.json",
+   "pin": "d4f80e0c0a221cbbdd53ea70f5e2fa68fdcb90c662ba0d01fd12f1ae34c741d7",
+   "predicate": [
+    {
+     "rel": "le",
+     "printed": "0.86864115895",
+     "c": "17372823179/20000000000"
+    }
+   ],
+   "certMachine": "ADMITTED  math-opt-P-hi-opt6  []  from the object: CERTIFIED value 540253280049022675529623587293…  0.001 s  note: no record attached",
    "certMachineSeconds": 0.0
   }
  ]

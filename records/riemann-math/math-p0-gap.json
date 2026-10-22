@@ -4,7 +4,7 @@
  "source": {
   "what": "the page pinned at ../claimbox/corpus/riemann/mathematician.md",
   "path": "../claimbox/corpus/riemann/mathematician.md",
-  "sha256": "f79e385d1552e89df7f64a59385e92508832d6527fc4c45a461023f707129ccd",
+  "sha256": "5e2a3b022b41def6750401ffccbd1f0f8a5f5e9c05b8cf39d00fd8ca281e5429",
   "quote": "|p₀ − 2/3| ≤ 0.016"
  },
  "reading": "universal",
@@ -14,7 +14,7 @@
    "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
    "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
   },
-  "decoder": "the array at encl: 256 rows of 2, each JSON integer exactly; p0 = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000, the file's own fields, written into the expression as literals",
+  "decoder": "the array at encl: 256 rows of 2, each JSON integer exactly; p0 = 109092589994213035880952… (83 chars), the file's own fields, written into the expression as literals",
   "count": 256,
   "variable": "f",
   "data": {

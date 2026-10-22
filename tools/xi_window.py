@@ -19,6 +19,7 @@ then states and cert-machine decides. Standard library only.
     python3 tools/xi_window.py --check         reproduce the paper's two windows exactly (the calibration)
     python3 tools/xi_window.py --certificate 2 "1,-7/25,-102/25" OUT.json    write a window certificate for the translator
     python3 tools/xi_window.py --optimum 11 OUT.json                           the exact minimiser over degree 20, as a certificate
+    python3 tools/xi_window.py --optimality 11 OUT.json                        the optimality certificate: no even window of degree ≤ 20 does better
 """
 import json
 import sys
@@ -156,6 +157,78 @@ def round_window(c, denominator):
     return [F(round(ci * denominator), denominator) for ci in c]
 
 
+def ldl(N):
+    """N = L·D·Lᵀ exactly, L unit lower triangular, D diagonal; a zero pivot is allowed when its whole column of the Schur
+    complement is zero (the positive-semidefinite case), else the factorisation refuses."""
+    n = len(N)
+    A = [row[:] for row in N]
+    L = [[F(int(i == j)) for j in range(n)] for i in range(n)]
+    D = [F(0)] * n
+    for k in range(n):
+        D[k] = A[k][k]
+        if D[k] == 0:
+            if any(A[i][k] != 0 for i in range(k + 1, n)):
+                raise ValueError('zero pivot with a nonzero column at step ' + str(k) + ': not positive semidefinite in this order')
+            continue
+        for i in range(k + 1, n):
+            L[i][k] = A[i][k] / D[k]
+        for i in range(k + 1, n):
+            for j in range(k + 1, n):
+                A[i][j] -= L[i][k] * D[k] * L[j][k]
+    return L, D
+
+
+def optimality_certificate(m, path):
+    """The certificate that no even polynomial window of degree 2(m-1) gives a smaller κ₉ than κ* = 1/(bᵀM⁻¹b): the matrix
+    N = M − κ*·bbᵀ is positive semidefinite, N = LDLᵀ with D ≥ 0 (one zero pivot: N kills c*), and c* ∝ M⁻¹b attains κ*.
+    The receiver recomputes M from the pair autocorrelations conv_{ij} (rows i·m + j of the array), checks L·D·Lᵀ = N entry by
+    entry, D ≥ 0, and κ₉(c*) = κ*; rows m², …, m²+m−1 hold L, row m²+m holds D, row m²+m+1 holds c*, all padded with zeros."""
+    M, b = quadratic_form(m)
+    x = solve(M, b)
+    kstar = 1 / sum(bi * xi for bi, xi in zip(b, x))
+    c = [xi / x[0] for xi in x]
+    N = [[M[i][j] - kstar * b[i] * b[j] for j in range(m)] for i in range(m)]
+    L, D = ldl(N)
+    # checks, exactly
+    for i in range(m):
+        for j in range(m):
+            assert sum(L[i][q] * D[q] * L[j][q] for q in range(m)) == N[i][j]
+    assert all(d >= 0 for d in D) and D.count(F(0)) == 1
+    num = sum(c[i] * c[j] * M[i][j] for i in range(m) for j in range(m))
+    den = sum(b[i] * c[i] for i in range(m)) ** 2
+    assert num / den == kstar
+    convs = {(i, j): conv_pair(i, j) for i in range(m) for j in range(m)}
+    W = max(max(p) for p in convs.values()) + 1
+    rows = []
+    for i in range(m):
+        for j in range(m):
+            rows.append([str(convs[(i, j)].get(e, F(0))) for e in range(W)])
+    for i in range(m):
+        rows.append([str(L[i][q]) for q in range(m)] + ['0'] * (W - m))
+    rows.append([str(d) for d in D] + ['0'] * (W - m))
+    rows.append([str(ci) for ci in c] + ['0'] * (W - m))
+    P = 2 - kstar - EPS9
+    out = {
+        'what': f'The optimality certificate for even polynomial windows of degree {2 * (m - 1)} (corpus/riemann/mathematician.md §7): κ₉(v) = cᵀMc/(bᵀc)² with '
+                f'M_ij = ∫s^(2i+2j) + (H_ij + H_ji)/2, H_ij = 2∫₀¹ D1trunc9(r)·(s^(2i) ⋆ s^(2j))(r) dr, b_i = ∫s^(2i) = 1/(4^i(2i+1)); κ* = 1/(bᵀM⁻¹b); the matrix '
+                f'N = M − κ*·bbᵀ is positive semidefinite, N = L·D·Lᵀ with D ≥ 0 and exactly one zero pivot, so κ₉(c) ≥ κ* for every c, with equality at c* ∝ M⁻¹b. '
+                f'Written by tools/xi_window.py, every number exact, 2026-10-22.',
+        'terms': 9,
+        'm': m,
+        'kappaStar': str(kstar),
+        'Pstar': str(P),
+        'PstarDecimal': fmt(P, 15),
+        'convRows': rows,
+        'convRowsNote': f'rows 0..{m * m - 1}: the coefficients in r of (s^(2i) ⋆ s^(2j))(r) = ∫_{{-1/2}}^{{1/2-r}} t^(2i) (t+r)^(2j) dt at row i·m + j, 0 ≤ r ≤ 1; '
+                        f'rows {m * m}..{m * m + m - 1}: L (unit lower triangular); row {m * m + m}: D; row {m * m + m + 1}: c* normalised to c*_0 = 1; every row padded with zeros to width {W}',
+        'derivation': 'M from the rows as the ξ′ functional computes J: H_ij = 2[Σ_l f_l(1/(l+2) − 4/(l+3)) + Σ_{k=0}^{8} a_k Σ_l f_l/(2k+l+4)] over row i·m+j; '
+                      'each row has f_0 = ∫s^(2i+2j) = 1/(4^(i+j)(2i+2j+1)) and Σ_l f_l = 0 (the autocorrelation at r = 0 and r = 1)',
+    }
+    with open(path, 'w', encoding='utf-8') as fh:
+        json.dump(out, fh, ensure_ascii=False, indent=1)
+    return kstar, P, W, max(len(str(v)) for row in rows for v in row)
+
+
 def fmt(x, digits=12):
     return f"{float(x):.{digits}f}"
 
@@ -236,6 +309,11 @@ if __name__ == '__main__':
         st = certificate(c, args[2], f'the exact minimiser of κ₉ over even windows of degree {2 * (m - 1)}, c ∝ M⁻¹b, written by tools/xi_window.py; '
                                      f'its coefficients are rationals with {max(len(str(x.denominator)) for x in c)}-digit denominators')
         print('degree', 2 * (m - 1), 'P* =', fmt(st['P'], 15), ' D* =', fmt(st['D'], 15), ' denominators up to', max(len(str(x.denominator)) for x in c), 'digits; vConv coefficients', len(st['vConv']))
+        sys.exit(0)
+    if args and args[0] == '--optimality':
+        m = int(args[1])
+        kstar, P, W, longest = optimality_certificate(m, args[2])
+        print('degree', 2 * (m - 1), 'κ* =', fmt(kstar, 15), ' P* =', fmt(P, 15), ' width', W, ' longest entry', longest, 'chars')
         sys.exit(0)
     if args and args[0] == '--certificate':
         c = [F(x) for x in args[2].split(',')]

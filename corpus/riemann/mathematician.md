@@ -208,3 +208,34 @@ a new digit in the paper's print, and the optimality within each degree is state
 object the receiver decides (a stationarity-and-positivity certificate over M is the next claim). On the Lean side a new window
 needs the four lemma instances AtOne.lean proves for the quartic — its two integrals, the closed form of v ⋆ v, positivity — with
 new rationals and the same proofs.
+
+The optimality, decided. Minimising cᵀMc/(bᵀc)² over all c is the statement that N := M − κ*·bbᵀ is positive semidefinite, with
+κ* = 1/(bᵀM⁻¹b); N kills c* ∝ M⁻¹b, so it has exactly one zero eigenvalue. The certificate (zeta23/xi-opt6.json, xi-opt20.json,
+written by tools/xi_window.py --optimality) prints the pair autocorrelations (s^{2i} ⋆ s^{2j})(r) as coefficient rows — from which
+the receiver recomputes M exactly, the way it computes J for a window — together with L, D and c*, where N = L·D·Lᵀ. The claims:
+the factorisation's residual is zero and every pivot is at least zero (so κ₉(c) ≥ κ* for every even window of that degree), the
+pivot minimum is not positive (the one zero pivot, c*), the gap κ₉(c*) − κ* is zero and not negative (attainment), and P* = 2 − κ* − ε₉
+bracketed to eleven digits — the same number the o20 window reaches:
+
+res_opt20 ≤ 0
+dmin_opt20 ≥ 0
+dmin_opt20 > 0
+gap_opt20 ≤ 0
+gap_opt20 < 0
+Pstar_opt20 ≥ 0.86864115895
+Pstar_opt20 ≤ 0.86864115896
+
+and the same for degree 6, whose P* is 1.6·10⁻¹¹ below degree 20's:
+
+res_opt6 ≤ 0
+dmin_opt6 ≥ 0
+dmin_opt6 > 0
+gap_opt6 ≤ 0
+gap_opt6 < 0
+Pstar_opt6 ≥ 0.86864115894
+Pstar_opt6 ≤ 0.86864115895
+
+So the sentence "no even polynomial window of degree at most 20 gives the method more than 0.86864115896 at λ = 1" is decided,
+not stated: the two controls (dmin > 0, gap < 0) come back REFUTED, as the one zero pivot and the exact attainment require, and
+everything else CERTIFIED. What the receiver takes from the file without recomputation is the pair autocorrelation rows themselves,
+held to their values at r = 0 and r = 1 as the window certificates are; the rest is its own arithmetic.

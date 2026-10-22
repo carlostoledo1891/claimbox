@@ -65,7 +65,8 @@ corpus/                    register-sentences.json (lifted), calibration.json (t
                            riemann/ (the story's 25 pinned sources + the video's captions, PINS.json by tools/riemann.py; ai-phrasings.json,
                            ai-claims.md: AI-written inputs, not sources of truth; mathematician.md: the session's own claims with their
                            derivations; zeta23/mt-series.json and zeta23/xi-certificate.json: the certificates behind the exact Montgomery–Taylor
-                           and ξ′ decisions; zeta23/xi-q4.json, xi-w6.json, xi-o20.json: the mathematician's windows of §7),
+                           and ξ′ decisions; zeta23/xi-q4.json, xi-w6.json, xi-o20.json: the mathematician's windows of §7; xi-opt6.json,
+                           xi-opt20.json: the optimality certificates the receiver decides),
                            riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
                            riemann-math-jobs.json (each claim with its expected outcome)
 records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json; <source>-run.json +

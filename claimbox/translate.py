@@ -43,7 +43,7 @@ from .grammar import Refusal
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 PLATFORM_DIR = os.path.join('corpus', 'platform', 'einstein-arena')
 RAT = re.compile(r'^-?\d+(?:/[1-9]\d*)?$')
-ARRAY_KEYS = ('values', 'vectors', 'weights_int', 'weights', 'cells', 'points', 'heights', 'vConv', 'data.values', 'data.vectors', 'configs.0')
+ARRAY_KEYS = ('values', 'vectors', 'weights_int', 'weights', 'cells', 'points', 'heights', 'vConv', 'convRows', 'data.values', 'data.vectors', 'configs.0')
 
 # ---- the functionals this program knows, written once as primitive expressions over the published array -------------
 # (the definitions are the registry's; the expressions are decided by cert-machine's exact evaluator, which binds n to the
@@ -300,6 +300,67 @@ CERTIFICATE.update({
 })
 for _L, _what in (('quartic', 'the paper\'s quartic'), ('q4', 'the degree-4 optimum\'s rounded'), ('w6', 'the degree-6 optimum\'s rounded'), ('o20', 'the exact degree-20 minimiser')):
     CERTIFICATE.update(xi_window(_L, _what))
+# the optimality certificate (mathematician.md §7, zeta23/xi-opt<deg>.json): κ₉(v) = cᵀMc/(bᵀc)² over even windows of degree 2(m−1), with
+# M_ij = ∫s^{2i+2j} + (H_ij + H_ji)/2 and H_ij = 2∫₀¹ D1trunc9·(s^{2i} ⋆ s^{2j}) computed by the receiver from the pair autocorrelations the
+# file prints (rows i·m + j of the array f); κ* = 1/(bᵀM⁻¹b) the file's literal; N = M − κ*·bbᵀ = L·D·Lᵀ with D ≥ 0 (rows m².., m²+m of f)
+# makes κ₉(c) ≥ κ* for every c, and c* (row m²+m+1) attains it — so no window of that degree beats P* = 2 − κ* − ε₉
+D1 = ['Subtract', 'd', '1']
+def opt_row(i, j, m):
+    return ['Add', ['Multiply', i, str(m)], j]
+def opt_H(i, j, m):
+    """2∫₀¹ D1trunc9(r)·conv_ij(r) dr over row i·m + j — J_WINDOW's form with the row's coefficients as the array"""
+    R = lambda l: ['Index', 'f', opt_row(i, j, m), l]
+    return ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', D1, ['Multiply', R('l'), ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
+                                            ['Multiply', A_0, ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', 'l', '4']]]]],
+                                    ['Sum', 'k', '1', '8', ['Multiply', A_K('k'), ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
+def opt_G(i, j):
+    return ['Divide', '1', ['Multiply', ['Power', '4', ['Add', i, j]], ['Add', ['Multiply', '2', ['Add', i, j]], '1']]]
+def opt_b(i):
+    return ['Divide', '1', ['Multiply', ['Power', '4', i], ['Add', ['Multiply', '2', i], '1']]]
+def opt_M(i, j, m):
+    return ['Add', opt_G(i, j), ['Divide', ['Add', opt_H(i, j, m), opt_H(j, i, m)], '2']]
+def opt_N(d, i, j):
+    return ['Subtract', opt_M(i, j, d['m']), ['Multiply', str(d['kappaStar']), ['Multiply', opt_b(i), opt_b(j)]]]
+def opt_L(i, q, m):
+    return ['Index', 'f', ['Add', str(m * m), i], q]
+def opt_D(q, m):
+    return ['Index', 'f', str(m * m + m), q]
+def opt_c(i, m):
+    return ['Index', 'f', str(m * m + m + 1), i]
+def opt_res(d):
+    m = d['m']
+    ldl = ['Sum', 'q', '0', str(m - 1), ['Multiply', ['Multiply', opt_L('i', 'q', m), opt_D('q', m)], opt_L('j', 'q', m)]]
+    return ['MaxOver', 'i', '0', str(m - 1), ['MaxOver', 'j', '0', str(m - 1), ['Abs', ['Subtract', ldl, opt_N(d, 'i', 'j')]]]]
+def opt_dmin(d):
+    return ['MinOver', 'q', '0', str(d['m'] - 1), opt_D('q', d['m'])]
+def opt_gap(d):
+    m = d['m']
+    num = ['Sum', 'i', '0', str(m - 1), ['Sum', 'j', '0', str(m - 1), ['Multiply', ['Multiply', opt_c('i', m), opt_c('j', m)], opt_M('i', 'j', m)]]]
+    den = ['Square', ['Sum', 'i', '0', str(m - 1), ['Multiply', opt_b('i'), opt_c('i', m)]]]
+    return ['Subtract', ['Divide', num, den], str(d['kappaStar'])]
+def opt_pstar(d):
+    return ['Subtract', ['Subtract', '2', str(d['kappaStar'])], EPS9]
+OPT_STRUCT = [{'what': 'every pair autocorrelation row starts at its r = 0 value ∫s^{2i+2j}: max_{i,j} |f[i·m+j][0] − 1/(4^{i+j}(2i+2j+1))| = 0, decided from the bytes',
+               'g': lambda d: ['MaxOver', 'i', '0', str(d['m'] - 1), ['MaxOver', 'j', '0', str(d['m'] - 1), ['Abs', ['Subtract', ['Index', 'f', opt_row('i', 'j', d['m']), '0'], opt_G('i', 'j')]]]], 'rel': 'eq', 'c': '0'},
+              {'what': 'every pair autocorrelation vanishes at r = 1: max_{i,j} |Σ_l f[i·m+j][l]| = 0, decided from the bytes',
+               'g': lambda d: ['MaxOver', 'i', '0', str(d['m'] - 1), ['MaxOver', 'j', '0', str(d['m'] - 1), ['Abs', ['Sum', 'l', '0', D1, ['Index', 'f', opt_row('i', 'j', d['m']), 'l']]]]], 'rel': 'eq', 'c': '0'}]
+OPT_DEF = ('the optimality certificate of the window search (mathematician.md §7): over even polynomial windows v = Σ c_i s^{2i} of one degree, κ₉(v) = cᵀMc/(bᵀc)² with M_ij = ∫s^{2i+2j} + (H_ij + H_ji)/2, '
+           'H_ij = 2∫₀¹ D1trunc9(r)·(s^{2i} ⋆ s^{2j})(r) dr and b_i = ∫s^{2i}; κ* = 1/(bᵀM⁻¹b); N = M − κ*·bbᵀ positive semidefinite (N = L·D·Lᵀ, D ≥ 0) is κ₉(c) ≥ κ* for every c; '
+           'c* ∝ M⁻¹b attains it; so P* = 2 − κ* − ε₉ is the most this method gives at λ = 1 within that degree — the definitions, read')
+OPT_RED = ('exact rational arithmetic over the rows the certificate prints: the pair autocorrelations (s^{2i} ⋆ s^{2j})(r) as coefficient rows, L, D and c* as rows, κ* a literal; '
+           'M recomputed from the rows as the ξ′ functional computes J; ∫_{-1/2}^{1/2} s^{2m} ds = 1/(4^m (2m+1)), ∫₀¹ r^p dr = 1/(p+1)')
+def xi_opt(L, what):
+    """the claims of one optimality certificate labelled L: res_L (the LDLᵀ residual), dmin_L (the least pivot), gap_L (κ₉(c*) − κ*), Pstar_L"""
+    def ent(keys, g, value, structural=()):
+        return {'keys': keys, 'needs': ('terms', 'm', 'kappaStar', 'convRows'), 'g': g, 'value': value, 'reduction': OPT_RED, 'definition': OPT_DEF, 'structural': list(structural)}
+    return {
+        'xi-opt-res-' + L: ent(('res' + L,), opt_res, 'max_{i,j} |(L·D·Lᵀ)_ij − (M − κ*·bbᵀ)_ij| over ' + what + ': zero is the factorisation, M recomputed from the pair autocorrelations', OPT_STRUCT),
+        'xi-opt-dmin-' + L: ent(('dmin' + L,), opt_dmin, 'the least pivot of D over ' + what + ': at least 0 is positive semidefiniteness (exactly one pivot is 0: N kills c*)'),
+        'xi-opt-gap-' + L: ent(('gap' + L,), opt_gap, 'κ₉(c*) − κ* over ' + what + ', with κ₉(c*) = c*ᵀMc*/(bᵀc*)² from the rows: zero is attainment', OPT_STRUCT),
+        'xi-opt-P-' + L: ent(('Pstar' + L,), opt_pstar, 'P* = 2 − κ* − ε₉ over ' + what + ': the most the window method gives for simple zeros of ξ′ at λ = 1 within that degree'),
+    }
+for _L, _what in (('opt6', 'even windows of degree 6'), ('opt20', 'even windows of degree 20')):
+    CERTIFICATE.update(xi_opt(_L, _what))
 CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
 
@@ -357,8 +418,8 @@ def platform_pin(slug):
     return {'file': PLATFORM_DIR + '/' + p['file'], 'sha256': p['sha256'], 'repo': pins['repo'], 'commit': pins['commit'], 'path': pins['path'].replace('<slug>', slug)}
 
 
-def find_quote(source_path, printed, name=None):
-    """the first line printing the number (preferring one that also names the quantity); None if absent"""
+def find_quote(source_path, printed, name=None, sentence=None):
+    """the first line printing the number — preferring one that prints the claim's sentence whole, else one that names the quantity; None if absent"""
     with open(source_path, 'rb') as f:
         text = f.read().decode('utf-8', 'replace')
     tok = re.compile(r'(?<![\d.])' + re.escape(printed) + r'(?![\d])')
@@ -366,10 +427,14 @@ def find_quote(source_path, printed, name=None):
     if not lines:
         return None
     pick = lines[0]
-    if name:
-        key = re.sub(r'[_{}\\$\s]', '', grammar.normalise(name))
+    flat = lambda t: re.sub(r'[_{}\\$\s]', '', grammar.normalise(t))
+    whole = flat(sentence) if sentence else None
+    if whole and any(whole in flat(ln) for ln in lines):     # the source prints the claim as written (a control beside its twin with the other relation)
+        pick = next(ln for ln in lines if whole in flat(ln))
+    elif name:
+        key = flat(name)
         for ln in lines:
-            if key in re.sub(r'[_{}\\$\s]', '', grammar.normalise(ln)):
+            if key in flat(ln):
                 pick = ln
                 break
     ln = pick.strip()
@@ -380,6 +445,14 @@ def find_quote(source_path, printed, name=None):
         hi = ln.rfind(' ', at, hi) if hi < len(ln) and ' ' in ln[at:hi] else hi
         ln = ln[lo:hi].strip()
     return ln
+
+
+def literal_text(v):
+    """a certificate field as the decoder names it: an array by its row count, a long literal by its head and length"""
+    if isinstance(v, list):
+        return str(len(v)) + ' rows'
+    t = str(v)
+    return t if len(t) <= 60 else t[:24] + '… (' + str(len(t)) + ' chars)'
 
 
 def select_array(doc):
@@ -494,7 +567,7 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     if not os.path.isfile(dp):
         raise Refusal('data', 'the published bytes are not on disk: ' + data)
     printed = shape.get('printed')
-    quote = find_quote(sp, printed, shape.get('name')) if printed else None
+    quote = find_quote(sp, printed, shape.get('name'), sentence) if printed else None
     if printed and quote is None:
         raise Refusal('source', 'the source does not print ' + printed)
     if quote is not None and shape.get('rel') not in (None, 'in'):
@@ -633,7 +706,7 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
                 raise Refusal('count', 'the claim\'s rows ' + rng['printed'] + ' are not the certificate\'s 0 < j < ' + str(doc['N']) + ' (' + str(count) + ' enclosures, the last row free)')
         bar = None if isinstance(shape['c'], list) else Fraction(shape['c'])   # any bar the source prints: the bytes decide it
         domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
-        lits = ', '.join(k + ' = ' + str(doc[k]) for k in cert['needs'] if k != 'K') + (', K = ' + str(doc['K'])[:6] + '… (' + str(len(str(doc['K']))) + ' digits)' if 'K' in cert['needs'] else '')
+        lits = ', '.join(k + ' = ' + literal_text(doc[k]) for k in cert['needs'] if k != 'K') + (', K = ' + str(doc['K'])[:6] + '… (' + str(len(str(doc['K']))) + ' digits)' if 'K' in cert['needs'] else '')
         domain['decoder'] += '; ' + lits + ', the file\'s own fields, written into the expression as literals'
         g = cert['g'](doc)
         if shape['rel'] == 'in':

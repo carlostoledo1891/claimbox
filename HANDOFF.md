@@ -31,7 +31,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
      explainer pages (★ THE EXPLAINER PAGES). THE FIFTH SESSION (2026-10-22) put the claim-machine to the Riemann-hypothesis story on
      the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST), then made its own claims as the mathematician (★ THE MATHEMATICIAN'S
-     CLAIMS). `make test`: 224 checks, 46 red controls all firing, 56/56 planted defects
+     CLAIMS). `make test`: 238 checks, 46 red controls all firing, 56/56 planted defects
      caught on the earlier corpora and 782/782 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them and the full recall). Coverage 97/132 on the register (unchanged by the
@@ -150,10 +150,15 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      (riemann-math-jobs.json: 37, all as expected): P_w6 ≥ 0.86864115 and D_w6 ≥ 0.93432057 CERTIFIED — the Lean's 0.86864017 and
      0.93432008 moved one unit of the sixth digit — the control P_w6 ≥ 0.86864116 REFUTED, the window hypotheses decided from the
      coefficients (cmax_w6 ≤ 0, w6(1/2) = 10737/16000), the paper's P_quartic ≤ 0.86864018 beside P_q4 ≥ 0.86864105, the degree-20
-     minimiser's P bracketed to eleven digits. make test 224 checks, 46 reds. NOT DONE, NEXT IN THIS CHASE: the optimality certificate
-     — stationarity Mc = μb and an LDLᵀ positivity certificate of M as one object the receiver decides, so that "no even window of
-     degree ≤ 2m beats P_m*" is CERTIFIED rather than stated; the Lean side (AtOne's four lemma instances for a new window) is the
-     authors'; the paper's five printed digits do not move.
+     minimiser's P bracketed to eleven digits. THEN THE OPTIMALITY, DECIDED (the same session, "continue"): N = M − κ*·bbᵀ is positive
+     semidefinite with one zero eigenvalue (c*), and the certificate (zeta23/xi-opt6.json, xi-opt20.json; tools/xi_window.py --optimality)
+     prints the pair autocorrelations (s^{2i} ⋆ s^{2j})(r) as rows, from which the RECEIVER RECOMPUTES M (the ξ′ functional's J over each
+     row), plus L, D, c* as rows and κ* as a literal; claims res_L ≤ 0 (LDLᵀ residual), dmin_L ≥ 0 (pivots), gap_L ≤ 0 (κ₉(c*) = κ*),
+     Pstar_L bracketed to eleven digits, with the controls dmin_L > 0 and gap_L < 0 REFUTED as the one zero pivot and exact attainment
+     require — 14 claims, 1.2 s each at degree 20 (translate.py xi_opt; literal_text shortens long certificate fields in the decoder).
+     So "no even polynomial window of degree ≤ 20 gives the method more than 0.86864115896 at λ = 1" is CERTIFIED, not stated. make test
+     counts in STATE. NOT DONE: the Lean side (AtOne's four lemma instances for a new window) is the authors'; the paper's five printed
+     digits do not move; the controls dmin > 0 / gap < 0 needed the quote finder to prefer the line printing the claim exactly (fixed).
   ★ THE QUEUE, CHECKED (2026-10-21, the fourth session, "continue the queued tasks"): every NEXT item waits on the receiver, and
      cert-machine has made none of (c)–(f) — its one commit since 40833648 is its self-audit (2311ac2c), which changed
      tools/run-mc100-einstein.js (an object that is not n vectors in R^d is now REFUSED); the ten objects naming it are still
