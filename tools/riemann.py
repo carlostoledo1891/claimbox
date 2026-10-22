@@ -42,7 +42,10 @@ GITHUB_FILES = {
                                   'preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/README.md']),
     'zeta23': (ZETA23, ['zeta23/README.md', 'zeta23/formalization.yaml', 'zeta23/ChallengeDeps.lean', 'zeta23/Challenge.lean', 'zeta23/AUDIT.md',
                         'zeta23/Zeta23/PairCeiling/LawN256.lean', 'zeta23/Zeta23/PairCeiling/CeilingLaw256.lean', 'zeta23/Zeta23/PairCeiling/NumericCert.lean',
-                        'zeta23/Zeta23/PairCeiling/RowCert.lean', 'zeta23/Zeta23/PairCeiling/NearCUE.lean']),
+                        'zeta23/Zeta23/PairCeiling/RowCert.lean', 'zeta23/Zeta23/PairCeiling/NearCUE.lean',
+                        # the ξ′ side (pinned 2026-10-22, later the same day: the window hypotheses, the functional, the certificate's three files)
+                        'zeta23/Zeta23/XiPrime/Statement.lean', 'zeta23/Zeta23/XiPrime/Defs.lean', 'zeta23/Zeta23/XiPrime/Certificate.lean',
+                        'zeta23/Zeta23/XiPrime/Certificate/D1.lean', 'zeta23/Zeta23/XiPrime/Certificate/Poly.lean', 'zeta23/Zeta23/XiPrime/Certificate/AtOne.lean']),
 }
 
 

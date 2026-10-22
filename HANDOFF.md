@@ -21,7 +21,44 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-22, the fifth handoff: the claim-machine put to the 2026 Riemann-hypothesis story — the one finite certificate with published bytes decided from the bytes, the theorems refused, the AI phrasings measured, 781 plants caught; a grammar defect fixed)
+## TASKS BACKLOG (updated 2026-10-22, the seventh session — the cert-machine chat allowed into this repository by the operator ("You are allowed to use claimbox project. The chat and handoff file there are aware"): §8 of the mathematician's write-up — the tail, the parameter and the calibration — decided; the XiPrime Lean files pinned; make test 288 checks, 48 reds)
+
+  ★ THE SEVENTH SESSION (2026-10-22, from the cert-machine chat, on "Proceed all your suggestions, make sure you will push even more
+     to make the results better and try to find opportunities hidden"). THREE THINGS §7 LEFT OPEN, DECIDED (corpus/riemann/mathematician.md
+     §8; records/riemann-math-run.json now 99 claims, 81 CERTIFIED, 18 REFUTED, every one as corpus/riemann-math-jobs.json expected):
+     (1) THE TAIL. D₁ truncated at fifteen terms instead of nine — the formalization's own route (Statement.lean: "D1trunc K, K ≥ 9")
+     — with ε_K = a_K·(K+2)(2K+3)/((K+2)(2K+3) − 2(K+1)) (ρ_K the coefficient ratio at k = K, decreasing): ε₁₅ = 8192/180952685768570625 =
+     4.5·10⁻¹⁴, where ε₉ was 3.4·10⁻⁷. The w6 window at fifteen terms: P_w6k15 ≥ 0.86864150, D_w6k15 ≥ 0.93432075 CERTIFIED
+     (0.868641500500…, 0.934320750250…), the controls one unit beyond REFUTED; the exact degree-20 minimiser at fifteen terms
+     P_o20k15 ∈ [0.86864150052, 0.86864150053]; the optimality certificates at fifteen terms (xi-opt6k15.json, xi-opt20k15.json):
+     res ≤ 0, dmin ≥ 0, gap ≤ 0 CERTIFIED, dmin > 0 and gap < 0 REFUTED, Pstar bracketed to eleven digits — so the Lean's 0.86864017 /
+     0.93432008 become 0.86864150 / 0.93432075 by the same window shape and three more terms, a change of 1.3·10⁻⁶; the paper's five
+     digits unchanged. (2) THE PARAMETER. κ₁(λ, v) = 1/c_λ(v; D₁) with c_λ(v; D) = λ(∫v)²/(∫v² + λ𝒥), 𝒥 = 2∫₀¹ D(λr)·(v⋆v)(r) dr
+     (Defs.lean's cWin, the paper's Theorem 8.2 at fixed λ): a Rayleigh quotient with M = G/λ + sym(H(λ)); the constant FALLS as λ
+     leaves 1 (0.8686 → 0.8632 at 0.99 → 0.8377 at 0.95 → 0.7970 at 0.9); on record the w6 window at λ = 19/20 and 9/10
+     (xi-w6l95.json, xi-w6l90.json): P_w6l95 ≤ 0.83686, P_w6l90 ≤ 0.79415 CERTIFIED, P_w6l95 ≥ 0.84 REFUTED. Closed by evaluation.
+     (3) THE CALIBRATION. The ζ kernel D(s) = s makes the functional the Montgomery–Taylor problem, whose optimum over all windows
+     is the paper's closed form 2 − 1/c₁* = 0.6725007036794116… (§1's series): the polynomial optima (xi-zeta2/6/20.json, kernel
+     named in the file, no tail) give exactly 2 − 531/400 = 0.6725 at degree 2 — the abstract's four digits to the digit —
+     0.672500703666… at degree 4 and 0.672500703679412… from degree 6 on, the closed form to fifteen digits: Pstar_zeta6 and
+     Pstar_zeta20 ∈ [0.672500703679, 0.672500703680] CERTIFIED, Dstar_zeta20 ≥ 0.836250351839, Pstar_zeta2 = 269/400 CERTIFIED;
+     the same machinery, on D₁, is the ξ′ ceiling. BUILT: tools/xi_window.py takes --terms K, --lam L, --zeta (window_stats,
+     quadratic_form, optimum, the two certificate writers; new keys terms/lam/kernel/truncationNote in the files; --sweep-terms,
+     --sweep-lambda, --sweep-zeta; --check unchanged, every rational of §4 reproduced); claimbox/translate.py: xi_K (an integer
+     K ≥ 9, else refused), xi_lam (a rational in (0, 1], else refused), xi_kernel (d1 or zeta, else refused), EPS(K), J_WINDOW and
+     KAPPA over K, λ and the kernel (the K = 9, λ = 1, D₁ expressions byte for byte as before — the 51 earlier objects changed only
+     by the write-up's digest), opt_H/opt_M likewise (M = G/λ + sym(H)), the Dstar entry, the labels w6k15, o20k15, w6l95, w6l90,
+     opt6k15, opt20k15, zeta2, zeta6, zeta20, eps12/15/20; tests/battery.py: the reds terms = 5, λ = 2, kernel = gue (the "ten terms"
+     red retired: ten is allowed now), the claim count read from the jobs file. PINNED: Zeta23/XiPrime/{Statement,Defs,Certificate}.lean
+     and Certificate/{D1,Poly,AtOne}.lean at e1a4e650 (tools/riemann.py; 31 files; the Anthropic post re-fetched as served moved by
+     43 bytes in its head, its four sentences still byte for byte). FOUND ON THE WAY: anthropics/zeta-23-lean redirects to
+     anthropics/formal-math; its open issues #8 (2026-08-12) and #14 ask for the law file and the EnclOK discharge path, unanswered
+     — the cert-machine chat posted its re-check as a comment on #8 (the operator's word); its issue #25 / PR #17 (mdumitrean,
+     2026-08) claims 0.6728005676 for ζ by six MT translates with 56,924 kernel modules — a replay target, unread. NOT DONE: the
+     L² optimality (polynomial saturation observed, not certified); a monotonicity proof in λ; the Lean instances (D1coeff_succ_le
+     at k ≥ 15, ratio 32/561; AtOne for w6) — the authors'. The companion paper and the outreach live in cert-machine.
+
+## (the fifth and sixth handoffs, as they were: the claim-machine put to the 2026 Riemann-hypothesis story — the one finite certificate with published bytes decided from the bytes, the theorems refused, the AI phrasings measured, 781 plants caught; a grammar defect fixed)
 
   ◆ AUTHORIZATION (the operator, 2026-10-22, the sixth session's close): THE CERT-MACHINE CHAT IS AUTHORIZED TO WORK ON THIS PROJECT —
      the report, the paper and the outreach built from the Riemann test and the window search (★ THE RIEMANN TEST, ★ THE MATHEMATICIAN'S

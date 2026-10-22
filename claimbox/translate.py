@@ -236,18 +236,52 @@ TWO_K = lambda k: ['Multiply', '2', k]
 J_FLAT = ['Multiply', '2', ['Add', ['Add', ['Subtract', '1/6', '1/3'], '1/5'], ['Sum', 'k', '1', '8', ['Divide', A_K('k'), ['Multiply', ['Add', TWO_K('k'), '4'], ['Add', TWO_K('k'), '5']]]]]]
 KAPPA_FLAT = ['Add', '1', J_FLAT]
 EPS9 = ['Multiply', A_K('9'), '231/211']
+# the truncation order K ≥ 9 (the Lean's D1trunc K), the tail ε_K = a_K·(K+2)(2K+3)/((K+2)(2K+3) − 2(K+1)) (the coefficient ratio at k = K is
+# 2(K+1)/((K+2)(2K+3)), decreasing in k, so the geometric comparison holds from K on; K = 9 gives a_9·231/211), the parameter λ ∈ (0, 1] of
+# the window functional c_λ(v; D) = λ(∫v)²/(∫v² + λ𝒥), 𝒥 = 2∫₀¹ D(λr)·(v⋆v)(r) dr (Defs.lean's cWin; the paper's Theorem 8.2 at fixed λ,
+# the limit form at λ = 1), and the kernel: D₁ for ξ′, or D(s) = s for ζ — the Montgomery–Taylor functional, no tail
+def xi_K(d):
+    K = d.get('terms')
+    if not (isinstance(K, int) and not isinstance(K, bool) and K >= 9):
+        raise Refusal('data', 'the certificate truncates D₁ at ' + str(K) + ' terms; the functional needs an integer K ≥ 9 (the Lean\'s D1trunc K with the tail ε_K)')
+    return K
+def xi_lam(d):
+    from fractions import Fraction as _F
+    lam = str(d.get('lam', '1'))
+    if not re.fullmatch(r'\d+(?:/\d+)?', lam) or _F(lam) <= 0 or _F(lam) > 1:
+        raise Refusal('data', 'λ = ' + lam + ' is not a rational in (0, 1] (the window functional is defined for λ ∈ (0, 1], the paper\'s Theorem 8.2 at fixed λ < 1 and the limit form at λ = 1)')
+    return lam
+def xi_kernel(d):
+    k = d.get('kernel', 'd1')
+    if k not in ('d1', 'zeta'):
+        raise Refusal('data', 'the kernel ' + str(k) + ' is neither the ξ′ diagonal density D₁ nor the ζ kernel D(s) = s')
+    return k
+def EPS(K):
+    q = (K + 2) * (2 * K + 3)
+    return ['Multiply', A_K(str(K)), str(q) + '/' + str(q - 2 * (K + 1))]
+def EPS_OF(d):
+    return '0' if xi_kernel(d) == 'zeta' else EPS(xi_K(d))
 B_L = IDX('l')
-J_WINDOW = lambda d: ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', N1, ['Multiply', B_L, ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
-                                                        ['Multiply', A_0, ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', 'l', '4']]]]],
-                                                ['Sum', 'k', '1', '8', ['Multiply', A_K('k'), ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
+def J_WINDOW(d):
+    K, lam, ker = xi_K(d), xi_lam(d), xi_kernel(d)
+    if ker == 'zeta':                                                              # D(λr) = λr: 𝒥 = 2λ Σ_l b_l/(l+2)
+        inner = ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', 'l', '2']]]
+        return ['Multiply', '2', inner] if lam == '1' else ['Multiply', '2', ['Multiply', lam, inner]]
+    if lam == '1':
+        return ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', N1, ['Multiply', B_L, ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
+                                                ['Multiply', A_0, ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', 'l', '4']]]]],
+                                        ['Sum', 'k', '1', str(K - 1), ['Multiply', A_K('k'), ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
+    L2, L3 = ['Power', lam, '2'], ['Power', lam, '3']                              # D₁(λr) = λr − 4λ²r² + Σ_k a_k λ^{2k+3} r^{2k+3}
+    return ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', N1, ['Multiply', B_L, ['Subtract', ['Divide', lam, ['Add', 'l', '2']], ['Divide', ['Multiply', '4', L2], ['Add', 'l', '3']]]]],
+                                            ['Multiply', ['Multiply', A_0, L3], ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', 'l', '4']]]]],
+                                    ['Sum', 'k', '1', str(K - 1), ['Multiply', ['Multiply', A_K('k'), ['Power', lam, ['Add', TWO_K('k'), '3']]], ['Sum', 'l', '0', N1, ['Divide', B_L, ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
 # any even polynomial window v(s) = Σ_i c_i s^i (odd c_i zero) goes through one functional: ∫v = Σ_{i even} c_i/(2^i (i+1)) and
 # ∫v² = Σ_{i,j even} c_i c_j/(2^{i+j} (i+j+1)) from the window's coefficients, J over the autocorrelation coefficients b_l the certificate
 # prints (the array f), and for the paper's window hypotheses (even, positive on [−1/2, 1/2], at most 1): v(1/2) and the largest
 # coefficient after the first — c_i ≤ 0 for i ≥ 2 makes v ≤ 1 on ℝ and decreasing in |s|, so v ≥ v(1/2) on the interval
 def xi_window_coeffs(d):
     """the window's coefficients as the certificate prints them; refuses a window that is not even, or a truncation other than nine terms"""
-    if d.get('terms') != 9:
-        raise Refusal('data', 'the certificate truncates D₁ at ' + str(d.get('terms')) + ' terms; the functional is written for nine (the tail ε₉ = a_9·231/211)')
+    xi_K(d)
     cs = [str(c) for c in d['window']]
     for i, c in enumerate(cs):
         if i % 2 == 1 and c != '0':
@@ -271,7 +305,11 @@ def c_max(d):
     for c in cs[1:]:
         out = ['Max', out, c]
     return out
-KAPPA = lambda d: ['Divide', ['Add', int_v2(d), J_WINDOW(d)], ['Square', int_v(d)]]
+def KAPPA(d):
+    lam = xi_lam(d)
+    if lam == '1':
+        return ['Divide', ['Add', int_v2(d), J_WINDOW(d)], ['Square', int_v(d)]]
+    return ['Divide', ['Add', int_v2(d), ['Multiply', lam, J_WINDOW(d)]], ['Multiply', lam, ['Square', int_v(d)]]]   # κ(λ, v) = (∫v² + λ𝒥)/(λ(∫v)²)
 XI_DEF = ('the ξ′ certificate as Zeta23/XiPrime/Certificate/{D1,Poly,AtOne}.lean define it: D₁(s) = s − 4s² + Σ_{k≥0} a_k s^{2k+3} with a_k = 2·4^{k+1}·k!/(2k+2)! (the paper\'s Lemma 7.1), '
           'truncated at nine terms (k = 0..8), the tail ε₉ = a_9·231/211 (a_{k+1}/a_k ≤ 20/231 from k = 9 on), J(v) = 2∫₀¹ D1trunc9(r)·vConv(r) dr, κ₉(v) = (∫v² + J(v))/(∫v)², and the '
           'proportions 2 − κ₉ − ε₉ (simple and on the line) and 3/2 − (κ₉ + ε₉)/2 (distinct), each a lower bound because the tail is added on the side that makes 1/c larger — for any even '
@@ -281,13 +319,13 @@ XI_STRUCT = [{'what': 'the autocorrelation at r = 0 is ∫v²: b_0 = ∫v², dec
              {'what': 'the autocorrelation at r = 1 vanishes: Σ_l b_l = 0, decided from the bytes', 'g': lambda d: ['Sum', 'l', '0', N1, B_L], 'rel': 'eq', 'c': '0'}]
 def xi(keys, g, value, structural=()):
     return {'keys': keys, 'needs': ('terms', 'window', 'vConv'), 'g': g if callable(g) else (lambda d, g=g: g), 'value': value, 'reduction': XI_RED, 'definition': XI_DEF, 'structural': list(structural)}
-def xi_window(L, what):
-    """the six claims about one window labelled L: J_L, kappa9_L, P_L, D_L, cmax_L, L(1/2)"""
+def xi_window(L, what, sub='₉', how='D1trunc9(r)'):
+    """the six claims about one window labelled L: J_L, kappa9_L, P_L, D_L, cmax_L, L(1/2); sub and how name the truncation in the texts"""
     return {
-        'xi-J-' + L: xi(('J' + L,), J_WINDOW, 'J(' + L + ') = 2∫₀¹ D1trunc9(r)·vConv(r) dr over ' + what + ' window\'s autocorrelation coefficients', XI_STRUCT),
-        'xi-kappa-' + L: xi(('kappa9' + L,), KAPPA, 'κ₉(' + L + ') = (∫v² + J)/(∫v)², ' + what + ' window', XI_STRUCT),
-        'xi-P-' + L: xi(('P' + L,), lambda d: ['Subtract', ['Subtract', '2', KAPPA(d)], EPS9], 'P_' + L + ' = 2 − κ₉ − ε₉, the proportion of zeros of ξ′ simple and on the line, ' + what + ' window', XI_STRUCT),
-        'xi-D-' + L: xi(('D' + L,), lambda d: ['Subtract', '3/2', ['Divide', ['Add', KAPPA(d), EPS9], '2']], 'D_' + L + ' = 3/2 − (κ₉ + ε₉)/2, the proportion of distinct zeros of ξ′, ' + what + ' window', XI_STRUCT),
+        'xi-J-' + L: xi(('J' + L,), J_WINDOW, 'J(' + L + ') = 2∫₀¹ ' + how + '·vConv(r) dr over ' + what + ' window\'s autocorrelation coefficients', XI_STRUCT),
+        'xi-kappa-' + L: xi(('kappa9' + L,), KAPPA, 'κ' + sub + '(' + L + ') = (∫v² + J)/(∫v)², ' + what + ' window', XI_STRUCT),
+        'xi-P-' + L: xi(('P' + L,), lambda d: ['Subtract', ['Subtract', '2', KAPPA(d)], EPS_OF(d)], 'P_' + L + ' = 2 − κ' + sub + ' − ε' + sub + ', the proportion of zeros of ξ′ simple and on the line, ' + what + ' window', XI_STRUCT),
+        'xi-D-' + L: xi(('D' + L,), lambda d: ['Subtract', '3/2', ['Divide', ['Add', KAPPA(d), EPS_OF(d)], '2']], 'D_' + L + ' = 3/2 − (κ' + sub + ' + ε' + sub + ')/2, the proportion of distinct zeros of ξ′, ' + what + ' window', XI_STRUCT),
         'xi-cmax-' + L: xi(('cmax' + L,), c_max, 'the largest coefficient of s², s⁴, … of ' + what + ' window: at most 0 makes v ≤ 1 on ℝ and decreasing in |s| (the paper\'s window hypotheses)'),
         'xi-half-' + L: xi((L + '(1/2)',), v_half, 'v(1/2) of ' + what + ' window, its minimum on [−1/2, 1/2] when the coefficients after the first are at most 0: positive is the paper\'s hypothesis'),
     }
@@ -300,6 +338,13 @@ CERTIFICATE.update({
 })
 for _L, _what in (('quartic', 'the paper\'s quartic'), ('q4', 'the degree-4 optimum\'s rounded'), ('w6', 'the degree-6 optimum\'s rounded'), ('o20', 'the exact degree-20 minimiser')):
     CERTIFICATE.update(xi_window(_L, _what))
+# the same windows with D₁ truncated at fifteen terms (mathematician.md §8: the tail after nine terms costs 3.4·10⁻⁷), and w6 at λ < 1
+for _L, _what in (('w6k15', 'the degree-6 optimum\'s rounded, D₁ at fifteen terms'), ('o20k15', 'the exact degree-20 minimiser at fifteen terms')):
+    CERTIFICATE.update(xi_window(_L, _what, '₁₅', 'D1trunc15(r)'))
+for _L, _what in (('w6l95', 'the w6 window at λ = 19/20, fifteen terms'), ('w6l90', 'the w6 window at λ = 9/10, fifteen terms')):
+    CERTIFICATE.update(xi_window(_L, _what, '₁₅(λ)', 'D1trunc15(λr)'))
+for _K in (12, 15, 20):
+    CERTIFICATE['xi-eps' + str(_K)] = xi(('eps' + str(_K),), EPS(_K), 'ε_' + str(_K) + ' = a_K·(K+2)(2K+3)/((K+2)(2K+3) − 2(K+1)) at K = ' + str(_K) + ', the certified tail of D₁ on [0, 1] after ' + str(_K) + ' terms')
 # the optimality certificate (mathematician.md §7, zeta23/xi-opt<deg>.json): κ₉(v) = cᵀMc/(bᵀc)² over even windows of degree 2(m−1), with
 # M_ij = ∫s^{2i+2j} + (H_ij + H_ji)/2 and H_ij = 2∫₀¹ D1trunc9·(s^{2i} ⋆ s^{2j}) computed by the receiver from the pair autocorrelations the
 # file prints (rows i·m + j of the array f); κ* = 1/(bᵀM⁻¹b) the file's literal; N = M − κ*·bbᵀ = L·D·Lᵀ with D ≥ 0 (rows m².., m²+m of f)
@@ -307,20 +352,30 @@ for _L, _what in (('quartic', 'the paper\'s quartic'), ('q4', 'the degree-4 opti
 D1 = ['Subtract', 'd', '1']
 def opt_row(i, j, m):
     return ['Add', ['Multiply', i, str(m)], j]
-def opt_H(i, j, m):
-    """2∫₀¹ D1trunc9(r)·conv_ij(r) dr over row i·m + j — J_WINDOW's form with the row's coefficients as the array"""
+def opt_H(i, j, d):
+    """2∫₀¹ D(λr)·conv_ij(r) dr over row i·m + j — J_WINDOW's form with the row's coefficients as the array"""
+    m, K, lam, ker = d['m'], xi_K(d), xi_lam(d), xi_kernel(d)
     R = lambda l: ['Index', 'f', opt_row(i, j, m), l]
-    return ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', D1, ['Multiply', R('l'), ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
-                                            ['Multiply', A_0, ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', 'l', '4']]]]],
-                                    ['Sum', 'k', '1', '8', ['Multiply', A_K('k'), ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
+    if ker == 'zeta':
+        inner = ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', 'l', '2']]]
+        return ['Multiply', '2', inner] if lam == '1' else ['Multiply', '2', ['Multiply', lam, inner]]
+    if lam == '1':
+        return ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', D1, ['Multiply', R('l'), ['Subtract', ['Divide', '1', ['Add', 'l', '2']], ['Divide', '4', ['Add', 'l', '3']]]]],
+                                                ['Multiply', A_0, ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', 'l', '4']]]]],
+                                        ['Sum', 'k', '1', str(K - 1), ['Multiply', A_K('k'), ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
+    L2, L3 = ['Power', lam, '2'], ['Power', lam, '3']
+    return ['Multiply', '2', ['Add', ['Add', ['Sum', 'l', '0', D1, ['Multiply', R('l'), ['Subtract', ['Divide', lam, ['Add', 'l', '2']], ['Divide', ['Multiply', '4', L2], ['Add', 'l', '3']]]]],
+                                            ['Multiply', ['Multiply', A_0, L3], ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', 'l', '4']]]]],
+                                    ['Sum', 'k', '1', str(K - 1), ['Multiply', ['Multiply', A_K('k'), ['Power', lam, ['Add', TWO_K('k'), '3']]], ['Sum', 'l', '0', D1, ['Divide', R('l'), ['Add', ['Add', TWO_K('k'), 'l'], '4']]]]]]]
 def opt_G(i, j):
     return ['Divide', '1', ['Multiply', ['Power', '4', ['Add', i, j]], ['Add', ['Multiply', '2', ['Add', i, j]], '1']]]
 def opt_b(i):
     return ['Divide', '1', ['Multiply', ['Power', '4', i], ['Add', ['Multiply', '2', i], '1']]]
-def opt_M(i, j, m):
-    return ['Add', opt_G(i, j), ['Divide', ['Add', opt_H(i, j, m), opt_H(j, i, m)], '2']]
+def opt_M(i, j, d):
+    lam = xi_lam(d)
+    return ['Add', opt_G(i, j) if lam == '1' else ['Divide', opt_G(i, j), lam], ['Divide', ['Add', opt_H(i, j, d), opt_H(j, i, d)], '2']]   # M = G/λ + sym(H)
 def opt_N(d, i, j):
-    return ['Subtract', opt_M(i, j, d['m']), ['Multiply', str(d['kappaStar']), ['Multiply', opt_b(i), opt_b(j)]]]
+    return ['Subtract', opt_M(i, j, d), ['Multiply', str(d['kappaStar']), ['Multiply', opt_b(i), opt_b(j)]]]
 def opt_L(i, q, m):
     return ['Index', 'f', ['Add', str(m * m), i], q]
 def opt_D(q, m):
@@ -335,11 +390,13 @@ def opt_dmin(d):
     return ['MinOver', 'q', '0', str(d['m'] - 1), opt_D('q', d['m'])]
 def opt_gap(d):
     m = d['m']
-    num = ['Sum', 'i', '0', str(m - 1), ['Sum', 'j', '0', str(m - 1), ['Multiply', ['Multiply', opt_c('i', m), opt_c('j', m)], opt_M('i', 'j', m)]]]
+    num = ['Sum', 'i', '0', str(m - 1), ['Sum', 'j', '0', str(m - 1), ['Multiply', ['Multiply', opt_c('i', m), opt_c('j', m)], opt_M('i', 'j', d)]]]
     den = ['Square', ['Sum', 'i', '0', str(m - 1), ['Multiply', opt_b('i'), opt_c('i', m)]]]
     return ['Subtract', ['Divide', num, den], str(d['kappaStar'])]
 def opt_pstar(d):
-    return ['Subtract', ['Subtract', '2', str(d['kappaStar'])], EPS9]
+    return ['Subtract', ['Subtract', '2', str(d['kappaStar'])], EPS_OF(d)]
+def opt_dstar(d):
+    return ['Subtract', '3/2', ['Divide', ['Add', str(d['kappaStar']), EPS_OF(d)], '2']]
 OPT_STRUCT = [{'what': 'every pair autocorrelation row starts at its r = 0 value ∫s^{2i+2j}: max_{i,j} |f[i·m+j][0] − 1/(4^{i+j}(2i+2j+1))| = 0, decided from the bytes',
                'g': lambda d: ['MaxOver', 'i', '0', str(d['m'] - 1), ['MaxOver', 'j', '0', str(d['m'] - 1), ['Abs', ['Subtract', ['Index', 'f', opt_row('i', 'j', d['m']), '0'], opt_G('i', 'j')]]]], 'rel': 'eq', 'c': '0'},
               {'what': 'every pair autocorrelation vanishes at r = 1: max_{i,j} |Σ_l f[i·m+j][l]| = 0, decided from the bytes',
@@ -349,18 +406,23 @@ OPT_DEF = ('the optimality certificate of the window search (mathematician.md §
            'c* ∝ M⁻¹b attains it; so P* = 2 − κ* − ε₉ is the most this method gives at λ = 1 within that degree — the definitions, read')
 OPT_RED = ('exact rational arithmetic over the rows the certificate prints: the pair autocorrelations (s^{2i} ⋆ s^{2j})(r) as coefficient rows, L, D and c* as rows, κ* a literal; '
            'M recomputed from the rows as the ξ′ functional computes J; ∫_{-1/2}^{1/2} s^{2m} ds = 1/(4^m (2m+1)), ∫₀¹ r^p dr = 1/(p+1)')
-def xi_opt(L, what):
-    """the claims of one optimality certificate labelled L: res_L (the LDLᵀ residual), dmin_L (the least pivot), gap_L (κ₉(c*) − κ*), Pstar_L"""
+def xi_opt(L, what, sub='₉', of='simple zeros of ξ′'):
+    """the claims of one optimality certificate labelled L: res_L (the LDLᵀ residual), dmin_L (the least pivot), gap_L (κ(c*) − κ*), Pstar_L, Dstar_L"""
     def ent(keys, g, value, structural=()):
         return {'keys': keys, 'needs': ('terms', 'm', 'kappaStar', 'convRows'), 'g': g, 'value': value, 'reduction': OPT_RED, 'definition': OPT_DEF, 'structural': list(structural)}
     return {
         'xi-opt-res-' + L: ent(('res' + L,), opt_res, 'max_{i,j} |(L·D·Lᵀ)_ij − (M − κ*·bbᵀ)_ij| over ' + what + ': zero is the factorisation, M recomputed from the pair autocorrelations', OPT_STRUCT),
         'xi-opt-dmin-' + L: ent(('dmin' + L,), opt_dmin, 'the least pivot of D over ' + what + ': at least 0 is positive semidefiniteness (exactly one pivot is 0: N kills c*)'),
-        'xi-opt-gap-' + L: ent(('gap' + L,), opt_gap, 'κ₉(c*) − κ* over ' + what + ', with κ₉(c*) = c*ᵀMc*/(bᵀc*)² from the rows: zero is attainment', OPT_STRUCT),
-        'xi-opt-P-' + L: ent(('Pstar' + L,), opt_pstar, 'P* = 2 − κ* − ε₉ over ' + what + ': the most the window method gives for simple zeros of ξ′ at λ = 1 within that degree'),
+        'xi-opt-gap-' + L: ent(('gap' + L,), opt_gap, 'κ' + sub + '(c*) − κ* over ' + what + ', with κ' + sub + '(c*) = c*ᵀMc*/(bᵀc*)² from the rows: zero is attainment', OPT_STRUCT),
+        'xi-opt-P-' + L: ent(('Pstar' + L,), opt_pstar, 'P* = 2 − κ* − ε' + sub + ' over ' + what + ': the most the window method gives for ' + of + ' at λ = 1 within that degree'),
+        'xi-opt-D-' + L: ent(('Dstar' + L,), opt_dstar, 'D* = 3/2 − (κ* + ε' + sub + ')/2 over ' + what + ': the most the window method gives for distinct zeros within that degree'),
     }
 for _L, _what in (('opt6', 'even windows of degree 6'), ('opt20', 'even windows of degree 20')):
     CERTIFICATE.update(xi_opt(_L, _what))
+for _L, _what in (('opt6k15', 'even windows of degree 6, D₁ at fifteen terms'), ('opt20k15', 'even windows of degree 20, D₁ at fifteen terms')):
+    CERTIFICATE.update(xi_opt(_L, _what, '₁₅'))
+for _L, _what in (('zeta2', 'even windows of degree 2 for ζ (the Montgomery–Taylor functional, D(s) = s)'), ('zeta6', 'even windows of degree 6 for ζ'), ('zeta20', 'even windows of degree 20 for ζ')):
+    CERTIFICATE.update(xi_opt(_L, _what, '', 'simple zeros of ζ on the line'))
 CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
 

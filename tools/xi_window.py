@@ -34,15 +34,39 @@ def d1_coeff(k):
     return F(2 * 4 ** (k + 1) * factorial(k), factorial(2 * k + 2))
 
 
-def t9():
-    """D1trunc9 as a dict power → coefficient: r − 4r² + Σ_{k=0}^{8} a_k r^{2k+3}."""
+def d1_trunc(K):
+    """D1trunc K as a dict power → coefficient: r − 4r² + Σ_{k=0}^{K−1} a_k r^{2k+3} (the Lean's D1trunc K, K ≥ 9)."""
     p = {1: F(1), 2: F(-4)}
-    for k in range(9):
+    for k in range(K):
         p[2 * k + 3] = p.get(2 * k + 3, F(0)) + d1_coeff(k)
     return p
 
 
-EPS9 = d1_coeff(9) * F(231, 211)
+def t9():
+    """D1trunc9 as a dict power → coefficient: r − 4r² + Σ_{k=0}^{8} a_k r^{2k+3}."""
+    return d1_trunc(9)
+
+
+def eps(K):
+    """the certified tail of D₁ on [0, 1] after K terms: a_K/(1 − ρ_K), ρ_K = 2(K+1)/((K+2)(2K+3)) the coefficient ratio at k = K
+    (decreasing in k, so the geometric comparison holds from K on); K = 9 gives a_9·231/211 — the Lean's eps9."""
+    q = (K + 2) * (2 * K + 3)
+    return d1_coeff(K) * F(q, q - 2 * (K + 1))
+
+
+ZETA = {1: F(1)}   # the ζ kernel D(s) = s: the Montgomery–Taylor functional (cWin with D(s) = s), no tail
+
+
+def kernel_poly(K, kernel):
+    return ZETA if kernel == 'zeta' else d1_trunc(K)
+
+
+def scale(p, lam):
+    """D(λr) from D(r): the coefficient of r^e times λ^e."""
+    return {e: v * lam ** e for e, v in p.items()}
+
+
+EPS9 = eps(9)
 
 
 def int_even_power(i):
@@ -84,7 +108,7 @@ def integrate_01(p):
 T9 = t9()
 
 
-def window_stats(c):
+def window_stats(c, K=9, lam=F(1), kernel='d1'):
     """Every exact quantity for the window v(s) = Σ c_i s^{2i}. c: list of Fractions."""
     m = len(c)
     int_v = sum(c[i] * int_even_power(i) for i in range(m))
@@ -97,19 +121,22 @@ def window_stats(c):
             for e, v in conv_pair(i, j).items():
                 vconv[e] = vconv.get(e, F(0)) + c[i] * c[j] * v
     vconv = {e: v for e, v in sorted(vconv.items()) if v != 0}
-    J = 2 * integrate_01(poly_mul(T9, vconv))
-    kappa = (int_v2 + J) / int_v ** 2
-    P = 2 - kappa - EPS9
-    D = F(3, 2) - (kappa + EPS9) / 2
-    return {'c': c, 'intV': int_v, 'intV2': int_v2, 'vConv': vconv, 'J': J, 'kappa9': kappa, 'P': P, 'D': D}
+    J = 2 * integrate_01(poly_mul(scale(kernel_poly(K, kernel), lam), vconv))      # 𝒥(λ; v) = 2∫₀¹ D(λr)·(v⋆v)(r) dr
+    e = F(0) if kernel == 'zeta' else eps(K)
+    kappa = (int_v2 + lam * J) / (lam * int_v ** 2)                                  # κ(λ, v) = 1/c_λ(v; D) = (∫v² + λ𝒥)/(λ(∫v)²)
+    P = 2 - kappa - e
+    D = F(3, 2) - (kappa + e) / 2
+    return {'c': c, 'intV': int_v, 'intV2': int_v2, 'vConv': vconv, 'J': J, 'kappa9': kappa, 'P': P, 'D': D, 'eps': e, 'terms': K, 'lam': lam, 'kernel': kernel}
 
 
-def quadratic_form(m):
-    """M (symmetric) and b with κ₉(c) = cᵀMc/(bᵀc)² over windows of degree 2(m-1)."""
+def quadratic_form(m, K=9, lam=F(1), kernel='d1'):
+    """M (symmetric) and b with κ(λ, c) = cᵀMc/(bᵀc)² over windows of degree 2(m-1): M = G/λ + sym(H), G_ij = ∫s^{2i+2j},
+    H_ij = 2∫₀¹ D(λr)·(s^{2i} ⋆ s^{2j})(r) dr with D = D1trunc K or the ζ kernel D(s) = s."""
     b = [int_even_power(i) for i in range(m)]
     G = [[int_even_power(i + j) for j in range(m)] for i in range(m)]
-    H = [[2 * integrate_01(poly_mul(T9, conv_pair(i, j))) for j in range(m)] for i in range(m)]
-    M = [[G[i][j] + (H[i][j] + H[j][i]) / 2 for j in range(m)] for i in range(m)]
+    Dp = scale(kernel_poly(K, kernel), lam)
+    H = [[2 * integrate_01(poly_mul(Dp, conv_pair(i, j))) for j in range(m)] for i in range(m)]
+    M = [[G[i][j] / lam + (H[i][j] + H[j][i]) / 2 for j in range(m)] for i in range(m)]
     return M, b
 
 
@@ -129,9 +156,9 @@ def solve(M, b):
     return [A[i][n] for i in range(n)]
 
 
-def optimum(m):
-    """The window minimising κ₉ over degree 2(m-1), normalised to v(0) = 1, with κ_min = 1/(bᵀM⁻¹b)."""
-    M, b = quadratic_form(m)
+def optimum(m, K=9, lam=F(1), kernel='d1'):
+    """The window minimising κ over degree 2(m-1), normalised to v(0) = 1, with κ_min = 1/(bᵀM⁻¹b)."""
+    M, b = quadratic_form(m, K, lam, kernel)
     x = solve(M, b)
     kmin = 1 / sum(bi * xi for bi, xi in zip(b, x))
     c = [xi / x[0] for xi in x]
@@ -178,12 +205,12 @@ def ldl(N):
     return L, D
 
 
-def optimality_certificate(m, path):
+def optimality_certificate(m, path, K=9, lam=F(1), kernel='d1'):
     """The certificate that no even polynomial window of degree 2(m-1) gives a smaller κ₉ than κ* = 1/(bᵀM⁻¹b): the matrix
     N = M − κ*·bbᵀ is positive semidefinite, N = LDLᵀ with D ≥ 0 (one zero pivot: N kills c*), and c* ∝ M⁻¹b attains κ*.
     The receiver recomputes M from the pair autocorrelations conv_{ij} (rows i·m + j of the array), checks L·D·Lᵀ = N entry by
     entry, D ≥ 0, and κ₉(c*) = κ*; rows m², …, m²+m−1 hold L, row m²+m holds D, row m²+m+1 holds c*, all padded with zeros."""
-    M, b = quadratic_form(m)
+    M, b = quadratic_form(m, K, lam, kernel)
     x = solve(M, b)
     kstar = 1 / sum(bi * xi for bi, xi in zip(b, x))
     c = [xi / x[0] for xi in x]
@@ -207,13 +234,15 @@ def optimality_certificate(m, path):
         rows.append([str(L[i][q]) for q in range(m)] + ['0'] * (W - m))
     rows.append([str(d) for d in D] + ['0'] * (W - m))
     rows.append([str(ci) for ci in c] + ['0'] * (W - m))
-    P = 2 - kstar - EPS9
+    e = F(0) if kernel == 'zeta' else eps(K)
+    P = 2 - kstar - e
     out = {
         'what': f'The optimality certificate for even polynomial windows of degree {2 * (m - 1)} (corpus/riemann/mathematician.md §7): κ₉(v) = cᵀMc/(bᵀc)² with '
                 f'M_ij = ∫s^(2i+2j) + (H_ij + H_ji)/2, H_ij = 2∫₀¹ D1trunc9(r)·(s^(2i) ⋆ s^(2j))(r) dr, b_i = ∫s^(2i) = 1/(4^i(2i+1)); κ* = 1/(bᵀM⁻¹b); the matrix '
                 f'N = M − κ*·bbᵀ is positive semidefinite, N = L·D·Lᵀ with D ≥ 0 and exactly one zero pivot, so κ₉(c) ≥ κ* for every c, with equality at c* ∝ M⁻¹b. '
                 f'Written by tools/xi_window.py, every number exact, 2026-10-22.',
-        'terms': 9,
+        'terms': K, 'lam': str(lam), 'kernel': kernel,
+        'truncationNote': ('the ζ kernel D(s) = s (the Montgomery–Taylor functional, no tail)' if kernel == 'zeta' else f'D₁ truncated at K = {K} terms (k = 0..{K - 1}), the tail ε_K = a_K·(K+2)(2K+3)/((K+2)(2K+3) − 2(K+1)) = {e}') + f'; λ = {lam}: κ(λ, v) = (∫v² + λ𝒥)/(λ(∫v)²), 𝒥 = 2∫₀¹ D(λr)·(v⋆v)(r) dr, M = G/λ + sym(H)',
         'm': m,
         'kappaStar': str(kstar),
         'Pstar': str(P),
@@ -233,8 +262,8 @@ def fmt(x, digits=12):
     return f"{float(x):.{digits}f}"
 
 
-def certificate(c, path, note):
-    st = window_stats(c)
+def certificate(c, path, note, K=9, lam=F(1), kernel='d1'):
+    st = window_stats(c, K, lam, kernel)
     deg = 2 * (len(c) - 1)
     coeffs = []
     for i, ci in enumerate(c):
@@ -243,7 +272,8 @@ def certificate(c, path, note):
     vconv = [str(st['vConv'].get(e, F(0))) for e in range(top + 1)]
     out = {
         'what': note,
-        'terms': 9,
+        'terms': K, 'lam': str(lam), 'kernel': kernel,
+        'truncationNote': ('the ζ kernel D(s) = s (no tail)' if kernel == 'zeta' else f'D₁ truncated at K = {K} terms (k = 0..{K - 1}), the tail ε_K = a_K·(K+2)(2K+3)/((K+2)(2K+3) − 2(K+1)) = {st["eps"]}') + f'; λ = {lam}: κ(λ, v) = (∫v² + λ𝒥)/(λ(∫v)²), 𝒥 = 2∫₀¹ D(λr)·(v⋆v)(r) dr',
         'window': coeffs,
         'windowNote': f'the coefficients of v(s) in powers of s (degree {deg}, even), on [−1/2, 1/2]',
         'vConv': vconv,
@@ -299,25 +329,63 @@ def sweep(degrees=(1, 2, 3, 4, 5, 6, 8, 10), denominators=(100, 1000, 10000, 100
             print(f"  rounded /{den}: P = {fmt(rs['P'])}  D = {fmt(rs['D'])}  min v = {fmt(rmn[0], 6)}  c = {', '.join(str(x) for x in r)}")
 
 
+def sweep_terms(degrees=(4, 11), terms=(9, 12, 15, 20)):
+    """P* at λ = 1 by truncation order and degree: the tail after nine terms costs 3.4·10⁻⁷; fifteen terms saturate."""
+    for K in terms:
+        for m in degrees:
+            c, kmin = optimum(m, K)
+            print(f'K = {K:2d}  degree {2 * (m - 1):2d}  ε_K = {float(eps(K)):.3e}  κ* = {fmt(kmin, 15)}  P* = {fmt(2 - kmin - eps(K), 15)}  D* = {fmt(F(3, 2) - (kmin + eps(K)) / 2, 15)}')
+
+
+def sweep_lambda(m=4, K=15, lams=(F(1), F(99, 100), F(19, 20), F(9, 10), F(4, 5), F(1, 2))):
+    """P*(λ): the window functional at fixed λ ∈ (0, 1] (the paper's Theorem 8.2; κ₁(λ, v) = 1/c_λ(v; D₁)) — decreasing towards λ = 1."""
+    for lam in lams:
+        c, kmin = optimum(m, K, lam)
+        print(f'λ = {str(lam):6s}  degree {2 * (m - 1)}  κ* = {fmt(kmin, 15)}  P* = {fmt(2 - kmin - eps(K), 15)}')
+
+
+def sweep_zeta(degrees=(2, 3, 4, 6, 11)):
+    """the calibration: D(s) = s is the Montgomery–Taylor functional, whose optimum over all windows is the closed form
+    2 − 1/c₁* = 3/2 − c/s = 0.672500703679411645…; the polynomial optima must stay at or below it and approach it."""
+    for m in degrees:
+        c, kmin = optimum(m, kernel='zeta')
+        print(f'ζ  degree {2 * (m - 1):2d}  κ* = {fmt(kmin, 15)}  2 − κ* = {fmt(2 - kmin, 15)}  3/2 − κ*/2 = {fmt(F(3, 2) - kmin / 2, 15)}')
+
+
 if __name__ == '__main__':
     args = sys.argv[1:]
+    K = 9
+    lam = F(1)
+    kernel = 'd1'
+    if '--terms' in args:
+        i = args.index('--terms'); K = int(args[i + 1]); del args[i:i + 2]
+    if '--lam' in args:
+        i = args.index('--lam'); lam = F(args[i + 1]); del args[i:i + 2]
+    if '--zeta' in args:
+        args.remove('--zeta'); kernel = 'zeta'
     if args and args[0] == '--check':
         sys.exit(0 if check() else 1)
+    if args and args[0] == '--sweep-terms':
+        sweep_terms(); sys.exit(0)
+    if args and args[0] == '--sweep-lambda':
+        sweep_lambda(); sys.exit(0)
+    if args and args[0] == '--sweep-zeta':
+        sweep_zeta(); sys.exit(0)
     if args and args[0] == '--optimum':
         m = int(args[1])
-        c, kmin = optimum(m)
-        st = certificate(c, args[2], f'the exact minimiser of κ₉ over even windows of degree {2 * (m - 1)}, c ∝ M⁻¹b, written by tools/xi_window.py; '
-                                     f'its coefficients are rationals with {max(len(str(x.denominator)) for x in c)}-digit denominators')
+        c, kmin = optimum(m, K, lam, kernel)
+        st = certificate(c, args[2], f'the exact minimiser of κ over even windows of degree {2 * (m - 1)}, c ∝ M⁻¹b, written by tools/xi_window.py '
+                                     f'(D₁ at {K} terms, λ = {lam}, kernel {kernel}); its coefficients are rationals with {max(len(str(x.denominator)) for x in c)}-digit denominators', K, lam, kernel)
         print('degree', 2 * (m - 1), 'P* =', fmt(st['P'], 15), ' D* =', fmt(st['D'], 15), ' denominators up to', max(len(str(x.denominator)) for x in c), 'digits; vConv coefficients', len(st['vConv']))
         sys.exit(0)
     if args and args[0] == '--optimality':
         m = int(args[1])
-        kstar, P, W, longest = optimality_certificate(m, args[2])
-        print('degree', 2 * (m - 1), 'κ* =', fmt(kstar, 15), ' P* =', fmt(P, 15), ' width', W, ' longest entry', longest, 'chars')
+        kstar, P, W, longest = optimality_certificate(m, args[2], K, lam, kernel)
+        print('degree', 2 * (m - 1), 'κ* =', fmt(kstar, 15), ' P* =', fmt(P, 15), ' width', W, ' longest entry', longest, 'chars', f' (terms {K}, λ = {lam}, kernel {kernel})')
         sys.exit(0)
     if args and args[0] == '--certificate':
         c = [F(x) for x in args[2].split(',')]
-        st = certificate(c, args[3], f'window of degree {2 * (len(c) - 1)} written by tools/xi_window.py')
-        print('P =', st['P'], '=', fmt(st['P']), ' D =', st['D'], '=', fmt(st['D']))
+        st = certificate(c, args[3], f'window of degree {2 * (len(c) - 1)} written by tools/xi_window.py (D₁ at {K} terms, λ = {lam}, kernel {kernel})', K, lam, kernel)
+        print('P =', st['P'], '=', fmt(st['P'], 15), ' D =', st['D'], '=', fmt(st['D'], 15))
         sys.exit(0)
     sweep()
