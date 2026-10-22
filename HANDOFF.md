@@ -31,7 +31,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      CHANGES, USED). THE FOURTH SESSION (2026-10-21) checked the queue against the receiver (★ THE QUEUE, CHECKED) and wrote the
      explainer pages (★ THE EXPLAINER PAGES). THE FIFTH SESSION (2026-10-22) put the claim-machine to the Riemann-hypothesis story on
      the operator's "Proceed 1 to 4" (★ THE RIEMANN TEST), then made its own claims as the mathematician (★ THE MATHEMATICIAN'S
-     CLAIMS). `make test`: 190 checks, 44 red controls all firing, 56/56 planted defects
+     CLAIMS). `make test`: 193 checks, 44 red controls all firing, 56/56 planted defects
      caught on the earlier corpora and 782/782 at scale on the Riemann certificate with 511/511 controls undisturbed (the heavy
      decisions — K(11) ≥ 594 at 25 s, C_1b and C_1c from the bytes in minutes, the third autocorrelation's 16,384 values at 1864 s —
      are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them and the full recall). Coverage 97/132 on the register (unchanged by the
@@ -115,7 +115,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
      within 3·10⁻⁴⁰ of them; hence D(1) = S(256)/256 − 1/512 and 256·S(256) = 54126.59434047636552400011418632126843044…. (5) THE PAPER'S
      CEILING ARITHMETIC from the file's own p₀: |p₀ − 2/3| ≤ 0.016 (0.0151620207…), B(8.2) := p₀ + 2.55·10⁻⁶·8.2 ≤ 0.6819 (0.68184954…),
      c_256 := 1/(6·256²) + τ/512 ≤ 2.55·10⁻⁶ — CERTIFIED. The recall at scale re-run: 782/782 caught (the series digits plant now caught;
-     a closed-form digits plant on the paper's claim undecided, recorded), 511/511 controls. make test 190 checks, 44 reds. NOT DONE,
+     a closed-form digits plant on the paper's claim undecided, recorded), 511/511 controls. make test 193 checks, 44 reds. NOT DONE,
      PROMISING: the ξ′ constants 0.85838/0.92919 (flat window) and 0.86864/0.93432 (quartic) — Lean proves them from certificates
      (Zeta23/XiPrime/Certificate/{Poly,D1,AtOne}.lean, CertificateFn.lean: "certified ε-free decimals"); if that arithmetic is rational,
      the same exact route decides them from a certificate; the bandwidth-one programme itself (the law) at small N by an exact simplex, a
