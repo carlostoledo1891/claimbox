@@ -21,8 +21,33 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-22, the seventh session — the cert-machine chat allowed into this repository by the operator ("You are allowed to use claimbox project. The chat and handoff file there are aware"): §8 of the mathematician's write-up — the tail, the parameter and the calibration — decided; the XiPrime Lean files pinned; make test 288 checks, 48 reds)
+## TASKS BACKLOG (updated 2026-10-23, the eighth session — the cryptids audit through claimbox (the machine family, the reader, the recall) beside cert-machine's hand audit, 124 of 128 paired claims agreeing; earlier the seventh session — the cert-machine chat allowed into this repository by the operator ("You are allowed to use claimbox project. The chat and handoff file there are aware"): §8 of the mathematician's write-up — the tail, the parameter and the calibration — decided; the XiPrime Lean files pinned; make test 288 checks, 48 reds)
 
+  ★ THE EIGHTH SESSION (2026-10-23, from the cert-machine chat, on "Proceed. Can we benchmark the process using claimbox vs not
+     using?"): THE MACHINE FAMILY in grammar.py (parse_machine, read first in parse): digests, state and cell counts, halting cells, a table
+     compiled from an upstream source (standard | tursi | nql) under the stated convention, the configuration after T steps (state, head,
+     nonzero; or the state alone), the ones after T steps, no halt within T, entries into a state (at least N; at listed steps), the same
+     tape and head as another pinned machine, lockstep entries, the Goldbach stage checkpoints, an embedding into a Lean literal table, and
+     the ratios and percentages a write-up prints beside two integers; the refusals: unbounded (halting equivalences, kernel sentences),
+     ambiguous ("core" transitions, "checkpoint k" with no finite definition), decider (counts of markdown rows and JSON names).
+     translate_machine in translate.py writes the objects: one pinned file, the quote byte for byte (a new `quote` job field, verified
+     against the source bytes), a `holds` over a named function of cert-machine's NEW decider for machines (instruments/claimbox/tm.py,
+     tm.js its twin; the other machine of a two-machine claim named by PATH@SHA through the new `other` job field), or an exact
+     expression the checker decides from the object. readers/cryptids.py reads cert-machine's copy of google-deepmind/cryptids at
+     664cd039 (corpus/cryptids there): the provenance table, verify.py's pinned constants and assertions, the write-ups — 129 jobs; the
+     record attached by id from cert-machine's certs/claimbox-cryptids-decisions.json when it exists (jobs(root, corpus=, record=) for
+     the recall). THE RUN: records/cryptids-run.json + records/cryptids/: 107 written, 22 refused by the grammar, 106 admitted by
+     cert-machine's checker (one refused: a digit-grouped decimal, 9,934.23 — the receiver's printed-bar rule reads no digit groups in a
+     decimal: a measured limit, not fixed); the receiver decided 95 CERTIFIED, 2 REFUTED (the ZF write-up's transition counts).
+     RECALL: tests/cryptids_recall.py (records/cryptids-recall.json): the same twelve plants as cert-machine's hand lane, on copies, end
+     to end — 9 of 11 caught, the green control quiet; the misses: a proof file no source pins; a theorem name removed from a comparator
+     configuration the receiver has no decider to count. The battery runs the reader (run_check cryptids; make test 399 pass, 48/48
+     reds). cert-machine lifts records/cryptids*, corpus/cryptids-jobs.json, records/coverage.json and recall.json for its benchmark
+     (certs/cryptids-benchmark.json there: 124 of 128 paired claims agree with the hand audit), its report /reports/cryptids.html and the
+     method paper's claimbox variant (§3.4 "The same audit under two protocols"). LESSONS: a reader quotes the source's text for every
+     expectation (the embedding map read clause by clause caught the plant the hard-coded map missed); bytes cross between the two
+     repositories only by lift. NEXT: nothing queued here; the issue to google-deepmind/cryptids and Pedro's reading are the operator's,
+     in cert-machine's HANDOFF.
   ★ THE SEVENTH SESSION (2026-10-22, from the cert-machine chat, on "Proceed all your suggestions, make sure you will push even more
      to make the results better and try to find opportunities hidden"). THREE THINGS §7 LEFT OPEN, DECIDED (corpus/riemann/mathematician.md
      §8; records/riemann-math-run.json now 99 claims, 81 CERTIFIED, 18 REFUTED, every one as corpus/riemann-math-jobs.json expected):
