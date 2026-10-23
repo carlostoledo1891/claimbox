@@ -612,7 +612,100 @@ def resolution_box(root, data, slug, title, p):
     return box, p - hw, p + hw, m.group(1)
 
 
-def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None):
+def translate_machine(shape, root, source, sp, data, dp, quote, other, record, reading, obj_id, what, sentence):
+    """the machine family (2026-10-23): one pinned file (a transition table, an upstream source, or the write-up itself for
+    the arithmetic it prints), one quote byte for byte in the source, and either a `holds` over a named function of the
+    receiver's decider for small Turing machines (instruments/claimbox/tm.py) or, for a ratio or a percentage of two printed
+    integers, an exact expression the receiver decides from the object alone."""
+    if not quote:
+        raise Refusal('source', 'a machine claim needs the quote the source prints, byte for byte')
+    with open(sp, 'rb') as f:
+        src_bytes = f.read()
+    if quote.encode('utf-8') not in src_bytes:
+        raise Refusal('source', 'the source does not print the quote: ' + quote[:80])
+    k = shape['kind']
+    dsha = sha256(dp)
+    TM = 'instruments/claimbox/tm.py'
+    if not os.path.isfile(os.path.join(root, TM)):
+        raise Refusal('decider', 'the receiver has no decider for machines (' + TM + ')')
+
+    def pinned(path):
+        pp = os.path.join(root, path)
+        if not os.path.isfile(pp):
+            raise Refusal('data', 'the other file is not on disk: ' + path)
+        return path + '@' + sha256(pp)
+
+    def holds(named, decoder, ref, hyps, fals, count=1):
+        domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': dsha}, 'count': count, 'variable': 'M', 'decoder': decoder}
+        preds = [{'g': {'named': named, 'where': TM, 'args': ['M']}, 'rel': 'holds'}]
+        return assemble(obj_id, shape, 'machine', sentence.strip(), what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record)
+    TABLE = 'a (Q, 2) transition table: one line per state, two cells wD<next> or ---, comments after #; the decider parses it; the canonical text is the table without comments'
+    if k in ('sha256', 'canonical_sha256'):
+        return holds(k + '(M) = ' + shape['hex'], TABLE if k == 'canonical_sha256' else 'the file\'s bytes, hashed as they are',
+                     'the digest the source prints for ' + shape['file'] + (' is of the canonical text of the table (the reading verify.py pins)' if k == 'canonical_sha256' else ' is of the file\'s bytes'),
+                     [], ['the pinned bytes do not hash to ' + shape['hex'][:12] + '…'])
+    if k == 'states':
+        return holds('states(M) = ' + str(shape['n']), TABLE, 'the state count is the number of rows of the table', [], ['the table has another number of rows'])
+    if k == 'states_lt':
+        return holds('states(M) < ' + str(shape['n']), TABLE, 'the reference ' + shape['ref'] + ' has ' + str(shape['n']) + ' states, as its own table shows; this object decides the candidate\'s count against that number', [], ['the table has ' + str(shape['n']) + ' rows or more'])
+    if k == 'cells':
+        return holds('nonhalting_cells(M) = ' + str(shape['n']), TABLE, 'a non-halting cell is a table cell that is not ---; the write-ups call these transitions', [], ['the table has another number of non-halting cells'])
+    if k == 'halting':
+        return holds('halting_cells(M) = ' + json.dumps(shape['cells'], separators=(',', ':')), TABLE, 'the halting cells are the --- cells, listed (state, symbol) in row order', [], ['another cell halts, or this one does not'])
+    if k == 'derived':
+        return holds('derived(' + shape['format'] + ') canonical_sha256(M) = ' + shape['hex'],
+                     'an upstream source in the ' + shape['format'] + ' format; the decider compiles it under the convention the provenance file states: the start state is 0, the others follow the order of first appearance, a target naming no defined state is a halt',
+                     'the table ' + shape['table'] + ' is claimed to be this source compiled; the object decides that the compilation hashes to the canonical digest the provenance prints',
+                     ['the compilation convention is the one the provenance file states'], ['the compiled table hashes to something else'])
+    if k == 'undefined':
+        return holds('derived(' + shape['format'] + ') undefined_targets(M) ⊆ ' + json.dumps(shape['allowed'], separators=(',', ':')),
+                     'an upstream source in the ' + shape['format'] + ' format', 'the convention turns any undefined target into a halt; this object decides that the only such targets are the halting names',
+                     [], ['a transition targets a name that is neither defined nor a halting name — a typo the convention would silently turn into a halt'])
+    if k == 'after':
+        return holds('after(M, ' + str(shape['steps']) + ') = state ' + str(shape['state']) + ', head ' + str(shape['head']) + (', nonzero ' + str(shape['nonzero']) if shape['nonzero'] is not None else ''),
+                     TABLE, 'the configuration after the printed number of steps from the blank tape (head at 0, state 0)', [], ['the machine halts first, or is elsewhere'])
+    if k == 'after_state':
+        return holds('after(M, ' + str(shape['steps']) + ') = state ' + str(shape['state']), TABLE, 'the state after the printed number of steps from the blank tape; the head and tape are not claimed', [], ['the machine halts first, or is in another state'])
+    if k == 'ones':
+        return holds('after(M, ' + str(shape['steps']) + ') ones = ' + json.dumps(shape['cells'], separators=(',', ':')), TABLE, 'the cells holding 1 after the printed number of steps, sorted', [], ['another set of cells holds 1'])
+    if k == 'no_halt':
+        return holds('no_halt(M, ' + str(shape['steps']) + ')', TABLE, 'a bounded run; it says nothing beyond the bound', [], ['the machine halts within the bound'])
+    if k == 'entries_ge':
+        return holds('entries(M, state ' + str(shape['state']) + ', after ' + str(shape['after']) + ', within ' + str(shape['within']) + ') >= ' + str(shape['n']), TABLE,
+                     'entries into the state counted at steps in the window', [], ['fewer entries'])
+    if k == 'entries_at':
+        return holds('entries(M, state ' + str(shape['state']) + ', after ' + str(shape['after']) + ', within ' + str(shape['within']) + ') at steps ' + json.dumps(shape['steps'], separators=(',', ':')), TABLE,
+                     'each listed step is an entry into the state; which entry (the ordinal) the decider records beside the word', [], ['a listed step is not an entry into the state'])
+    if k == 'same':
+        return holds('same_tape_and_head(M, ' + str(shape['steps']) + '; ' + pinned(other) + ', ' + str(shape['steps2']) + ')', TABLE,
+                     'the write-up prints two step counts and calls the difference overhead; this object reads that as: M reaches, at its printed step, the tape and head the other machine has at its printed step (the states differ by the reduction\'s map)',
+                     ['the reading of "step overhead" as a configuration correspondence'], ['the tapes or the heads differ at the printed steps'])
+    if k == 'lockstep':
+        return holds('same_tape_and_head_at_entries(M; ' + pinned(other) + '; state ' + str(shape['state']) + ', after ' + str(shape['after']) + ', within ' + str(shape['within']) + ') >= ' + str(shape['n']), TABLE,
+                     'each entry into the state after the boot, on both machines, compared tape for tape relative to the head', [], ['a checkpoint tape differs, or fewer than the stated number exist'])
+    if k == 'stage':
+        return holds('stage_entry(M, ' + shape['role'] + ', n = ' + str(shape['n']) + ') = ' + str(shape['steps']), TABLE,
+                     'a Goldbach stage checkpoint is the producer checker\'s pattern: the checkpoint state with a unary block under the head and the stated neighbours; the stage is the even number the blocks encode',
+                     ['the checkpoint pattern is the one the producer\'s checker states'], ['the stage is entered at another step, or not within the window'])
+    if k == 'embeds':
+        return holds('embeds_into(M; lean ' + pinned(shape['lean']) + ' def ' + shape['def'] + '; map ' + shape['map'] + ')', TABLE,
+                     'every cell of M matches the Lean literal table under the map the write-up prints: same write, same move, embedded target, halts in the same places',
+                     ['the map is the one the write-up prints'], ['a cell differs under the map'])
+    if k in ('ratio', 'pct'):
+        a, b = str(shape['a']), str(shape['b'])
+        g = ['Divide', a, b] if k == 'ratio' else ['Multiply', ['Divide', a, b], '100']
+        printed = shape['printed'].rstrip('x%').lstrip('+-')
+        lo, hi = shape['c']
+        domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': dsha}, 'count': 1, 'variable': 'M',
+                  'decoder': 'no bytes are decoded: the two integers are the ones the write-up prints, written into the expression as literals'}
+        preds = [{'g': g, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]}]
+        ref = ('the printed ' + shape['printed'] + ' is read as the box its digits allow (half a unit of the last digit either way); the quantity is ' +
+               (a + '/' + b if k == 'ratio' else '100 · ' + a + '/' + b + ', the sign being the direction of the reduction') + '; the two integers are decided by their own objects')
+        return assemble(obj_id, shape, 'machine', sentence.strip(), what, source, sp, quote, reading, domain, preds, ref, [], ['the exact quotient lies outside the printed box'], record)
+    raise Refusal('decider', 'no decider for the machine claim kind ' + k)
+
+
+def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None, quote=None, other=None):
     """the claimbox object for a claim, or Refusal. Paths are relative to root (cert-machine's root, so that its checker resolves them)."""
     shape = grammar.parse(sentence)
     if name:
@@ -628,6 +721,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         raise Refusal('source', 'the source is not on disk: ' + source)
     if not os.path.isfile(dp):
         raise Refusal('data', 'the published bytes are not on disk: ' + data)
+    if shape['family'] == 'machine':
+        return translate_machine(shape, root, source, sp, data, dp, quote, other, record, reading, obj_id, what, sentence)
     printed = shape.get('printed')
     quote = find_quote(sp, printed, shape.get('name'), sentence) if printed else None
     if printed and quote is None:

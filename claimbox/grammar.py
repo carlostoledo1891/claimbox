@@ -31,6 +31,7 @@ exact rational and the box its digits allow are computed from it (the unit of th
 exponent). LaTeX and Unicode are normalised before matching: $…$, \\leq \\le ≤ → <=, \\geq \\ge ≥ → >=, C_{1d} and C\\_{1d}
 → C_1d, × and x between dimensions, the minus sign − → -, a trailing * (the registry's unverified mark) is stripped and noted.
 MIT"""
+import json
 import re
 from fractions import Fraction
 
@@ -129,11 +130,103 @@ def finite_range(m):
     return {'var': var, 'lo': a, 'hi': b, 'printed': m.group(0).strip()}
 
 
+HEX = r'([0-9a-f]{64})'
+FILE = r'(\S+)'
+
+
+def parse_machine(t):
+    """the machine family (2026-10-23, the cryptids audit): claims about a small (Q, 2) Turing machine held in a pinned transition
+    table, as a structural reader states them — digests, counts, derivations from an upstream source, configurations after a
+    number of steps, entries into a state, lockstep with another machine, the Goldbach stage checkpoints, an embedding into a
+    Lean literal table — and the arithmetic a write-up prints beside them (a ratio or a percentage of two printed integers).
+    Returns a shape, a Refusal, or None when the sentence is not of this family."""
+    m = re.match(r'^(canonical )?sha256 of ' + FILE + ' is ' + HEX + '$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'canonical_sha256' if m.group(1) else 'sha256', 'file': m.group(2), 'hex': m.group(3)}
+    m = re.match(r'^' + FILE + r' has (\d+) states$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'states', 'file': m.group(1), 'n': int(m.group(2))}
+    m = re.match(r'^' + FILE + r' has fewer states than ' + FILE + r' \((\d+)\)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'states_lt', 'file': m.group(1), 'ref': m.group(2), 'n': int(m.group(3))}
+    m = re.match(r'^' + FILE + r' has (\d+) core non-halting transitions', t)
+    if m:
+        raise Refusal('ambiguous', 'the write-up prints no definition of a "core" transition; the table has its non-halting cells, which is another count')
+    m = re.match(r'^' + FILE + r' has (\d+) (?:non-halting cells|non-halting transitions|defined transitions)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'cells', 'file': m.group(1), 'n': int(m.group(2))}
+    m = re.match(r'^' + FILE + r' has halting cells (\[\[.*\]\])$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'halting', 'file': m.group(1), 'cells': json.loads(m.group(2))}
+    m = re.match(r'^' + FILE + r' compiled from ' + FILE + r' \((standard|tursi|nql)\) has canonical sha256 ' + HEX + '$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'derived', 'file': m.group(2), 'table': m.group(1), 'format': m.group(3), 'hex': m.group(4)}
+    m = re.match(r'^the undefined targets of ' + FILE + r' \((standard|tursi|nql)\) are among (\[.*\])$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'undefined', 'file': m.group(1), 'format': m.group(2), 'allowed': json.loads(m.group(3))}
+    m = re.match(r'^after ([\d,]+) steps from the blank tape, ' + FILE + r' is in state (\d+) with the head at (-?\d+)(?:, (\d+) nonzero cells)?$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'after', 'file': m.group(2), 'steps': int(m.group(1).replace(',', '')), 'state': int(m.group(3)), 'head': int(m.group(4)),
+                'nonzero': int(m.group(5)) if m.group(5) else None}
+    m = re.match(r'^after ([\d,]+) steps from the blank tape, ' + FILE + r' is in state (\d+)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'after_state', 'file': m.group(2), 'steps': int(m.group(1).replace(',', '')), 'state': int(m.group(3))}
+    m = re.match(r'^after ([\d,]+) steps from the blank tape, the ones of ' + FILE + r' are (\[.*\])$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'ones', 'file': m.group(2), 'steps': int(m.group(1).replace(',', '')), 'cells': json.loads(m.group(3))}
+    m = re.match(r'^' + FILE + r' does not halt within ([\d,]+) steps$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'no_halt', 'file': m.group(1), 'steps': int(m.group(2).replace(',', ''))}
+    m = re.match(r'^' + FILE + r' enters state (\d+) at least ([\d,]+) times between steps ([\d,]+) and ([\d,]+)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'entries_ge', 'file': m.group(1), 'state': int(m.group(2)), 'n': int(m.group(3).replace(',', '')),
+                'after': int(m.group(4).replace(',', '')), 'within': int(m.group(5).replace(',', ''))}
+    m = re.match(r'^' + FILE + r' enters state (\d+) at steps (\[.*\]) \(after ([\d,]+), within ([\d,]+)\)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'entries_at', 'file': m.group(1), 'state': int(m.group(2)), 'steps': json.loads(m.group(3)),
+                'after': int(m.group(4).replace(',', '')), 'within': int(m.group(5).replace(',', ''))}
+    m = re.match(r'^after ([\d,]+) steps ' + FILE + r' has the tape and head ' + FILE + r' has after ([\d,]+) steps$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'same', 'file': m.group(2), 'other': m.group(3), 'steps': int(m.group(1).replace(',', '')), 'steps2': int(m.group(4).replace(',', ''))}
+    m = re.match(r'^the first (\d+) entries of ' + FILE + r' into state (\d+) after step ([\d,]+) \(within ([\d,]+)\) show the tape ' + FILE + r' shows$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'lockstep', 'file': m.group(2), 'other': m.group(6), 'n': int(m.group(1)), 'state': int(m.group(3)),
+                'after': int(m.group(4).replace(',', '')), 'within': int(m.group(5).replace(',', ''))}
+    m = re.match(r'^' + FILE + r' \((candidate|reference)\) enters Goldbach stage n = (\d+) at step ([\d,]+)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'stage', 'file': m.group(1), 'role': m.group(2), 'n': int(m.group(3)), 'steps': int(m.group(4).replace(',', ''))}
+    m = re.match(r'^' + FILE + r' embeds into the Lean table ' + FILE + r' \(def (\w+)\) under the map (.+)$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'embeds', 'file': m.group(1), 'lean': m.group(2), 'def': m.group(3), 'map': m.group(4)}
+    m = re.match(r'^the ratio ([\d,]+)/([\d,]+) is printed as ([\d,]*\.?\d+)x$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'ratio', 'a': int(m.group(1).replace(',', '')), 'b': int(m.group(2).replace(',', '')), 'printed': m.group(3) + 'x',
+                'rel': 'in', 'c': box(m.group(3).replace(',', ''))}
+    m = re.match(r'^the percentage ([\d,]+)/([\d,]+) is printed as ([+-]?\d+\.\d+)%$', t)
+    if m:
+        return {'family': 'machine', 'kind': 'pct', 'a': int(m.group(1).replace(',', '')), 'b': int(m.group(2).replace(',', '')), 'printed': m.group(3) + '%',
+                'rel': 'in', 'c': box(m.group(3).lstrip('+-'))}
+    m = re.match(r'^checkpoint (\d+) of ' + FILE + r' is at step ([\d,]+)$', t)
+    if m:
+        raise Refusal('ambiguous', 'the event "checkpoint k" is not defined in finite terms by the write-up (the register machine\'s abstraction): no decider until the selection rule is printed')
+    if re.search(r'halts (?:from the blank tape )?if and only if|Halts \S+ ↔|↔ ¬|checked by the kernel|kernel-verified|proves that it halts', t, re.I):
+        raise Refusal('unbounded', 'a halting equivalence or a kernel-checked theorem is a statement about every step: the Lean kernel is the authority, no finite box')
+    m = re.match(r'^the (\w+) (?:catalogue|configuration) (?:lists|names) (\d+) (?:holdout machines|theorems)$', t)
+    if m:
+        raise Refusal('decider', 'a count of rows in a markdown table or names in a JSON file: the receiver has no decider for it')
+    return None
+
+
 def parse(text):
     """the shape of a claim, or Refusal"""
     if not isinstance(text, str) or not text.strip():
         raise Refusal('empty', 'no claim')
     t = normalise(text)
+    mach = parse_machine(t)
+    if mach is not None:
+        mach['starred'] = False
+        mach['text'] = t
+        return mach
     starred = bool(re.search(r'\d\*(?![A-Za-z(])', t))       # the registry's unverified mark, never the * of 0.5*Z
     t = re.sub(r'(\d)\*(?![A-Za-z(])', r'\1', t)
     nonneg = re.match(r'^(\S+) >= 0 as (\d+) values on \[[^\]]*\]:\s*', t)   # a feasibility prefix: "f ≥ 0 as 600 values on [−1/4, 1/4]: C₁ ≤ …"

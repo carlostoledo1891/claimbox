@@ -5,7 +5,7 @@
             [--decider P] [--record P --row ID --value PATH --verdict WORD] [--name N] [--elements decimals]
             [--reading epistemic] [--id ID] [--out FILE] [--check]
   batch jobs.json --out DIR [--check] [--record F]  one object per job (the fields of translate, in JSON); --record writes the run's summary
-  read <source> [--out jobs.json]                  the jobs a structural reader makes from a pinned source: einstein-arena, alphaevolve, qiushi, station, funsearch
+  read <source> [--out jobs.json]                  the jobs a structural reader makes from a pinned source: einstein-arena, alphaevolve, qiushi, station, funsearch, zeta23, cryptids
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -17,9 +17,9 @@ import sys
 
 from . import grammar, translate as T
 from .grammar import Refusal
-from .readers import einsteinarena, alphaevolve, qiushi, station, funsearch, zeta23
+from .readers import einsteinarena, alphaevolve, qiushi, station, funsearch, zeta23, cryptids
 
-READERS = {'einstein-arena': einsteinarena, 'alphaevolve': alphaevolve, 'qiushi': qiushi, 'station': station, 'funsearch': funsearch, 'zeta23': zeta23}
+READERS = {'einstein-arena': einsteinarena, 'alphaevolve': alphaevolve, 'qiushi': qiushi, 'station': station, 'funsearch': funsearch, 'zeta23': zeta23, 'cryptids': cryptids}
 
 ROOT = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
 
@@ -103,7 +103,7 @@ def main(argv=None):
                 continue
             try:
                 obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), record=j.get('record'), reading=j.get('reading', 'universal'),
-                                  name=j.get('name'), elements=j.get('elements'), obj_id=j.get('id'), what=j.get('what'))
+                                  name=j.get('name'), elements=j.get('elements'), obj_id=j.get('id'), what=j.get('what'), quote=j.get('quote'), other=j.get('other'))
             except Refusal as e:
                 bad += 1
                 row['refused'] = e.rule + ': ' + e.msg

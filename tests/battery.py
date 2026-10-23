@@ -297,7 +297,7 @@ def run_check(name, jobs_, prefix, counts):
         if not r or j.get('skipped'):
             continue
         try:
-            obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), record=j.get('record'), elements=j.get('elements'), obj_id=j['id'], what=j.get('what'), name=j.get('name'))
+            obj = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), record=j.get('record'), elements=j.get('elements'), obj_id=j['id'], what=j.get('what'), name=j.get('name'), quote=j.get('quote'), other=j.get('other'))
             now = {'pin': obj['domain']['pin']['sha256'], 'predicate': [{'rel': q['rel'], 'printed': q.get('printed'), 'c': q.get('c')} for q in obj['predicate']]}
             agree += (now == {'pin': r.get('pin'), 'predicate': r.get('predicate')})
             if 'certMachine' in r and (r.get('certMachineSeconds', 99) < 5 or FULL):
@@ -324,6 +324,9 @@ run_check('station', station.jobs(ROOT), 'mc100-st-', {'present': 0, 'run': {'wr
 run_check('funsearch', funsearch.jobs(ROOT), 'mc100-fs-', {'present': 0, 'run': {'written': 0, 'refused': 0, 'skipped': 4},
           'words': 'four construction files and no claimant text in the pinned corpus: every file skipped, a file name is not a printed claim'})
 from claimbox.readers import zeta23  # noqa: E402
+from claimbox.readers import cryptids  # noqa: E402
+run_check('cryptids', cryptids.jobs(ROOT), 'none-', {'present': 0, 'run': {'written': 107, 'refused': 22, 'skipped': 0},
+          'words': 'the cryptids audit, arm C (cert-machine\'s notes/cryptids-benchmark-preregistration-2026-10-23.md): 107 objects written and 106 admitted by cert-machine\'s checker — the digests, counts, derivations, configurations and lockstep checkpoints decided by its decider for machines (95 CERTIFIED, 2 REFUTED: the ZF write-up\'s transition counts), the ratios and percentages decided from the object (one refused by the checker\'s schema: a digit-grouped decimal, 9,934.23) — 22 refused by the grammar with the rule: eight halting equivalences and the kernel sentence (unbounded), "core" transitions (ambiguous), the nine "checkpoint k" rows (ambiguous), three counts of markdown rows and JSON names (decider)'})
 run_check('riemann', zeta23.jobs(ROOT), 'none-', {'present': 0, 'run': {'written': 7, 'refused': 0, 'skipped': 1},
           'words': 'the zeta23 certificate: the near-CUE rows (with the decimal constant beside them), the edge bound and the rounded-up p₀ DECIDED FROM THE BYTES by cert-machine, CERTIFIED — the same integers Lean kernel-checks; the four Montgomery–Taylor digits claims admitted and left undecided (transcendental heads); EnclOK skipped: the law\'s bytes are not published'})
 AIJ = json.load(open(os.path.join(REPO, 'corpus', 'riemann-ai-jobs.json'), encoding='utf-8'))['jobs']
