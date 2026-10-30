@@ -3,61 +3,61 @@
  "corpus": "register",
  "summary": {
   "sentences": 132,
-  "proposals": 24,
+  "proposals": 42,
   "byKind": {
    "grammar": 23,
-   "model:claude-opus-5-5": 1
+   "model:claude-opus-5-5": 19
   },
   "perKind": {
    "grammar": {
     "proposed": 132,
     "compiled": 23,
     "holes": 109,
-    "faithful": 23,
+    "faithful": 16,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 0,
-    "plantedHeld": 8,
+    "noReference": 7,
+    "plantedHeld": 1,
     "plantedBroke": 0
    },
    "model:claude-opus-5-5": {
     "proposed": 24,
-    "compiled": 1,
-    "holes": 23,
-    "faithful": 1,
+    "compiled": 19,
+    "holes": 5,
+    "faithful": 13,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 0,
+    "noReference": 6,
     "plantedHeld": 0,
     "plantedBroke": 0
    }
   },
-  "anchored": 24,
-  "printedBack": 24,
-  "planted": 8,
-  "faithful": 24,
+  "anchored": 42,
+  "printedBack": 42,
+  "planted": 1,
+  "faithful": 29,
   "unfaithful": 0,
   "sameValueOtherPrint": 0,
-  "validated": 1,
+  "validated": 19,
   "notStated": 109,
   "sensitivity": {
    "held": 2,
    "broke": 0,
    "tight": 0,
    "slack": 0,
-   "notRun": 22
+   "notRun": 40
   },
   "vacuity": {
    "depends": 0,
    "flagged": 0,
-   "notRun": 24
+   "notRun": 42
   },
   "pairs": {
-   "sentences": 1,
-   "agree": 1,
-   "agreeOnReference": 1,
+   "sentences": 19,
+   "agree": 19,
+   "agreeOnReference": 13,
    "agreeElsewhere": 0,
-   "agreeNoReference": 0,
+   "agreeNoReference": 6,
    "disagree": 0
   },
   "paraphrase": {
@@ -1661,14 +1661,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_2x4x7_r45",
+     "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+     "object": "m-mc100-ae-nb-2x4x7-r45",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,4,7⟩ matrix-multiplication tensor over Z at rank 45, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-2x4x7-r45",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-2x4x8-r51",
@@ -1705,20 +1732,47 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.007 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_2x4x8_r51",
+     "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+     "object": "m-mc100-ae-nb-2x4x8-r51",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,4,8⟩ matrix-multiplication tensor over Z at rank 51, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-2x4x8-r51",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-2x5x6-r47",
@@ -1755,20 +1809,47 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_2x5x6_r47",
+     "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+     "object": "m-mc100-ae-nb-2x5x6-r47",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,5,6⟩ matrix-multiplication tensor over Z at rank 47, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-2x5x6-r47",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-3x3x3-r23",
@@ -1811,14 +1892,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_3x3x3_r23",
+     "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+     "object": "m-mc100-ae-nb-3x3x3-r23",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,3,3⟩ matrix-multiplication tensor over Z at rank 23, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-3x3x3-r23",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-3x4x6-r54",
@@ -1861,14 +1969,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_3x4x6_r54",
+     "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+     "object": "m-mc100-ae-nb-3x4x6-r54",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,4,6⟩ matrix-multiplication tensor over 0.5*Z at rank 54, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-3x4x6-r54",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-3x4x7-r63",
@@ -1911,14 +2046,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_3x4x7_r63",
+     "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+     "object": "m-mc100-ae-nb-3x4x7-r63",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,4,7⟩ matrix-multiplication tensor over 0.5*C at rank 63, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-3x4x7-r63",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-3x4x8-r74",
@@ -1961,14 +2123,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_3x4x8_r74",
+     "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+     "object": "m-mc100-ae-nb-3x4x8-r74",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,4,8⟩ matrix-multiplication tensor over Z at rank 74, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-3x4x8-r74",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-3x5x6-r68",
@@ -2011,14 +2200,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_3x5x6_r68",
+     "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+     "object": "m-mc100-ae-nb-3x5x6-r68",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,5,6⟩ matrix-multiplication tensor over Z at rank 68, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-3x5x6-r68",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-3x5x7-r80",
@@ -2061,14 +2277,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_3x5x7_r80",
+     "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+     "object": "m-mc100-ae-nb-3x5x7-r80",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,5,7⟩ matrix-multiplication tensor over Z at rank 80, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-3x5x7-r80",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x7-r80  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-4x4x8-r96",
@@ -2211,14 +2454,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_4x4x7_r85",
+     "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+     "object": "m-mc100-ae-nb-4x4x7-r85",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨4,4,7⟩ matrix-multiplication tensor over Z at rank 85, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-4x4x7-r85",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-4x5x6-r90",
@@ -2261,14 +2531,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_4x5x6_r90",
+     "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+     "object": "m-mc100-ae-nb-4x5x6-r90",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨4,5,6⟩ matrix-multiplication tensor over Z at rank 90, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-4x5x6-r90",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ae-nb-5x5x5-r93",
@@ -2311,14 +2608,41 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "relations",
-      "hole": "relations",
-      "why": "the language cannot read the proposal: a statement has one relation; this one has 4"
-     }
+     "claim": "m_mc100_ae_nb_5x5x5_r93",
+     "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+     "object": "m-mc100-ae-nb-5x5x5-r93",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphaevolve_mathematical_results.ipynb",
+       "sha256": "2cce2543e48c89aa3e91614272a698a0147dd2548ea11cf92f1292b7435d38ff"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨5,5,5⟩ matrix-multiplication tensor over Z at rank 93, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphaevolve-nb-matmul.json",
+       "ae-nb-5x5x5-r93",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"
+   "outcome": "validated"
   },
   {
    "id": "mc100-at-f2-2x2x3",
@@ -2691,33 +3015,65 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-erdos-min-overlap",
        null,
-       null,
-       null,
-       null,
+       "REPAIRED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-erdos-min-overlap  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "REFUSED",
+     "certMachine": "REFUSED   p-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'"
     },
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no definition of the platform's \"Erdős Minimum Overlap (Upper Bound)\""
-     }
+     "object": "m-mc100-ea-best-erdos-min-overlap",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-1.json",
+       "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
+      },
+      "count": 3584,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.3808585748578584",
+        [
+         "7617171497157167/20000000000000000",
+         "7617171497157169/20000000000000000"
+        ]
+       ]
+      ],
+      "named": [
+       "the platform's score of the published object, as the claimant defines it"
+      ],
+      "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-erdos-min-overlap",
+       null,
+       "REPAIRED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUSED",
+     "certMachine": "REFUSED   m-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'"
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ea-best-first-autocorrelation-inequality",
@@ -2750,20 +3106,22 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-first-autocorrelation-inequality",
        null,
-       null,
-       null,
-       null,
+       "CERTIFIED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-first-autocorrelation-inequality  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-first-autocorrelation-inequality  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2809,33 +3167,69 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-flat-polynomials",
        null,
-       null,
-       null,
-       null,
+       "CERTIFIED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-flat-polynomials  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_mc100_ea_best_flat_polynomials",
      "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no definition of the platform's \"Flat Polynomials (degree 69)\""
-     }
+     "object": "m-mc100-ea-best-flat-polynomials",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-12.json",
+       "sha256": "772b895b2cb8b9511dc0b57f1508aeb7b66ce480b2a633bfe04140cd956793d2"
+      },
+      "count": 70,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "1.2807274949642549",
+        [
+         "25614549899285097/20000000000000000",
+         "25614549899285099/20000000000000000"
+        ]
+       ]
+      ],
+      "named": [
+       "the platform's score of the published object, as the claimant defines it"
+      ],
+      "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-flat-polynomials",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ea-best-edges-vs-triangles",
@@ -2868,33 +3262,69 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-edges-vs-triangles",
        null,
-       null,
-       null,
-       null,
+       "CERTIFIED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-edges-vs-triangles  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_mc100_ea_best_edges_vs_triangles",
      "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no definition of the platform's \"Edges vs Triangles (Minimal Triangle Density)\""
-     }
+     "object": "m-mc100-ea-best-edges-vs-triangles",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-13.json",
+       "sha256": "91be01ed42c02f5123af1c0c44831ad6c0dc2f030cf894feff2c46e6ed01aa7a"
+      },
+      "count": 500,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "-0.7117091757692579",
+        [
+         "-14234183515385159/20000000000000000",
+         "-14234183515385157/20000000000000000"
+        ]
+       ]
+      ],
+      "named": [
+       "the platform's score of the published object, as the claimant defines it"
+      ],
+      "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-edges-vs-triangles",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ea-best-circles-rectangle",
@@ -3030,33 +3460,69 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-kissing-number-d12",
        null,
-       null,
-       null,
-       null,
+       "CERTIFIED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_mc100_ea_best_kissing_number_d12",
      "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no definition of the platform's \"Kissing Number in Dimension 12 (n=841)\""
-     }
+     "object": "m-mc100-ea-best-kissing-number-d12",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-22.json",
+       "sha256": "5d9d2124947a496e0581d344e738c4f4899c85bf036cbe151a4ce4ff5e8fe66f"
+      },
+      "count": 841,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "2",
+        [
+         "3/2",
+         "5/2"
+        ]
+       ]
+      ],
+      "named": [
+       "the platform's score of the published object, as the claimant defines it"
+      ],
+      "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-kissing-number-d12",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ea-best-kissing-number-d11-605",
@@ -3089,33 +3555,69 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-kissing-number-d11-605",
        null,
-       null,
-       null,
-       null,
+       "CERTIFIED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d11-605  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_mc100_ea_best_kissing_number_d11_605",
      "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no definition of the platform's \"Kissing Number in Dimension 11 (n=605)\""
-     }
+     "object": "m-mc100-ea-best-kissing-number-d11-605",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-24.json",
+       "sha256": "1bc113d0235788eaf7ec9951abe770b9c062bdcf6a2c2b49ae583f4096dad6ce"
+      },
+      "count": 605,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "1.7102381876301676",
+        [
+         "34204763752603351/20000000000000000",
+         "34204763752603353/20000000000000000"
+        ]
+       ]
+      ],
+      "named": [
+       "the platform's score of the published object, as the claimant defines it"
+      ],
+      "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-kissing-number-d11-605",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"
+   "outcome": "validated"
   },
   {
    "id": "mc100-ea-best-kissing-number-d12-842",
@@ -3148,33 +3650,69 @@
        "the platform's score of the published object, as the claimant defines it"
       ],
       "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-kissing-number-d12-842",
        null,
-       null,
-       null,
-       null,
+       "CERTIFIED",
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": true,
+     "planted": null,
      "paraphrase": "unread",
-     "faithful": true,
-     "word": "ADMITTED, undecided",
-     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12-842  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided"
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     },
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_mc100_ea_best_kissing_number_d12_842",
      "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no definition of the platform's \"Kissing Number in Dimension 12 (n=842)\""
-     }
+     "object": "m-mc100-ea-best-kissing-number-d12-842",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-25.json",
+       "sha256": "0a58d04ac86fcea33f5fafe0f618e18ef5ebd38d7d9f8cbe6d0159b6e7aca7b9"
+      },
+      "count": 842,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.5469062458557645",
+        [
+         "10938124917115289/20000000000000000",
+         "10938124917115291/20000000000000000"
+        ]
+       ]
+      ],
+      "named": [
+       "the platform's score of the published object, as the claimant defines it"
+      ],
+      "record": [
+       "certs/mc100-einstein-arena.json",
+       "ea-best-kissing-number-d12-842",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"
+   "outcome": "validated"
   },
   {
    "id": "mc100-st-jacobian",

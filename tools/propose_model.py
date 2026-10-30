@@ -95,6 +95,8 @@ REGISTER_SYSTEM = SYSTEM.replace("""A STATEMENT is one of:
   TERM REL BAR
   for every VAR in A < VAR < B : TERM REL BAR        (a claim over the integer rows A < VAR < B)
   DATA is a rank-R decomposition of <n,m,p> over RING          (DATA the name of the pinned file; RING as the sentence prints it)
+  DATA["HEADING"] is a rank-R decomposition of <n,m,p> over RING   (one decomposition of a file that holds many, named by the
+                                                                     heading the file prints it under, exactly as the sentence quotes it)
   DATA is a feasible solution of "TITLE" and its score is BAR  (a platform's problem, TITLE exactly as the sentence prints it)""")
 
 SCHEMA = {'type': 'object', 'properties': {'statement': {'type': 'string'}, 'hole': {'type': 'string', 'enum': [''] + HOLES}, 'why': {'type': 'string'}},
@@ -214,6 +216,7 @@ def main(argv):
     ap.add_argument('--workers', type=int, default=6)
     ap.add_argument('--planted-only', action='store_true')
     ap.add_argument('--paraphrase', action='store_true')
+    ap.add_argument('--again', metavar='ID_PREFIX', help='ask again the sentences whose id starts so; the earlier answers stay in the ledger, marked superseded')
     a = ap.parse_args(argv)
     cfg = dict(prose.CORPORA[a.corpus], name=a.corpus)
     rows = prose.rows_of(a.corpus)
@@ -227,7 +230,7 @@ def main(argv):
         print('sign in with `ant auth login`, or export ANTHROPIC_API_KEY, then run this again')
         return 2
     ledger = Ledger(a.cap)
-    if a.planted_only or a.paraphrase:     # the calls already made stay in the ledger, and count against the cap
+    if a.planted_only or a.paraphrase or a.again:     # the calls already made stay in the ledger, and count against the cap
         old = json.load(open(ledger_path(a.corpus), encoding='utf-8'))
         ledger.calls, ledger.spent = list(old['entries']), old['spent']
     try:
@@ -301,9 +304,16 @@ def head_of(a, cfg, rows=None):
 
 def run(a, cfg, rows, client, ledger):
     with cf.ThreadPoolExecutor(a.workers) as pool:
-        if a.planted_only:
+        if a.planted_only or a.again:
             done = {e['tag']: e for e in ledger.calls}
             first = {r['id']: done.get(r['id']) for r in rows}
+            if a.again:
+                redo = [r for r in rows if r['id'].startswith(a.again)]
+                for e in ledger.calls:
+                    if e['tag'] in {r['id'] for r in redo} or e['tag'] in {r['id'] + ' planted' for r in redo}:
+                        e['tag'] += ' (superseded)'
+                print(f'{len(redo)} sentences asked again')
+                first.update(zip([r['id'] for r in redo], pool.map(lambda r: ask(client, ledger, r['text'], library_for(cfg, r), r['id']), redo)))
         else:
             first = dict(zip([r['id'] for r in rows], pool.map(lambda r: ask(client, ledger, r['text'], library_for(cfg, r), r['id']), rows)))
         planted_jobs = []
@@ -316,7 +326,7 @@ def run(a, cfg, rows, client, ledger):
                 except ValueError:                 # the sentence prints the bar in no form a digit can be moved in
                     continue
                 planted_jobs.append((r, mutated, moved))
-        if a.planted_only:
+        if a.planted_only or a.again:
             asked = {e['tag'][:-len(' planted')]: e for e in ledger.calls if e['tag'].endswith(' planted')}
             new = [j for j in planted_jobs if j[0]['id'] not in asked]
             print(f'{len(new)} planted runs to ask: ' + ' '.join(j[0]['id'] for j in new))

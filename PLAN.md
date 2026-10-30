@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 9, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 10, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -181,6 +181,8 @@ passes. Parked behind a spend decision.
 
 ## 9 · What needs cert-machine (each in a cert-machine chat first)
 
+- A record with no value decides any bar: the receiver should hold an object's bar to the claim its record row states (or
+  require the record's value), else record-decision-mismatch (found 2026-10-30, claimbox step 6's sensitivity run).
 - Format v4: canonical form; typed readings; a hole and its price on a REFUSED; CONFLICT from concordance only.
 - The folder carlostoledo.co/claimbox/ as a foreign zone (design/zones.js), published by tools/publish-zone.js.
 - Still open from earlier sessions: (c1) the kissing route through the wave file, (g) the two checkers' paths, (h) a
@@ -198,6 +200,16 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r10, 2026-10-30.** The register's two gaps closed. `DATA["heading"]` names one object of a file that holds many (library
+  `decomposition` v1: cert-machine's tensor decider and the record row it wrote for that heading of these bytes; no heading on a
+  file holding many is hole `ambiguous`). A platform problem with no verifier written here takes the recorded route (library
+  `platform score, recorded` v1: cert-machine's EinsteinArena decider and its row for that title and these bytes; another score
+  is hole `decider`). The model, asked the 15 decompositions again with the selector in its prompt (15 calls; one took 23
+  minutes), wrote it 12 times (3 named the file, not its declared name). The register now: 42 claims proposed (grammar 23,
+  model 19), cert-machine certifies 40 and refuses 2 (Erdős Minimum Overlap: its record's word is REPAIRED, not one the receiver
+  decides with); validated 19 of the 24 sentences claimbox pins bytes for. FOUND: the receiver takes a record's word for any
+  bar when the record carries no value — a score moved two million units came back CERTIFIED (the sensitivity run); claimbox
+  attaches a decider's record only to the bar its row states (compile and the validator), and asks cert-machine (§9).
 - **r9, 2026-10-30.** Step 6 built. On the operator's choices (a person writes the second kind; finish step 6; the register
   run approved): the read-back reads a closed table of relation words and Lean's numerals; a plant and a moved bar find
   the bar by value; the wrong hole on 7/paper/68 fixed (the quantity, not the bytes); an object quotes its claim's own

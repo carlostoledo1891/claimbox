@@ -261,7 +261,9 @@ def bar_words(b, rel):
 RANGE = re.compile(r'^(-?\d+|\S+)\s*(≤|<)\s*(\w+)\s*(≤|<)\s*(-?\d+|\S+)$')
 DOTS = re.compile(r'^(-?\d+|\S+)\s*\.\.\s*(-?\d+|\S+)$')
 CONFIG = re.compile(r'^the (' + GROUPED + r'|\d+) vectors of (\w+) form a kissing configuration in dimension (\d+)$')
-DECOMP = re.compile(r'^(\w+) is a rank-(\d+) decomposition of <(\d+),(\d+),(\d+)> over (\S+)$')
+# DATA["KEY"]: one object of a file that holds many, named by the heading the file prints it under (2026-10-30: the model, on
+# the register, needed it fifteen times — AlphaEvolve's notebook prints every decomposition under its own heading)
+DECOMP = re.compile(r'^(\w+)(?:\["([^"]+)"\])? is a rank-(\d+) decomposition of <(\d+),(\d+),(\d+)> over (\S+)$')
 SCORE = re.compile(r'^(\w+) is a feasible solution of "([^"]+)" and its score is (.+)$')
 FILE_KEYS = ('file', 'other', 'table', 'lean')
 
@@ -285,7 +287,7 @@ def statement(text, line):
         return ('config', m.group(1), m.group(2), int(m.group(3)))
     m = DECOMP.match(t)
     if m:
-        return ('decomp', m.group(1), int(m.group(2)), (int(m.group(3)), int(m.group(4)), int(m.group(5))), m.group(6))
+        return ('decomp', m.group(1), int(m.group(3)), (int(m.group(4)), int(m.group(5)), int(m.group(6))), m.group(7), m.group(2))
     m = SCORE.match(t)
     if m:
         return ('score', m.group(1), m.group(2), bar(m.group(3), line))
@@ -387,7 +389,8 @@ def fmt_statement(s):
     if k == 'config':
         return f'the {s[1]} vectors of {s[2]} form a kissing configuration in dimension {s[3]}'
     if k == 'decomp':
-        return f'{s[1]} is a rank-{s[2]} decomposition of <{s[3][0]},{s[3][1]},{s[3][2]}> over {s[4]}'
+        sel = f'["{s[5]}"]' if len(s) > 5 and s[5] else ''
+        return f'{s[1]}{sel} is a rank-{s[2]} decomposition of <{s[3][0]},{s[3][1]},{s[3][2]}> over {s[4]}'
     if k == 'score':
         return f'{s[1]} is a feasible solution of "{s[2]}" and its score is {fmt_bar(s[3])}'
     if k == 'machine':
@@ -408,7 +411,7 @@ def statement_means(s):
     if k == 'config':
         return f'every pair of the {s[1]} vectors of {s[2]} is at least 60° apart: a kissing configuration in dimension {s[3]}'
     if k == 'decomp':
-        return f'the factors in {s[1]} sum to the tensor <{s[3][0]},{s[3][1]},{s[3][2]}> with {s[2]} rank-one terms over {s[4]}'
+        return f'the factors in {s[1]}' + (f' under "{s[5]}"' if len(s) > 5 and s[5] else '') + f' sum to the tensor <{s[3][0]},{s[3][1]},{s[3][2]}> with {s[2]} rank-one terms over {s[4]}'
     if k == 'score':
         return f'{s[1]} meets every condition of "{s[2]}", and the score the platform defines is {bar_words(s[3], "=")}'
     if k == 'machine':

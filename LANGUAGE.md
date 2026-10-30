@@ -67,7 +67,7 @@ bar         := NUMBER                       the exact rational the digits mean
 term        := QUANTITY | NAME(args) | NUMBER | term OP term | |term| | (term)
              | max over i in RANGE of term | min over … | sum over … | product over …
 configuration := the N vectors of DATA form a kissing configuration in dimension D
-decomposition := DATA is a rank-R decomposition of <n,m,p> over RING
+decomposition := DATA["HEADING"] is a rank-R decomposition of <n,m,p> over RING   (the heading: one of many in the file)
 score       := DATA is a feasible solution of "TITLE" and its score is bar     (a platform's own definition, §4)
 machine     := the statements of §3.1
 quantified  := for every VAR in RANGE : statement      bounded: decided now
@@ -76,11 +76,12 @@ quantified  := for every VAR in RANGE : statement      bounded: decided now
 RANGE       := A .. B | A < VAR < B | pairs i < j of DATA | the rows of DATA
 ```
 
-**Open (found 2026-10-30 by the model on the register):** a file that holds many objects — AlphaEvolve's notebook prints
-every decomposition under its heading — has no name for one of them in a statement: `DATA is a rank-R decomposition …`
-names the whole file. The model wrote `n("Rank-32 decomposition of <2,4,5> over 0.5*Z") is …` fifteen times, which the
-language does not read (rule `relations`, the heading's angle brackets). The translator selects by the heading the
-sentence prints; the language needs the same selector, written down, before decompositions can be stated in it.
+**One object of a file that holds many** (2026-10-30, found by the model on the register): `DATA["HEADING"]` names the
+object the file prints under that heading — AlphaEvolve's notebook prints fifteen decompositions, each under its own. The
+model wrote `n("Rank-32 decomposition of <2,4,5> over 0.5*Z") is …` fifteen times before the language had it. A
+decomposition is decided by cert-machine's tensor decider and the record row it wrote for that heading of these bytes
+(library `decomposition` v1); without the heading, a file holding many is hole `ambiguous`; a heading that names another
+decomposition than the statement is hole `source`.
 
 A printed number is kept as printed and read as the exact rational its digits mean. The relation, the bar and every
 literal in the statement must occur in the quote, or the claim is not stated: hole `source` (the source does not print
@@ -123,7 +124,8 @@ which cert-machine decides. `for every VAR there is …` has no machine that hal
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —
 `step_functions.py` (C_1a, C_1b, C_1c, C_1d), `einstein_arena.py` (five platform scores, written from the platform's own
 verifiers), `kissing.py`, `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
-(the machine statements) — and its registry, `claimbox/library/__init__.py`, lists every definition with:
+(the machine statements), `decompositions.py` (matrix-multiplication tensor decompositions, decided by cert-machine's tensor
+decider and its record) — and its registry, `claimbox/library/__init__.py`, lists every definition with:
 
 ```
 names        what a claim may call it (a certificate entry also by its normalised key: J_flat is Jflat)

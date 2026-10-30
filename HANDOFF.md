@@ -197,9 +197,22 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    both ways (-0.7117… "is -0.71"); objects with no bar (decompositions) anchor and read back by their shape; bar_printed reads
    a score's bar. Model spend in all: riemann-ai 184 calls $1.1818, register 24 calls $0.1379 (≈ $0.50 lost earlier, not in a
    ledger). make test: 489 pass, 0 fail, 106/106 reds; recall 56/56 unchanged. PLAN.md r9: step 6 built, step 7 next.
-   NEXT: republish (a cert-machine session, on the operator's word); the operator's worksheet; step 7; beside it the
-   register's two gaps (a selector for one object of a file; the platform scores' definitions) and readers for its 108
-   sentences whose bytes claimbox does not pin.
+   THEN (on "proceed"): the register's two gaps closed — `DATA["heading"]` (lang.py DECOMP; library/decompositions.py: cert-machine's
+   tensor decider tools/run-mc100-tensors.js and its record certs/mc100-alphaevolve-nb-matmul.json, the row matched by heading and
+   the bytes' sha256; compile.decomposition_job; no heading on a file holding many: hole ambiguous; a heading naming another
+   decomposition: hole source) and the recorded platform route (einstein_arena.py RECORDED: tools/run-mc100-einstein.js and
+   certs/mc100-einstein-arena.json; compile.recorded_score_job; another score: hole decider). tools/propose_model.py --again
+   mc100-ae-nb asked the 15 decompositions again with the selector in REGISTER_SYSTEM (one call took 1,373 s): 12 wrote it, 3 named
+   the file by its basename (refused). The register's contexts: a reference only where the reader's object is decided; the
+   platform problems take the recorded route in the grammar's path too (prose.register_context). FOUND by the sensitivity run: the
+   receiver took a record's word for a score moved 2,000,001 units (CERTIFIED: the record has no value) — the validator's grammar
+   path now attaches a decider's record only to the bar its row states (rule recorded-bar: a moved bar is not measurable, not a
+   failure); a translate-level guard was tried and reverted (calibration's 1c-rozetyp-k3072 row prints 0.4103021 for the bar
+   0.41030211724); asked of cert-machine (PLAN.md §9). THE REGISTER NOW: 42 claims (grammar 23, model 19), cert-machine certifies
+   40, refuses 2 (Erdős: record word REPAIRED); validated 19 of the 24 with bytes; one kind only 4. Model spend: register 39 calls
+   $0.2698. make test: 495 pass, 0 fail, 110/110 reds; recall 56/56. PLAN.md r10.
+   NEXT: the republish (approved by the operator in cert-machine-cb's chat, "wait for claimbox to finish and send live"); the
+   operator's worksheet; step 7; readers for the 108 register sentences whose bytes claimbox does not pin.
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)

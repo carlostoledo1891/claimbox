@@ -698,6 +698,46 @@ LREDS = [
 for rule, what, text, cid in LREDS:
     got = compile_refusal(text, cid)
     red(got == rule, 'library: refused — ' + what, got)
+# a decomposition named inside a file that holds many (DATA["heading"], 2026-10-30): its route is cert-machine's tensor decider and
+# the record row it wrote for that heading of these bytes; the object equals the reader job's, decision for decision
+DQ = 'the notebook\'s \\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\" is a decomposition of that tensor of rank 32 over that ring'
+DHEAD = ('source R = ../claimbox/corpus/register/sentences.md\ndata   n = corpus/sources/alphaevolve_mathematical_results.ipynb\n'
+         'read   n as rationals\nuse    decomposition v1\n')
+def decomp_claim(stmt):
+    t = lang.parse(DHEAD + f'claim  d1\n  quote "{DQ}" from R\n  : {stmt}\n')
+    return t, [i for i in t['items'] if i['kw'] == 'claim'][0]
+dt, dc = decomp_claim('n["Rank-32 decomposition of <2,4,5> over 0.5*Z"] is a rank-32 decomposition of <2,4,5> over 0.5*Z')
+dobj = CP.compile_claim(dt, dc, ROOT)[0]['object']
+dref = json.load(open(os.path.join(REPO, 'records', 'alphaevolve', 'ae-nb-2x4x5-r32.json'), encoding='utf-8'))
+ok(CP.decision_fields(dobj) == CP.decision_fields(dref) and dobj['record']['row'] == 'ae-nb-2x4x5-r32',
+   'library: n["heading"] is a rank-R decomposition compiles to the reader job\'s object, decision for decision, with cert-machine\'s record row',
+   dobj['record']['row'])
+for stmt, rule, what in (('n is a rank-32 decomposition of <2,4,5> over 0.5*Z', 'ambiguous', 'a decomposition of a file that holds many, not named'),
+                         ('n["Rank-31 decomposition of <2,4,5> over 0.5*Z"] is a rank-32 decomposition of <2,4,5> over 0.5*Z', 'source',
+                          'a heading that names another decomposition than the statement')):
+    try:
+        CP.compile_claim(*decomp_claim(stmt), ROOT)
+        got = None
+    except Refusal as e:
+        got = e.rule
+    red(got == rule, 'library: refused — ' + what, str(got))
+# a platform problem with no verifier written here: its route is cert-machine's EinsteinArena decider and the record row it wrote
+# for that title and these bytes; a score other than the row's is decided by nothing here
+RQ = [r['claim'] for r in json.load(open(os.path.join(REPO, 'corpus', 'register-sentences.json'), encoding='utf-8'))['rows']
+      if r['id'] == 'mc100-ea-best-first-autocorrelation-inequality'][0].replace('"', '\\"')
+def score_claim(bar):
+    t = lang.parse('source R = ../claimbox/corpus/register/sentences.md\ndata   x2 = corpus/einstein-arena/best-2.json\nread   x2 as doubles\n'
+                   f'claim  s2\n  quote "{RQ}" from R\n  : x2 is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and its score is {bar}\n')
+    return t, [i for i in t['items'] if i['kw'] == 'claim'][0]
+sobj = CP.compile_claim(*score_claim('1.5027436492326165'), ROOT)[0]['object']
+ok(sobj['record']['row'] == 'ea-best-first-autocorrelation-inequality' and CP.word(T.check_with_cert_machine(sobj, ROOT)) == 'CERTIFIED',
+   'library: a platform score with no verifier written here is decided through cert-machine\'s record row for its title and bytes', sobj['record']['row'])
+try:
+    CP.compile_claim(*score_claim('1.5027436492326166'), ROOT)
+    got = None
+except Refusal as e:
+    got = e.rule
+red(got == 'decider', 'library: refused — a recorded platform score other than the one cert-machine\'s record decides', str(got))
 
 # ---- 9 · holes and forks (roadmap step 5) -------------------------------------------------------------------------------
 # every rule the code refuses with is a named hole (or one of the two that are not: a name to fix, a claim about every case);
@@ -814,9 +854,13 @@ rnow = PR.run('register', ROOT, words=True)
 ok([(e['id'], e['outcome']) for e in rnow] == [(e['id'], e['outcome']) for e in RREC['sentences']] and PR.summary(rnow) == RREC['summary'],
    'prose: the register\'s run reproduces its record, sentence for sentence', json.dumps({k: RREC['summary'][k] for k in ('sentences', 'proposals', 'validated', 'notStated')}))
 rg = [p for e in RREC['sentences'] for p in e['proposals'] if 'object' in p and p['kind'] == 'grammar']
-ok(rg and all(p['faithful'] and p['anchored'] and p['printedBack'] for p in rg) and len(PR.register_context()) == 24,
-   'prose: every register sentence whose bytes a reader job pins and the grammar states compiles to that job\'s object, anchored and read back',
-   f'{len(rg)} of {len(PR.register_context())} with bytes')
+ok(rg and all(p['faithful'] is not False and p['anchored'] and p['printedBack'] for p in rg) and len(PR.register_context()) == 24,
+   'prose: every register sentence whose bytes a reader job pins and the grammar states compiles to that job\'s object where it is decided '
+   '(the platform problems with no verifier written here have none: they take the recorded route), anchored and read back',
+   f'{len(rg)} of {len(PR.register_context())} with bytes, {sum(1 for p in rg if p["faithful"])} against a decided object')
+rec_ref = [e for e in RREC['sentences'] if e['id'] == 'mc100-ea-best-flat-polynomials'][0]
+red(all(p.get('planted') is None for p in rec_ref['proposals'] if 'object' in p and p['kind'] == 'grammar'),
+    'prose: a recorded score\'s moved bar is not taken from its record: the record decides one bar only (the receiver would certify any)', 'flat polynomials')
 RLED = json.load(open(os.path.join(REPO, 'records', 'model-proposals-register.json'), encoding='utf-8'))
 ok(RLED['calls'] == len(RLED['entries']) and abs(RLED['spent'] - sum(x['cost'] for x in RLED['entries'])) < 1e-3 and RLED['spent'] <= RLED['cap'],
    'prose: the register\'s model ledger adds up', f'{RLED["calls"]} calls, ${RLED["spent"]}')

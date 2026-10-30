@@ -23,63 +23,63 @@ data   x25 = corpus/einstein-arena/best-25.json
 read   x25 as decimals
 claim  m_mc100_ae_nb_2x4x5_r32 over n
   quote "the notebook's "Rank-32 decomposition of <2,4,5> over 0.5*Z" is a decomposition of that tensor of rank 32 over that ring" from P
-  : n("Rank-32 decomposition of <2,4,5> over 0.5*Z") is a rank-32 decomposition of <2,4,5> over 0.5*Z
+  : alphaevolve_mathematical_results.ipynb["Rank-32 decomposition of <2,4,5> over 0.5*Z"] is a rank-32 decomposition of <2,4,5> over 0.5*Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_2x4x7_r45 over n
   quote "the notebook's "Rank-45 decomposition of <2,4,7> over Z" is a decomposition of that tensor of rank 45 over that ring" from P
-  : n("Rank-45 decomposition of <2,4,7> over Z") is a rank-45 decomposition of <2,4,7> over Z
+  : n["Rank-45 decomposition of <2,4,7> over Z"] is a rank-45 decomposition of <2,4,7> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_2x4x8_r51 over n
   quote "the notebook's "Rank-51 decomposition of <2,4,8> over Z" is a decomposition of that tensor of rank 51 over that ring" from P
-  : n("Rank-51 decomposition of <2,4,8> over Z") is a rank-51 decomposition of <2,4,8> over Z
+  : n["Rank-51 decomposition of <2,4,8> over Z"] is a rank-51 decomposition of <2,4,8> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_2x5x6_r47 over n
   quote "the notebook's "Rank-47 decomposition of <2,5,6> over Z" is a decomposition of that tensor of rank 47 over that ring" from P
-  : n("Rank-47 decomposition of <2,5,6> over Z") is a rank-47 decomposition of <2,5,6> over Z
+  : n["Rank-47 decomposition of <2,5,6> over Z"] is a rank-47 decomposition of <2,5,6> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_3x3x3_r23 over n
   quote "the notebook's "Rank-23 decomposition of <3,3,3> over Z" is a decomposition of that tensor of rank 23 over that ring" from P
-  : n("Rank-23 decomposition of <3,3,3> over Z") is a rank-23 decomposition of <3,3,3> over Z
+  : n["Rank-23 decomposition of <3,3,3> over Z"] is a rank-23 decomposition of <3,3,3> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_3x4x6_r54 over n
   quote "the notebook's "Rank-54 decomposition of <3,4,6> over 0.5*Z" is a decomposition of that tensor of rank 54 over that ring" from P
-  : n("Rank-54 decomposition of <3,4,6> over 0.5*Z") is a rank-54 decomposition of <3,4,6> over 0.5*Z
+  : n["Rank-54 decomposition of <3,4,6> over 0.5*Z"] is a rank-54 decomposition of <3,4,6> over 0.5*Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_3x4x7_r63 over n
   quote "the notebook's "Rank-63 decomposition of <3,4,7> over 0.5*C" is a decomposition of that tensor of rank 63 over that ring" from P
-  : n("Rank-63 decomposition of <3,4,7> over 0.5*C") is a rank-63 decomposition of <3,4,7> over 0.5*C
+  : n["Rank-63 decomposition of <3,4,7> over 0.5*C"] is a rank-63 decomposition of <3,4,7> over 0.5*C
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_3x4x8_r74 over n
   quote "the notebook's "Rank-74 decomposition of <3,4,8> over Z" is a decomposition of that tensor of rank 74 over that ring" from P
-  : n("Rank-74 decomposition of <3,4,8> over Z") is a rank-74 decomposition of <3,4,8> over Z
+  : n["Rank-74 decomposition of <3,4,8> over Z"] is a rank-74 decomposition of <3,4,8> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_3x5x6_r68 over n
   quote "the notebook's "Rank-68 decomposition of <3,5,6> over Z" is a decomposition of that tensor of rank 68 over that ring" from P
-  : n("Rank-68 decomposition of <3,5,6> over Z") is a rank-68 decomposition of <3,5,6> over Z
+  : n["Rank-68 decomposition of <3,5,6> over Z"] is a rank-68 decomposition of <3,5,6> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_3x5x7_r80 over n
   quote "the notebook's "Rank-80 decomposition of <3,5,7> over Z" is a decomposition of that tensor of rank 80 over that ring" from P
-  : n("Rank-80 decomposition of <3,5,7> over Z") is a rank-80 decomposition of <3,5,7> over Z
+  : n["Rank-80 decomposition of <3,5,7> over Z"] is a rank-80 decomposition of <3,5,7> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_4x4x8_r96 over n
   quote "the notebook's "Rank-96 decomposition of <4,4,8> over 0.5*C" is a decomposition of that tensor of rank 96 over that ring" from P
-  : n("Rank-96 decomposition of <4,4,8> over 0.5*C") is a rank-96 decomposition of <4,4,8> over 0.5*C
+  : alphaevolve_mathematical_results.ipynb["Rank-96 decomposition of <4,4,8> over 0.5*C"] is a rank-96 decomposition of <4,4,8> over 0.5*C
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_4x4x5_r61 over n
   quote "the notebook's "Rank-61 decomposition of <4,4,5> over Z" is a decomposition of that tensor of rank 61 over that ring" from P
-  : n("Rank-61 decomposition of <4,4,5> over Z") is a rank-61 decomposition of <4,4,5> over Z
+  : alphaevolve_mathematical_results.ipynb["Rank-61 decomposition of <4,4,5> over Z"] is a rank-61 decomposition of <4,4,5> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_4x4x7_r85 over n
   quote "the notebook's "Rank-85 decomposition of <4,4,7> over Z" is a decomposition of that tensor of rank 85 over that ring" from P
-  : Rank-85 decomposition of <4,4,7> over Z is a rank-85 decomposition of <4,4,7> over Z
+  : n["Rank-85 decomposition of <4,4,7> over Z"] is a rank-85 decomposition of <4,4,7> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_4x5x6_r90 over n
   quote "the notebook's "Rank-90 decomposition of <4,5,6> over Z" is a decomposition of that tensor of rank 90 over that ring" from P
-  : "Rank-90 decomposition of <4,5,6> over Z" is a rank-90 decomposition of <4,5,6> over Z
+  : n["Rank-90 decomposition of <4,5,6> over Z"] is a rank-90 decomposition of <4,5,6> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_5x5x5_r93 over n
   quote "the notebook's "Rank-93 decomposition of <5,5,5> over Z" is a decomposition of that tensor of rank 93 over that ring" from P
-  : "Rank-93 decomposition of <5,5,5> over Z" is a rank-93 decomposition of <5,5,5> over Z
+  : n["Rank-93 decomposition of <5,5,5> over Z"] is a rank-93 decomposition of <5,5,5> over Z
   proposed by model:claude-opus-5-5
 claim  m_mc100_ea_best_erdos_min_overlap over x1
   quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578584 (minimize)" from P

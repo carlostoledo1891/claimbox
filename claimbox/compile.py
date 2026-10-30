@@ -141,6 +141,7 @@ def lower(tree, c):
         job['claim'] = f'K({body[3]}) >= {body[1]}'
     elif body[0] == 'decomp':
         job['claim'] = f'Rank-{body[2]} decomposition of <{body[3][0]},{body[3][1]},{body[3][2]}> over {body[4]}'
+        job['heading'] = body[5] if len(body) > 5 else None     # DATA["heading"]: the record row is found at compile time (root)
     elif body[0] == 'score':
         printed = body[3][2] if body[3][0] == 'within' else body[3][1]
         job['claim'] = f'the object is a feasible solution of "{body[2]}" and the platform\'s score of it is {printed}'
@@ -181,12 +182,12 @@ def resolve(tree, c, readings):
     if body[0] == 'config':
         found.append(('kissing configuration', LIB.lookup('kissing configuration')))
     elif body[0] == 'score':
-        e = LIB.platform(body[2])
-        if e is None:
-            raise Refusal('decider', f'the library has no definition of the platform\'s "{body[2]}"')
+        e = LIB.platform(body[2]) or LIB.recorded_platform()     # its verifier written here, else cert-machine's record of it
         found.append((body[2], e))
     elif body[0] == 'machine':
         found.append((body[1]['kind'], LIB.lookup(body[1]['kind'])))
+    elif body[0] == 'decomp':
+        found.append(('decomposition', LIB.lookup('decomposition')))
     for n, e in found:
         if e['route'] is None:
             raise Refusal('decider', f'{n} has no route to the checker yet: ' + '; '.join(e['conventions']))
@@ -197,11 +198,58 @@ def resolve(tree, c, readings):
     return found
 
 
+def _library():
+    from . import library
+    return library
+
+
+def recorded_score_job(job, stmt, root):
+    """a platform problem with no verifier written here (library einstein_arena.py, RECORDED): the row cert-machine's decider wrote
+    for its title and these bytes becomes the job's record and its sentence; the claim's score must be the row's"""
+    from .library import decompositions as D, einstein_arena as EA
+    title, b = stmt[2], stmt[3]
+    rows = [(p, r) for p, r in D.rows_for(root, job['data'], EA.RECORDED) if f'"{title}"' in r.get('claim', '')]
+    if not rows:
+        raise Refusal('decider', f'the library has no verifier of the platform\'s "{title}", and cert-machine\'s decider has no record of it over these bytes')
+    path, row = rows[0]
+    printed = b[2] if b[0] == 'within' else b[1]
+    theirs = grammar.parse(row['claim']).get('printed')
+    if theirs is None or grammar.value_of(theirs) != grammar.value_of(printed):
+        raise Refusal('decider', f'cert-machine\'s record decides "{title}" at the score {theirs} over these bytes; nothing here decides the claim\'s {printed}')
+    return dict(job, claim=row['claim'], decider=EA.RECORDED_DECIDER, record={'path': path, 'row': row['id'], 'value': None, 'verdict': row['verdict']})
+
+
+def decomposition_job(job, stmt, root):
+    """a decomposition's route (library/decompositions.py): the row cert-machine's tensor decider wrote for the named heading of
+    these bytes becomes the job's record and its sentence; a file holding many decompositions must be told which"""
+    from .library import decompositions as D
+    rank, dims, ring, key = stmt[2], stmt[3], stmt[4], stmt[5] if len(stmt) > 5 else None
+    want = D.heading(rank, dims, ring)
+    if key is not None and key != want:
+        raise Refusal('source', f'the heading named, "{key}", is not the decomposition the statement states ("{want}")')
+    rows = D.rows_for(root, job['data'])
+    if not rows:
+        raise Refusal('decider', 'cert-machine\'s tensor decider has no record of these bytes (' + ', '.join(D.RECORDS) + ')')
+    if key is None and len(rows) > 1:
+        raise Refusal('ambiguous', f'the file holds {len(rows)} decompositions; name one by its heading: DATA["{want}"]')
+    hit = [(p, r) for p, r in rows if f'"{want}"' in r.get('claim', '')]
+    if not hit:
+        raise Refusal('source', f'the decider\'s record holds no decomposition headed "{want}" for these bytes')
+    path, row = hit[0]
+    job = dict(job, claim=row['claim'], decider=D.DECIDER, record={'path': path, 'row': row['id'], 'value': None, 'verdict': row['verdict']})
+    job.pop('heading', None)
+    return job
+
+
 def compile_claim(tree, c, root):
     out = []
     jobs = lower(tree, c)
     definitions = resolve(tree, c, [r for r, _ in jobs])
     for reading, job in jobs:
+        if c['stmt'][0] == 'decomp' or (c['stmt'][0] == 'forall' and c['stmt'][3][0] == 'decomp'):
+            job = decomposition_job(job, c['stmt'], root)
+        elif c['stmt'][0] == 'score' and _library().platform(c['stmt'][2]) is None:
+            job = recorded_score_job(job, c['stmt'], root)
         obj_id = job['id'] + ('-' + reading if len(jobs) > 1 else '')
         obj = T.translate(job['claim'], root, job['source'], job['data'], decider=job.get('decider'), record=job.get('record'),
                           name=job.get('name'), elements=job.get('elements'), obj_id=obj_id, quote=job.get('quote'), other=job.get('other'))

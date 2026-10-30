@@ -76,3 +76,10 @@ PLATFORM = {
         'reduction': 'the platform computes C = |max(convolve(f, f) · dx)| / (Σ f · dx)^2 with dx = 0.5/n in float64, and convolve(f, f)[k] = Σ_{i+j=k} f_i f_j, so exactly C = 2n · |max_k Σ_{i+j=k} f_i f_j| / (Σ f_i)^2 — the absolute value of the maximum, as the platform takes it, not the maximum of the absolute values (the registry\'s C_1d); the platform rejects a function whose (Σ f · dx)^2 is below 1e-9, read here as the rational 1/10^9; the score is a float64 evaluation, boxed by the platform\'s declared resolution'},
 }
 PLATFORM_BY_TITLE = {grammar.normalise(k): v for k, v in PLATFORM.items()}
+
+
+# THE PLATFORM'S OTHER PROBLEMS (2026-10-30, for the register): no verifier is written here for them; cert-machine's EinsteinArena
+# decider runs each problem's own conditions over its pinned record and writes one row per problem, which the receiver reads in
+# place. A claim over one rests on that row: the one written for its title and these very bytes (matched by sha256)
+RECORDED_DECIDER = 'tools/run-mc100-einstein.js'
+RECORDED = ('certs/mc100-einstein-arena.json',)

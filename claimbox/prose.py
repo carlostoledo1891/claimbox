@@ -29,6 +29,7 @@ import shutil
 from fractions import Fraction
 
 from . import compile as C, grammar, lang, translate as T
+from .library import decompositions as D, einstein_arena as EA
 from .grammar import Refusal, LEAN_NUMERAL, lean_numerals, numbers_in, value_of  # noqa: F401  (the readers, kept by name)
 
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
@@ -68,15 +69,26 @@ def register_context():
     """{register id: (data, elements, reference, decider, record)} for the sentences a reader job states, its object the reference"""
     out = {}
     reg = [r['id'] for r in json.load(open(os.path.join(REPO, 'corpus', 'register-sentences.json'), encoding='utf-8'))['rows']]
+    root = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
     for path, rpre, jpre, folder in REGISTER_JOBS:
         jobs = {j['id']: j for j in json.load(open(os.path.join(REPO, path), encoding='utf-8'))['jobs']}
+        run = json.load(open(os.path.join(REPO, 'records', folder + '-run.json'), encoding='utf-8'))
+        decided = {r['id'] for r in (run.get('rows') or run.get('jobs') or []) if re.search(r'CERTIFIED|REFUTED', r.get('certMachine') or '')}
         for rid in reg:
             j = jobs.get(jpre + rid[len(rpre):]) if rid.startswith(rpre) else None
             if j is None or rid in out:
                 continue
             ref = folder + '/' + j['id']
-            out[rid] = (j['data'], j.get('elements'), ref if os.path.isfile(os.path.join(REPO, 'records', ref + '.json')) else None,
-                        j.get('decider'), j.get('record'))
+            # a reference is a DECIDED object: the reader's object for a platform problem with no verifier written here is admitted
+            # undecided, so it is none; those sentences take the library's recorded route (cert-machine's decider and its row)
+            ref = ref if j['id'] in decided and os.path.isfile(os.path.join(REPO, 'records', ref + '.json')) else None
+            record = j.get('record')
+            if record is None and j.get('problem') and j.get('decider') == EA.RECORDED_DECIDER:
+                title = (re.search(r'feasible solution of "([^"]+)"', j['claim']) or [None, None])[1]
+                hit = [(p_, r) for p_, r in D.rows_for(root, j['data'], EA.RECORDED) if title and f'"{title}"' in r.get('claim', '')]
+                if hit and title not in EA.PLATFORM:
+                    record = {'path': hit[0][0], 'row': hit[0][1]['id'], 'value': None, 'verdict': hit[0][1]['verdict']}
+            out[rid] = (j['data'], j.get('elements'), ref, j.get('decider'), record)
     return out
 
 
@@ -121,6 +133,15 @@ def grammar_proposal(sentence, source, data, elements, obj_id, root, decider=Non
         except Refusal as e:
             return None, (e.rule, e.msg)
     try:
+        if record and record.get('path', '').startswith('certs/mc100-'):
+            # a decider's record decides the claim its row states (the recorded routes of library/decompositions.py and
+            # einstein_arena.py): a sentence printing another bar is another claim, which that record never decided — the
+            # receiver would take the record's word for it, since the record carries no value (found by the sensitivity runs)
+            rows = json.load(open(os.path.join(root, record['path']), encoding='utf-8'))['rows']
+            row = next((r for r in rows if r.get('id') == record.get('row')), {})
+            mine, theirs = grammar.parse(sentence).get('printed'), grammar.parse(row.get('claim', '')).get('printed')
+            if mine is not None and theirs is not None and grammar.value_of(mine) != grammar.value_of(theirs):
+                return None, ('recorded-bar', f'the record {record["path"]} row {record["row"]} decides the bar {theirs}; the sentence prints {mine}')
         return T.translate(sentence, root, source, data, elements=elements, obj_id=obj_id, decider=decider, record=record), None
     except Refusal as e:
         return None, (e.rule, e.msg)
@@ -396,11 +417,11 @@ def planted(obj, row, ctx, corpus, root):
     with open(path, 'w', encoding='utf-8') as f:
         f.write(text.replace(row['text'].replace('\n', ' '), mutated.replace('\n', ' '), 1))
     try:
-        obj2, _ = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
+        obj2, why = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
     finally:
         os.remove(path)
-    if obj2 is None:
-        return False
+    if obj2 is None:                         # a recorded route decides one bar only: a moved one is not measurable, not a failure
+        return None if why and why[0] == 'recorded-bar' else False
     a, b = C.decision_fields(obj), C.decision_fields(obj2)
     return printed_numbers(obj2)[:1] == [moved] and a['pin'] == b['pin'] and [x[0] for x in a['ineqs']] == [x[0] for x in b['ineqs']]
 
@@ -618,6 +639,8 @@ def sensitivity(kind, obj, claim, row, ctx, corpus, root):
             out[tag] = _word(o2, root)       # while the planted source is on disk: the receiver reads it
         finally:
             os.remove(path)
+    if out['up'] is None and out['down'] is None:
+        return None                          # the moved claim has no route to a decision (a recorded score): not measurable
     if rel in ('in', 'eq'):
         out['held'] = out['up'] == out['down'] == 'REFUTED'
         out['tight'] = None

@@ -6,13 +6,15 @@ Every definition the translator knows lives in a file of its family:
     kissing.py          the kissing condition
     zeta23.py           the Riemann story's certificate and the mathematician's ξ′ and window certificates
     machines.py         the machine statements, decided by cert-machine's machine decider
+    decompositions.py   matrix-multiplication tensor decompositions, decided by cert-machine's tensor decider and its record
     common.py           the expression pieces they share
 
 This file is the registry a `.claim` file's `use NAME vN` resolves against: per definition, the names a claim may use, its
 version, the readings of the bytes it takes, its conventions, and the route that decides it. A definition is changed only
 with a new version; the objects the translator writes from it are held byte for byte by the battery.
 MIT"""
-from .einstein_arena import PLATFORM
+from .decompositions import DECIDER as TENSOR_DECIDER, RECORDS as TENSOR_RECORDS
+from .einstein_arena import PLATFORM, RECORDED, RECORDED_DECIDER
 from .machines import DECIDER, MACHINES
 from .step_functions import PRIMITIVE
 from .zeta23 import CERTIFICATE, ckey
@@ -38,6 +40,11 @@ def _entries():
                     'conventions': ['the bytes are read as the platform\'s verifier reads them: ' + e['elements'],
                                     'the score\'s box is the platform\'s declared resolution' if e['resolution'] else 'an integer score is held exactly']
                     + [s['what'] for s in e['structural']]})
+    out.append({'names': ('platform score, recorded',), 'version': 'v1', 'file': 'einstein_arena.py',
+                'what': 'the score of a platform problem with no verifier written here, as cert-machine\'s decider recorded it', 'readings': NUMERIC,
+                'route': 'cert-machine\'s EinsteinArena decider, ' + RECORDED_DECIDER + ', its record read in place (' + ', '.join(RECORDED) + ')',
+                'conventions': ['the record row is the one cert-machine wrote for the problem\'s title and these very bytes (matched by sha256)',
+                                'the claim\'s score must be the score that row states']})
     out.append({'names': ('kissing configuration',), 'version': 'v1', 'file': 'kissing.py', 'what': 'n vectors in dimension d, every pair at least 60° apart',
                 'readings': NUMERIC, 'route': 'an exact expression over every pair, decided by the checker from the object',
                 'conventions': ['4·(u·v)·|u·v| ≤ |u|²·|v|² for every pair, exact over the reading of the bytes (the angle is at least 60° iff u·v ≤ |u||v|/2)']})
@@ -52,6 +59,11 @@ def _entries():
     out.append({'names': ('P*',), 'version': 'v1', 'file': 'zeta23.py', 'what': 'the most an even polynomial window of degree d gives the ξ′ method (λ = 1)',
                 'readings': (), 'route': None,
                 'conventions': ['each degree\'s optimum is exact rational arithmetic (tools/xi_window.py --optimality); a claim about every degree is a watcher (roadmap step 7)']})
+    out.append({'names': ('decomposition',), 'version': 'v1', 'file': 'decompositions.py',
+                'what': 'a rank-R decomposition of the matrix-multiplication tensor <n,m,p> over a ring', 'readings': NUMERIC,
+                'route': 'cert-machine\'s tensor decider, ' + TENSOR_DECIDER + ', its record read in place (' + ', '.join(TENSOR_RECORDS) + ')',
+                'conventions': ['one decomposition of a file that holds many is named by the heading the file prints it under: DATA["heading"]',
+                                'the record row is the one cert-machine wrote for that heading of these very bytes (matched by sha256)']})
     for kind, what in MACHINES.items():
         out.append({'names': (kind,), 'version': 'v1', 'file': 'machines.py', 'what': what, 'readings': ('table (Q, 2)', 'text', 'bytes'),
                     'route': 'a named function of cert-machine\'s machine decider, ' + DECIDER, 'conventions': [], 'statement': True})
@@ -74,10 +86,15 @@ def lookup(name):
 
 
 def platform(title):
+    """a platform problem's definition: its verifier written here, else the recorded route (cert-machine's decider and its record)"""
     for e in ENTRIES:
         if e['file'] == 'einstein_arena.py' and e['names'][0] == title:
             return e
     return None
+
+
+def recorded_platform():
+    return lookup('platform score, recorded')
 
 
 def listing():

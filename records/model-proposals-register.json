@@ -3,8 +3,8 @@
  "model": "claude-opus-5-5",
  "effort": "high",
  "cap": 20.0,
- "spent": 0.1379,
- "calls": 24,
+ "spent": 0.2698,
+ "calls": 39,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -15,6 +15,26 @@
  "entries": [
   {
    "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLUcv1UJ16jbTdYK5E",
+   "stopReason": "end_turn",
+   "seconds": 5.3,
+   "usage": {
+    "input": 130,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 363
+   },
+   "cost": 0.01453,
+   "raw": "{\"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition printed under that heading in the notebook is a rank-32 decomposition of <2,4,5> over 0.5*Z.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition printed under that heading in the notebook is a rank-32 decomposition of <2,4,5> over 0.5*Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCypoArQeP2YJmPYWdN",
    "stopReason": "end_turn",
@@ -36,6 +56,26 @@
   {
    "tag": "mc100-ae-nb-2x4x7-r45",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLSMETo7wpLW7NWvhv",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 109
+   },
+   "cost": 0.00943,
+   "raw": "{\"statement\":\"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the decomposition printed under that heading in the notebook has rank 45 for <2,4,7> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition printed under that heading in the notebook has rank 45 for <2,4,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCypV53sJT7XNvBiPgp",
    "stopReason": "end_turn",
    "seconds": 2.9,
@@ -55,6 +95,26 @@
   },
   {
    "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLT68eTMgnbVVm7VvX",
+   "stopReason": "end_turn",
+   "seconds": 3.3,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 119
+   },
+   "cost": 0.00963,
+   "raw": "{\"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts that the decomposition printed under that heading in the notebook is a valid rank-51 decomposition of <2,4,8> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the decomposition printed under that heading in the notebook is a valid rank-51 decomposition of <2,4,8> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCypfUUTkS4WJX3P9kV",
    "stopReason": "end_turn",
@@ -76,6 +136,26 @@
   {
    "tag": "mc100-ae-nb-2x5x6-r47",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLTG4ApJ7sSgsMZhb9",
+   "stopReason": "end_turn",
+   "seconds": 4.9,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 404
+   },
+   "cost": 0.01533,
+   "raw": "{\"statement\": \"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook entry under this heading is a rank-47 decomposition of the <2,5,6> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook entry under this heading is a rank-47 decomposition of the <2,5,6> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCyq91fRzt13wXqRtpx",
    "stopReason": "end_turn",
    "seconds": 5.0,
@@ -95,6 +175,26 @@
   },
   {
    "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLTxUt99PYB6VUaGSg",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 111
+   },
+   "cost": 0.00947,
+   "raw": "{\"statement\":\"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the notebook's decomposition under that heading is a rank-23 decomposition of <3,3,3> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook's decomposition under that heading is a rank-23 decomposition of <3,3,3> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCypz5V46RJtxFAyqex",
    "stopReason": "end_turn",
@@ -116,6 +216,26 @@
   {
    "tag": "mc100-ae-nb-3x4x6-r54",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLUXxBvo5Rp85T1CvD",
+   "stopReason": "end_turn",
+   "seconds": 3.2,
+   "usage": {
+    "input": 130,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 129
+   },
+   "cost": 0.00985,
+   "raw": "{\"statement\":\"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\",\"hole\":\"\",\"why\":\"The sentence names one decomposition in the notebook by its heading and claims it is a rank-54 decomposition of <3,4,6> over 0.5*Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence names one decomposition in the notebook by its heading and claims it is a rank-54 decomposition of <3,4,6> over 0.5*Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCypvrgDFq3BuxAcddD",
    "stopReason": "end_turn",
    "seconds": 2.5,
@@ -135,6 +255,26 @@
   },
   {
    "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLeH5oFgUHaPA1v921",
+   "stopReason": "end_turn",
+   "seconds": 2.2,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 0,
+    "cacheRead": 1350,
+    "output": 126
+   },
+   "cost": 0.003306,
+   "raw": "{\"statement\": \"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under this heading in the notebook is a rank-63 decomposition of <3,4,7> over 0.5*C.\"}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under this heading in the notebook is a rank-63 decomposition of <3,4,7> over 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCz1HhpbNV97U8gY5nD",
    "stopReason": "end_turn",
@@ -156,6 +296,26 @@
   {
    "tag": "mc100-ae-nb-3x4x8-r74",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLfU2K17BaLUT38HwN",
+   "stopReason": "end_turn",
+   "seconds": 5.0,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1350,
+    "output": 391
+   },
+   "cost": 0.00859,
+   "raw": "{\"statement\": \"n[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook decomposition under this exact heading is a rank-74 decomposition of <3,4,8> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook decomposition under this exact heading is a rank-74 decomposition of <3,4,8> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCz2i2GL2vUTQmhtsfM",
    "stopReason": "end_turn",
    "seconds": 2.3,
@@ -175,6 +335,26 @@
   },
   {
    "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLfsarqhS5Fx3i9de8",
+   "stopReason": "end_turn",
+   "seconds": 1.9,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1350,
+    "output": 112
+   },
+   "cost": 0.00301,
+   "raw": "{\"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook decomposition under this heading is a rank-68 decomposition of <3,5,6> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook decomposition under this heading is a rank-68 decomposition of <3,5,6> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCz2z9UGGB41WvSaWZJ",
    "stopReason": "end_turn",
@@ -196,6 +376,26 @@
   {
    "tag": "mc100-ae-nb-3x5x7-r80",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLi15Lbe2V7LhMfSph",
+   "stopReason": "end_turn",
+   "seconds": 2.6,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1350,
+    "output": 112
+   },
+   "cost": 0.00301,
+   "raw": "{\"statement\":\"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that one heading-named decomposition in the notebook is a rank-80 decomposition of <3,5,7> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that one heading-named decomposition in the notebook is a rank-80 decomposition of <3,5,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCz85yWv2DPPysH8rZ2",
    "stopReason": "end_turn",
    "seconds": 2.2,
@@ -215,6 +415,26 @@
   },
   {
    "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLow1U8rmUsgEQ4UeL",
+   "stopReason": "end_turn",
+   "seconds": 2.5,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1350,
+    "output": 129
+   },
+   "cost": 0.00335,
+   "raw": "{\"statement\":\"alphaevolve_mathematical_results.ipynb[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\",\"hole\":\"\",\"why\":\"The sentence names one decomposition in the pinned notebook by its heading and claims it has rank 61 for <4,4,5> over Z.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence names one decomposition in the pinned notebook by its heading and claims it has rank 61 for <4,4,5> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzBjkLrQMgRP6yDnb2",
    "stopReason": "end_turn",
@@ -236,6 +456,26 @@
   {
    "tag": "mc100-ae-nb-4x4x7-r85",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZJ5iRCHWiQJBNg6QLna",
+   "stopReason": "end_turn",
+   "seconds": 1373.4,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 372
+   },
+   "cost": 0.01469,
+   "raw": "{\"statement\": \"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence says the notebook's decomposition under that heading has rank 85 for the tensor <4,4,7> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence says the notebook's decomposition under that heading has rank 85 for the tensor <4,4,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzCiJ4YahjZPCNvSCj",
    "stopReason": "end_turn",
    "seconds": 2.1,
@@ -255,6 +495,26 @@
   },
   {
    "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZJ5hx9u7KCMtozkDNrR",
+   "stopReason": "end_turn",
+   "seconds": 1373.0,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 324
+   },
+   "cost": 0.013746,
+   "raw": "{\"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition printed under that heading in the notebook is a rank-96 decomposition of <4,4,8> over 0.5*C.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims that the decomposition printed under that heading in the notebook is a rank-96 decomposition of <4,4,8> over 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzAW6LSsVjgUPWT3GG",
    "stopReason": "end_turn",
@@ -276,6 +536,26 @@
   {
    "tag": "mc100-ae-nb-4x5x6-r90",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgZGLpTFwdWo3DCkbnE3h",
+   "stopReason": "end_turn",
+   "seconds": 2.1,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1350,
+    "output": 109
+   },
+   "cost": 0.00295,
+   "raw": "{\"statement\":\"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the decomposition printed under this heading is a rank-90 decomposition of <4,5,6> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition printed under this heading is a rank-90 decomposition of <4,5,6> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzE9cHGuw97eWz5Qdi",
    "stopReason": "end_turn",
    "seconds": 2.3,
@@ -295,6 +575,26 @@
   },
   {
    "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZJ5ocyNXDqvkH9izrag",
+   "stopReason": "end_turn",
+   "seconds": 1372.5,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1350,
+    "cacheRead": 0,
+    "output": 187
+   },
+   "cost": 0.01099,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"The sentence names one decomposition in the notebook by its heading and claims it has rank 93 for <5,5,5> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence names one decomposition in the notebook by its heading and claims it has rank 93 for <5,5,5> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzHbUuCMYa2bXxho6i",
    "stopReason": "end_turn",

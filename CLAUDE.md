@@ -78,7 +78,7 @@ claimbox/readers/          structural readers of real sources: registry.py (the 
                            integers decoded into JSON beside it, one job per claim the sources print; EnclOK skipped: bytes not published)
 claimbox/lang.py           the language of LANGUAGE.md: a .claim file read into a tree, printed back (canonical) and in plain words;
                            malformed files refused with the rule, statements that are not claims made holes
-claimbox/library/          the definitions, one file per family (step_functions, einstein_arena, kissing, zeta23, machines; common pieces);
+claimbox/library/          the definitions, one file per family (step_functions, einstein_arena, kissing, zeta23, machines, decompositions; common pieces);
                            __init__.py the registry `use NAME vN` resolves against; the objects held byte for byte (records/library-identity.json)
 claimbox/prose.py          from prose to claims: proposers (the grammar; corpus/proposals/<corpus>.claim for a person's or a model's), the
                            levels (anchored, printed back, planted, concord), faithfulness measured against a decided reference
