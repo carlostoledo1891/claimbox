@@ -21,7 +21,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the eighth session's state follows)
+## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 
   ★ THE GROWTH PLAN (2026-10-30, from the cert-machine chat, on the operator's word: "keep claimbox separated but improving as
      we need. I do not want to change cert-machine scope"; then "Yes. Update the plan and handoff"). Nothing below is built yet.
@@ -79,6 +79,22 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
        Lean object kind, the standing of each input carried into the certificate); `instruments/ledger` (B6's sampled replay
        decider) is the OPERATOR'S DECISION — without it, watchers return only halting witnesses, which the receiver already decides.
      ── ORDER: A1 → B5 → A2+A3 (with format v4) → D1 → A4 + B6's go/no-go → D2 → B7 → B8 + D3 → C9; C10 when the spend is approved.
+     ── IDEAS, NOT ADOPTED (2026-10-30, the operator: "Save the ideas in the right places. I'm not sure yet."). The operator's
+       brainstorm sheet "three-verdict paradigm" (27 Oct, private), read after the plan above was written; the plan and its
+       order are unchanged. The digest and the mapping live in cert-machine's notes/three-verdict-paradigm-2026-10-30.md
+       (local, not committed). Candidates on this side, none adopted:
+       (a) the sheet's verbs as commands beside today's translator (propose): fill (supply a refusal's missing quantity; the
+           receiver decides again), attack (a challenge object against a witness or a certificate), replay (re-decide from the
+           pinned bytes with a disjoint implementation, "the only verb that raises trust");
+       (b) a lineage graph and a decay query built from cert-machine's records, read-only ("which certificates rest on this
+           constant, this decider, this pin?"); first test, the Erdős #852 correction redone by machine;
+       (c) CONFLICT as A3's failure word instead of REFUSED, once the receiver admits the word (format v4, cert-machine's side);
+       (d) the Newman experiment beside C10: arm A one checker with a scalar reward, arm B proposer + decider + disjoint
+           replayer with the three-verdict reward, same compute; false-C rate, hole accuracy, hacking rate under injected
+           break-the-grader claims. Read notes/claim-court-2026-10-23.md first (the reward is published and collapses under GRPO).
+       The rule any lineage work keeps: a refuted premise sends its dependants to REFUSED with the premise as the hole, never to
+       REFUTED (the sheet says "inherits R"); a dependant is REFUTED only by its own re-decision with a witness. The sheet's own
+       risks come first: lineage tags blow up, and no merge rule for many verifiers' verdicts exists.
 
 
   ★ THE EIGHTH SESSION (2026-10-23, from the cert-machine chat, on "Proceed. Can we benchmark the process using claimbox vs not
