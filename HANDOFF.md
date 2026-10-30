@@ -137,6 +137,33 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    per proposer kind (proposed, compiled, holes, faithful, unfaithful, planted held/broke). REPUBLISHED by cert-machine-cb
    (cert-machine 39e5e6ef, from claimbox 6320675c, 83,187 bytes): the live page's sha256 equals web/dist's, checked with curl
    about thirty seconds after the deploy. make test: 462 pass, 0 fail, 95/95 reds.
+   THE MODEL RUN (on "API Authorized. The auto refil is on. Try to run"): `.venv/bin/python tools/propose_model.py riemann-ai --cap
+   20 --workers 6` — 125 calls, $0.7495 (records/model-proposals-riemann-ai.json; every call served by claude-opus-5-5, no
+   refusal). A first pass crashed in the planted step on a superscript digit (Python's isdigit is True for '⁰'), after about 80
+   calls, about $0.50, not in the ledger: plantable/plant_digit now move the mantissa's last ASCII digit (3·10⁻⁴⁰ → 4·10⁻⁴⁰) and the
+   ledger is saved in a finally. The proposals: corpus/proposals/riemann-ai.claim (80 claims) and riemann-ai.planted.claim (45).
+   FIXES IN THE VALIDATOR, found by the run: one model statement that does not parse (`/(16·10³⁹)`) failed the whole file —
+   proposal_blocks now parses the head and each claim on its own, a LangError becoming that proposal's `syntax` hole; anchoring
+   compared printed strings — it now compares exact values (numbers_in, value_of); the read-back ignored mirrored relations
+   (0.6818287 ≥ p₀) and an ellipsis with no "=" — both read now; a bar written into the expression prints no `printed` — object_bar
+   reads it back from the object's text. RESULT (records/prose-riemann-ai.json): the model compiled 50 and named 30 holes; 40
+   equal the reference field for field; 1 (2/blog/19, the sentence prints 0.000…3) states the same bar printed another way —
+   `sameValue`, counted apart, never as unfaithful; none differ; 9 (group 3, c256) have no decided reference; planted held 38,
+   broke 1 (6/abstract/51: on the moved sentence the model named a hole). Every one of the 52 claims proposed is CERTIFIED.
+   Validated 2 (5/tweet/45, 6/tweet/55); 40 one kind only; 8 refused: 1/blog/4, 1/paper/8, 2/blog/14, 3/blog/24, 3/referee/26
+   write the relation in words ("never exceeds", "does not exceed", "at most", "below", "exceeds" after the bar), 2/docstring/13
+   and 3/docstring/23 print the bar in Lean's notation (`3 * 10 ^ (-40 : ℤ)`), which numbers_in does not read — the model's
+   claims there are faithful; the check is strict and says so — and 6/abstract/51 the planted break. In the p₀ group the model
+   names `source` for 7 sentences that print two relations (it states the leading exact identity, which no source line prints as
+   a bar). THE PAGE: the "From prose to claims, so far" paragraphs give the per-kind counts, every one from the record (the
+   ledger's model, calls, cost and cap from records/model-proposals-riemann-ai.json); record.val gained count=True (an empty count
+   prints ∅ and a word, WARRANT rule 7, as derived() already did), the page's check a gate on a count printed as 0 and its tenth
+   red control; a derived `proposalWords` counts cert-machine's words over the proposals. Battery §10: the grammar's check
+   restricted to its own proposals; the ledger adds up (calls, cost, cap, the model named); the model proposed or named a hole for
+   every phrasing; every claim proposed CERTIFIED and no model claim differs from its reference but in the print of an equal bar.
+   make test: 466 pass, 0 fail, 96/96 reds. NOT REPUBLISHED: the live page still shows the baseline (republish = a cert-machine
+   session's publish-zone run, on the operator's word). NEXT: the read-back learns a written table of relation words and Lean's
+   numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 

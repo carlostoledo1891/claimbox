@@ -24,6 +24,7 @@ import json
 import os
 import re
 import shutil
+from fractions import Fraction
 
 from . import compile as C, grammar, lang, translate as T
 from .grammar import Refusal
@@ -81,14 +82,45 @@ def grammar_proposal(sentence, source, data, elements, obj_id, root):
         return None, (e.rule, e.msg)
 
 
+def proposal_blocks(path):
+    """a proposals file read claim by claim: [(tree, claim) or (None, (id, quote, kind, LangError))]. The declarations head
+    every claim; a claim the language cannot read is that proposal's refusal and never sinks the others"""
+    text = open(path, encoding='utf-8').read().split('\n')
+    first = next((i for i, l in enumerate(text) if l.startswith('claim ')), len(text))
+    head, blocks, cur = '\n'.join(text[:first]) + '\n', [], []
+    for l in text[first:]:
+        if l.startswith('claim ') and cur:
+            blocks.append(cur)
+            cur = []
+        if l.strip():
+            cur.append(l)
+    if cur:
+        blocks.append(cur)
+    out = []
+    for b in blocks:
+        body = '\n'.join(b) + '\n'
+        try:
+            tree = lang.parse(head + body)
+            out.append((tree, [i for i in tree['items'] if i['kw'] == 'claim'][0]))
+        except lang.LangError as e:
+            cid = (re.match(r'claim\s+(\w+)', b[0]) or [None, None])[1]
+            q = re.search(r'^\s*quote "(.*)" from \w+\s*$', body, re.M)
+            k = re.search(r'proposed by (\S+)', body)
+            out.append((None, (cid, q.group(1) if q else None, k.group(1) if k else 'unlabelled', e)))
+    return out
+
+
 def file_proposals(corpus, root):
-    """the proposals of the corpus's .claim file: {sentence: [(kind, object or None, refusal or None, the claim)]}"""
+    """the proposals of the corpus's .claim file: {sentence: [(kind, object or None, refusal or None, the claim or None)]}"""
     p = os.path.join(REPO, CORPORA[corpus]['proposals'])
     out = {}
     if not os.path.isfile(p):
         return out
-    tree = lang.parse(open(p, encoding='utf-8').read())
-    for c in [i for i in tree['items'] if i['kw'] == 'claim']:
+    for tree, c in proposal_blocks(p):
+        if tree is None:
+            cid, quote, kind, err = c
+            out.setdefault(quote, []).append((kind, None, (err.rule, 'the language cannot read the proposal: ' + err.msg), None))
+            continue
         kind = c['proposed'] or 'unlabelled'
         try:
             obj = C.compile_claim(tree, c, root)[0]['object']
@@ -104,8 +136,7 @@ def planted_claims(corpus):
     p = os.path.join(REPO, CORPORA[corpus]['proposals'].replace('.claim', '.planted.claim'))
     if not os.path.isfile(p):
         return {}
-    tree = lang.parse(open(p, encoding='utf-8').read())
-    return {c['id']: c for c in tree['items'] if c['kw'] == 'claim'}
+    return {c['id']: c for tree, c in proposal_blocks(p) if tree is not None}
 
 
 def bar_printed(stmt):
@@ -123,7 +154,7 @@ def planted_statement(claim, planted):
     if planted is None or claim['stmt'][0] == 'hole':
         return None
     p = bar_printed(claim['stmt'])
-    if not p or p not in claim['quote'] or not p[-1].isdigit():
+    if not p or p not in claim['quote'] or not plantable(p):
         return None
     _, moved = plant_digit(claim['quote'], p)
     if planted['stmt'][0] == 'hole':
@@ -134,38 +165,111 @@ def planted_statement(claim, planted):
 # ------------------------------------------------------------------------------------------------- the checks
 
 def printed_numbers(obj):
-    return [p['printed'] for p in obj['predicate'] if p.get('printed')]
+    """the bars an object prints: its predicates' printed digits, or — where the receiver takes the bar into the expression
+    (3·10⁻⁴⁰ is not a form it reads as a bar) — the bar of the claim the object was written from"""
+    out = [p['printed'] for p in obj['predicate'] if p.get('printed')]
+    if not out:
+        b = object_bar(obj)
+        out = [b[1]] if b else []
+    return out
+
+
+def object_bar(obj):
+    """(relation, printed digits, cut off with an ellipsis) of the claim the object was written from, read by the grammar"""
+    try:
+        sh = grammar.parse(obj['text'])
+    except Refusal:
+        return None
+    return (sh.get('rel'), sh['printed'], bool(sh.get('ellipsis'))) if sh.get('printed') else None
+
+
+def value_of(printed):
+    """the exact rational a printed number means, in any of the forms the grammar reads (3·10⁻⁴⁰, 3\\cdot10^{-40}, 3e-40, p/q)"""
+    p = printed.replace(',', '').replace(' ', '')
+    m = re.fullmatch(r'(-?\d+)/([1-9]\d*)', p)
+    if m and not re.fullmatch(r'-?\d+/10\^\{?\d+\}?', p):
+        return Fraction(int(m.group(1)), int(m.group(2)))
+    return grammar.exact(p)
+
+
+def numbers_in(sentence):
+    """every number the sentence prints, with its place: [(start, end, exact value)] over the normalised sentence"""
+    norm = grammar.normalise(sentence)
+    out = []
+    for m in re.finditer(r'(?<![\w.])(\d+)\s*/\s*([1-9]\d*)(?![\d.])', norm):
+        out.append((m.start(), m.end(), Fraction(int(m.group(1)), int(m.group(2)))))
+    for m in re.finditer(r'(?<![\w.])' + grammar.NUMBER, norm):
+        if any(a <= m.start() < b for a, b, _ in out):
+            continue
+        try:
+            out.append((m.start(), m.end(), value_of(m.group(0).lstrip('-'))))
+        except (ValueError, ZeroDivisionError):
+            pass
+    return norm, sorted(out)
 
 
 def anchored(obj, sentence, source_path, root):
-    """every number the object prints is a token of the sentence, and the sentence is printed in the source"""
-    norm = grammar.normalise(sentence)
-    tok = lambda x: re.search(r'(?<![\d.])' + re.escape(x) + r'(?![\d])', norm) or re.search(r'(?<![\d.])' + re.escape(x) + r'(?![\d])', sentence)
+    """every number the object prints is a number the sentence prints — the same exact value, in whatever notation —, and the
+    sentence is printed in the source; a number written in words is not printed"""
+    _, nums = numbers_in(sentence)
+    values = {v for _, _, v in nums}
     with open(os.path.join(root, source_path), encoding='utf-8') as f:
         src = f.read()
-    return bool(printed_numbers(obj)) and all(tok(x) for x in printed_numbers(obj)) and sentence.replace('\n', ' ') in src
+    printed = printed_numbers(obj)
+    return bool(printed) and all(value_of(x) in values for x in printed) and sentence.replace('\n', ' ') in src
 
 
-REL_SYMBOLS = {'le': ('<=', '≤', '\\le'), 'lt': ('<',), 'ge': ('>=', '≥', '\\ge'), 'gt': ('>',), 'in': ('=',), 'eq': ('=',)}
+REL_SYMBOLS = {'le': ('<=', '≤'), 'lt': ('<',), 'ge': ('>=', '≥'), 'gt': ('>',), 'in': ('=',), 'eq': ('=',)}
+MIRROR = {'le': 'ge', 'lt': 'gt', 'ge': 'le', 'gt': 'lt', 'in': 'in', 'eq': 'eq'}
+INEQUALITY = ('<=', '>=', '<', '>', '≤', '≥')
+ELLIPSIS = ('…', '...', '\\ldots', '\\dots')
 
 
 def printed_back(obj, sentence):
-    """the object, read back: its first bar's relation is the one the sentence prints beside the bar"""
-    p = next((q for q in obj['predicate'] if q.get('printed')), None)
-    if p is None:
+    """the object, read back: its first bar sits in the sentence with the relation the object holds — the symbol before the bar,
+    or its mirror after it (0.6818287 >= p_0 is p_0 <= 0.6818287); a print cut off with "…" reads back from the ellipsis itself,
+    with no inequality before it. A relation written only in words does not read back (it is flagged, never guessed)"""
+    b = object_bar(obj)
+    if b is None:
         return False
-    norm = grammar.normalise(sentence)
-    i = norm.find(p['printed'])
-    before, after = norm[:i], norm[i + len(p['printed']):]
-    if p['rel'] == 'ge' and 'ellipsis' in (p.get('note') or ''):     # a print cut off: "= p…" reads back as p <= x < p + unit
-        return '=' in before[-12:] and after.lstrip().startswith(('…', '...', '\\ldots', '\\dots'))
-    return any(sym in before[-12:] for sym in REL_SYMBOLS.get(p['rel'], ()))
+    rel, printed, cut = b
+    norm, nums = numbers_in(sentence)
+    want = value_of(printed)
+    hit = next(((a, b) for a, b, v in nums if v == want), None)
+    if hit is None:
+        return False
+    before, after = norm[:hit[0]].rstrip(), norm[hit[1]:].lstrip()
+    if cut:
+        return after.startswith(ELLIPSIS) and not any(before.endswith(x) or before[-6:].count(x) for x in INEQUALITY)
+    if any(sym in before[-12:] for sym in REL_SYMBOLS.get(rel, ())):
+        return True
+    return any(after[:12].startswith(sym) or sym in after[:4] for sym in REL_SYMBOLS.get(MIRROR.get(rel, ''), ()))
+
+
+def plantable(printed):
+    """a bar whose last printed digit can be moved: its mantissa ends in an ASCII digit (3·10⁻⁴⁰ moves its 3, never its
+    exponent or its base; Python counts superscripts as digits, so the test is on ASCII)"""
+    if not printed:
+        return False
+    try:
+        mant = grammar.parts(printed.replace(',', ''))[0]
+    except (ValueError, IndexError):
+        return False
+    return bool(mant) and mant[-1] in '0123456789' and printed.replace(',', '').startswith(mant.lstrip('-')) or printed[-1:] in list('0123456789')
 
 
 def plant_digit(sentence, printed):
-    """the sentence with its bar's last digit moved by one (9 down to 8): what a moved bar looks like"""
-    d = printed[-1]
-    moved = printed[:-1] + (str(int(d) + 1) if d != '9' else '8')
+    """the sentence with its bar's last digit moved by one (9 down to 8): what a moved bar looks like. In a power of ten
+    (3·10⁻⁴⁰, 2.5431316·10⁻⁶) the mantissa's last digit moves; a plain number's last digit does"""
+    mant = grammar.parts(printed.replace(',', ''))[0].lstrip('-')
+    if printed[-1:] in list('0123456789'):
+        cut = len(printed) - 1
+    elif printed.startswith(mant) and mant and mant[-1] in '0123456789':
+        cut = len(mant) - 1
+    else:
+        raise ValueError('no digit to move in ' + printed)
+    d = printed[cut]
+    moved = printed[:cut] + (str(int(d) + 1) if d != '9' else '8') + printed[cut + 1:]
     return sentence.replace(printed, moved, 1), moved
 
 
@@ -173,7 +277,7 @@ def planted(obj, row, ctx, corpus, root):
     """the metamorphic plant: the source copied with this sentence's bar moved; the grammar proposer, re-run on it, must move the
     object's bar exactly so and nothing else that bears on the decision"""
     printed = printed_numbers(obj)
-    if not printed or not printed[0][-1].isdigit():
+    if not printed or not plantable(printed[0]):
         return None
     mutated, moved = plant_digit(row['text'], printed[0])
     os.makedirs(PLANTS, exist_ok=True)
@@ -227,6 +331,10 @@ def run(corpus, root, words=False):
                 pr['printedBack'] = printed_back(o, row['text'])
                 pr['planted'] = planted(o, row, ctx, corpus, root) if kind == 'grammar' else planted_statement(claim, replanted.get(claim['id']))
                 pr['faithful'] = (C.decision_fields(o) == C.decision_fields(reference)) if reference else None
+                if pr['faithful'] is False:          # the same pinned bytes, relation and exact bar, printed another way
+                    a_, b_ = object_bar(o), object_bar(reference)
+                    pr['sameValue'] = bool(a_ and b_ and a_[0] == b_[0] and a_[2] == b_[2] and value_of(a_[1]) == value_of(b_[1])
+                                           and o['domain']['pin'] == reference['domain']['pin'])
                 if words:
                     line = T.check_with_cert_machine(o, root)
                     pr['word'], pr['certMachine'] = C.word(line), line[:200]
@@ -262,12 +370,15 @@ def summary(entries):
                     'compiled': sum(1 for p in made if p['kind'] == k),
                     'holes': sum(1 for e in entries for p in e['proposals'] if p['kind'] == k and 'refused' in p),
                     'faithful': sum(1 for p in made if p['kind'] == k and p['faithful']),
-                    'unfaithful': sum(1 for p in made if p['kind'] == k and p['faithful'] is False),
+                    'unfaithful': sum(1 for p in made if p['kind'] == k and p['faithful'] is False and not p.get('sameValue')),
+                    'sameValueOtherPrint': sum(1 for p in made if p['kind'] == k and p.get('sameValue')),
+                    'noReference': sum(1 for p in made if p['kind'] == k and p['faithful'] is None),
                     'plantedHeld': sum(1 for p in made if p['kind'] == k and p['planted']),
                     'plantedBroke': sum(1 for p in made if p['kind'] == k and p['planted'] is False)} for k in kinds}
     return {'sentences': len(entries), 'proposals': len(made), 'byKind': {k: sum(1 for p in made if p['kind'] == k) for k in sorted({p['kind'] for p in made})},
             'perKind': per_kind,
             'anchored': by('anchored'), 'printedBack': by('printedBack'), 'planted': sum(1 for p in made if p['planted']),
-            'faithful': sum(1 for p in made if p['faithful']), 'unfaithful': sum(1 for p in made if p['faithful'] is False),
+            'faithful': sum(1 for p in made if p['faithful']), 'unfaithful': sum(1 for p in made if p['faithful'] is False and not p.get('sameValue')),
+            'sameValueOtherPrint': sum(1 for p in made if p.get('sameValue')),
             'validated': sum(1 for e in entries if e['outcome'] == 'validated'),
             'notStated': sum(1 for e in entries if e['outcome'].startswith('not stated'))}

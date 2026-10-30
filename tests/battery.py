@@ -740,9 +740,21 @@ PREC = json.load(open(os.path.join(REPO, 'records', 'prose-riemann-ai.json'), en
 now = PR.run('riemann-ai', ROOT)
 ok([(e['id'], e['outcome']) for e in now] == [(e['id'], e['outcome']) for e in PREC['sentences']] and PR.summary(now) == PREC['summary'],
    'prose: the run reproduces its record, sentence for sentence', json.dumps(PREC['summary']))
-gp = [p for e in PREC['sentences'] for p in e['proposals'] if 'object' in p]
+gp = [p for e in PREC['sentences'] for p in e['proposals'] if 'object' in p and p['kind'] == 'grammar']
 ok(gp and all(p['faithful'] and p['anchored'] and p['printedBack'] and p['planted'] and p.get('word') == 'CERTIFIED' for p in gp),
    'prose: every claim the grammar proposes is anchored, printed back, moves under a planted bar, equals the decided reference and is CERTIFIED', f'{len(gp)} proposals')
+# the model's run (tools/propose_model.py): its ledger adds up, and what it proposed is what the record read
+LEDGER = json.load(open(os.path.join(REPO, 'records', 'model-proposals-riemann-ai.json'), encoding='utf-8'))
+ok(LEDGER['calls'] == len(LEDGER['entries']) and abs(LEDGER['spent'] - sum(x['cost'] for x in LEDGER['entries'])) < 1e-3
+   and LEDGER['spent'] <= LEDGER['cap'] and all(x['model'] == LEDGER['model'] for x in LEDGER['entries']),
+   'prose: the model\'s ledger adds up — every call, its cost, under the cap, each served by the model named', f'{LEDGER["calls"]} calls, ${LEDGER["spent"]}')
+mp = [p for e in PREC['sentences'] for p in e['proposals'] if p['kind'] == 'model:' + LEDGER['model']]
+ok(len(mp) == len(PREC['sentences']) and PREC['summary']['perKind']['model:' + LEDGER['model']]['proposed'] == len(mp),
+   'prose: the model proposed, or named a hole, for every phrasing', f'{len(mp)} of {len(PREC["sentences"])}')
+ok(all(p.get('word') == 'CERTIFIED' for e in PREC['sentences'] for p in e['proposals'] if 'object' in p)
+   and not [p for p in mp if p.get('faithful') is False and not p.get('sameValue')],
+   'prose: every claim proposed, of either kind, is CERTIFIED, and no model claim differs from its decided reference but in the print of an equal bar',
+   f'{PREC["summary"]["proposals"]} claims')
 ROW = {r['id']: r for r in PR.rows_of('riemann-ai')}
 S5, S6, S1 = ROW['5/tweet/45']['text'], ROW['6/tweet/55']['text'], ROW['1/paper/0']['text']
 HEADP = 'source P = ../claimbox/corpus/riemann/ai-phrasings.md\ndata   s = ../claimbox/corpus/riemann/zeta23/mt-series.json\nread   s as integers\n' \

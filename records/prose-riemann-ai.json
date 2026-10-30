@@ -3,9 +3,10 @@
  "corpus": "riemann-ai",
  "summary": {
   "sentences": 80,
-  "proposals": 2,
+  "proposals": 52,
   "byKind": {
-   "grammar": 2
+   "grammar": 2,
+   "model:claude-opus-5-5": 50
   },
   "perKind": {
    "grammar": {
@@ -14,17 +15,31 @@
     "holes": 78,
     "faithful": 2,
     "unfaithful": 0,
+    "sameValueOtherPrint": 0,
+    "noReference": 0,
     "plantedHeld": 2,
     "plantedBroke": 0
+   },
+   "model:claude-opus-5-5": {
+    "proposed": 80,
+    "compiled": 50,
+    "holes": 30,
+    "faithful": 40,
+    "unfaithful": 0,
+    "sameValueOtherPrint": 1,
+    "noReference": 9,
+    "plantedHeld": 38,
+    "plantedBroke": 1
    }
   },
-  "anchored": 2,
-  "printedBack": 2,
-  "planted": 2,
-  "faithful": 2,
+  "anchored": 50,
+  "printedBack": 45,
+  "planted": 40,
+  "faithful": 42,
   "unfaithful": 0,
-  "validated": 0,
-  "notStated": 78
+  "sameValueOtherPrint": 1,
+  "validated": 2,
+  "notStated": 30
  },
  "sentences": [
   {
@@ -40,9 +55,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_paper_0",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-paper-0",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-paper-0  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/abstract/1",
@@ -57,9 +108,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_abstract_1",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-abstract-1",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-abstract-1  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/readme/2",
@@ -74,9 +161,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_readme_2",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-readme-2",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/docstring/3",
@@ -91,9 +214,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_docstring_3",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-docstring-3",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/blog/4",
@@ -108,9 +267,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_blog_4",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-blog-4",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails printedBack"
   },
   {
    "id": "1/tweet/5",
@@ -125,9 +320,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_tweet_5",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The bar 'about 0.824' is an approximate number, not an exact printed value."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: approximate, prose"
   },
   {
    "id": "1/referee/6",
@@ -142,9 +347,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_referee_6",
+     "statement": null,
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence says it is unclear whether the bound 0.82395317 applies to D(1) or to |D(1)|, so the relation can be read two ways."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: ambiguous, prose"
   },
   {
    "id": "1/assistant/7",
@@ -159,9 +374,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_assistant_7",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-assistant-7",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-assistant-7  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/paper/8",
@@ -176,9 +427,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_paper_8",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "m-1-paper-8",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-1-paper-8  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails printedBack"
   },
   {
    "id": "1/assistant/9",
@@ -193,9 +480,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_1_assistant_9",
+     "statement": "D(1) < 0.82395317",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"D(1)\" has no primitive expression here: a decider path is needed, and none was given"
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: decider, prose"
   },
   {
    "id": "2/paper/10",
@@ -210,9 +507,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_paper_10",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-paper-10",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "2/abstract/11",
@@ -227,9 +554,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_abstract_11",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-abstract-11",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-abstract-11  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "2/readme/12",
@@ -244,9 +601,39 @@
       "hole": "unbounded",
       "why": "a universal quantifier with no finite bound"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_readme_12",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-readme-12",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-readme-12  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: unbounded"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "2/docstring/13",
@@ -261,9 +648,39 @@
       "hole": "ambiguous",
       "why": "two relations in one claim: < and <"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_docstring_13",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-docstring-13",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": false,
+     "printedBack": false,
+     "planted": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: ambiguous"
+   "outcome": "refused: a proposal fails anchored, printedBack"
   },
   {
    "id": "2/blog/14",
@@ -278,9 +695,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_blog_14",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-blog-14",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-blog-14  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails printedBack"
   },
   {
    "id": "2/tweet/15",
@@ -290,6 +737,16 @@
    "proposals": [
     {
      "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_tweet_15",
+     "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
      "refused": {
       "rule": "prose",
       "hole": "prose",
@@ -312,6 +769,16 @@
       "hole": "ambiguous",
       "why": "two relations in one claim: < and <="
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_referee_16",
+     "statement": null,
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence gives the bound on |256·S(j) − j| both as strict (<) and non-strict (≤), so the relation can be read two ways."
+     }
     }
    ],
    "outcome": "not stated: ambiguous"
@@ -329,9 +796,39 @@
       "hole": "unbounded",
       "why": "a universal quantifier with no finite bound"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_assistant_17",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-assistant-17",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: unbounded"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "2/paper/18",
@@ -346,9 +843,39 @@
       "hole": "unbounded",
       "why": "a universal quantifier with no finite bound"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_paper_18",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "m-2-paper-18",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: unbounded"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "2/blog/19",
@@ -363,9 +890,46 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_2_blog_19",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+     "object": "m-2-blog-19",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.0000000000000000000000000000000000000003",
+        "3/10000000000000000000000000000000000000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": false,
+     "sameValue": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-2-blog-19  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.007 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/paper/20",
@@ -380,9 +944,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_paper_20",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-paper-20",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-paper-20  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/abstract/21",
@@ -397,9 +991,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_abstract_21",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-abstract-21",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-abstract-21  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/readme/22",
@@ -414,9 +1038,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_readme_22",
+     "statement": "c256 < 2.5431316e-6",
+     "object": "m-3-readme-22",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-readme-22  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/docstring/23",
@@ -431,9 +1085,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_docstring_23",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-docstring-23",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": false,
+     "printedBack": false,
+     "planted": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-docstring-23  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails anchored, printedBack"
   },
   {
    "id": "3/blog/24",
@@ -448,9 +1132,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_blog_24",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-blog-24",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-blog-24  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails printedBack"
   },
   {
    "id": "3/tweet/25",
@@ -465,9 +1179,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_tweet_25",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-tweet-25",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-tweet-25  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/referee/26",
@@ -482,9 +1226,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_referee_26",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-referee-26",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-referee-26  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails printedBack"
   },
   {
    "id": "3/assistant/27",
@@ -499,9 +1273,39 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_assistant_27",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "m-3-assistant-27",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-assistant-27  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/abstract/28",
@@ -516,9 +1320,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_abstract_28",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence gives only an approximate value ('about') for c256, not an exact or ellipsis-truncated print."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: approximate, prose"
   },
   {
    "id": "3/assistant/29",
@@ -533,9 +1347,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_3_assistant_29",
+     "statement": "c256 < 0.0000025431316",
+     "object": "m-3-assistant-29",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "lt",
+        "0.0000025431316",
+        "6357829/2500000000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-3-assistant-29  []  from the object: CERTIFIED value 390625000000000000000000000000…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "4/paper/30",
@@ -550,9 +1400,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_paper_30",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, source"
   },
   {
    "id": "4/abstract/31",
@@ -567,9 +1427,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_abstract_31",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, source"
   },
   {
    "id": "4/readme/32",
@@ -584,9 +1454,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_readme_32",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, source"
   },
   {
    "id": "4/docstring/33",
@@ -601,9 +1481,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_docstring_33",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, source"
   },
   {
    "id": "4/blog/34",
@@ -618,9 +1508,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_blog_34",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, source"
   },
   {
    "id": "4/tweet/35",
@@ -635,9 +1535,17 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "refused": {
+      "rule": "syntax",
+      "hole": "syntax",
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"10909258999421303588095230195816054408197/(16·10³⁹)\""
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, syntax"
   },
   {
    "id": "4/referee/36",
@@ -651,6 +1559,16 @@
       "rule": "prose",
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_referee_36",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence asks whether p₀ equals the fraction and whether a bound is strict, so it asserts no claim."
      }
     }
    ],
@@ -669,9 +1587,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_assistant_37",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, source"
   },
   {
    "id": "4/blog/38",
@@ -686,9 +1614,19 @@
       "hole": "approximate",
       "why": "an approximation sign is not a claim"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_blog_38",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
-   "outcome": "not stated: approximate"
+   "outcome": "not stated: approximate, source"
   },
   {
    "id": "4/paper/39",
@@ -703,9 +1641,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_4_paper_39",
+     "statement": "p₀ ≤ 0.6818287",
+     "object": "m-4-paper-39",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.6818287",
+        "6818287/10000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-4-paper-39  []  from the object: CERTIFIED value 109092589994213035880952301958…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/paper/40",
@@ -720,9 +1694,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_paper_40",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-paper-40",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-paper-40  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/abstract/41",
@@ -737,9 +1747,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_abstract_41",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-abstract-41",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-abstract-41  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/readme/42",
@@ -754,9 +1800,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_readme_42",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-readme-42",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-readme-42  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/docstring/43",
@@ -771,9 +1853,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_docstring_43",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-docstring-43",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-docstring-43  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/blog/44",
@@ -788,9 +1906,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_blog_44",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The value is given only as 'about 0.7533', an approximate figure rather than an exact or truncated print."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: approximate, prose"
   },
   {
    "id": "5/tweet/45",
@@ -830,10 +1958,46 @@
      "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached"
+     "certMachine": "ADMITTED  p-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_tweet_45",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-tweet-45",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "validated"
   },
   {
    "id": "5/referee/46",
@@ -848,9 +2012,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_referee_46",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-referee-46",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-referee-46  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/assistant/47",
@@ -865,9 +2065,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_assistant_47",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-assistant-47",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/paper/48",
@@ -882,9 +2118,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_paper_48",
+     "statement": "c₁* = 0.7532960…",
+     "object": "m-5-paper-48",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "5/tweet/49",
@@ -898,6 +2170,16 @@
       "rule": "approximate",
       "hole": "approximate",
       "why": "an approximation sign is not a claim"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_5_tweet_49",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The value of c₁* is given only approximately (≈ 0.753296), with no exact or cut-off bar."
      }
     }
    ],
@@ -916,9 +2198,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_paper_50",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-paper-50",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-paper-50  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/abstract/51",
@@ -933,9 +2251,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_abstract_51",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-abstract-51",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": false,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-abstract-51  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "refused: a proposal fails planted"
   },
   {
    "id": "6/readme/52",
@@ -950,9 +2304,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_readme_52",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-readme-52",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-readme-52  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/docstring/53",
@@ -967,9 +2357,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_docstring_53",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-docstring-53",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-docstring-53  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/blog/54",
@@ -984,9 +2410,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_blog_54",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-blog-54",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-blog-54  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/tweet/55",
@@ -1027,9 +2489,45 @@
      "faithful": true,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_tweet_55",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-tweet-55",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "validated"
   },
   {
    "id": "6/referee/56",
@@ -1044,9 +2542,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_referee_56",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-referee-56",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-referee-56  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/assistant/57",
@@ -1061,9 +2595,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_assistant_57",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-assistant-57",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-assistant-57  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/paper/58",
@@ -1078,9 +2648,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_paper_58",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "m-6-paper-58",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-6-paper-58  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "6/readme/59",
@@ -1094,6 +2700,16 @@
       "rule": "approximate",
       "hole": "approximate",
       "why": "an approximation sign is not a claim"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_6_readme_59",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The value is given with ≈, so it is approximate rather than an exact or truncated print."
      }
     }
    ],
@@ -1112,9 +2728,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_paper_60",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-paper-60",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-paper-60  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/abstract/61",
@@ -1129,9 +2781,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_abstract_61",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-abstract-61",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-abstract-61  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/readme/62",
@@ -1146,9 +2834,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_readme_62",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-readme-62",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-readme-62  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/docstring/63",
@@ -1163,9 +2887,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_docstring_63",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-docstring-63",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-docstring-63  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/blog/64",
@@ -1180,9 +2940,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_blog_64",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-blog-64",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-blog-64  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/tweet/65",
@@ -1197,9 +2993,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_tweet_65",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-tweet-65",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-tweet-65  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/referee/66",
@@ -1214,9 +3046,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_referee_66",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-referee-66",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-referee-66  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/assistant/67",
@@ -1231,9 +3099,45 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_assistant_67",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "m-7-assistant-67",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-7-assistant-67  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "7/paper/68",
@@ -1243,6 +3147,16 @@
    "proposals": [
     {
      "kind": "grammar",
+     "refused": {
+      "rule": "data",
+      "hole": "data",
+      "why": "no array in the published bytes"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_paper_68",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
      "refused": {
       "rule": "data",
       "hole": "data",
@@ -1265,6 +3179,16 @@
       "hole": "approximate",
       "why": "an approximation sign is not a claim"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_7_blog_69",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The value 0.836 is given only approximately ('approximately'), so there is no exact bar to check against."
+     }
     }
    ],
    "outcome": "not stated: approximate"
@@ -1282,9 +3206,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_paper_70",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "A zero-free region for every Dirichlet L-function is a claim about all cases, and no finite check decides it."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/abstract/71",
@@ -1299,9 +3233,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_abstract_71",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "A zero-free region claim for every Dirichlet L-function is a theorem that no finite check over the data decides."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/readme/72",
@@ -1316,9 +3260,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_readme_72",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "A zero-free region for all Dirichlet L-functions is a statement about infinitely many cases that no finite check over the data decides."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/docstring/73",
@@ -1333,9 +3287,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_docstring_73",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence is a theorem about all nontrivial zeros of zeta (a density statement over infinitely many zeros), which no finite check over the given data decides."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/blog/74",
@@ -1350,9 +3314,19 @@
       "hole": "quantity",
       "why": "no printed quantity in the claim"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_blog_74",
+     "statement": null,
+     "refused": {
+      "rule": "asymptotic",
+      "hole": "asymptotic",
+      "why": "A proportion of all nontrivial zeta zeros is a limiting density as the height grows, which no finite check over the given data decides."
+     }
     }
    ],
-   "outcome": "not stated: quantity"
+   "outcome": "not stated: asymptotic, quantity"
   },
   {
    "id": "8/tweet/75",
@@ -1367,9 +3341,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_tweet_75",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "A zero-free region for every Dirichlet L-function is a statement about all cases that no finite check over the data decides."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/referee/76",
@@ -1384,9 +3368,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_referee_76",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence concerns a theorem about the infinitely many zeros of ζ, which no finite check of the data can decide."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/assistant/77",
@@ -1401,9 +3395,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_assistant_77",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The leading claim is a zero-free region for every Dirichlet L-function, which no finite check can decide."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/paper/78",
@@ -1418,9 +3422,19 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_paper_78",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "A proportion claim over infinitely many zeta zeros is a theorem that no finite check of the given data decides."
+     }
     }
    ],
-   "outcome": "not stated: prose"
+   "outcome": "not stated: prose, unbounded"
   },
   {
    "id": "8/tweet/79",
@@ -1435,9 +3449,19 @@
       "hole": "ambiguous",
       "why": "two relations in one claim: >= and >="
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_8_tweet_79",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states theorems about all L-functions and the proportion of zeta zeros, which no finite check of the data can decide."
+     }
     }
    ],
-   "outcome": "not stated: ambiguous"
+   "outcome": "not stated: ambiguous, unbounded"
   }
  ]
 }

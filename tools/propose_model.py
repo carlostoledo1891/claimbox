@@ -193,7 +193,24 @@ def main(argv):
         print('sign in with `ant auth login`, or export ANTHROPIC_API_KEY, then run this again')
         return 2
     ledger = Ledger(a.cap)
+    try:
+        return run(a, cfg, rows, client, ledger)
+    finally:
+        save_ledger(a, ledger)
 
+
+def save_ledger(a, ledger):
+    rec = {'what': 'every call tools/propose_model.py made for ' + a.corpus + ': the sentence it was for (its id; "planted" for the copy with the bar '
+                   'moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer',
+           'model': MODEL, 'effort': 'high', 'cap': a.cap, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
+           'prices': PRICE, 'entries': sorted(ledger.calls, key=lambda e: e['tag'])}
+    with open(os.path.join(REPO, 'records', 'model-proposals-' + a.corpus + '.json'), 'w', encoding='utf-8') as f:
+        json.dump(rec, f, indent=1, ensure_ascii=False)
+        f.write('\n')
+    print(f'{len(ledger.calls)} calls, ${ledger.spent:.4f} of ${a.cap:.2f}' + (' — stopped at the cap' if ledger.stopped else ''))
+
+
+def run(a, cfg, rows, client, ledger):
     def data_for(row):
         path = cfg['context'][row['claim']][0]
         return os.path.basename(path) if path else 'LawN256.encl.json'      # a theorem's sentence is offered the law's names
@@ -204,7 +221,7 @@ def main(argv):
         for r in rows:
             ans = (first[r['id']] or {}).get('answer') or {}
             p = bar_of(ans.get('statement') or '')
-            if p and p in r['text'] and p[-1].isdigit():
+            if p and p in r['text'] and prose.plantable(p):
                 mutated, moved = prose.plant_digit(r['text'], p)
                 planted_jobs.append((r, mutated, moved))
         planted = dict(zip([j[0]['id'] for j in planted_jobs],
@@ -233,14 +250,6 @@ def main(argv):
     with open(os.path.join(REPO, cfg['proposals'].replace('.claim', '.planted.claim')), 'w', encoding='utf-8') as f:
         f.write(head.replace('one proposal per sentence', 'the planted run: each sentence with its bar\'s last digit moved, asked again alone')
                 + blocks(planted, {j[0]['id']: j[1] for j in planted_jobs}))
-    rec = {'what': 'every call tools/propose_model.py made for ' + a.corpus + ': the sentence it was for (its id; "planted" for the copy with the bar '
-                   'moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer',
-           'model': MODEL, 'effort': 'high', 'cap': a.cap, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
-           'prices': PRICE, 'entries': sorted(ledger.calls, key=lambda e: e['tag'])}
-    with open(os.path.join(REPO, 'records', 'model-proposals-' + a.corpus + '.json'), 'w', encoding='utf-8') as f:
-        json.dump(rec, f, indent=1, ensure_ascii=False)
-        f.write('\n')
-    print(f'{len(ledger.calls)} calls, ${ledger.spent:.4f} of ${a.cap:.2f}' + (' — stopped at the cap' if ledger.stopped else ''))
     return 0
 
 

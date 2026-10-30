@@ -147,9 +147,15 @@ def meta_check(meta):
     return bad
 
 
+def zeros(page):
+    """a count printed as 0: WARRANT rule 7 prints an empty set as ∅ and a word (record.val(count=True), record.derived)"""
+    return re.findall(r'<span class="w-val w-decided"[^>]*data-fmt="int"[^>]*>0</span>', page)
+
+
 def findings(page):
     out = [f'host {h}' for h in hosts(page)] + grammar(page) + [f'word "{w}"' for w in words(page)] + legend(page)
     out += [f'a number with no address: {n}' for n in census(page)]
+    out += ['a count printed as a zero' for _ in zeros(page)]
     return out
 
 

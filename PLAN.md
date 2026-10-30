@@ -198,6 +198,15 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r8, 2026-10-30.** The second proposer run: a model, claude-opus-5-5 (tools/propose_model.py, the operator's $20 cap), over
+  the eighty AI phrasings, never shown the grammar's reading, the reference or another proposal. 125 calls, $0.7495 in the ledger
+  (records/model-proposals-riemann-ai.json; a first pass that crashed on a superscript digit cost about $0.50 more and is not in
+  it). It proposed 50 claims and named a hole for 30; of the 50, 40 equal the decided reference field for field, 1 states the
+  same bar printed another way, none differ, 9 have no decided reference; on the moved sentences it moved with the bar in 38
+  runs and not in 1 (it answered with a hole). cert-machine certifies all 52 claims proposed. Validated 2 (5/tweet/45, 6/tweet/55:
+  grammar and model agree); 40 proposed by one kind only; 8 refused — 5 sentences write the relation in words, 2 print the bar in
+  Lean's notation, both of which the read-back does not read yet, and 1 is the planted break. Next in step 6: the read-back
+  learns a written table of relation words and Lean's numerals (each entry with a red control), then the register's sentences.
 - **r7, 2026-10-30.** Step 6's validator built and its baseline measured (claimbox/prose.py; `python3 -m claimbox prose
   riemann-ai`; records/prose-riemann-ai.json): of the eighty AI phrasings, today's grammar proposes two claims, both anchored,
   printed back, moving under a planted bar, equal to the decided reference and certified; none validated, because validation

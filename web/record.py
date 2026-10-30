@@ -61,7 +61,9 @@ def _span(text, standing, attrs):
     return f'<span class="{cls}" data-w="{standing}"{a} title="{html.escape(GLOSS[standing], quote=True)}">{html.escape(text)}</span>'
 
 
-def val(path, ptr, how='int', standing='decided'):
+def val(path, ptr, how='int', standing='decided', count=False):
+    if count and at(path, ptr) == 0:                       # WARRANT rule 7, as derived() keeps it: ∅ and a word, never a zero
+        return _span('none', 'refused', {'data-rec': f'{path}#{ptr}', 'data-fmt': 'none'})
     return _span(fmt(at(path, ptr), how), standing, {'data-rec': f'{path}#{ptr}', 'data-fmt': how})
 
 
@@ -161,6 +163,7 @@ DERIVED = {
     'expected': lambda jobs, run: expected(jobs, run),
     'jobs': lambda jobs: len(load(jobs)['jobs']),
     'outcomes': lambda path, prefix: sum(1 for e in load(path)['sentences'] if e['outcome'].startswith(prefix)),
+    'proposalWords': lambda path, w: sum(1 for e in load(path)['sentences'] for p in e['proposals'] if p.get('word') == w),
 }
 
 
@@ -188,7 +191,8 @@ def recheck(page):
         try:
             if 'data-rec' in a:
                 path, ptr = a['data-rec'].split('#', 1)
-                want = fmt(at(path, ptr), a.get('data-fmt', 'int'))
+                v = at(path, ptr)
+                want = ('none' if v == 0 else str(v)) if a.get('data-fmt') == 'none' else fmt(v, a.get('data-fmt', 'int'))
             elif 'data-derived' in a:
                 v = DERIVED[a['data-derived']](*a['data-in'].split('|'))
                 if a.get('data-fmt') == 'none':

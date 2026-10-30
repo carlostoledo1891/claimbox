@@ -20,6 +20,8 @@ AI_EDGE = '1~1abstract~11'            # the same claim, as an AI-written abstrac
 BOOT = 'riemann-104-boot'             # a machine claim from the cryptids release
 FORK = 'records/fork-605.json'        # one file, two readings, both decided (LANGUAGE.md E16)
 PROSE = 'records/prose-riemann-ai.json'  # from prose to claims: the AI phrasings, proposed and validated
+MODEL = 'records/model-proposals-riemann-ai.json'  # every call the model proposer made, its tokens and its cost
+MK = '/summary/perKind/model:claude-opus-5-5'
 
 RUNS = [
     ('records/einstein-arena-run.json', "EinsteinArena's best solutions"),
@@ -119,8 +121,15 @@ def slots():
         'boot_word': derived('word', CRY, BOOT), 'cry_sha': derived('sha12', CRY),
         'runs': runs_table(), 'misses': misses(),
         'pr_n': val(PROSE, '/summary/sentences'), 'pr_made': val(PROSE, '/summary/proposals'), 'pr_valid': derived_count(PROSE, 'validated'),
-        'pr_not': val(PROSE, '/summary/notStated'), 'pr_prose': derived('outcomes', PROSE, 'not stated: prose'),
-        'pr_approx': derived('outcomes', PROSE, 'not stated: approximate'), 'pr_unb': derived('outcomes', PROSE, 'not stated: unbounded'),
+        'pr_not': val(PROSE, '/summary/notStated'), 'pr_one': derived_count(PROSE, 'proposed, not validated: one kind'),
+        'pr_ref': derived_count(PROSE, 'refused'), 'pr_rw': derived_count(PROSE, 'refused: a proposal fails printedBack'),
+        'pr_rl': derived_count(PROSE, 'refused: a proposal fails anchored, printedBack'), 'pr_rp': derived_count(PROSE, 'refused: a proposal fails planted'), 'pr_cert': derived('proposalWords', PROSE, 'CERTIFIED'),
+        'pr_g': val(PROSE, '/summary/perKind/grammar/compiled'), 'pr_m': val(PROSE, MK + '/compiled'),
+        'pr_mh': val(PROSE, MK + '/holes'), 'pr_mf': val(PROSE, MK + '/faithful'), 'pr_ms': val(PROSE, MK + '/sameValueOtherPrint', count=True),
+        'pr_mn': val(PROSE, MK + '/noReference', count=True), 'pr_mu': val(PROSE, MK + '/unfaithful', count=True),
+        'pr_mph': val(PROSE, MK + '/plantedHeld'), 'pr_mpb': val(PROSE, MK + '/plantedBroke', count=True),
+        'm_id': val(MODEL, '/model', 'raw', standing='computed'), 'm_calls': val(MODEL, '/calls'),
+        'm_spent': val(MODEL, '/spent', 'raw', standing='computed'), 'm_cap': val(MODEL, '/cap', standing='computed'),
         'fork_sha': derived('sha12', FORK), 'fork_stmt': val(FORK, '/claims/0/statement', 'raw'), 'fork_n': val(FORK, '/claims/0/readings/0/count'),
         **{f'fork_r{i}': val(FORK, f'/claims/0/readings/{i}/reading', 'raw') for i in (0, 1)},
         **{f'fork_w{i}': fork_chip(i) for i in (0, 1)},

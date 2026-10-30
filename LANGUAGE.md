@@ -224,8 +224,9 @@ proposal reaches levels:
 anchored      every number the compiled object prints is printed in the sentence, and the sentence in the source
 printed back  the object's bar and relation read back as the sentence prints them (a print cut off with "…" reads back as
               "= p…", never as "≥ p")
-planted       for a proposer that can be re-run (today's grammar): the sentence with its bar's last digit moved makes the
-              proposer move the object's bar exactly so, and nothing else that bears on the decision
+planted       the sentence with its bar's last digit moved makes the proposer move the object's bar exactly so, and nothing
+              else that bears on the decision (the grammar is re-run; a file proposer writes its run on the moved sentences
+              beside its proposals, <corpus>.planted.claim, and its statement there must be its statement with that bar moved)
 concord       a proposer of ANOTHER kind compiles the sentence to an object equal on every decision-bearing field
 ```
 
@@ -233,8 +234,11 @@ A sentence is validated only at concord, with every proposal anchored, printed b
 models agreeing count as one kind (agreement is not independence: Knight & Leveson 1986; Kim et al. 2025). Today's grammar
 proposes by itself; a person's or a model's proposals enter through the corpus's proposals file (corpus/proposals/<corpus>.
 claim), each claim quoting the sentence it reads and saying who proposed it. claimbox calls no model: a model proposer is a
-program that writes that file. Faithfulness to the author is not established by any of this; against a decided reference
-object it is measured — the decision-bearing fields equal — never judged.
+program that writes that file (tools/propose_model.py is one). Faithfulness to the author is not established by any of this;
+against a decided reference object it is measured — the decision-bearing fields equal — never judged; a proposal that differs
+from the reference only in how an equal bar is printed (0.000…3 for 3·10⁻⁴⁰) is counted apart, as the same value printed
+another way. A relation written only in words, or a bar printed in Lean's notation (`3 * 10 ^ (-40 : ℤ)`), does not read back
+yet: the proposal is refused at that level, never read by guess.
 
 ## 10 · The object
 
