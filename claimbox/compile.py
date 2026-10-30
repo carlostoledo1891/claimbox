@@ -151,9 +151,53 @@ def lower(tree, c):
     return out
 
 
+def resolve(tree, c, readings):
+    """the library's definitions a claim uses, each checked: in the library, at the version the file names, with a route to
+    the checker, over a reading it takes — or Refusal. A statement form (a kissing configuration, a platform's score, a machine
+    statement) resolves to its definition too."""
+    from . import library as LIB
+    uses = {i['name']: i['version'] for i in tree['items'] if i['kw'] == 'use'}
+    defines = {i['name'] for i in tree['items'] if i['kw'] == 'define'}
+    _, data, _ = _decls(tree)
+    s = c['stmt']
+    body = s[3] if s[0] == 'forall' else s
+    names = set()
+    for t in lang.terms_of(s):
+        names |= lang.names_in(t, set())
+    names -= lang.bound_vars(s, set()) | set(data)
+    found = []
+    for n in sorted(names):
+        if n in defines:
+            raise Refusal('decider', f'{n} is defined in this file only: a local definition has no route to the checker until it enters the library')
+        e = LIB.lookup(n)
+        if e is None:
+            raise Refusal('definition', f'{n} is not in the library (python3 -m claimbox library lists what is)')
+        if uses.get(n) != e['version']:
+            raise Refusal('definition', f'the library has {n} {e["version"]}; this file uses {n} {uses.get(n)}')
+        found.append((n, e))
+    if body[0] == 'config':
+        found.append(('kissing configuration', LIB.lookup('kissing configuration')))
+    elif body[0] == 'score':
+        e = LIB.platform(body[2])
+        if e is None:
+            raise Refusal('decider', f'the library has no definition of the platform\'s "{body[2]}"')
+        found.append((body[2], e))
+    elif body[0] == 'machine':
+        found.append((body[1]['kind'], LIB.lookup(body[1]['kind'])))
+    for n, e in found:
+        if e['route'] is None:
+            raise Refusal('decider', f'{n} has no route to the checker yet: ' + '; '.join(e['conventions']))
+        if not e.get('statement'):
+            bad = [r for r in readings if r not in e['readings']]
+            if bad:
+                raise Refusal('reading', f'{n} takes {", ".join(e["readings"])}; the claim reads its bytes as {", ".join(bad)}')
+    return found
+
+
 def compile_claim(tree, c, root):
     out = []
     jobs = lower(tree, c)
+    definitions = resolve(tree, c, [r for r, _ in jobs])
     for reading, job in jobs:
         obj_id = job['id'] + ('-' + reading if len(jobs) > 1 else '')
         obj = T.translate(job['claim'], root, job['source'], job['data'], decider=job.get('decider'), record=job.get('record'),
@@ -164,7 +208,7 @@ def compile_claim(tree, c, root):
             if 'halfWidth' not in box or Fraction(box['halfWidth']) != grammar.exact(body[3][1]):
                 raise Refusal('resolution', f'the claim says within {body[3][1]}; the platform declares '
                               + (str(Fraction(box['halfWidth'])) if 'halfWidth' in box else 'no resolution'))
-        out.append({'reading': reading, 'job': job, 'object': obj})
+        out.append({'reading': reading, 'job': job, 'object': obj, 'definitions': definitions})
     return out
 
 
@@ -248,15 +292,10 @@ def _sha(root, path):
         return 'not on disk'
 
 
-def rests_on(obj, root, tree=None, c=None):
+def rests_on(obj, root, definitions=()):
     out = [f'the bytes  {obj["domain"]["pin"]["path"]} @ {obj["domain"]["pin"]["sha256"][:12]}',
            f'the source {obj["source"]["path"]} @ {obj["source"]["sha256"][:12]}']
-    if tree is not None and c is not None:
-        uses = {i['name']: i['version'] for i in tree['items'] if i['kw'] == 'use'}
-        names = set()
-        for t in lang.terms_of(c['stmt']):
-            names |= lang.names_in(t, set())
-        out += [f'definition {n} {uses[n]}' for n in sorted(names) if n in uses]
+    out += [f'definition {n} {e["version"]} (claimbox/library/{e["file"]})' for n, e in definitions]
     if obj.get('record'):
         r = obj['record']
         out.append(f'the record {r["path"]} @ {_sha(root, r["path"])}, row {r["row"]}')
@@ -282,7 +321,7 @@ def check(tree, root, run=False):
             if run:
                 line = T.check_with_cert_machine(obj, root)
                 out.append('  word      ' + line[:200] + '   (cert-machine)')
-            out += ['  rests on  ' + ln for ln in rests_on(obj, root, tree, c)]
+            out += ['  rests on  ' + ln for ln in rests_on(obj, root, k['definitions'])]
         if c['expect']:
             out.append(f'  expect    {c["expect"]}')
     return '\n'.join(out) + '\n'

@@ -9,6 +9,7 @@
   lang FILE.claim [--canonical]                    the language (LANGUAGE.md): each claim in plain words, its kind, its fork and its source;
                                                    --canonical prints the file back as the printer writes it; a malformed file is REFUSED with the rule
   check FILE.claim [--run]                         each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
+  library                                          every definition a claim may use: its names, version, readings, conventions and route
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -62,7 +63,12 @@ def main(argv=None):
     ck = sub.add_parser('check')
     ck.add_argument('file')
     ck.add_argument('--run', action='store_true')
+    sub.add_parser('library')
     a = ap.parse_args(argv)
+    if a.cmd == 'library':
+        from . import library
+        sys.stdout.write(library.listing())
+        return 0
     if a.cmd == 'check':
         from . import lang, compile as C
         try:

@@ -643,5 +643,65 @@ line = 'ADMITTED  x  []  from the object: CERTIFIED value 1/2 · CERTIFIED · RE
 red(outcome({'certMachine': line}) == 'refuted', 'the page\'s counter: a REFUTED printed after a CERTIFIED makes the object refuted (it was counted certified until 2026-10-30)',
     outcome({'certMachine': line}))
 
+# ---- 8 · the library (claimbox/library/, roadmap step 4) ----------------------------------------------------------------
+# every job of every jobs file translates to the object it translated to when the definitions moved into the library, byte for
+# byte (records/library-identity.json: a sha256 per job; a definition changes only with a new version and WRITE=1); every
+# definition the translator knows is in the registry with its version, readings, conventions and route; every `use` of
+# LANGUAGE.md resolves at its version; and a claim the library cannot back is refused with the rule
+import hashlib  # noqa: E402
+from claimbox import library as LIB  # noqa: E402
+
+
+def job_digests():
+    out = {}
+    for f in sorted(os.listdir(os.path.join(REPO, 'corpus'))):
+        if not (f.endswith('-jobs.json') or f == 'calibration.json'):
+            continue
+        d = json.load(open(os.path.join(REPO, 'corpus', f), encoding='utf-8'))
+        for j in (d['jobs'] if isinstance(d, dict) else d):
+            if j.get('skipped') or 'claim' not in j or 'data' not in j:
+                continue
+            try:
+                o = T.translate(j['claim'], ROOT, j['source'], j['data'], decider=j.get('decider'), record=j.get('record'), reading=j.get('reading', 'universal'),
+                                name=j.get('name'), elements=j.get('elements'), obj_id=j.get('id'), what=j.get('what'), quote=j.get('quote'), other=j.get('other'))
+            except Refusal as e:
+                o = {'refused': e.rule, 'msg': e.msg}
+            out[f + ':' + str(j.get('id'))] = hashlib.sha256(json.dumps(o, ensure_ascii=False, sort_keys=True).encode('utf-8')).hexdigest()
+    return out
+
+
+IDP = os.path.join(REPO, 'records', 'library-identity.json')
+dig = job_digests()
+if WRITE:
+    with open(IDP, 'w', encoding='utf-8') as f:
+        json.dump({'what': 'the sha256 of the object (or the refusal) the translator writes for every job of corpus/*-jobs.json and corpus/calibration.json, '
+                           'taken when the definitions moved into claimbox/library/ (2026-10-30): a definition changes only with a new version, and the '
+                           'battery holds every object to this byte for byte', 'jobs': len(dig), 'objects': dig}, f, indent=1, sort_keys=True)
+        f.write('\n')
+held = json.load(open(IDP, encoding='utf-8'))['objects']
+moved = sorted(k for k in set(held) | set(dig) if held.get(k) != dig.get(k))
+ok(not moved, 'library: every job translates to the object it did when the definitions moved into the library, byte for byte', ', '.join(moved[:6]) or f'{len(dig)} jobs')
+want = set(T.PRIMITIVE) | set(T.PLATFORM) | {n for e in T.CERTIFICATE.values() for n in e['keys']} | set(lang.MACHINE_FMT) | {'kissing configuration'}
+have = {n for e in LIB.ENTRIES for n in e['names']}
+fields_ok = all(set(e) >= {'names', 'version', 'file', 'what', 'readings', 'route', 'conventions'} and re.fullmatch(r'v\d+', e['version']) for e in LIB.ENTRIES)
+ok(want <= have and fields_ok, 'library: every definition the translator knows is in the registry with its version, readings, conventions and route',
+   ', '.join(sorted(want - have)) or f'{len(LIB.ENTRIES)} definitions')
+unresolved = []
+for label, block in EX:
+    for i in lang.parse(block)['items']:
+        if i['kw'] == 'use' and (LIB.lookup(i['name']) is None or LIB.lookup(i['name'])['version'] != i['version']):
+            unresolved.append(f'{label} {i["name"]} {i["version"]}')
+ok(not unresolved, 'library: every `use` in LANGUAGE.md resolves to a definition at its version', ', '.join(unresolved) or 'all')
+LREDS = [
+    ('definition', 'a quantity the library does not have', EXD['E2'].replace('use    C_1b v1', 'use    C_9z v1').replace('C_1b(h)', 'C_9z(h)'), 'c1b_upper'),
+    ('definition', 'a definition at a version the library does not have', EXD['E2'].replace('use    C_1b v1', 'use    C_1b v2'), 'c1b_upper'),
+    ('reading', 'a platform\'s score read another way than its verifier reads it', EXD['E9'].replace('read   c as doubles', 'read   c as decimals'), 'packing_26'),
+    ('decider', 'a definition with no route to the checker in a claim to decide now', EXD['E20'].replace(': for every d : P*(d) ≤ 0.86864150053', ': P*(20) ≤ 0.86864150053').replace('claim  ceiling', 'claim  ceiling over w').replace('use    P* v1', 'data   w = ../claimbox/corpus/riemann/zeta23/xi-o20k15.json\nread   w as rationals\nuse    P* v1'), 'ceiling'),
+    ('decider', 'a quantity defined only in the file', EXD['E2'].replace('use    C_1b v1', 'define C_1b(h) = h'), 'c1b_upper'),
+]
+for rule, what, text, cid in LREDS:
+    got = compile_refusal(text, cid)
+    red(got == rule, 'library: refused — ' + what, got)
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

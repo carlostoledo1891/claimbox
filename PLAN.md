@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 4, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 5, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -128,8 +128,8 @@ The landing page renders this table. Status words: `built`, `next`, `planned`, `
 | 1 | The language, written down | LANGUAGE.md: the syntax, readings, holes, forks, the print-back, the object, and examples, each a claim already decided | every shape today's grammar reads and every rule it refuses with has its construct (a battery check); each claim's round trip is step 2's | built |
 | 2 | Read it and print it back | a parser that rejects malformed claims with a reason, and the plain-words printer | every example round-trips; planted malformed claims are rejected | built |
 | 3 | Compile and check | claim, object, cert-machine's word, and what it rests on | the same words cert-machine gives today, claim for claim | built |
-| 4 | The library | the definitions written once: kissing, the autocorrelation constants, the platform scores, the Riemann functionals, machine runs, each with its conventions | identical objects to today's | next |
-| 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | planned |
+| 4 | The library | the definitions written once: kissing, the autocorrelation constants, the platform scores, the Riemann functionals, machine runs, each with its conventions | identical objects to today's | built |
+| 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | next |
 | 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | planned |
 | 7 | Helpers and watchers | tighten, attack, fill; watchers for "for all" claims that report how far they searched | every proposal is decided by cert-machine; planted twins halt where predicted | research |
 | 8 | Documents that build | a report whose numbers are claims: it does not build when one is refuted, and each number shows what it rests on | one existing report rebuilt this way | planned |
@@ -149,8 +149,8 @@ unbounded quantifier written as bounded). Done when every example round-trips by
 **Step 3 — compile and check.** `claimbox/compile.py`: tree → object (today's format). Calibration: the words for every
 claim of every run record equal today's. `python3 -m claimbox check FILE.claim`.
 
-**Step 4 — the library.** `library/` (one file per definition: its expression, its conventions, its decider route, its
-version). The functionals hard-coded in translate.py move here with identical objects. The library states its
+**Step 4 — the library (built).** `claimbox/library/` (one file per family: its expressions, its conventions, its decider
+route, its version; the registry in `__init__.py`). The functionals hard-coded in translate.py move here with identical objects. The library states its
 totalisation and reading conventions (§4).
 
 **Step 5 — holes and forks.** A refusal carries its hole (the missing quantity, the rule). A fork is one claim with
@@ -198,6 +198,11 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r5, 2026-10-30.** Step 4 built: the definitions moved verbatim from translate.py into claimbox/library/ (step
+  functions, platform scores, kissing, the Riemann certificates, the machine statements), translate.py importing them back; the
+  329 jobs translate to byte-identical objects (records/library-identity.json, held by the battery); the registry lists 132
+  definitions with version, readings, conventions and route; `use NAME vN` resolves at compile time (`python3 -m claimbox
+  library` prints the registry). Step 5, holes and forks, is next.
 - **r4, 2026-10-30.** Step 3 built: claimbox/compile.py lowers each claim to a job for today's translator and prints the
   result back from the compiled object (`python3 -m claimbox check FILE.claim [--run]`); a `record` line attaches a
   cert-machine decision. Calibration: the sixteen example claims that name a record compile to objects equal to today's on

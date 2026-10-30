@@ -74,8 +74,22 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    the platform does not declare, a flipped relation, a watcher, a hole). FOUND BY IT: web/record.py's outcome() read only the
    first word after "from the object:", so the 26-circle packing (REFUTED on non-overlap) was counted certified on the landing
    page's EinsteinArena row; now every word counts (certified 5, refuted 1), with a red control. make test: 438 pass, 0 fail,
-   82/82 reds. NEXT: step 4, the library — the definitions in translate.py (PRIMITIVE, PLATFORM, CERTIFICATE, the machine
-   family) moved to library/ one file each, with identical objects; `use NAME vN` resolved against it.
+   82/82 reds.
+   The vericoding idea saved (notes/vericoding-2026-10-30.md, not adopted; d169e7a).
+   STEP 4 BUILT (on "proceed"): the definitions moved VERBATIM from translate.py (1,007 → 629 lines) into claimbox/library/ —
+   common.py (the shared expression pieces), step_functions.py (PRIMITIVE), einstein_arena.py (PLATFORM), kissing.py,
+   zeta23.py (CERTIFICATE, the ξ′/window/optimality families and ckey), machines.py (the machine statements and tm.py) —
+   translate.py importing them back; every one of the 329 jobs (corpus/*-jobs.json, calibration.json) translated to a
+   byte-identical object before and after, and records/library-identity.json now holds each job's sha256 for the battery (18
+   EinsteinArena objects differ from their run records in the quote only, a translator change older than this session, the same
+   before and after). The registry (claimbox/library/__init__.py, 132 definitions: 4 step functions, 5 platform scores, kissing,
+   101 certificate entries with S and D as aliases of the rows and edge entries, P* with no route yet, 20 machine statements)
+   gives each its names, version v1, readings, conventions and route; compile.py resolves every name a claim uses (refused
+   `definition` when missing or at another version, `decider` when it has no route or is only defined in the file, `reading`
+   when the definition does not take the claim's reading, a platform's score only its verifier's); `python3 -m claimbox
+   library` prints it; `rests on` names each definition with its version and file. LANGUAGE.md §4 rewritten. make test: 446
+   pass, 0 fail, 87/87 reds. NEXT: step 5, holes and forks — every refusal a named hole in the result; a fork's readings each
+   decided and shown, the 605 file's doubles count produced (about a minute of cert-machine).
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 

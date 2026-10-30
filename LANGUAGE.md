@@ -1,6 +1,6 @@
 # LANGUAGE — claimbox, written down
 
-*Roadmap steps 1 to 3 (PLAN.md §7), revision 3, 2026-10-30. The language in which a person or an AI states a claim so
+*Roadmap steps 1 to 4 (PLAN.md §7), revision 4, 2026-10-30. The language in which a person or an AI states a claim so
 that cert-machine can decide it. This file is the specification; claimbox/lang.py reads and prints it (`python3 -m
 claimbox lang FILE.claim`, step 2); claimbox/compile.py compiles it to the object cert-machine reads (`python3 -m
 claimbox check`, step 3).
@@ -114,22 +114,28 @@ which cert-machine decides. `for every VAR there is …` has no machine that hal
 
 ## 4 · The library
 
-A definition is written once and used by name: its expression over the data, the conventions it assumes, the route that
-decides it, its version.
+A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —
+`step_functions.py` (C_1a, C_1b, C_1c, C_1d), `einstein_arena.py` (five platform scores, written from the platform's own
+verifiers), `kissing.py`, `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
+(the machine statements) — and its registry, `claimbox/library/__init__.py`, lists every definition with:
 
 ```
-definition C_1c v1
-  over      w : integers (weights), K : integer (read from the certificate's K field)
-  value     K · min over k in 0..K of (sum over i of w_i · w_{i+k}) / (sum over i of w_i)²
-  decided   from the object (an exact expression over the cells)
-  convention the convolution of two step functions on one grid is piecewise linear; its extremum is at a knot
+names        what a claim may call it (a certificate entry also by its normalised key: J_flat is Jflat)
+version      v1 today; a definition changes only with a new version
+reads        the readings of the bytes it takes (a platform's score only the reading its verifier makes)
+decided      the route to the checker: an exact expression from the object, a named decider, or none yet
+assumes      its conventions: the structural conditions it writes beside the value, the reduction it rests on
 ```
 
-What a definition must state: every reading convention it assumes (digits or doubles; exact or wrapping integers;
-truncated subtraction; x/0), because statements carry their defects in their conventions (Ammanamanchi et al. 2026). A
-definition with no decider route is hole `decider` wherever it is used. Library entries today live as code in
-claimbox/translate.py (PRIMITIVE, PLATFORM, CERTIFICATE, the machine family); step 4 moves them to `library/`, one file each,
-with identical objects.
+`python3 -m claimbox lang` checks a name against the file's own `use` and `define` lines; `python3 -m claimbox check`
+resolves it against the library: a name the library does not have, or has at another version, is refused `definition`; a
+definition with no route to the checker, or one only `define`d in the file, is refused `decider`; a reading the definition
+does not take is refused `reading`. `python3 -m claimbox library` prints the registry. The definitions moved here from
+claimbox/translate.py verbatim; the objects the translator writes for every job are held byte for byte to
+records/library-identity.json, so a definition changes only with a new version.
+
+Every definition must state the reading conventions it assumes (digits or doubles; exact or wrapping integers; truncated
+subtraction; x/0), because statements carry their defects in their conventions (Ammanamanchi et al. 2026).
 
 ## 5 · Readings
 
@@ -491,3 +497,4 @@ appear here.
 | `rule:source` `rule:data` `rule:count` `rule:kissing-count` `rule:decider` `rule:resolution` `rule:reading` `rule:range` | holes (§6) |
 | `rule:unbounded` `rule:asymptotic` `rule:approximate` `rule:ambiguous` `rule:no-quantity` `rule:prose` `rule:empty` | holes (§6) |
 | `rule:watcher` | not a hole: a claim about every case is a watcher or a hunter (§3.2), compiled to nothing until roadmap step 7 |
+| `rule:definition` | a name the library does not have, or has at another version (§4) |
