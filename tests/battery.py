@@ -737,7 +737,7 @@ from claimbox import prose as PR  # noqa: E402
 ok(open(os.path.join(REPO, PR.CORPORA['riemann-ai']['source']), encoding='utf-8').read() == PR.source_text('riemann-ai'),
    'prose: the phrasings\' source is written from their JSON, one per line, byte for byte')
 PREC = json.load(open(os.path.join(REPO, 'records', 'prose-riemann-ai.json'), encoding='utf-8'))
-now = PR.run('riemann-ai', ROOT)
+now = PR.run('riemann-ai', ROOT, words=True)          # with cert-machine's words, sensitivity and vacuity: the whole record
 ok([(e['id'], e['outcome']) for e in now] == [(e['id'], e['outcome']) for e in PREC['sentences']] and PR.summary(now) == PREC['summary'],
    'prose: the run reproduces its record, sentence for sentence', json.dumps(PREC['summary']))
 gp = [p for e in PREC['sentences'] for p in e['proposals'] if 'object' in p and p['kind'] == 'grammar']
@@ -752,8 +752,8 @@ mp = [p for e in PREC['sentences'] for p in e['proposals'] if p['kind'] == 'mode
 ok(len(mp) == len(PREC['sentences']) and PREC['summary']['perKind']['model:' + LEDGER['model']]['proposed'] == len(mp),
    'prose: the model proposed, or named a hole, for every phrasing', f'{len(mp)} of {len(PREC["sentences"])}')
 ok(all(p.get('word') == 'CERTIFIED' for e in PREC['sentences'] for p in e['proposals'] if 'object' in p)
-   and not [p for p in mp if p.get('faithful') is False and not p.get('sameValue')],
-   'prose: every claim proposed, of either kind, is CERTIFIED, and no model claim differs from its decided reference but in the print of an equal bar',
+   and all(p['anchored'] for p in mp if p.get('faithful') is False),
+   'prose: every claim proposed, of either kind, is CERTIFIED, and a model claim that differs from its decided reference states a number its own sentence prints',
    f'{PREC["summary"]["proposals"]} claims')
 ROW = {r['id']: r for r in PR.rows_of('riemann-ai')}
 S5, S6, S1 = ROW['5/tweet/45']['text'], ROW['6/tweet/55']['text'], ROW['1/paper/0']['text']
@@ -805,6 +805,21 @@ try:
 finally:
     PR.grammar_proposal = real
 red(stuck is False, 'prose: refused — a proposer that does not move when the sentence\'s bar is moved', str(stuck))
+# sensitivity and vacuity (run with cert-machine): the record's, then a translation that ignores its bar, and one that ignores its bytes
+SV = PREC['summary']
+ok(SV['sensitivity']['broke'] == 0 and SV['sensitivity']['held'] > 0 and all(
+       p['vacuity']['depends'] == (not e['id'].startswith('3/')) for e in PREC['sentences'] for p in e['proposals'] if p.get('vacuity')),
+   'prose: every claim\'s word moves as the arithmetic says when its bar moves one unit; every claim but the decimal constant\'s depends on its bytes '
+   '(c256 is arithmetic on a library constant: no plant of the file moves it, flagged)', json.dumps(SV['sensitivity']) + ' ' + json.dumps(SV['vacuity']))
+real_rc = PR._recompile
+PR._recompile = lambda *a, **k: o5
+try:
+    s_stuck = PR.sensitivity('grammar', o5, None, row5, PR.CORPORA['riemann-ai']['context'][5], 'riemann-ai', ROOT)
+    v_stuck = PR.vacuity('grammar', o5, None, row5, PR.CORPORA['riemann-ai']['context'][5], 'CERTIFIED', ROOT)
+finally:
+    PR._recompile = real_rc
+red(s_stuck is not None and not s_stuck['held'], 'prose: refused — an object that does not move with its bar fails sensitivity (a box must be REFUTED one unit away)', str(s_stuck))
+red(v_stuck is not None and not v_stuck['depends'], 'prose: flagged — an object that does not read its bytes does not depend on them (vacuity)', str(v_stuck and v_stuck['plants']))
 shutil.rmtree(PR.PLANTS, ignore_errors=True)
 # a file proposer's planted run (tools/propose_model.py writes it): the statement for the moved sentence must be the statement
 # with that bar moved and nothing else

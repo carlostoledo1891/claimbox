@@ -4,7 +4,7 @@
  "files": {
   "design/WARRANT.md": "aeba21946e544db5c58e23735ef16b7bd7cb1d43c667ea77562ab1b459bff996",
   "design/grammar.js": "45d0f6bd48b93ef27e1c419d3bcfd86187933036590df989e1df88e36c41ef26",
-  "design/tokens.js": "8679bde7818855ed055f27a5b9ac9669c0c84e0f321ed02f6996ec352e30e144",
+  "design/tokens.js": "03401d2e3ef4ff8598c69bc8e14eab09c264ec8e4fff003ed50706ba27cd9bda",
   "design/COPY.md": "ebff3f681bdc87f6c39d6b22934c158f2020ecb85fbedbfe9c8e816e40a8d4fe",
   "playground/warrant.js": "06e12b304e079598ead046774edc774f881fcdebb8a29ea78d09666de24f390e"
  }

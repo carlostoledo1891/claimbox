@@ -319,6 +319,9 @@ def translate_machine(shape, root, source, sp, data, dp, quote, other, record, r
     raise Refusal('decider', 'no decider for the machine claim kind ' + k)
 
 
+MIRROR_REL = {'le': 'ge', 'lt': 'gt', 'ge': 'le', 'gt': 'lt'}
+
+
 def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None, quote=None, other=None):
     """the claimbox object for a claim, or Refusal. Paths are relative to root (cert-machine's root, so that its checker resolves them)."""
     shape = grammar.parse(sentence)
@@ -338,7 +341,18 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     if shape['family'] == 'machine':
         return translate_machine(shape, root, source, sp, data, dp, quote, other, record, reading, obj_id, what, sentence)
     printed = shape.get('printed')
-    quote = find_quote(sp, printed, shape.get('name'), sentence) if printed else None
+    if quote is not None and printed:
+        # a claim's own quote (a .claim file names the sentence it states): the object quotes that line and no other — it must
+        # be in the source byte for byte and print the bar's value, in any notation (until 2026-10-30 the first line printing
+        # the bar's digits was quoted, which could be another sentence of the source: found by step 6's sensitivity runs)
+        with open(sp, 'rb') as f:
+            src_text = f.read().decode('utf-8', 'replace')
+        if quote.replace('\n', ' ') not in src_text:
+            raise Refusal('source', 'the source does not print the quote: ' + quote[:80])
+        if not grammar.prints_value(quote, printed):
+            raise Refusal('source', 'the quote does not print ' + printed)
+    else:
+        quote = find_quote(sp, printed, shape.get('name'), sentence) if printed else None
     if printed and quote is None:
         raise Refusal('source', 'the source does not print ' + printed)
     if quote is not None and shape.get('rel') not in (None, 'in'):
@@ -348,7 +362,14 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         q = re.sub(r'(\d)\*(?![A-Za-z(])', r'\1', q)
         rels = set(re.findall(r'(?<![<>=!])(<=|>=|<|>)(?!=)', q))
         if rels and grammar.REL_WORD.get(next(iter(rels))) != shape['rel'] and len(rels) == 1:
-            raise Refusal('source', 'the source prints the bar with the relation ' + next(iter(rels)) + ', the claim says ' + rel_text(shape['rel']))
+            # the one relation may sit right after the bar, its mirror (0.6818287 >= p_0 is p_0 <= 0.6818287): read where the bar is
+            sym = next(iter(rels))
+            at = next((m for m in grammar.numbers_in(q)[1] if m[2] == grammar.value_of(printed)), None) if printed else None
+            norm = grammar.numbers_in(q)[0]
+            mirrored = at is not None and norm[at[1]:].lstrip().startswith(sym) and sym not in norm[:at[0]] and \
+                grammar.REL_WORD.get(sym) == MIRROR_REL.get(shape['rel'])
+            if not mirrored:
+                raise Refusal('source', 'the source prints the bar with the relation ' + sym + ', the claim says ' + rel_text(shape['rel']))
         names = set(re.findall(r'\bC_\d+[a-z]?\b', q))
         if names and re.match(r'^C_\d+[a-z]?$', str(shape.get('name') or '')) and shape['name'] not in names:
             raise Refusal('source', 'the line printing the bar names ' + ', '.join(sorted(names)) + ', the claim says ' + shape['name'])

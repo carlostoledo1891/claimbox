@@ -228,9 +228,19 @@ planted       the sentence with its bar's last digit moved makes the proposer mo
               else that bears on the decision (the grammar is re-run; a file proposer writes its run on the moved sentences
               beside its proposals, <corpus>.planted.claim, and its statement there must be its statement with that bar moved)
 concord       a proposer of ANOTHER kind compiles the sentence to an object equal on every decision-bearing field
+sensitivity   (with cert-machine) the sentence's bar moved one unit of its last digit up and down, the claim recompiled: a
+              box must be REFUTED both ways, a bound must hold when weakened; the strengthened word says whether it is tight
+vacuity       (with cert-machine) the claim recompiled over planted copies of its bytes (a closed list per file): if no plant
+              changes the word, the claim does not depend on its bytes — flagged, not refused (a constant's arithmetic)
 ```
 
-A sentence is validated only at concord, with every proposal anchored, printed back and, where it applies, planted. Two
+The object quotes the claim's own sentence (the `quote` line), which must be in the source byte for byte and print the
+bar's value in some notation — never another line that happens to print the same digits. The pair's same-error rate is
+published beside the outcomes: of the sentences two kinds both compiled, how many agree on the decided reference, how
+many agree elsewhere.
+
+A sentence is validated only at concord, with every proposal anchored, printed back and, where it applies, planted and
+sensitive. Two
 models agreeing count as one kind (agreement is not independence: Knight & Leveson 1986; Kim et al. 2025). Today's grammar
 proposes by itself; a person's or a model's proposals enter through the corpus's proposals file (corpus/proposals/<corpus>.
 claim), each claim quoting the sentence it reads and saying who proposed it. claimbox calls no model: a model proposer is a

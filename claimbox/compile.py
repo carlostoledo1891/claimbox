@@ -133,6 +133,8 @@ def lower(tree, c):
             except Refusal:
                 pass
         job['claim'] = sentence
+        if c['quote'] is not None:
+            job['quote'] = c['quote']               # the object quotes the claim's sentence, never another line printing its bar
         if name:
             job['name'] = name
     elif body[0] == 'config':

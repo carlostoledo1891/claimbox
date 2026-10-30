@@ -20,6 +20,8 @@ today's grammar may propose, and all of them are held to the same checks (commit
 
     run(corpus) -> the record of one corpus: per sentence, its proposals, their levels, the reference and the outcome
 """
+import copy
+import hashlib
 import json
 import os
 import re
@@ -27,7 +29,7 @@ import shutil
 from fractions import Fraction
 
 from . import compile as C, grammar, lang, translate as T
-from .grammar import Refusal
+from .grammar import Refusal, LEAN_NUMERAL, lean_numerals, numbers_in, value_of  # noqa: F401  (the readers, kept by name)
 
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 PLANTS = os.path.join(REPO, '.plants')
@@ -131,6 +133,7 @@ def read_file(p, root, out):
             out.setdefault(quote, []).append((kind, None, (err.rule, 'the language cannot read the proposal: ' + err.msg), None))
             continue
         kind = c['proposed'] or 'unlabelled'
+        c['_tree'] = tree                    # kept for the sensitivity and vacuity runs, which recompile the claim
         try:
             obj = C.compile_claim(tree, c, root)[0]['object']
             out.setdefault(c['quote'], []).append((kind, obj, None, c))
@@ -199,42 +202,6 @@ def object_bar(obj):
     return (sh.get('rel'), sh['printed'], bool(sh.get('ellipsis'))) if sh.get('printed') else None
 
 
-def value_of(printed):
-    """the exact rational a printed number means, in any of the forms the grammar reads (3·10⁻⁴⁰, 3\\cdot10^{-40}, 3e-40, p/q)"""
-    p = printed.replace(',', '').replace(' ', '')
-    m = re.fullmatch(r'(-?\d+)/([1-9]\d*)', p)
-    if m and not re.fullmatch(r'-?\d+/10\^\{?\d+\}?', p):
-        return Fraction(int(m.group(1)), int(m.group(2)))
-    return grammar.exact(p)
-
-
-# Lean's numerals as a Lean file prints them: `3 * 10 ^ (-40 : ℤ)`, `2.5431316 * 10 ^ (-6 : ℤ)`, `5 * 10 ^ 3` — the mantissa
-# times an integer power of ten, the exponent's type ascription optional; read as the same exact rational the grammar reads
-LEAN_NUMERAL = re.compile(r'(?<![\w.])(\d+(?:\.\d+)?)\s*\*\s*10\s*\^\s*(?:\(\s*(-?\d+)\s*(?::\s*[ℤℕℚℝ]\s*)?\)|(\d+)(?![\d.]))')
-
-
-def lean_numerals(text):
-    """the sentence with each Lean numeral written as the grammar writes a power of ten (3·10^{-40})"""
-    return LEAN_NUMERAL.sub(lambda m: m.group(1) + '·10^{' + (m.group(2) or m.group(3)) + '}', text)
-
-
-def numbers_in(sentence):
-    """every number the sentence prints, with its place: [(start, end, exact value)] over the normalised sentence (Lean's
-    numerals read too)"""
-    norm = grammar.normalise(lean_numerals(sentence))
-    out = []
-    for m in re.finditer(r'(?<![\w.])(\d+)\s*/\s*([1-9]\d*)(?![\d.])', norm):
-        out.append((m.start(), m.end(), Fraction(int(m.group(1)), int(m.group(2)))))
-    for m in re.finditer(r'(?<![\w.])' + grammar.NUMBER, norm):
-        if any(a <= m.start() < b for a, b, _ in out):
-            continue
-        try:
-            out.append((m.start(), m.end(), value_of(m.group(0).lstrip('-'))))
-        except (ValueError, ZeroDivisionError):
-            pass
-    return norm, sorted(out)
-
-
 def anchored(obj, sentence, source_path, root):
     """every number the object prints is a number the sentence prints — the same exact value, in whatever notation —, and the
     sentence is printed in the source; a number written in words is not printed"""
@@ -254,7 +221,8 @@ REL_WORDS = {'le': ('at most', 'does not exceed', 'do not exceed', 'never exceed
                     'no greater than', 'not greater than', 'no larger than', 'not larger than'),
              'lt': ('less than', 'below', 'smaller than', 'strictly less than', 'strictly below'),
              'ge': ('at least', 'no less than', 'not less than', 'no smaller than', 'not smaller than', 'not below'),
-             'gt': ('exceeds', 'exceed', 'greater than', 'more than', 'larger than', 'above', 'strictly greater than', 'strictly above')}
+             'gt': ('exceeds', 'exceed', 'greater than', 'more than', 'larger than', 'above', 'strictly greater than', 'strictly above'),
+             'eq': ('equals', 'is equal to', 'is exactly', 'is precisely')}      # also the words of a box's = (rel in)
 PHRASES = sorted(((w, r) for r, ws in REL_WORDS.items() for w in ws), key=lambda x: -len(x[0]))
 
 
@@ -295,7 +263,8 @@ def printed_back(obj, sentence):
     if any(after[:12].startswith(sym) or sym in after[:4] for sym in REL_SYMBOLS.get(MIRROR.get(rel, ''), ())):
         return True
     wb, wa = word_before(before), word_after(after)
-    return (wb == rel) if wb else (wa == MIRROR.get(rel)) if wa else False
+    same = lambda w, r: w == r or (w == 'eq' and r == 'in')
+    return same(wb, rel) if wb else same(wa, MIRROR.get(rel)) if wa else False
 
 
 def plantable(printed):
@@ -371,6 +340,149 @@ def kind_class(kind):
     return 'model' if kind.startswith('model:') else kind
 
 
+# ------------------------------------------------------------------------------------------------- sensitivity and vacuity
+# (notes/research-2026-10-30.md §3, finding 2; run with cert-machine, --run). SENSITIVITY: the sentence's bar moved one unit of
+# its last printed digit up and down, in a copy of the source, and the claim recompiled with the moved bar: a box (= p…, or a
+# rounding) must be REFUTED both ways — the value lies in one box only —; a bound must hold when weakened, and its strengthened
+# word says whether it is tight at its last digit. VACUITY: the claim recompiled over planted copies of its bytes (a closed
+# list per file, below); if no plant changes cert-machine's word the claim does not depend on its bytes, and is flagged
+
+BYTE_PLANTS = {
+    'LawN256.encl.json': [('enclosures doubled', lambda d: dict(d, encl=[[2 * a, 2 * b] for a, b in d['encl']])),
+                          ('enclosures halved', lambda d: dict(d, encl=[[a // 2, b // 2] for a, b in d['encl']])),
+                          ('p0 = 1', lambda d: dict(d, p0='1/1')), ('p0 = 0', lambda d: dict(d, p0='0/1')),
+                          ('tau ten times', lambda d: dict(d, tn=d['tn'] * 10))],
+    'mt-series.json': [('K = 2', lambda d: dict(d, K=2)), ('K = 4', lambda d: dict(d, K=4))],
+}
+WEAKER = {'le': 1, 'lt': 1, 'ge': -1, 'gt': -1}          # the direction a bar moves to weaken the claim
+
+
+def shift_printed(printed, k):
+    """a printed bar moved by k units of its last printed digit, in the same form (0.82395317 → 0.82395318; 3·10⁻⁴⁰ → 4·10⁻⁴⁰)"""
+    mant = grammar.parts(printed.replace(',', ''))[0]
+    if not re.fullmatch(r'-?\d+(?:\.\d+)?', mant) or not printed.startswith(mant):
+        raise ValueError('no decimal mantissa in ' + printed)
+    d = len(mant.split('.')[1]) if '.' in mant else 0
+    q = int(Fraction(mant) * 10 ** d) + k
+    if q < 0:
+        raise ValueError('the moved bar is negative')
+    text = (str(q // 10 ** d) + '.' + str(q % 10 ** d).zfill(d)) if d else str(q)
+    return text + printed[len(mant):]
+
+
+def move_bar(sentence, printed, k):
+    """(the sentence with its bar moved by k units, the moved bar as the claim prints it): the span that prints the bar's value,
+    in the claim's form or another (3 × 10^{-40}, 3 * 10 ^ (-40 : ℤ)), its mantissa moved by the same unit"""
+    moved = shift_printed(printed, k)
+    if printed in sentence:
+        return sentence.replace(printed, moved, 1), moved
+    for m in list(LEAN_NUMERAL.finditer(sentence)) + list(re.finditer(r'(?<![\w.])' + grammar.NUMBER, sentence)):
+        span = m.group(0)
+        try:
+            if value_of(lean_numerals(span).replace(' ', '')) != value_of(printed):
+                continue
+            mt = re.match(r'-?\d+(?:\.\d+)?', span).group(0)
+            span2 = shift_printed(mt, k) + span[len(mt):]
+            if value_of(lean_numerals(span2).replace(' ', '')) == value_of(moved):
+                return sentence[:m.start()] + span2 + sentence[m.end():], moved
+        except (ValueError, ZeroDivisionError):
+            continue
+    raise ValueError('the sentence does not print ' + printed)
+
+
+def _word(obj, root):
+    return C.word(T.check_with_cert_machine(obj, root)) if obj is not None else None
+
+
+def _recompile(kind, claim, row, ctx, root, source=None, quote=None, stmt=None, data=None, obj_id=None):
+    """the proposal compiled again with its source, quote, statement or bytes replaced: the grammar re-reads the sentence; a
+    file proposer's claim is recompiled from its own tree"""
+    try:
+        if kind == 'grammar':
+            return grammar_proposal(quote or row['text'], source, data or ctx[0], ctx[1], obj_id, root)[0]
+        tree = copy.deepcopy(claim['_tree'])
+        c = copy.deepcopy({k: v for k, v in claim.items() if k != '_tree'})
+        for i in tree['items']:
+            if source and i['kw'] == 'source' and i['name'] == c['from']:
+                i['path'] = source
+            if data and i['kw'] == 'data':
+                i['path'] = data
+        if quote:
+            c['quote'] = quote
+        if stmt:
+            c['stmt'] = lang.statement(stmt, c['line'])
+        c['id'] = obj_id
+        return C.compile_claim(tree, c, root)[0]['object']
+    except (Refusal, lang.LangError, KeyError, ValueError):
+        return None
+
+
+def _planted_source(corpus, row, mutated, tag):
+    os.makedirs(PLANTS, exist_ok=True)
+    path = os.path.join(PLANTS, corpus + '-' + re.sub(r'\W', '-', row['id']) + '-' + tag + '.md')
+    with open(os.path.join(REPO, CORPORA[corpus]['source']), encoding='utf-8') as f:
+        text = f.read()
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(text.replace(row['text'].replace('\n', ' '), mutated.replace('\n', ' '), 1))
+    return path
+
+
+def sensitivity(kind, obj, claim, row, ctx, corpus, root):
+    """{'up': word, 'down': word, 'held': bool, 'tight': bool or None}, or None where the bar has no decimal digit to move"""
+    b = object_bar(obj)
+    if b is None:
+        return None
+    rel, printed, cut = b
+    rel = 'in' if cut else rel
+    out = {}
+    for tag, k in (('up', 1), ('down', -1)):
+        try:
+            mutated, moved = move_bar(row['text'], printed, k)
+        except ValueError:
+            return None
+        path = _planted_source(corpus, row, mutated, tag)
+        try:
+            stmt = None
+            if kind != 'grammar':
+                t = lang.fmt_statement(claim['stmt'])
+                p = bar_printed(claim['stmt'])
+                stmt = t[::-1].replace(p[::-1], shift_printed(p, k)[::-1], 1)[::-1] if p else None
+            o2 = _recompile(kind, claim, row, ctx, root, source=rel_of(path), quote=mutated, stmt=stmt, obj_id=obj['id'] + '-' + tag)
+            out[tag] = _word(o2, root)       # while the planted source is on disk: the receiver reads it
+        finally:
+            os.remove(path)
+    if rel in ('in', 'eq'):
+        out['held'] = out['up'] == out['down'] == 'REFUTED'
+        out['tight'] = None
+    else:
+        weak, strong = ('up', 'down') if WEAKER[rel] > 0 else ('down', 'up')
+        out['held'] = out[weak] == 'CERTIFIED'
+        out['tight'] = out[strong] == 'REFUTED'
+    return out
+
+
+def vacuity(kind, obj, claim, row, ctx, word, root):
+    """{'plants': {name: word}, 'depends': bool}: the claim over each planted copy of its bytes; None when its file has no plants"""
+    pin = obj['domain']['pin']['path']
+    plants = BYTE_PLANTS.get(os.path.basename(pin))
+    if not plants:
+        return None
+    with open(os.path.join(root, pin), encoding='utf-8') as f:
+        doc = json.load(f)
+    words = {}
+    os.makedirs(PLANTS, exist_ok=True)
+    for name, fn in plants:
+        path = os.path.join(PLANTS, 'vacuity-' + hashlib.sha256(name.encode()).hexdigest()[:8] + '-' + os.path.basename(pin))
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(fn(doc), f)
+        try:
+            o2 = _recompile(kind, claim, row, ctx, root, data=rel_of(path), obj_id=obj['id'] + '-v')
+            words[name] = _word(o2, root) or 'refused'
+        finally:
+            os.remove(path)
+    return {'plants': words, 'depends': any(w != word for w in words.values())}
+
+
 # ------------------------------------------------------------------------------------------------- the run
 
 def run(corpus, root, words=False):
@@ -408,17 +520,22 @@ def run(corpus, root, words=False):
                 if words:
                     line = T.check_with_cert_machine(o, root)
                     pr['word'], pr['certMachine'] = C.word(line), line[:200]
+                    if pr['word'] in ('CERTIFIED', 'REFUTED'):
+                        pr['sensitivity'] = sensitivity(kind, o, claim, row, ctx, corpus, root)
+                        pr['vacuity'] = vacuity(kind, o, claim, row, ctx, pr['word'], root)
             entry['proposals'].append(pr)
         made = [p for p in entry['proposals'] if 'object' in p]
         kinds = {}
         for p in made:
             kinds.setdefault(kind_class(p['kind']), []).append(json.dumps(p['decision'], sort_keys=True))
         agree = len(kinds) >= 2 and len({v[0] for v in kinds.values()}) == 1 and all(len(set(v)) == 1 for v in kinds.values())
-        checks = made and all(p['anchored'] and p['printedBack'] and p['planted'] is not False for p in made)
+        sens = lambda p: (p.get('sensitivity') or {}).get('held', True)      # run with cert-machine only (--run)
+        checks = made and all(p['anchored'] and p['printedBack'] and p['planted'] is not False and sens(p) for p in made)
         if not made:
             entry['outcome'] = 'not stated: ' + ', '.join(sorted({p['refused']['hole'] for p in entry['proposals']}))
         elif not checks:
-            entry['outcome'] = 'refused: a proposal fails ' + ', '.join(sorted({k for p in made for k in ('anchored', 'printedBack', 'planted') if p[k] is False}))
+            entry['outcome'] = 'refused: a proposal fails ' + ', '.join(sorted({k for p in made for k in ('anchored', 'printedBack', 'planted') if p[k] is False}
+                                                                                | ({'sensitivity'} if not all(sens(p) for p in made) else set())))
         elif not agree:
             entry['outcome'] = 'proposed, not validated: ' + ('one kind of proposer only' if len(kinds) < 2 else 'the kinds disagree')
         else:
@@ -451,7 +568,34 @@ def summary(entries):
             'faithful': sum(1 for p in made if p['faithful']), 'unfaithful': sum(1 for p in made if p['faithful'] is False and not p.get('sameValue')),
             'sameValueOtherPrint': sum(1 for p in made if p.get('sameValue')),
             'validated': sum(1 for e in entries if e['outcome'] == 'validated'),
-            'notStated': sum(1 for e in entries if e['outcome'].startswith('not stated'))}
+            'notStated': sum(1 for e in entries if e['outcome'].startswith('not stated')),
+            'sensitivity': {'held': sum(1 for p in made if (p.get('sensitivity') or {}).get('held')),
+                            'broke': sum(1 for p in made if p.get('sensitivity') and not p['sensitivity']['held']),
+                            'tight': sum(1 for p in made if (p.get('sensitivity') or {}).get('tight') is True),
+                            'slack': sum(1 for p in made if (p.get('sensitivity') or {}).get('tight') is False),
+                            'notRun': sum(1 for p in made if not p.get('sensitivity'))},
+            'vacuity': {'depends': sum(1 for p in made if (p.get('vacuity') or {}).get('depends')),
+                        'flagged': sum(1 for p in made if p.get('vacuity') and not p['vacuity']['depends']),
+                        'notRun': sum(1 for p in made if not p.get('vacuity'))},
+            'pairs': pairs(entries)}
+
+
+def pairs(entries):
+    """the sentences two kinds of proposer both compiled: how often they agree, and how often they agree on a claim other than the
+    decided reference — the pair's same-error rate (research note §3, finding 1)"""
+    out = {'sentences': 0, 'agree': 0, 'agreeOnReference': 0, 'agreeElsewhere': 0, 'agreeNoReference': 0, 'disagree': 0}
+    for e in entries:
+        made = [p for p in e['proposals'] if 'object' in p]
+        if len({kind_class(p['kind']) for p in made}) < 2:
+            continue
+        out['sentences'] += 1
+        if len({json.dumps(p['decision'], sort_keys=True) for p in made}) > 1:
+            out['disagree'] += 1
+            continue
+        out['agree'] += 1
+        f = made[0]['faithful']
+        out['agreeOnReference' if f else 'agreeNoReference' if f is None else 'agreeElsewhere'] += 1
+    return out
 
 
 # ------------------------------------------------------------------------------------------------- a person's worksheet

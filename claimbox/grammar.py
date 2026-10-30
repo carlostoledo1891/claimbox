@@ -353,3 +353,47 @@ def parse(text):
     if not re.search(r'(?<![A-Za-z_\d])\d+(?:\.\d+)?(?![A-Za-z_\d])', t):
         raise Refusal('no-quantity', 'no printed quantity in the claim')
     raise Refusal('prose', 'no claim shape in the grammar matches')
+
+# ------------------------------------------------------------------------------------------------- numbers read by value
+# (moved here from prose.py 2026-10-30: translate holds a claim's own quote to print its bar by value)
+
+def value_of(printed):
+    """the exact rational a printed number means, in any of the forms the grammar reads (3·10⁻⁴⁰, 3\\cdot10^{-40}, 3e-40, p/q)"""
+    p = printed.replace(',', '').replace(' ', '')
+    m = re.fullmatch(r'(-?\d+)/([1-9]\d*)', p)
+    if m and not re.fullmatch(r'-?\d+/10\^\{?\d+\}?', p):
+        return Fraction(int(m.group(1)), int(m.group(2)))
+    return exact(p)
+
+
+# Lean's numerals as a Lean file prints them: `3 * 10 ^ (-40 : ℤ)`, `2.5431316 * 10 ^ (-6 : ℤ)`, `5 * 10 ^ 3` — the mantissa
+# times an integer power of ten, the exponent's type ascription optional; read as the same exact rational the grammar reads
+LEAN_NUMERAL = re.compile(r'(?<![\w.])(\d+(?:\.\d+)?)\s*\*\s*10\s*\^\s*(?:\(\s*(-?\d+)\s*(?::\s*[ℤℕℚℝ]\s*)?\)|(\d+)(?![\d.]))')
+
+
+def lean_numerals(text):
+    """the sentence with each Lean numeral written as the grammar writes a power of ten (3·10^{-40})"""
+    return LEAN_NUMERAL.sub(lambda m: m.group(1) + '·10^{' + (m.group(2) or m.group(3)) + '}', text)
+
+
+def numbers_in(sentence):
+    """every number the sentence prints, with its place: [(start, end, exact value)] over the normalised sentence (Lean's
+    numerals read too)"""
+    norm = normalise(lean_numerals(sentence))
+    out = []
+    for m in re.finditer(r'(?<![\w.])(\d+)\s*/\s*([1-9]\d*)(?![\d.])', norm):
+        out.append((m.start(), m.end(), Fraction(int(m.group(1)), int(m.group(2)))))
+    for m in re.finditer(r'(?<![\w.])' + NUMBER, norm):
+        if any(a <= m.start() < b for a, b, _ in out):
+            continue
+        try:
+            out.append((m.start(), m.end(), value_of(m.group(0).lstrip('-'))))
+        except (ValueError, ZeroDivisionError):
+            pass
+    return norm, sorted(out)
+
+
+def prints_value(text, printed):
+    """the text prints the number's exact value, in any notation the grammar or Lean writes it"""
+    want = value_of(printed)
+    return any(v == want for _, _, v in numbers_in(text)[1])
