@@ -134,8 +134,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    records/prose-riemann-ai.json` and the page rebuilt. FOUND: tools/platform.py shadows the standard library's `platform` for any
    script run from tools/ (the SDK imports it); the script drops its own directory from sys.path. prose.py now reads the planted
    run (planted_statement: the moved sentence's statement must be the statement with that bar moved and nothing else) and reports
-   per proposer kind (proposed, compiled, holes, faithful, unfaithful, planted held/broke). The republish request went to
-   cert-machine-cb (cert-machine-c4 had ended). make test: 462 pass, 0 fail, 95/95 reds.
+   per proposer kind (proposed, compiled, holes, faithful, unfaithful, planted held/broke). REPUBLISHED by cert-machine-cb
+   (cert-machine 39e5e6ef, from claimbox 6320675c, 83,187 bytes): the live page's sha256 equals web/dist's, checked with curl
+   about thirty seconds after the deploy. make test: 462 pass, 0 fail, 95/95 reds.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 
