@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 2, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 3, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -126,8 +126,8 @@ The landing page renders this table. Status words: `built`, `next`, `planned`, `
 |---|---|---|---|---|
 | 0 | Today's translator | a closed list of claim shapes read by patterns, readers of real sources, objects cert-machine decides | the calibration objects reproduced; planted defects caught; every refusal has a red control | built |
 | 1 | The language, written down | LANGUAGE.md: the syntax, readings, holes, forks, the print-back, the object, and examples, each a claim already decided | every shape today's grammar reads and every rule it refuses with has its construct (a battery check); each claim's round trip is step 2's | built |
-| 2 | Read it and print it back | a parser that rejects malformed claims with a reason, and the plain-words printer | every example round-trips; planted malformed claims are rejected | next |
-| 3 | Compile and check | claim, object, cert-machine's word, and what it rests on | the same words cert-machine gives today, claim for claim | planned |
+| 2 | Read it and print it back | a parser that rejects malformed claims with a reason, and the plain-words printer | every example round-trips; planted malformed claims are rejected | built |
+| 3 | Compile and check | claim, object, cert-machine's word, and what it rests on | the same words cert-machine gives today, claim for claim | next |
 | 4 | The library | the definitions written once: kissing, the autocorrelation constants, the platform scores, the Riemann functionals, machine runs, each with its conventions | identical objects to today's | planned |
 | 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | planned |
 | 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | planned |
@@ -198,6 +198,9 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r3, 2026-10-30.** Step 2 built: claimbox/lang.py reads a `.claim` file, prints it back and in plain words; the twenty
+  examples of LANGUAGE.md round-trip byte for byte; twelve malformed files are refused with their rule and four statements
+  that are not claims become holes (red controls). Step 3, the compiler, is next.
 - **r2, 2026-10-30.** The operator's decisions (§6): the commitments adopted, the description held, the page to go live like
   Machinidae's. Step 1 built: LANGUAGE.md, with a battery check that every shape and refusal of today's grammar has its
   construct. Step 2 is next.

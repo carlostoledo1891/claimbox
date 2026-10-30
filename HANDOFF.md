@@ -47,8 +47,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    holes, forks, the print-back, proposals, the object, twenty examples each a decided claim named by its record, and a
    coverage table); tests/battery.py section 6 requires every shape today's grammar reads over every corpus (31) and every rule
    the code refuses with (15) to have its construct there, with a red control. web/PINS.json re-pinned after cert-machine's
-   playground/warrant.js gained `illustration` values (uncommitted there; no CSS change, grammar.css unaffected). NEXT: step 2,
-   claimbox/lang.py — the parser and the printer, every LANGUAGE.md example round-tripping.
+   playground/warrant.js gained `illustration` values (uncommitted there; no CSS change, grammar.css unaffected).
+   STEP 2 BUILT (on "push as it is, continue"; the Claim Court note pushed as it is, 5acbfe7): claimbox/lang.py reads a `.claim`
+   file into a tree (declarations source/data/read/use/define; claim blocks with quote/from, ": STATEMENT" or a written hole,
+   proposed by, expect; statements: comparisons over terms with exact, truncated "…", "published as" and "within R of" bars,
+   bounded "for every v in A < v < B", watchers "for every v :", hunters "there is v :", kissing configurations,
+   decompositions, platform scores, and every machine statement through grammar.parse_machine), prints it back canonically and
+   in plain words (`python3 -m claimbox lang FILE.claim [--canonical]`), refuses a malformed file with its rule (syntax, name,
+   reading, definition, relations, range, source) and makes a statement that is not a claim a hole (a theorem, "for every …
+   there is", ≈, o(·), prose). LANGUAGE.md's examples were rewritten in canonical layout with every name declared and every
+   path as the records pin it; all twenty round-trip byte for byte. Battery: twelve malformed files and four non-claims as red
+   controls. web/PINS.json re-pinned again after design/WARRANT.md gained "The grammar page as a one-pager, and illustrations"
+   (uncommitted in cert-machine; claimbox's page prints no invented number). make test: 428 pass, 0 fail, 74/74 reds. NEXT:
+   step 3, claimbox/compile.py — tree → the object cert-machine reads, calibrated claim for claim against today's run records,
+   and the `means` line printed from the compiled object.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 

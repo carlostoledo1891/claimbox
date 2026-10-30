@@ -1,7 +1,8 @@
 # LANGUAGE — claimbox, written down
 
-*Roadmap step 1 (PLAN.md §7), revision 1, 2026-10-30. The language in which a person or an AI states a claim so that
-cert-machine can decide it. This file is the specification; the parser and the printer are step 2, the compiler step 3.
+*Roadmap steps 1 and 2 (PLAN.md §7), revision 2, 2026-10-30. The language in which a person or an AI states a claim so
+that cert-machine can decide it. This file is the specification; claimbox/lang.py reads and prints it (`python3 -m
+claimbox lang FILE.claim`, step 2); the compiler is step 3.
 Every example in §11 is a claim that has already been decided, named by its record. §12 maps every shape today's grammar
 reads and every rule it refuses with to its construct here; the battery holds that map to the code.*
 
@@ -31,17 +32,24 @@ as the rational they mean, digit groups `347,584` read as one integer (and refus
 source NAME = PATH [@ sha256:HEX]          a document that prints claims
 data   NAME = PATH [@ sha256:HEX]          the bytes a claim is about
 read   NAME as READING [| READING …]       how those bytes are read (§5); two or more readings make a fork (§7)
-use    DEFINITION [vN]                     a definition from the library (§4)
+use    DEFINITION vN                       a definition from the library (§4)
 define NAME(ARGS) = EXPRESSION             a definition local to this file, with its conventions (§4)
-claim  ID                                  a claim block:
-  quote "TEXT" from SOURCE                   the claim as its source prints it, byte for byte
-  : STATEMENT                                the statement (§3)
-  [proposed by KIND]                         a proposal until validated (§9)
-  [expect WORD]                              the word written down before the run
+claim  ID [over DATA, …]                   a claim block, its lines indented by two spaces:
+  quote "TEXT" from SOURCE                   the claim as its source prints it, byte for byte (or `from SOURCE`: the
+                                             compiler finds the line, as today's translator does)
+  : STATEMENT                                the statement (§3), or
+  hole RULE "WHY"                            a hole written by hand (§6)
+  proposed by KIND                           a proposal until validated (§9): grammar | person | model:<family>
+  expect WORD                                the word written down before the run: CERTIFIED | REFUTED | REFUSED
 ```
 
-A path is relative to the repository that holds the file. When `@ sha256:` is left out, the check computes the digest
-and the printed result names it; a written digest that differs is hole `source` or `data`.
+Every name a statement uses is declared in its file: data by `data` (and read by `read`), quantities by `use` or
+`define`, sources by `source`; a claim whose statement prints a number names its source. `over` names the data a claim's
+quantities are computed over. The canonical layout is the one the printer writes: the keyword padded to six characters
+and a space, a claim's lines indented by two spaces, comments dropped. A path is written as cert-machine's checker
+resolves it today — relative to its root, claimbox's own corpus as `../claimbox/corpus/…` — until the receiver settles how
+paths outside its root are read (its open ask (g)). When `@ sha256:` is left out, the compiler computes the digest and the
+result names it; a written digest that differs is hole `source` or `data`.
 
 ## 3 · Statements
 
@@ -130,6 +138,8 @@ with identical objects.
 | `rationals` | `p/q` strings, exactly | ring-loading records |
 | `int64` | integers that wrap at 2⁶³ | (none yet) |
 | `table (Q, 2)` | a Turing-machine transition table | the cryptids tables |
+| `text` | text, compiled or quoted as it is | an upstream machine source in `standard`, `tursi` or `nql` |
+| `bytes` | the bytes as they are, for a digest | a file whose sha256 is claimed |
 
 A reading is a choice that changes exact answers: one file of 605 vectors in dimension 11 has 9,510 violating pairs under
 `decimals` and 9,480 under `doubles` (cert-machine's primitive object). JSON itself does not fix the choice (RFC 8259 §6).
@@ -182,6 +192,14 @@ rests on   <pins with digests, definitions with versions, the reading, the check
 
 or `hole <kind>: <what is missing>`. A proposal (§9) also prints `proposed by …` until it is validated.
 
+Today (step 2) `python3 -m claimbox lang FILE.claim` prints `means`, `kind`, `fork` and `source` from the parsed tree, and
+`--canonical` prints the file back as the printer writes it. From step 3 the `means` line is printed from the compiled object,
+and `word` and `rests on` come from cert-machine. A file the language cannot read is REFUSED with its rule: `syntax`,
+`name` (a name no line declares), `reading` (a datum with no reading, or a reading the language does not know),
+`definition` (a quantity neither used nor defined), `relations` (more than one), `range` (a bounded quantifier over a range
+that is not finite integers, or is empty), `source` (a printed number with no source). A statement that is not a claim —
+a theorem, an approximation, an order of growth, prose — is not an error: it is a hole.
+
 ## 9 · Proposals
 
 `proposed by grammar | person | model:<family>` marks a claim someone or something proposed from a sentence. It counts only
@@ -210,16 +228,19 @@ A hole compiles to no object. A fork compiles to one object per reading.
 
 ## 11 · Examples, each a claim already decided
 
-Each names its record (`records/<run>.json#<id>`) and cert-machine's word there.
+Each names its record (`records/<run>.json#<id>`) and cert-machine's word there. Paths are written as cert-machine's
+checker resolves them today (§2). Every example is in the canonical layout the printer writes: `python3 -m claimbox lang`
+reads each, prints it back byte for byte (comments dropped), and the battery holds it to that.
 
 **E1 · a kissing configuration** — `records/einstein-arena-run.json#ea-kissing-kissing-number-d11` · CERTIFIED
 ```
 source P = corpus/einstein-arena/problems.json
 data   v = corpus/einstein-arena/best-6.json
-read   v as decimals                     -- the platform's verifier reads Decimal(str(x))
+read   v as decimals                       -- the platform's verifier reads Decimal(str(x))
 claim  kissing_11
   quote "Kissing Number in Dimension 11 (n=594)" from P
   : the 594 vectors of v form a kissing configuration in dimension 11
+  expect CERTIFIED
 ```
 
 **E2 · a bound on a functional** — `records/primitive-run.json#prim-1b-codexprolong` · CERTIFIED
@@ -231,6 +252,7 @@ use    C_1b v1
 claim  c1b_upper
   quote "0.3808585749" from R
   : C_1b(h) ≤ 0.3808585749
+  expect CERTIFIED
 ```
 
 **E3 · a lower bound rounded up** — `records/primitive-run.json#prim-1c-rozetyp-k3072` · REFUTED
@@ -242,133 +264,198 @@ use    C_1c v1
 claim  c1c_k3072
   quote "C ≥ 0.41030211724" from R
   : C_1c(w) ≥ 0.41030211724
+  expect REFUTED
 ```
 
 **E4 · digits with an ellipsis** — `records/riemann-run.json#zeta23-cmt` · CERTIFIED
 ```
-source D = corpus/riemann/zeta23/zeta23__ChallengeDeps.lean
-data   s = corpus/riemann/zeta23/mt-series.json
-read   s as integers                     -- the certificate's one datum, the number of terms
-use    c_MT v1                           -- c₁* = 2s/(2c + s) over the alternating rational series
-claim  cmt
+source D = ../claimbox/corpus/riemann/zeta23/zeta23__ChallengeDeps.lean
+data   s = ../claimbox/corpus/riemann/zeta23/mt-series.json
+read   s as integers                       -- the certificate's one datum, the number of terms
+use    c₁* v1                              -- c₁* = 2s/(2c + s) over the alternating rational series
+claim  cmt over s
   quote "c₁* = 0.7532960…" from D
-  : c₁* = 0.7532960…                      -- the truncation box [0.7532960, 0.7532961)
+  : c₁* = 0.7532960…
+  expect CERTIFIED
 ```
 
 **E5 · a bounded quantifier over rows** — `records/riemann-run.json#zeta23-rows` · CERTIFIED
 ```
-source README = corpus/riemann/zeta23/zeta23__README.md
-data   e = corpus/riemann/zeta23/LawN256.encl.json
-read   e as integers                     -- enclosures at scale K = 2^140, decoded from LawN256.lean
-claim  near_cue
-  quote "|256·S(j) − j| ≤ 3·10⁻⁴⁰ (0 < j < 256)" from README
+source M = ../claimbox/corpus/riemann/zeta23/zeta23__README.md
+data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json
+read   e as integers                       -- enclosures at scale K = 2^140, decoded from LawN256.lean
+use    S v1
+claim  near_cue over e
+  quote "|256·S(j) − j| ≤ 3·10⁻⁴⁰ (0 < j < 256)" from M
   : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰
+  expect CERTIFIED
 ```
 
 **E6 · an edge bound** — `records/riemann-run.json#zeta23-edge` · CERTIFIED
 ```
-source L = corpus/riemann/zeta23/zeta23__Zeta23__PairCeiling__CeilingLaw256.lean
-claim  edge
+source L = ../claimbox/corpus/riemann/zeta23/zeta23__Zeta23__PairCeiling__CeilingLaw256.lean
+data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json
+read   e as integers
+use    D v1
+claim  edge over e
   quote "|D(1)| ≤ 0.82395317" from L
-  : |D(1)| ≤ 0.82395317                    -- D(1) from the library, over e read as integers
+  : |D(1)| ≤ 0.82395317
+  expect CERTIFIED
 ```
 
 **E7 · an exact identity** — `records/riemann-math-run.json#math-xi-J-flat` · CERTIFIED
 ```
-claim  j_flat
-  quote "J_flat = 12517210259/88388425125" from mathematician.md
+source W = ../claimbox/corpus/riemann/mathematician.md
+data   x = ../claimbox/corpus/riemann/zeta23/xi-certificate.json
+read   x as rationals
+use    J_flat v1
+claim  j_flat over x
+  quote "J_flat = 12517210259/88388425125" from W
   : J_flat = 12517210259/88388425125
+  expect CERTIFIED
 ```
 
 **E8 · a bar and its control** — `records/riemann-math-run.json#math-tail-w6k15-P` · CERTIFIED, and
 `#math-tail-w6k15-P-false` · REFUTED
 ```
-claim  p_w6k15        : P_w6k15 ≥ 0.86864150      expect CERTIFIED
-claim  p_w6k15_false  : P_w6k15 ≥ 0.86864151      expect REFUTED
+source W = ../claimbox/corpus/riemann/mathematician.md
+data   w = ../claimbox/corpus/riemann/zeta23/xi-w6k15.json
+read   w as rationals
+use    P_w6k15 v1
+claim  p_w6k15 over w
+  quote "P_w6k15 ≥ 0.86864150" from W
+  : P_w6k15 ≥ 0.86864150
+  expect CERTIFIED
+claim  p_w6k15_false over w
+  quote "P_w6k15 ≥ 0.86864151" from W
+  : P_w6k15 ≥ 0.86864151
+  expect REFUTED
 ```
 
 **E9 · a platform's score within its resolution** — `records/einstein-arena-run.json#ea-best-circle-packing` · REFUTED (one
 predicate, non-overlap, on three pairs that overlap by about 10⁻¹⁸ in squared distance)
 ```
+source B = corpus/einstein-arena/best-14.json
 data   c = corpus/einstein-arena/best-14.json
 read   c as doubles
 claim  packing_26
+  from B
   : c is a feasible solution of "Circle Packing in a Square" and its score is within 1e-10 of 2.6359830849176076
+  expect REFUTED
 ```
 
 **E10 · a count a platform scores** — `records/einstein-arena-run.json#ea-best-shannon-capacity-c7-5` · CERTIFIED
 ```
+source B = corpus/einstein-arena/best-29.json
 data   x = corpus/einstein-arena/best-29.json
 read   x as integers
-claim  shannon : x is a feasible solution of "Shannon Capacity of the 7-Cycle (Fifth Power)" and its score is 367
+claim  shannon
+  from B
+  : x is a feasible solution of "Shannon Capacity of the 7-Cycle (Fifth Power)" and its score is 367
+  expect CERTIFIED
 ```
 
 **E11 · a state count** — `records/cryptids-run.json#prov-states-goldbach` · CERTIFIED
 ```
+source P = corpus/cryptids/baselines/PROVENANCE.md
 data   G = corpus/cryptids/baselines/tables/goldbach_25.txt
 read   G as table (Q, 2)
-claim  states : quote "`25` states" from PROVENANCE.md : G has 25 states
+claim  states
+  quote "`25` states" from P
+  : G has 25 states
+  expect CERTIFIED
 ```
 
 **E12 · a table compiled from its source** — `records/cryptids-run.json#derive-zf` · CERTIFIED
 ```
+source P = corpus/cryptids/baselines/PROVENANCE.md
+data   T = corpus/cryptids/baselines/tables/zf_432.txt
+data   S = corpus/cryptids/baselines/sources/zf_432_wade.tm
+read   T as table (Q, 2)
+read   S as text
 claim  derive_zf
-  quote "`tursi`" from PROVENANCE.md
-  : baselines/tables/zf_432.txt compiled from baselines/sources/zf_432_wade.tm (tursi) has canonical sha256
-    cb9ffd320f7360b5e0e49181a6201286b408d1f8c168d61fafc51d1ca8b86702
+  quote "`tursi`" from P
+  : T compiled from S (tursi) has canonical sha256 cb9ffd320f7360b5e0e49181a6201286b408d1f8c168d61fafc51d1ca8b86702
+  expect CERTIFIED
 ```
 
 **E13 · a configuration after a run** — `records/cryptids-run.json#riemann-104-boot` · CERTIFIED
 ```
+source V = corpus/cryptids/verify.py
 data   M = corpus/cryptids/artifacts/riemann_104/machine.txt
 read   M as table (Q, 2)
 claim  boot
-  quote "state == 19 and head == -7 and len(tape) == 19" from verify.py
+  quote "state == 19 and head == -7 and len(tape) == 19" from V
   : after 9,037 steps from the blank tape, M is in state 19 with the head at -7, 19 nonzero cells
+  expect CERTIFIED
 ```
 
 **E14 · a bounded run that does not halt** — `records/cryptids-run.json#riemann-120-no-halt-boot-length` · CERTIFIED
 ```
-claim  boot_length : baselines/tables/riemann_120.txt does not halt within 89,775,610 steps
+source R = corpus/cryptids/artifacts/riemann_104/README.md
+data   T = corpus/cryptids/baselines/tables/riemann_120.txt
+read   T as table (Q, 2)
+claim  boot_length
+  quote "`89,775,610`" from R
+  : T does not halt within 89,775,610 steps
+  expect CERTIFIED
 ```
 
 **E15 · a printed ratio** — `records/cryptids-run.json#ratio-goldbach-steps` · CERTIFIED
 ```
-claim  ratio : the ratio 339,411/170,966 is printed as 1.99x    -- the half-unit box of 1.99
+source R = corpus/cryptids/artifacts/goldbach_21/README.md
+claim  ratio
+  quote "`1.99x` cumulative ratio" from R
+  : the ratio 339,411/170,966 is printed as 1.99x
+  expect CERTIFIED
 ```
 
 **E16 · a fork** — cert-machine's primitive object for the 605 vectors (its certs/claimbox-decisions.json) · REFUTED under
 `decimals` with 9,510 violating pairs; 9,480 under `doubles`
 ```
-data   v = corpus/einstein-arena/best-24.json        -- cert-machine's pinned copy of the platform's record
+source P = corpus/einstein-arena/problems.json
+data   v = corpus/einstein-arena/best-24.json  -- cert-machine's pinned copy of the platform's record
 read   v as decimals | doubles
-claim  k11_605 : the 605 vectors of v form a kissing configuration in dimension 11
+claim  k11_605
+  quote "Kissing Number in Dimension 11 (n=605)" from P
+  : the 605 vectors of v form a kissing configuration in dimension 11
 ```
 
 **E17 · a hole: an undefined term** — `records/cryptids-run.json#core-transitions-goldbach` · not stated, hole `ambiguous`
 ```
-claim  core : artifacts/goldbach_21/machine.txt has 37 core non-halting transitions
-  -- hole ambiguous: the write-up prints no definition of a "core" transition
+source R = corpus/cryptids/artifacts/goldbach_21/README.md
+data   G = corpus/cryptids/artifacts/goldbach_21/machine.txt
+read   G as table (Q, 2)
+claim  core
+  from R
+  : G has 37 core non-halting transitions
 ```
 
 **E18 · a hole: a theorem** — `records/cryptids-run.json#theorem-riemann_95` · not stated, hole `unbounded`
 ```
-claim  rh95 : riemann_95 halts from the blank tape if and only if ¬ RiemannHypothesis
-  -- hole unbounded: a statement about every step; the Lean kernel is the authority
+source R = corpus/cryptids/Cryptids/README.md
+claim  rh95
+  from R
+  : riemann_95 halts from the blank tape if and only if ¬ RiemannHypothesis
 ```
 
 **E19 · a hole: bytes not published** — `records/riemann-run.json#zeta23-enclok` (skipped) · hole `data`
 ```
-claim  encl_ok : EnclOK
-  -- hole data: the law file behind the enclosures is "available from the authors", not published
+source M = ../claimbox/corpus/riemann/zeta23/zeta23__README.md
+claim  encl_ok
+  from M
+  hole data "the law file behind the enclosures is available from the authors, not published"
 ```
 
 **E20 · a watcher (planned, step 7)** — the ξ′ ceiling of corpus/riemann/mathematician.md §8
 ```
-claim  ceiling : for every d : P*(d) ≤ 0.86864150053
-  -- kind: for every — a watcher. Each degree's optimum is exact rational arithmetic (fifteen terms of D₁, λ = 1). On
-  -- record: no even window of degree ≤ 20 does better (the optimality certificate at degree 20), so the watcher would
-  -- report "not refuted up to d = 20" — never CERTIFIED for every d.
+source W = ../claimbox/corpus/riemann/mathematician.md
+use    P* v1                               -- each degree's optimum, exact rational arithmetic (D₁ to fifteen terms, λ = 1)
+claim  ceiling
+  from W
+  : for every d : P*(d) ≤ 0.86864150053
+  -- a watcher. On record: no even window of degree ≤ 20 does better (the optimality certificate at degree 20), so it
+  -- would report "not refuted up to d = 20", never CERTIFIED for every d.
 ```
 
 ## 12 · Coverage: every shape and every refusal of today's grammar

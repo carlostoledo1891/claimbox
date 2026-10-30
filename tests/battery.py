@@ -517,5 +517,53 @@ ok(not gs and not gr, 'language: every shape today\'s grammar reads and every ru
 gs, gr = language_gaps(SH | {'kissing/le'}, RU | {'imaginary'}, LANG)
 red(gs == ['kissing/le'] and gr == ['imaginary'], 'language: a shape and a rule LANGUAGE.md does not cover are found', ', '.join(gs + gr))
 
+# the parser and the printer (claimbox/lang.py, roadmap step 2): every example of LANGUAGE.md reads, prints back byte for byte
+# (comments dropped) and prints the same again; each comes out with the kind or the hole LANGUAGE.md gives it
+from claimbox import lang  # noqa: E402
+EXPECT_KIND = {'E17': ('hole', 'ambiguous'), 'E18': ('hole', 'unbounded'), 'E19': ('hole', 'data'), 'E20': ('kind', 'watcher')}
+bad = []
+EX = lang.examples(LANG)
+for label, block in EX:
+    try:
+        tree = lang.parse(block)
+    except lang.LangError as e:
+        bad.append(label + ' ' + str(e))
+        continue
+    printed = lang.canonical(tree)
+    if printed != lang.uncommented(block) or lang.canonical(lang.parse(printed)) != printed:
+        bad.append(label + ' does not round-trip')
+    for c in [i for i in tree['items'] if i['kw'] == 'claim']:
+        got = ('hole', c['stmt'][1]) if c['stmt'][0] == 'hole' else ('kind', lang.kind(c))
+        if got != EXPECT_KIND.get(label, ('kind', 'bounded')):
+            bad.append(label + ' ' + c['id'] + ': ' + str(got))
+ok(len(EX) == 20 and not bad, 'language: the ' + str(len(EX)) + ' examples of LANGUAGE.md read, print back byte for byte, and come out with their kind or hole', '; '.join(bad))
+HEAD = 'source S = s.md\ndata v = v.json\nread v as decimals\nuse q v1\n'
+REDS = [
+    ('source', 'a number with no address', 'data v = v.json\nread v as decimals\nuse q v1\nclaim c over v\n  : q ≤ 0.5\n'),
+    ('reading', 'a datum with no reading', 'source S = s.md\ndata v = v.json\nuse q v1\nclaim c over v\n  from S\n  : q ≤ 0.5\n'),
+    ('reading', 'a reading the language does not know', 'data v = v.json\nread v as floats\n'),
+    ('relations', 'two relations', HEAD + 'claim c over v\n  from S\n  : 0.1 ≤ q ≤ 0.5\n'),
+    ('definition', 'an unknown definition', HEAD + 'claim c over v\n  from S\n  : r(v) ≤ 0.5\n'),
+    ('range', 'a "for every" over an unbounded range written as bounded', HEAD + 'claim c over v\n  from S\n  : for every n in 1 ≤ n < N : q ≤ 0.5\n'),
+    ('range', 'an empty range', HEAD + 'claim c over v\n  from S\n  : for every j in 5 < j < 6 : q ≤ 0.5\n'),
+    ('name', 'a machine no data line declares', 'source S = s.md\nclaim c\n  from S\n  : M has 25 states\n'),
+    ('name', 'a source no source line declares', HEAD + 'claim c over v\n  from T\n  : q ≤ 0.5\n'),
+    ('syntax', 'a bar that is not a number', HEAD + 'claim c over v\n  from S\n  : q ≤ x + 1\n'),
+    ('syntax', 'a claim with no statement', HEAD + 'claim c over v\n  from S\n'),
+    ('name', 'a claim declared twice', HEAD + 'claim c over v\n  from S\n  : q ≤ 0.5\nclaim c over v\n  from S\n  : q ≤ 0.4\n'),
+]
+for rule, what, text in REDS:
+    try:
+        lang.parse(text)
+        got = 'read'
+    except lang.LangError as e:
+        got = e.rule
+    red(got == rule, 'language: refused — ' + what, got)
+HOLES = [('unbounded', 'for every n there is m : q(n, m) ≤ 0.5'), ('approximate', 'q ≈ 0.5'), ('asymptotic', 'q ≤ 3.69^(k+o(k))'),
+         ('prose', 'we checked that q is small')]
+for rule, st in HOLES:
+    s_ = lang.statement(st, 1)
+    red(s_[0] == 'hole' and s_[1] == rule, 'language: a hole, not a guess — ' + rule, str(s_[:2]))
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

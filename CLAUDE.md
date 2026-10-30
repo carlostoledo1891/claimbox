@@ -9,6 +9,7 @@
 ```
 python3 -m claimbox shape "<claim>"                              the claim's shape, or REFUSED with the rule
 python3 -m claimbox translate --claim "…" --source P --data P …   the claim object; --check hands it to cert-machine
+python3 -m claimbox lang FILE.claim [--canonical]                 the language: each claim in plain words, its kind, fork, source
 make test        the battery: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its
                  register, the planted defects, the landing page's checks
 make web         the landing page from the records: web/dist/index.html (python3 -m web.build --check re-reads every value)
@@ -72,6 +73,8 @@ claimbox/translate.py      shape + page + bytes (+ decider, record) → the obje
 claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (with the reading each
                            verifier makes of the bytes), alphaevolve.py, qiushi.py, station.py, funsearch.py, zeta23.py (LawN256.lean's
                            integers decoded into JSON beside it, one job per claim the sources print; EnclOK skipped: bytes not published)
+claimbox/lang.py           the language of LANGUAGE.md: a .claim file read into a tree, printed back (canonical) and in plain words;
+                           malformed files refused with the rule, statements that are not claims made holes
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
                            platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json),

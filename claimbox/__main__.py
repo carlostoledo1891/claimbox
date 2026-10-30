@@ -6,6 +6,8 @@
             [--reading epistemic] [--id ID] [--out FILE] [--check]
   batch jobs.json --out DIR [--check] [--record F]  one object per job (the fields of translate, in JSON); --record writes the run's summary
   read <source> [--out jobs.json]                  the jobs a structural reader makes from a pinned source: einstein-arena, alphaevolve, qiushi, station, funsearch, zeta23, cryptids
+  lang FILE.claim [--canonical]                    the language (LANGUAGE.md): each claim in plain words, its kind, its fork and its source;
+                                                   --canonical prints the file back as the printer writes it; a malformed file is REFUSED with the rule
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -53,7 +55,19 @@ def main(argv=None):
     rd = sub.add_parser('read')
     rd.add_argument('source', choices=sorted(READERS))
     rd.add_argument('--out')
+    lg = sub.add_parser('lang')
+    lg.add_argument('file')
+    lg.add_argument('--canonical', action='store_true')
     a = ap.parse_args(argv)
+    if a.cmd == 'lang':
+        from . import lang
+        try:
+            tree = lang.parse(open(a.file, encoding='utf-8').read())
+        except lang.LangError as e:
+            print('REFUSED  ' + str(e))
+            return 1
+        sys.stdout.write(lang.canonical(tree) if a.canonical else lang.report(tree))
+        return 0
     if a.cmd == 'read':
         js = READERS[a.source].jobs(ROOT)
         out = json.dumps({'what': 'translation jobs read from ' + a.source + ' by claimbox.readers.' + a.source.replace('-', '') + ' (cert-machine\'s pinned corpus)', 'jobs': js}, indent=1, ensure_ascii=False) + '\n'
