@@ -90,7 +90,8 @@ corpus/                    register-sentences.json (lifted), calibration.json (t
                            xi-opt20.json: the optimality certificates the receiver decides),
                            riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
                            riemann-math-jobs.json (each claim with its expected outcome)
-records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json; <source>-run.json +
+records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json, library-identity.json,
+                           fork-605.json (`check LANGUAGE.md#E16 --run --record`); <source>-run.json +
                            <source>/ (each batch's --record and objects)
 tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json); tests/riemann_recall.py the plants at scale on
                            the certificate, each expectation computed from the integers (records/riemann-recall.json; CLAIMBOX_FULL=1 all)

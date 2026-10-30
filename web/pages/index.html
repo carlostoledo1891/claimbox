@@ -79,6 +79,16 @@
 <span class="kw">word</span>       {{boot_word}}   <span class="c">(cert-machine)</span>
 <span class="kw">rests on</span>   machine.txt as pinned, the definition “after”, the reading “(Q, 2) table”</pre>
   <p class="cap">records/cryptids-run.json · sha256 {{cry_sha}}.</p>
+
+  <h3>One file, two readings, both decided</h3>
+  <p class="cap" style="font-style:normal">The claim: {{fork_stmt}}, over {{fork_n}} vectors pinned once.</p>
+  <div class="tw" data-measured><table>
+    <thead><tr><th>the bytes read as</th><th>cert-machine</th><th class="n">pairs that break the condition</th><th>first pair it found</th></tr></thead>
+    <tbody>
+      <tr><td class="k">{{fork_r0}}: the digits as printed</td><td>{{fork_w0}}</td><td class="n">{{fork_v0}}</td><td>vectors {{fork_i0}} and {{fork_j0}}</td></tr>
+      <tr><td class="k">{{fork_r1}}: the IEEE values they denote</td><td>{{fork_w1}}</td><td class="n">{{fork_v1}}</td><td>vectors {{fork_i1}} and {{fork_j1}}</td></tr>
+    </tbody></table></div>
+  <p class="cap">records/fork-605.json · sha256 {{fork_sha}}. The same pinned bytes, two exact answers: the reading belongs to the claim. A fork shows every reading's word; when the words differ it says split, and claimbox never merges them into one.</p>
   <ul class="plain" style="margin-top:2rem">
     <li><b>Printed back.</b> The “means” line is printed from the object cert-machine receives, by the grammar run backwards, never by a model. What is read is what is checked.</li>
     <li><b>Every number has an address</b>: a line of a source or a pinned file. A number with no address is not a claim.</li>

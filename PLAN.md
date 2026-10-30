@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 5, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 6, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -129,8 +129,8 @@ The landing page renders this table. Status words: `built`, `next`, `planned`, `
 | 2 | Read it and print it back | a parser that rejects malformed claims with a reason, and the plain-words printer | every example round-trips; planted malformed claims are rejected | built |
 | 3 | Compile and check | claim, object, cert-machine's word, and what it rests on | the same words cert-machine gives today, claim for claim | built |
 | 4 | The library | the definitions written once: kissing, the autocorrelation constants, the platform scores, the Riemann functionals, machine runs, each with its conventions | identical objects to today's | built |
-| 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | next |
-| 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | planned |
+| 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | built |
+| 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | next |
 | 7 | Helpers and watchers | tighten, attack, fill; watchers for "for all" claims that report how far they searched | every proposal is decided by cert-machine; planted twins halt where predicted | research |
 | 8 | Documents that build | a report whose numbers are claims: it does not build when one is refuted, and each number shows what it rests on | one existing report rebuilt this way | planned |
 | 9 | Teaching models to write it | the Claim Court environment on the Hub; its first task is writing claims claimbox reads | the share of validated claims before and after training | research |
@@ -198,6 +198,11 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r6, 2026-10-30.** Step 5 built: every refusal is a named hole in the result (`hole KIND: what is missing`); a fork
+  runs every reading through cert-machine and is described (`under every reading: WORD`, or `split`), never merged; `check
+  --record` writes the results. The 605-vector fork, decided: REFUTED under both readings, 9,510 violating pairs read as
+  decimals and 9,480 as doubles, the first pair the same (records/fork-605.json), now on the landing page. Step 6, prose to
+  claims, is next.
 - **r5, 2026-10-30.** Step 4 built: the definitions moved verbatim from translate.py into claimbox/library/ (step
   functions, platform scores, kissing, the Riemann certificates, the machine statements), translate.py importing them back; the
   329 jobs translate to byte-identical objects (records/library-identity.json, held by the battery); the registry lists 132

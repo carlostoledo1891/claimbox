@@ -1,6 +1,6 @@
 # LANGUAGE — claimbox, written down
 
-*Roadmap steps 1 to 4 (PLAN.md §7), revision 4, 2026-10-30. The language in which a person or an AI states a claim so
+*Roadmap steps 1 to 5 (PLAN.md §7), revision 5, 2026-10-30. The language in which a person or an AI states a claim so
 that cert-machine can decide it. This file is the specification; claimbox/lang.py reads and prints it (`python3 -m
 claimbox lang FILE.claim`, step 2); claimbox/compile.py compiles it to the object cert-machine reads (`python3 -m
 claimbox check`, step 3).
@@ -175,7 +175,8 @@ verdict. Today's refusal rules are the hole kinds:
 | `quantity` | no number at all | `no-quantity` |
 | `prose` | no statement the language reads | `prose`, `empty` |
 
-When cert-machine's format v4 admits it, a hole also carries its price: what would state the claim (the bytes, a
+`python3 -m claimbox check` prints a hole as `hole KIND: what is missing`; `--record` writes it with the rule that found
+it. When cert-machine's format v4 admits it, a hole also carries its price: what would state the claim (the bytes, a
 definition, a decider, digits of precision).
 
 ## 7 · Forks
@@ -183,7 +184,8 @@ definition, a decider, digits of precision).
 `read v as decimals | doubles` makes one claim two objects, one per reading, each decided by cert-machine. The result
 shows every word: `under every reading: REFUTED`, or `split: decimals CERTIFIED, doubles REFUTED`. *Split* describes the
 results; it is not a verdict, and claimbox never merges words into one (supervaluation: a sentence is settled only when
-every precisification agrees). The readings of a fork come from the declarations and the library, never from a proposer:
+every precisification agrees). `python3 -m claimbox check FILE --run` prints a `fork` line after the readings; `--record`
+writes each reading's object, word, count and witness (records/fork-605.json is E16's). The readings of a fork come from the declarations and the library, never from a proposer:
 models do not reliably list a sentence's readings.
 
 ## 8 · The print-back and the result
@@ -427,8 +429,8 @@ claim  ratio
   expect CERTIFIED
 ```
 
-**E16 · a fork** — cert-machine's primitive object for the 605 vectors (its certs/claimbox-decisions.json) · REFUTED under
-`decimals` with 9,510 violating pairs; 9,480 under `doubles`
+**E16 · a fork** — `records/fork-605.json` (`python3 -m claimbox check LANGUAGE.md#E16 --run --record …`) · REFUTED under
+every reading: 9,510 violating pairs under `decimals`, 9,480 under `doubles`, the first pair the same (0 and 48)
 ```
 source P = corpus/einstein-arena/problems.json
 data   v = corpus/einstein-arena/best-24.json  -- cert-machine's pinned copy of the platform's record

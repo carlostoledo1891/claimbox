@@ -8,7 +8,8 @@
   read <source> [--out jobs.json]                  the jobs a structural reader makes from a pinned source: einstein-arena, alphaevolve, qiushi, station, funsearch, zeta23, cryptids
   lang FILE.claim [--canonical]                    the language (LANGUAGE.md): each claim in plain words, its kind, its fork and its source;
                                                    --canonical prints the file back as the printer writes it; a malformed file is REFUSED with the rule
-  check FILE.claim [--run]                         each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
+  check FILE.claim [--run] [--record OUT.json]     each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
+                                                   (a fork: every reading); FILE may be LANGUAGE.md#E16, an example; --record writes the results
   library                                          every definition a claim may use: its names, version, readings, conventions and route
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
@@ -63,6 +64,7 @@ def main(argv=None):
     ck = sub.add_parser('check')
     ck.add_argument('file')
     ck.add_argument('--run', action='store_true')
+    ck.add_argument('--record')
     sub.add_parser('library')
     a = ap.parse_args(argv)
     if a.cmd == 'library':
@@ -71,12 +73,30 @@ def main(argv=None):
         return 0
     if a.cmd == 'check':
         from . import lang, compile as C
+        path, _, label = a.file.partition('#')
+        text = open(path, encoding='utf-8').read()
+        if label:
+            text = dict(lang.examples(text)).get(label)
+            if text is None:
+                print('REFUSED  ' + path + ' has no example ' + label)
+                return 1
         try:
-            tree = lang.parse(open(a.file, encoding='utf-8').read())
+            tree = lang.parse(text)
         except lang.LangError as e:
             print('REFUSED  ' + str(e))
             return 1
-        sys.stdout.write(C.check(tree, ROOT, run=a.run))
+        results = []
+        sys.stdout.write(C.check(tree, ROOT, run=a.run, results=results))
+        if a.record:
+            for r in results:
+                for k in r.get('readings', []):
+                    k.pop('compiled', None)
+            with open(a.record, 'w', encoding='utf-8') as f:
+                json.dump({'what': 'claimbox check' + (' --run' if a.run else '') + ' of ' + a.file + ': per claim, its kind or its hole, and per reading the '
+                                   'object compiled (its id, pin and reading), the definitions it rests on and cert-machine\'s line and word',
+                           'from': a.file, 'claims': results}, f, indent=1, ensure_ascii=False)
+                f.write('\n')
+            print('record ' + a.record)
         return 0
     if a.cmd == 'lang':
         from . import lang

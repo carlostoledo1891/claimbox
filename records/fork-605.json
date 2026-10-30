@@ -1,0 +1,57 @@
+{
+ "what": "claimbox check --run of LANGUAGE.md#E16: per claim, its kind or its hole, and per reading the object compiled (its id, pin and reading), the definitions it rests on and cert-machine's line and word",
+ "from": "LANGUAGE.md#E16",
+ "claims": [
+  {
+   "id": "k11_605",
+   "kind": "bounded",
+   "expect": null,
+   "statement": "the 605 vectors of v form a kissing configuration in dimension 11",
+   "readings": [
+    {
+     "reading": "decimals",
+     "object": "k11-605-decimals",
+     "pin": {
+      "path": "corpus/einstein-arena/best-24.json",
+      "sha256": "1bc113d0235788eaf7ec9951abe770b9c062bdcf6a2c2b49ae583f4096dad6ce"
+     },
+     "count": 605,
+     "elements": "decimals",
+     "definitions": [
+      "kissing configuration v1"
+     ],
+     "certMachine": "ADMITTED  k11-605-decimals  []  from the object: REFUTED (witness {\"i\": 0, \"j\": 48}, 9510 violating)  48.996 s  note: no record attached",
+     "word": "REFUTED",
+     "seconds": 49.0,
+     "witness": {
+      "i": 0,
+      "j": 48
+     },
+     "violating": 9510
+    },
+    {
+     "reading": "doubles",
+     "object": "k11-605-doubles",
+     "pin": {
+      "path": "corpus/einstein-arena/best-24.json",
+      "sha256": "1bc113d0235788eaf7ec9951abe770b9c062bdcf6a2c2b49ae583f4096dad6ce"
+     },
+     "count": 605,
+     "elements": "doubles",
+     "definitions": [
+      "kissing configuration v1"
+     ],
+     "certMachine": "ADMITTED  k11-605-doubles  []  from the object: REFUTED (witness {\"i\": 0, \"j\": 48}, 9480 violating)  47.521 s  note: no record attached",
+     "word": "REFUTED",
+     "seconds": 47.6,
+     "witness": {
+      "i": 0,
+      "j": 48
+     },
+     "violating": 9480
+    }
+   ],
+   "fork": "under every reading: REFUTED"
+  }
+ ]
+}

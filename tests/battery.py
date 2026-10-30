@@ -703,5 +703,35 @@ for rule, what, text, cid in LREDS:
     got = compile_refusal(text, cid)
     red(got == rule, 'library: refused — ' + what, got)
 
+# ---- 9 · holes and forks (roadmap step 5) -------------------------------------------------------------------------------
+# every rule the code refuses with is a named hole (or one of the two that are not: a name to fix, a claim about every case);
+# the examples that are holes come out with their hole's kind; the fork of the 605 vectors is held to its record — the same
+# pinned bytes, one object per reading, cert-machine's word under each and its exact count (the two runs take about a minute
+# each and are recorded, not re-run; CLAIMBOX_FULL=1 re-runs them)
+unmapped = sorted(r for r in rules_today() if r not in CP.HOLE_OF and r not in CP.NOT_HOLES)
+ok(not unmapped and set(CP.HOLE_OF.values()) <= set(lang.HOLES), 'holes: every rule the code refuses with is a named hole of LANGUAGE.md §6, or a name to fix, or a watcher',
+   ', '.join(unmapped) or f'{len(CP.HOLE_OF)} rules, {len(set(CP.HOLE_OF.values()))} holes')
+red(sorted(r for r in rules_today() | {'imaginary'} if r not in CP.HOLE_OF and r not in CP.NOT_HOLES) == ['imaginary'], 'holes: a refusal rule with no hole is found', 'imaginary')
+got = {}
+for label in ('E17', 'E18', 'E19'):
+    t_ = lang.parse(EXD[label])
+    r_ = CP.result(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)
+    got[label] = (r_.get('hole') or {}).get('kind')
+ok(got == {'E17': 'ambiguous', 'E18': 'unbounded', 'E19': 'data'}, 'holes: the examples that are holes come out as a named hole, not an object and not an error', json.dumps(got))
+FORKREC = json.load(open(os.path.join(REPO, 'records', 'fork-605.json'), encoding='utf-8'))['claims'][0]
+fork_now = CP.compile_claim(t16, [i for i in t16['items'] if i['kw'] == 'claim'][0], ROOT)
+same_objects = [(k['reading'], k['object']['id'], k['object']['domain']['pin']) for k in fork_now] == \
+               [(r['reading'], r['object'], r['pin']) for r in FORKREC['readings']]
+counts = [(r['reading'], r['word'], r.get('violating')) for r in FORKREC['readings']]
+ok(same_objects and counts == [('decimals', 'REFUTED', 9510), ('doubles', 'REFUTED', 9480)] and FORKREC['fork'] == 'under every reading: REFUTED',
+   'forks: the 605 vectors compile to one object per reading over one pin, and cert-machine refutes both — 9,510 violating pairs read as decimals, 9,480 as doubles',
+   json.dumps(counts))
+if os.environ.get('CLAIMBOX_FULL'):
+    rerun = [(k['reading'], CP.word(line), int(re.search(r'(\d+) violating', line).group(1)))
+             for k in fork_now for line in [T.check_with_cert_machine(k['object'], ROOT)]]
+    ok(rerun == counts, 'forks (full): the two readings re-decided by cert-machine give the recorded words and counts', json.dumps(rerun))
+red(CP.fork_summary([('decimals', 'REFUTED'), ('doubles', 'CERTIFIED')]) == 'split: decimals REFUTED, doubles CERTIFIED',
+    'forks: readings with different words are described as split, never merged into one word', CP.fork_summary([('decimals', 'REFUTED'), ('doubles', 'CERTIFIED')]))
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

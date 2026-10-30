@@ -88,8 +88,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    `definition` when missing or at another version, `decider` when it has no route or is only defined in the file, `reading`
    when the definition does not take the claim's reading, a platform's score only its verifier's); `python3 -m claimbox
    library` prints it; `rests on` names each definition with its version and file. LANGUAGE.md §4 rewritten. make test: 446
-   pass, 0 fail, 87/87 reds. NEXT: step 5, holes and forks — every refusal a named hole in the result; a fork's readings each
-   decided and shown, the 605 file's doubles count produced (about a minute of cert-machine).
+   pass, 0 fail, 87/87 reds.
+   STEP 5 BUILT (on "continue"): compile.py gives every claim a structured result (result()): its kind; or its hole — the rule
+   that found it mapped to LANGUAGE.md §6's names (HOLE_OF; `definition` and `watcher` are the two that are not holes); or, per
+   reading, the compiled object's id, pin, count and reading, the definitions it rests on and, with --run, cert-machine's line,
+   one word (words_of/word: REFUTED if any predicate is, CERTIFIED if all are), the violating count and the witness. A fork is
+   described, never merged: "under every reading: WORD" or "split: …" (fork_summary). `python3 -m claimbox check FILE --run
+   --record OUT.json` writes the results; FILE may be an example, LANGUAGE.md#E16. THE 605 FORK, DECIDED: records/fork-605.json
+   — the same pin, one object per reading, REFUTED under both, 9,510 violating pairs read as decimals and 9,480 as doubles, the
+   first pair the same (0, 48), about fifty seconds each — the doubles count now in a claimbox record for the first time; the
+   landing page shows it (a table in the language section, every number from that record; the page's own check first refused
+   a header that typed 605, 11 and 60 without an address). Battery §9: every refusal rule is a hole or one of the two, the hole
+   examples come out as holes, the fork held to its record (CLAIMBOX_FULL=1 re-runs the two decisions), "split" never merged;
+   two reds. make test: 451 pass, 0 fail, 89/89 reds. NEXT: step 6, prose to claims — the AI phrasings and the register as
+   proposals, validated by anchoring, print-back, a second proposer of another kind and planted sources; refusal rate published.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 

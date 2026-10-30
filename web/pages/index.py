@@ -18,6 +18,7 @@ EX = 'prim-1c-rozetyp-k3072'          # a claimant's lower bound, its last digit
 EDGE = 'zeta23-edge'                  # the Riemann certificate's edge bound, as its own source prints it
 AI_EDGE = '1~1abstract~11'            # the same claim, as an AI-written abstract phrases it (id 1/abstract/1)
 BOOT = 'riemann-104-boot'             # a machine claim from the cryptids release
+FORK = 'records/fork-605.json'        # one file, two readings, both decided (LANGUAGE.md E16)
 
 RUNS = [
     ('records/einstein-arena-run.json', "EinsteinArena's best solutions"),
@@ -43,6 +44,12 @@ WORD_TAG = {'CERTIFIED': 'held', 'REFUTED': 'dep', 'REFUSED': 'open'}
 def chip(path, rid):
     from web.record import word
     return f'<span class="tag {WORD_TAG[word(path, rid)]}">{derived("word", path, rid)}</span>'
+
+
+def fork_chip(i):
+    from web.record import at
+    w = at(FORK, f'/claims/0/readings/{i}/word')
+    return f'<span class="tag {WORD_TAG[w]}">{val(FORK, f"/claims/0/readings/{i}/word", "raw")}</span>'
 
 
 def runs_table():
@@ -106,6 +113,12 @@ def slots():
         'boot_nonzero': derived('shape', CRY, BOOT, 'nonzero', count=False),
         'boot_word': derived('word', CRY, BOOT), 'cry_sha': derived('sha12', CRY),
         'runs': runs_table(), 'misses': misses(),
+        'fork_sha': derived('sha12', FORK), 'fork_stmt': val(FORK, '/claims/0/statement', 'raw'), 'fork_n': val(FORK, '/claims/0/readings/0/count'),
+        **{f'fork_r{i}': val(FORK, f'/claims/0/readings/{i}/reading', 'raw') for i in (0, 1)},
+        **{f'fork_w{i}': fork_chip(i) for i in (0, 1)},
+        **{f'fork_v{i}': val(FORK, f'/claims/0/readings/{i}/violating') for i in (0, 1)},
+        **{f'fork_i{i}': val(FORK, f'/claims/0/readings/{i}/witness/i', 'raw') for i in (0, 1)},
+        **{f'fork_j{i}': val(FORK, f'/claims/0/readings/{i}/witness/j', 'raw') for i in (0, 1)},
         'cov_shaped': val(COV, '/shaped'), 'cov_n': val(COV, '/sentences'),
         'cov_noq': val(COV, '/byRefusal/no-quantity'), 'cov_prose': val(COV, '/byRefusal/prose'),
         'cov_asym': val(COV, '/byRefusal/asymptotic'),

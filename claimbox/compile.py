@@ -13,6 +13,7 @@ A hole compiles to nothing (Refusal with its rule). A watcher or a hunter compil
 'watcher'). Nothing here decides: cert-machine's checker does (translate.check_with_cert_machine).
 """
 import hashlib
+import json
 import os
 import re
 from fractions import Fraction
@@ -303,25 +304,103 @@ def rests_on(obj, root, definitions=()):
     return out
 
 
-def check(tree, root, run=False):
-    """what `claimbox check FILE.claim` prints"""
+# ------------------------------------------------------------------------------------------------- holes, forks, results
+
+HOLE_OF = {'source': 'source', 'data': 'data', 'count': 'count', 'kissing-count': 'count', 'decider': 'decider', 'resolution': 'resolution',
+           'reading': 'reading', 'range': 'range', 'unbounded': 'unbounded', 'asymptotic': 'asymptotic', 'approximate': 'approximate',
+           'ambiguous': 'ambiguous', 'no-quantity': 'quantity', 'prose': 'prose', 'empty': 'prose'}
+NOT_HOLES = ('definition', 'watcher')     # a name the file must fix; a claim about every case, which is a kind
+
+
+def words_of(line):
+    """cert-machine's words in its line for one object: the record's, and every word printed for the object's predicates"""
+    if not line.startswith('ADMITTED'):
+        return [line.split()[0]] if line else []
+    br = re.search(r'\[([^\]]*)\]', line)
+    ws = [w.strip() for w in br.group(1).split('·')] if br and br.group(1).strip() else []
+    if 'from the object:' in line:
+        ws += re.findall(r'\b(CERTIFIED|REFUTED|REFUSED)\b', line.split('from the object:', 1)[1].split('  note:')[0])
+    return ws
+
+
+def word(line):
+    """the one word for an object: REFUTED if any predicate is, CERTIFIED if every one is, admitted-undecided with none"""
+    ws = words_of(line)
+    if not ws:
+        return 'ADMITTED, undecided'
+    if not line.startswith('ADMITTED'):
+        return ws[0]
+    return 'REFUTED' if 'REFUTED' in ws else ('CERTIFIED' if all(w == 'CERTIFIED' for w in ws) else ' · '.join(ws))
+
+
+def fork_summary(pairs):
+    """the readings' words, described: the same under every reading, or split — a description, never a verdict of its own"""
+    ws = [w for _, w in pairs]
+    if len(set(ws)) == 1:
+        return 'under every reading: ' + ws[0]
+    return 'split: ' + ', '.join(f'{r} {w}' for r, w in pairs)
+
+
+def result(tree, c, root, run=False):
+    """the structured result of one claim: its kind, or its hole, and per reading the object and cert-machine's word"""
+    out = {'id': c['id'], 'kind': lang.kind(c), 'expect': c['expect'],
+           'statement': lang.fmt_statement(c['stmt']) if c['stmt'][0] != 'hole' else None}
+    try:
+        compiled = compile_claim(tree, c, root)
+    except Refusal as e:
+        if e.rule == 'watcher':
+            out['watcher'] = e.msg
+        elif e.rule in NOT_HOLES:
+            out['error'] = {'rule': e.rule, 'what': e.msg}
+        else:
+            out['hole'] = {'kind': HOLE_OF.get(e.rule, e.rule), 'rule': e.rule, 'missing': e.msg}
+        return out
+    out['readings'] = []
+    for k in compiled:
+        obj = k['object']
+        row = {'reading': k['reading'], 'object': obj['id'], 'pin': obj['domain']['pin'], 'count': obj['domain'].get('count'),
+               'elements': (obj['domain'].get('data') or {}).get('elements'),
+               'definitions': [f'{n} {e["version"]}' for n, e in k['definitions']], 'compiled': obj}
+        if run:
+            import time
+            t0 = time.time()
+            line = T.check_with_cert_machine(obj, root)
+            row.update({'certMachine': line[:400], 'word': word(line), 'seconds': round(time.time() - t0, 1)})
+            m = re.search(r'witness (\{[^}]*\}), (\d+) violating', line)
+            if m:
+                row['witness'], row['violating'] = json.loads(m.group(1)), int(m.group(2))
+        out['readings'].append(row)
+    if run and len(out['readings']) > 1:
+        out['fork'] = fork_summary([(r['reading'], r['word']) for r in out['readings']])
+    return out
+
+
+def check(tree, root, run=False, results=None):
+    """what `claimbox check FILE.claim` prints; `results`, when given, collects the structured results"""
     out = []
     for c in [i for i in tree['items'] if i['kw'] == 'claim']:
+        r = result(tree, c, root, run)
+        if results is not None:
+            results.append(r)
         out.append(f'claim {c["id"]}')
-        try:
-            compiled = compile_claim(tree, c, root)
-        except Refusal as e:
-            out.append(f'  hole      {e.rule}: {e.msg}' if e.rule != 'watcher' else f'  kind      {e.msg}')
-            continue
-        for k in compiled:
-            obj = k['object']
-            if len(compiled) > 1:
+        if 'hole' in r:
+            out.append(f'  hole      {r["hole"]["kind"]}: {r["hole"]["missing"]}')
+        elif 'watcher' in r:
+            out.append(f'  kind      {r["watcher"]}')
+        elif 'error' in r:
+            out.append(f'  refused   {r["error"]["rule"]}: {r["error"]["what"]}')
+        for k in r.get('readings', []):
+            obj = k['compiled']
+            if len(r['readings']) > 1:
                 out.append(f'  reading   {k["reading"]}')
             out += ['  ' + ln for ln in means_object(obj).split('\n')]
             if run:
-                line = T.check_with_cert_machine(obj, root)
-                out.append('  word      ' + line[:200] + '   (cert-machine)')
-            out += ['  rests on  ' + ln for ln in rests_on(obj, root, k['definitions'])]
+                extra = f', {k["violating"]:,} violating, witness {json.dumps(k["witness"])}' if 'violating' in k else ''
+                out.append(f'  word      {k["word"]}{extra}   (cert-machine: {k["certMachine"][:160]})')
+            out += ['  rests on  ' + ln for ln in rests_on(obj, root, ())]
+            out += [f'  rests on  definition {d}' for d in k['definitions']]
+        if 'fork' in r:
+            out.append(f'  fork      {r["fork"]}')
         if c['expect']:
             out.append(f'  expect    {c["expect"]}')
     return '\n'.join(out) + '\n'
