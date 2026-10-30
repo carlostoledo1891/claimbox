@@ -140,6 +140,11 @@ claim  h_3_assistant_29 over e
   : ?
   proposed by person
 
+claim  h_4_assistant_37 over e
+  quote "I verified that p_0 = 1 − a_N is exactly 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000 and that p_0 is at most 0.6818287." from P
+  : ?
+  proposed by person
+
 claim  h_4_paper_39 over e
   quote "$0.6818287 \geq p_0$, and $p_0 = 1 - a_N = 10909258999421303588095230195816054408197 / 16000000000000000000000000000000000000000$." from P
   : ?
@@ -237,11 +242,6 @@ claim  h_7_docstring_63 over s
 
 claim  h_7_blog_64 over s
   quote "Take three minus the reciprocal of c₁*, divide by two, and you get 0.83625… — the distinct proportion." from P
-  : ?
-  proposed by person
-
-claim  h_7_tweet_65 over s
-  quote "distinct proportion: 3 − 1/c₁* / 2 = 0.83625…" from P
   : ?
   proposed by person
 
