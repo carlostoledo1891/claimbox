@@ -21,7 +21,65 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## TASKS BACKLOG (updated 2026-10-23, the eighth session — the cryptids audit through claimbox (the machine family, the reader, the recall) beside cert-machine's hand audit, 124 of 128 paired claims agreeing; earlier the seventh session — the cert-machine chat allowed into this repository by the operator ("You are allowed to use claimbox project. The chat and handoff file there are aware"): §8 of the mathematician's write-up — the tail, the parameter and the calibration — decided; the XiPrime Lean files pinned; make test 288 checks, 48 reds)
+## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the eighth session's state follows)
+
+  ★ THE GROWTH PLAN (2026-10-30, from the cert-machine chat, on the operator's word: "keep claimbox separated but improving as
+     we need. I do not want to change cert-machine scope"; then "Yes. Update the plan and handoff"). Nothing below is built yet.
+     ── THE SHAPE: any input → claimbox (read, sort, run) → cert-machine receiver (admit, decide, `--check`) → verdict + record.
+       claimbox is the front door and the workshop; cert-machine is the judge, unchanged. The direction never reverses (this repo
+       reads cert-machine read-only and pins what it reads); a receiver change is made in a cert-machine chat first, then `make lift`.
+       Standard library only, no model inside the translator, build what is asked — every rule above still binds.
+     ── WHY: four gaps were named on 2026-10-30 between what this pair does and verification of real code: (1) proving properties
+       of programs for all inputs, (2) a formal semantics of a programming language, (3) generating proofs, not only checking
+       them, (4) engineering at production scale. Items D1–D3 exist for gaps 1–3; gap 4 is experience, and C9 is the honest part.
+     ── A. READING (the front door)
+       A1 ONE COMMAND for any input: `python3 -m claimbox run <text | path | url | repo>` pins the bytes, picks a reader, writes the
+          objects, runs `--check`, records the run. The existing readers plug in unchanged.
+       A2 CANONICAL FORM + TYPED READINGS: one inequality per bar; `elements` grows into a declared semantics (IEEE doubles,
+          int64 wraparound, BigInt, Python int, the machine model — the 605 lesson and the ETH lesson as one rule). Needs the
+          receiver's format v4.
+       A3 CONCORD: a second deterministic reader; a model-written object enters only as an outside input to compare against;
+          every decision-bearing field must agree or the claim is REFUSED (no concord). Readers graded on planted defects.
+       A4 SORTING CLAIMS (notes/claim-court-2026-10-23.md §2): bounded → decide now; Π₁ → a watcher that halts on a
+          counterexample; Σ₁ → a hunter that halts on a witness; Π₂ and up → REFUSED as today. "Verified up to N" is read as a
+          box claim.
+     ── B. RUNNING (producer-side work)
+       B5 THE CONSISTENCY CRYPTID: a watcher that halts on the first object where cert-machine's check.py and check.js disagree
+          (or tm.py and tm.js), or where brute force on a tiny domain contradicts a CERTIFIED. A plain battery; any time.
+       B6 BORN CRYPTIDS WITH RED CONTROLS: each watcher ships a planted twin that must halt at a predicted step and a
+          one-transition mutant the ledger must catch; a ledger of search progress (hash-chained checkpoints, random stretches
+          replayed on two simulators: a runner skipping a fraction f is caught with probability 1 − (1 − f)^k after k audits);
+          first sources: the ξ′ ceiling, arena hunters that halt only on beating a pinned record. The brainstorm's go/no-go:
+          one cryptid with a planted twin — the twin halts on time, skipped stretches are caught at the predicted rate, the
+          audit's cost is measured.
+       B7 PROGRAMS (bounded): a claim about code run under the declared semantics in two runtimes; the input→output table pinned;
+          cert-machine decides it with the finite quantifier it already has. The run is a reading (assumed) unless the two
+          runtimes agree. Unbounded → REFUSED with its rule, or D3.
+       B8 LEAN OBJECTS: read a claimant's Lean project, or emit a Lean statement for a claim beyond the finite layer; the
+          receiver's kernel lanes decide (two kernels, a fresh replay).
+     ── C. USING IT
+       C9 THE PRODUCT FACE: a court tool for agents (a small stdio server any coding or research agent calls to check its
+          numbers before writing them), a GitHub Action that runs a claim on every pull request, a versioned format, conformance
+          fixtures (cert-machine's ten hand-written objects plus the red controls), packaged releases with a changelog.
+       C10 RESEARCH, each step on the operator's word: the deference test (notes §10; a pilot of about $200 of API spend,
+          scored by the exact referee); Claim Court and cert-model stay PARKED behind their gates (a pinball-loss reward; a
+          frozen 7B proposer beating blind rules, then one GPU-day pilot).
+     ── D. CLOSING THE GAPS (added 2026-10-30)
+       D1 PROVE REAL CODE (gaps 1–2), first: model cert-machine's outward printer (design/outward.js, read-only, pinned here)
+          in Lean and prove an upper end is never printed below its value and a lower end never above, at any precision — the
+          truncated-upper-bound class that bit three times (C84b, GNNW, the lonely-runner threshold). Second: this repo's
+          digits → exact rational parser, the core of its faithfulness. Each: a Lean statement and proof, replayed under two
+          kernels on the hosted runners (no local Lean here), and a differential battery tying the JS/Python to the Lean model.
+       D2 A SMALL FORMAL SEMANTICS (gap 2): the Turing-machine semantics in Lean as an executable reference; tm.py and tm.js
+          tested against it exactly; then a minimal while-language with exact integers — the language B7's claims are stated in.
+       D3 A PROVER LOOP, inference only (gap 3): for objects beyond the finite layer, emit the Lean statement, let an
+          off-the-shelf AI prover propose proofs, the kernels decide; on a pinned corpus measure proved / refuted / refused, with
+          planted false statements that must never come back proved. No training (cert-model stays parked).
+     ── RECEIVER CHANGES (in cert-machine, scope unchanged; listed in its HANDOFF): format v4 (canonical form, typed readings, a
+       Lean object kind, the standing of each input carried into the certificate); `instruments/ledger` (B6's sampled replay
+       decider) is the OPERATOR'S DECISION — without it, watchers return only halting witnesses, which the receiver already decides.
+     ── ORDER: A1 → B5 → A2+A3 (with format v4) → D1 → A4 + B6's go/no-go → D2 → B7 → B8 + D3 → C9; C10 when the spend is approved.
+
 
   ★ THE EIGHTH SESSION (2026-10-23, from the cert-machine chat, on "Proceed. Can we benchmark the process using claimbox vs not
      using?"): THE MACHINE FAMILY in grammar.py (parse_machine, read first in parse): digests, state and cell counts, halting cells, a table
