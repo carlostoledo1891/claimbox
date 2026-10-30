@@ -565,5 +565,83 @@ for rule, st in HOLES:
     s_ = lang.statement(st, 1)
     red(s_[0] == 'hole' and s_[1] == rule, 'language: a hole, not a guess — ' + rule, str(s_[:2]))
 
+# ---- 7 · the compiler (claimbox/compile.py, roadmap step 3) ------------------------------------------------------------
+# every example that names a record compiles to an object equal on every decision-bearing field to the object today's run
+# wrote — the pin, the count, the reading of the bytes, each bound, each named decision, the record — so cert-machine gives it
+# the same word; the light ones (recorded under 5 s) are handed to the checker again and must come out as `expect` says
+from claimbox import compile as CP  # noqa: E402
+from web.record import outcome  # noqa: E402
+CALIB = {('E1', 'kissing_11'): 'einstein-arena/ea-kissing-kissing-number-d11', ('E2', 'c1b_upper'): 'primitive/prim-1b-codexprolong',
+         ('E3', 'c1c_k3072'): 'primitive/prim-1c-rozetyp-k3072', ('E4', 'cmt'): 'riemann/zeta23-cmt', ('E5', 'near_cue'): 'riemann/zeta23-rows',
+         ('E6', 'edge'): 'riemann/zeta23-edge', ('E7', 'j_flat'): 'riemann-math/math-xi-J-flat', ('E8', 'p_w6k15'): 'riemann-math/math-tail-w6k15-P',
+         ('E8', 'p_w6k15_false'): 'riemann-math/math-tail-w6k15-P-false', ('E9', 'packing_26'): 'einstein-arena/ea-best-circle-packing',
+         ('E10', 'shannon'): 'einstein-arena/ea-best-shannon-capacity-c7-5', ('E11', 'states'): 'cryptids/prov-states-goldbach',
+         ('E12', 'derive_zf'): 'cryptids/derive-zf', ('E13', 'boot'): 'cryptids/riemann-104-boot',
+         ('E14', 'boot_length'): 'cryptids/riemann-120-no-halt-boot-length', ('E15', 'ratio'): 'cryptids/ratio-goldbach-steps'}
+
+
+def decision_fields(o):
+    r, d = o.get('record') or {}, o['domain']
+    return {'pin': d['pin'], 'count': d.get('count'), 'elements': (d.get('data') or {}).get('elements'), 'reading': o['reading'], 'ineqs': ineqs(o),
+            'named': [p['g'].get('named') for p in o['predicate'] if isinstance(p.get('g'), dict)],
+            'record': [r.get('path'), r.get('row'), r.get('value'), r.get('verdict'), r.get('predicate')]}
+
+
+EXD = dict(EX)
+same, words, bad = 0, 0, []
+for (label, cid), rec in CALIB.items():
+    tree = lang.parse(EXD[label])
+    c = [i for i in tree['items'] if i['kw'] == 'claim' and i['id'] == cid][0]
+    try:
+        obj = CP.compile_claim(tree, c, ROOT)[0]['object']
+    except Refusal as e:
+        bad.append(f'{label} {cid}: {e.rule}: {e.msg[:80]}')
+        continue
+    run_dir, rid = rec.split('/')
+    if decision_fields(obj) == decision_fields(json.load(open(os.path.join(REPO, 'records', run_dir, rid + '.json'), encoding='utf-8'))):
+        same += 1
+    else:
+        bad.append(f'{label} {cid}: a decision-bearing field differs from records/{rec}.json')
+    row = [r for r in json.load(open(os.path.join(REPO, 'records', run_dir + '-run.json'), encoding='utf-8'))['rows'] if r['id'] == rid][0]
+    if (row.get('certMachineSeconds') or 0) < 5:
+        got = {'certified': 'CERTIFIED', 'refuted': 'REFUTED'}.get(outcome({'certMachine': T.check_with_cert_machine(obj, ROOT)}), '?')
+        words += 1
+        if got != c['expect']:
+            bad.append(f'{label} {cid}: cert-machine says {got}, expected {c["expect"]}')
+ok(not bad and same == len(CALIB), 'compiler: every example that names a record compiles to the object today\'s run wrote, field for field, and the '
+   + str(words) + ' light ones come back from cert-machine with the expected word', '; '.join(bad) or f'{same}/{len(CALIB)} objects, {words} words')
+t16 = lang.parse(EXD['E16'])
+fork = CP.compile_claim(t16, [i for i in t16['items'] if i['kw'] == 'claim'][0], ROOT)
+ok([k['reading'] for k in fork] == ['decimals', 'doubles'] and len({k['object']['domain']['pin']['sha256'] for k in fork}) == 1
+   and [k['object']['domain']['data']['elements'] for k in fork] == ['decimals', 'doubles'],
+   'compiler: a fork compiles to one object per reading, the same pinned bytes read two ways', ', '.join(k['object']['id'] for k in fork))
+
+
+def compile_refusal(text, cid):
+    tree = lang.parse(text)
+    try:
+        CP.compile_claim(tree, [i for i in tree['items'] if i['kw'] == 'claim' and i['id'] == cid][0], ROOT)
+        return 'compiled'
+    except Refusal as e:
+        return e.rule
+
+
+E2T, E3T, E9T, E13T = EXD['E2'], EXD['E3'], EXD['E9'], EXD['E13']
+CREDS = [
+    ('data', 'a claim over two pinned files', E2T.replace('use    C_1b v1', 'data   g = corpus/einstein-arena/best-6.json\nread   g as doubles\nuse    C_1b v1').replace(': C_1b(h) ≤', ': C_1b(h) + C_1b(g) ≤'), 'c1b_upper'),
+    ('reading', 'a machine file read as decimals', E13T.replace('read   M as table (Q, 2)', 'read   M as decimals'), 'boot'),
+    ('reading', 'a functional over bytes read as a transition table', E2T.replace('read   h as doubles', 'read   h as table (Q, 2)'), 'c1b_upper'),
+    ('resolution', 'a score claimed within a resolution the platform does not declare', E9T.replace('within 1e-10 of', 'within 1e-9 of'), 'packing_26'),
+    ('source', 'the relation flipped against the line the source prints', E3T.replace('C_1c(w) ≥ 0.41030211724', 'C_1c(w) ≤ 0.41030211724'), 'c1c_k3072'),
+    ('watcher', 'a claim about every case compiled to decide now', EXD['E20'], 'ceiling'),
+    ('ambiguous', 'a hole compiled to an object', EXD['E17'], 'core'),
+]
+for rule, what, text, cid in CREDS:
+    got = compile_refusal(text, cid)
+    red(got == rule, 'compiler: refused — ' + what, got)
+line = 'ADMITTED  x  []  from the object: CERTIFIED value 1/2 · CERTIFIED · REFUTED (witness {"i": 1, "j": 13}, 3 violating)  0.01 s'
+red(outcome({'certMachine': line}) == 'refuted', 'the page\'s counter: a REFUTED printed after a CERTIFIED makes the object refuted (it was counted certified until 2026-10-30)',
+    outcome({'certMachine': line}))
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

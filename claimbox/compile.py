@@ -1,0 +1,288 @@
+"""claimbox/compile.py — a claim of the language compiled to the object cert-machine reads, and printed back from it.
+
+Roadmap step 3. The compiler lowers each claim of a tree (lang.parse) to a job for today's translator (translate.py, the
+code the calibration and the planted defects already hold) and lets it write the object, so the step from a claim to what
+the checker reads stays the one that has been checked (commitment 9). What the language adds is decided here, before the
+translator runs: which file, which source, which reading, which record, and whether there is anything to compile at all.
+
+    compile_claim(tree, claim, root) -> [{'reading', 'job', 'object'}]   one per reading (a fork gives several), or Refusal
+    means_object(obj) -> str                                           the claim in plain words, printed from the object
+    rests_on(obj, root) -> [str]                                       the pins, the decoder, the record, the checker
+
+A hole compiles to nothing (Refusal with its rule). A watcher or a hunter compiles to nothing until step 7 (Refusal
+'watcher'). Nothing here decides: cert-machine's checker does (translate.check_with_cert_machine).
+"""
+import hashlib
+import os
+import re
+from fractions import Fraction
+
+from . import grammar, lang, translate as T
+from .grammar import Refusal
+
+ELEMENTS = ('decimals', 'doubles', 'integers', 'rationals')          # the readings today's translator decodes
+MACHINE_READINGS = ('table (Q, 2)', 'text', 'bytes')                 # the readings the machine decider decodes itself
+MACHINE_DECIDER = 'instruments/claimbox/tm.py'
+
+
+def _decls(tree):
+    items = tree['items']
+    return ({i['name']: i['path'] for i in items if i['kw'] == 'source'},
+            {i['name']: i['path'] for i in items if i['kw'] == 'data'},
+            {i['name']: i['readings'] for i in items if i['kw'] == 'read'})
+
+
+def _resolve(name, data):
+    """a data name, or a path a data line declares, to its path"""
+    if name in data:
+        return name, data[name]
+    for d, p in data.items():
+        if p == name or p.endswith('/' + name):
+            return d, p
+    raise Refusal('data', name + ' is not declared by a data line')
+
+
+def _lower_term(t, data):
+    """a term as today's grammar prints it: a quantity applied to the data it is over is the quantity's name"""
+    if t[0] == 'call' and all(a[0] == 'name' and a[1] in data for a in t[2]):
+        return ('name', t[1])
+    if t[0] == 'call':
+        return ('call', t[1], [_lower_term(a, data) for a in t[2]])
+    if t[0] in ('paren', 'abs', 'neg'):
+        return (t[0], _lower_term(t[1], data))
+    if t[0] == 'bin':
+        return ('bin', t[1], _lower_term(t[2], data), _lower_term(t[3], data))
+    return t
+
+
+def _quantity(t):
+    """the quantity a comparison is about, when it is one name (applied or not)"""
+    return t[1] if t[0] in ('name', 'call') else None
+
+
+def _range_text(r, var):
+    m = re.match(r'^(-?\d+) \.\. (-?\d+)$', r['printed'])
+    return f'{m.group(1)} <= {var} <= {m.group(2)}' if m else r['printed']
+
+
+def _same_shape(a, b):
+    keys = ('family', 'rel', 'printed', 'kind', 'n', 'dim')
+    return all(a.get(k) == b.get(k) for k in keys) and (a.get('range') or {}).get('lo') == (b.get('range') or {}).get('lo') and \
+        (a.get('range') or {}).get('hi') == (b.get('range') or {}).get('hi')
+
+
+def lower(tree, c):
+    """the claim as jobs for today's translator: [(reading, job)], or Refusal"""
+    sources, data, reads = _decls(tree)
+    s = c['stmt']
+    if s[0] == 'hole':
+        raise Refusal(s[1], s[2])
+    k = lang.kind(c)
+    if k in ('watcher', 'hunter'):
+        raise Refusal('watcher', f'a claim about every case runs as a {k} (roadmap step 7); nothing is compiled to decide now')
+    if c['from'] is None:
+        raise Refusal('source', 'the claim names no source')
+    source = sources[c['from']]
+    job = {'id': c['id'].replace('_', '-'), 'source': source}
+    if c['record']:
+        job['record'] = dict(c['record'])
+    body, rng, var = s, None, None
+    if s[0] == 'forall':
+        var, rng, body = s[1], s[2], s[3]
+    if body[0] == 'machine':
+        sh = body[1]
+        fields = dict(sh)
+        for key in lang.FILE_KEYS:
+            if key in sh:
+                fields[key] = _resolve(sh[key], data)[1]
+        job['claim'] = lang.MACHINE_FMT[sh['kind']](fields)
+        if 'file' in sh:
+            name, path = _resolve(sh['file'], data)
+            bad = [r for r in reads.get(name, []) if r not in MACHINE_READINGS]
+            if bad:
+                raise Refusal('reading', f'{name} is a machine file; it is read as {", ".join(MACHINE_READINGS)}, not {", ".join(bad)}')
+            job['data'] = path
+        else:
+            job['data'] = source                    # a ratio or a percentage of two printed integers: the write-up is the object
+        if 'other' in sh:
+            job['other'] = _resolve(sh['other'], data)[1]
+        job['quote'] = c['quote']
+        job['decider'] = MACHINE_DECIDER
+        return [('machine', job)]
+    over = set(c['over']) | lang.data_in(body, set())
+    for t in lang.terms_of(body):
+        over |= {n for n in lang.names_in(t, set()) if n in data}
+    if len(over) != 1:
+        raise Refusal('data', 'one object is about one pinned file; this claim names ' + (', '.join(sorted(over)) or 'none'))
+    dname = over.pop()
+    job['data'] = data[dname]
+    if body[0] == 'cmp':
+        lowered = lang.fmt_term(_lower_term(body[1], data)) + ' ' + body[2] + ' ' + lang.fmt_bar(body[3])
+        if rng:
+            lowered += f' ({_range_text(rng, var)})'
+        sentence, name = lowered, None
+        if c['quote'] is not None:
+            try:
+                q, l = grammar.parse(c['quote']), grammar.parse(lowered)
+                if _same_shape(q, l):
+                    sentence = c['quote']
+                    qn = _quantity(_lower_term(body[1], data))
+                    if qn and q.get('name') != qn:
+                        name = qn
+            except Refusal:
+                pass
+        job['claim'] = sentence
+        if name:
+            job['name'] = name
+    elif body[0] == 'config':
+        job['claim'] = f'K({body[3]}) >= {body[1]}'
+    elif body[0] == 'decomp':
+        job['claim'] = f'Rank-{body[2]} decomposition of <{body[3][0]},{body[3][1]},{body[3][2]}> over {body[4]}'
+    elif body[0] == 'score':
+        printed = body[3][2] if body[3][0] == 'within' else body[3][1]
+        job['claim'] = f'the object is a feasible solution of "{body[2]}" and the platform\'s score of it is {printed}'
+    else:
+        raise Refusal('decider', 'no compiler for this statement yet')
+    out = []
+    for r in reads.get(dname, []):
+        if r not in ELEMENTS:
+            raise Refusal('reading', f'{dname} is read as {r}; today\'s translator decodes {", ".join(ELEMENTS)}')
+        out.append((r, dict(job, elements=r)))
+    return out
+
+
+def compile_claim(tree, c, root):
+    out = []
+    jobs = lower(tree, c)
+    for reading, job in jobs:
+        obj_id = job['id'] + ('-' + reading if len(jobs) > 1 else '')
+        obj = T.translate(job['claim'], root, job['source'], job['data'], decider=job.get('decider'), record=job.get('record'),
+                          name=job.get('name'), elements=job.get('elements'), obj_id=obj_id, quote=job.get('quote'), other=job.get('other'))
+        body = c['stmt'][3] if c['stmt'][0] == 'forall' else c['stmt']
+        if body[0] == 'score' and body[3][0] == 'within':
+            box = (obj['predicate'][0].get('box') or {})
+            if 'halfWidth' not in box or Fraction(box['halfWidth']) != grammar.exact(body[3][1]):
+                raise Refusal('resolution', f'the claim says within {body[3][1]}; the platform declares '
+                              + (str(Fraction(box['halfWidth'])) if 'halfWidth' in box else 'no resolution'))
+        out.append({'reading': reading, 'job': job, 'object': obj})
+    return out
+
+
+# ------------------------------------------------------------------------------------------------- the object, in words
+
+PREC = {'Add': 1, 'Subtract': 1, 'Multiply': 2, 'Divide': 2, 'Power': 3}
+
+
+def _lit(x):
+    x = str(x)
+    return x if len(x) <= 30 else x[:10] + f'…({len(x)} characters)'
+
+
+def expr(g, outer=0):
+    """an expression of the checker's vocabulary, printed back the way a reader writes it"""
+    if isinstance(g, str):
+        return _lit(g)
+    if isinstance(g, dict):
+        return g.get('named', '?') + f' (decided by {g.get("where", "a named decider")})'
+    h, a = g[0], g[1:]
+    if h in PREC:
+        p = PREC[h]
+        sym = {'Add': ' + ', 'Subtract': ' - ', 'Multiply': '·', 'Divide': '/', 'Power': '^'}[h]
+        text = sym.join(expr(x, p + (1 if i else 0)) for i, x in enumerate(a))
+        return f'({text})' if p < outer else text
+    if h == 'Square':
+        return expr(a[0], 3) + '²'
+    if h == 'Abs':
+        return '|' + expr(a[0]) + '|'
+    if h in ('Max', 'Min'):
+        return h.lower() + '(' + ', '.join(expr(x) for x in a) + ')'
+    if h in ('Sum', 'Product', 'MaxOver', 'MinOver'):
+        sym = {'Sum': 'Σ', 'Product': 'Π', 'MaxOver': 'max', 'MinOver': 'min'}[h]
+        text = f'{sym}_{{{a[0]}={expr(a[1])}..{expr(a[2])}}} ' + expr(a[3], 3)
+        return f'({text})' if outer >= 2 else text
+    if h == 'Index':
+        return expr(a[0]) + ''.join(f'[{expr(x)}]' for x in a[1:])
+    return h + '(' + ', '.join(expr(x) for x in a) + ')'
+
+
+REL = {'le': '≤', 'lt': '<', 'ge': '≥', 'gt': '>', 'eq': '=', 'in': '∈', 'holds': 'holds'}
+
+
+def _short(text, n=240):
+    return text if len(text) <= n else text[:n - 1] + '…'
+
+
+def means_object(obj):
+    """the claim in plain words, read from the object cert-machine receives and nothing else"""
+    d = obj['domain']
+    lines = [f'over      {d["pin"]["path"]} (sha256 {d["pin"]["sha256"][:12]}): ' + _short(d.get('decoder') or '', 200)]
+    for i, p in enumerate(obj['predicate']):
+        g = p.get('g')
+        if p['rel'] == 'holds':
+            what = expr(g)
+        elif p.get('note') and not p.get('printed'):
+            what = p['note']
+        else:
+            lhs = expr(g)
+            c = p.get('c')
+            if p['rel'] == 'in':
+                bar = f'[{_lit(c[0])}, {_lit(c[1])}]' + (f', the box of {p["printed"]}' if p.get('printed') else '')
+                if p.get('box'):
+                    bar += f' at the platform\'s resolution ±{p["box"]["halfWidth"]}'
+            else:
+                bar = (p['printed'] + f' (exactly {_lit(c)})' if p.get('printed') and str(c) != p['printed'] else _lit(c))
+            what = f'{lhs} {REL[p["rel"]]} {bar}'
+        if p.get('forall'):
+            what = 'for every ' + ', '.join(f'{v[0]} in {expr(v[1])}..{expr(v[2])}' for v in p['forall']) + ': ' + what
+        lines.append(f'claims    {i + 1}. ' + _short(what))
+    r = obj.get('record')
+    lines.append(f'decided   by the record {r["path"]} row {r["row"]} (its word: {r["verdict"]})' if r else 'decided   from the object itself')
+    return '\n'.join(lines)
+
+
+def _sha(root, path):
+    try:
+        with open(os.path.join(root, path), 'rb') as f:
+            return hashlib.sha256(f.read()).hexdigest()[:12]
+    except OSError:
+        return 'not on disk'
+
+
+def rests_on(obj, root, tree=None, c=None):
+    out = [f'the bytes  {obj["domain"]["pin"]["path"]} @ {obj["domain"]["pin"]["sha256"][:12]}',
+           f'the source {obj["source"]["path"]} @ {obj["source"]["sha256"][:12]}']
+    if tree is not None and c is not None:
+        uses = {i['name']: i['version'] for i in tree['items'] if i['kw'] == 'use'}
+        names = set()
+        for t in lang.terms_of(c['stmt']):
+            names |= lang.names_in(t, set())
+        out += [f'definition {n} {uses[n]}' for n in sorted(names) if n in uses]
+    if obj.get('record'):
+        r = obj['record']
+        out.append(f'the record {r["path"]} @ {_sha(root, r["path"])}, row {r["row"]}')
+    out.append(f'the checker instruments/claimbox/check.py @ {_sha(root, "instruments/claimbox/check.py")}')
+    return out
+
+
+def check(tree, root, run=False):
+    """what `claimbox check FILE.claim` prints"""
+    out = []
+    for c in [i for i in tree['items'] if i['kw'] == 'claim']:
+        out.append(f'claim {c["id"]}')
+        try:
+            compiled = compile_claim(tree, c, root)
+        except Refusal as e:
+            out.append(f'  hole      {e.rule}: {e.msg}' if e.rule != 'watcher' else f'  kind      {e.msg}')
+            continue
+        for k in compiled:
+            obj = k['object']
+            if len(compiled) > 1:
+                out.append(f'  reading   {k["reading"]}')
+            out += ['  ' + ln for ln in means_object(obj).split('\n')]
+            if run:
+                line = T.check_with_cert_machine(obj, root)
+                out.append('  word      ' + line[:200] + '   (cert-machine)')
+            out += ['  rests on  ' + ln for ln in rests_on(obj, root, tree, c)]
+        if c['expect']:
+            out.append(f'  expect    {c["expect"]}')
+    return '\n'.join(out) + '\n'

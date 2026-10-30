@@ -8,6 +8,7 @@
   read <source> [--out jobs.json]                  the jobs a structural reader makes from a pinned source: einstein-arena, alphaevolve, qiushi, station, funsearch, zeta23, cryptids
   lang FILE.claim [--canonical]                    the language (LANGUAGE.md): each claim in plain words, its kind, its fork and its source;
                                                    --canonical prints the file back as the printer writes it; a malformed file is REFUSED with the rule
+  check FILE.claim [--run]                         each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -58,7 +59,19 @@ def main(argv=None):
     lg = sub.add_parser('lang')
     lg.add_argument('file')
     lg.add_argument('--canonical', action='store_true')
+    ck = sub.add_parser('check')
+    ck.add_argument('file')
+    ck.add_argument('--run', action='store_true')
     a = ap.parse_args(argv)
+    if a.cmd == 'check':
+        from . import lang, compile as C
+        try:
+            tree = lang.parse(open(a.file, encoding='utf-8').read())
+        except lang.LangError as e:
+            print('REFUSED  ' + str(e))
+            return 1
+        sys.stdout.write(C.check(tree, ROOT, run=a.run))
+        return 0
     if a.cmd == 'lang':
         from . import lang
         try:

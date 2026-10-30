@@ -476,7 +476,7 @@ def parse(text):
             if not m:
                 raise LangError('syntax', n, 'claim ID [over DATA, …]')
             claim = item = {'kw': 'claim', 'id': m.group(1), 'over': m.group(2).split(', ') if m.group(2) else [], 'quote': None,
-                            'from': None, 'stmt': None, 'stmt_text': None, 'proposed': None, 'expect': None, 'line': n}
+                            'from': None, 'stmt': None, 'stmt_text': None, 'record': None, 'proposed': None, 'expect': None, 'line': n}
         key = ('claim:' if kw == 'claim' else 'name:') + (item.get('id') or item['name'])
         if kw != 'read' and key in names:
             raise LangError('name', n, f'{key.split(":")[1]} is declared twice (line {names[key]})')
@@ -507,6 +507,12 @@ def claim_line(c, line, n):
             raise LangError('syntax', n, f'not a hole the language names: {m.group(1)}')
         c['stmt'] = ('hole', m.group(1), m.group(2), 'written')
         return
+    m = re.fullmatch(r'record (\S+) row (\S+)(?: value (\S+))? verdict (\w+)', line)
+    if m:
+        if m.group(4) not in WORDS:
+            raise LangError('syntax', n, 'a record\'s verdict is one of ' + ', '.join(WORDS))
+        c['record'] = {'path': m.group(1), 'row': m.group(2), 'value': m.group(3), 'verdict': m.group(4)}
+        return
     m = re.fullmatch(r'proposed by (grammar|person|model:[\w.-]+)', line)
     if m:
         c['proposed'] = m.group(1)
@@ -517,7 +523,7 @@ def claim_line(c, line, n):
             raise LangError('syntax', n, f'expect one of {", ".join(WORDS)}')
         c['expect'] = m.group(1)
         return
-    raise LangError('syntax', n, f'a claim line is quote, from, ": STATEMENT", hole, proposed by or expect, not "{line[:30]}"')
+    raise LangError('syntax', n, f'a claim line is quote, from, ": STATEMENT", hole, record, proposed by or expect, not "{line[:30]}"')
 
 
 def data_in(s, out):
@@ -624,6 +630,9 @@ def canonical(tree):
                 out.append('  : ' + normalise(i['stmt_text']))
             else:
                 out.append('  : ' + fmt_statement(s))
+            if i['record']:
+                r = i['record']
+                out.append(f'  record {r["path"]} row {r["row"]}' + (f' value {r["value"]}' if r['value'] else '') + f' verdict {r["verdict"]}')
             if i['proposed']:
                 out.append(f'  proposed by {i["proposed"]}')
             if i['expect']:

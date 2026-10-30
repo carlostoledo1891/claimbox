@@ -1,8 +1,9 @@
 # LANGUAGE — claimbox, written down
 
-*Roadmap steps 1 and 2 (PLAN.md §7), revision 2, 2026-10-30. The language in which a person or an AI states a claim so
+*Roadmap steps 1 to 3 (PLAN.md §7), revision 3, 2026-10-30. The language in which a person or an AI states a claim so
 that cert-machine can decide it. This file is the specification; claimbox/lang.py reads and prints it (`python3 -m
-claimbox lang FILE.claim`, step 2); the compiler is step 3.
+claimbox lang FILE.claim`, step 2); claimbox/compile.py compiles it to the object cert-machine reads (`python3 -m
+claimbox check`, step 3).
 Every example in §11 is a claim that has already been decided, named by its record. §12 maps every shape today's grammar
 reads and every rule it refuses with to its construct here; the battery holds that map to the code.*
 
@@ -39,6 +40,8 @@ claim  ID [over DATA, …]                   a claim block, its lines indented b
                                              compiler finds the line, as today's translator does)
   : STATEMENT                                the statement (§3), or
   hole RULE "WHY"                            a hole written by hand (§6)
+  record PATH row ROW [value V] verdict WORD a cert-machine decision record the object is held to (its path, row,
+                                             the value it decided and its word), as today's jobs attach one
   proposed by KIND                           a proposal until validated (§9): grammar | person | model:<family>
   expect WORD                                the word written down before the run: CERTIFIED | REFUTED | REFUSED
 ```
@@ -192,9 +195,12 @@ rests on   <pins with digests, definitions with versions, the reading, the check
 
 or `hole <kind>: <what is missing>`. A proposal (§9) also prints `proposed by …` until it is validated.
 
-Today (step 2) `python3 -m claimbox lang FILE.claim` prints `means`, `kind`, `fork` and `source` from the parsed tree, and
-`--canonical` prints the file back as the printer writes it. From step 3 the `means` line is printed from the compiled object,
-and `word` and `rests on` come from cert-machine. A file the language cannot read is REFUSED with its rule: `syntax`,
+`python3 -m claimbox lang FILE.claim` (step 2) prints `means`, `kind`, `fork` and `source` from the parsed tree, and
+`--canonical` prints the file back as the printer writes it. `python3 -m claimbox check FILE.claim [--run]` (step 3)
+compiles each claim and prints it back from the compiled object — `over` (the pinned bytes and their decoder), `claims`
+(every predicate, its expression printed back), `decided` (the record it is held to, or the object itself) — then, with
+`--run`, cert-machine's word, and `rests on`. The compiler lowers each claim to a job for today's translator, so what the
+checker receives is written by the code the calibration holds. A file the language cannot read is REFUSED with its rule: `syntax`,
 `name` (a name no line declares), `reading` (a datum with no reading, or a reading the language does not know),
 `definition` (a quantity neither used nor defined), `relations` (more than one), `range` (a bounded quantifier over a range
 that is not finite integers, or is empty), `source` (a printed number with no source). A statement that is not a claim —
@@ -252,6 +258,7 @@ use    C_1b v1
 claim  c1b_upper
   quote "0.3808585749" from R
   : C_1b(h) ≤ 0.3808585749
+  record certs/stepfun-replay.json row 1b-codexprolong value js.value verdict CERTIFIED
   expect CERTIFIED
 ```
 
@@ -363,6 +370,7 @@ read   G as table (Q, 2)
 claim  states
   quote "`25` states" from P
   : G has 25 states
+  record certs/claimbox-cryptids-decisions.json row prov-states-goldbach verdict CERTIFIED
   expect CERTIFIED
 ```
 
@@ -376,6 +384,7 @@ read   S as text
 claim  derive_zf
   quote "`tursi`" from P
   : T compiled from S (tursi) has canonical sha256 cb9ffd320f7360b5e0e49181a6201286b408d1f8c168d61fafc51d1ca8b86702
+  record certs/claimbox-cryptids-decisions.json row derive-zf verdict CERTIFIED
   expect CERTIFIED
 ```
 
@@ -387,6 +396,7 @@ read   M as table (Q, 2)
 claim  boot
   quote "state == 19 and head == -7 and len(tape) == 19" from V
   : after 9,037 steps from the blank tape, M is in state 19 with the head at -7, 19 nonzero cells
+  record certs/claimbox-cryptids-decisions.json row riemann-104-boot verdict CERTIFIED
   expect CERTIFIED
 ```
 
@@ -398,6 +408,7 @@ read   T as table (Q, 2)
 claim  boot_length
   quote "`89,775,610`" from R
   : T does not halt within 89,775,610 steps
+  record certs/claimbox-cryptids-decisions.json row riemann-120-no-halt-boot-length verdict CERTIFIED
   expect CERTIFIED
 ```
 
@@ -479,3 +490,4 @@ appear here.
 | `shape:machine/ratio` `shape:machine/pct` | a printed ratio or percentage (§3.1) |
 | `rule:source` `rule:data` `rule:count` `rule:kissing-count` `rule:decider` `rule:resolution` `rule:reading` `rule:range` | holes (§6) |
 | `rule:unbounded` `rule:asymptotic` `rule:approximate` `rule:ambiguous` `rule:no-quantity` `rule:prose` `rule:empty` | holes (§6) |
+| `rule:watcher` | not a hole: a claim about every case is a watcher or a hunter (§3.2), compiled to nothing until roadmap step 7 |

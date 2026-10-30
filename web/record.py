@@ -70,7 +70,9 @@ def val(path, ptr, how='int', standing='decided'):
 def outcome(row):
     """one run row's outcome, read from what the run recorded: refused by claimbox (with its rule), skipped, refused by
     cert-machine's checker, or admitted with cert-machine's words on its predicates — from the record it attached or from
-    the object itself. certified: every word CERTIFIED; refuted: any word REFUTED; undecided: admitted with no word."""
+    the object itself. certified: every word CERTIFIED; refuted: any word REFUTED; undecided: admitted with no word. Every word
+    the checker printed counts: until 2026-10-30 only the first word after "from the object:" did, and the 26-circle packing,
+    REFUTED on its non-overlap predicate, was counted certified (found by the compiler's calibration)."""
     if row.get('refused'):
         return 'refused'
     if row.get('skipped'):
@@ -82,7 +84,8 @@ def outcome(row):
         return 'checker-refused'
     br = re.search(r'\[([^\]]*)\]', m)
     ws = [w.strip() for w in br.group(1).split('·')] if br and br.group(1).strip() else []
-    ws = ws or re.findall(r'from the object: (CERTIFIED|REFUTED)', m) + re.findall(r'· (CERTIFIED|REFUTED) value', m)
+    if 'from the object:' in m:                # every word the checker printed for the object's predicates, not only the first
+        ws += re.findall(r'\b(CERTIFIED|REFUTED|REFUSED)\b', m.split('from the object:', 1)[1].split('  note:')[0])
     if not ws:
         return 'undecided'
     if 'REFUTED' in ws:

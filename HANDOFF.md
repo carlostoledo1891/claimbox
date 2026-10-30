@@ -58,9 +58,24 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    there is", ≈, o(·), prose). LANGUAGE.md's examples were rewritten in canonical layout with every name declared and every
    path as the records pin it; all twenty round-trip byte for byte. Battery: twelve malformed files and four non-claims as red
    controls. web/PINS.json re-pinned again after design/WARRANT.md gained "The grammar page as a one-pager, and illustrations"
-   (uncommitted in cert-machine; claimbox's page prints no invented number). make test: 428 pass, 0 fail, 74/74 reds. NEXT:
-   step 3, claimbox/compile.py — tree → the object cert-machine reads, calibrated claim for claim against today's run records,
-   and the `means` line printed from the compiled object.
+   (uncommitted in cert-machine; claimbox's page prints no invented number). make test: 428 pass, 0 fail, 74/74 reds.
+   STEP 3 BUILT (on "proceed"): claimbox/compile.py lowers a claim to a job for today's translator (the quote kept as the
+   object's sentence when it reads as the same shape, the quantity's name passed when the quote prints another; a forall's
+   range as today's trailing range; a kissing configuration as K(d) >= n; a platform score as the platform's sentence, its
+   `within R` held to the resolution the platform declares; machine statements with their data names resolved to paths and
+   tm.py as decider) and lets translate.py write the object, so the trusted step stays the calibrated one; a fork compiles to
+   one object per reading; a hole or a watcher compiles to nothing. `python3 -m claimbox check FILE.claim [--run]` prints each
+   claim back FROM THE OBJECT (over: the pin and its decoder; claims: every predicate, its expression printed back; decided: the
+   record or the object), cert-machine's line with --run, and rests on (bytes, source, definitions, record and checker, each
+   with its sha). The language gained `record PATH row ROW [value V] verdict WORD`. CALIBRATION: the sixteen example claims that
+   name a record compile to objects equal to the run records' on pin, count, element reading, universal reading, every bound,
+   every named decision and the record; the thirteen light ones (recorded under 5 s) come back from cert-machine with the word
+   `expect` gives; seven compiler red controls (two files, a machine read as decimals, a functional read as a table, a resolution
+   the platform does not declare, a flipped relation, a watcher, a hole). FOUND BY IT: web/record.py's outcome() read only the
+   first word after "from the object:", so the 26-circle packing (REFUTED on non-overlap) was counted certified on the landing
+   page's EinsteinArena row; now every word counts (certified 5, refuted 1), with a red control. make test: 438 pass, 0 fail,
+   82/82 reds. NEXT: step 4, the library — the definitions in translate.py (PRIMITIVE, PLATFORM, CERTIFICATE, the machine
+   family) moved to library/ one file each, with identical objects; `use NAME vN` resolved against it.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 
