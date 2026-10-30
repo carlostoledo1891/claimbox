@@ -40,6 +40,7 @@ CORPORA = {
         'rows': 'corpus/riemann/ai-phrasings.json',
         'source': 'corpus/riemann/ai-phrasings.md',
         'proposals': 'corpus/proposals/riemann-ai.claim',
+        'person': 'corpus/proposals/riemann-ai.person.claim',      # a person's, written apart from the model's (--worksheet)
         'context': {1: (LAW, 'integers', 'riemann/zeta23-edge'), 2: (LAW, 'integers', 'riemann/zeta23-rows'), 3: (LAW, 'integers', None),
                     4: (LAW, 'integers', 'riemann/zeta23-p0'), 5: (SERIES, None, 'riemann/zeta23-cmt'), 6: (SERIES, None, 'riemann/zeta23-mt-simple'),
                     7: (SERIES, None, 'riemann/zeta23-mt-distinct'), 8: (None, None, None)},
@@ -98,6 +99,8 @@ def proposal_blocks(path):
         blocks.append(cur)
     out = []
     for b in blocks:
+        if any(l.strip() == ': ?' for l in b):     # a worksheet's blank (--worksheet): not written yet, so not a proposal
+            continue
         body = '\n'.join(b) + '\n'
         try:
             tree = lang.parse(head + body)
@@ -111,11 +114,17 @@ def proposal_blocks(path):
 
 
 def file_proposals(corpus, root):
-    """the proposals of the corpus's .claim file: {sentence: [(kind, object or None, refusal or None, the claim or None)]}"""
-    p = os.path.join(REPO, CORPORA[corpus]['proposals'])
+    """the proposals of the corpus's .claim files (a program's, a person's): {sentence: [(kind, object or None, refusal or None,
+    the claim or None)]}"""
     out = {}
-    if not os.path.isfile(p):
-        return out
+    for key in ('proposals', 'person'):
+        p = os.path.join(REPO, CORPORA[corpus][key]) if CORPORA[corpus].get(key) else None
+        if p and os.path.isfile(p):
+            read_file(p, root, out)
+    return out
+
+
+def read_file(p, root, out):
     for tree, c in proposal_blocks(p):
         if tree is None:
             cid, quote, kind, err = c
@@ -127,7 +136,6 @@ def file_proposals(corpus, root):
             out.setdefault(c['quote'], []).append((kind, obj, None, c))
         except Refusal as e:
             out.setdefault(c['quote'], []).append((kind, None, (e.rule, e.msg), c))
-    return out
 
 
 def planted_claims(corpus):
@@ -444,3 +452,44 @@ def summary(entries):
             'sameValueOtherPrint': sum(1 for p in made if p.get('sameValue')),
             'validated': sum(1 for e in entries if e['outcome'] == 'validated'),
             'notStated': sum(1 for e in entries if e['outcome'].startswith('not stated'))}
+
+
+# ------------------------------------------------------------------------------------------------- a person's worksheet
+
+WORKSHEET_HEAD = """-- A person's proposals for {corpus}: the second kind of proposer. For each sentence below, replace the "?" after ":" with the
+-- claim the sentence makes, or replace the whole ": ?" line with   hole KIND "why"   when it makes none that can be stated
+-- exactly. A claim left at ": ?" is not a proposal. Write it without looking at the model's file ({model}): two proposals
+-- count as two only when they were written apart.
+--
+-- A statement:   TERM REL BAR      or      for every j in 0 < j < 256 : TERM REL BAR
+--   REL is one of  ≤ < ≥ > =  (one relation per statement)
+--   BAR is the number exactly as the sentence prints it:  NUMBER  ·  NUMBER… for a print cut off  ·  published as NUMBER for a
+--   rounded one. Never round, extend or re-express its digits.
+--   over e (LawN256.encl.json, read as integers):  S(j) the form factor at row j · D(1) the edge discrepancy · p₀ the
+--   simple-point fraction · c256 the decimal constant 1/(6·256²) + τ/512
+--   over s (mt-series.json):  c₁* the Montgomery–Taylor constant, and expressions over it such as 2 - 1/c₁* and (3 - 1/c₁*)/2
+-- Hole kinds: prose, quantity, approximate, unbounded, asymptotic, ambiguous, decider, range, count, data, reading.
+--
+-- Then:   python3 -m claimbox prose {corpus} --run --record records/prose-{corpus}.json
+"""
+
+
+def worksheet(corpus, record):
+    """a person's worksheet: a blank claim for every sentence the record proposes by one kind only, written in the language with
+    the declarations its claims need — never the other proposals' statements"""
+    cfg = CORPORA[corpus]
+    var = {LAW: 'e', SERIES: 's'}
+    rows = {r['id']: r for r in rows_of(corpus)}
+    out = [WORKSHEET_HEAD.format(corpus=corpus, model=cfg['proposals']),
+           'source P = ../claimbox/' + cfg['source'],
+           'data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json', 'read   e as integers',
+           'data   s = ../claimbox/corpus/riemann/zeta23/mt-series.json', 'read   s as integers',
+           'use    S v1', 'use    D v1', 'use    p₀ v1', 'use    c256 v1', 'use    c₁* v1', '']
+    for e in record['sentences']:
+        if not e['outcome'].startswith('proposed, not validated: one kind'):
+            continue
+        r = rows[e['id']]
+        v = var.get(cfg['context'][r['claim']][0])
+        out += ['claim  h_' + re.sub(r'\W', '_', e['id']) + (' over ' + v if v else ''), '  quote "' + r['text'] + '" from P', '  : ?',
+                '  proposed by person', '']
+    return '\n'.join(out)

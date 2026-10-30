@@ -234,7 +234,10 @@ A sentence is validated only at concord, with every proposal anchored, printed b
 models agreeing count as one kind (agreement is not independence: Knight & Leveson 1986; Kim et al. 2025). Today's grammar
 proposes by itself; a person's or a model's proposals enter through the corpus's proposals file (corpus/proposals/<corpus>.
 claim), each claim quoting the sentence it reads and saying who proposed it. claimbox calls no model: a model proposer is a
-program that writes that file (tools/propose_model.py is one). Faithfulness to the author is not established by any of this;
+program that writes that file (tools/propose_model.py is one). A person's proposals have their own file beside it
+(corpus/proposals/<corpus>.person.claim); `python3 -m claimbox prose CORPUS --worksheet` writes it once, a blank claim
+(`: ?`, which is not a proposal) for every sentence proposed by one kind only, with the declarations and none of the other
+proposals' statements, and never writes over it again. Faithfulness to the author is not established by any of this;
 against a decided reference object it is measured — the decision-bearing fields equal — never judged; a proposal that differs
 from the reference only in how an equal bar is printed (0.000…3 for 3·10⁻⁴⁰) is counted apart, as the same value printed
 another way. A relation written only in words, or a bar printed in Lean's notation (`3 * 10 ^ (-40 : ℤ)`), does not read back

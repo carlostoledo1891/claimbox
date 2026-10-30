@@ -11,7 +11,7 @@
   check FILE.claim [--run] [--record OUT.json]     each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
                                                    (a fork: every reading); FILE may be LANGUAGE.md#E16, an example; --record writes the results
   library                                          every definition a claim may use: its names, version, readings, conventions and route
-  prose CORPUS [--run] [--record OUT.json]         from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
+  prose CORPUS [--run] [--record OUT.json] [--worksheet]         from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
                                                    their levels (anchored, printed back, planted, concord) and the outcome; --run adds cert-machine's words
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
@@ -72,12 +72,23 @@ def main(argv=None):
     pr.add_argument('corpus')
     pr.add_argument('--run', action='store_true')
     pr.add_argument('--record')
+    pr.add_argument('--worksheet', action='store_true')
     a = ap.parse_args(argv)
     if a.cmd == 'prose':
         from . import prose
         if a.corpus not in prose.CORPORA:
             print('REFUSED  no corpus ' + a.corpus + ' (' + ', '.join(prose.CORPORA) + ')')
             return 1
+        if a.worksheet:                    # a person's blank claims, never written over a worksheet already begun
+            path = os.path.join(prose.REPO, prose.CORPORA[a.corpus]['person'])
+            if os.path.exists(path):
+                print('REFUSED  ' + os.path.relpath(path, prose.REPO) + ' exists: it is a person\'s, and is never overwritten')
+                return 1
+            rec = json.load(open(os.path.join(prose.REPO, 'records', 'prose-' + a.corpus + '.json'), encoding='utf-8'))
+            with open(path, 'w', encoding='utf-8') as f:
+                f.write(prose.worksheet(a.corpus, rec))
+            print('worksheet ' + os.path.relpath(path, prose.REPO))
+            return 0
         entries = prose.run(a.corpus, ROOT, words=a.run)
         for e in entries:
             print(f'{e["id"]:<18} {e["outcome"]}')

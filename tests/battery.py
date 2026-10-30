@@ -768,6 +768,7 @@ def prose_with(proposals):
         f.write(HEADP + proposals)
     saved = dict(PR.CORPORA['riemann-ai'])
     PR.CORPORA['riemann-ai']['proposals'] = os.path.relpath(path, REPO)
+    PR.CORPORA['riemann-ai']['person'] = None
     try:
         return {e['id']: e for e in PR.run('riemann-ai', ROOT)}
     finally:
@@ -777,6 +778,14 @@ def prose_with(proposals):
 
 got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* = 0.7532960…\n  proposed by person\n')
 ok(got['5/tweet/45']['outcome'] == 'validated', 'prose: a person\'s proposal that agrees with the grammar\'s, field for field, validates the sentence', got['5/tweet/45']['outcome'])
+got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : ?\n  proposed by person\n')
+ok(got['5/tweet/45']['outcome'] == 'proposed, not validated: one kind of proposer only' and len(got['5/tweet/45']['proposals']) == 1,
+   'prose: a worksheet\'s blank (": ?") is not a proposal', got['5/tweet/45']['outcome'])
+WS = PR.worksheet('riemann-ai', PREC)
+ok(WS.count('\n  : ?\n') == sum(1 for e in PREC['sentences'] if e['outcome'].startswith('proposed, not validated: one kind'))
+   and not any(p['statement'] in '\n'.join(l for l in WS.split('\n') if not l.startswith('  quote '))
+               for e in PREC['sentences'] for p in e['proposals'] if p.get('statement')),
+   'prose: the person\'s worksheet has a blank for every sentence proposed by one kind only, and no other proposal\'s statement', f'{WS.count(": ?") - 2} blanks')
 got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* = 0.7532961…\n  proposed by person\n')
 red(got['5/tweet/45']['outcome'] != 'validated' and "person's proposal not stated: source" in got['5/tweet/45']['outcome'],
     'prose: refused — a proposal whose bar the sentence does not print', got['5/tweet/45']['outcome'])
