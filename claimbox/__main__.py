@@ -11,6 +11,8 @@
   check FILE.claim [--run] [--record OUT.json]     each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
                                                    (a fork: every reading); FILE may be LANGUAGE.md#E16, an example; --record writes the results
   library                                          every definition a claim may use: its names, version, readings, conventions and route
+  prose CORPUS [--run] [--record OUT.json]         from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
+                                                   their levels (anchored, printed back, planted, concord) and the outcome; --run adds cert-machine's words
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -66,7 +68,30 @@ def main(argv=None):
     ck.add_argument('--run', action='store_true')
     ck.add_argument('--record')
     sub.add_parser('library')
+    pr = sub.add_parser('prose')
+    pr.add_argument('corpus')
+    pr.add_argument('--run', action='store_true')
+    pr.add_argument('--record')
     a = ap.parse_args(argv)
+    if a.cmd == 'prose':
+        from . import prose
+        if a.corpus not in prose.CORPORA:
+            print('REFUSED  no corpus ' + a.corpus + ' (' + ', '.join(prose.CORPORA) + ')')
+            return 1
+        entries = prose.run(a.corpus, ROOT, words=a.run)
+        for e in entries:
+            print(f'{e["id"]:<18} {e["outcome"]}')
+        s = prose.summary(entries)
+        print(json.dumps(s, ensure_ascii=False))
+        if a.record:
+            with open(a.record, 'w', encoding='utf-8') as f:
+                json.dump({'what': 'claimbox prose ' + a.corpus + (' --run' if a.run else '') + ': every sentence of the corpus, its proposals (the grammar\'s and '
+                                   'the proposals file\'s), the levels each reached (anchored, printed back, planted, concord), whether it equals the decided '
+                                   'reference object, and the outcome; a sentence counts as validated only in concord between two kinds of proposer',
+                           'corpus': a.corpus, 'summary': s, 'sentences': entries}, f, indent=1, ensure_ascii=False)
+                f.write('\n')
+            print('record ' + a.record)
+        return 0
     if a.cmd == 'library':
         from . import library
         sys.stdout.write(library.listing())

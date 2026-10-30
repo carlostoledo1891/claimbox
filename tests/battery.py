@@ -580,11 +580,7 @@ CALIB = {('E1', 'kissing_11'): 'einstein-arena/ea-kissing-kissing-number-d11', (
          ('E14', 'boot_length'): 'cryptids/riemann-120-no-halt-boot-length', ('E15', 'ratio'): 'cryptids/ratio-goldbach-steps'}
 
 
-def decision_fields(o):
-    r, d = o.get('record') or {}, o['domain']
-    return {'pin': d['pin'], 'count': d.get('count'), 'elements': (d.get('data') or {}).get('elements'), 'reading': o['reading'], 'ineqs': ineqs(o),
-            'named': [p['g'].get('named') for p in o['predicate'] if isinstance(p.get('g'), dict)],
-            'record': [r.get('path'), r.get('row'), r.get('value'), r.get('verdict'), r.get('predicate')]}
+decision_fields = CP.decision_fields
 
 
 EXD = dict(EX)
@@ -732,6 +728,63 @@ if os.environ.get('CLAIMBOX_FULL'):
     ok(rerun == counts, 'forks (full): the two readings re-decided by cert-machine give the recorded words and counts', json.dumps(rerun))
 red(CP.fork_summary([('decimals', 'REFUTED'), ('doubles', 'CERTIFIED')]) == 'split: decimals REFUTED, doubles CERTIFIED',
     'forks: readings with different words are described as split, never merged into one word', CP.fork_summary([('decimals', 'REFUTED'), ('doubles', 'CERTIFIED')]))
+
+# ---- 10 · from prose to claims (claimbox/prose.py, roadmap step 6) ---------------------------------------------------
+# the phrasings' source is written from their JSON; the run reproduces its record (records/prose-riemann-ai.json); the grammar's
+# proposals are faithful to the decided references; and planted proposals — a person's that agrees (the green), a mistranslated
+# bar, a relation reversed, two model families and nothing else, a proposer that ignores the sentence — come out as they must
+from claimbox import prose as PR  # noqa: E402
+ok(open(os.path.join(REPO, PR.CORPORA['riemann-ai']['source']), encoding='utf-8').read() == PR.source_text('riemann-ai'),
+   'prose: the phrasings\' source is written from their JSON, one per line, byte for byte')
+PREC = json.load(open(os.path.join(REPO, 'records', 'prose-riemann-ai.json'), encoding='utf-8'))
+now = PR.run('riemann-ai', ROOT)
+ok([(e['id'], e['outcome']) for e in now] == [(e['id'], e['outcome']) for e in PREC['sentences']] and PR.summary(now) == PREC['summary'],
+   'prose: the run reproduces its record, sentence for sentence', json.dumps(PREC['summary']))
+gp = [p for e in PREC['sentences'] for p in e['proposals'] if 'object' in p]
+ok(gp and all(p['faithful'] and p['anchored'] and p['printedBack'] and p['planted'] and p.get('word') == 'CERTIFIED' for p in gp),
+   'prose: every claim the grammar proposes is anchored, printed back, moves under a planted bar, equals the decided reference and is CERTIFIED', f'{len(gp)} proposals')
+ROW = {r['id']: r for r in PR.rows_of('riemann-ai')}
+S5, S6, S1 = ROW['5/tweet/45']['text'], ROW['6/tweet/55']['text'], ROW['1/paper/0']['text']
+HEADP = 'source P = ../claimbox/corpus/riemann/ai-phrasings.md\ndata   s = ../claimbox/corpus/riemann/zeta23/mt-series.json\nread   s as integers\n' \
+        'data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json\nread   e as integers\nuse    c₁* v1\nuse    D v1\n'
+
+
+def prose_with(proposals):
+    os.makedirs(PR.PLANTS, exist_ok=True)
+    path = os.path.join(PR.PLANTS, 'proposals.claim')
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(HEADP + proposals)
+    saved = dict(PR.CORPORA['riemann-ai'])
+    PR.CORPORA['riemann-ai']['proposals'] = os.path.relpath(path, REPO)
+    try:
+        return {e['id']: e for e in PR.run('riemann-ai', ROOT)}
+    finally:
+        PR.CORPORA['riemann-ai'] = saved
+        os.remove(path)
+
+
+got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* = 0.7532960…\n  proposed by person\n')
+ok(got['5/tweet/45']['outcome'] == 'validated', 'prose: a person\'s proposal that agrees with the grammar\'s, field for field, validates the sentence', got['5/tweet/45']['outcome'])
+got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* = 0.7532961…\n  proposed by person\n')
+red(got['5/tweet/45']['outcome'] != 'validated' and "person's proposal not stated: source" in got['5/tweet/45']['outcome'],
+    'prose: refused — a proposal whose bar the sentence does not print', got['5/tweet/45']['outcome'])
+got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* ≥ 0.7532960\n  proposed by person\n')
+red(got['5/tweet/45']['outcome'].startswith('refused') and 'printedBack' in got['5/tweet/45']['outcome'],
+    'prose: refused — a proposal that weakens the sentence (≥ where it prints = …): it does not read back as the sentence', got['5/tweet/45']['outcome'])
+got = prose_with(f'claim  q1 over e\n  quote "{S1}" from P\n  : |D(1)| ≤ 0.82395317\n  proposed by model:alpha\n'
+                 f'claim  q2 over e\n  quote "{S1}" from P\n  : |D(1)| ≤ 0.82395317\n  proposed by model:beta\n')
+red(got['1/paper/0']['outcome'] == 'proposed, not validated: one kind of proposer only', 'prose: two model families agreeing count as one kind, not as concord',
+    got['1/paper/0']['outcome'])
+real = PR.grammar_proposal
+row5 = ROW['5/tweet/45']
+o5, _ = real(S5, PR.rel_of(os.path.join(REPO, PR.CORPORA['riemann-ai']['source'])), PR.SERIES, None, 'p-5', ROOT)
+PR.grammar_proposal = lambda *a, **k: (o5, None)
+try:
+    stuck = PR.planted(o5, row5, PR.CORPORA['riemann-ai']['context'][5], 'riemann-ai', ROOT)
+finally:
+    PR.grammar_proposal = real
+red(stuck is False, 'prose: refused — a proposer that does not move when the sentence\'s bar is moved', str(stuck))
+shutil.rmtree(PR.PLANTS, ignore_errors=True)
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

@@ -304,6 +304,17 @@ def rests_on(obj, root, definitions=()):
     return out
 
 
+def decision_fields(o):
+    """the fields of an object that bear on cert-machine's decision: two objects equal here get the same word"""
+    def ineqs(o):
+        return sorted((p['rel'], p.get('printed'), str(Fraction(p['c'])) if isinstance(p.get('c'), str) else [str(Fraction(x)) for x in p['c']])
+                      for p in o['predicate'] if p.get('rel') not in ('holds', None) and 'c' in p and (p.get('printed') or p['c'] != '0'))
+    r, d = o.get('record') or {}, o['domain']
+    return {'pin': d['pin'], 'count': d.get('count'), 'elements': (d.get('data') or {}).get('elements'), 'reading': o['reading'], 'ineqs': ineqs(o),
+            'named': [p['g'].get('named') for p in o['predicate'] if isinstance(p.get('g'), dict)],
+            'record': [r.get('path'), r.get('row'), r.get('value'), r.get('verdict'), r.get('predicate')]}
+
+
 # ------------------------------------------------------------------------------------------------- holes, forks, results
 
 HOLE_OF = {'source': 'source', 'data': 'data', 'count': 'count', 'kissing-count': 'count', 'decider': 'decider', 'resolution': 'resolution',

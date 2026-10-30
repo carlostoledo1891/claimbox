@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 6, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 7, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -198,6 +198,12 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r7, 2026-10-30.** Step 6's validator built and its baseline measured (claimbox/prose.py; `python3 -m claimbox prose
+  riemann-ai`; records/prose-riemann-ai.json): of the eighty AI phrasings, today's grammar proposes two claims, both anchored,
+  printed back, moving under a planted bar, equal to the decided reference and certified; none validated, because validation
+  needs a second kind of proposer; the other seventy-eight are named holes. The proposals file (corpus/proposals/riemann-ai.claim)
+  is where a person's or a model's proposals enter; claimbox calls no model. Next in step 6: a second proposer — a person's
+  proposals, or a model the operator approves a budget for — then the register.
 - **r6, 2026-10-30.** Step 5 built: every refusal is a named hole in the result (`hole KIND: what is missing`); a fork
   runs every reading through cert-machine and is described (`under every reading: WORD`, or `split`), never merged; `check
   --record` writes the results. The 605-vector fork, decided: REFUTED under both readings, 9,510 violating pairs read as

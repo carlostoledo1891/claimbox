@@ -1,0 +1,6 @@
+-- Proposals for the eighty AI phrasings of corpus/riemann/ai-phrasings.json (python3 -m claimbox prose riemann-ai).
+-- Each claim quotes the phrasing it reads, byte for byte, and says who proposed it: `proposed by person`, or
+-- `proposed by model:<family>` for a program that asked a model. claimbox calls no model itself. Today's grammar proposes
+-- by itself and needs no line here. A proposal counts only when it is anchored, printed back, and in concord with a
+-- proposer of another kind (LANGUAGE.md §9). The source every quote is found in:
+source P = ../claimbox/corpus/riemann/ai-phrasings.md

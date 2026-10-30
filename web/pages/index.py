@@ -19,6 +19,7 @@ EDGE = 'zeta23-edge'                  # the Riemann certificate's edge bound, as
 AI_EDGE = '1~1abstract~11'            # the same claim, as an AI-written abstract phrases it (id 1/abstract/1)
 BOOT = 'riemann-104-boot'             # a machine claim from the cryptids release
 FORK = 'records/fork-605.json'        # one file, two readings, both decided (LANGUAGE.md E16)
+PROSE = 'records/prose-riemann-ai.json'  # from prose to claims: the AI phrasings, proposed and validated
 
 RUNS = [
     ('records/einstein-arena-run.json', "EinsteinArena's best solutions"),
@@ -44,6 +45,10 @@ WORD_TAG = {'CERTIFIED': 'held', 'REFUTED': 'dep', 'REFUSED': 'open'}
 def chip(path, rid):
     from web.record import word
     return f'<span class="tag {WORD_TAG[word(path, rid)]}">{derived("word", path, rid)}</span>'
+
+
+def derived_count(path, prefix):
+    return derived('outcomes', path, prefix)
 
 
 def fork_chip(i):
@@ -113,6 +118,9 @@ def slots():
         'boot_nonzero': derived('shape', CRY, BOOT, 'nonzero', count=False),
         'boot_word': derived('word', CRY, BOOT), 'cry_sha': derived('sha12', CRY),
         'runs': runs_table(), 'misses': misses(),
+        'pr_n': val(PROSE, '/summary/sentences'), 'pr_made': val(PROSE, '/summary/proposals'), 'pr_valid': derived_count(PROSE, 'validated'),
+        'pr_not': val(PROSE, '/summary/notStated'), 'pr_prose': derived('outcomes', PROSE, 'not stated: prose'),
+        'pr_approx': derived('outcomes', PROSE, 'not stated: approximate'), 'pr_unb': derived('outcomes', PROSE, 'not stated: unbounded'),
         'fork_sha': derived('sha12', FORK), 'fork_stmt': val(FORK, '/claims/0/statement', 'raw'), 'fork_n': val(FORK, '/claims/0/readings/0/count'),
         **{f'fork_r{i}': val(FORK, f'/claims/0/readings/{i}/reading', 'raw') for i in (0, 1)},
         **{f'fork_w{i}': fork_chip(i) for i in (0, 1)},

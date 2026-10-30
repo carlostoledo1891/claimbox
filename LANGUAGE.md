@@ -1,6 +1,6 @@
 # LANGUAGE — claimbox, written down
 
-*Roadmap steps 1 to 5 (PLAN.md §7), revision 5, 2026-10-30. The language in which a person or an AI states a claim so
+*Roadmap steps 1 to 6 (PLAN.md §7), revision 6, 2026-10-30. The language in which a person or an AI states a claim so
 that cert-machine can decide it. This file is the specification; claimbox/lang.py reads and prints it (`python3 -m
 claimbox lang FILE.claim`, step 2); claimbox/compile.py compiles it to the object cert-machine reads (`python3 -m
 claimbox check`, step 3).
@@ -217,11 +217,24 @@ a theorem, an approximation, an order of growth, prose — is not an error: it i
 ## 9 · Proposals
 
 `proposed by grammar | person | model:<family>` marks a claim someone or something proposed from a sentence. It counts only
-after validation, all of it deterministic: every literal anchored to a span of the source; the print-back read against
-the sentence; a second proposal of a different kind compiling to the same object, also on sources with planted changes
-(change a digit in the source and both must move; paraphrase the sentence and neither may); a vacuity check (planting the
-bytes changes the word) and a sensitivity check (a number moved by one unit of its last printed digit moves the word
-where the arithmetic says it should). Agreement between two models of one family counts once. This is step 6.
+after validation, all of it deterministic (`python3 -m claimbox prose CORPUS`, claimbox/prose.py; roadmap step 6). Each
+proposal reaches levels:
+
+```
+anchored      every number the compiled object prints is printed in the sentence, and the sentence in the source
+printed back  the object's bar and relation read back as the sentence prints them (a print cut off with "…" reads back as
+              "= p…", never as "≥ p")
+planted       for a proposer that can be re-run (today's grammar): the sentence with its bar's last digit moved makes the
+              proposer move the object's bar exactly so, and nothing else that bears on the decision
+concord       a proposer of ANOTHER kind compiles the sentence to an object equal on every decision-bearing field
+```
+
+A sentence is validated only at concord, with every proposal anchored, printed back and, where it applies, planted. Two
+models agreeing count as one kind (agreement is not independence: Knight & Leveson 1986; Kim et al. 2025). Today's grammar
+proposes by itself; a person's or a model's proposals enter through the corpus's proposals file (corpus/proposals/<corpus>.
+claim), each claim quoting the sentence it reads and saying who proposed it. claimbox calls no model: a model proposer is a
+program that writes that file. Faithfulness to the author is not established by any of this; against a decided reference
+object it is measured — the decision-bearing fields equal — never judged.
 
 ## 10 · The object
 

@@ -12,6 +12,7 @@ python3 -m claimbox translate --claim "…" --source P --data P …   the claim 
 python3 -m claimbox lang FILE.claim [--canonical]                 the language: each claim in plain words, its kind, fork, source
 python3 -m claimbox check FILE.claim [--run]                      each claim compiled to the object, printed back from it; --run: cert-machine's word
 python3 -m claimbox library                                       every definition a claim may use: names, version, readings, conventions, route
+python3 -m claimbox prose CORPUS [--run] [--record OUT]          from prose to claims: proposals, their levels, concord, the outcome
 make test        the battery: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its
                  register, the planted defects, the landing page's checks
 make web         the landing page from the records: web/dist/index.html (python3 -m web.build --check re-reads every value)
@@ -79,6 +80,8 @@ claimbox/lang.py           the language of LANGUAGE.md: a .claim file read into 
                            malformed files refused with the rule, statements that are not claims made holes
 claimbox/library/          the definitions, one file per family (step_functions, einstein_arena, kissing, zeta23, machines; common pieces);
                            __init__.py the registry `use NAME vN` resolves against; the objects held byte for byte (records/library-identity.json)
+claimbox/prose.py          from prose to claims: proposers (the grammar; corpus/proposals/<corpus>.claim for a person's or a model's), the
+                           levels (anchored, printed back, planted, concord), faithfulness measured against a decided reference
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),

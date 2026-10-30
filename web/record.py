@@ -160,6 +160,7 @@ DERIVED = {
     'shape': lambda path, rid, key: shape(path, rid, key),
     'expected': lambda jobs, run: expected(jobs, run),
     'jobs': lambda jobs: len(load(jobs)['jobs']),
+    'outcomes': lambda path, prefix: sum(1 for e in load(path)['sentences'] if e['outcome'].startswith(prefix)),
 }
 
 

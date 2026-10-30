@@ -100,8 +100,29 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    landing page shows it (a table in the language section, every number from that record; the page's own check first refused
    a header that typed 605, 11 and 60 without an address). Battery §9: every refusal rule is a hole or one of the two, the hole
    examples come out as holes, the fork held to its record (CLAIMBOX_FULL=1 re-runs the two decisions), "split" never merged;
-   two reds. make test: 451 pass, 0 fail, 89/89 reds. NEXT: step 6, prose to claims — the AI phrasings and the register as
-   proposals, validated by anchoring, print-back, a second proposer of another kind and planted sources; refusal rate published.
+   two reds. make test: 451 pass, 0 fail, 89/89 reds.
+   THE PAGE IS LIVE: https://carlostoledo.co/claimbox/ (the operator: "I want the claimbox page live as it is now first"; asked of
+   the cert-machine session cert-machine-c4 by message, done there on the operator's word: zone registered in design/zones.js
+   131e0d04, published 1a5bf395 at claimbox 77a68e4's web/dist — 81,071 bytes, its sha256 equal to that commit's build, checked
+   with curl — in the sitemap 9110cef6, linked from no page). A later build of web/dist reaches the site only by another
+   publish-zone run in cert-machine (pinned there in corpus/zones/claimbox.json).
+   STEP 6, THE VALIDATOR AND ITS BASELINE (on "continue with the suggested plan"): claimbox/prose.py — proposers (today's
+   grammar; the corpus's proposals file corpus/proposals/<corpus>.claim for a person's or a model's, each quoting its sentence and
+   saying who proposed it; claimbox calls no model), the levels (anchored, printed back — a print cut off with "…" reads back as
+   "= p…" —, planted: the sentence's bar moved in a copy of the source must move the re-run proposer's object exactly so,
+   concord: a proposer of ANOTHER kind compiling to an equal object; two model families count as one kind), faithfulness MEASURED
+   as equality with the group's decided reference object. `python3 -m claimbox prose riemann-ai [--run] [--record]`;
+   corpus/riemann/ai-phrasings.md (the eighty phrasings one per line, written from the JSON). BASELINE (records/
+   prose-riemann-ai.json): the grammar proposes 2 claims (5/tweet/45, 6/tweet/55), both anchored, printed back, planted, equal to
+   the reference and CERTIFIED; validated 0 (one kind of proposer); 78 named holes (66 prose, 4 approximate, 3 unbounded, 3
+   ambiguous, 1 data, 1 quantity). FINDING: 7/paper/68 (\tfrac{1}{2}\bigl(3 − 1/c_1^*\bigr) = 0.83625…) is shaped by the grammar
+   but its LaTeX name matches no certificate key, and translate.py then reports "no array in the published bytes" (hole `data`)
+   where the true reason is an unknown quantity — the refusal's kind is wrong; not fixed (a translator change moves the identity
+   record). Battery §10: the source, the record, the grammar's proposals; a person's agreeing proposal validates (the green); a bar
+   the sentence does not print, a weakening (≥ where it prints = …), two model families alone, a proposer that ignores its
+   sentence — four reds. The page's measured section states the baseline from the record. make test: 459 pass, 0 fail, 93/93 reds.
+   NEXT in step 6: a second proposer — proposals by a person in corpus/proposals/riemann-ai.claim, or a model on a budget the
+   operator approves (a program writing that file) — then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 

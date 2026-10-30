@@ -1,0 +1,1432 @@
+{
+ "what": "claimbox prose riemann-ai --run: every sentence of the corpus, its proposals (the grammar's and the proposals file's), the levels each reached (anchored, printed back, planted, concord), whether it equals the decided reference object, and the outcome; a sentence counts as validated only in concord between two kinds of proposer",
+ "corpus": "riemann-ai",
+ "summary": {
+  "sentences": 80,
+  "proposals": 2,
+  "byKind": {
+   "grammar": 2
+  },
+  "anchored": 2,
+  "printedBack": 2,
+  "planted": 2,
+  "faithful": 2,
+  "unfaithful": 0,
+  "validated": 0,
+  "notStated": 78
+ },
+ "sentences": [
+  {
+   "id": "1/paper/0",
+   "group": 1,
+   "style": "paper",
+   "sentence": "Theorem 1.2. We have $|D(1)| \\leq 0.82395317$, where $D(1) = T_{256}/256 - 1/2$ is the discrepancy at $1$ of the form factor of the $256$-periodic law.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/abstract/1",
+   "group": 1,
+   "style": "abstract",
+   "sentence": "We show that the edge discrepancy of the 256-periodic law's form factor satisfies |D(1)| ≤ 0.82395317, where D(1) = T_256/256 − 1/2.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/readme/2",
+   "group": 1,
+   "style": "readme",
+   "sentence": "- **Edge bound**: `abs(D(1)) <= 0.82395317`, with `D(1) = T_256/256 - 1/2` the discrepancy at 1 of the 256-periodic law's form factor.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/docstring/3",
+   "group": 1,
+   "style": "docstring",
+   "sentence": "/-- Edge bound: `|D 1| ≤ 0.82395317`, where `D 1 = T 256 / 256 - 1 / 2` is the discrepancy at 1 of the form factor of the 256-periodic law. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/blog/4",
+   "group": 1,
+   "style": "blog",
+   "sentence": "How large can the discrepancy at 1 get? Not very: D(1) = T_256/256 − 1/2, for the 256-periodic law's form factor, never exceeds 0.82395317 in absolute value.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/tweet/5",
+   "group": 1,
+   "style": "tweet",
+   "sentence": "edge bound: the discrepancy at 1, D(1) = T_256/256 − 1/2, is at most about 0.824 in absolute value (256-periodic law, form factor)",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/referee/6",
+   "group": 1,
+   "style": "referee",
+   "sentence": "The authors claim D(1) is bounded by 0.82395317 (D(1) = T_256/256 − 1/2, the discrepancy at 1 of the 256-periodic law's form factor), but they never say whether this is for D(1) itself or for its absolute value.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/assistant/7",
+   "group": 1,
+   "style": "assistant",
+   "sentence": "I checked that $|D(1)| \\le 0.82395317$ holds, where $D(1) = \\frac{T_{256}}{256} - \\frac{1}{2}$ is the discrepancy at 1 of the 256-periodic law's form factor.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/paper/8",
+   "group": 1,
+   "style": "paper",
+   "sentence": "Lemma 3. Let $D(1) = T_{256}/256 - \\tfrac12$ be the discrepancy at $1$ of the form factor of the $256$-periodic law. Then the absolute value of $D(1)$ does not exceed $0.82395317$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "1/assistant/9",
+   "group": 1,
+   "style": "assistant",
+   "sentence": "The kernel verifies D(1) < 0.82395317, where D(1) = T_256/256 − 1/2 is the discrepancy at 1 of the 256-periodic law's form factor.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "2/paper/10",
+   "group": 2,
+   "style": "paper",
+   "sentence": "Theorem 2. For every integer $j$ with $0 < j < 256$ one has $|256\\cdot S(j) - j| \\leq 3\\cdot 10^{-40}$, where $S(j)$ is the grid form factor of the $256$-periodic law.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "2/abstract/11",
+   "group": 2,
+   "style": "abstract",
+   "sentence": "We prove the near-CUE property of the grid form factor S(j) of the 256-periodic law: |256·S(j) − j| ≤ 3·10⁻⁴⁰ for all 1 ≤ j ≤ 255.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "2/readme/12",
+   "group": 2,
+   "style": "readme",
+   "sentence": "- Near-CUE rows: `abs(256*S(j) - j) <= 3e-40` for each row j below 256 (j >= 1); `S(j)` is the grid form factor of the 256-periodic law.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "a universal quantifier with no finite bound"
+     }
+    }
+   ],
+   "outcome": "not stated: unbounded"
+  },
+  {
+   "id": "2/docstring/13",
+   "group": 2,
+   "style": "docstring",
+   "sentence": "/-- Near-CUE rows: for every `j : ℕ` with `0 < j` and `j < 256`, `|256 * S j - j| ≤ 3 * 10 ^ (-40 : ℤ)`, where `S j` is the grid form factor of the 256-periodic law. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "two relations in one claim: < and <"
+     }
+    }
+   ],
+   "outcome": "not stated: ambiguous"
+  },
+  {
+   "id": "2/blog/14",
+   "group": 2,
+   "style": "blog",
+   "sentence": "Every row j from 1 to 255 of the grid form factor S(j) of the 256-periodic law is within three times ten to the minus forty of the ideal value: 256·S(j) differs from j by at most 3 × 10^{-40}.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "2/tweet/15",
+   "group": 2,
+   "style": "tweet",
+   "sentence": "256·S(j) − j ≤ 3×10⁻⁴⁰ for 0<j<256 (S = grid form factor of the 256-periodic law). near-CUE",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "2/referee/16",
+   "group": 2,
+   "style": "referee",
+   "sentence": "The claim |256·S(j) − j| < 3·10^-40 (0 < j < 256) is stated with a strict inequality in the abstract but proved with ≤ in Section 4; S(j) is the grid form factor of the 256-periodic law.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "two relations in one claim: < and <="
+     }
+    }
+   ],
+   "outcome": "not stated: ambiguous"
+  },
+  {
+   "id": "2/assistant/17",
+   "group": 2,
+   "style": "assistant",
+   "sentence": "Checked: for all integers j with 0 < j < 256, $|256 S(j) - j| \\le 3 \\times 10^{-40}$. Here $S(j)$ is the grid form factor of the 256-periodic law.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "a universal quantifier with no finite bound"
+     }
+    }
+   ],
+   "outcome": "not stated: unbounded"
+  },
+  {
+   "id": "2/paper/18",
+   "group": 2,
+   "style": "paper",
+   "sentence": "$3\\cdot 10^{-40} \\geq \\left| 256\\,S(j) - j \\right|$ for all $j \\in \\{1, \\dots, 255\\}$, with $S(j)$ the grid form factor of the $256$-periodic law.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "a universal quantifier with no finite bound"
+     }
+    }
+   ],
+   "outcome": "not stated: unbounded"
+  },
+  {
+   "id": "2/blog/19",
+   "group": 2,
+   "style": "blog",
+   "sentence": "The grid form factor S(j) of the 256-periodic law satisfies |256·S(j) − j| ≤ 0.0000000000000000000000000000000000000003 for every j with 0 < j < 256.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/paper/20",
+   "group": 3,
+   "style": "paper",
+   "sentence": "Lemma 4. $\\frac{1}{6\\cdot 256^2} + \\frac{3\\cdot 10^{-40}}{512} < 2.5431316\\cdot 10^{-6}$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/abstract/21",
+   "group": 3,
+   "style": "abstract",
+   "sentence": "The resulting decimal constant satisfies 1/(6·256²) + (3·10⁻⁴⁰)/512 < 2.5431316·10⁻⁶.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/readme/22",
+   "group": 3,
+   "style": "readme",
+   "sentence": "`1/(6*256**2) + 3e-40/512 < 2.5431316e-6`  # the decimal constant",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/docstring/23",
+   "group": 3,
+   "style": "docstring",
+   "sentence": "/-- The decimal constant: `1 / (6 * 256 ^ 2) + (3 * 10 ^ (-40 : ℤ)) / 512 < 2.5431316 * 10 ^ (-6 : ℤ)`. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/blog/24",
+   "group": 3,
+   "style": "blog",
+   "sentence": "Put together, one over six times 256 squared, plus three times ten to the minus forty over 512, is still below 2.5431316 × 10^{-6}.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/tweet/25",
+   "group": 3,
+   "style": "tweet",
+   "sentence": "1/(6·256²) + 3×10⁻⁴⁰/512 < 2.5431316×10⁻⁶, so the 3e-40 slack costs nothing in the decimal constant",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/referee/26",
+   "group": 3,
+   "style": "referee",
+   "sentence": "Please justify that 2.5431316·10⁻⁶ exceeds 1/(6·256²) + (3·10⁻⁴⁰)/512; the margin looks very small and the strictness of the inequality should be shown.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/assistant/27",
+   "group": 3,
+   "style": "assistant",
+   "sentence": "Yes: $2.5431316 \\cdot 10^{-6} > \\frac{1}{6 \\cdot 256^{2}} + \\frac{3 \\cdot 10^{-40}}{512}$, so the decimal constant is strictly below $2.5431316\\cdot 10^{-6}$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/abstract/28",
+   "group": 3,
+   "style": "abstract",
+   "sentence": "The constant 1/(6·256²) + (3·10⁻⁴⁰)/512 comes out at about 2.5431316·10⁻⁶.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "3/assistant/29",
+   "group": 3,
+   "style": "assistant",
+   "sentence": "We checked that 1/(6·256²) + (3·10⁻⁴⁰)/512 < 0.0000025431316.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/paper/30",
+   "group": 4,
+   "style": "paper",
+   "sentence": "Proposition 5. $p_0 = 1 - a_N = \\frac{10909258999421303588095230195816054408197}{16000000000000000000000000000000000000000}$ exactly, and $p_0 \\leq 0.6818287$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/abstract/31",
+   "group": 4,
+   "style": "abstract",
+   "sentence": "The simple-point fraction p₀ = 1 − a_N equals 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000 exactly; in particular p₀ ≤ 0.6818287.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/readme/32",
+   "group": 4,
+   "style": "readme",
+   "sentence": "p0 = 1 - a_N == 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000 (exact rational) and p0 <= 0.6818287",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/docstring/33",
+   "group": 4,
+   "style": "docstring",
+   "sentence": "/-- `p₀ = 1 - a_N = 10909258999421303588095230195816054408197 / 16000000000000000000000000000000000000000` exactly, and `p₀ ≤ 0.6818287`. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/blog/34",
+   "group": 4,
+   "style": "blog",
+   "sentence": "The simple-point fraction p₀, which is 1 − a_N, is exactly the rational number 10909258999421303588095230195816054408197 over 16000000000000000000000000000000000000000, and it is no more than 0.6818287.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/tweet/35",
+   "group": 4,
+   "style": "tweet",
+   "sentence": "p₀ = 1 − a_N = 10909258999421303588095230195816054408197/(16·10³⁹) exactly, and p₀ ≤ 0.6818287",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/referee/36",
+   "group": 4,
+   "style": "referee",
+   "sentence": "Is p₀ = 1 − a_N really equal to 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000 on the nose? The bound p₀ < 0.6818287 should also say whether it is strict.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/assistant/37",
+   "group": 4,
+   "style": "assistant",
+   "sentence": "I verified that p_0 = 1 − a_N is exactly 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000 and that p_0 is at most 0.6818287.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "4/blog/38",
+   "group": 4,
+   "style": "blog",
+   "sentence": "p₀ = 1 − a_N ≈ 0.68183, the exact value being 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "an approximation sign is not a claim"
+     }
+    }
+   ],
+   "outcome": "not stated: approximate"
+  },
+  {
+   "id": "4/paper/39",
+   "group": 4,
+   "style": "paper",
+   "sentence": "$0.6818287 \\geq p_0$, and $p_0 = 1 - a_N = 10909258999421303588095230195816054408197 / 16000000000000000000000000000000000000000$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/paper/40",
+   "group": 5,
+   "style": "paper",
+   "sentence": "Definition 2.1. The Montgomery–Taylor constant is $c_1^* = \\dfrac{\\sqrt{2}\\,\\tan(1/\\sqrt{2})}{1 + \\frac{1}{\\sqrt{2}}\\tan(1/\\sqrt{2})} = 0.7532960\\ldots$; equivalently $1/c_1^* = \\tfrac12 + \\tfrac{1}{\\sqrt{2}}\\cot(1/\\sqrt{2})$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/abstract/41",
+   "group": 5,
+   "style": "abstract",
+   "sentence": "The Montgomery–Taylor constant c₁* = √2·tan(1/√2)/(1 + (1/√2)·tan(1/√2)) = 0.7532960… enters our proportion.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/readme/42",
+   "group": 5,
+   "style": "readme",
+   "sentence": "c1* = sqrt(2)*tan(1/sqrt(2)) / (1 + (1/sqrt(2))*tan(1/sqrt(2))) = 0.7532960... ; equivalently 1/c1* = 1/2 + (1/sqrt(2))*cot(1/sqrt(2))",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/docstring/43",
+   "group": 5,
+   "style": "docstring",
+   "sentence": "/-- The Montgomery–Taylor constant `c₁* = √2 * tan (1/√2) / (1 + (1/√2) * tan (1/√2))`, numerically `0.7532960…`. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/blog/44",
+   "group": 5,
+   "style": "blog",
+   "sentence": "The Montgomery–Taylor constant c₁* is about 0.7533; it is √2 tan(1/√2) divided by 1 + (1/√2) tan(1/√2).",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/tweet/45",
+   "group": 5,
+   "style": "tweet",
+   "sentence": "c₁* = 0.7532960… and 1/c₁* = 1/2 + (1/√2)·cot(1/√2). the Montgomery–Taylor constant has a clean closed form",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "object": "p-5-tweet-45",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached"
+    }
+   ],
+   "outcome": "proposed, not validated: one kind of proposer only"
+  },
+  {
+   "id": "5/referee/46",
+   "group": 5,
+   "style": "referee",
+   "sentence": "Please check that c₁* = √2·tan(1/√2)/(1 + (1/√2)·tan(1/√2)) really equals 0.7532960…; I confirm that the reciprocal form 1/c₁* = 1/2 + (1/√2)·cot(1/√2) is equivalent.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/assistant/47",
+   "group": 5,
+   "style": "assistant",
+   "sentence": "Here c_1^* = 0.7532960..., where c_1^* = sqrt(2) tan(1/sqrt(2)) / (1 + (1/sqrt(2)) tan(1/sqrt(2))); equivalently 1/c_1^* = 1/2 + (1/sqrt(2)) cot(1/sqrt(2)).",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/paper/48",
+   "group": 5,
+   "style": "paper",
+   "sentence": "$$\\frac{1}{c_1^*} = \\frac12 + \\frac{1}{\\sqrt{2}}\\cot\\frac{1}{\\sqrt{2}}, \\qquad c_1^* = 0.7532960\\ldots$$",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "5/tweet/49",
+   "group": 5,
+   "style": "tweet",
+   "sentence": "c₁* = √2 tan 1/√2 / (1 + 1/√2 tan 1/√2) ≈ 0.753296",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "an approximation sign is not a claim"
+     }
+    }
+   ],
+   "outcome": "not stated: approximate"
+  },
+  {
+   "id": "6/paper/50",
+   "group": 6,
+   "style": "paper",
+   "sentence": "Theorem 1.1. At least the proportion $2 - 1/c_1^* = 0.67250\\ldots$ of the nontrivial zeros of $\\zeta(s)$ are simple and lie on the critical line.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/abstract/51",
+   "group": 6,
+   "style": "abstract",
+   "sentence": "We show that at least 67.25% of the zeros of the Riemann zeta function are simple and on the critical line, the proportion being 2 − 1/c₁* = 0.67250….",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/readme/52",
+   "group": 6,
+   "style": "readme",
+   "sentence": "proportion = 2 - 1/c1* = 0.67250... (>= 67.25% of zeta zeros are simple and on the critical line)",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/docstring/53",
+   "group": 6,
+   "style": "docstring",
+   "sentence": "/-- The proportion `2 - 1 / c₁* = 0.67250…`: at least `67.25%` of the nontrivial zeros of ζ are simple and on the critical line. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/blog/54",
+   "group": 6,
+   "style": "blog",
+   "sentence": "Two minus the reciprocal of c₁* is 0.67250…, so roughly 67.25 percent of the zeta zeros are simple and on the critical line.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/tweet/55",
+   "group": 6,
+   "style": "tweet",
+   "sentence": "2 − 1/c₁* = 0.67250… → at least 67.25% of ζ's zeros are simple & on the critical line",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "object": "p-6-tweet-55",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached"
+    }
+   ],
+   "outcome": "proposed, not validated: one kind of proposer only"
+  },
+  {
+   "id": "6/referee/56",
+   "group": 6,
+   "style": "referee",
+   "sentence": "The proportion is stated as 2 − 1/c₁* = 0.67250… in the theorem but as 67% in the abstract; please reconcile (I would state at least 0.6725).",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/assistant/57",
+   "group": 6,
+   "style": "assistant",
+   "sentence": "The proportion of simple zeros on the critical line is 2 − 1/c_1^* = 0.67250..., so at least 67.25% of the nontrivial zeros of ζ qualify.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/paper/58",
+   "group": 6,
+   "style": "paper",
+   "sentence": "The proportion of zeros that are simple and on the line is at least $2 - \\frac{1}{c_1^*}$, numerically $0.67250\\ldots$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "6/readme/59",
+   "group": 6,
+   "style": "readme",
+   "sentence": "2 − 1/c₁* ≈ 0.6725",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "an approximation sign is not a claim"
+     }
+    }
+   ],
+   "outcome": "not stated: approximate"
+  },
+  {
+   "id": "7/paper/60",
+   "group": 7,
+   "style": "paper",
+   "sentence": "The distinct proportion is $\\frac{3 - 1/c_1^*}{2} = 0.83625\\ldots$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/abstract/61",
+   "group": 7,
+   "style": "abstract",
+   "sentence": "In the same range the distinct proportion is (3 − 1/c₁*)/2 = 0.83625….",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/readme/62",
+   "group": 7,
+   "style": "readme",
+   "sentence": "distinct proportion = (3 - 1/c1*)/2 = 0.83625...",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/docstring/63",
+   "group": 7,
+   "style": "docstring",
+   "sentence": "/-- The distinct proportion `(3 - 1 / c₁*) / 2 = 0.83625…`. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/blog/64",
+   "group": 7,
+   "style": "blog",
+   "sentence": "Take three minus the reciprocal of c₁*, divide by two, and you get 0.83625… — the distinct proportion.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/tweet/65",
+   "group": 7,
+   "style": "tweet",
+   "sentence": "distinct proportion: 3 − 1/c₁* / 2 = 0.83625…",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/referee/66",
+   "group": 7,
+   "style": "referee",
+   "sentence": "I recompute (3 − 1/c₁*)/2 = 0.83625…; the manuscript's table prints 0.8362, which should be flagged as rounded.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/assistant/67",
+   "group": 7,
+   "style": "assistant",
+   "sentence": "We have $(3 - 1/c_1^*)/2 = 0.83625\\ldots$, which is the distinct proportion.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "7/paper/68",
+   "group": 7,
+   "style": "paper",
+   "sentence": "$\\tfrac{1}{2}\\bigl(3 - 1/c_1^*\\bigr) = 0.83625\\ldots$, the distinct proportion.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "data",
+      "hole": "data",
+      "why": "no array in the published bytes"
+     }
+    }
+   ],
+   "outcome": "not stated: data"
+  },
+  {
+   "id": "7/blog/69",
+   "group": 7,
+   "style": "blog",
+   "sentence": "so the distinct proportion, (3 − 1/c₁*)/2, is approximately 0.836",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "an approximation sign is not a claim"
+     }
+    }
+   ],
+   "outcome": "not stated: approximate"
+  },
+  {
+   "id": "8/paper/70",
+   "group": 8,
+   "style": "paper",
+   "sentence": "Theorem 1. Every Dirichlet $L$-function, including $\\zeta(s)$, is zero-free in $\\operatorname{Re} s > 7/8$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/abstract/71",
+   "group": 8,
+   "style": "abstract",
+   "sentence": "We show that every Dirichlet L-function, including ζ(s), is zero-free in Re s > 7/8.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/readme/72",
+   "group": 8,
+   "style": "readme",
+   "sentence": "- Claim A: all Dirichlet L-functions (zeta included) have no zeros with Re(s) > 7/8.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/docstring/73",
+   "group": 8,
+   "style": "docstring",
+   "sentence": "/-- At least two thirds of the nontrivial zeros of `riemannZeta` are simple and lie on the critical line `Re s = 1/2`. -/",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/blog/74",
+   "group": 8,
+   "style": "blog",
+   "sentence": "The headline result: at least two thirds of the nontrivial zeros of ζ are simple and on the critical line.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "no-quantity",
+      "hole": "quantity",
+      "why": "no printed quantity in the claim"
+     }
+    }
+   ],
+   "outcome": "not stated: quantity"
+  },
+  {
+   "id": "8/tweet/75",
+   "group": 8,
+   "style": "tweet",
+   "sentence": "every Dirichlet L-function incl. ζ(s) is zero-free in Re s > 7/8, no exceptions",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/referee/76",
+   "group": 8,
+   "style": "referee",
+   "sentence": "Theorem 2 asserts that at least ⅔ of the nontrivial zeros of ζ are simple and on the critical line; the argument as written does not establish this.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/assistant/77",
+   "group": 8,
+   "style": "assistant",
+   "sentence": "The paper claims two things: (1) every Dirichlet L-function, including ζ(s), is zero-free in Re s > 7/8; (2) at least two thirds of the nontrivial zeros of ζ are simple and on the critical line. I have not checked either.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/paper/78",
+   "group": 8,
+   "style": "paper",
+   "sentence": "Theorem 3. At least $\\frac{2}{3}$ of the nontrivial zeros of $\\zeta(s)$ are simple and lie on the line $\\operatorname{Re} s = \\frac12$.",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    }
+   ],
+   "outcome": "not stated: prose"
+  },
+  {
+   "id": "8/tweet/79",
+   "group": 8,
+   "style": "tweet",
+   "sentence": "all L-functions have no zeros for Re s ≥ 7/8 and ≥ 66% of zeta zeros are simple + on the line",
+   "proposals": [
+    {
+     "kind": "grammar",
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "two relations in one claim: >= and >="
+     }
+    }
+   ],
+   "outcome": "not stated: ambiguous"
+  }
+ ]
+}
