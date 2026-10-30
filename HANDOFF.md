@@ -211,8 +211,10 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    0.41030211724); asked of cert-machine (PLAN.md §9). THE REGISTER NOW: 42 claims (grammar 23, model 19), cert-machine certifies
    40, refuses 2 (Erdős: record word REPAIRED); validated 19 of the 24 with bytes; one kind only 4. Model spend: register 39 calls
    $0.2698. make test: 495 pass, 0 fail, 110/110 reds; recall 56/56. PLAN.md r10.
-   NEXT: the republish (approved by the operator in cert-machine-cb's chat, "wait for claimbox to finish and send live"); the
-   operator's worksheet; step 7; readers for the 108 register sentences whose bytes claimbox does not pin.
+   REPUBLISHED (approved by the operator in cert-machine-cb's chat, "wait for claimbox to finish and send live"): cert-machine
+   c32aa22c, from claimbox 70e3691 (94,473 bytes, pinned in corpus/zones/claimbox.json); the live sha256 ab3a82c1…b97e552 equals
+   web/dist's, checked here with curl. The receiver finding is in cert-machine's HANDOFF backlog, for the operator's word.
+   NEXT: the operator's worksheet; step 7; readers for the 108 register sentences whose bytes claimbox does not pin.
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
