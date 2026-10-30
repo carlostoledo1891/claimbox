@@ -64,7 +64,7 @@ CERTIFICATE = {
     'mt-simple': {'keys': ('2-1/c1*', '2-cMT^-1'), 'constant': True, 'g': ['Subtract', '2', ['Divide', '1', CMT]],
                   'value': 'the Montgomery–Taylor proportion of simple zeros on the critical line, 2 − 1/c₁*', 'definition': CMT_DEF,
                   'exact': lambda K: (['Subtract', '3/2', ['Divide', C_HI(K), S_LO(K)]], ['Subtract', '3/2', ['Divide', C_LO(K), S_HI(K)]])},
-    'mt-distinct': {'keys': ('(3-1/c1*)/2', '12(3-cMT^-1)'), 'constant': True, 'g': ['Divide', ['Subtract', '3', ['Divide', '1', CMT]], '2'],
+    'mt-distinct': {'keys': ('(3-1/c1*)/2', '12(3-cMT^-1)', '12(3-1/c1*)'), 'constant': True, 'g': ['Divide', ['Subtract', '3', ['Divide', '1', CMT]], '2'],
                     'value': 'the Montgomery–Taylor proportion of distinct zeros, (3 − 1/c₁*)/2', 'definition': CMT_DEF,
                     'exact': lambda K: (['Subtract', '5/4', ['Divide', C_HI(K), ['Multiply', '2', S_LO(K)]]], ['Subtract', '5/4', ['Divide', C_LO(K), ['Multiply', '2', S_HI(K)]]])},
     # the mathematician's claims (corpus/riemann/mathematician.md): the law is exactly CUE on the band; the paper's arithmetic on the ceiling
@@ -287,7 +287,8 @@ CERTIFICATE_BY_KEY = {k: v for v in CERTIFICATE.values() for k in v['keys']}
 def ckey(name):
     """a quantity's name as the claim prints it, normalised for the CERTIFICATE lookup: LaTeX wrappers, braces, spaces, dots and
     underscores dropped, the minus sign and subscript digits plain"""
-    k = str(name).replace('−', '-').replace('⁻¹', '^-1')
+    k = str(name).replace('−', '-').replace('⁻¹', '^-1').replace('^*', '*')      # c_1^* is c₁*
+    k = re.sub(r'\\(?:[bB]igg?[lr]?|left|right)(?![a-zA-Z])', '', k)               # sizing commands carry no meaning
     k = re.sub(r'\\(mathrm|tfrac|frac|,|;|!)', '', k)
     k = re.sub(r'[{}\s·$\\_]', '', k)
     return ''.join(str('₀₁₂₃₄₅₆₇₈₉'.index(ch)) if ch in '₀₁₂₃₄₅₆₇₈₉' else ch for ch in k)

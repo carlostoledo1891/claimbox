@@ -438,10 +438,16 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             doc = json.loads(f.read().decode('utf-8'))
         except (ValueError, UnicodeDecodeError) as e:
             raise Refusal('data', 'the published bytes are not JSON: ' + str(e)[:60])
-    select, arr = select_array(doc)
     platform = PLATFORM_BY_TITLE.get(grammar.normalise(shape['problem'])) if fam == 'score' and shape.get('problem') and not decider else None
     known = fam == 'bound' and shape['name'] in PRIMITIVE and not decider
     primitive = fam == 'kissing' or known or platform is not None or cert is not None
+    if not primitive and not decider and fam in ('bound', 'digits', 'identity'):
+        # a quantity no definition names and no decider decides: the refusal is the quantity's, whatever the bytes hold (until
+        # 2026-10-30 the bytes were read first, and a file with no array was refused as `data`: the wrong reason, found on the
+        # AI phrasing 7/paper/68, \tfrac{1}{2}(3 − 1/c_1^*) over the series certificate). The numeric families only: a platform
+        # score with no verifier written keeps its recorded refusal (ea-best-prime-number-theorem, `data`)
+        raise Refusal('decider', 'the quantity "' + str(shape.get('name') or fam) + '" has no primitive expression here: a decider path is needed, and none was given')
+    select, arr = select_array(doc)
     try:
         kind, shp, sizes = inspect_array(arr)
     except Refusal:

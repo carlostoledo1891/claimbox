@@ -817,6 +817,11 @@ red(not PR.printed_back({'text': 'C_1a < 1.5029'}, 'C_1a is not less than 1.5029
 ok(PR.value_of(PR.lean_numerals('3 * 10 ^ (-40 : ℤ)').replace(' ', '')) == PR.value_of('3·10⁻⁴⁰')
    and [v for _, _, v in PR.numbers_in('x ≤ 2.5431316 * 10 ^ (-6 : ℤ)')[1]][-1] == PR.value_of('2.5431316·10⁻⁶'),
    'prose: Lean\'s numerals (a * 10 ^ (k : ℤ)) are read as the exact value the grammar reads', '3·10⁻⁴⁰, 2.5431316·10⁻⁶')
+from claimbox.library.zeta23 import ckey, CERTIFICATE_BY_KEY  # noqa: E402
+ok(CERTIFICATE_BY_KEY.get(ckey('\\tfrac{1}{2}\\bigl(3 - 1/c_1^*\\bigr)')) is CERTIFICATE_BY_KEY.get(ckey('(3 - 1/c₁*)/2')) is not None,
+   'library: a LaTeX sizing command and c_1^* carry no meaning: \\tfrac{1}{2}\\bigl(3 − 1/c_1^*\\bigr) is the distinct proportion (3 − 1/c₁*)/2', ckey('\\tfrac{1}{2}\\bigl(3 - 1/c_1^*\\bigr)'))
+_, why = PR.grammar_proposal('$\\tfrac{1}{3}\\bigl(3 - 1/c_1^*\\bigr) = 0.83625\\ldots$', PR.rel_of(os.path.join(REPO, PR.CORPORA['riemann-ai']['source'])), PR.SERIES, None, 'x', ROOT)
+red(why is not None and why[0] == 'decider', 'translate: refused as decider, not data — a quantity no definition names, over a file with no array (found on 7/paper/68)', str(why)[:90])
 S12 = ROW['2/readme/12']['text']
 T12 = lang.parse(HEADP + 'use    S v1\n' + f'claim  m12 over e\n  quote "{S12}" from P\n  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\n  proposed by model:x\n')
 c12 = [i for i in T12['items'] if i['kw'] == 'claim'][0]
