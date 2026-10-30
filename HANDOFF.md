@@ -161,8 +161,11 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    red control; a derived `proposalWords` counts cert-machine's words over the proposals. Battery §10: the grammar's check
    restricted to its own proposals; the ledger adds up (calls, cost, cap, the model named); the model proposed or named a hole for
    every phrasing; every claim proposed CERTIFIED and no model claim differs from its reference but in the print of an equal bar.
-   make test: 466 pass, 0 fail, 96/96 reds. NOT REPUBLISHED: the live page still shows the baseline (republish = a cert-machine
-   session's publish-zone run, on the operator's word). NEXT: the read-back learns a written table of relation words and Lean's
+   make test: 466 pass, 0 fail, 96/96 reds. REPUBLISHED on the operator's "publish" (approved in the cert-machine-cb chat, whose
+   permission check holds publish-zone --push as a production deploy): cert-machine fac29cbf, from claimbox 5530c96 (87,738 bytes,
+   pinned in corpus/zones/claimbox.json); the live page's sha256 fbd87029…3a387f equals web/dist's, checked here with curl.
+   COMING FROM cert-machine-cb: instruments/claimbox check.py, check.js and SCHEMA.md change (format v4) when its merge lands on
+   main — then `make lift` here, `make drift`, and the battery's calibration re-run before anything else. NEXT: the read-back learns a written table of relation words and Lean's
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
