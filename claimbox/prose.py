@@ -390,6 +390,92 @@ def move_bar(sentence, printed, k):
     raise ValueError('the sentence does not print ' + printed)
 
 
+# PARAPHRASE (step 6: "paraphrase the claim and neither may move"): the sentence said another way, its meaning unchanged, by a
+# closed list of rewrites — the relation right before the bar written in the table's words if it is a symbol, as a symbol if
+# it is in words. A proposer re-run (the grammar) or re-asked (a file proposer's <proposals>.paraphrase.claim) must state the
+# same claim: 'same', 'moved' (another claim: a failure), or 'unread' (nothing stated on the paraphrase: recorded, not a failure)
+PARA_WORDS = {'le': 'is at most', 'lt': 'is less than', 'ge': 'is at least', 'gt': 'is greater than', 'eq': 'equals', 'in': 'equals'}
+PARA_SYMBOL = {'le': '≤', 'lt': '<', 'ge': '≥', 'gt': '>', 'eq': '='}
+RAW_REL = re.compile(r'(\\leq|\\le|\\geq|\\ge|\\lt|\\gt|<=|>=|≤|≥|⩽|⩾|<|>|=)\s*$')
+RAW_REL_OF = {'\\leq': 'le', '\\le': 'le', '<=': 'le', '≤': 'le', '⩽': 'le', '\\geq': 'ge', '\\ge': 'ge', '>=': 'ge', '≥': 'ge', '⩾': 'ge',
+              '\\lt': 'lt', '<': 'lt', '\\gt': 'gt', '>': 'gt', '=': 'eq'}
+
+
+def bar_span(sentence, printed):
+    """(start, end) of the span of the sentence that prints the bar, in the claim's form or another, or None"""
+    if printed in sentence:
+        i = sentence.index(printed)
+        return i, i + len(printed)
+    for m in list(LEAN_NUMERAL.finditer(sentence)) + list(re.finditer(r'(?<![\w.])' + grammar.NUMBER, sentence)):
+        try:
+            if value_of(lean_numerals(m.group(0)).replace(' ', '')) == value_of(printed):
+                return m.start(), m.end()
+        except (ValueError, ZeroDivisionError):
+            continue
+    return None
+
+
+def paraphrase(sentence, printed):
+    """(the sentence with the relation before its bar rewritten, symbol to words or words to symbol, the rewrite's name), or None"""
+    at = bar_span(sentence, printed)
+    if at is None:
+        return None
+    before, rest = sentence[:at[0]], sentence[at[0]:]
+    m = RAW_REL.search(before)
+    if m:
+        return before[:m.start()].rstrip() + ' ' + PARA_WORDS[RAW_REL_OF[m.group(1)]] + ' ' + rest, 'symbol to words'
+    low = before.lower().rstrip()
+    for w, r in PHRASES:
+        if low.endswith(w) and r in PARA_SYMBOL and (len(low) == len(w) or not low[-len(w) - 1].isalpha()):
+            cut = len(before.rstrip()) - len(w)
+            return before[:cut].rstrip() + ' ' + PARA_SYMBOL[r] + ' ' + rest, 'words to symbol'
+    return None
+
+
+def paraphrase_claims(corpus):
+    """a file proposer's paraphrase run: {claim id: the claim}, from <proposals>.paraphrase.claim"""
+    p = os.path.join(REPO, CORPORA[corpus]['proposals'].replace('.claim', '.paraphrase.claim'))
+    if not os.path.isfile(p):
+        return {}
+    out = {}
+    for tree, c in proposal_blocks(p):        # a statement the language cannot read states nothing: a hole, `syntax`
+        out[c['id'] if tree is not None else c[0]] = c if tree is not None else {'id': c[0], 'quote': c[1], 'stmt': ('hole', 'syntax', str(c[3]))}
+    return out
+
+
+def paraphrased_statement(claim, para):
+    """'same' when the statement for the paraphrased sentence is the statement (the bar equal by value), 'moved' when it is
+    another claim, 'unread' when it is a hole; None when the proposer was not asked"""
+    if para is None or claim['stmt'][0] == 'hole':
+        return None
+    p = bar_printed(claim['stmt'])
+    want = paraphrase(claim['quote'], p) if p else None
+    if want is None or para['quote'] != want[0]:
+        return None
+    if para['stmt'][0] == 'hole':
+        return 'unread'
+    p2 = bar_printed(para['stmt'])
+    if not p2 or value_of(p2) != value_of(p):
+        return 'moved'
+    return 'same' if lang.fmt_statement(para['stmt']).replace(p2, p, 1) == lang.fmt_statement(claim['stmt']) else 'moved'
+
+
+def paraphrased_grammar(obj, row, ctx, corpus, root):
+    """the grammar re-run on the paraphrased sentence, in a copy of the source"""
+    b = object_bar(obj)
+    want = paraphrase(row['text'], b[1]) if b else None
+    if want is None:
+        return None
+    path = _planted_source(corpus, row, want[0], 'para')
+    try:
+        obj2, _ = grammar_proposal(want[0], rel_of(path), ctx[0], ctx[1], obj['id'], root)
+    finally:
+        os.remove(path)
+    if obj2 is None:
+        return 'unread'
+    return 'same' if C.decision_fields(obj2) == C.decision_fields(obj) else 'moved'
+
+
 def _word(obj, root):
     return C.word(T.check_with_cert_machine(obj, root)) if obj is not None else None
 
@@ -490,6 +576,7 @@ def run(corpus, root, words=False):
     source = rel_of(os.path.join(REPO, cfg['source']))
     files = file_proposals(corpus, root)
     replanted = planted_claims(corpus)
+    reparaphrased = paraphrase_claims(corpus)
     out = []
     for row in rows_of(corpus):
         ctx = cfg['context'][row['claim']]
@@ -512,6 +599,8 @@ def run(corpus, root, words=False):
                 pr['anchored'] = anchored(o, row['text'], source if kind == 'grammar' else o['source']['path'], root)
                 pr['printedBack'] = printed_back(o, row['text'])
                 pr['planted'] = planted(o, row, ctx, corpus, root) if kind == 'grammar' else planted_statement(claim, replanted.get(claim['id']))
+                pr['paraphrase'] = paraphrased_grammar(o, row, ctx, corpus, root) if kind == 'grammar' else \
+                    paraphrased_statement(claim, reparaphrased.get(claim['id'])) if claim is not None else None
                 pr['faithful'] = (C.decision_fields(o) == C.decision_fields(reference)) if reference else None
                 if pr['faithful'] is False:          # the same pinned bytes, relation and exact bar, printed another way
                     a_, b_ = object_bar(o), object_bar(reference)
@@ -530,12 +619,13 @@ def run(corpus, root, words=False):
             kinds.setdefault(kind_class(p['kind']), []).append(json.dumps(p['decision'], sort_keys=True))
         agree = len(kinds) >= 2 and len({v[0] for v in kinds.values()}) == 1 and all(len(set(v)) == 1 for v in kinds.values())
         sens = lambda p: (p.get('sensitivity') or {}).get('held', True)      # run with cert-machine only (--run)
-        checks = made and all(p['anchored'] and p['printedBack'] and p['planted'] is not False and sens(p) for p in made)
+        checks = made and all(p['anchored'] and p['printedBack'] and p['planted'] is not False and sens(p) and p.get('paraphrase') != 'moved' for p in made)
         if not made:
             entry['outcome'] = 'not stated: ' + ', '.join(sorted({p['refused']['hole'] for p in entry['proposals']}))
         elif not checks:
             entry['outcome'] = 'refused: a proposal fails ' + ', '.join(sorted({k for p in made for k in ('anchored', 'printedBack', 'planted') if p[k] is False}
-                                                                                | ({'sensitivity'} if not all(sens(p) for p in made) else set())))
+                                                                                | ({'sensitivity'} if not all(sens(p) for p in made) else set())
+                                                                                | ({'paraphrase'} if any(p.get('paraphrase') == 'moved' for p in made) else set())))
         elif not agree:
             entry['outcome'] = 'proposed, not validated: ' + ('one kind of proposer only' if len(kinds) < 2 else 'the kinds disagree')
         else:
@@ -577,7 +667,9 @@ def summary(entries):
             'vacuity': {'depends': sum(1 for p in made if (p.get('vacuity') or {}).get('depends')),
                         'flagged': sum(1 for p in made if p.get('vacuity') and not p['vacuity']['depends']),
                         'notRun': sum(1 for p in made if not p.get('vacuity'))},
-            'pairs': pairs(entries)}
+            'pairs': pairs(entries),
+            'paraphrase': {k: {w: sum(1 for p in made if p['kind'] == k and p.get('paraphrase') == w) for w in ('same', 'moved', 'unread')}
+                           for k in sorted({p['kind'] for p in made})}}
 
 
 def pairs(entries):

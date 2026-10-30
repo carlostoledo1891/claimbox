@@ -805,6 +805,21 @@ try:
 finally:
     PR.grammar_proposal = real
 red(stuck is False, 'prose: refused — a proposer that does not move when the sentence\'s bar is moved', str(stuck))
+# paraphrase: the rewrites, a model's run that stays and one that moves (the record's 7/tweet/65: 3 - 1/c₁* / 2 for (3 - 1/c₁*)/2)
+ok(PR.paraphrase('We have $|D(1)| \\leq 0.82395317$.', '0.82395317')[0] == 'We have $|D(1)| is at most 0.82395317$.'
+   and PR.paraphrase('D(1) never exceeds 0.82395317 here', '0.82395317')[0] == 'D(1) ≤ 0.82395317 here',
+   'prose: a paraphrase rewrites only the relation before the bar, symbol to the table\'s words or words to the symbol', 'two rewrites')
+T45 = lang.parse(HEADP + f'claim  m5 over s\n  quote "{S5}" from P\n  : c₁* = 0.7532960…\n  proposed by model:x\n')
+c45 = [i for i in T45['items'] if i['kw'] == 'claim'][0]
+para5 = PR.paraphrase(S5, '0.7532960')[0]
+def para_of(stmt):
+    t_ = lang.parse(HEADP + f'claim  m5 over s\n  quote "{para5}" from P\n  : {stmt}\n  proposed by model:x\n')
+    return [i for i in t_['items'] if i['kw'] == 'claim'][0]
+ok(PR.paraphrased_statement(c45, para_of('c₁* = 0.7532960…')) == 'same', 'prose: a model that states the same claim on the paraphrase holds it', para5[:50])
+red(PR.paraphrased_statement(c45, para_of('c₁* ≥ 0.7532960')) == 'moved', 'prose: refused — a model whose claim moves when the sentence is said another way', 'relation changed')
+red([e['outcome'] for e in PREC['sentences'] if e['id'] == '7/tweet/65'][0].startswith('refused') and 'paraphrase' in
+    [e['outcome'] for e in PREC['sentences'] if e['id'] == '7/tweet/65'][0],
+    'prose: refused — 7/tweet/65, where the model wrote 3 - 1/c₁* / 2 for (3 - 1/c₁*)/2 on the paraphrase (the record)', 'paraphrase')
 # sensitivity and vacuity (run with cert-machine): the record's, then a translation that ignores its bar, and one that ignores its bytes
 SV = PREC['summary']
 ok(SV['sensitivity']['broke'] == 0 and SV['sensitivity']['held'] > 0 and all(

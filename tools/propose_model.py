@@ -7,6 +7,9 @@ model; this program is outside it, and nothing it writes counts until claimbox v
     .venv/bin/python tools/propose_model.py riemann-ai [--cap 20] [--workers 6]
     .venv/bin/python tools/propose_model.py riemann-ai --planted-only     the planted runs the ledger does not hold yet, asked
                                                                           and added; the first answers are read from the ledger
+    .venv/bin/python tools/propose_model.py riemann-ai --paraphrase       the paraphrase run (prose.paraphrase: the relation before
+                                                                          the bar rewritten), asked alone, written to
+                                                                          <proposals>.paraphrase.claim
 
 For each sentence the model sees the claim language's rules for a statement, the library names it may use over the data the
 sentence is about, and the sentence — never the grammar's reading, the reference claim or another proposal. Where its
@@ -185,6 +188,7 @@ def main(argv):
     ap.add_argument('--cap', type=float, default=20.0)
     ap.add_argument('--workers', type=int, default=6)
     ap.add_argument('--planted-only', action='store_true')
+    ap.add_argument('--paraphrase', action='store_true')
     a = ap.parse_args(argv)
     cfg = prose.CORPORA[a.corpus]
     rows = prose.rows_of(a.corpus)
@@ -196,11 +200,11 @@ def main(argv):
         print('sign in with `ant auth login`, or export ANTHROPIC_API_KEY, then run this again')
         return 2
     ledger = Ledger(a.cap)
-    if a.planted_only:                     # the calls already made stay in the ledger, and count against the cap
+    if a.planted_only or a.paraphrase:     # the calls already made stay in the ledger, and count against the cap
         old = json.load(open(ledger_path(a.corpus), encoding='utf-8'))
         ledger.calls, ledger.spent = list(old['entries']), old['spent']
     try:
-        return run(a, cfg, rows, client, ledger)
+        return paraphrase_run(a, cfg, rows, client, ledger) if a.paraphrase else run(a, cfg, rows, client, ledger)
     finally:
         save_ledger(a, ledger)
 
@@ -218,6 +222,46 @@ def save_ledger(a, ledger):
         json.dump(rec, f, indent=1, ensure_ascii=False)
         f.write('\n')
     print(f'{len(ledger.calls)} calls, ${ledger.spent:.4f} of ${a.cap:.2f}' + (' — stopped at the cap' if ledger.stopped else ''))
+
+
+def paraphrase_run(a, cfg, rows, client, ledger):
+    """each sentence whose first answer states a bar, said another way (prose.paraphrase), asked again alone"""
+    done = {e['tag']: e for e in ledger.calls}
+    jobs = []
+    for r in rows:
+        ans = (done.get(r['id']) or {}).get('answer') or {}
+        p = bar_of(ans.get('statement') or '')
+        para = prose.paraphrase(r['text'], p) if p else None
+        if para:
+            jobs.append((r, para[0]))
+    new = [j for j in jobs if j[0]['id'] + ' paraphrase' not in done]
+    print(f'{len(new)} paraphrase runs to ask')
+    with cf.ThreadPoolExecutor(a.workers) as pool:
+        got = dict(zip([j[0]['id'] for j in new], pool.map(lambda j: ask(client, ledger, j[1], data_for(cfg, j[0]), j[0]['id'] + ' paraphrase'), new)))
+    got.update({j[0]['id']: done[j[0]['id'] + ' paraphrase'] for j in jobs if j[0]['id'] + ' paraphrase' in done})
+    out = []
+    for r, text in jobs:
+        e = got.get(r['id'])
+        if e and e.get('answer'):
+            out.append(claim_block('m_' + re.sub(r'\W', '_', r['id']), LIBRARY[data_for(cfg, r)][0], text, e['answer'], e['model']))
+    with open(os.path.join(REPO, cfg['proposals'].replace('.claim', '.paraphrase.claim')), 'w', encoding='utf-8') as f:
+        f.write(head_of(a, cfg).replace('one proposal per sentence', 'the paraphrase run: each sentence said another way (the relation before its bar '
+                                        'rewritten), asked again alone') + '\n'.join(out) + '\n')
+    return 0
+
+
+def data_for(cfg, row):
+    path = cfg['context'][row['claim']][0]
+    return os.path.basename(path) if path else 'LawN256.encl.json'      # a theorem's sentence is offered the law's names
+
+
+def head_of(a, cfg):
+    return '-- Written by tools/propose_model.py (' + MODEL + ', effort high): one proposal per sentence, the model\'s own statement or hole.\n' \
+           '-- It counts only after claimbox validates it (python3 -m claimbox prose ' + a.corpus + ').\n' \
+           'source P = ../claimbox/' + cfg['source'] + '\n' \
+           'data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json\nread   e as integers\n' \
+           'data   s = ../claimbox/corpus/riemann/zeta23/mt-series.json\nread   s as integers\n' \
+           'use    S v1\nuse    D v1\nuse    p₀ v1\nuse    c256 v1\nuse    c₁* v1\n'
 
 
 def run(a, cfg, rows, client, ledger):

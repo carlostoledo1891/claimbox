@@ -127,6 +127,8 @@ def slots():
         'pr_mh': val(PROSE, MK + '/holes'), 'pr_mf': val(PROSE, MK + '/faithful'), 'pr_ms': val(PROSE, MK + '/sameValueOtherPrint', count=True),
         'pr_mn': val(PROSE, MK + '/noReference', count=True), 'pr_mu': val(PROSE, MK + '/unfaithful', count=True),
         'pr_mph': val(PROSE, MK + '/plantedHeld'), 'pr_mpb': val(PROSE, MK + '/plantedBroke', count=True),
+        'pa_same': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/same'), 'pa_moved': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/moved', count=True),
+        'pa_unread': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/unread', count=True), 'pa_g': val(PROSE, '/summary/paraphrase/grammar/unread', count=True),
         'sv_held': val(PROSE, '/summary/sensitivity/held'), 'sv_broke': val(PROSE, '/summary/sensitivity/broke', count=True),
         'sv_tight': val(PROSE, '/summary/sensitivity/tight'), 'v_dep': val(PROSE, '/summary/vacuity/depends'),
         'v_flag': val(PROSE, '/summary/vacuity/flagged', count=True), 'pp_n': val(PROSE, '/summary/pairs/sentences'),

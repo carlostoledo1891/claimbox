@@ -3,8 +3,8 @@
  "model": "claude-opus-5-5",
  "effort": "high",
  "cap": 20.0,
- "spent": 0.8691,
- "calls": 137,
+ "spent": 1.1818,
+ "calls": 184,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -31,6 +31,26 @@
     "statement": "|D(1)| ≤ 0.82395317",
     "hole": "",
     "why": "The sentence bounds the absolute edge discrepancy |D(1)| by the printed number 0.82395317."
+   }
+  },
+  {
+   "tag": "1/abstract/1 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjhQfFBNgALrLwCNkJ",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 272,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 81
+   },
+   "cost": 0.008553,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute edge discrepancy |D(1)| above by the printed number 0.82395317, and D(1) is a library name.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute edge discrepancy |D(1)| above by the printed number 0.82395317, and D(1) is a library name."
    }
   },
   {
@@ -74,6 +94,26 @@
    }
   },
   {
+   "tag": "1/assistant/7 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjh93Wuvpdx5GsHDBq",
+   "stopReason": "end_turn",
+   "seconds": 3.9,
+   "usage": {
+    "input": 292,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 251
+   },
+   "cost": 0.012033,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states the bound |D(1)| ≤ 0.82395317 explicitly, and D(1) is a library name.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states the bound |D(1)| ≤ 0.82395317 explicitly, and D(1) is a library name."
+   }
+  },
+  {
    "tag": "1/assistant/7 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPbx3b5vdJmqVFM7Ea",
@@ -111,6 +151,26 @@
     "statement": "D(1) < 0.82395317",
     "hole": "",
     "why": "The sentence states a single strict upper bound on the library quantity D(1), printed as 0.82395317."
+   }
+  },
+  {
+   "tag": "1/assistant/9 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjrz7yPXCcG4Vun5eb",
+   "stopReason": "end_turn",
+   "seconds": 2.1,
+   "usage": {
+    "input": 274,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 64
+   },
+   "cost": 0.00261,
+   "raw": "{\"statement\": \"D(1) < 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims the library quantity D(1) is strictly less than the printed bar 0.82395317.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the library quantity D(1) is strictly less than the printed bar 0.82395317."
    }
   },
   {
@@ -154,6 +214,26 @@
    }
   },
   {
+   "tag": "1/blog/4 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjhHyA9D8MpNFRPgvw",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 277,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 71
+   },
+   "cost": 0.008373,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute value of the edge discrepancy D(1) by the printed number 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute value of the edge discrepancy D(1) by the printed number 0.82395317."
+   }
+  },
+  {
    "tag": "1/blog/4 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPbxHNraaVkRaN3qnN",
@@ -194,6 +274,26 @@
    }
   },
   {
+   "tag": "1/docstring/3 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjhYquAi5epVSDfWEc",
+   "stopReason": "end_turn",
+   "seconds": 2.7,
+   "usage": {
+    "input": 287,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 71
+   },
+   "cost": 0.008413,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute edge discrepancy |D(1)| above by the printed number 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute edge discrepancy |D(1)| above by the printed number 0.82395317."
+   }
+  },
+  {
    "tag": "1/docstring/3 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPbxnGZVjiniV5XkKf",
@@ -231,6 +331,26 @@
     "statement": "|D(1)| ≤ 0.82395317",
     "hole": "",
     "why": "The theorem states a single bound on the absolute edge discrepancy, and D(1) is a library name."
+   }
+  },
+  {
+   "tag": "1/paper/0 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjgS86ePSE7iFQvm5R",
+   "stopReason": "end_turn",
+   "seconds": 3.4,
+   "usage": {
+    "input": 289,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 71
+   },
+   "cost": 0.008421,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute edge discrepancy |D(1)| above by the printed number 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute edge discrepancy |D(1)| above by the printed number 0.82395317."
    }
   },
   {
@@ -314,6 +434,26 @@
    }
   },
   {
+   "tag": "1/readme/2 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjh3asP87vRJD9XU9C",
+   "stopReason": "end_turn",
+   "seconds": 2.5,
+   "usage": {
+    "input": 282,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 71
+   },
+   "cost": 0.008393,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute edge discrepancy |D(1)| by the printed constant 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute edge discrepancy |D(1)| by the printed constant 0.82395317."
+   }
+  },
+  {
    "tag": "1/readme/2 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPbwYuECqDwxJeUoT5",
@@ -394,6 +534,26 @@
    }
   },
   {
+   "tag": "2/abstract/11 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBju3eBrm5EMsR1ZDb9",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 285,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 234
+   },
+   "cost": 0.006054,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by the printed 3·10⁻⁴⁰ over the finite integer rows 1 ≤ j ≤ 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by the printed 3·10⁻⁴⁰ over the finite integer rows 1 ≤ j ≤ 255."
+   }
+  },
+  {
    "tag": "2/abstract/11 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPmbiQ8594LyNwRg7k",
@@ -431,6 +591,26 @@
     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
     "hole": "",
     "why": "The sentence bounds |256 S(j) − j| by a printed number over the finite integer rows 0 < j < 256, which the checker can decide."
+   }
+  },
+  {
+   "tag": "2/assistant/17 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBk9sskNHDftiUMDF8v",
+   "stopReason": "end_turn",
+   "seconds": 4.9,
+   "usage": {
+    "input": 283,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 406
+   },
+   "cost": 0.009486,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 3×10⁻⁴⁰ for each integer row 0 < j < 256, using the library form factor S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 3×10⁻⁴⁰ for each integer row 0 < j < 256, using the library form factor S(j)."
    }
   },
   {
@@ -474,6 +654,26 @@
    }
   },
   {
+   "tag": "2/blog/14 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjy3Wf6x7823qBukjm",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 289,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 266
+   },
+   "cost": 0.00671,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by the printed 3 × 10^{-40} for every row j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by the printed 3 × 10^{-40} for every row j from 1 to 255."
+   }
+  },
+  {
    "tag": "2/blog/14 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7atRyhZkhrMmzsvUkH",
@@ -511,6 +711,26 @@
     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
     "hole": "",
     "why": "The sentence bounds |256·S(j) − j| by a printed decimal over the finite integer rows 0 < j < 256, which S(j) expresses."
+   }
+  },
+  {
+   "tag": "2/blog/19 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBk9reA9zoQqUaytUci",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 277,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 265
+   },
+   "cost": 0.006642,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by a printed decimal over the finite integer rows 0 < j < 256, using the library name S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by a printed decimal over the finite integer rows 0 < j < 256, using the library name S(j)."
    }
   },
   {
@@ -554,6 +774,26 @@
    }
   },
   {
+   "tag": "2/docstring/13 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjvnKteNWS7yQTt4Y7",
+   "stopReason": "end_turn",
+   "seconds": 3.1,
+   "usage": {
+    "input": 306,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 218
+   },
+   "cost": 0.005818,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 3·10⁻⁴⁰ for each of the finitely many integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 3·10⁻⁴⁰ for each of the finitely many integer rows 0 < j < 256."
+   }
+  },
+  {
    "tag": "2/docstring/13 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7atbtLaTRABSmKfCAz",
@@ -591,6 +831,26 @@
     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
     "hole": "",
     "why": "The sentence bounds |256·S(j) − j| by 3·10⁻⁴⁰ over the finite integer rows 0 < j < 256, which the enclosures in the file can decide."
+   }
+  },
+  {
+   "tag": "2/paper/10 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBjtB51VnULCkmxEawu",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 296,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 249
+   },
+   "cost": 0.006398,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 3·10⁻⁴⁰ over the finite integer rows 0 < j < 256, which a check of the file can decide.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 3·10⁻⁴⁰ over the finite integer rows 0 < j < 256, which a check of the file can decide."
    }
   },
   {
@@ -674,6 +934,26 @@
    }
   },
   {
+   "tag": "2/readme/12 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBju4dmSzJhdEmocdfd",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 280,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 342
+   },
+   "cost": 0.008194,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\",\"hole\":\"\",\"why\":\"The sentence bounds |256·S(j) − j| by the printed 3e-40 for each integer row j from 1 to 255, which is a finite check.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by the printed 3e-40 for each integer row j from 1 to 255, which is a finite check."
+   }
+  },
+  {
    "tag": "2/readme/12 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7atLmXHaxVMHLhUkMc",
@@ -734,6 +1014,26 @@
    }
   },
   {
+   "tag": "2/tweet/15 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBk1kURrp5G9ZR5XYqP",
+   "stopReason": "end_turn",
+   "seconds": 2.7,
+   "usage": {
+    "input": 266,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 258
+   },
+   "cost": 0.006458,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds 256·S(j) − j above by 3×10⁻⁴⁰ on every integer row 0<j<256, using the library name S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds 256·S(j) − j above by 3×10⁻⁴⁰ on every integer row 0<j<256, using the library name S(j)."
+   }
+  },
+  {
    "tag": "2/tweet/15 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7atsG7UphG8FYGz8QP",
@@ -771,6 +1071,26 @@
     "statement": "c256 < 2.5431316·10⁻⁶",
     "hole": "",
     "why": "The sentence bounds the decimal constant 1/(6·256²) + τ/512, which is the library name c256, strictly above by the printed number 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/abstract/21 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkAsQVHDENndKwnUiz",
+   "stopReason": "end_turn",
+   "seconds": 3.1,
+   "usage": {
+    "input": 268,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 206
+   },
+   "cost": 0.005426,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence bounds the constant c256 = 1/(6·256²) + τ/512 strictly above by the printed value 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence bounds the constant c256 = 1/(6·256²) + τ/512 strictly above by the printed value 2.5431316·10⁻⁶."
    }
   },
   {
@@ -874,6 +1194,26 @@
    }
   },
   {
+   "tag": "3/assistant/29 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkR3w51QX7FpSQC1jX",
+   "stopReason": "end_turn",
+   "seconds": 5.0,
+   "usage": {
+    "input": 253,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 344
+   },
+   "cost": 0.008126,
+   "raw": "{\"statement\": \"c256 < 0.0000025431316\", \"hole\": \"\", \"why\": \"The sentence states an explicit upper bound on the library constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431316",
+    "hole": "",
+    "why": "The sentence states an explicit upper bound on the library constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰."
+   }
+  },
+  {
    "tag": "3/assistant/29 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPv8SMaDphHHPKaH7H",
@@ -911,6 +1251,26 @@
     "statement": "c256 < 2.5431316·10⁻⁶",
     "hole": "",
     "why": "The sentence says the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is c256, is strictly below the printed bar."
+   }
+  },
+  {
+   "tag": "3/blog/24 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkPLVhrSabMVQmbFE3",
+   "stopReason": "end_turn",
+   "seconds": 4.7,
+   "usage": {
+    "input": 259,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 358
+   },
+   "cost": 0.00843,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence bounds the constant 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, which is exactly c256, strictly below the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence bounds the constant 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, which is exactly c256, strictly below the printed number."
    }
   },
   {
@@ -954,6 +1314,26 @@
    }
   },
   {
+   "tag": "3/docstring/23 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkEbeJ7rKmZmGECyks",
+   "stopReason": "end_turn",
+   "seconds": 2.0,
+   "usage": {
+    "input": 294,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 76
+   },
+   "cost": 0.00293,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10^(-6)\",\"hole\":\"\",\"why\":\"The sentence bounds the decimal constant c256 strictly from above by the printed number 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10^(-6)",
+    "hole": "",
+    "why": "The sentence bounds the decimal constant c256 strictly from above by the printed number 2.5431316·10⁻⁶."
+   }
+  },
+  {
    "tag": "3/docstring/23 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7bAX77cUFvizfyfJia",
@@ -994,6 +1374,26 @@
    }
   },
   {
+   "tag": "3/paper/20 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkABUwxM7191MUcSbh",
+   "stopReason": "end_turn",
+   "seconds": 3.8,
+   "usage": {
+    "input": 278,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 295
+   },
+   "cost": 0.007246,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The left side is exactly the library constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, and the sentence says it is strictly less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The left side is exactly the library constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, and the sentence says it is strictly less than the printed bound."
+   }
+  },
+  {
    "tag": "3/paper/20 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7bANvgPv5W65r4GnSS",
@@ -1031,6 +1431,26 @@
     "statement": "c256 < 2.5431316e-6",
     "hole": "",
     "why": "The sentence bounds the decimal constant 1/(6·256²) + τ/512 strictly above by the printed number 2.5431316e-6."
+   }
+  },
+  {
+   "tag": "3/readme/22 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkDBoZHDeKupyH9Lg9",
+   "stopReason": "end_turn",
+   "seconds": 4.0,
+   "usage": {
+    "input": 250,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 281
+   },
+   "cost": 0.006854,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-6\", \"hole\": \"\", \"why\": \"The sentence bounds the decimal constant c256 = 1/(6·256²) + τ/512 strictly above by the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": "The sentence bounds the decimal constant c256 = 1/(6·256²) + τ/512 strictly above by the printed number."
    }
   },
   {
@@ -1114,6 +1534,26 @@
    }
   },
   {
+   "tag": "3/tweet/25 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkQLn7GTra6CRwdNxB",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 275,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 273
+   },
+   "cost": 0.006794,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence's lead claim is that the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is c256, lies below the printed bar 2.5431316×10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence's lead claim is that the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is c256, lies below the printed bar 2.5431316×10⁻⁶."
+   }
+  },
+  {
    "tag": "3/tweet/25 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZ7bCknkGk1FcFGX6iPA",
@@ -1154,6 +1594,26 @@
    }
   },
   {
+   "tag": "4/abstract/31 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkSTGxP5B3VeTmu9tC",
+   "stopReason": "end_turn",
+   "seconds": 2.7,
+   "usage": {
+    "input": 284,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 143
+   },
+   "cost": 0.00423,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with an exact rational value for p₀, which the library name p₀ expresses directly.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact rational value for p₀, which the library name p₀ expresses directly."
+   }
+  },
+  {
    "tag": "4/abstract/31 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyPymiLTrS8N1YRwSYL",
@@ -1191,6 +1651,26 @@
     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
     "hole": "",
     "why": "The sentence first claims that p₀ equals the printed exact rational, so that is the claim stated; the 0.6818287 upper bound is a second claim."
+   }
+  },
+  {
+   "tag": "4/assistant/37 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkWuARihEdQTGuvvb4",
+   "stopReason": "end_turn",
+   "seconds": 4.0,
+   "usage": {
+    "input": 274,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 331
+   },
+   "cost": 0.00795,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀, which is a library name, so the claim is that p₀ equals that printed fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀, which is a library name, so the claim is that p₀ equals that printed fraction."
    }
   },
   {
@@ -1374,6 +1854,26 @@
    }
   },
   {
+   "tag": "4/readme/32 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkWsBD1tRMgHJCDhK7",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 273,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 157
+   },
+   "cost": 0.004466,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence first claims that p₀ equals the printed exact rational; the later bound p₀ ≤ 0.6818287 is a secondary claim.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence first claims that p₀ equals the printed exact rational; the later bound p₀ ≤ 0.6818287 is a secondary claim."
+   }
+  },
+  {
    "tag": "4/readme/32 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQ2W9x6gpnucRxDh3d",
@@ -1454,6 +1954,26 @@
    }
   },
   {
+   "tag": "5/abstract/41 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkftAmiNfvQY7VXZbz",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 203,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 266
+   },
+   "cost": 0.006366,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence gives the value of the library constant c₁* as a print cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the value of the library constant c₁* as a print cut off with an ellipsis."
+   }
+  },
+  {
    "tag": "5/abstract/41 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQKZKv22fwvRdd1wP3",
@@ -1491,6 +2011,26 @@
     "statement": "c₁* = 0.7532960…",
     "hole": "",
     "why": "The sentence leads with the truncated decimal print of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkp4nuWaGFnBbRAiq2",
+   "stopReason": "end_turn",
+   "seconds": 2.4,
+   "usage": {
+    "input": 253,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 64
+   },
+   "cost": 0.002526,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence leads with a truncated decimal value of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with a truncated decimal value of the Montgomery–Taylor constant c₁*."
    }
   },
   {
@@ -1594,6 +2134,26 @@
    }
   },
   {
+   "tag": "5/paper/40 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkdqNsZ5JSd5DJshbD",
+   "stopReason": "end_turn",
+   "seconds": 4.2,
+   "usage": {
+    "input": 301,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 288
+   },
+   "cost": 0.007198,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"Although labelled a definition, the sentence asserts a truncated decimal value for the library constant c₁*, and that value is its leading numerical claim.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "Although labelled a definition, the sentence asserts a truncated decimal value for the library constant c₁*, and that value is its leading numerical claim."
+   }
+  },
+  {
    "tag": "5/paper/40 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQGu6HGLCXTJhG4w8L",
@@ -1631,6 +2191,26 @@
     "statement": "c₁* = 0.7532960…",
     "hole": "",
     "why": "The first part is a closed-form identity, not a numeric bar, so the stated numerical claim is the truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/48 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBksD3MeYWp1QWCjSUc",
+   "stopReason": "end_turn",
+   "seconds": 4.4,
+   "usage": {
+    "input": 218,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 361
+   },
+   "cost": 0.008326,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The identity has no printed numeric bar, so the numerical claim is that c₁* is printed as 0.7532960 with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The identity has no printed numeric bar, so the numerical claim is that c₁* is printed as 0.7532960 with an ellipsis."
    }
   },
   {
@@ -1674,6 +2254,26 @@
    }
   },
   {
+   "tag": "5/readme/42 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkizCX6Twq57ftZgCH",
+   "stopReason": "end_turn",
+   "seconds": 1.9,
+   "usage": {
+    "input": 242,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 74
+   },
+   "cost": 0.002682,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence leads with the truncated decimal value of the Montgomery–Taylor constant c₁*, printed with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of the Montgomery–Taylor constant c₁*, printed with an ellipsis."
+   }
+  },
+  {
    "tag": "5/readme/42 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQNbttR3mg16oNMgco",
@@ -1714,6 +2314,26 @@
    }
   },
   {
+   "tag": "5/referee/46 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkndiqkm2UebjEPUDB",
+   "stopReason": "end_turn",
+   "seconds": 3.8,
+   "usage": {
+    "input": 235,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 276
+   },
+   "cost": 0.006694,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that c₁* equals 0.7532960 printed with an ellipsis; the reciprocal identity is secondary.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532960 printed with an ellipsis; the reciprocal identity is secondary."
+   }
+  },
+  {
    "tag": "5/referee/46 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQZahBsdW76Dtv9J5x",
@@ -1751,6 +2371,26 @@
     "statement": "c₁* = 0.7532960…",
     "hole": "",
     "why": "The sentence leads with a truncated decimal value for the library constant c₁*, which is a checkable claim."
+   }
+  },
+  {
+   "tag": "5/tweet/45 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkjXSJ7fFQG8QmRVw4",
+   "stopReason": "end_turn",
+   "seconds": 3.2,
+   "usage": {
+    "input": 200,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 200
+   },
+   "cost": 0.005034,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with a truncated decimal value for c₁*, so the claim is that c₁* begins with the printed digits 0.7532960.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with a truncated decimal value for c₁*, so the claim is that c₁* begins with the printed digits 0.7532960."
    }
   },
   {
@@ -1814,6 +2454,26 @@
    }
   },
   {
+   "tag": "6/abstract/51 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkwvZVZFy4UL1f4qte",
+   "stopReason": "end_turn",
+   "seconds": 6.5,
+   "usage": {
+    "input": 196,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 513
+   },
+   "cost": 0.011278,
+   "raw": "{\"statement\": \"\", \"hole\": \"asymptotic\", \"why\": \"The leading claim is that at least 67.25% of all zeta zeros are simple and on the critical line, a limiting density over infinitely many zeros that no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "asymptotic",
+    "why": "The leading claim is that at least 67.25% of all zeta zeros are simple and on the critical line, a limiting density over infinitely many zeros that no finite check decides."
+   }
+  },
+  {
    "tag": "6/abstract/51 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQgg5ShZUiQjqnAS8n",
@@ -1851,6 +2511,26 @@
     "statement": "2 - 1/c₁* = 0.67250…",
     "hole": "",
     "why": "The sentence leads with the value of 2 − 1/c₁*, printed cut off as 0.67250…, and c₁* is in the library."
+   }
+  },
+  {
+   "tag": "6/assistant/57 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmC5cCczd5kLXSLNoY",
+   "stopReason": "end_turn",
+   "seconds": 2.8,
+   "usage": {
+    "input": 200,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 173
+   },
+   "cost": 0.004494,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the value of 2 − 1/c₁*, printed truncated as 0.67250..., which the library name expresses directly.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the value of 2 − 1/c₁*, printed truncated as 0.67250..., which the library name expresses directly."
    }
   },
   {
@@ -1934,6 +2614,26 @@
    }
   },
   {
+   "tag": "6/docstring/53 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkzPQPzoCeswQGPdJS",
+   "stopReason": "end_turn",
+   "seconds": 3.3,
+   "usage": {
+    "input": 200,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 189
+   },
+   "cost": 0.004814,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated value of the library expression 2 - 1/c₁*, which a finite computation can check.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the truncated value of the library expression 2 - 1/c₁*, which a finite computation can check."
+   }
+  },
+  {
    "tag": "6/docstring/53 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQmqtZnbzAS6CaB3Bt",
@@ -1971,6 +2671,26 @@
     "statement": "2 - 1/c₁* = 0.67250…",
     "hole": "",
     "why": "The theorem about zeros cannot be checked, but its printed value 2 - 1/c₁* = 0.67250… is a decidable truncated-decimal claim over the library constant."
+   }
+  },
+  {
+   "tag": "6/paper/50 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkvgQmNPf7yejvvDy9",
+   "stopReason": "end_turn",
+   "seconds": 5.6,
+   "usage": {
+    "input": 210,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 472
+   },
+   "cost": 0.010514,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The theorem about zeros cannot be checked, but its stated value 2 - 1/c₁* = 0.67250… is a truncated-decimal claim over the library constant.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The theorem about zeros cannot be checked, but its stated value 2 - 1/c₁* = 0.67250… is a truncated-decimal claim over the library constant."
    }
   },
   {
@@ -2054,6 +2774,26 @@
    }
   },
   {
+   "tag": "6/readme/52 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBkyKuRMy7rk9ZQRjPy",
+   "stopReason": "end_turn",
+   "seconds": 2.5,
+   "usage": {
+    "input": 184,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 164
+   },
+   "cost": 0.00425,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the value of 2 - 1/c₁*, printed and cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the value of 2 - 1/c₁*, printed and cut off with an ellipsis."
+   }
+  },
+  {
    "tag": "6/readme/52 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyQiVU9MeEHJVcJUgKi",
@@ -2114,6 +2854,26 @@
    }
   },
   {
+   "tag": "6/referee/56 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmAAGmiH5pFkjkXgMw",
+   "stopReason": "end_turn",
+   "seconds": 3.3,
+   "usage": {
+    "input": 197,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 213
+   },
+   "cost": 0.005282,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the theorem's printed value of 2 − 1/c₁*, cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the theorem's printed value of 2 − 1/c₁*, cut off with an ellipsis."
+   }
+  },
+  {
    "tag": "6/referee/56 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyR6UoNcnJGR5UnGUYu",
@@ -2151,6 +2911,26 @@
     "statement": "2 - 1/c₁* = 0.67250…",
     "hole": "",
     "why": "The sentence leads with the value of 2 - 1/c₁*, printed truncated as 0.67250…; the claim about the zeros is the consequence drawn from it."
+   }
+  },
+  {
+   "tag": "6/tweet/55 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBm4gcFi2ervuarqNJY",
+   "stopReason": "end_turn",
+   "seconds": 4.1,
+   "usage": {
+    "input": 180,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 289
+   },
+   "cost": 0.006734,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with a truncated decimal value for 2 − 1/c₁*, expressible directly from the library constant.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with a truncated decimal value for 2 − 1/c₁*, expressible directly from the library constant."
    }
   },
   {
@@ -2194,6 +2974,26 @@
    }
   },
   {
+   "tag": "7/abstract/61 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmLoE3AKHX174CQDFn",
+   "stopReason": "end_turn",
+   "seconds": 3.3,
+   "usage": {
+    "input": 172,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 303
+   },
+   "cost": 0.006982,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence prints a truncated decimal value for the library expression (3 − 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence prints a truncated decimal value for the library expression (3 − 1/c₁*)/2."
+   }
+  },
+  {
    "tag": "7/abstract/61 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyRM3AAd69MjeKtYHhj",
@@ -2231,6 +3031,26 @@
     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
     "hole": "",
     "why": "The sentence prints a truncated value for an expression written in the library constant c₁*."
+   }
+  },
+  {
+   "tag": "7/assistant/67 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmRdCPT8SwMwQemszP",
+   "stopReason": "end_turn",
+   "seconds": 4.7,
+   "usage": {
+    "input": 179,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 257
+   },
+   "cost": 0.00609,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states a value for (3 - 1/c₁*)/2, printed with an ellipsis, and c₁* is a library name.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states a value for (3 - 1/c₁*)/2, printed with an ellipsis, and c₁* is a library name."
    }
   },
   {
@@ -2334,6 +3154,26 @@
    }
   },
   {
+   "tag": "7/docstring/63 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmN7MnfW7ztCVma766",
+   "stopReason": "end_turn",
+   "seconds": 2.1,
+   "usage": {
+    "input": 177,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 87
+   },
+   "cost": 0.002682,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence gives the expression (3 - 1/c₁*)/2 over the library constant and says it equals a value cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the expression (3 - 1/c₁*)/2 over the library constant and says it equals a value cut off with an ellipsis."
+   }
+  },
+  {
    "tag": "7/docstring/63 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyRQkQNoWfHrRDKAwFZ",
@@ -2371,6 +3211,26 @@
     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
     "hole": "",
     "why": "The sentence equates the library expression (3 - 1/c₁*)/2 with a print cut off by an ellipsis, 0.83625…."
+   }
+  },
+  {
+   "tag": "7/paper/60 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmEUUhLPhprmCxuqwk",
+   "stopReason": "end_turn",
+   "seconds": 1.8,
+   "usage": {
+    "input": 178,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 92
+   },
+   "cost": 0.002786,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence gives (3 - 1/c₁*)/2 as a print cut off with an ellipsis, 0.83625…, and c₁* is a library name.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives (3 - 1/c₁*)/2 as a print cut off with an ellipsis, 0.83625…, and c₁* is a library name."
    }
   },
   {
@@ -2414,6 +3274,26 @@
    }
   },
   {
+   "tag": "7/paper/68 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmWwvR8QFB4b1S57xp",
+   "stopReason": "end_turn",
+   "seconds": 2.2,
+   "usage": {
+    "input": 191,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 82
+   },
+   "cost": 0.002638,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence gives a truncated decimal value for the expression (3 - 1/c₁*)/2, which is written over the library constant.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives a truncated decimal value for the expression (3 - 1/c₁*)/2, which is written over the library constant."
+   }
+  },
+  {
    "tag": "7/paper/68 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyRnJSrashV4GVvgqDx",
@@ -2451,6 +3331,26 @@
     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
     "hole": "",
     "why": "The sentence gives the value of the library expression (3 - 1/c₁*)/2 as a decimal cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/readme/62 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmN2QDQQHp2TA8tTwY",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 166,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 289
+   },
+   "cost": 0.006678,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence gives an exact library expression whose value it prints cut off with an ellipsis as 0.83625....\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives an exact library expression whose value it prints cut off with an ellipsis as 0.83625...."
    }
   },
   {
@@ -2494,6 +3394,26 @@
    }
   },
   {
+   "tag": "7/referee/66 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmQFqmyUPWi1UtxPwc",
+   "stopReason": "end_turn",
+   "seconds": 3.1,
+   "usage": {
+    "input": 191,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 189
+   },
+   "cost": 0.004778,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with the recomputed value, printed truncated with an ellipsis, for an expression written over c₁*.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the recomputed value, printed truncated with an ellipsis, for an expression written over c₁*."
+   }
+  },
+  {
    "tag": "7/referee/66 planted",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyRaVnDoGrhRkaEZSxx",
@@ -2531,6 +3451,26 @@
     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
     "hole": "",
     "why": "The missing parentheses are a print slip: the library defines (3 - 1/c₁*)/2, and only that grouping fits the 0.83625… value, so the sentence claims this truncated value."
+   }
+  },
+  {
+   "tag": "7/tweet/65 paraphrase",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZBmPwywodwrZsZtBG4U",
+   "stopReason": "end_turn",
+   "seconds": 9.9,
+   "usage": {
+    "input": 167,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 899
+   },
+   "cost": 0.018882,
+   "raw": "{\"statement\": \"3 - 1/c₁* / 2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence prints the unparenthesized term 3 − 1/c₁* / 2 equal to the truncated value 0.83625…, transcribed exactly as written without inserting parentheses.\"}",
+   "answer": {
+    "statement": "3 - 1/c₁* / 2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence prints the unparenthesized term 3 − 1/c₁* / 2 equal to the truncated value 0.83625…, transcribed exactly as written without inserting parentheses."
    }
   },
   {

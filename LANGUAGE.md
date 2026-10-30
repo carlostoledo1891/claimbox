@@ -230,6 +230,9 @@ planted       the sentence with its bar's last digit moved makes the proposer mo
 concord       a proposer of ANOTHER kind compiles the sentence to an object equal on every decision-bearing field
 sensitivity   (with cert-machine) the sentence's bar moved one unit of its last digit up and down, the claim recompiled: a
               box must be REFUTED both ways, a bound must hold when weakened; the strengthened word says whether it is tight
+paraphrase    the sentence said another way — the relation before the bar rewritten, symbol to the table's words or words
+              to the symbol — and the proposer re-run or asked again alone: the same claim, or another (refused), or nothing
+              (recorded: the grammar reads no relation words)
 vacuity       (with cert-machine) the claim recompiled over planted copies of its bytes (a closed list per file): if no plant
               changes the word, the claim does not depend on its bytes — flagged, not refused (a constant's arithmetic)
 ```
