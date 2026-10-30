@@ -2,9 +2,9 @@
  "what": "the cert-machine files web/grammar.css re-expresses (read in place, nothing imported), by sha256",
  "certMachine": "/Users/carlostoledo/Projects/cert-machine",
  "files": {
-  "design/WARRANT.md": "f3ba74cde5552fe1fc2b147507d18551f2aa57faaf403be31bc4b38f190c78a1",
+  "design/WARRANT.md": "aeba21946e544db5c58e23735ef16b7bd7cb1d43c667ea77562ab1b459bff996",
   "design/grammar.js": "45d0f6bd48b93ef27e1c419d3bcfd86187933036590df989e1df88e36c41ef26",
-  "design/tokens.js": "a9449f2fa726e608ceea4038776a95f0c323b9b0cb26a1f845edc032b42c02cf",
+  "design/tokens.js": "8679bde7818855ed055f27a5b9ac9669c0c84e0f321ed02f6996ec352e30e144",
   "design/COPY.md": "ebff3f681bdc87f6c39d6b22934c158f2020ecb85fbedbfe9c8e816e40a8d4fe",
   "playground/warrant.js": "06e12b304e079598ead046774edc774f881fcdebb8a29ea78d09666de24f390e"
  }
