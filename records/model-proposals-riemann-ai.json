@@ -3,8 +3,8 @@
  "model": "claude-opus-5-5",
  "effort": "high",
  "cap": 20.0,
- "spent": 0.7495,
- "calls": 125,
+ "spent": 0.8691,
+ "calls": 137,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -434,6 +434,26 @@
    }
   },
   {
+   "tag": "2/assistant/17 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7atk4vk7XestKXx2nx",
+   "stopReason": "end_turn",
+   "seconds": 4.3,
+   "usage": {
+    "input": 282,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 312
+   },
+   "cost": 0.013213,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by a printed number over the finite integer rows 0 < j < 256, and S(j) is a library name.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by a printed number over the finite integer rows 0 < j < 256, and S(j) is a library name."
+   }
+  },
+  {
    "tag": "2/blog/14",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyLSr2WiZweudwmECHW",
@@ -451,6 +471,26 @@
     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
     "hole": "",
     "why": "The sentence bounds |256·S(j) − j| by the printed 3 × 10^{-40} for every row 1 through 255, a finite check over the data."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7atRyhZkhrMmzsvUkH",
+   "stopReason": "end_turn",
+   "seconds": 5.6,
+   "usage": {
+    "input": 287,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 465
+   },
+   "cost": 0.016293,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never defines the 'ideal value', and its two bounds (3·10⁻⁴⁰ on S(j) and 4×10⁻⁴⁰ on 256·S(j)) do not match each other, so the claim can be read more than one way.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never defines the 'ideal value', and its two bounds (3·10⁻⁴⁰ on S(j) and 4×10⁻⁴⁰ on 256·S(j)) do not match each other, so the claim can be read more than one way."
    }
   },
   {
@@ -514,6 +554,26 @@
    }
   },
   {
+   "tag": "2/docstring/13 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7atbtLaTRABSmKfCAz",
+   "stopReason": "end_turn",
+   "seconds": 3.8,
+   "usage": {
+    "input": 307,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 221
+   },
+   "cost": 0.011493,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 4·10⁻⁴⁰ for each integer row 0 < j < 256, a finite check over the enclosed form factor.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 4·10⁻⁴⁰ for each integer row 0 < j < 256, a finite check over the enclosed form factor."
+   }
+  },
+  {
    "tag": "2/paper/10",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyLJidNm6xmmzju7Tty",
@@ -531,6 +591,26 @@
     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
     "hole": "",
     "why": "The sentence bounds |256·S(j) − j| by 3·10⁻⁴⁰ over the finite integer rows 0 < j < 256, which the enclosures in the file can decide."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7atKmwstWyjicBSmnH",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 296,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 225
+   },
+   "cost": 0.011529,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The theorem is a bound over the finite integer rows 0 < j < 256, each of which the enclosures in the file can decide.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The theorem is a bound over the finite integer rows 0 < j < 256, each of which the enclosures in the file can decide."
    }
   },
   {
@@ -554,6 +634,26 @@
    }
   },
   {
+   "tag": "2/paper/18 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7b9hzbjRYYNXiCmNiJ",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 289,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 207
+   },
+   "cost": 0.00553,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 4·10⁻⁴⁰ on each integer row 1 through 255, a finite check over the data.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 4·10⁻⁴⁰ on each integer row 1 through 255, a finite check over the data."
+   }
+  },
+  {
    "tag": "2/readme/12",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyLR5rVzXUKUtcDyFwB",
@@ -571,6 +671,26 @@
     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
     "hole": "",
     "why": "The sentence bounds |256·S(j) − j| by the printed 3e-40 over the finite integer rows 1 ≤ j < 256."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7atLmXHaxVMHLhUkMc",
+   "stopReason": "end_turn",
+   "seconds": 3.8,
+   "usage": {
+    "input": 279,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 299
+   },
+   "cost": 0.012941,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4e-40\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 4e-40 for each integer row 1 ≤ j < 256, which the S(j) library name expresses directly.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4e-40",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 4e-40 for each integer row 1 ≤ j < 256, which the S(j) library name expresses directly."
    }
   },
   {
@@ -611,6 +731,26 @@
     "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
     "hole": "",
     "why": "A one-sided bound on 256·S(j) − j over the finite integer rows 0<j<256, with the bar as printed."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7atsG7UphG8FYGz8QP",
+   "stopReason": "end_turn",
+   "seconds": 4.3,
+   "usage": {
+    "input": 267,
+    "cacheWrite": 1169,
+    "cacheRead": 0,
+    "output": 306
+   },
+   "cost": 0.013033,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds 256·S(j) − j above by 4×10⁻⁴⁰ on every row 0<j<256, a finite check of the given form factor.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds 256·S(j) − j above by 4×10⁻⁴⁰ on every row 0<j<256, a finite check of the given form factor."
    }
   },
   {
@@ -694,6 +834,26 @@
    }
   },
   {
+   "tag": "3/assistant/27 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7bJFwWymcgtpkfxBz9",
+   "stopReason": "end_turn",
+   "seconds": 3.9,
+   "usage": {
+    "input": 308,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 302
+   },
+   "cost": 0.007506,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence leads with the strict bound 2.5431317·10⁻⁶ > 1/(6·256²) + τ/512, which is the library constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the strict bound 2.5431317·10⁻⁶ > 1/(6·256²) + τ/512, which is the library constant c256."
+   }
+  },
+  {
    "tag": "3/assistant/29",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyMBT5ovs7YNSSMeF18",
@@ -754,6 +914,26 @@
    }
   },
   {
+   "tag": "3/blog/24 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7bCVfHg1pza3Un9JNy",
+   "stopReason": "end_turn",
+   "seconds": 3.8,
+   "usage": {
+    "input": 259,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 301
+   },
+   "cost": 0.00729,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence describes the constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰ and claims it is below the printed bar.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence describes the constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰ and claims it is below the printed bar."
+   }
+  },
+  {
    "tag": "3/docstring/23",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyLtgHp9Cb6vKcyby3q",
@@ -774,6 +954,26 @@
    }
   },
   {
+   "tag": "3/docstring/23 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7bAX77cUFvizfyfJia",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 292,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 257
+   },
+   "cost": 0.006542,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence bounds the decimal constant 1/(6·256²) + τ/512, which the library names c256, strictly above by 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence bounds the decimal constant 1/(6·256²) + τ/512, which the library names c256, strictly above by 2.5431317·10⁻⁶."
+   }
+  },
+  {
    "tag": "3/paper/20",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgYyLk7qkwgBhQWak4qLQ",
@@ -791,6 +991,26 @@
     "statement": "c256 < 2.5431316·10⁻⁶",
     "hole": "",
     "why": "The left side is exactly the library constant c256 = 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, and the lemma bounds it strictly above by the printed number."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7bANvgPv5W65r4GnSS",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 276,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 240
+   },
+   "cost": 0.006138,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The lemma bounds the constant 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, which is exactly c256, strictly above by the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The lemma bounds the constant 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, which is exactly c256, strictly above by the printed number."
    }
   },
   {
@@ -891,6 +1111,26 @@
     "statement": "c256 < 2.5431316·10⁻⁶",
     "hole": "",
     "why": "The sentence's leading claim is that the decimal constant 1/(6·256²) + τ/512 with τ = 3·10⁻⁴⁰, which is c256, lies strictly below the printed bar."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZ7bCknkGk1FcFGX6iPA",
+   "stopReason": "end_turn",
+   "seconds": 4.3,
+   "usage": {
+    "input": 273,
+    "cacheWrite": 0,
+    "cacheRead": 1169,
+    "output": 338
+   },
+   "cost": 0.008086,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence leads with a strict upper bound on the decimal constant 1/(6·256²) + τ/512, which is exactly c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with a strict upper bound on the decimal constant 1/(6·256²) + τ/512, which is exactly c256."
    }
   },
   {

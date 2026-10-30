@@ -806,6 +806,28 @@ def planted_of(stmt):
     t_ = lang.parse(HEADP + f'claim  m5 over s\n  quote "{moved5}" from P\n  : {stmt}\n  proposed by model:x\n')
     return [i for i in t_['items'] if i['kw'] == 'claim'][0]
 ok(PR.planted_statement(c5, planted_of('c₁* = 0.7532961…')) is True, 'prose: a model that moves its bar with the sentence\'s holds its planted run')
+# the read-back's relation words (a closed table, the longest phrase first) and Lean's numerals
+LE, GE = {'text': 'C_1a <= 1.5029'}, {'text': 'C_1a >= 1.5029'}
+ok(all(PR.printed_back(LE, x) for x in ('C_1a never exceeds 1.5029 here.', 'C_1a is at most 1.5029.', '1.5029 is at least C_1a.',
+                                        'C_1a ≤ 1.5029 * 10 ^ (0 : ℤ)')) and PR.printed_back(GE, 'C_1a is not less than 1.5029.'),
+   'prose: a relation written in the table\'s words, or around a Lean numeral, reads back as the object\'s', '5 sentences')
+red(not PR.printed_back(LE, 'C_1a exceeds 1.5029 here.'), 'prose: refused — "exceeds" does not read back as ≤', 'exceeds')
+red(not PR.printed_back(LE, 'C_1a is dominated by 1.5029.'), 'prose: refused — a phrase not in the table does not read back, never guessed', 'dominated by')
+red(not PR.printed_back({'text': 'C_1a < 1.5029'}, 'C_1a is not less than 1.5029.'), 'prose: refused — "not less than" is never read as <', 'not less than')
+ok(PR.value_of(PR.lean_numerals('3 * 10 ^ (-40 : ℤ)').replace(' ', '')) == PR.value_of('3·10⁻⁴⁰')
+   and [v for _, _, v in PR.numbers_in('x ≤ 2.5431316 * 10 ^ (-6 : ℤ)')[1]][-1] == PR.value_of('2.5431316·10⁻⁶'),
+   'prose: Lean\'s numerals (a * 10 ^ (k : ℤ)) are read as the exact value the grammar reads', '3·10⁻⁴⁰, 2.5431316·10⁻⁶')
+S12 = ROW['2/readme/12']['text']
+T12 = lang.parse(HEADP + 'use    S v1\n' + f'claim  m12 over e\n  quote "{S12}" from P\n  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\n  proposed by model:x\n')
+c12 = [i for i in T12['items'] if i['kw'] == 'claim'][0]
+moved12, _ = PR.plant_digit(S12, '3·10⁻⁴⁰')
+def planted12(stmt):
+    t_ = lang.parse(HEADP + 'use    S v1\n' + f'claim  m12 over e\n  quote "{moved12}" from P\n  : {stmt}\n  proposed by model:x\n')
+    return [i for i in t_['items'] if i['kw'] == 'claim'][0]
+ok(PR.planted_statement(c12, planted12('for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4e-40')) is True,
+   'prose: a planted bar found by value (the sentence prints 3e-40, the statement 3·10⁻⁴⁰) and moved, printed either way, holds', moved12[:60])
+red(PR.planted_statement(c12, planted12('for every j in 0 < j < 255 : |256·S(j) - j| ≤ 4e-40')) is False,
+    'prose: refused — a planted run that moves the bar and also the range', 'range changed')
 red(PR.planted_statement(c5, planted_of('c₁* = 0.7532960…')) is False, 'prose: refused — a model whose statement does not move when the sentence\'s bar is moved', 'stuck')
 red(PR.planted_statement(c5, planted_of('c₁* ≥ 0.7532961')) is False, 'prose: refused — a model whose planted statement moves more than the bar', 'relation changed')
 

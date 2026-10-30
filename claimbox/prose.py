@@ -154,12 +154,20 @@ def planted_statement(claim, planted):
     if planted is None or claim['stmt'][0] == 'hole':
         return None
     p = bar_printed(claim['stmt'])
-    if not p or p not in claim['quote'] or not plantable(p):
+    if not p or not plantable(p):
         return None
-    _, moved = plant_digit(claim['quote'], p)
+    try:
+        mutated, moved = plant_digit(claim['quote'], p)
+    except ValueError:                       # the sentence prints the bar in no form a digit can be moved in
+        return None
+    if planted['quote'] != mutated:          # asked on another sentence than this plant: not this plant's run
+        return None
     if planted['stmt'][0] == 'hole':
         return False
-    return lang.fmt_statement(planted['stmt']) == lang.fmt_statement(claim['stmt']).replace(p, moved, 1)
+    p2 = bar_printed(planted['stmt'])        # the moved bar may be printed another way (4e-40 for 4·10⁻⁴⁰): equal by value,
+    if not p2 or value_of(p2) != value_of(moved):   # and the rest of the statement unchanged, character for character
+        return False
+    return lang.fmt_statement(planted['stmt']).replace(p2, moved, 1) == lang.fmt_statement(claim['stmt']).replace(p, moved, 1)
 
 
 # ------------------------------------------------------------------------------------------------- the checks
@@ -192,9 +200,20 @@ def value_of(printed):
     return grammar.exact(p)
 
 
+# Lean's numerals as a Lean file prints them: `3 * 10 ^ (-40 : ℤ)`, `2.5431316 * 10 ^ (-6 : ℤ)`, `5 * 10 ^ 3` — the mantissa
+# times an integer power of ten, the exponent's type ascription optional; read as the same exact rational the grammar reads
+LEAN_NUMERAL = re.compile(r'(?<![\w.])(\d+(?:\.\d+)?)\s*\*\s*10\s*\^\s*(?:\(\s*(-?\d+)\s*(?::\s*[ℤℕℚℝ]\s*)?\)|(\d+)(?![\d.]))')
+
+
+def lean_numerals(text):
+    """the sentence with each Lean numeral written as the grammar writes a power of ten (3·10^{-40})"""
+    return LEAN_NUMERAL.sub(lambda m: m.group(1) + '·10^{' + (m.group(2) or m.group(3)) + '}', text)
+
+
 def numbers_in(sentence):
-    """every number the sentence prints, with its place: [(start, end, exact value)] over the normalised sentence"""
-    norm = grammar.normalise(sentence)
+    """every number the sentence prints, with its place: [(start, end, exact value)] over the normalised sentence (Lean's
+    numerals read too)"""
+    norm = grammar.normalise(lean_numerals(sentence))
     out = []
     for m in re.finditer(r'(?<![\w.])(\d+)\s*/\s*([1-9]\d*)(?![\d.])', norm):
         out.append((m.start(), m.end(), Fraction(int(m.group(1)), int(m.group(2)))))
@@ -220,6 +239,27 @@ def anchored(obj, sentence, source_path, root):
 
 
 REL_SYMBOLS = {'le': ('<=', '≤'), 'lt': ('<',), 'ge': ('>=', '≥'), 'gt': ('>',), 'in': ('=',), 'eq': ('=',)}
+# a relation written in words, read from a closed table and nowhere else: the phrase that ends right before the bar (or, for
+# the mirror, starts right after it); the longest phrase wins, so "not less than" is ≥ and never <. A phrase not in the table
+# does not read back: it is flagged, never guessed
+REL_WORDS = {'le': ('at most', 'does not exceed', 'do not exceed', 'never exceeds', 'never exceed', 'no more than', 'not more than',
+                    'no greater than', 'not greater than', 'no larger than', 'not larger than'),
+             'lt': ('less than', 'below', 'smaller than', 'strictly less than', 'strictly below'),
+             'ge': ('at least', 'no less than', 'not less than', 'no smaller than', 'not smaller than', 'not below'),
+             'gt': ('exceeds', 'exceed', 'greater than', 'more than', 'larger than', 'above', 'strictly greater than', 'strictly above')}
+PHRASES = sorted(((w, r) for r, ws in REL_WORDS.items() for w in ws), key=lambda x: -len(x[0]))
+
+
+def word_before(before):
+    """the relation the words right before a bar state, or None"""
+    t = before.lower().rstrip()
+    return next((r for w, r in PHRASES if t.endswith(w) and (len(t) == len(w) or not t[-len(w) - 1].isalpha())), None)
+
+
+def word_after(after):
+    """the relation the words right after a bar state (the bar their subject), or None"""
+    t = re.sub(r'^(?:is|are|remains|stays)(?: still)?\s+', '', after.lower().lstrip())      # "0.68 is at least p₀"
+    return next((r for w, r in PHRASES if t.startswith(w) and (len(t) == len(w) or not t[len(w)].isalpha())), None)
 MIRROR = {'le': 'ge', 'lt': 'gt', 'ge': 'le', 'gt': 'lt', 'in': 'in', 'eq': 'eq'}
 INEQUALITY = ('<=', '>=', '<', '>', '≤', '≥')
 ELLIPSIS = ('…', '...', '\\ldots', '\\dots')
@@ -228,7 +268,8 @@ ELLIPSIS = ('…', '...', '\\ldots', '\\dots')
 def printed_back(obj, sentence):
     """the object, read back: its first bar sits in the sentence with the relation the object holds — the symbol before the bar,
     or its mirror after it (0.6818287 >= p_0 is p_0 <= 0.6818287); a print cut off with "…" reads back from the ellipsis itself,
-    with no inequality before it. A relation written only in words does not read back (it is flagged, never guessed)"""
+    with no inequality before it. A relation written in words reads back through REL_WORDS only (any other phrasing is flagged,
+    never guessed)"""
     b = object_bar(obj)
     if b is None:
         return False
@@ -243,7 +284,10 @@ def printed_back(obj, sentence):
         return after.startswith(ELLIPSIS) and not any(before.endswith(x) or before[-6:].count(x) for x in INEQUALITY)
     if any(sym in before[-12:] for sym in REL_SYMBOLS.get(rel, ())):
         return True
-    return any(after[:12].startswith(sym) or sym in after[:4] for sym in REL_SYMBOLS.get(MIRROR.get(rel, ''), ()))
+    if any(after[:12].startswith(sym) or sym in after[:4] for sym in REL_SYMBOLS.get(MIRROR.get(rel, ''), ())):
+        return True
+    wb, wa = word_before(before), word_after(after)
+    return (wb == rel) if wb else (wa == MIRROR.get(rel)) if wa else False
 
 
 def plantable(printed):
@@ -270,7 +314,22 @@ def plant_digit(sentence, printed):
         raise ValueError('no digit to move in ' + printed)
     d = printed[cut]
     moved = printed[:cut] + (str(int(d) + 1) if d != '9' else '8') + printed[cut + 1:]
-    return sentence.replace(printed, moved, 1), moved
+    if printed in sentence:
+        return sentence.replace(printed, moved, 1), moved
+    # printed another way in the sentence (3 × 10^{-40}, Lean's 3 * 10 ^ (-40 : ℤ)): the span that prints the same value,
+    # its mantissa's last digit moved, kept only when it then prints the moved value
+    for m in list(LEAN_NUMERAL.finditer(sentence)) + list(re.finditer(r'(?<![\w.])' + grammar.NUMBER, sentence)):
+        span = m.group(0)
+        try:
+            if value_of(lean_numerals(span).replace(' ', '')) != value_of(printed):
+                continue
+        except (ValueError, ZeroDivisionError):
+            continue
+        k = re.match(r'-?\d+(?:\.\d+)?', span).end() - 1
+        span2 = span[:k] + (str(int(span[k]) + 1) if span[k] != '9' else '8') + span[k + 1:]
+        if value_of(lean_numerals(span2).replace(' ', '')) == value_of(moved):
+            return sentence[:m.start()] + span2 + sentence[m.end():], moved
+    raise ValueError('the sentence does not print ' + printed)
 
 
 def planted(obj, row, ctx, corpus, root):
@@ -279,7 +338,10 @@ def planted(obj, row, ctx, corpus, root):
     printed = printed_numbers(obj)
     if not printed or not plantable(printed[0]):
         return None
-    mutated, moved = plant_digit(row['text'], printed[0])
+    try:
+        mutated, moved = plant_digit(row['text'], printed[0])
+    except ValueError:
+        return None
     os.makedirs(PLANTS, exist_ok=True)
     path = os.path.join(PLANTS, corpus + '-' + re.sub(r'\W', '-', row['id']) + '.md')
     with open(os.path.join(REPO, CORPORA[corpus]['source']), encoding='utf-8') as f:

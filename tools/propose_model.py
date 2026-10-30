@@ -5,6 +5,8 @@ other (corpus/proposals/<corpus>.claim, each claim `proposed by model:<the model
 model; this program is outside it, and nothing it writes counts until claimbox validates it.
 
     .venv/bin/python tools/propose_model.py riemann-ai [--cap 20] [--workers 6]
+    .venv/bin/python tools/propose_model.py riemann-ai --planted-only     the planted runs the ledger does not hold yet, asked
+                                                                          and added; the first answers are read from the ledger
 
 For each sentence the model sees the claim language's rules for a statement, the library names it may use over the data the
 sentence is about, and the sentence — never the grammar's reading, the reference claim or another proposal. Where its
@@ -182,6 +184,7 @@ def main(argv):
     ap.add_argument('corpus')
     ap.add_argument('--cap', type=float, default=20.0)
     ap.add_argument('--workers', type=int, default=6)
+    ap.add_argument('--planted-only', action='store_true')
     a = ap.parse_args(argv)
     cfg = prose.CORPORA[a.corpus]
     rows = prose.rows_of(a.corpus)
@@ -193,10 +196,17 @@ def main(argv):
         print('sign in with `ant auth login`, or export ANTHROPIC_API_KEY, then run this again')
         return 2
     ledger = Ledger(a.cap)
+    if a.planted_only:                     # the calls already made stay in the ledger, and count against the cap
+        old = json.load(open(ledger_path(a.corpus), encoding='utf-8'))
+        ledger.calls, ledger.spent = list(old['entries']), old['spent']
     try:
         return run(a, cfg, rows, client, ledger)
     finally:
         save_ledger(a, ledger)
+
+
+def ledger_path(corpus):
+    return os.path.join(REPO, 'records', 'model-proposals-' + corpus + '.json')
 
 
 def save_ledger(a, ledger):
@@ -204,7 +214,7 @@ def save_ledger(a, ledger):
                    'moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer',
            'model': MODEL, 'effort': 'high', 'cap': a.cap, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
            'prices': PRICE, 'entries': sorted(ledger.calls, key=lambda e: e['tag'])}
-    with open(os.path.join(REPO, 'records', 'model-proposals-' + a.corpus + '.json'), 'w', encoding='utf-8') as f:
+    with open(ledger_path(a.corpus), 'w', encoding='utf-8') as f:
         json.dump(rec, f, indent=1, ensure_ascii=False)
         f.write('\n')
     print(f'{len(ledger.calls)} calls, ${ledger.spent:.4f} of ${a.cap:.2f}' + (' — stopped at the cap' if ledger.stopped else ''))
@@ -216,16 +226,30 @@ def run(a, cfg, rows, client, ledger):
         return os.path.basename(path) if path else 'LawN256.encl.json'      # a theorem's sentence is offered the law's names
 
     with cf.ThreadPoolExecutor(a.workers) as pool:
-        first = dict(zip([r['id'] for r in rows], pool.map(lambda r: ask(client, ledger, r['text'], data_for(r), r['id']), rows)))
+        if a.planted_only:
+            done = {e['tag']: e for e in ledger.calls}
+            first = {r['id']: done.get(r['id']) for r in rows}
+        else:
+            first = dict(zip([r['id'] for r in rows], pool.map(lambda r: ask(client, ledger, r['text'], data_for(r), r['id']), rows)))
         planted_jobs = []
         for r in rows:
             ans = (first[r['id']] or {}).get('answer') or {}
             p = bar_of(ans.get('statement') or '')
-            if p and p in r['text'] and prose.plantable(p):
-                mutated, moved = prose.plant_digit(r['text'], p)
+            if p and prose.plantable(p):
+                try:
+                    mutated, moved = prose.plant_digit(r['text'], p)
+                except ValueError:                 # the sentence prints the bar in no form a digit can be moved in
+                    continue
                 planted_jobs.append((r, mutated, moved))
-        planted = dict(zip([j[0]['id'] for j in planted_jobs],
-                           pool.map(lambda j: ask(client, ledger, j[1], data_for(j[0]), j[0]['id'] + ' planted'), planted_jobs)))
+        if a.planted_only:
+            asked = {e['tag'][:-len(' planted')]: e for e in ledger.calls if e['tag'].endswith(' planted')}
+            new = [j for j in planted_jobs if j[0]['id'] not in asked]
+            print(f'{len(new)} planted runs to ask: ' + ' '.join(j[0]['id'] for j in new))
+            asked.update(zip([j[0]['id'] for j in new], pool.map(lambda j: ask(client, ledger, j[1], data_for(j[0]), j[0]['id'] + ' planted'), new)))
+            planted = {j[0]['id']: asked.get(j[0]['id']) for j in planted_jobs}
+        else:
+            planted = dict(zip([j[0]['id'] for j in planted_jobs],
+                               pool.map(lambda j: ask(client, ledger, j[1], data_for(j[0]), j[0]['id'] + ' planted'), planted_jobs)))
 
     head = '-- Written by tools/propose_model.py (' + MODEL + ', effort high): one proposal per sentence, the model\'s own statement or hole.\n' \
            '-- It counts only after claimbox validates it (python3 -m claimbox prose ' + a.corpus + ').\n' \

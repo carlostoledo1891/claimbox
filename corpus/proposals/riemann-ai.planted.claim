@@ -42,13 +42,45 @@ claim  m_1_assistant_9 over e
   quote "The kernel verifies D(1) < 0.82395318, where D(1) = T_256/256 − 1/2 is the discrepancy at 1 of the 256-periodic law's form factor." from P
   : D(1) < 0.82395318
   proposed by model:claude-opus-5-5
+claim  m_2_paper_10 over e
+  quote "Theorem 2. For every integer $j$ with $0 < j < 256$ one has $|256\cdot S(j) - j| \leq 4\cdot 10^{-40}$, where $S(j)$ is the grid form factor of the $256$-periodic law." from P
+  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰
+  proposed by model:claude-opus-5-5
 claim  m_2_abstract_11 over e
   quote "We prove the near-CUE property of the grid form factor S(j) of the 256-periodic law: |256·S(j) − j| ≤ 4·10⁻⁴⁰ for all 1 ≤ j ≤ 255." from P
+  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰
+  proposed by model:claude-opus-5-5
+claim  m_2_readme_12 over e
+  quote "- Near-CUE rows: `abs(256*S(j) - j) <= 4e-40` for each row j below 256 (j >= 1); `S(j)` is the grid form factor of the 256-periodic law." from P
+  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4e-40
+  proposed by model:claude-opus-5-5
+claim  m_2_docstring_13 over e
+  quote "/-- Near-CUE rows: for every `j : ℕ` with `0 < j` and `j < 256`, `|256 * S j - j| ≤ 4 * 10 ^ (-40 : ℤ)`, where `S j` is the grid form factor of the 256-periodic law. -/" from P
+  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰
+  proposed by model:claude-opus-5-5
+claim  m_2_blog_14
+  quote "Every row j from 1 to 255 of the grid form factor S(j) of the 256-periodic law is within three times ten to the minus forty of the ideal value: 256·S(j) differs from j by at most 4 × 10^{-40}." from P
+  hole ambiguous "The sentence never defines the 'ideal value', and its two bounds (3·10⁻⁴⁰ on S(j) and 4×10⁻⁴⁰ on 256·S(j)) do not match each other, so the claim can be read more than one way."
+  proposed by model:claude-opus-5-5
+claim  m_2_tweet_15 over e
+  quote "256·S(j) − j ≤ 4×10⁻⁴⁰ for 0<j<256 (S = grid form factor of the 256-periodic law). near-CUE" from P
+  : for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰
+  proposed by model:claude-opus-5-5
+claim  m_2_assistant_17 over e
+  quote "Checked: for all integers j with 0 < j < 256, $|256 S(j) - j| \le 4 \times 10^{-40}$. Here $S(j)$ is the grid form factor of the 256-periodic law." from P
+  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰
+  proposed by model:claude-opus-5-5
+claim  m_2_paper_18 over e
+  quote "$4\cdot 10^{-40} \geq \left| 256\,S(j) - j \right|$ for all $j \in \{1, \dots, 255\}$, with $S(j)$ the grid form factor of the $256$-periodic law." from P
   : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰
   proposed by model:claude-opus-5-5
 claim  m_2_blog_19 over e
   quote "The grid form factor S(j) of the 256-periodic law satisfies |256·S(j) − j| ≤ 0.0000000000000000000000000000000000000004 for every j with 0 < j < 256." from P
   : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004
+  proposed by model:claude-opus-5-5
+claim  m_3_paper_20 over e
+  quote "Lemma 4. $\frac{1}{6\cdot 256^2} + \frac{3\cdot 10^{-40}}{512} < 2.5431317\cdot 10^{-6}$." from P
+  : c256 < 2.5431317·10⁻⁶
   proposed by model:claude-opus-5-5
 claim  m_3_abstract_21 over e
   quote "The resulting decimal constant satisfies 1/(6·256²) + (3·10⁻⁴⁰)/512 < 2.5431317·10⁻⁶." from P
@@ -58,8 +90,24 @@ claim  m_3_readme_22 over e
   quote "`1/(6*256**2) + 3e-40/512 < 2.5431316e-7`  # the decimal constant" from P
   : c256 < 2.5431316e-7
   proposed by model:claude-opus-5-5
+claim  m_3_docstring_23 over e
+  quote "/-- The decimal constant: `1 / (6 * 256 ^ 2) + (3 * 10 ^ (-40 : ℤ)) / 512 < 2.5431317 * 10 ^ (-6 : ℤ)`. -/" from P
+  : c256 < 2.5431317·10⁻⁶
+  proposed by model:claude-opus-5-5
+claim  m_3_blog_24 over e
+  quote "Put together, one over six times 256 squared, plus three times ten to the minus forty over 512, is still below 2.5431317 × 10^{-6}." from P
+  : c256 < 2.5431317·10⁻⁶
+  proposed by model:claude-opus-5-5
+claim  m_3_tweet_25 over e
+  quote "1/(6·256²) + 3×10⁻⁴⁰/512 < 2.5431317×10⁻⁶, so the 3e-40 slack costs nothing in the decimal constant" from P
+  : c256 < 2.5431317·10⁻⁶
+  proposed by model:claude-opus-5-5
 claim  m_3_referee_26 over e
   quote "Please justify that 2.5431317·10⁻⁶ exceeds 1/(6·256²) + (3·10⁻⁴⁰)/512; the margin looks very small and the strictness of the inequality should be shown." from P
+  : c256 < 2.5431317·10⁻⁶
+  proposed by model:claude-opus-5-5
+claim  m_3_assistant_27 over e
+  quote "Yes: $2.5431317 \cdot 10^{-6} > \frac{1}{6 \cdot 256^{2}} + \frac{3 \cdot 10^{-40}}{512}$, so the decimal constant is strictly below $2.5431316\cdot 10^{-6}$." from P
   : c256 < 2.5431317·10⁻⁶
   proposed by model:claude-opus-5-5
 claim  m_3_assistant_29 over e

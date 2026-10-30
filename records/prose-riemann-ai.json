@@ -28,13 +28,13 @@
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
     "noReference": 9,
-    "plantedHeld": 38,
-    "plantedBroke": 1
+    "plantedHeld": 48,
+    "plantedBroke": 2
    }
   },
-  "anchored": 50,
-  "printedBack": 45,
-  "planted": 40,
+  "anchored": 52,
+  "printedBack": 52,
+  "planted": 50,
   "faithful": 42,
   "unfaithful": 0,
   "sameValueOtherPrint": 1,
@@ -298,14 +298,14 @@
       ]
      },
      "anchored": true,
-     "printedBack": false,
+     "printedBack": true,
      "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails printedBack"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/tweet/5",
@@ -458,14 +458,14 @@
       ]
      },
      "anchored": true,
-     "printedBack": false,
+     "printedBack": true,
      "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-1-paper-8  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails printedBack"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "1/assistant/9",
@@ -533,10 +533,10 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+     "certMachine": "ADMITTED  m-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -627,7 +627,7 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-2-readme-12  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
@@ -672,15 +672,15 @@
        null
       ]
      },
-     "anchored": false,
-     "printedBack": false,
-     "planted": null,
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails anchored, printedBack"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "2/blog/14",
@@ -720,14 +720,14 @@
       ]
      },
      "anchored": true,
-     "printedBack": false,
-     "planted": null,
+     "printedBack": true,
+     "planted": false,
      "faithful": true,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-2-blog-14  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails printedBack"
+   "outcome": "refused: a proposal fails planted"
   },
   {
    "id": "2/tweet/15",
@@ -822,10 +822,10 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
+     "certMachine": "ADMITTED  m-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -869,10 +869,10 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+     "certMachine": "ADMITTED  m-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached"
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -970,7 +970,7 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": null,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-paper-20  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
@@ -1109,15 +1109,15 @@
        null
       ]
      },
-     "anchored": false,
-     "printedBack": false,
-     "planted": null,
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
      "faithful": null,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-docstring-23  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails anchored, printedBack"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/blog/24",
@@ -1157,14 +1157,14 @@
       ]
      },
      "anchored": true,
-     "printedBack": false,
-     "planted": null,
+     "printedBack": true,
+     "planted": true,
      "faithful": null,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-blog-24  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails printedBack"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/tweet/25",
@@ -1205,7 +1205,7 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": null,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-tweet-25  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
@@ -1251,14 +1251,14 @@
       ]
      },
      "anchored": true,
-     "printedBack": false,
+     "printedBack": true,
      "planted": true,
      "faithful": null,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-referee-26  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
     }
    ],
-   "outcome": "refused: a proposal fails printedBack"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "3/assistant/27",
@@ -1299,7 +1299,7 @@
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "faithful": null,
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-assistant-27  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached"
@@ -2100,7 +2100,7 @@
      "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
+     "certMachine": "ADMITTED  m-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached"
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2153,7 +2153,7 @@
      "planted": true,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached"
+     "certMachine": "ADMITTED  m-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached"
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
