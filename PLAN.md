@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 7, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 9, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -130,8 +130,8 @@ The landing page renders this table. Status words: `built`, `next`, `planned`, `
 | 3 | Compile and check | claim, object, cert-machine's word, and what it rests on | the same words cert-machine gives today, claim for claim | built |
 | 4 | The library | the definitions written once: kissing, the autocorrelation constants, the platform scores, the Riemann functionals, machine runs, each with its conventions | identical objects to today's | built |
 | 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | built |
-| 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | next |
-| 7 | Helpers and watchers | tighten, attack, fill; watchers for "for all" claims that report how far they searched | every proposal is decided by cert-machine; planted twins halt where predicted | research |
+| 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | built |
+| 7 | Helpers and watchers | tighten, attack, fill; watchers for "for all" claims that report how far they searched | every proposal is decided by cert-machine; planted twins halt where predicted | next |
 | 8 | Documents that build | a report whose numbers are claims: it does not build when one is refuted, and each number shows what it rests on | one existing report rebuilt this way | planned |
 | 9 | Teaching models to write it | the Claim Court environment on the Hub; its first task is writing claims claimbox reads | the share of validated claims before and after training | research |
 | 10 | Proposal loops at scale | many model proposals, the deterministic filter, cert-machine's word, counterexamples fed back | the target pinned first; red controls before every loop; every denominator published | research |
@@ -198,6 +198,19 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r9, 2026-10-30.** Step 6 built. On the operator's choices (a person writes the second kind; finish step 6; the register
+  run approved): the read-back reads a closed table of relation words and Lean's numerals; a plant and a moved bar find
+  the bar by value; the wrong hole on 7/paper/68 fixed (the quantity, not the bytes); an object quotes its claim's own
+  sentence (found: 40 of 51 model objects had quoted another line printing the same digits), with mirrored relations read;
+  sensitivity (the bar moved one unit, or past a platform's box), vacuity (planted bytes, a closed list per file), the
+  paraphrase check (the relation rewritten; the model moved once, a precedence slip) and the pair's same-error rate. AI
+  phrasings: the model compiles 53 of 80, 41 equal to the reference; validated 3 (grammar and model); refused 4; the person's
+  worksheet waits (46 blanks). The register: claimbox pins the bytes of 24 of its 132 sentences; the grammar states 23, all
+  equal to the reader jobs' objects; the model states 1 (15 decompositions it cannot name inside a notebook — a gap in the
+  language —, 6 platform scores the library does not define); validated 1. Model spend: $1.32 of $20 in all. cert-machine's
+  format v4 lifted (version-3 objects unchanged). Next: step 7, and beside it the two gaps the register showed (a selector
+  for one object of a file, the platform scores' definitions) and readers for the 108 register sentences whose bytes
+  claimbox does not pin.
 - **r8, 2026-10-30.** The second proposer run: a model, claude-opus-5-5 (tools/propose_model.py, the operator's $20 cap), over
   the eighty AI phrasings, never shown the grammar's reading, the reference or another proposal. 125 calls, $0.7495 in the ledger
   (records/model-proposals-riemann-ai.json; a first pass that crashed on a superscript digit cost about $0.50 more and is not in

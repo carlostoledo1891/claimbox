@@ -1,0 +1,497 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "cap": 20.0,
+ "spent": 0.1379,
+ "calls": 24,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 4.0,
+  "cache_write": 5.0,
+  "cache_read": 0.2,
+  "output": 20.0
+ },
+ "entries": [
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCypoArQeP2YJmPYWdN",
+   "stopReason": "end_turn",
+   "seconds": 5.5,
+   "usage": {
+    "input": 130,
+    "cacheWrite": 1271,
+    "cacheRead": 0,
+    "output": 453
+   },
+   "cost": 0.015935,
+   "raw": "{\"statement\": \"n(\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\") is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the named notebook heading is a rank-32 decomposition of <2,4,5> over the printed ring 0.5*Z.\"}",
+   "answer": {
+    "statement": "n(\"Rank-32 decomposition of <2,4,5> over 0.5*Z\") is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the named notebook heading is a rank-32 decomposition of <2,4,5> over the printed ring 0.5*Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCypV53sJT7XNvBiPgp",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1271,
+    "cacheRead": 0,
+    "output": 109
+   },
+   "cost": 0.009035,
+   "raw": "{\"statement\":\"n(\\\"Rank-45 decomposition of <2,4,7> over Z\\\") is a rank-45 decomposition of <2,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the decomposition the notebook prints under this heading has rank 45 and represents <2,4,7> over Z.\"}",
+   "answer": {
+    "statement": "n(\"Rank-45 decomposition of <2,4,7> over Z\") is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition the notebook prints under this heading has rank 45 and represents <2,4,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCypfUUTkS4WJX3P9kV",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1271,
+    "cacheRead": 0,
+    "output": 115
+   },
+   "cost": 0.009155,
+   "raw": "{\"statement\":\"n(\\\"Rank-51 decomposition of <2,4,8> over Z\\\") is a rank-51 decomposition of <2,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named notebook entry is a rank-51 decomposition of <2,4,8> over Z, which the checker can verify against the data.\"}",
+   "answer": {
+    "statement": "n(\"Rank-51 decomposition of <2,4,8> over Z\") is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named notebook entry is a rank-51 decomposition of <2,4,8> over Z, which the checker can verify against the data."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCyq91fRzt13wXqRtpx",
+   "stopReason": "end_turn",
+   "seconds": 5.0,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1271,
+    "cacheRead": 0,
+    "output": 427
+   },
+   "cost": 0.015395,
+   "raw": "{\"statement\": \"n(\\\"Rank-47 decomposition of <2,5,6> over Z\\\") is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition printed under that heading in the notebook is a rank-47 decomposition of the <2,5,6> tensor over Z.\"}",
+   "answer": {
+    "statement": "n(\"Rank-47 decomposition of <2,5,6> over Z\") is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition printed under that heading in the notebook is a rank-47 decomposition of the <2,5,6> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCypz5V46RJtxFAyqex",
+   "stopReason": "end_turn",
+   "seconds": 4.1,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 1271,
+    "cacheRead": 0,
+    "output": 322
+   },
+   "cost": 0.013295,
+   "raw": "{\"statement\": \"n(\\\"Rank-23 decomposition of <3,3,3> over Z\\\") is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook's decomposition with this heading is a rank-23 decomposition of <3,3,3> over Z.\"}",
+   "answer": {
+    "statement": "n(\"Rank-23 decomposition of <3,3,3> over Z\") is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook's decomposition with this heading is a rank-23 decomposition of <3,3,3> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCypvrgDFq3BuxAcddD",
+   "stopReason": "end_turn",
+   "seconds": 2.5,
+   "usage": {
+    "input": 130,
+    "cacheWrite": 1271,
+    "cacheRead": 0,
+    "output": 131
+   },
+   "cost": 0.009495,
+   "raw": "{\"statement\":\"n(\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\") is a rank-54 decomposition of <3,4,6> over 0.5*Z\",\"hole\":\"\",\"why\":\"The sentence claims the named data is a rank-54 decomposition of <3,4,6> over the ring 0.5*Z, and that matches the decomposition form exactly.\"}",
+   "answer": {
+    "statement": "n(\"Rank-54 decomposition of <3,4,6> over 0.5*Z\") is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims the named data is a rank-54 decomposition of <3,4,6> over the ring 0.5*Z, and that matches the decomposition form exactly."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCz1HhpbNV97U8gY5nD",
+   "stopReason": "end_turn",
+   "seconds": 2.1,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 124
+   },
+   "cost": 0.00325,
+   "raw": "{\"statement\":\"n(\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\") is a rank-63 decomposition of <3,4,7> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence claims that the named data in the notebook is a rank-63 decomposition of <3,4,7> over the ring 0.5*C, as printed.\"}",
+   "answer": {
+    "statement": "n(\"Rank-63 decomposition of <3,4,7> over 0.5*C\") is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims that the named data in the notebook is a rank-63 decomposition of <3,4,7> over the ring 0.5*C, as printed."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCz2i2GL2vUTQmhtsfM",
+   "stopReason": "end_turn",
+   "seconds": 2.3,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 106
+   },
+   "cost": 0.002874,
+   "raw": "{\"statement\":\"n(\\\"Rank-74 decomposition of <3,4,8> over Z\\\") is a rank-74 decomposition of <3,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named pinned decomposition is a rank-74 decomposition of <3,4,8> over Z.\"}",
+   "answer": {
+    "statement": "n(\"Rank-74 decomposition of <3,4,8> over Z\") is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named pinned decomposition is a rank-74 decomposition of <3,4,8> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCz2z9UGGB41WvSaWZJ",
+   "stopReason": "end_turn",
+   "seconds": 4.1,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 346
+   },
+   "cost": 0.007674,
+   "raw": "{\"statement\": \"n(\\\"Rank-68 decomposition of <3,5,6> over Z\\\") is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence says the named notebook decomposition is a rank-68 decomposition of <3,5,6> over Z, which the checker can verify against the data.\"}",
+   "answer": {
+    "statement": "n(\"Rank-68 decomposition of <3,5,6> over Z\") is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence says the named notebook decomposition is a rank-68 decomposition of <3,5,6> over Z, which the checker can verify against the data."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCz85yWv2DPPysH8rZ2",
+   "stopReason": "end_turn",
+   "seconds": 2.2,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 106
+   },
+   "cost": 0.002874,
+   "raw": "{\"statement\":\"n(\\\"Rank-80 decomposition of <3,5,7> over Z\\\") is a rank-80 decomposition of <3,5,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named pinned decomposition is a rank-80 decomposition of <3,5,7> over Z.\"}",
+   "answer": {
+    "statement": "n(\"Rank-80 decomposition of <3,5,7> over Z\") is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named pinned decomposition is a rank-80 decomposition of <3,5,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzBjkLrQMgRP6yDnb2",
+   "stopReason": "end_turn",
+   "seconds": 4.5,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 411
+   },
+   "cost": 0.008974,
+   "raw": "{\"statement\": \"n(\\\"Rank-61 decomposition of <4,4,5> over Z\\\") is a rank-61 decomposition of <4,4,5> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook's decomposition with this heading has rank 61 for the tensor <4,4,5> over Z, and that can be checked exactly.\"}",
+   "answer": {
+    "statement": "n(\"Rank-61 decomposition of <4,4,5> over Z\") is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook's decomposition with this heading has rank 61 for the tensor <4,4,5> over Z, and that can be checked exactly."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzCiJ4YahjZPCNvSCj",
+   "stopReason": "end_turn",
+   "seconds": 2.1,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 110
+   },
+   "cost": 0.002954,
+   "raw": "{\"statement\":\"Rank-85 decomposition of <4,4,7> over Z is a rank-85 decomposition of <4,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named data in the notebook is a rank-85 decomposition of the <4,4,7> matrix multiplication tensor over Z.\"}",
+   "answer": {
+    "statement": "Rank-85 decomposition of <4,4,7> over Z is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named data in the notebook is a rank-85 decomposition of the <4,4,7> matrix multiplication tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzAW6LSsVjgUPWT3GG",
+   "stopReason": "end_turn",
+   "seconds": 4.5,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 331
+   },
+   "cost": 0.00739,
+   "raw": "{\"statement\": \"n(\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\") is a rank-96 decomposition of <4,4,8> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook decomposition with this heading is a rank-96 decomposition of <4,4,8> over the ring as printed.\"}",
+   "answer": {
+    "statement": "n(\"Rank-96 decomposition of <4,4,8> over 0.5*C\") is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims that the notebook decomposition with this heading is a rank-96 decomposition of <4,4,8> over the ring as printed."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzE9cHGuw97eWz5Qdi",
+   "stopReason": "end_turn",
+   "seconds": 2.3,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 119
+   },
+   "cost": 0.003134,
+   "raw": "{\"statement\":\"\\\"Rank-90 decomposition of <4,5,6> over Z\\\" is a rank-90 decomposition of <4,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the pinned decomposition is a rank-90 decomposition of the <4,5,6> tensor over Z, which matches the decomposition form directly.\"}",
+   "answer": {
+    "statement": "\"Rank-90 decomposition of <4,5,6> over Z\" is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the pinned decomposition is a rank-90 decomposition of the <4,5,6> tensor over Z, which matches the decomposition form directly."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzHbUuCMYa2bXxho6i",
+   "stopReason": "end_turn",
+   "seconds": 2.4,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 108
+   },
+   "cost": 0.002914,
+   "raw": "{\"statement\":\"\\\"Rank-93 decomposition of <5,5,5> over Z\\\" is a rank-93 decomposition of <5,5,5> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named pinned decomposition is a rank-93 decomposition of the <5,5,5> tensor over Z.\"}",
+   "answer": {
+    "statement": "\"Rank-93 decomposition of <5,5,5> over Z\" is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named pinned decomposition is a rank-93 decomposition of the <5,5,5> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzVpgTADC65PVdYoFD",
+   "stopReason": "end_turn",
+   "seconds": 1.9,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 93
+   },
+   "cost": 0.002614,
+   "raw": "{\"statement\":\"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\",\"hole\":\"\",\"why\":\"The sentence claims the pinned solution is feasible for the named platform problem and gives its printed score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence claims the pinned solution is feasible for the named platform problem and gives its printed score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzThwghkHzPwvutK5t",
+   "stopReason": "end_turn",
+   "seconds": 1.9,
+   "usage": {
+    "input": 130,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 100
+   },
+   "cost": 0.002774,
+   "raw": "{\"statement\":\"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\",\"hole\":\"\",\"why\":\"The sentence asserts that the pinned solution is feasible for the named platform problem and gives its exact score.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence asserts that the pinned solution is feasible for the named platform problem and gives its exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzLjEk5kK1quBRLX91",
+   "stopReason": "end_turn",
+   "seconds": 2.4,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 99
+   },
+   "cost": 0.00275,
+   "raw": "{\"statement\":\"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\",\"hole\":\"\",\"why\":\"The sentence claims the pinned solution is feasible for the named platform problem and gives its exact printed score.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence claims the pinned solution is feasible for the named platform problem and gives its exact printed score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzMrTRHrunZcS3J1Pd",
+   "stopReason": "end_turn",
+   "seconds": 2.4,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 103
+   },
+   "cost": 0.00283,
+   "raw": "{\"statement\": \"best-2.json is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\", \"hole\": \"\", \"why\": \"The sentence claims the pinned data is feasible for the named platform problem and gives a score printed exactly.\"}",
+   "answer": {
+    "statement": "best-2.json is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence claims the pinned data is feasible for the named platform problem and gives a score printed exactly."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzQ6tYUPGTu1Y77AHV",
+   "stopReason": "end_turn",
+   "seconds": 1.8,
+   "usage": {
+    "input": 123,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 94
+   },
+   "cost": 0.002626,
+   "raw": "{\"statement\":\"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\",\"hole\":\"\",\"why\":\"The sentence claims the pinned data is a feasible solution of the named platform problem, scored at the printed value.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence claims the pinned data is a feasible solution of the named platform problem, scored at the printed value."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzWxek2otq9qNeCTkR",
+   "stopReason": "end_turn",
+   "seconds": 2.1,
+   "usage": {
+    "input": 128,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 94
+   },
+   "cost": 0.002646,
+   "raw": "{\"statement\":\"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\",\"hole\":\"\",\"why\":\"The sentence claims feasibility for the named platform problem and gives the score exactly as printed.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence claims feasibility for the named platform problem and gives the score exactly as printed."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzWtS2bakevC834yaw",
+   "stopReason": "end_turn",
+   "seconds": 2.6,
+   "usage": {
+    "input": 121,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 92
+   },
+   "cost": 0.002578,
+   "raw": "{\"statement\": \"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\", \"hole\": \"\", \"why\": \"The sentence claims the pinned solution is feasible for the named platform problem and scores exactly 2.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": "The sentence claims the pinned solution is feasible for the named platform problem and scores exactly 2."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzXnzhwahoyDiEBWyJ",
+   "stopReason": "end_turn",
+   "seconds": 2.2,
+   "usage": {
+    "input": 128,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 100
+   },
+   "cost": 0.002766,
+   "raw": "{\"statement\":\"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\",\"hole\":\"\",\"why\":\"The sentence claims the pinned solution is feasible for the named platform problem and gives the score exactly as printed.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "The sentence claims the pinned solution is feasible for the named platform problem and gives the score exactly as printed."
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgZCzY6MK6WhyR2TAUKAD",
+   "stopReason": "end_turn",
+   "seconds": 2.3,
+   "usage": {
+    "input": 111,
+    "cacheWrite": 0,
+    "cacheRead": 1271,
+    "output": 63
+   },
+   "cost": 0.001958,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence asserts qualitative properties (a Jacobian property and colliding witnesses) without any number or bar to compare against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence asserts qualitative properties (a Jacobian property and colliding witnesses) without any number or bar to compare against."
+   }
+  }
+ ]
+}

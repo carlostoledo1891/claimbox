@@ -1,0 +1,119 @@
+-- Written by tools/propose_model.py (claude-opus-5-5, effort high): one proposal per sentence, the model's own statement or hole.
+-- It counts only after claimbox validates it (python3 -m claimbox prose register).
+source P = ../claimbox/corpus/register/sentences.md
+data   n = corpus/sources/alphaevolve_mathematical_results.ipynb
+read   n as rationals
+data   x = corpus/station-v2/jacobian/construction.json
+read   x as doubles
+data   x1 = corpus/einstein-arena/best-1.json
+read   x1 as doubles
+data   x12 = corpus/einstein-arena/best-12.json
+read   x12 as doubles
+data   x13 = corpus/einstein-arena/best-13.json
+read   x13 as doubles
+data   x18 = corpus/einstein-arena/best-18.json
+read   x18 as doubles
+data   x2 = corpus/einstein-arena/best-2.json
+read   x2 as doubles
+data   x22 = corpus/einstein-arena/best-22.json
+read   x22 as decimals
+data   x24 = corpus/einstein-arena/best-24.json
+read   x24 as decimals
+data   x25 = corpus/einstein-arena/best-25.json
+read   x25 as decimals
+claim  m_mc100_ae_nb_2x4x5_r32 over n
+  quote "the notebook's "Rank-32 decomposition of <2,4,5> over 0.5*Z" is a decomposition of that tensor of rank 32 over that ring" from P
+  : n("Rank-32 decomposition of <2,4,5> over 0.5*Z") is a rank-32 decomposition of <2,4,5> over 0.5*Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_2x4x7_r45 over n
+  quote "the notebook's "Rank-45 decomposition of <2,4,7> over Z" is a decomposition of that tensor of rank 45 over that ring" from P
+  : n("Rank-45 decomposition of <2,4,7> over Z") is a rank-45 decomposition of <2,4,7> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_2x4x8_r51 over n
+  quote "the notebook's "Rank-51 decomposition of <2,4,8> over Z" is a decomposition of that tensor of rank 51 over that ring" from P
+  : n("Rank-51 decomposition of <2,4,8> over Z") is a rank-51 decomposition of <2,4,8> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_2x5x6_r47 over n
+  quote "the notebook's "Rank-47 decomposition of <2,5,6> over Z" is a decomposition of that tensor of rank 47 over that ring" from P
+  : n("Rank-47 decomposition of <2,5,6> over Z") is a rank-47 decomposition of <2,5,6> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_3x3x3_r23 over n
+  quote "the notebook's "Rank-23 decomposition of <3,3,3> over Z" is a decomposition of that tensor of rank 23 over that ring" from P
+  : n("Rank-23 decomposition of <3,3,3> over Z") is a rank-23 decomposition of <3,3,3> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_3x4x6_r54 over n
+  quote "the notebook's "Rank-54 decomposition of <3,4,6> over 0.5*Z" is a decomposition of that tensor of rank 54 over that ring" from P
+  : n("Rank-54 decomposition of <3,4,6> over 0.5*Z") is a rank-54 decomposition of <3,4,6> over 0.5*Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_3x4x7_r63 over n
+  quote "the notebook's "Rank-63 decomposition of <3,4,7> over 0.5*C" is a decomposition of that tensor of rank 63 over that ring" from P
+  : n("Rank-63 decomposition of <3,4,7> over 0.5*C") is a rank-63 decomposition of <3,4,7> over 0.5*C
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_3x4x8_r74 over n
+  quote "the notebook's "Rank-74 decomposition of <3,4,8> over Z" is a decomposition of that tensor of rank 74 over that ring" from P
+  : n("Rank-74 decomposition of <3,4,8> over Z") is a rank-74 decomposition of <3,4,8> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_3x5x6_r68 over n
+  quote "the notebook's "Rank-68 decomposition of <3,5,6> over Z" is a decomposition of that tensor of rank 68 over that ring" from P
+  : n("Rank-68 decomposition of <3,5,6> over Z") is a rank-68 decomposition of <3,5,6> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_3x5x7_r80 over n
+  quote "the notebook's "Rank-80 decomposition of <3,5,7> over Z" is a decomposition of that tensor of rank 80 over that ring" from P
+  : n("Rank-80 decomposition of <3,5,7> over Z") is a rank-80 decomposition of <3,5,7> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_4x4x8_r96 over n
+  quote "the notebook's "Rank-96 decomposition of <4,4,8> over 0.5*C" is a decomposition of that tensor of rank 96 over that ring" from P
+  : n("Rank-96 decomposition of <4,4,8> over 0.5*C") is a rank-96 decomposition of <4,4,8> over 0.5*C
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_4x4x5_r61 over n
+  quote "the notebook's "Rank-61 decomposition of <4,4,5> over Z" is a decomposition of that tensor of rank 61 over that ring" from P
+  : n("Rank-61 decomposition of <4,4,5> over Z") is a rank-61 decomposition of <4,4,5> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_4x4x7_r85 over n
+  quote "the notebook's "Rank-85 decomposition of <4,4,7> over Z" is a decomposition of that tensor of rank 85 over that ring" from P
+  : Rank-85 decomposition of <4,4,7> over Z is a rank-85 decomposition of <4,4,7> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_4x5x6_r90 over n
+  quote "the notebook's "Rank-90 decomposition of <4,5,6> over Z" is a decomposition of that tensor of rank 90 over that ring" from P
+  : "Rank-90 decomposition of <4,5,6> over Z" is a rank-90 decomposition of <4,5,6> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ae_nb_5x5x5_r93 over n
+  quote "the notebook's "Rank-93 decomposition of <5,5,5> over Z" is a decomposition of that tensor of rank 93 over that ring" from P
+  : "Rank-93 decomposition of <5,5,5> over Z" is a rank-93 decomposition of <5,5,5> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_erdos_min_overlap over x1
+  quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578584 (minimize)" from P
+  : x1 is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and its score is 0.3808585748578584
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_first_autocorrelation_inequality over x2
+  quote "the object is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and the platform's score of it is 1.5027436492326165 (minimize)" from P
+  : best-2.json is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and its score is 1.5027436492326165
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_flat_polynomials over x12
+  quote "the object is a feasible solution of "Flat Polynomials (degree 69)" and the platform's score of it is 1.2807274949642549 (minimize)" from P
+  : x12 is a feasible solution of "Flat Polynomials (degree 69)" and its score is 1.2807274949642549
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_edges_vs_triangles over x13
+  quote "the object is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and the platform's score of it is -0.7117091757692579 (maximize)" from P
+  : x13 is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and its score is -0.7117091757692579
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_circles_rectangle over x18
+  quote "the object is a feasible solution of "Circles in a Rectangle (n = 21)" and the platform's score of it is 2.3658323759098576 (maximize)" from P
+  : x18 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323759098576
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_kissing_number_d12 over x22
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and the platform's score of it is 2 (minimize)" from P
+  : x22 is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and its score is 2
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_kissing_number_d11_605 over x24
+  quote "the object is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and the platform's score of it is 1.7102381876301676 (minimize)" from P
+  : x24 is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and its score is 1.7102381876301676
+  proposed by model:claude-opus-5-5
+claim  m_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557645 (minimize)" from P
+  : x25 is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557645
+  proposed by model:claude-opus-5-5
+claim  m_mc100_st_jacobian
+  quote "the polynomial map with the sparse rational coefficients given has the Jacobian property claimed and the collision witnesses listed collide" from P
+  hole prose "The sentence asserts qualitative properties (a Jacobian property and colliding witnesses) without any number or bar to compare against."
+  proposed by model:claude-opus-5-5

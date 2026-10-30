@@ -166,6 +166,40 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    pinned in corpus/zones/claimbox.json); the live page's sha256 fbd87029…3a387f equals web/dist's, checked here with curl.
    COMING FROM cert-machine-cb: instruments/claimbox check.py, check.js and SCHEMA.md change (format v4) when its merge lands on
    main — then `make lift` here, `make drift`, and the battery's calibration re-run before anything else. NEXT: the read-back learns a written table of relation words and Lean's
+   THE OPERATOR'S ANSWERS (asked here): a person writes the second kind of proposer; finish step 6 first; the register's model
+   run approved; republish once, at step 6's end. FORMAT V4 LIFTED (cert-machine cb327187, cert-machine-cb fast-forwarded the
+   main checkout on request): drift saw check.py, check.js, SCHEMA.md; re-pinned; the calibration holds (16/16, 13 words);
+   claimbox still writes version-3 objects (a v3 object is checked as before). web/PINS.json re-pinned twice (tokens.js: the
+   light theme, then the dark-only page list emptied; the dark palette unchanged). STEP 6 BUILT, in this order:
+   (1) the read-back reads a closed table of relation words (REL_WORDS: "at most", "does not exceed", "below", "exceeds" after
+   the bar, "equals", "its score is" …; the longest phrase wins) and Lean's numerals (a * 10 ^ (k : ℤ)); a plant finds its bar
+   by value and as a whole number (never the 2 inside 12 — the kissing-d12 plant once moved "Dimension 12"); --planted-only
+   asked the 12 plants this made possible. (2) The wrong hole on 7/paper/68 fixed: translate refuses an unnamed quantity before
+   reading bytes (decider, not data; numeric families only — ea-best-prime-number-theorem keeps its recorded `data`); ckey drops
+   \bigl/\bigr and reads c_1^*; 7/paper/68 validated. (3) A person's worksheet: `prose CORPUS --worksheet` wrote
+   corpus/proposals/riemann-ai.person.claim once (46 blanks, `: ?` is not a proposal; never overwritten; rewritten once while
+   still blank). (4) Sensitivity and vacuity, run with cert-machine: FOUND — 40 of the model's 51 objects quoted ANOTHER line
+   of the source (the first printing the bar's digits); compile now passes the claim's quote and translate holds it (byte for
+   byte, printing the bar's value: grammar.prints_value; the number readers moved into grammar.py); translate's relation check
+   reads a mirrored relation right after the bar. Sensitivity: the bar ±1 unit (a platform's box: past twice its half-width);
+   a box must be REFUTED both ways, a bound hold when weakened: 54 held, none broke, 17 bounds tight. Vacuity: BYTE_PLANTS per
+   file; 47 depend on their bytes, 9 flagged — all c256, arithmetic on a library constant. Pairs: 3, all on the reference.
+   (5) Paraphrase: the relation before the bar rewritten (symbol↔words); --paraphrase asked 47: the same claim 40 times, moved
+   once (7/tweet/65: 3 - 1/c₁* / 2 for (3 - 1/c₁*)/2, refused), nothing twice; the grammar reads none of its 3 rewrites
+   (recorded). AI PHRASINGS NOW: the model compiles 53/80 (41 equal to the reference, 1 same value printed otherwise, 2 the
+   exact p₀ identity their sentence also prints, 9 no reference); validated 3, refused 4, one kind only 46, not stated 27.
+   (6) THE REGISTER (CORPORA['register']; corpus/register/sentences.md; records/prose-register.json): contexts from the reader
+   jobs the register was written from (REGISTER_JOBS: alphaevolve, einstein-arena, station) — 24 of 132 sentences have pinned
+   bytes; the grammar states 23, every one its job's object; the model (24 calls, $0.1379; REGISTER_SYSTEM adds the
+   decomposition and score statements) states 1: 15 decompositions it tried to name inside the notebook (n("Rank-32 …") — the
+   language has no selector for one object of a file: LANGUAGE.md §3 "Open"), 6 platform scores the library does not define;
+   validated 1 (Circles in a Rectangle, grammar and model, CERTIFIED). Also fixed on the way: a minus after a word is read
+   both ways (-0.7117… "is -0.71"); objects with no bar (decompositions) anchor and read back by their shape; bar_printed reads
+   a score's bar. Model spend in all: riemann-ai 184 calls $1.1818, register 24 calls $0.1379 (≈ $0.50 lost earlier, not in a
+   ledger). make test: 489 pass, 0 fail, 106/106 reds; recall 56/56 unchanged. PLAN.md r9: step 6 built, step 7 next.
+   NEXT: republish (a cert-machine session, on the operator's word); the operator's worksheet; step 7; beside it the
+   register's two gaps (a selector for one object of a file; the platform scores' definitions) and readers for its 108
+   sentences whose bytes claimbox does not pin.
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)

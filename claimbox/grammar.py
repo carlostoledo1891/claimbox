@@ -387,7 +387,14 @@ def numbers_in(sentence):
         if any(a <= m.start() < b for a, b, _ in out):
             continue
         try:
-            out.append((m.start(), m.end(), value_of(m.group(0).lstrip('-'))))
+            text = m.group(0)
+            # a minus is the number's sign where no operand stands before it (`= -0.71`, `(-3`), never after a digit or a closing
+            # bracket (`256 - 1/2`, `|x| - 1`); after a word it may be either (`is -0.71`, `x - 0.71`): both values are read
+            prev = norm[:m.start()].rstrip()[-1:]
+            if text.startswith('-') and prev.isalpha():
+                out.append((m.start(), m.end(), value_of(text)))
+            unary = text.startswith('-') and not (prev.isalnum() or prev in ')|]}')
+            out.append((m.start(), m.end(), value_of(text if unary else text.lstrip('-'))))
         except (ValueError, ZeroDivisionError):
             pass
     return norm, sorted(out)

@@ -87,12 +87,37 @@ When the sentence does not state a claim of this form, answer with a HOLE instea
 
 Answer with JSON only: {"statement": "...", "hole": "", "why": "..."} for a claim, or {"statement": "", "hole": "KIND", "why": "..."} for a hole. "why" is one short sentence."""
 
+# cert-machine's register (step 6's second corpus): its sentences name decompositions and platform scores, so the model is
+# also given those two statements of the language (LANGUAGE.md §3), and each sentence's own pinned file
+REGISTER_SYSTEM = SYSTEM.replace("""A STATEMENT is one of:
+  TERM REL BAR
+  for every VAR in A < VAR < B : TERM REL BAR        (a claim over the integer rows A < VAR < B)""", """A STATEMENT is one of:
+  TERM REL BAR
+  for every VAR in A < VAR < B : TERM REL BAR        (a claim over the integer rows A < VAR < B)
+  DATA is a rank-R decomposition of <n,m,p> over RING          (DATA the name of the pinned file; RING as the sentence prints it)
+  DATA is a feasible solution of "TITLE" and its score is BAR  (a platform's problem, TITLE exactly as the sentence prints it)""")
+
 SCHEMA = {'type': 'object', 'properties': {'statement': {'type': 'string'}, 'hole': {'type': 'string', 'enum': [''] + HOLES}, 'why': {'type': 'string'}},
           'required': ['statement', 'hole', 'why'], 'additionalProperties': False}
 
 
-def user_message(sentence, data_name):
-    var, reading, names = LIBRARY[data_name]
+def library_for(cfg, row):
+    """(the data's name in the claim file, its reading, the library names over it, the file's path) for a sentence"""
+    if cfg['name'] != 'register':
+        base = data_for(cfg, row)
+        return LIBRARY[base] + (None,)
+    data, elements = prose.context_of('register', row)[:2]
+    if data.endswith('.ipynb'):
+        return ('n', 'rationals', [('n', 'the results notebook: the decompositions it prints, each named by its heading')], data)
+    var = 'x' + re.sub(r'\D', '', os.path.basename(data))
+    return (var, elements or 'doubles', [(var, 'the platform\'s API record of the best solution (its "data"), read as the platform\'s verifier reads it')], data)
+
+
+def user_message(sentence, lib):
+    var, reading, names, path = lib
+    data_name = os.path.basename(path) if path else None
+    if data_name is None:
+        data_name = {'e': 'LawN256.encl.json', 's': 'mt-series.json'}[var]
     lines = [f'The data: {data_name}, read as {reading}.', 'The library names you may use over it:']
     lines += [f'  {n} — {d}' for n, d in names]
     lines += ['', 'The sentence:', sentence]
@@ -121,7 +146,7 @@ class Ledger:
             self.calls.append(entry)
 
 
-def ask(client, ledger, sentence, data_name, tag):
+def ask(client, ledger, sentence, lib, tag):
     if not ledger.allow():
         return {'tag': tag, 'skipped': 'the cap would be passed'}
     t0 = time.time()
@@ -129,8 +154,8 @@ def ask(client, ledger, sentence, data_name, tag):
         r = client.beta.messages.create(
             model=MODEL, max_tokens=16000, betas=['server-side-fallback-2026-07-01'], fallbacks='default',
             output_config={'effort': 'high', 'format': {'type': 'json_schema', 'schema': SCHEMA}},
-            system=[{'type': 'text', 'text': SYSTEM, 'cache_control': {'type': 'ephemeral'}}],
-            messages=[{'role': 'user', 'content': user_message(sentence, data_name)}])
+            system=[{'type': 'text', 'text': REGISTER_SYSTEM if lib[3] else SYSTEM, 'cache_control': {'type': 'ephemeral'}}],
+            messages=[{'role': 'user', 'content': user_message(sentence, lib)}])
     except anthropic.APIStatusError as e:
         entry = {'tag': tag, 'error': f'{e.status_code}: {str(e.message)[:200]}', 'cost': 0.0}
         ledger.add(entry)
@@ -190,8 +215,10 @@ def main(argv):
     ap.add_argument('--planted-only', action='store_true')
     ap.add_argument('--paraphrase', action='store_true')
     a = ap.parse_args(argv)
-    cfg = prose.CORPORA[a.corpus]
+    cfg = dict(prose.CORPORA[a.corpus], name=a.corpus)
     rows = prose.rows_of(a.corpus)
+    if a.corpus == 'register':               # only the sentences whose bytes claimbox pins: the others name no file to state a claim over
+        rows = [r for r in rows if prose.context_of('register', r)[0]]
     client = anthropic.Anthropic()
     try:                                   # a preflight that costs nothing: the credentials resolve and the model exists
         client.models.retrieve(MODEL)
@@ -237,25 +264,33 @@ def paraphrase_run(a, cfg, rows, client, ledger):
     new = [j for j in jobs if j[0]['id'] + ' paraphrase' not in done]
     print(f'{len(new)} paraphrase runs to ask')
     with cf.ThreadPoolExecutor(a.workers) as pool:
-        got = dict(zip([j[0]['id'] for j in new], pool.map(lambda j: ask(client, ledger, j[1], data_for(cfg, j[0]), j[0]['id'] + ' paraphrase'), new)))
+        got = dict(zip([j[0]['id'] for j in new], pool.map(lambda j: ask(client, ledger, j[1], library_for(cfg, j[0]), j[0]['id'] + ' paraphrase'), new)))
     got.update({j[0]['id']: done[j[0]['id'] + ' paraphrase'] for j in jobs if j[0]['id'] + ' paraphrase' in done})
     out = []
     for r, text in jobs:
         e = got.get(r['id'])
         if e and e.get('answer'):
-            out.append(claim_block('m_' + re.sub(r'\W', '_', r['id']), LIBRARY[data_for(cfg, r)][0], text, e['answer'], e['model']))
+            out.append(claim_block('m_' + re.sub(r'\W', '_', r['id']), library_for(cfg, r)[0], text, e['answer'], e['model']))
     with open(os.path.join(REPO, cfg['proposals'].replace('.claim', '.paraphrase.claim')), 'w', encoding='utf-8') as f:
-        f.write(head_of(a, cfg).replace('one proposal per sentence', 'the paraphrase run: each sentence said another way (the relation before its bar '
+        f.write(head_of(a, cfg, [j[0] for j in jobs]).replace('one proposal per sentence', 'the paraphrase run: each sentence said another way (the relation before its bar '
                                         'rewritten), asked again alone') + '\n'.join(out) + '\n')
     return 0
 
 
 def data_for(cfg, row):
-    path = cfg['context'][row['claim']][0]
+    path = prose.context_of(cfg['name'], row)[0]
     return os.path.basename(path) if path else 'LawN256.encl.json'      # a theorem's sentence is offered the law's names
 
 
-def head_of(a, cfg):
+def head_of(a, cfg, rows=None):
+    if cfg['name'] == 'register':            # every sentence's own pinned file, declared once, with the reading it is read as
+        decl = {}
+        for r in rows or []:
+            var, reading, _, path = library_for(cfg, r)
+            decl[var] = f'data   {var} = {path}\nread   {var} as {reading}\n'
+        return '-- Written by tools/propose_model.py (' + MODEL + ', effort high): one proposal per sentence, the model\'s own statement or hole.\n' \
+               '-- It counts only after claimbox validates it (python3 -m claimbox prose ' + a.corpus + ').\n' \
+               'source P = ../claimbox/' + cfg['source'] + '\n' + ''.join(decl[k] for k in sorted(decl))
     return '-- Written by tools/propose_model.py (' + MODEL + ', effort high): one proposal per sentence, the model\'s own statement or hole.\n' \
            '-- It counts only after claimbox validates it (python3 -m claimbox prose ' + a.corpus + ').\n' \
            'source P = ../claimbox/' + cfg['source'] + '\n' \
@@ -265,16 +300,12 @@ def head_of(a, cfg):
 
 
 def run(a, cfg, rows, client, ledger):
-    def data_for(row):
-        path = cfg['context'][row['claim']][0]
-        return os.path.basename(path) if path else 'LawN256.encl.json'      # a theorem's sentence is offered the law's names
-
     with cf.ThreadPoolExecutor(a.workers) as pool:
         if a.planted_only:
             done = {e['tag']: e for e in ledger.calls}
             first = {r['id']: done.get(r['id']) for r in rows}
         else:
-            first = dict(zip([r['id'] for r in rows], pool.map(lambda r: ask(client, ledger, r['text'], data_for(r), r['id']), rows)))
+            first = dict(zip([r['id'] for r in rows], pool.map(lambda r: ask(client, ledger, r['text'], library_for(cfg, r), r['id']), rows)))
         planted_jobs = []
         for r in rows:
             ans = (first[r['id']] or {}).get('answer') or {}
@@ -289,18 +320,13 @@ def run(a, cfg, rows, client, ledger):
             asked = {e['tag'][:-len(' planted')]: e for e in ledger.calls if e['tag'].endswith(' planted')}
             new = [j for j in planted_jobs if j[0]['id'] not in asked]
             print(f'{len(new)} planted runs to ask: ' + ' '.join(j[0]['id'] for j in new))
-            asked.update(zip([j[0]['id'] for j in new], pool.map(lambda j: ask(client, ledger, j[1], data_for(j[0]), j[0]['id'] + ' planted'), new)))
+            asked.update(zip([j[0]['id'] for j in new], pool.map(lambda j: ask(client, ledger, j[1], library_for(cfg, j[0]), j[0]['id'] + ' planted'), new)))
             planted = {j[0]['id']: asked.get(j[0]['id']) for j in planted_jobs}
         else:
             planted = dict(zip([j[0]['id'] for j in planted_jobs],
-                               pool.map(lambda j: ask(client, ledger, j[1], data_for(j[0]), j[0]['id'] + ' planted'), planted_jobs)))
+                               pool.map(lambda j: ask(client, ledger, j[1], library_for(cfg, j[0]), j[0]['id'] + ' planted'), planted_jobs)))
 
-    head = '-- Written by tools/propose_model.py (' + MODEL + ', effort high): one proposal per sentence, the model\'s own statement or hole.\n' \
-           '-- It counts only after claimbox validates it (python3 -m claimbox prose ' + a.corpus + ').\n' \
-           'source P = ../claimbox/' + cfg['source'] + '\n' \
-           'data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json\nread   e as integers\n' \
-           'data   s = ../claimbox/corpus/riemann/zeta23/mt-series.json\nread   s as integers\n' \
-           'use    S v1\nuse    D v1\nuse    p₀ v1\nuse    c256 v1\nuse    c₁* v1\n'
+    head = head_of(a, cfg, rows)
 
     def blocks(entries, sentences):
         out = []
@@ -308,7 +334,7 @@ def run(a, cfg, rows, client, ledger):
             e = entries.get(r['id'])
             if not e or not e.get('answer'):
                 continue
-            var = LIBRARY[data_for(r)][0]
+            var = library_for(cfg, r)[0]
             out.append(claim_block('m_' + re.sub(r'\W', '_', r['id']), var, sentences[r['id']], e['answer'], e['model']))
         return '\n'.join(out) + '\n'
 

@@ -47,11 +47,52 @@ CORPORA = {
                     4: (LAW, 'integers', 'riemann/zeta23-p0'), 5: (SERIES, None, 'riemann/zeta23-cmt'), 6: (SERIES, None, 'riemann/zeta23-mt-simple'),
                     7: (SERIES, None, 'riemann/zeta23-mt-distinct'), 8: (None, None, None)},
     },
+    # cert-machine's register (corpus/register-sentences.json, lifted): each sentence's context is the claimbox job that reads
+    # the same claim's bytes, where one exists (REGISTER_JOBS); the others name bytes claimbox does not pin: hole `data`
+    'register': {
+        'rows': 'corpus/register-sentences.json',
+        'source': 'corpus/register/sentences.md',
+        'proposals': 'corpus/proposals/register.claim',
+        'person': 'corpus/proposals/register.person.claim',
+        'context': None,
+    },
 }
+# the register's sentences that a claimbox reader job states (the register was written from those runs): (jobs file, the
+# register id's prefix, the job id's prefix, the run's records folder)
+REGISTER_JOBS = [('corpus/alphaevolve-jobs.json', 'mc100-', '', 'alphaevolve'),
+                 ('corpus/einstein-arena-jobs.json', 'mc100-', '', 'einstein-arena'),
+                 ('corpus/station-jobs.json', 'mc100-st-', 'station-', 'station')]
+
+
+def register_context():
+    """{register id: (data, elements, reference, decider, record)} for the sentences a reader job states, its object the reference"""
+    out = {}
+    reg = [r['id'] for r in json.load(open(os.path.join(REPO, 'corpus', 'register-sentences.json'), encoding='utf-8'))['rows']]
+    for path, rpre, jpre, folder in REGISTER_JOBS:
+        jobs = {j['id']: j for j in json.load(open(os.path.join(REPO, path), encoding='utf-8'))['jobs']}
+        for rid in reg:
+            j = jobs.get(jpre + rid[len(rpre):]) if rid.startswith(rpre) else None
+            if j is None or rid in out:
+                continue
+            ref = folder + '/' + j['id']
+            out[rid] = (j['data'], j.get('elements'), ref if os.path.isfile(os.path.join(REPO, 'records', ref + '.json')) else None,
+                        j.get('decider'), j.get('record'))
+    return out
+
+
+def context_of(corpus, row):
+    """(data, elements, reference, decider, record) of a sentence"""
+    cfg = CORPORA[corpus]
+    if cfg['context'] is None:
+        return register_context().get(row['id'], (None, None, None, None, None))
+    c = cfg['context'][row['claim']]
+    return tuple(c) + (None, None)
 
 
 def rows_of(corpus):
     d = json.load(open(os.path.join(REPO, CORPORA[corpus]['rows']), encoding='utf-8'))
+    if corpus == 'register':                 # the register's rows: an id, the claim as the register prints it, its verdict
+        return [{'id': r['id'], 'claim': r['id'], 'style': 'register', 'text': r['claim'], 'verdict': r['verdict']} for r in d['rows']]
     return [dict(r, id=f'{r["claim"]}/{r["style"]}/{i}') for i, r in enumerate(d['rows'])]
 
 
@@ -71,7 +112,7 @@ def rel_of(root_path):
 
 # ------------------------------------------------------------------------------------------------- proposers
 
-def grammar_proposal(sentence, source, data, elements, obj_id, root):
+def grammar_proposal(sentence, source, data, elements, obj_id, root, decider=None, record=None):
     """today's grammar as a proposer: the object translate writes from the sentence as printed, or the rule that refused it"""
     if data is None:
         try:
@@ -80,7 +121,7 @@ def grammar_proposal(sentence, source, data, elements, obj_id, root):
         except Refusal as e:
             return None, (e.rule, e.msg)
     try:
-        return T.translate(sentence, root, source, data, elements=elements, obj_id=obj_id), None
+        return T.translate(sentence, root, source, data, elements=elements, obj_id=obj_id, decider=decider, record=record), None
     except Refusal as e:
         return None, (e.rule, e.msg)
 
@@ -153,7 +194,7 @@ def planted_claims(corpus):
 def bar_printed(stmt):
     while stmt[0] == 'forall':
         stmt = stmt[3]
-    if stmt[0] != 'cmp':
+    if stmt[0] not in ('cmp', 'score'):        # a comparison's bar, or a platform score's
         return None
     b = stmt[3]
     return b[2] if b[0] == 'within' else b[1]
@@ -202,6 +243,26 @@ def object_bar(obj):
     return (sh.get('rel'), sh['printed'], bool(sh.get('ellipsis'))) if sh.get('printed') else None
 
 
+def token_at(sentence, printed):
+    """(start, end) of the first place the sentence prints the bar's digits as a whole number (never inside 12 for 2), or None"""
+    m = re.search(r'(?<![\d.])' + re.escape(printed) + r'(?![\d])', sentence)
+    return (m.start(), m.end()) if m else None
+
+
+def shape_literals(obj):
+    """an object with no bar (a decomposition, a kissing configuration): its shape as the grammar reads its text, and the numbers
+    that shape prints (rank and dimensions, count and dimension)"""
+    try:
+        sh = grammar.parse(obj['text'])
+    except Refusal:
+        return None, []
+    nums = [sh[k] for k in ('rank', 'n', 'dim') if isinstance(sh.get(k), int)] + list(sh.get('dims') or [])
+    return sh, [Fraction(x) for x in nums]
+
+
+SHAPE_KEYS = ('family', 'rank', 'dims', 'ring', 'n', 'dim')
+
+
 def anchored(obj, sentence, source_path, root):
     """every number the object prints is a number the sentence prints — the same exact value, in whatever notation —, and the
     sentence is printed in the source; a number written in words is not printed"""
@@ -210,7 +271,10 @@ def anchored(obj, sentence, source_path, root):
     with open(os.path.join(root, source_path), encoding='utf-8') as f:
         src = f.read()
     printed = printed_numbers(obj)
-    return bool(printed) and all(value_of(x) in values for x in printed) and sentence.replace('\n', ' ') in src
+    if not printed:                          # no bar: every number the claim's shape prints
+        sh, lits = shape_literals(obj)
+        return bool(sh) and bool(lits) and all(x in values for x in lits) and sentence.replace('\n', ' ') in src
+    return all(value_of(x) in values for x in printed) and sentence.replace('\n', ' ') in src
 
 
 REL_SYMBOLS = {'le': ('<=', '≤'), 'lt': ('<',), 'ge': ('>=', '≥'), 'gt': ('>',), 'in': ('=',), 'eq': ('=',)}
@@ -222,7 +286,7 @@ REL_WORDS = {'le': ('at most', 'does not exceed', 'do not exceed', 'never exceed
              'lt': ('less than', 'below', 'smaller than', 'strictly less than', 'strictly below'),
              'ge': ('at least', 'no less than', 'not less than', 'no smaller than', 'not smaller than', 'not below'),
              'gt': ('exceeds', 'exceed', 'greater than', 'more than', 'larger than', 'above', 'strictly greater than', 'strictly above'),
-             'eq': ('equals', 'is equal to', 'is exactly', 'is precisely')}      # also the words of a box's = (rel in)
+             'eq': ('equals', 'is equal to', 'is exactly', 'is precisely', 'its score is', 'score of it is')}  # also a box's = (rel in)
 PHRASES = sorted(((w, r) for r, ws in REL_WORDS.items() for w in ws), key=lambda x: -len(x[0]))
 
 
@@ -247,8 +311,13 @@ def printed_back(obj, sentence):
     with no inequality before it. A relation written in words reads back through REL_WORDS only (any other phrasing is flagged,
     never guessed)"""
     b = object_bar(obj)
-    if b is None:
-        return False
+    if b is None:                            # no bar: the sentence read by the grammar is the object's shape, field for field
+        sh, _ = shape_literals(obj)
+        try:
+            mine = grammar.parse(sentence)
+        except Refusal:
+            return False
+        return bool(sh) and sh.get('family') in ('decomposition', 'kissing') and all(sh.get(k) == mine.get(k) for k in SHAPE_KEYS)
     rel, printed, cut = b
     norm, nums = numbers_in(sentence)
     want = value_of(printed)
@@ -291,8 +360,9 @@ def plant_digit(sentence, printed):
         raise ValueError('no digit to move in ' + printed)
     d = printed[cut]
     moved = printed[:cut] + (str(int(d) + 1) if d != '9' else '8') + printed[cut + 1:]
-    if printed in sentence:
-        return sentence.replace(printed, moved, 1), moved
+    at = token_at(sentence, printed)
+    if at:
+        return sentence[:at[0]] + moved + sentence[at[1]:], moved
     # printed another way in the sentence (3 × 10^{-40}, Lean's 3 * 10 ^ (-40 : ℤ)): the span that prints the same value,
     # its mantissa's last digit moved, kept only when it then prints the moved value
     for m in list(LEAN_NUMERAL.finditer(sentence)) + list(re.finditer(r'(?<![\w.])' + grammar.NUMBER, sentence)):
@@ -326,7 +396,7 @@ def planted(obj, row, ctx, corpus, root):
     with open(path, 'w', encoding='utf-8') as f:
         f.write(text.replace(row['text'].replace('\n', ' '), mutated.replace('\n', ' '), 1))
     try:
-        obj2, _ = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root)
+        obj2, _ = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
     finally:
         os.remove(path)
     if obj2 is None:
@@ -374,8 +444,9 @@ def move_bar(sentence, printed, k):
     """(the sentence with its bar moved by k units, the moved bar as the claim prints it): the span that prints the bar's value,
     in the claim's form or another (3 × 10^{-40}, 3 * 10 ^ (-40 : ℤ)), its mantissa moved by the same unit"""
     moved = shift_printed(printed, k)
-    if printed in sentence:
-        return sentence.replace(printed, moved, 1), moved
+    at = token_at(sentence, printed)
+    if at:
+        return sentence[:at[0]] + moved + sentence[at[1]:], moved
     for m in list(LEAN_NUMERAL.finditer(sentence)) + list(re.finditer(r'(?<![\w.])' + grammar.NUMBER, sentence)):
         span = m.group(0)
         try:
@@ -403,9 +474,9 @@ RAW_REL_OF = {'\\leq': 'le', '\\le': 'le', '<=': 'le', '≤': 'le', '⩽': 'le',
 
 def bar_span(sentence, printed):
     """(start, end) of the span of the sentence that prints the bar, in the claim's form or another, or None"""
-    if printed in sentence:
-        i = sentence.index(printed)
-        return i, i + len(printed)
+    at = token_at(sentence, printed)
+    if at:
+        return at
     for m in list(LEAN_NUMERAL.finditer(sentence)) + list(re.finditer(r'(?<![\w.])' + grammar.NUMBER, sentence)):
         try:
             if value_of(lean_numerals(m.group(0)).replace(' ', '')) == value_of(printed):
@@ -468,7 +539,7 @@ def paraphrased_grammar(obj, row, ctx, corpus, root):
         return None
     path = _planted_source(corpus, row, want[0], 'para')
     try:
-        obj2, _ = grammar_proposal(want[0], rel_of(path), ctx[0], ctx[1], obj['id'], root)
+        obj2, _ = grammar_proposal(want[0], rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
     finally:
         os.remove(path)
     if obj2 is None:
@@ -485,7 +556,7 @@ def _recompile(kind, claim, row, ctx, root, source=None, quote=None, stmt=None, 
     file proposer's claim is recompiled from its own tree"""
     try:
         if kind == 'grammar':
-            return grammar_proposal(quote or row['text'], source, data or ctx[0], ctx[1], obj_id, root)[0]
+            return grammar_proposal(quote or row['text'], source, data or ctx[0], ctx[1], obj_id, root, *ctx[3:5])[0]
         tree = copy.deepcopy(claim['_tree'])
         c = copy.deepcopy({k: v for k, v in claim.items() if k != '_tree'})
         for i in tree['items']:
@@ -521,7 +592,17 @@ def sensitivity(kind, obj, claim, row, ctx, corpus, root):
     rel, printed, cut = b
     rel = 'in' if cut else rel
     out = {}
-    for tag, k in (('up', 1), ('down', -1)):
+    # a box the platform declares (within R of the score) is moved past twice its half-width, so the moved box leaves the first
+    # one entirely; a box of the printed digits, by one unit of the last digit
+    hw = next((Fraction(p['box']['halfWidth']) for p in obj['predicate'] if (p.get('box') or {}).get('halfWidth')), None)
+    try:
+        mant = grammar.parts(printed.replace(',', ''))
+        unit = Fraction(1, 10 ** (len(mant[0].split('.')[1]) if '.' in mant[0] else 0)) * Fraction(10) ** mant[1]
+    except (ValueError, IndexError):
+        return None
+    steps = int(2 * hw / unit) + 1 if hw else 1
+    out['steps'] = steps
+    for tag, k in (('up', steps), ('down', -steps)):
         try:
             mutated, moved = move_bar(row['text'], printed, k)
         except ValueError:
@@ -579,9 +660,9 @@ def run(corpus, root, words=False):
     reparaphrased = paraphrase_claims(corpus)
     out = []
     for row in rows_of(corpus):
-        ctx = cfg['context'][row['claim']]
+        ctx = context_of(corpus, row)
         props = []
-        obj, ref = grammar_proposal(row['text'], source, ctx[0], ctx[1], 'p-' + re.sub(r'\W', '-', row['id']), root)
+        obj, ref = grammar_proposal(row['text'], source, ctx[0], ctx[1], 'p-' + re.sub(r'\W', '-', row['id']), root, ctx[3], ctx[4])
         props.append(('grammar', obj, ref, None))
         props += files.get(row['text'], [])
         entry = {'id': row['id'], 'group': row['claim'], 'style': row['style'], 'sentence': row['text'], 'proposals': []}
@@ -725,7 +806,7 @@ def worksheet(corpus, record):
         if not e['outcome'].startswith('proposed, not validated: one kind'):
             continue
         r = rows[e['id']]
-        v = var.get(cfg['context'][r['claim']][0])
+        v = var.get(context_of(corpus, r)[0])
         out += ['claim  h_' + re.sub(r'\W', '_', e['id']) + (' over ' + v if v else ''), '  quote "' + r['text'] + '" from P', '  : ?',
                 '  proposed by person', '']
     return '\n'.join(out)

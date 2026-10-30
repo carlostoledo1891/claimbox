@@ -1,0 +1,4 @@
+-- Written by tools/propose_model.py (claude-opus-5-5, effort high): the paraphrase run: each sentence said another way (the relation before its bar rewritten), asked again alone, the model's own statement or hole.
+-- It counts only after claimbox validates it (python3 -m claimbox prose register).
+source P = ../claimbox/corpus/register/sentences.md
+

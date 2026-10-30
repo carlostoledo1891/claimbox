@@ -20,6 +20,7 @@ AI_EDGE = '1~1abstract~11'            # the same claim, as an AI-written abstrac
 BOOT = 'riemann-104-boot'             # a machine claim from the cryptids release
 FORK = 'records/fork-605.json'        # one file, two readings, both decided (LANGUAGE.md E16)
 PROSE = 'records/prose-riemann-ai.json'  # from prose to claims: the AI phrasings, proposed and validated
+REG = 'records/prose-register.json'  # from prose to claims over cert-machine's register
 MODEL = 'records/model-proposals-riemann-ai.json'  # every call the model proposer made, its tokens and its cost
 MK = '/summary/perKind/model:claude-opus-5-5'
 
@@ -129,6 +130,11 @@ def slots():
         'pr_mph': val(PROSE, MK + '/plantedHeld'), 'pr_mpb': val(PROSE, MK + '/plantedBroke', count=True),
         'pa_same': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/same'), 'pa_moved': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/moved', count=True),
         'pa_unread': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/unread', count=True), 'pa_g': val(PROSE, '/summary/paraphrase/grammar/unread', count=True),
+        'r_bytes': val(REG, MK + '/proposed'), 'r_g': val(REG, '/summary/perKind/grammar/compiled'),
+        'r_gf': val(REG, '/summary/perKind/grammar/faithful'), 'r_m': val(REG, MK + '/compiled'),
+        'r_rel': derived_count(REG, "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: relations"),
+        'r_dec': derived_count(REG, "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: decider"),
+        'r_valid': derived_count(REG, 'validated'), 'r_data': derived_count(REG, 'not stated: data'),
         'sv_held': val(PROSE, '/summary/sensitivity/held'), 'sv_broke': val(PROSE, '/summary/sensitivity/broke', count=True),
         'sv_tight': val(PROSE, '/summary/sensitivity/tight'), 'v_dep': val(PROSE, '/summary/vacuity/depends'),
         'v_flag': val(PROSE, '/summary/vacuity/flagged', count=True), 'pp_n': val(PROSE, '/summary/pairs/sentences'),

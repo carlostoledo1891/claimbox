@@ -805,6 +805,24 @@ try:
 finally:
     PR.grammar_proposal = real
 red(stuck is False, 'prose: refused — a proposer that does not move when the sentence\'s bar is moved', str(stuck))
+# the register (cert-machine's 132 claim sentences): the source written from the lifted JSON, the run reproduced, the grammar's
+# proposals equal to the reader jobs' objects, the model's ledger; a decomposition read back against another rank is refused
+ok(open(os.path.join(REPO, PR.CORPORA['register']['source']), encoding='utf-8').read() == PR.source_text('register'),
+   'prose: the register\'s source is written from corpus/register-sentences.json, one sentence per line, byte for byte')
+RREC = json.load(open(os.path.join(REPO, 'records', 'prose-register.json'), encoding='utf-8'))
+rnow = PR.run('register', ROOT, words=True)
+ok([(e['id'], e['outcome']) for e in rnow] == [(e['id'], e['outcome']) for e in RREC['sentences']] and PR.summary(rnow) == RREC['summary'],
+   'prose: the register\'s run reproduces its record, sentence for sentence', json.dumps({k: RREC['summary'][k] for k in ('sentences', 'proposals', 'validated', 'notStated')}))
+rg = [p for e in RREC['sentences'] for p in e['proposals'] if 'object' in p and p['kind'] == 'grammar']
+ok(rg and all(p['faithful'] and p['anchored'] and p['printedBack'] for p in rg) and len(PR.register_context()) == 24,
+   'prose: every register sentence whose bytes a reader job pins and the grammar states compiles to that job\'s object, anchored and read back',
+   f'{len(rg)} of {len(PR.register_context())} with bytes')
+RLED = json.load(open(os.path.join(REPO, 'records', 'model-proposals-register.json'), encoding='utf-8'))
+ok(RLED['calls'] == len(RLED['entries']) and abs(RLED['spent'] - sum(x['cost'] for x in RLED['entries'])) < 1e-3 and RLED['spent'] <= RLED['cap'],
+   'prose: the register\'s model ledger adds up', f'{RLED["calls"]} calls, ${RLED["spent"]}')
+DEC = {'text': 'the notebook\'s "Rank-32 decomposition of <2,4,5> over 0.5*Z" is a decomposition of that tensor of rank 32 over that ring'}
+red(not PR.printed_back(DEC, 'the notebook\'s "Rank-33 decomposition of <2,4,5> over 0.5*Z" is a decomposition of that tensor of rank 33 over that ring'),
+    'prose: refused — a decomposition read back against a sentence that prints another rank', 'rank 33')
 # paraphrase: the rewrites, a model's run that stays and one that moves (the record's 7/tweet/65: 3 - 1/c₁* / 2 for (3 - 1/c₁*)/2)
 ok(PR.paraphrase('We have $|D(1)| \\leq 0.82395317$.', '0.82395317')[0] == 'We have $|D(1)| is at most 0.82395317$.'
    and PR.paraphrase('D(1) never exceeds 0.82395317 here', '0.82395317')[0] == 'D(1) ≤ 0.82395317 here',

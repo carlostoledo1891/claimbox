@@ -76,6 +76,12 @@ quantified  := for every VAR in RANGE : statement      bounded: decided now
 RANGE       := A .. B | A < VAR < B | pairs i < j of DATA | the rows of DATA
 ```
 
+**Open (found 2026-10-30 by the model on the register):** a file that holds many objects — AlphaEvolve's notebook prints
+every decomposition under its heading — has no name for one of them in a statement: `DATA is a rank-R decomposition …`
+names the whole file. The model wrote `n("Rank-32 decomposition of <2,4,5> over 0.5*Z") is …` fifteen times, which the
+language does not read (rule `relations`, the heading's angle brackets). The translator selects by the heading the
+sentence prints; the language needs the same selector, written down, before decompositions can be stated in it.
+
 A printed number is kept as printed and read as the exact rational its digits mean. The relation, the bar and every
 literal in the statement must occur in the quote, or the claim is not stated: hole `source` (the source does not print
 it). A statement with two relations, or none, is not a claim.
