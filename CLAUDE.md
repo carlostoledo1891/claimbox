@@ -1,39 +1,52 @@
-# claimbox — the claim-machine
+# claimbox — the language for cert-machine
 
-> A standard-library pattern-matching translator that reduces a claim, as a human or an AI wrote it, in prose or
-> LaTeX, to the predicate JSON cert-machine decides — and refuses what its grammar does not cover.
+> **claimbox is the language humans and AIs state checkable claims in. cert-machine decides them.**
+>
+> The one description, held (the operator, 2026-10-30). claimbox is to cert-machine what the Lean language is to Lean's
+> kernel: one kernel, cert-machine, a separate project; claimbox states claims so precisely that cert-machine can decide them,
+> and says exactly why when it cannot. PLAN.md is the plan and its roadmap; HANDOFF.md the state.
 
 ```
 python3 -m claimbox shape "<claim>"                              the claim's shape, or REFUSED with the rule
-python3 -m claimbox translate --claim "…" --source P --data P …   the predicate JSON; --check hands it to cert-machine
-make test        the gate: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its register
+python3 -m claimbox translate --claim "…" --source P --data P …   the claim object; --check hands it to cert-machine
+make test        the battery: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its
+                 register, the planted defects, the landing page's checks
+make web         the landing page from the records: web/dist/index.html (python3 -m web.build --check re-reads every value)
 make lift        refresh the corpus and the pins from cert-machine (read-only)      make drift   re-hash the pins
 make platform    re-fetch EinsteinArena's problem definitions at the pinned commit (corpus/platform/einstein-arena)
 make riemann     re-fetch the 2026 Riemann-hypothesis story's sources at their pinned commits (corpus/riemann)
 ```
 
 ```
-[ human or AI text ]  →  [ claimbox: grammar + translate ]  →  [ predicate JSON ]  →  [ cert-machine decides ]
+[ human or AI text ]  →  [ claimbox: the claim, printed back ]  →  [ the claim object ]  →  [ cert-machine decides ]
 ```
 
-## What binds here
+## What binds here (the commitments, approved by the operator 2026-10-30; they replace the rules of 2026-10-20)
 
-1. **Standard library only.** No model, no parser framework, no dependency. The grammar is regular expressions over a
-   closed list of claim shapes; the translator extracts and never infers. Anything outside the grammar is REFUSED with
-   the rule named, and a refusal is the right answer, not a failure.
-2. **cert-machine is read-only** (`~/Projects/cert-machine`, or `CERT_MACHINE`). Its checker verifies what this
-   program emits, run as a subprocess; its deciders decide; the ten hand-written objects there are the calibration;
-   no code is copied. PROVENANCE.json pins what is read; `make drift` re-hashes it.
-3. **Every red control must fire.** Absurd and malformed claims are planted in the battery; one admitted means the
-   battery fails. Calibrate against the known answers before changing the grammar.
-4. **The reading of the bytes is written down.** A JSON number read as the double it denotes and read as the digits
-   printed are different numbers (cert-machine's 605 case: 9,480 vs 9,510 violating pairs). The decoder and the
-   reference state which reading the object uses.
-5. **Keep it lean.** One folder per concern; no records that nothing reads; delete what is unused.
-6. **Build what is asked.** The operator, 2026-10-20: "when I ask for something, I want that something, not other
-   something." When the operator specifies a design, build that; raise a concern once, in a sentence, then build it as
-   asked. This project exists because the first attempt substituted a design (a format and checker inside cert-machine)
-   for the one asked for (the translator); it was rejected twice.
+1. **cert-machine is the only judge.** claimbox never prints CERTIFIED or REFUTED on its own; it shows cert-machine's word.
+2. **Say what is checked.** Every claim is printed back in plain words from the object cert-machine receives, not from
+   what was typed. The print-back is the grammar run backwards, never a model.
+3. **Every number has an address**: a line of a source or a pinned file.
+4. **Every reading is written down**: decimal digits or IEEE doubles, exact or int64, totalised subtraction or not. No
+   default (cert-machine's 605 case: 9,510 violating pairs under the digits printed, 9,480 under the doubles they denote).
+5. **Anyone may propose; only checks count.** People, models and search can write claims; a proposal is marked as one
+   until it is validated. Two proposals count as two only when they are of different kinds.
+6. **Unclear is an answer.** A claim that cannot be stated exactly gets a named hole; an ambiguous one gets a fork, and
+   every reading is decided.
+7. **Every feature ships with planted wrong claims, and every one must be caught.** The results, misses included, are
+   published. Calibrate against the known answers before changing what decides.
+8. **Never say more than was checked.** "Not refuted up to N" stays that; "admitted" is never shown as "faithful";
+   CERTIFIED means *this object, under this reading, holds on these bytes*.
+9. **The trusted part stays small**: the step from a claim to the object cert-machine reads is short enough to read in an
+   afternoon. Libraries and models are free to use; trust is not.
+10. **cert-machine stays separate** (`~/Projects/cert-machine`, or `CERT_MACHINE`). claimbox sends it objects and reads it
+    in place; PROVENANCE.json pins what is read and `make drift` re-hashes it; a change there is made in its own chat first.
+
+**And the operator's standing rule: build what is asked.** The operator, 2026-10-20: "when I ask for something, I want
+that something, not other something." When the operator specifies a design, build that; raise a concern once, in a
+sentence, then build it as asked. This project exists because the first attempt substituted a design (a format and
+checker inside cert-machine) for the one asked for (the translator); it was rejected twice. Keep it lean: one folder per
+concern, no records that nothing reads.
 
 ## The two projects
 
@@ -73,6 +86,12 @@ records/                   calibration.json, coverage.json, recall.json, riemann
                            <source>/ (each batch's --record and objects)
 tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json); tests/riemann_recall.py the plants at scale on
                            the certificate, each expectation computed from the integers (records/riemann-recall.json; CLAIMBOX_FULL=1 all)
+PLAN.md                    the plan: what claimbox is, how it works at the end, the commitments, the roadmap (§7, rendered by the page)
+LANGUAGE.md                the language, written down (roadmap step 1)
+notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
+web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),
+                           record.py (every value from a record address, re-read from the built page), engine.py (the page's checks),
+                           pages/index.{html,py}, build.py → dist/ (published by cert-machine as carlostoledo.co/claimbox/)
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the
                            story's pins (fetch, --check); tools/ceiling_lp.py an exploration in floats of the paper's bandwidth-one programme
                            at small N (not a certificate; its numbers are in mathematician.md §6); tools/xi_window.py the window search for

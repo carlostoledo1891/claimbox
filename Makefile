@@ -14,7 +14,10 @@ drift:
 platform:
 	@$(PY) tools/platform.py
 
-.PHONY: test lift drift platform riemann
+web:
+	@$(PY) -m web.build
+
+.PHONY: test lift drift platform riemann web
 
 riemann:
 	@$(PY) tools/riemann.py

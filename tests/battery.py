@@ -464,5 +464,58 @@ for title, e in T.PLATFORM.items():
         bad.append(e['slug'])
 ok(not bad, 'platform: each float-printed score\'s resolution in problems.json equals the one its pinned verifier declares, and is positive', ', '.join(bad) or ', '.join(e['slug'] for e in T.PLATFORM.values() if e['resolution']))
 
+# ---- 5 · the landing page ----------------------------------------------------------------------------------------------
+# web/: built from the records; every value read back from its address; inside WARRANT; its own red controls refused
+wb = subprocess.run([sys.executable, '-m', 'web.build', '--check'], capture_output=True, text=True, cwd=REPO)
+wred = [l for l in wb.stdout.splitlines() if 'RED' in l]
+ok(wb.returncode == 0, 'web: the landing page is the build of its records, reads back from every address, draws inside the grammar', (wb.stdout.strip().split('\n') or [''])[-1])
+for l in wred:
+    red(l.startswith('PASS'), 'web: ' + l.split('refused — ', 1)[-1])
+
+# ---- 6 · the language (LANGUAGE.md, roadmap step 1) -------------------------------------------------------------------
+# every shape today's grammar reads, over every corpus and run, and every rule the code can refuse with, has its construct
+
+
+def shapes_today():
+    texts = []
+    for f in sorted(os.listdir(os.path.join(REPO, 'records'))):
+        if f.endswith('-run.json'):
+            texts += [r['claim'] for r in json.load(open(os.path.join(REPO, 'records', f)))['rows'] if r.get('claim')]
+    texts += [r['claim'] for r in json.load(open(os.path.join(REPO, 'corpus', 'register-sentences.json')))['rows']]
+    texts += [r['text'] for r in json.load(open(os.path.join(REPO, 'corpus', 'riemann', 'ai-phrasings.json')))['rows']]
+    texts += [r['text'] for r in json.load(open(os.path.join(REPO, 'corpus', 'riemann-sentences.json')))['rows']]
+    keys = set()
+    for t in texts:
+        try:
+            s = grammar.parse(t)
+        except Refusal:
+            continue
+        k = s.get('kind') or s.get('rel') or ''
+        keys.add(s['family'] + ('/' + k if k else ''))
+    return keys
+
+
+def rules_today():
+    found = set()
+    for d in ('claimbox', os.path.join('claimbox', 'readers')):
+        for f in os.listdir(os.path.join(REPO, d)):
+            if f.endswith('.py'):
+                found |= set(re.findall(r"Refusal\('([a-z-]+)'", open(os.path.join(REPO, d, f), encoding='utf-8').read()))
+    return found
+
+
+def language_gaps(shapes, rules, text):
+    have_s, have_r = set(re.findall(r'`shape:([\w/]+)`', text)), set(re.findall(r'`rule:([a-z-]+)`', text))
+    return sorted(shapes - have_s), sorted(rules - have_r)
+
+
+LANG = open(os.path.join(REPO, 'LANGUAGE.md'), encoding='utf-8').read()
+SH, RU = shapes_today(), rules_today()
+gs, gr = language_gaps(SH, RU, LANG)
+ok(not gs and not gr, 'language: every shape today\'s grammar reads and every rule it refuses with has its construct in LANGUAGE.md',
+   (', '.join(gs + gr) or str(len(SH)) + ' shapes, ' + str(len(RU)) + ' rules'))
+gs, gr = language_gaps(SH | {'kissing/le'}, RU | {'imaginary'}, LANG)
+red(gs == ['kissing/le'] and gr == ['imaginary'], 'language: a shape and a rule LANGUAGE.md does not cover are found', ', '.join(gs + gr))
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

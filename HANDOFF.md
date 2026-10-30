@@ -21,6 +21,35 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
+## ★ PLAN.md IS THE STATE (2026-10-30, the ninth session, a claimbox chat, on the operator's "I want a full plan … a html landing page
+   for claimbox … use the Warrant Grammar … reference check, competitors, research and a plan … translated also to a roadmap section")
+   claimbox is reconceived as THE LANGUAGE FOR cert-machine (as Lean's language is for Lean's kernel; one kernel, no other back
+   ends; the operator: "claimbox is the Lean for cert-machine", "I'm on the anti hype side"). PLAN.md (revision 1) holds the one
+   description, the analogy, how it works at the end and the difference from cert-machine alone, TEN COMMITMENTS that replace the
+   old rules once the operator approves the wording (CLAUDE.md still states the old ones), what the research changes, the language's
+   design notes, the roadmap (§7, steps 0–10, which the page renders), each step in detail, the cert-machine asks, open questions.
+   notes/research-2026-10-30.md: the reference check (neighbours: AWS Automated Reasoning checks the closest concept, statcheck the
+   closest in spirit, Lean's comparator, &Truth, Harmonic, data-test tools, controlled languages), the literature, five findings that
+   change the design, the claims never to make. THE LANDING PAGE, built the Machinidae way: web/ (grammar.css re-expresses WARRANT,
+   nothing imported, its five cert-machine sources pinned in web/PINS.json; record.py prints every number from a record address or a
+   named derivation and re-reads it from the built page; engine.py refuses a page outside the five dashes, the greys and the one red,
+   loading from another host, printing an unaddressed number in a measured section, marking a standing without a legend, or using
+   the words the public pages never use; `make web` → web/dist/index.html; `python3 -m web.build --check` with nine red controls,
+   wired into tests/battery.py as section 5). Checked at 1440 and in a 390 frame. NOT PUBLISHED: carlostoledo.co/claimbox/ needs a
+   cert-machine chat to register the folder as a foreign zone (design/zones.js) and publish it (tools/publish-zone.js), on the
+   operator's word. The deference test stays off the public page (the operator's roadmap choice).
+   THE OPERATOR'S DECISIONS, the same day (PLAN.md §6, revision 2): the ten commitments REPLACE the old rules in CLAUDE.md, with
+   "build what is asked" kept beside them (standard library only / regex grammar / no model are no longer rules); the one
+   description is held ("claimbox is the language humans and AIs state checkable claims in. cert-machine decides them.");
+   the page goes live like Machinidae's (sitemap, no links) — the paste-ready ask is notes/ask-publish-2026-10-30.md, for a
+   cert-machine chat. `make lift` run: the register's ledger had moved, its 132 sentences did not (corpus unchanged, one pin).
+   STEP 1 BUILT: LANGUAGE.md (declarations, statements, the machine statements, claims about every case, the library, readings,
+   holes, forks, the print-back, proposals, the object, twenty examples each a decided claim named by its record, and a
+   coverage table); tests/battery.py section 6 requires every shape today's grammar reads over every corpus (31) and every rule
+   the code refuses with (15) to have its construct there, with a red control. web/PINS.json re-pinned after cert-machine's
+   playground/warrant.js gained `illustration` values (uncommitted there; no CSS change, grammar.css unaffected). NEXT: step 2,
+   claimbox/lang.py — the parser and the printer, every LANGUAGE.md example round-tripping.
+
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 
   ★ THE GROWTH PLAN (2026-10-30, from the cert-machine chat, on the operator's word: "keep claimbox separated but improving as
