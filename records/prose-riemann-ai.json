@@ -7,6 +7,17 @@
   "byKind": {
    "grammar": 2
   },
+  "perKind": {
+   "grammar": {
+    "proposed": 80,
+    "compiled": 2,
+    "holes": 78,
+    "faithful": 2,
+    "unfaithful": 0,
+    "plantedHeld": 2,
+    "plantedBroke": 0
+   }
+  },
   "anchored": 2,
   "printedBack": 2,
   "planted": 2,

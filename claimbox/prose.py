@@ -82,7 +82,7 @@ def grammar_proposal(sentence, source, data, elements, obj_id, root):
 
 
 def file_proposals(corpus, root):
-    """the proposals of the corpus's .claim file: {sentence: [(kind, object or None, refusal or None, claim id)]}"""
+    """the proposals of the corpus's .claim file: {sentence: [(kind, object or None, refusal or None, the claim)]}"""
     p = os.path.join(REPO, CORPORA[corpus]['proposals'])
     out = {}
     if not os.path.isfile(p):
@@ -92,10 +92,43 @@ def file_proposals(corpus, root):
         kind = c['proposed'] or 'unlabelled'
         try:
             obj = C.compile_claim(tree, c, root)[0]['object']
-            out.setdefault(c['quote'], []).append((kind, obj, None, c['id']))
+            out.setdefault(c['quote'], []).append((kind, obj, None, c))
         except Refusal as e:
-            out.setdefault(c['quote'], []).append((kind, None, (e.rule, e.msg), c['id']))
+            out.setdefault(c['quote'], []).append((kind, None, (e.rule, e.msg), c))
     return out
+
+
+def planted_claims(corpus):
+    """the planted run of a proposer that writes files (a program asking a model): {claim id: the claim}, read from
+    <proposals>.planted.claim — each sentence asked again with its bar's last digit moved"""
+    p = os.path.join(REPO, CORPORA[corpus]['proposals'].replace('.claim', '.planted.claim'))
+    if not os.path.isfile(p):
+        return {}
+    tree = lang.parse(open(p, encoding='utf-8').read())
+    return {c['id']: c for c in tree['items'] if c['kw'] == 'claim'}
+
+
+def bar_printed(stmt):
+    while stmt[0] == 'forall':
+        stmt = stmt[3]
+    if stmt[0] != 'cmp':
+        return None
+    b = stmt[3]
+    return b[2] if b[0] == 'within' else b[1]
+
+
+def planted_statement(claim, planted):
+    """a file proposer's planted run: its statement for the sentence with the bar's last digit moved must be its statement
+    for the sentence, with that bar moved and nothing else — None when the proposer was not asked again"""
+    if planted is None or claim['stmt'][0] == 'hole':
+        return None
+    p = bar_printed(claim['stmt'])
+    if not p or p not in claim['quote'] or not p[-1].isdigit():
+        return None
+    _, moved = plant_digit(claim['quote'], p)
+    if planted['stmt'][0] == 'hole':
+        return False
+    return lang.fmt_statement(planted['stmt']) == lang.fmt_statement(claim['stmt']).replace(p, moved, 1)
 
 
 # ------------------------------------------------------------------------------------------------- the checks
@@ -170,6 +203,7 @@ def run(corpus, root, words=False):
     cfg = CORPORA[corpus]
     source = rel_of(os.path.join(REPO, cfg['source']))
     files = file_proposals(corpus, root)
+    replanted = planted_claims(corpus)
     out = []
     for row in rows_of(corpus):
         ctx = cfg['context'][row['claim']]
@@ -179,8 +213,11 @@ def run(corpus, root, words=False):
         props += files.get(row['text'], [])
         entry = {'id': row['id'], 'group': row['claim'], 'style': row['style'], 'sentence': row['text'], 'proposals': []}
         reference = json.load(open(os.path.join(REPO, 'records', ctx[2] + '.json'), encoding='utf-8')) if ctx[2] else None
-        for kind, o, refusal, cid in props:
+        for kind, o, refusal, claim in props:
             pr = {'kind': kind}
+            if claim is not None:
+                pr['claim'] = claim['id']
+                pr['statement'] = lang.fmt_statement(claim['stmt']) if claim['stmt'][0] != 'hole' else None
             if o is None:
                 pr['refused'] = {'rule': refusal[0], 'hole': C.HOLE_OF.get(refusal[0], refusal[0]), 'why': refusal[1][:200]}
             else:
@@ -188,7 +225,7 @@ def run(corpus, root, words=False):
                 pr['decision'] = C.decision_fields(o)
                 pr['anchored'] = anchored(o, row['text'], source if kind == 'grammar' else o['source']['path'], root)
                 pr['printedBack'] = printed_back(o, row['text'])
-                pr['planted'] = planted(o, row, ctx, corpus, root) if kind == 'grammar' else None
+                pr['planted'] = planted(o, row, ctx, corpus, root) if kind == 'grammar' else planted_statement(claim, replanted.get(claim['id']))
                 pr['faithful'] = (C.decision_fields(o) == C.decision_fields(reference)) if reference else None
                 if words:
                     line = T.check_with_cert_machine(o, root)
@@ -220,7 +257,16 @@ def run(corpus, root, words=False):
 def summary(entries):
     made = [p for e in entries for p in e['proposals'] if 'object' in p]
     by = lambda k: sum(1 for p in made if p.get(k))
+    kinds = sorted({p['kind'] for e in entries for p in e['proposals']})
+    per_kind = {k: {'proposed': sum(1 for e in entries for p in e['proposals'] if p['kind'] == k),
+                    'compiled': sum(1 for p in made if p['kind'] == k),
+                    'holes': sum(1 for e in entries for p in e['proposals'] if p['kind'] == k and 'refused' in p),
+                    'faithful': sum(1 for p in made if p['kind'] == k and p['faithful']),
+                    'unfaithful': sum(1 for p in made if p['kind'] == k and p['faithful'] is False),
+                    'plantedHeld': sum(1 for p in made if p['kind'] == k and p['planted']),
+                    'plantedBroke': sum(1 for p in made if p['kind'] == k and p['planted'] is False)} for k in kinds}
     return {'sentences': len(entries), 'proposals': len(made), 'byKind': {k: sum(1 for p in made if p['kind'] == k) for k in sorted({p['kind'] for p in made})},
+            'perKind': per_kind,
             'anchored': by('anchored'), 'printedBack': by('printedBack'), 'planted': sum(1 for p in made if p['planted']),
             'faithful': sum(1 for p in made if p['faithful']), 'unfaithful': sum(1 for p in made if p['faithful'] is False),
             'validated': sum(1 for e in entries if e['outcome'] == 'validated'),

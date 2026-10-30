@@ -785,6 +785,17 @@ finally:
     PR.grammar_proposal = real
 red(stuck is False, 'prose: refused — a proposer that does not move when the sentence\'s bar is moved', str(stuck))
 shutil.rmtree(PR.PLANTS, ignore_errors=True)
+# a file proposer's planted run (tools/propose_model.py writes it): the statement for the moved sentence must be the statement
+# with that bar moved and nothing else
+T5 = lang.parse(HEADP + f'claim  m5 over s\n  quote "{S5}" from P\n  : c₁* = 0.7532960…\n  proposed by model:x\n')
+c5 = [i for i in T5['items'] if i['kw'] == 'claim'][0]
+moved5, _ = PR.plant_digit(S5, '0.7532960')
+def planted_of(stmt):
+    t_ = lang.parse(HEADP + f'claim  m5 over s\n  quote "{moved5}" from P\n  : {stmt}\n  proposed by model:x\n')
+    return [i for i in t_['items'] if i['kw'] == 'claim'][0]
+ok(PR.planted_statement(c5, planted_of('c₁* = 0.7532961…')) is True, 'prose: a model that moves its bar with the sentence\'s holds its planted run')
+red(PR.planted_statement(c5, planted_of('c₁* = 0.7532960…')) is False, 'prose: refused — a model whose statement does not move when the sentence\'s bar is moved', 'stuck')
+red(PR.planted_statement(c5, planted_of('c₁* ≥ 0.7532961')) is False, 'prose: refused — a model whose planted statement moves more than the bar', 'relation changed')
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

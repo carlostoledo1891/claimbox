@@ -121,8 +121,21 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    record). Battery §10: the source, the record, the grammar's proposals; a person's agreeing proposal validates (the green); a bar
    the sentence does not print, a weakening (≥ where it prints = …), two model families alone, a proposer that ignores its
    sentence — four reds. The page's measured section states the baseline from the record. make test: 459 pass, 0 fail, 93/93 reds.
-   NEXT in step 6: a second proposer — proposals by a person in corpus/proposals/riemann-ai.claim, or a model on a budget the
-   operator approves (a program writing that file) — then the register's sentences.
+   THE OPERATOR'S CHOICES (asked here): a model proposer, claude-opus-5-5, cap $20; republish the page now. BUILT:
+   tools/propose_model.py — outside claimbox (claimbox still calls no model), run with .venv/bin/python (the anthropic SDK in a
+   git-ignored .venv, python3.12); per sentence the model sees the claim language's statement rules, the library names over its
+   data, and the sentence — never the grammar's reading, the reference or another proposal; structured JSON output (statement, or
+   hole and why), effort high, the system prompt cached, server-side fallbacks "default" with the proposal labelled by the model
+   that served it; where its statement prints a bar, the sentence with that bar's last digit moved is asked again alone (the
+   planted run, <proposals>.planted.claim); every call logged with tokens and cost (records/model-proposals-<corpus>.json); stops
+   before a call would pass the cap; a free preflight (models.retrieve) first. NOT RUN: the `ant` profile's refresh token has
+   expired (HTTP 400 invalid_grant) — the operator signs in again (`ant auth login`) or exports ANTHROPIC_API_KEY, then
+   `.venv/bin/python tools/propose_model.py riemann-ai`, then `python3 -m claimbox prose riemann-ai --run --record
+   records/prose-riemann-ai.json` and the page rebuilt. FOUND: tools/platform.py shadows the standard library's `platform` for any
+   script run from tools/ (the SDK imports it); the script drops its own directory from sys.path. prose.py now reads the planted
+   run (planted_statement: the moved sentence's statement must be the statement with that bar moved and nothing else) and reports
+   per proposer kind (proposed, compiled, holes, faithful, unfaithful, planted held/broke). The republish request went to
+   cert-machine-cb (cert-machine-c4 had ended). make test: 462 pass, 0 fail, 95/95 reds.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
 
