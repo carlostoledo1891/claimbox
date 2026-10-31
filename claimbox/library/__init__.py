@@ -2,7 +2,7 @@
 
 Every definition the translator knows lives in a file of its family:
     step_functions.py   the registry's step-function constants C_1a, C_1b, C_1c, C_1d
-    einstein_arena.py   five of EinsteinArena's platform scores, written from the platform's own verifiers
+    einstein_arena.py   seven of EinsteinArena's scores, written from the platform's own verifiers (one from the SOTA table's)
     kissing.py          the kissing condition
     zeta23.py           the Riemann story's certificate and the mathematician's ξ′ and window certificates
     machines.py         the machine statements, decided by cert-machine's machine decider
@@ -38,9 +38,11 @@ def _entries():
                     'conventions': [s['what'] for s in e['structural']] + [_first(e['reduction'])]})
     for title, e in PLATFORM.items():
         out.append({'names': (title,), 'version': 'v1', 'file': 'einstein_arena.py', 'what': e['score'], 'readings': (e['elements'],),
-                    'route': 'the platform\'s own verifier, written as exact predicates over the bytes',
+                    'route': ('the SOTA table\'s verifier (' + e['verifier'] + '), written as exact predicates over the bytes' if e.get('verifier') else
+                              'the platform\'s own verifier, written as exact predicates over the bytes'),
                     'conventions': ['the bytes are read as the platform\'s verifier reads them: ' + e['elements'],
-                                    'the score\'s box is the platform\'s declared resolution' if e['resolution'] else 'an integer score is held exactly']
+                                    'the score\'s box is the platform\'s declared resolution; over the SOTA table\'s bytes, the half-unit box of its print'
+                                    if e['resolution'] else 'an integer score is held exactly']
                     + [s['what'] for s in e['structural']]})
     out.append({'names': ('platform score, recorded',), 'version': 'v1', 'file': 'einstein_arena.py',
                 'what': 'the score of a platform problem with no verifier written here, as cert-machine\'s decider recorded it', 'readings': NUMERIC,

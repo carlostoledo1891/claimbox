@@ -202,6 +202,15 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r15, 2026-10-31.** SOTA definitions (the operator's choice: the JSON-published problems first). The library gains the
+  minimum distance ratio (the platform's pinned verifier: max over pairs of the squared distance over min, distinct to 10^-12)
+  and the Heilbronn problem for convex regions (the SOTA table's verifier, the platform having added it after the pinned commit:
+  min triangle area over the hull's area, the hull a certificate — its vertices listed by claimbox, every edge's condition decided
+  by the receiver). Over the SOTA table's bytes a score is read as the half-unit box of the table's print (its rounding), not
+  the platform's resolution: AlphaEvolve's distance ratio lies 1.1·10⁻⁷ from its six-digit print, past the platform's 10⁻⁷. The
+  model states five of the six SOTA rows over these definitions, cert-machine certifies them; the platform's own best distance
+  ratio, formerly admitted undecided, is CERTIFIED from its bytes. Hexagon packing stays a hole (float rotation angles in degrees;
+  no exact sine). Planted: each score moved one unit, a forged hull with a vertex dropped — all refuted.
 - **r14, 2026-10-31.** Attack, on the operator's design: a watcher's template searched on a declared schedule (the start, the
   powers of two, the reach) and bisected between the last certified and the first refuted instance; a counterexample beside a
   certified instance (claimed first only for a monotone family) or "not refuted at the K instances asked", never CERTIFIED.

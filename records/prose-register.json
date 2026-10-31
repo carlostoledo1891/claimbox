@@ -3,10 +3,10 @@
  "corpus": "register",
  "summary": {
   "sentences": 132,
-  "proposals": 73,
+  "proposals": 76,
   "byKind": {
    "grammar": 52,
-   "model:claude-opus-5-5": 21
+   "model:claude-opus-5-5": 24
   },
   "perKind": {
    "grammar": {
@@ -22,26 +22,26 @@
    },
    "model:claude-opus-5-5": {
     "proposed": 66,
-    "compiled": 21,
-    "holes": 45,
+    "compiled": 24,
+    "holes": 42,
     "faithful": 13,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 8,
+    "noReference": 11,
     "plantedHeld": 0,
     "plantedBroke": 0
    }
   },
-  "anchored": 73,
-  "printedBack": 73,
+  "anchored": 76,
+  "printedBack": 76,
   "planted": 1,
   "faithful": 31,
   "unfaithful": 0,
   "sameValueOtherPrint": 0,
   "validated": 19,
-  "notStated": 78,
+  "notStated": 75,
   "sensitivity": {
-   "held": 4,
+   "held": 7,
    "broke": 0,
    "tight": 0,
    "slack": 0,
@@ -50,7 +50,7 @@
   "vacuity": {
    "depends": 0,
    "flagged": 0,
-   "notRun": 73
+   "notRun": 76
   },
   "pairs": {
    "sentences": 19,
@@ -260,7 +260,7 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  16.901 s",
+     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  16.438 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -310,7 +310,7 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  18.513 s  note: no record attached",
+     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  18.269 s  note: no record attached",
      "sensitivity": null,
      "vacuity": null
     },
@@ -663,8 +663,8 @@
         "in",
         "2.3658321334",
         [
-         "23658321333/10000000000",
-         "4731664267/2000000000"
+         "47316642667/20000000000",
+         "47316642669/20000000000"
         ]
        ]
       ],
@@ -685,7 +685,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-ea-circles-alphaevolve-2025  []  from the object: CERTIFIED value 170476171431630081/72057594037… · CERTIFIED value 5385692126216525/7205759403792… · CERTIFIED value -2303304775/7205759403",
      "sensitivity": {
-      "steps": 3,
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -728,8 +728,8 @@
         "in",
         "2.3658323759",
         [
-         "11829161879/5000000000",
-         "295729047/125000000"
+         "47316647517/20000000000",
+         "47316647519/20000000000"
         ]
        ]
       ],
@@ -750,7 +750,7 @@
      "word": "REFUTED",
      "certMachine": "ADMITTED  m-ea-circles-ours-2026  []  from the object: CERTIFIED value 21309523613215363/900719925474… · CERTIFIED value 2692846334980217/3602879701896… · REFUTED value 757/18014398509481984 · REFUTED",
      "sensitivity": {
-      "steps": 3,
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -778,15 +778,53 @@
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_ea_heilbronn_alphaevolve_2025",
-     "statement": "heil_alphaevolve_2025 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355715",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"heilbronn-convex\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+     "object": "m-ea-heilbronn-alphaevolve-2025",
+     "decision": {
+      "pin": {
+       "path": "corpus/easota/heilbronn-convex/alphaevolve_2025.json",
+       "sha256": "0006a49a12e12a4d5a941967aa0b65db79a74c879d44e3c5b66158b97422e8ae"
+      },
+      "count": 14,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.0278355715",
+        [
+         "556711429/20000000000",
+         "556711431/20000000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-ea-heilbronn-alphaevolve-2025  []  from the object: CERTIFIED value 172898945321512595956123898793… · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · CE",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: decider"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "ea-heilbronn-ours_2026",
@@ -804,16 +842,14 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "claim": "m_ea_heilbronn_ours_2026",
-     "statement": "heil_ours_2026 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355805",
      "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"heilbronn-convex\", and cert-machine's decider has no record of it over these bytes"
+      "rule": "syntax",
+      "hole": "syntax",
+      "why": "the language cannot read the proposal: cannot read the term at \".json is a feasible \""
      }
     }
    ],
-   "outcome": "not stated: decider"
+   "outcome": "not stated: decider, syntax"
   },
   {
    "id": "ea-mindist-alphaevolve_2025",
@@ -831,14 +867,54 @@
     },
     {
      "kind": "model:claude-opus-5-5",
-     "refused": {
-      "rule": "name",
-      "hole": "name",
-      "why": "the language cannot read the proposal: alphaevolve_2025 is not declared by a data line"
-     }
+     "claim": "m_ea_mindist_alphaevolve_2025",
+     "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+     "object": "m-ea-mindist-alphaevolve-2025",
+     "decision": {
+      "pin": {
+       "path": "corpus/easota/min-distance-ratio-2d/alphaevolve_2025.json",
+       "sha256": "07c7449a55b94f7c0c55600161f376c31b541c89c4bbff856396d61fba37b94e"
+      },
+      "count": 16,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "12.889266",
+        [
+         "25778531/2000000",
+         "25778533/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-ea-mindist-alphaevolve-2025  []  from the object: CERTIFIED value 404020058100786265686230296126… · CERTIFIED value 291927404893437366208277516928…  0.004 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: decider, name"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "ea-mindist-ours_2026",
@@ -857,15 +933,53 @@
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_ea_mindist_ours_2026",
-     "statement": null,
-     "refused": {
-      "rule": "prose",
-      "hole": "prose",
-      "why": "no statement the language reads"
-     }
+     "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+     "object": "m-ea-mindist-ours-2026",
+     "decision": {
+      "pin": {
+       "path": "corpus/easota/min-distance-ratio-2d/ours_2026.json",
+       "sha256": "9236e69edf32372938f59d99ae3f8b21b57d64662dedcaf80cec4b4e900e6492"
+      },
+      "count": 16,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "12.889230",
+        [
+         "25778459/2000000",
+         "25778461/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-ea-mindist-ours-2026  []  from the object: CERTIFIED value 669247079851380422803644281805… · CERTIFIED value 309485009943258583479101687597…  0.005 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: decider, prose"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "ea-overlap-haugland_2016",
@@ -2154,7 +2268,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x5-r32  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x5-r32  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2204,7 +2318,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2239,7 +2353,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2281,7 +2395,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2435,7 +2549,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2470,7 +2584,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2701,7 +2815,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2997,7 +3111,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3228,7 +3342,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x3  [CERTIFIED]  0.0 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x3  [CERTIFIED]  0.001 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3488,7 +3602,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x5  [CERTIFIED]  0.001 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x5  [CERTIFIED]  0.0 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3592,7 +3706,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-3x3x4  [CERTIFIED]  0.001 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-3x3x4  [CERTIFIED]  0.0 s",
      "sensitivity": null,
      "vacuity": null
     },

@@ -402,13 +402,18 @@
      "rel": "in",
      "printed": "12.889229907717521",
      "c": [
-      "25778459815435041/2000000000000000",
-      "25778459815435043/2000000000000000"
+      "12889229807717521/1000000000000000",
+      "12889230007717521/1000000000000000"
      ]
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  from the object: CERTIFIED value 669247079851380422803644281805… · CERTIFIED value 309485009943258583479101687597…  0.004 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-7  note: no record attached",
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-kissing-number-d11",

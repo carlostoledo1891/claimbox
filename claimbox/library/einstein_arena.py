@@ -1,4 +1,5 @@
-"""claimbox/library/einstein_arena.py — five of EinsteinArena's platform scores, written from the platform's own pinned verifiers
+"""claimbox/library/einstein_arena.py — seven of EinsteinArena's scores, written from the platform's own pinned verifiers (the convex
+Heilbronn problem from the SOTA table's, 2026-10-31)
 
 Part of the library (roadmap step 4): the definitions a claim uses by name, written once. Moved here verbatim from
 claimbox/translate.py on 2026-10-30, which imports them back, so the objects it writes are unchanged byte for byte
@@ -75,6 +76,68 @@ PLATFORM = {
         'structural': [{'what': 'the integral is not close to zero: (Σ f · dx)^2 >= 1e-9, read as the rational 1/10^9', 'g': ['Subtract', ['Square', ['Multiply', TOTAL, DX]], '1/1000000000'], 'rel': 'ge', 'c': '0'}],
         'reduction': 'the platform computes C = |max(convolve(f, f) · dx)| / (Σ f · dx)^2 with dx = 0.5/n in float64, and convolve(f, f)[k] = Σ_{i+j=k} f_i f_j, so exactly C = 2n · |max_k Σ_{i+j=k} f_i f_j| / (Σ f_i)^2 — the absolute value of the maximum, as the platform takes it, not the maximum of the absolute values (the registry\'s C_1d); the platform rejects a function whose (Σ f · dx)^2 is below 1e-9, read here as the rational 1/10^9; the score is a float64 evaluation, boxed by the platform\'s declared resolution'},
 }
+# 2026-10-31, for EinsteinArena's SOTA table (certs/easota-ledger.json; the operator: "SOTA definitions", the JSON-published ones
+# first): the minimum distance ratio, from the platform's pinned verifier, and the Heilbronn problem for convex regions, from the
+# SOTA table's verifier (the platform added the problem after the commit pinned here; the table's verifier "matches
+# heilbronn-convex.ts"). Hexagon packing is not here: its hexagons are rotated by float angles in degrees, and the receiver has no
+# exact sine or cosine
+PX, PY, QX, QY = IDX('i', '0'), IDX('i', '1'), IDX('j', '0'), IDX('j', '1')
+SQD = ['Add', ['Square', ['Subtract', PX, QX]], ['Square', ['Subtract', PY, QY]]]                          # |p_i - p_j|^2
+MAX_SQD = ['MaxOver', 'i', '0', ['Subtract', 'n', '2'], ['MaxOver', 'j', ['Add', 'i', '1'], N1, SQD]]
+MIN_SQD = ['MinOver', 'i', '0', ['Subtract', 'n', '2'], ['MinOver', 'j', ['Add', 'i', '1'], N1, SQD]]
+MIN_TRI = ['MinOver', 'i', '0', ['Subtract', 'n', '3'], ['MinOver', 'j', ['Add', 'i', '1'], ['Subtract', 'n', '2'],
+                                                        ['MinOver', 'k', ['Add', 'j', '1'], N1, ['Divide', ['Abs', DET], '2']]]]
+PLATFORM.update({
+    'Minimizing Max/Min Distance Ratio (2D, n=16)': {
+        'slug': 'min-distance-ratio-2d', 'elements': 'doubles', 'd': 2, 'n': 16, 'rows': 'points', 'resolution': True,
+        'g': ['Divide', MAX_SQD, MIN_SQD],
+        'score': 'the squared ratio (max |p_i - p_j| / min |p_i - p_j|)^2 of 16 points in the plane',
+        'structural': [{'what': 'the points are distinct: every pairwise distance is at least 1e-12, its square at least 1/10^24',
+                        'g': ['Subtract', MIN_SQD, '1/1000000000000000000000000'], 'rel': 'ge', 'c': '0'}],
+        'reduction': 'the platform computes every pairwise distance through a float64 square root and returns (max d / min d)^2, rejecting a set whose minimum distance is below 1e-12; the square root is monotone, so exactly R = max_{i<j} |p_i - p_j|^2 / min_{i<j} |p_i - p_j|^2 and the distinctness condition is min |p_i - p_j|^2 >= 10^-24; the score is a float64 evaluation, boxed by the platform\'s declared resolution'},
+    'Heilbronn Problem for Convex Regions (n = 14)': {
+        'slug': 'heilbronn-convex', 'elements': 'doubles', 'd': 2, 'n': 14, 'rows': 'points', 'resolution': True, 'hull': True,
+        'verifier': 'corpus/easota/heilbronn-convex/verifier.py',
+        'score': 'the minimum area of a triangle of 14 points divided by the area of their convex hull',
+        'structural': [],
+        'reduction': 'the verifier takes min over every triple of |det|/2 and divides by the area of the convex hull (a monotone chain, then the shoelace sum); here the hull is a certificate: claimbox lists its vertices in counter-clockwise order, the receiver decides that every point lies on the closed left side of every edge — so the polygon is convex, holds every point, and has points for vertices: it is the hull — and the expression takes its area by the shoelace sum over those vertices; the score is a float64 evaluation of the same arithmetic'},
+})
+
+
+def hull_of(points):
+    """the convex hull's vertices, counter-clockwise, as indices into the points (exact rationals): Andrew's monotone chain"""
+    order = sorted(range(len(points)), key=lambda i: (points[i][0], points[i][1]))
+    cross = lambda o, a, b: (points[a][0] - points[o][0]) * (points[b][1] - points[o][1]) - (points[a][1] - points[o][1]) * (points[b][0] - points[o][0])
+    lower, upper = [], []
+    for i in order:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], i) <= 0:
+            lower.pop()
+        lower.append(i)
+    for i in reversed(order):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], i) <= 0:
+            upper.pop()
+        upper.append(i)
+    return lower[:-1] + upper[:-1]
+
+
+def hull_parts(points):
+    """(the score's expression, the hull certificate's predicates) for the convex Heilbronn score over these points"""
+    h = hull_of(points)
+    c = lambda i, k: ['Index', 'f', str(i), str(k)]
+    edges = list(zip(h, h[1:] + h[:1]))
+    area = None
+    for a, b in edges:
+        term = ['Subtract', ['Multiply', c(a, 0), c(b, 1)], ['Multiply', c(b, 0), c(a, 1)]]
+        area = term if area is None else ['Add', area, term]
+    hull_area = ['Divide', area, '2']
+    preds = [{'what': f'every point lies on the closed left side of the hull edge from point {a} to point {b}', 'forall': [['i', '0', N1]],
+              'g': ['Subtract', ['Multiply', ['Subtract', c(b, 0), c(a, 0)], ['Subtract', IDX('i', '1'), c(a, 1)]],
+                                ['Multiply', ['Subtract', c(b, 1), c(a, 1)], ['Subtract', IDX('i', '0'), c(a, 0)]]], 'rel': 'ge', 'c': '0'}
+             for a, b in edges]
+    preds.append({'what': 'the hull has positive area (the points are not all on one line)', 'g': hull_area, 'rel': 'gt', 'c': '0'})
+    return ['Divide', MIN_TRI, hull_area], preds, h
+
+
 PLATFORM_BY_TITLE = {grammar.normalise(k): v for k, v in PLATFORM.items()}
 
 

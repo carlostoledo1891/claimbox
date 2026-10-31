@@ -216,7 +216,10 @@ def slug_of(root, data, title):
     return m.group(1) if m else None
 
 
-PLATFORM_PROBLEMS, SOTA_TABLE = 'corpus/einstein-arena/problems.json', 'corpus/easota/'
+# EinsteinArena's SOTA table (certs/easota-ledger.json, 2026-10-31): constructions published for the platform's problems outside
+# its records, each score printed ROUNDED to the table's digits (the ledger's printedConvention) — read as the half-unit box of
+# those digits, not the platform's resolution (a six-digit print of a float64 score is no float64 print)
+SOTA_TABLE = 'corpus/easota/'
 
 
 def resolution_box(root, data, slug, title, p, relative=False):
@@ -225,11 +228,6 @@ def resolution_box(root, data, slug, title, p, relative=False):
     by cert-machine's record, whose rows agree within the platform's resolution, or 1e-12 relative where it declares none: the
     operator's ruling of 2026-10-30, "hold the box to the row"), a minImprovement of 0 gives t = 1e-12·max(1, |p|), exactly"""
     pj = os.path.join(os.path.dirname(data), 'problems.json')
-    if data.startswith(SOTA_TABLE) and not relative:
-        # the bytes of EinsteinArena's SOTA table (certs/easota-ledger.json, 2026-10-31), published for the platform's problems
-        # outside its records: the problem's resolution is the platform's, quoted from its own problems.json in cert-machine's
-        # corpus. Bytes anywhere else quote it from beside themselves or not at all
-        pj = PLATFORM_PROBLEMS
     pjp = os.path.join(root, pj)
     if not os.path.isfile(pjp):
         raise Refusal('resolution', 'the platform\'s problems.json is not beside the record (' + pj + '): its declared resolution for "' + title + '" cannot be quoted')
@@ -612,27 +610,42 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         if t['n'] and count != t['n']:
             raise Refusal('count', 'the platform\'s "' + title + '" takes exactly ' + str(t['n']) + ' ' + t['rows'] + '; the bytes hold ' + str(count))
         pin = platform_pin(t['slug'])
+        if pin is None and t.get('verifier') and os.path.isfile(os.path.join(root, t['verifier'])):
+            pin = {'file': t['verifier'], 'sha256': sha256(os.path.join(root, t['verifier'])), 'repo': 'EinsteinArena\'s SOTA table, as cert-machine pins it',
+                   'path': t['verifier'], 'commit': 'pinned by cert-machine'}
         if pin is None:
             raise Refusal('decider', 'the platform\'s verifier for "' + title + '" is not pinned here (tools/platform.py)')
         domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
-        if t['resolution']:
+        g, extra = t.get('g'), []
+        if t.get('hull'):
+            # the convex hull as a certificate the receiver decides (library einstein_arena.hull_parts): its vertices are computed
+            # here over the exact doubles, every edge's condition is a predicate below
+            g, extra, hull = hull_parts([[Fraction(v) for v in row] for row in arr])
+            hyps.append('the convex hull\'s vertices, counter-clockwise, are points ' + ', '.join(map(str, hull)) + ' (computed by claimbox over the exact doubles; a certificate, decided by the edge predicates below)')
+        sota = data.startswith(SOTA_TABLE)
+        if t['resolution'] and not sota:
             box, lo, hi, res = resolution_box(root, data, t['slug'], title, grammar.exact(printed))
-            preds.append({'g': t['g'], 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)], 'box': box,
+            preds.append({'g': g, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)], 'box': box,
                           'note': 'the box is the printed score ± the platform\'s declared resolution for the problem (its minImprovement ' + res + ', quoted from problems.json), not the half-unit box of the printed digits: the print is a float64 evaluation, and the exact value of the same arithmetic over the same doubles need not lie within half a unit of its last digit'})
         else:
             lo, hi = shape['c']
-            preds.append({'g': t['g'], 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]})
-        preds += structural(t['structural'])
+            preds.append({'g': g, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]})
+        preds += structural(t['structural'] + extra)
         hyps.append('the platform\'s own verifier for "' + title + '" (' + pin['repo'] + ', ' + pin['path'] + ' at ' + pin['commit'][:8] + ', sha256 ' + pin['sha256'][:12] +
                     '…, pinned here at ' + pin['file'] + ') scores a submission as ' + t['score'] + ' once every constraint holds; its constraints are written here as the exact inequalities below')
         hyps.append(t['reduction'])
-        if t['resolution']:
+        if sota and t['resolution']:
+            hyps.append('the SOTA table prints the score rounded to its digits (certs/easota-ledger.json, its printedConvention): the box is half a unit of the last digit either side, not the platform\'s resolution')
+            fals = ['the exact ' + t['score'] + ' of the pinned ' + t['rows'] + ' lies outside [' + str(lo) + ', ' + str(hi) + ']']
+        elif t['resolution']:
             hyps.append('the platform prints its score as a float64 evaluation of the same arithmetic over the same doubles; the exact value and the print agree within the platform\'s own resolution for the problem, its minImprovement, when they agree at all — which is what the resolution box decides (the register\'s agreement rule for these rows); a value outside the box is a finding, not a reason to widen it')
             fals = ['the exact ' + t['score'] + ' of the pinned ' + t['rows'] + ' lies outside [' + str(lo) + ', ' + str(hi) + ']']
         else:
             fals = ['the count of ' + t['rows'] + ' is not ' + printed]
-        fals += ['the pinned ' + t['rows'] + ' violate: ' + s['what'] for s in t['structural']] + [hashed]
-        if t['resolution']:
+        fals += ['the pinned ' + t['rows'] + ' violate: ' + s['what'] for s in t['structural'] + extra] + [hashed]
+        if sota and t['resolution']:
+            ref = 'the printed ' + printed + ' is the SOTA table\'s rounding of the score, read as the box its digits allow; the quantity is ' + t['score'] + ', computed exactly from the pinned bytes by the expression itself; feasibility is decided from the bytes by the conditions of the problem\'s verifier, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
+        elif t['resolution']:
             fals.append('problems.json does not hash to ' + box['source']['sha256'][:8] + '…, or no longer prints minImprovement ' + res + ' for ' + t['slug'])
             ref = 'the printed ' + printed + ' is the platform\'s float64 score, read as the exact decimal and boxed by the platform\'s declared resolution ' + res + ' either side (its minImprovement for "' + title + '", quoted from the pinned problems.json); the quantity is ' + t['score'] + ', computed exactly from the pinned bytes by the expression itself; feasibility is decided from the bytes by the platform\'s own conditions, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
         else:

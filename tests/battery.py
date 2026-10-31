@@ -450,13 +450,17 @@ def pinned_text(slug):
 
 bad = [slug for slug, (reading, evidence) in READING.items() if evidence not in pinned_text(slug)]
 ok(not bad, 'platform: every reading\'s evidence line is byte for byte in the platform\'s pinned verifier', ', '.join(bad) or str(len(READING)) + ' lines quoted')
-bad = [title for title, e in T.PLATFORM.items() if ('title: "' + title + '"') not in pinned_text(e['slug'])]
-ok(not bad, 'platform: each score written here as an expression is keyed by the title its pinned verifier prints', ', '.join(bad) or ', '.join(e['slug'] for e in T.PLATFORM.values()))
+def sota_title(e):    # a problem the platform added after the pinned commit: its title as the SOTA table's README beside its verifier prints it
+    rd = os.path.join(ROOT, os.path.dirname(e['verifier']), 'README.md')
+    return open(rd, encoding='utf-8').read() if os.path.isfile(rd) else ''
+bad = [title for title, e in T.PLATFORM.items() if ('title: "' + title + '"') not in pinned_text(e['slug']) and not (e.get('verifier') and title in sota_title(e))]
+ok(not bad, 'platform: each score written here as an expression is keyed by the title its pinned verifier prints (the SOTA table\'s README for a problem the pinned platform lacks)',
+   ', '.join(bad) or ', '.join(e['slug'] for e in T.PLATFORM.values()))
 # the resolution the translator quotes from problems.json is the one the pinned verifier itself declares
 pj_raw = open(os.path.join(ROOT, 'corpus', 'einstein-arena', 'problems.json'), encoding='utf-8').read()
 bad = []
 for title, e in T.PLATFORM.items():
-    if not e['resolution']:
+    if not e['resolution'] or e.get('verifier'):     # the SOTA table's problems are read as the half-unit box of the table's print
         continue
     at = pj_raw.find('"slug":"' + e['slug'] + '"')
     m1 = re.compile(r'"minImprovement":(' + grammar.NUMBER + ')').search(pj_raw, at)
@@ -1129,24 +1133,44 @@ ok(again == {cid: yw[cid] for cid in again}, 'x^x = y: four claims re-decided he
 # from their bytes by the library's platform conditions — the AlphaEvolve packing CERTIFIED, the 2026 one REFUTED on 44
 # overlapping pairs (certs/easota-ledger.json counts 44 as published: its REPAIRED); a score moved past the platform's resolution
 # is refuted; a bar printed as a fraction (polymaps F4's det J = -44/9) is a hole, never an object the format refuses
-SOTA = ('source P = ../claimbox/corpus/register/sentences.md\ndata   c = corpus/easota/circles-rectangle/{who}.json\nread   c as doubles\n'
-        'claim  sota over c\n  quote "{quote}" from P\n  : c is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is {bar}\n')
+SOTA = ('source P = ../claimbox/corpus/register/sentences.md\ndata   c = corpus/easota/{folder}/{who}.json\nread   c as doubles\n'
+        'claim  sota over c\n  quote "{quote}" from P\n  : c is a feasible solution of "{title}" and its score is {bar}\n')
 SQ = {r['id']: r['text'] for r in PR.rows_of('register')}
-def sota(who, bar, quote_bar=None):
-    t_ = lang.parse(SOTA.format(who=who, bar=bar, quote=SQ['ea-circles-' + who].replace(quote_bar or bar, bar)))
+SOTA_P = {'circles': ('circles-rectangle', 'Circles in a Rectangle (n = 21)'), 'mindist': ('min-distance-ratio-2d', 'Minimizing Max/Min Distance Ratio (2D, n=16)'),
+          'heilbronn': ('heilbronn-convex', 'Heilbronn Problem for Convex Regions (n = 14)')}
+def sota(prob, who, bar, quote_bar=None):
+    folder, title = SOTA_P[prob]
+    sent = SQ['ea-' + prob + '-' + who]
+    t_ = lang.parse(SOTA.format(folder=folder, who=who, title=title, bar=bar, quote=sent.replace(quote_bar or bar, bar)))
     if quote_bar:   # a planted bar: the source the claim quotes is the register's sentence with its bar moved
         with open(os.path.join(PR.PLANTS, 'sota-planted.md'), 'w', encoding='utf-8') as f:
-            f.write(SQ['ea-circles-' + who].replace(quote_bar, bar) + '\n')
+            f.write(sent.replace(quote_bar, bar) + '\n')
         t_['items'] = [dict(i, path=PR.rel_of(os.path.join(PR.PLANTS, 'sota-planted.md'))) if i['kw'] == 'source' else i for i in t_['items']]
     line = T.check_with_cert_machine(CP.compile_claim(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)[0]['object'], ROOT)
     return CP.word(line) + (' (44 violating)' if '44 violating' in line else '')
 os.makedirs(PR.PLANTS, exist_ok=True)
-sw = {'ae': sota('alphaevolve_2025', '2.3658321334'), 'ours': sota('ours_2026', '2.3658323759'),
-      'moved': sota('alphaevolve_2025', '2.3658321337', quote_bar='2.3658321334')}
+import claimbox.library.einstein_arena as EAL  # noqa: E402
+real_hull = EAL.hull_of
+sw = {'ae': sota('circles', 'alphaevolve_2025', '2.3658321334'), 'ours': sota('circles', 'ours_2026', '2.3658323759'),
+      'moved': sota('circles', 'alphaevolve_2025', '2.3658321335', quote_bar='2.3658321334'),
+      'm1': sota('mindist', 'alphaevolve_2025', '12.889266'), 'm2': sota('mindist', 'ours_2026', '12.889230'),
+      'mmoved': sota('mindist', 'alphaevolve_2025', '12.889267', quote_bar='12.889266'),
+      'h1': sota('heilbronn', 'alphaevolve_2025', '0.0278355715'), 'h2': sota('heilbronn', 'ours_2026', '0.0278355805'),
+      'hmoved': sota('heilbronn', 'ours_2026', '0.0278355806', quote_bar='0.0278355805')}
+try:            # a forged hull certificate: one vertex dropped, so a point lies outside the polygon the expression measures
+    EAL.hull_of = lambda pts: real_hull(pts)[1:]
+    sw['hforged'] = sota('heilbronn', 'ours_2026', '0.0278355805')
+finally:
+    EAL.hull_of = real_hull
 shutil.rmtree(PR.PLANTS, ignore_errors=True)
 ok(sw['ae'] == 'CERTIFIED', 'register batch 2: the SOTA table\'s AlphaEvolve circles in a rectangle, decided from the bytes by the platform\'s conditions', sw['ae'])
 red(sw['ours'] == 'REFUTED (44 violating)', 'register batch 2: refuted — the SOTA table\'s 2026 circles overlap, 44 pairs as published (the easota ledger\'s count)', sw['ours'])
-red(sw['moved'].startswith('REFUTED'), 'register batch 2: refuted — the AlphaEvolve score moved three units past the platform\'s resolution', sw['moved'])
+red(sw['moved'].startswith('REFUTED'), 'register batch 2: refuted — the AlphaEvolve score moved one unit of the table\'s last digit (its print is a rounding: half a unit either side)', sw['moved'])
+ok(sw['m1'] == sw['m2'] == sw['h1'] == sw['h2'] == 'CERTIFIED',
+   'SOTA definitions: the minimum distance ratio (the platform\'s verifier) and the convex Heilbronn score (the table\'s, its hull a certificate) certify the four rows the table prints', json.dumps({k: sw[k] for k in ('m1', 'm2', 'h1', 'h2')}))
+red(sw['mmoved'].startswith('REFUTED') and sw['hmoved'].startswith('REFUTED'),
+    'SOTA definitions: refuted — each score moved one unit of the table\'s last digit', sw['mmoved'] + ' · ' + sw['hmoved'])
+red(sw['hforged'].startswith('REFUTED'), 'SOTA definitions: refuted — a forged hull certificate (one vertex dropped): an edge predicate fails', sw['hforged'])
 RB2 = {e['id']: e for e in RREC['sentences']}
 ok(all(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in RB2[i]['proposals']) for i in ('optconst-71', 'polymaps-gao-g', 'polymaps-chv-phi')),
    'register batch 2: C71, Gao\'s G and the Phi map, each over the file its ledger row\'s decider read, take the row\'s word (the record)', 'three')

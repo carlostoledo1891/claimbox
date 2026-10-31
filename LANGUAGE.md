@@ -143,8 +143,9 @@ is computed by cert-machine's tm.js (tools/attack_twins.py, corpus/attack/predic
 ## 4 · The library
 
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —
-`step_functions.py` (C_1a, C_1b, C_1c, C_1d), `einstein_arena.py` (five platform scores, written from the platform's own
-verifiers), `kissing.py`, `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
+`step_functions.py` (C_1a, C_1b, C_1c, C_1d), `einstein_arena.py` (seven platform scores, written from the platform's own
+verifiers, the convex Heilbronn problem from the SOTA table's; over the SOTA table's bytes a score's box is the half unit of
+its print), `kissing.py`, `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
 (the machine statements), `decompositions.py` (matrix-multiplication tensor decompositions, decided by cert-machine's tensor
 decider and its record) — and its registry, `claimbox/library/__init__.py`, lists every definition with:
 

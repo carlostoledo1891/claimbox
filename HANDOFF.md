@@ -23,9 +23,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-10-31, end of the eleventh session) — the state in one screen; the dated entries below are the history
 
-**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r14,
+**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r15,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 535 pass, 0 fail, 131/131 red controls; `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 538 pass, 0 fail, 133/133 red controls; `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -83,9 +83,26 @@ re-pinned check.py, check.js, SCHEMA.md; the register re-run: horizonmath-keich 
 (the register: 70 CERTIFIED, 1 REFUTED, 2 REFUSED); the page's bytes unchanged (no republish needed). cert-machine notes one
 weakness it left, since (c) was not approved: a fraction bar "< 19676/1639" reads as 19676; no object prints one.
 
+**SOTA DEFINITIONS (the operator's choice, asked here: SOTA definitions next, the JSON-published problems first).** library
+einstein_arena.py: 'Minimizing Max/Min Distance Ratio (2D, n=16)' (the platform's pinned verifier) and 'Heilbronn Problem for
+Convex Regions (n = 14)' (the SOTA table's corpus/easota/heilbronn-convex/verifier.py — the pinned platform commit predates the
+problem; its README prints the title): min triangle area / hull area, the hull a CERTIFICATE (hull_of computes its vertices over
+the exact doubles; one predicate per edge, every point on its closed left side, and positive area — decided by the receiver).
+translate: over bytes under corpus/easota/ (SOTA_TABLE) a score is the HALF-UNIT BOX of the table's print (the ledger's
+printedConvention: rounding) — the platform's resolution would have refuted AlphaEvolve's distance ratio (1.12·10⁻⁷ from its print,
+minImprovement 10⁻⁷); the earlier fallback to the platform's problems.json is gone. The model re-asked the four rows (4 calls; the
+register ledger 85 calls, $0.7226): circles 2, mindist 2, heilbronn 1 CERTIFIED/REFUTED as expected, heilbronn ours_2026 the
+model's own syntax slip (it wrote the file name for the data name). The einstein-arena reader now decides the platform's best
+min-distance from its bytes (the title is defined): CERTIFIED (formerly admitted undecided); its job and the identity record were
+rewritten (WRITE=1: only that job's digest moved). The register: 76 proposed, 73 CERTIFIED, 1 REFUTED, 2 REFUSED; validated 19;
+not stated 75. Battery §13: a green and two reds (scores moved one unit, a forged hull). make test 538 pass, 133/133. The page
+moved ("57 decided, 75 name the reason"): cert-machine-cb asked to republish on the operator's word. Hexagons stay a hole: the
+hexagons are rotated by float angles in degrees and the receiver has no exact sine or cosine.
+
 **NEXT, in order.**
-1. Step 7's fill (fetch a missing quantity) — not designed; or step 8 (documents that build). The operator's choice.
-2. More SOTA definitions in the library (heilbronn, min-distance, hexagons…) would decide 17 more register rows from their bytes.
+1. The operator's choice: step 7's fill (not designed), step 8 (documents that build), or the SOTA table's .py-published problems
+   (Erdős overlap, edges vs triangles, flat polynomials: a reader for their literal arrays first) and the first autocorrelation
+   (30,000 values: past the receiver's quadratic evaluator).
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
    written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is

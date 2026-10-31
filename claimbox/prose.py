@@ -109,7 +109,9 @@ LEDGER_ROWS = {'optconst-71': ('corpus/optimization-constants/num2026/fei_c71_n1
                   for r in ('gao-g', 'gao-f4', 'gao-f5', 'chv-phi')}}
 # EinsteinArena's SOTA table (certs/easota-ledger.json): the files its rows decided, given as bytes. Its words (WITNESSED,
 # REPAIRED) are not the receiver's, so no row is attached: a claim over these bytes is decided from them by a definition in the
-# library or not at all (the circles in a rectangle: the platform's conditions; the others have none, their hole says so)
+# library or not at all (the circles in a rectangle, the minimum distance ratio and the convex Heilbronn problem have one; hexagon
+# packing has none, its hexagons rotated by float angles in degrees; the others are published as Python files or exceed the
+# receiver's evaluator, and their hole says so)
 EASOTA = 'certs/easota-ledger.json'
 # not given bytes, and why: polymaps-gao-f6 and -f7 (the full maps are not printed; maps.json holds neither), optconst-84b
 # (REPAIRED) and C42's two (PARTIAL: no receiver word, and no file of theirs pinned), erdos852-cstar (its certificate is one

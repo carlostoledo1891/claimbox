@@ -273,7 +273,7 @@
    "claim": "the object is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and the platform's score of it is 12.889229907717521 (minimize)",
    "source": "corpus/einstein-arena/best-5.json",
    "data": "corpus/einstein-arena/best-5.json",
-   "decider": "tools/run-mc100-einstein.js",
+   "decider": null,
    "what": "EinsteinArena's API record of the best solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\", pinned by cert-machine (corpus/einstein-arena/best-5.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `vectors = np.array(data[\"vectors\"], dtype=np.float64)`)",
    "problem": "min-distance-ratio-2d",
    "score": "12.889229907717521",

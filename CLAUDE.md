@@ -69,8 +69,9 @@ pinned corpora open cert-machine. Each repository's HANDOFF.md is its state; rea
 claimbox/grammar.py        the shapes and the refusals (prose and LaTeX normalised first)
 claimbox/translate.py      shape + page + bytes (+ decider, record) → the object; the quote found, the array decoded; the functionals
                            written once (PRIMITIVE: C_1a, C_1b, C_1c, C_1d; beside a record, the record names predicate 0), the platform
-                           scores written once (PLATFORM: five of EinsteinArena's — two integer counts in the half-unit box, three
-                           float-printed scores in the box of the platform's declared resolution, quoted from problems.json) and the
+                           scores written once (PLATFORM: seven of EinsteinArena's — two integer counts in the half-unit box, five
+                           float-printed scores in the box of the platform's declared resolution, quoted from problems.json, or over
+                           the SOTA table's bytes the half-unit box of its print; the convex Heilbronn hull a certificate) and the
                            Riemann story's certificate written once (CERTIFICATE: zeta23's near-CUE rows, edge bound and p₀ over the decoded
                            enclosures; the Montgomery–Taylor constant as a closed form the receiver admits and cannot decide)
 claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (with the reading each

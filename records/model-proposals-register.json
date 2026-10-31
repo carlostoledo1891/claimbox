@@ -3,8 +3,8 @@
  "model": "claude-opus-5-5",
  "effort": "high",
  "cap": 20.0,
- "spent": 0.6679,
- "calls": 81,
+ "spent": 0.7226,
+ "calls": 85,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -216,6 +216,26 @@
   {
    "tag": "ea-heilbronn-alphaevolve_2025",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgapQANeAgTdm1ztqHcXz",
+   "stopReason": "end_turn",
+   "seconds": 5.3,
+   "usage": {
+    "input": 193,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 471
+   },
+   "cost": 0.017277,
+   "raw": "{\"statement\":\"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\",\"hole\":\"\",\"why\":\"The sentence gives the score of the 14-point construction on the platform's Heilbronn convex problem, so the claim is that score.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence gives the score of the 14-point construction on the platform's Heilbronn convex problem, so the claim is that score."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011Cgaej3keSvx4o1LWWScJx",
    "stopReason": "end_turn",
    "seconds": 4.9,
@@ -235,6 +255,26 @@
   },
   {
    "tag": "ea-heilbronn-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgapQAcH22fnWP2uZTMrZ",
+   "stopReason": "end_turn",
+   "seconds": 3.3,
+   "usage": {
+    "input": 185,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 106
+   },
+   "cost": 0.009945,
+   "raw": "{\"statement\":\"ours_2026.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\",\"hole\":\"\",\"why\":\"The sentence gives the platform score of the 14-point construction as a printed number, which can be checked against the pinned data.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence gives the platform score of the 14-point construction as a printed number, which can be checked against the pinned data."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011Cgaej3XWHgYZk8fCCczBm",
    "stopReason": "end_turn",
@@ -296,6 +336,26 @@
   {
    "tag": "ea-mindist-alphaevolve_2025",
    "model": "claude-opus-5-5",
+   "requestId": "req_011CgapQAW6EvG8CMKkX731y",
+   "stopReason": "end_turn",
+   "seconds": 5.8,
+   "usage": {
+    "input": 209,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 470
+   },
+   "cost": 0.017321,
+   "raw": "{\"statement\": \"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio of the 16-point construction as 12.889266, which is the platform problem's score.\"}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio of the 16-point construction as 12.889266, which is the platform problem's score."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025 (superseded)",
+   "model": "claude-opus-5-5",
    "requestId": "req_011Cgaej3KM9G45wqVfuGGnp",
    "stopReason": "end_turn",
    "seconds": 4.7,
@@ -315,6 +375,26 @@
   },
   {
    "tag": "ea-mindist-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgapQA9kTihNx9tR5rrJn",
+   "stopReason": "end_turn",
+   "seconds": 3.2,
+   "usage": {
+    "input": 201,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 115
+   },
+   "cost": 0.010189,
+   "raw": "{\"statement\": \"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\", \"hole\": \"\", \"why\": \"The sentence reports the 16-point construction's squared max/min distance ratio as 12.889230, which is that platform problem's score.\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "The sentence reports the 16-point construction's squared max/min distance ratio as 12.889230, which is that platform problem's score."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026 (superseded)",
    "model": "claude-opus-5-5",
    "requestId": "req_011Cgaej3yXu2RkQwuiEuhz3",
    "stopReason": "end_turn",
