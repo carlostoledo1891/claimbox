@@ -239,6 +239,10 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    quoted from problems.json (slug_of by title), or 1e-12·max(1,|S|) with rule 1e-12-relative where it is 0 — cert-machine-cb's
    ten values matched; a red holds the half-unit box refused. The register's words unchanged (40 CERTIFIED, 2 REFUSED: Erdős,
    REPAIRED). make test: 507 pass, 0 fail, 116/116 reds; recall 56/56. The page gains "Helpers, begun". PLAN.md r11.
+   REPUBLISHED on the operator's word: cert-machine ccf56d01, from claimbox 7e600ec (96,749 bytes); the live sha256 6d0af739…964968d37
+   equals web/dist's, checked here with curl. COMING from cert-machine-cb: tools/run-mc100-einstein.js's agreement() measured to
+   the far end of the enclosure and certs/mc100-einstein-arena.json re-recorded (no verdict expected to move) — then make drift
+   (the record is read in place by the recorded route, not pinned), re-run the register and the battery.
    NEXT: step 7's attack, then watchers; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
 
