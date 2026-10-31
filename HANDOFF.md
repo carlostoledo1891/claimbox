@@ -286,7 +286,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    HERE, by the operator's ruling in cert-machine-cb's chat: the x^x = y report is served by cert-machine at /reports/xx.html
    (rebuilt in its grammar, every bracket re-decided by its own ledger certs/xx-ledger.json, claimbox's records lifted via its
    LIFT-claimbox.json), one version only — so claimbox's page source moved to web/drafts/ (not built; web/dist holds index.html
-   alone, the zone publishes all of web/dist), and the zone republishes index.html only.
+   alone, the zone publishes all of web/dist), and the zone republishes index.html only. REPUBLISHED: cert-machine 4a4d6fcf from
+   claimbox 407c609 (commit pinned; index.html 99,051 bytes); the live sha256 865b0956…b1ffc965 equals web/dist's, checked here
+   with curl; /claimbox/xx.html is 404, as ruled; the report is live at /reports/xx.html.
    make test: 530 pass, 0 fail, 132/132 reds.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
