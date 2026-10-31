@@ -78,10 +78,15 @@ claimbox/readers/          structural readers of real sources: registry.py (the 
                            integers decoded into JSON beside it, one job per claim the sources print; EnclOK skipped: bytes not published)
 claimbox/lang.py           the language of LANGUAGE.md: a .claim file read into a tree, printed back (canonical) and in plain words;
                            malformed files refused with the rule, statements that are not claims made holes
-claimbox/library/          the definitions, one file per family (step_functions, einstein_arena, kissing, zeta23, machines, decompositions; common pieces);
+claimbox/library/          the definitions, one file per family (step_functions, einstein_arena with its RECORDED route, kissing, zeta23,
+                           machines, decompositions (DATA["heading"|"key"], cert-machine's tensor records), selfpower (xroot, x^x = N); common pieces);
                            __init__.py the registry `use NAME vN` resolves against; the objects held byte for byte (records/library-identity.json)
-claimbox/prose.py          from prose to claims: proposers (the grammar; corpus/proposals/<corpus>.claim for a person's or a model's), the
-                           levels (anchored, printed back, planted, concord), faithfulness measured against a decided reference
+claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and register (register_context/register_extra: the bytes per
+                           sentence); proposers (the grammar; corpus/proposals/<corpus>{,.person,.planted,.paraphrase}.claim); the levels
+                           (anchored, printed back, planted, sensitivity, vacuity, paraphrase, concord), faithfulness against a decided
+                           reference, the pairs' same-error rate; `--worksheet` writes a person's blank claims once
+claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"),
+                           watch (a claim about every case, instance by instance; planted twins); proposals `proposed by search:<helper>`
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
@@ -92,7 +97,9 @@ corpus/                    register-sentences.json (lifted), calibration.json (t
                            and ξ′ decisions; zeta23/xi-q4.json, xi-w6.json, xi-o20.json: the mathematician's windows of §7; xi-opt6.json,
                            xi-opt20.json: the optimality certificates the receiver decides),
                            riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
-                           riemann-math-jobs.json (each claim with its expected outcome)
+                           riemann-math-jobs.json (each claim with its expected outcome); register/sentences.md; proposals/ (the model's,
+                           the person's worksheet, the helpers'); helpers/ (the sources the searches wrote); watchers/machines.claim;
+                           xx64/ and xxy/ (the x^x = 64 and x^x = y studies' claims, sources and N files)
 records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json, library-identity.json,
                            fork-605.json (`check LANGUAGE.md#E16 --run --record`); <source>-run.json +
                            <source>/ (each batch's --record and objects)
@@ -103,7 +110,10 @@ LANGUAGE.md                the language, written down (roadmap step 1)
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),
                            record.py (every value from a record address, re-read from the built page), engine.py (the page's checks),
-                           pages/index.{html,py}, build.py → dist/ (published by cert-machine as carlostoledo.co/claimbox/)
+                           pages/index.{html,py} (a marketing touchpoint since 2026-10-31: visible pins removed, every number still read),
+                           drafts/ (not built), build.py → dist/ (index.html only; published by cert-machine as carlostoledo.co/claimbox/)
+tools/propose_model.py     a model as a proposer (claude-opus-5-5, the operator's $20 cap; .venv/bin/python; ledgers records/model-proposals-*);
+tools/xx_study.py          the x^x = y study (roots computed, claims written for cert-machine);
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the
                            story's pins (fetch, --check); tools/ceiling_lp.py an exploration in floats of the paper's bandwidth-one programme
                            at small N (not a certificate; its numbers are in mathematician.md §6); tools/xi_window.py the window search for
