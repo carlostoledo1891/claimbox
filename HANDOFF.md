@@ -255,7 +255,8 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    make test: 512 pass, 0 fail, 118/118 reds. PLAN.md r12.
    THE RE-RECORD (cert-machine 6039e6f8: agreement() measured to the enclosure's far end; certs/mc100-einstein-arena.json, read in
    place, not pinned): the register re-run with cert-machine at 7ab83014 — summary, outcomes and every word unchanged; drift 15/15;
-   make test 512 pass, 118/118. The republish from ead7e84 is HELD in cert-machine-cb's chat for the operator's approval.
+   make test 512 pass, 118/118. REPUBLISHED on the operator's word: cert-machine 9e5c4e18, from claimbox ead7e84 (98,291
+   bytes); the live sha256 d8b9b20c…8046123c equals web/dist's, checked here with curl.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
 
