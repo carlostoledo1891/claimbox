@@ -289,6 +289,19 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    alone, the zone publishes all of web/dist), and the zone republishes index.html only. REPUBLISHED: cert-machine 4a4d6fcf from
    claimbox 407c609 (commit pinned; index.html 99,051 bytes); the live sha256 865b0956…b1ffc965 equals web/dist's, checked here
    with curl; /claimbox/xx.html is 404, as ruled; the report is live at /reports/xx.html.
+   THE LANDING PAGE REDESIGNED (the operator, in cert-machine's chat, relayed by cert-machine-cb: "Next task is to beautify the
+   Claimbox page to look like we did to verify. Go."; reference: cert-machine's /verify/ v5 and its marketing ruling, "No need to
+   pin everything on Verify LP, this is a mkt touchpoint and the focus now is content and visuals"): web/pages/index.{html,py}
+   rewritten as a marketing touchpoint — the hook in the H1 ("Claims are written in words no machine can check. claimbox states
+   them so one can."), call-to-action buttons (Bring one claim, the email), a hero figure from the records (three collections:
+   cert-machine's word vs a named hole, the cryptids' two refutations as the red ×), four big numbers, three proofs with one big
+   number each (named holes; a model's claims through the checks; x^x = 64 trapped by fractions), two uses, the flow, built-on
+   cards, a closing "Bring one claim" panel, the roadmap below as secondary, one evidence line. Every number still read from a
+   record and re-read by the build; the visible pins (record lines, paths, digests, rigor blocks) are gone. Light and dark: the
+   print register's values in grammar.css under :root[data-theme="light"] (engine.COLOURS gains exactly those eight), the theme
+   pill and its two inline scripts as cert-machine's design/nav.js writes them (key "warrant-theme"); each figure has a narrow
+   drawing (.only-wide/.only-narrow), checked at 390 px in a frame with no overflow. record.py gains the derived barOf. NOT
+   PUBLISHED: cert-machine-cb shows the operator screenshots first.
    make test: 530 pass, 0 fail, 132/132 reds.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.

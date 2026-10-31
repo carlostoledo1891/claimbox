@@ -173,6 +173,7 @@ DERIVED = {
     'proposalWords': lambda path, w: sum(1 for e in load(path)['sentences'] for p in e['proposals'] if p.get('word') == w),
     'length': lambda path, ptr: len(at(path, ptr)),
     'powerDigits': lambda path, ptr: power_digits(at(path, ptr)),
+    'barOf': lambda path, ptr: at(path, ptr).split()[-1],
     'checkWords': lambda path, w: sum(1 for c in load(path)['claims'] if (c.get('readings') or [{}])[0].get('word') == w),
 }
 

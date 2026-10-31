@@ -18,7 +18,9 @@ HOSTS = ('fonts.googleapis.com', 'fonts.gstatic.com')
 DASHES = ('5 4', '1.5 2', '1 5', '1 3', '2 3')
 # the colours a page may carry: cert-machine's greys and the one red (design/tokens.js; WARRANT v2.2's registry)
 COLOURS = ('#0a0a0c', '#101014', '#141419', '#1a1a20', '#f6f6f8', '#c9c9d2', '#9a9aa6', '#6e6e7a', '#4a4a55', '#232329',
-           '#32323c', '#1c1c22', '#e0574e')
+           '#32323c', '#1c1c22', '#e0574e',
+           # the light theme: the print register's values (cert-machine design/print/tokens.js), nothing else
+           '#ffffff', '#000000', '#262626', '#4d4d4d', '#8a8a8a', '#dcdcdc', '#c1c1c1', '#e9e9e9')
 # words the public pages never use (cert-machine's design/COPY.md): a reader has no way to learn them
 WORDS = ('shelf', 'drift', 'gate', 'gated', 'lift', 'lifted', 'funnel', 'rung', 'operator', 'handoff', 'make test', 'control page',
          'provenance.json', 'the desk', 'the board')

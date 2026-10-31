@@ -1,48 +1,28 @@
-"""the landing page: what claimbox is, what it decides through cert-machine today, and the roadmap of PLAN.md §7"""
+"""the landing page, a marketing touchpoint (2026-10-31: after cert-machine's /verify/, on the operator's word, "beautify the
+Claimbox page to look like we did to verify"): content and visuals first. Every number is still read from its record by this
+builder and re-read from the built page by web/record.py; only the visible pins (record lines, paths, digests) go."""
+import math
+
 from web.engine import esc
-from web.record import derived, roadmap, val
+from web.record import at, derived, load, roadmap, tally, val
 
 META = {
     'title': 'claimbox · Carlos Toledo',
-    'description': 'claimbox is the language a claim is written in so that cert-machine can decide it: printed back in plain words, '
-                   'every number pinned, or refused with the reason named.',
+    'description': 'Claims are written in words no machine can check. claimbox states them exactly, so cert-machine can decide them, or names the reason it cannot.',
     'robots': 'index, follow',
     'url': 'https://carlostoledo.co/claimbox/',
 }
 
 CAL, COV, REC = 'records/calibration.json', 'records/coverage.json', 'records/recall.json'
-RREC, RCOV, RRUN = 'records/riemann-recall.json', 'records/riemann-coverage.json', 'records/riemann-run.json'
-CRY, CREC, PRIM = 'records/cryptids-run.json', 'records/cryptids-recall.json', 'records/primitive-run.json'
-AIP = 'corpus/riemann/ai-phrasings.json'
-EX = 'prim-1c-rozetyp-k3072'          # a claimant's lower bound, its last digit rounded up
-EDGE = 'zeta23-edge'                  # the Riemann certificate's edge bound, as its own source prints it
-AI_EDGE = '1~1abstract~11'            # the same claim, as an AI-written abstract phrases it (id 1/abstract/1)
-BOOT = 'riemann-104-boot'             # a machine claim from the cryptids release
-FORK = 'records/fork-605.json'        # one file, two readings, both decided (LANGUAGE.md E16)
-PROSE = 'records/prose-riemann-ai.json'  # from prose to claims: the AI phrasings, proposed and validated
-REG = 'records/prose-register.json'  # from prose to claims over cert-machine's register
-MODEL = 'records/model-proposals-riemann-ai.json'  # every call the model proposer made, its tokens and its cost
+CRY, RRUN = 'records/cryptids-run.json', 'records/riemann-run.json'
+PROSE, REG = 'records/prose-riemann-ai.json', 'records/prose-register.json'
+X64, XXY, XST = 'records/xx64-check.json', 'records/xxy-check.json', 'records/xxy-study.json'
+BB5 = 'records/helpers/watch-bb5-twin.json'
 MK = '/summary/perKind/model:claude-opus-5-5'
-
-RUNS = [
-    ('records/einstein-arena-run.json', "EinsteinArena's best solutions"),
-    ('records/alphaevolve-run.json', "AlphaEvolve's results notebook"),
-    ('records/primitive-run.json', "The registry's step-function constants"),
-    ('records/qiushi-run.json', "The Qiushi Engine's kissing release"),
-    ('records/station-run.json', "The Station's artifact folders"),
-    ('records/funsearch-run.json', "FunSearch's construction files"),
-    ('records/riemann-run.json', "The Riemann story's finite certificate"),
-    ('records/riemann-ai-run.json', 'AI-written claims about that certificate'),
-    ('records/riemann-math-run.json', 'Claims written for the Riemann test'),
-    ('records/cryptids-run.json', "Google DeepMind's cryptids release"),
-]
-
-MISSES = {   # the cryptids plants claimbox did not catch, in words; the plant ids are the record's
-    '10-proof-file': 'a proof file edited: no claim the sources print pins it',
-    '11-theorem-removed': 'a theorem removed from a configuration file: counting its names has no decider',
-}
-
+EDGE = 'zeta23-edge'
+INK, INK2, INK3, INK4, INK5, RULE = 'var(--ink)', 'var(--ink-2)', 'var(--ink-3)', 'var(--ink-4)', 'var(--ink-5)', 'var(--rule-strong)'
 WORD_TAG = {'CERTIFIED': 'held', 'REFUTED': 'dep', 'REFUSED': 'open'}
+EMAIL = 'carlos@carlostoledo.co'
 
 
 def chip(path, rid):
@@ -50,40 +30,164 @@ def chip(path, rid):
     return f'<span class="tag {WORD_TAG[word(path, rid)]}">{derived("word", path, rid)}</span>'
 
 
-def derived_count(path, prefix):
-    return derived('outcomes', path, prefix)
+def outcomes(path):
+    return [e['outcome'] for e in load(path)['sentences']]
 
 
-def fork_chip(i):
-    from web.record import at
-    w = at(FORK, f'/claims/0/readings/{i}/word')
-    return f'<span class="tag {WORD_TAG[w]}">{val(FORK, f"/claims/0/readings/{i}/word", "raw")}</span>'
+# ------------------------------------------------------------------------------------------------- the hero
+
+def corpora():
+    """(name, sentences, decided by cert-machine, of them refuted, named holes) per collection, from the records"""
+    t = tally(CRY)
+    ai = outcomes(PROSE)
+    reg = outcomes(REG)
+    return [
+        ("DeepMind’s cryptids release", t['jobs'], t['written'], t['refuted'], t['refused']),
+        ('AI phrasings of a Riemann certificate', len(ai), sum(1 for o in ai if not o.startswith('not stated')), 0,
+         sum(1 for o in ai if o.startswith('not stated'))),
+        ('cert-machine’s register', len(reg), sum(1 for o in reg if not o.startswith('not stated')), 0,
+         sum(1 for o in reg if o.startswith('not stated'))),
+    ]
 
 
-def runs_table():
-    head = ('<div class="tw"><table><thead><tr><th>source</th><th class="n">jobs</th><th class="n">written</th>'
-            '<th class="n">not stated</th><th class="n">skipped</th><th class="n">certified</th><th class="n">refuted</th><th class="n">admitted, undecided</th>'
-            '<th class="n">refused by the checker</th></tr></thead><tbody>')
-    rows = []
-    for path, label in RUNS:
-        cells = [derived('tally', path, k) for k in ('jobs', 'written', 'refused', 'skipped', 'certified', 'refuted', 'undecided', 'checker-refused')]
-        rows.append(f'<tr><td class="k">{esc(label)}</td>' + ''.join(f'<td class="n">{c}</td>' for c in cells) + '</tr>')
-    return head + ''.join(rows) + '</tbody></table></div>'
+HATCH = ('<defs><pattern id="{id}" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+         '<line x1="0" y1="0" x2="0" y2="7" stroke="var(--ink-5)" stroke-width="1.4"/></pattern></defs>')
 
 
-def misses():
-    from web.record import load
-    res = load(CREC)['results']
-    out = []
-    for i, r in enumerate(res):
-        if r['plant'] in MISSES:
-            if r['caught']:
-                raise ValueError(f'{CREC}: plant {r["plant"]} is caught now; the page still lists it as missed')
-            out.append(f'<li><b>{val(CREC, f"/results/{i}/plant", "raw")}</b>: {esc(MISSES[r["plant"]])}.</li>')
-    if len(out) != len(MISSES):
-        raise ValueError(f'{CREC}: the misses the page names are not the record\'s')
-    return '<ul class="plain">' + ''.join(out) + '</ul>'
+def fig_hero(narrow=False):
+    W = 390 if narrow else 1000
+    rows = corpora()
+    L = 0 if narrow else 320
+    bar_h, gap, top = (26, 74, 30) if narrow else (34, 40, 34)
+    H = top + len(rows) * (bar_h + gap) + (80 if narrow else 60)
+    scale = (W - L - (10 if narrow else 150)) / max(r[1] for r in rows)
+    hid = 'hh-n' if narrow else 'hh-w'
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="for each collection of claims, how many cert-machine decided and how many name the reason they cannot be stated">',
+           HATCH.format(id=hid)]
+    out.append(f'<text x="{L}" y="14" font-size="{11 if narrow else 12}">every sentence, and what came back</text>')
+    for i, (name, n, dec, refuted, holes) in enumerate(rows):
+        y = top + i * (bar_h + gap) + (34 if narrow else 0)
+        if narrow:
+            out.append(f'<text x="0" y="{y - 10}" font-size="11.5" class="hi">{esc(name)}</text>')
+        else:
+            out.append(f'<text x="{L - 16}" y="{y + bar_h / 2 + 5}" text-anchor="end" font-size="12" class="hi">{esc(name)}</text>')
+        wd, wh = dec * scale, holes * scale
+        out.append(f'<rect x="{L}" y="{y}" width="{wd:.1f}" height="{bar_h}" fill="{INK}"/>')
+        out.append(f'<rect x="{L + wd + 2:.1f}" y="{y}" width="{max(wh - 2, 1):.1f}" height="{bar_h}" fill="url(#{hid})" stroke="{INK5}" stroke-width="1"/>')
+        if refuted:
+            out.append(f'<text x="{L + wd - 8:.1f}" y="{y + bar_h / 2 + 6}" text-anchor="end" font-size="15" class="wx">{"×" * refuted}</text>')
+        lab_y = y + bar_h + 18
+        out.append(f'<text x="{L}" y="{lab_y}" font-size="11.5" class="hi">{dec:,} decided</text>'
+                   f'<text x="{L + (wd if not narrow else 130)}" y="{lab_y}" font-size="11.5">{holes:,} name the reason</text>')
+    ly = H - (38 if narrow else 18)
+    out.append(f'<rect x="{L}" y="{ly - 10}" width="22" height="12" fill="{INK}"/><text x="{L + 30}" y="{ly}" font-size="11">cert-machine’s word</text>')
+    out.append(f'<rect x="{L + 200}" y="{ly - 10}" width="22" height="12" fill="url(#{hid})" stroke="{INK5}"/><text x="{L + 230}" y="{ly}" font-size="11">a named hole</text>')
+    out.append(f'<text x="{L + (110 if narrow else 350)}" y="{ly + (20 if narrow else 0)}" font-size="11"><tspan class="wx">×</tspan> refuted</text>')
+    out.append('</svg>')
+    return '\n'.join(out)
 
+
+# ------------------------------------------------------------------------------------------------- the proofs
+
+def hole_kinds():
+    """the named holes across the three collections, by kind"""
+    kinds = {}
+    for path in (PROSE, REG):
+        for o in outcomes(path):
+            if o.startswith('not stated: '):
+                k = o[len('not stated: '):].split(',')[0].split(';')[0].strip()
+                kinds[k] = kinds.get(k, 0) + 1
+    for r in load(CRY)['rows']:
+        if r.get('refused'):
+            k = r['refused'].split(':')[0].strip()
+            kinds[k] = kinds.get(k, 0) + 1
+    WORDS = {'data': 'needs its bytes', 'quantity': 'prints no quantity', 'no-quantity': 'prints no quantity', 'prose': 'prose, no claim shape',
+             'unbounded': 'about every case', 'asymptotic': 'a limit', 'approximate': 'approximate (≈)', 'ambiguous': 'can be read two ways',
+             'source': 'the source does not print it', 'decider': 'nothing decides that quantity', 'count': 'the count is not the data’s'}
+    merged = {}
+    for k, v in kinds.items():
+        merged[WORDS.get(k, k)] = merged.get(WORDS.get(k, k), 0) + v
+    return sorted(merged.items(), key=lambda kv: -kv[1])[:7]
+
+
+def fig_holes(narrow=False):
+    rows = hole_kinds()
+    W = 390 if narrow else 560
+    L = 200 if narrow else 220
+    bh, gap, top = 20, 12, 10
+    H = top + len(rows) * (bh + gap) + 10
+    scale = (W - L - 46) / rows[0][1]
+    hid = 'hk-n' if narrow else 'hk-w'
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="the named holes, by kind">', HATCH.format(id=hid)]
+    for i, (k, v) in enumerate(rows):
+        y = top + i * (bh + gap)
+        out.append(f'<text x="{L - 12}" y="{y + bh / 2 + 4}" text-anchor="end" font-size="{10.5 if narrow else 11.5}">{esc(k)}</text>'
+                   f'<rect x="{L}" y="{y}" width="{v * scale:.1f}" height="{bh}" fill="url(#{hid})" stroke="{INK5}"/>'
+                   f'<text x="{L + v * scale + 8:.1f}" y="{y + bh / 2 + 4}" font-size="11.5" class="hi">{v}</text>')
+    out.append('</svg>')
+    return '\n'.join(out)
+
+
+def checks():
+    d = load(PROSE)
+    mp = [p for e in d['sentences'] for p in e['proposals'] if p['kind'].startswith('model:') and 'object' in p]
+    return [('sentences given to the model', d['summary']['sentences']), ('stated as a claim', len(mp)),
+            ('every number found in its sentence', sum(1 for p in mp if p['anchored'])),
+            ('reads back with the sentence’s relation', sum(1 for p in mp if p['printedBack'])),
+            ('moves exactly when its bar is moved', sum(1 for p in mp if p['planted'])),
+            ('stays put when the sentence is reworded', sum(1 for p in mp if p.get('paraphrase') == 'same')),
+            ('equal to the decided reference', sum(1 for p in mp if p['faithful']))]
+
+
+def fig_checks(narrow=False):
+    rows = checks()
+    W = 390 if narrow else 600
+    L = 0 if narrow else 310
+    bh, gap, top = (14, 34, 22) if narrow else (20, 14, 6)
+    H = top + len(rows) * (bh + gap) + 8
+    scale = (W - L - 40) / rows[0][1]
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="the model\'s claims through each check">']
+    for i, (k, v) in enumerate(rows):
+        y = top + i * (bh + gap)
+        if narrow:
+            out.append(f'<text x="0" y="{y - 6}" font-size="11">{esc(k)}</text>')
+        else:
+            out.append(f'<text x="{L - 12}" y="{y + bh / 2 + 4}" text-anchor="end" font-size="11.5">{esc(k)}</text>')
+        fill = INK3 if i == 0 else INK
+        out.append(f'<rect x="{L}" y="{y}" width="{v * scale:.1f}" height="{bh}" fill="{fill}"/>'
+                   f'<text x="{L + v * scale + 8:.1f}" y="{y + bh / 2 + 4}" font-size="11.5" class="hi">{v}</text>')
+    out.append('</svg>')
+    return '\n'.join(out)
+
+
+def fig_trap(narrow=False):
+    """x^x = 64: the root on a number line, the fractions that trap it at each depth, tighter and tighter"""
+    W = 390 if narrow else 560
+    claims = {c['id']: c for c in load(X64)['claims']}
+    pairs = [('above', 'below', '3.3991 < x < 3.3992'), ('cf_above_8', 'cf_below_7', '58815/17303 < x < 47207/13888'),
+             ('cf_above_10', 'cf_below_9', '458912/135009 < x < 400097/117706')]
+    from fractions import Fraction
+    def bar(cid):
+        return Fraction(claims[cid]['statement'].split()[-1])
+    x = float(load(XST)['rows'][62]['x'][:22])
+    H = 46 + len(pairs) * 70
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="the root of x to the x equals 64, trapped between fractions, closer at each step">']
+    for i, (lo_id, hi_id, label) in enumerate(pairs):
+        lo, hi = float(bar(lo_id)), float(bar(hi_id))
+        width = hi - lo
+        y = 30 + i * 70
+        span, mid = width * 1.6, (lo + hi) / 2
+        px = lambda v: 20 + (v - (mid - span / 2)) / span * (W - 40)
+        out.append(f'<line x1="20" x2="{W - 20}" y1="{y + 14}" y2="{y + 14}" stroke="{RULE}" stroke-width="1"/>'
+                   f'<rect x="{px(lo):.1f}" y="{y + 6}" width="{px(hi) - px(lo):.1f}" height="16" fill="{INK}" fill-opacity=".14" stroke="{INK}" stroke-width="1.2"/>'
+                   f'<line x1="{px(x):.1f}" x2="{px(x):.1f}" y1="{y + 2}" y2="{y + 26}" stroke="{INK}" stroke-width="2"/>'
+                   f'<text x="20" y="{y - 4}" font-size="{10.5 if narrow else 11.5}" class="hi">{esc(label)}</text>'
+                   f'<text x="{W - 20}" y="{y + 42}" text-anchor="end" font-size="10.5">width {width:.1e}</text>')
+    out.append(f'<text x="20" y="{H - 6}" font-size="10.5">{"zooming in: the root, and its two fractions" if narrow else "each row zooms in: the line is the root, the box its two fractions"}</text></svg>')
+    return '\n'.join(out)
+
+
+# ------------------------------------------------------------------------------------------------- the secondary material
 
 def roadmap_table():
     head = ('<div class="tw"><table><thead><tr><th>#</th><th>step</th><th>what you get</th><th>how it is checked</th><th>status</th>'
@@ -93,77 +197,28 @@ def roadmap_table():
     return head + body + '</tbody></table></div>'
 
 
+def figure(fn, cap, cls=''):
+    return (f'<figure class="fig {cls}"><div class="only-wide">{fn(False)}</div><div class="only-narrow">{fn(True)}</div>'
+            f'<p class="cap nonum">{cap}</p></figure>')
+
+
 def slots():
-    s = {
+    return {
+        'email': EMAIL,
+        'fig_hero': figure(fig_hero, 'Three collections of claims, as their authors wrote them. Each sentence came back with cert-machine’s word on it, or with the exact reason it cannot be stated as a claim. None was dropped, and none was guessed.', 'hero-fig'),
         'cal_agree': val(CAL, '/agree'), 'cal_of': val(CAL, '/of'),
-        'cry_written': derived('tally', CRY, 'written'), 'cry_decided': derived('tally', CRY, 'decided'),
-        'cry_cert': derived('tally', CRY, 'certified'), 'cry_ref': derived('tally', CRY, 'refuted'),
-        'cry_chk': derived('tally', CRY, 'checker-refused'), 'cry_refused': derived('tally', CRY, 'refused'),
         'rec_caught': val(REC, '/caught'), 'rec_plants': val(REC, '/plants'),
-        'rrec_caught': val(RREC, '/caught'), 'rrec_plants': val(RREC, '/plants'), 'rrec_ok': val(RREC, '/controlsAsExpected'),
-        'crec_caught': val(CREC, '/caught'), 'crec_of': val(CREC, '/of'),
-        'ai_shaped': val(RCOV, '/aiPhrasings/shaped'), 'ai_n': val(RCOV, '/aiPhrasings/sentences'),
-        'ai_ref': val(RCOV, '/aiPhrasings/refused'),
-        'ex_claim': val(PRIM, f'/rows/[id={EX}]/claim', 'raw', standing='computed'),
-        'ex_source': val(PRIM, f'/rows/[id={EX}]/source', 'raw'),
-        'ex_bar': val(PRIM, f'/rows/[id={EX}]/predicate/0/c', 'raw'),
-        'ex_word': chip(PRIM, EX), 'prim_sha': derived('sha12', PRIM),
-        'edge_claim': val(RRUN, f'/rows/[id={EDGE}]/claim', 'raw', standing='computed'),
-        'edge_word': chip(RRUN, EDGE),
-        'ai_text': val(AIP, '/rows/1/text', 'raw', standing='computed'),
-        'ai_rule': val(RCOV, f'/aiPhrasings/rows/[id={AI_EDGE}]/refused', 'raw', standing='refused'),
-        'rrun_sha': derived('sha12', RRUN), 'rcov_sha': derived('sha12', RCOV),
-        'boot_file': val(CRY, f'/rows/[id={BOOT}]/claim', 'raw', standing='computed'),
-        'boot_pin': val(CRY, f'/rows/[id={BOOT}]/pin', 'raw'),
-        'boot_steps': derived('shape', CRY, BOOT, 'steps', count=False),
-        'boot_state': derived('shape', CRY, BOOT, 'state', count=False),
-        'boot_head': derived('shape', CRY, BOOT, 'head', count=False),
-        'boot_nonzero': derived('shape', CRY, BOOT, 'nonzero', count=False),
-        'boot_word': derived('word', CRY, BOOT), 'cry_sha': derived('sha12', CRY),
-        'runs': runs_table(), 'misses': misses(),
-        'pr_n': val(PROSE, '/summary/sentences'), 'pr_made': val(PROSE, '/summary/proposals'), 'pr_valid': derived_count(PROSE, 'validated'),
-        'pr_not': val(PROSE, '/summary/notStated'), 'pr_one': derived_count(PROSE, 'proposed, not validated: one kind'),
-        'pr_ref': derived_count(PROSE, 'refused'), 'pr_rp': derived_count(PROSE, 'refused: a proposal fails planted'), 'pr_cert': derived('proposalWords', PROSE, 'CERTIFIED'),
-        'pr_g': val(PROSE, '/summary/perKind/grammar/compiled'), 'pr_m': val(PROSE, MK + '/compiled'),
-        'pr_mh': val(PROSE, MK + '/holes'), 'pr_mf': val(PROSE, MK + '/faithful'), 'pr_ms': val(PROSE, MK + '/sameValueOtherPrint', count=True),
-        'pr_mn': val(PROSE, MK + '/noReference', count=True), 'pr_mu': val(PROSE, MK + '/unfaithful', count=True),
-        'pr_mph': val(PROSE, MK + '/plantedHeld'), 'pr_mpb': val(PROSE, MK + '/plantedBroke', count=True),
-        'pa_same': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/same'), 'pa_moved': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/moved', count=True),
-        'pa_unread': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/unread', count=True), 'pa_g': val(PROSE, '/summary/paraphrase/grammar/unread', count=True),
-        'r_bytes': val(REG, MK + '/proposed'), 'r_g': val(REG, '/summary/perKind/grammar/compiled'),
-        'r_gf': val(REG, '/summary/perKind/grammar/faithful'), 'r_gn': val(REG, '/summary/perKind/grammar/noReference', count=True),
-        'r_cert': derived('proposalWords', REG, 'CERTIFIED'), 'r_refd': derived('proposalWords', REG, 'REFUSED'), 'r_made': val(REG, '/summary/proposals'), 'r_m': val(REG, MK + '/compiled'),
-        'r_one': derived_count(REG, 'proposed, not validated: one kind'), 'r_ref': derived_count(REG, 'refused'),
-        'r_valid': derived_count(REG, 'validated'), 'r_data': derived_count(REG, 'not stated: data'),
-        'h_edge': val('records/helpers/edge-d1.json', '/tightestStatement', 'raw', standing='decided'),
-        'h_edge_n': val('records/helpers/edge-d1.json', '/neighbour', 'raw', standing='decided'),
-        'h_rows': val('records/helpers/rows-near-cue.json', '/tightestStatement', 'raw', standing='decided'),
-        'h_rows_from': val('records/helpers/rows-near-cue.json', '/from', 'raw', standing='computed'),
-        'h_c1c': val('records/helpers/c1c-k3072-repair.json', '/tightestStatement', 'raw', standing='decided'),
-        'h_cmt': val('records/helpers/cmt-digits.json', '/extendedStatement', 'raw', standing='decided'),
-        'h_cmt_stop': val('records/helpers/cmt-digits.json', '/stopped', 'raw', standing='refused'),
-        'w_b4': val('records/helpers/watch-bb4-twin.json', '/counterexample'), 'w_b5': val('records/helpers/watch-bb5-twin.json', '/counterexample'),
-        'w_g': val('records/helpers/watch-goldbach-25.json', '/reach'), 'w_r': val('records/helpers/watch-riemann-120.json', '/reach'),
-        'w_z': val('records/helpers/watch-zf-393.json', '/reach'),
-        'sv_held': val(PROSE, '/summary/sensitivity/held'), 'sv_broke': val(PROSE, '/summary/sensitivity/broke', count=True),
-        'sv_tight': val(PROSE, '/summary/sensitivity/tight'), 'v_dep': val(PROSE, '/summary/vacuity/depends'),
-        'v_flag': val(PROSE, '/summary/vacuity/flagged', count=True), 'pp_n': val(PROSE, '/summary/pairs/sentences'),
-        'pp_ref': val(PROSE, '/summary/pairs/agreeOnReference'), 'pp_else': val(PROSE, '/summary/pairs/agreeElsewhere', count=True),
-        'm_id': val(MODEL, '/model', 'raw', standing='computed'), 'm_calls': val(MODEL, '/calls'),
-        'm_spent': val(MODEL, '/spent', 'raw', standing='computed'), 'm_cap': val(MODEL, '/cap', standing='computed'),
-        'fork_sha': derived('sha12', FORK), 'fork_stmt': val(FORK, '/claims/0/statement', 'raw'), 'fork_n': val(FORK, '/claims/0/readings/0/count'),
-        **{f'fork_r{i}': val(FORK, f'/claims/0/readings/{i}/reading', 'raw') for i in (0, 1)},
-        **{f'fork_w{i}': fork_chip(i) for i in (0, 1)},
-        **{f'fork_v{i}': val(FORK, f'/claims/0/readings/{i}/violating') for i in (0, 1)},
-        **{f'fork_i{i}': val(FORK, f'/claims/0/readings/{i}/witness/i', 'raw') for i in (0, 1)},
-        **{f'fork_j{i}': val(FORK, f'/claims/0/readings/{i}/witness/j', 'raw') for i in (0, 1)},
-        'cov_shaped': val(COV, '/shaped'), 'cov_n': val(COV, '/sentences'),
-        'cov_noq': val(COV, '/byRefusal/no-quantity'), 'cov_prose': val(COV, '/byRefusal/prose'),
-        'cov_asym': val(COV, '/byRefusal/asymptotic'),
-        'rai_exp': derived('expected', 'corpus/riemann-ai-jobs.json', 'records/riemann-ai-run.json'),
-        'rai_n': derived('jobs', 'corpus/riemann-ai-jobs.json'),
-        'rmath_exp': derived('expected', 'corpus/riemann-math-jobs.json', 'records/riemann-math-run.json'),
-        'rmath_n': derived('jobs', 'corpus/riemann-math-jobs.json'),
+        'd64': derived('powerDigits', X64, '/claims/[id=cf_above_10]/statement'),
+        'bb5': val(BB5, '/counterexample'),
+        'cov_ref': val(COV, '/refused'), 'cov_n': val(COV, '/sentences'),
+        'fig_holes': figure(fig_holes, 'The reasons a sentence could not be stated, across the three collections. Most need the bytes the claim is about, or print no quantity at all.'),
+        'pr_m': val(PROSE, MK + '/compiled'), 'pr_n': val(PROSE, '/summary/sentences'), 'pr_mf': val(PROSE, MK + '/faithful'),
+        'pa_moved': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/moved', count=True),
+        'pr_valid': derived('outcomes', PROSE, 'validated'),
+        'fig_checks': figure(fig_checks, 'A model, given each sentence alone, wrote the claim. Each bar is how many of its claims passed one more check. None of the checks is a model.'),
+        'x_dec': derived('length', XST, '/decidedYs'), 'x_cert': derived('checkWords', XXY, 'CERTIFIED'),
+        'x_lo': derived('barOf', X64, '/claims/[id=cf_above_10]/statement'), 'x_hi': derived('barOf', X64, '/claims/[id=cf_below_9]/statement'),
+        'fig_trap': figure(fig_trap, 'The root of x<sup>x</sup> = 64, trapped between fractions. Each step is one comparison of whole numbers on each side, decided exactly, with no logarithm evaluated.'),
+        'edge_claim': val(RRUN, f'/rows/[id={EDGE}]/claim', 'raw', standing='computed'), 'edge_word': chip(RRUN, EDGE),
         'roadmap': roadmap_table(),
     }
-    return s
