@@ -1009,6 +1009,33 @@ try:
 except Refusal as e:
     got = e.rule
 red(got == 'decider', 'helpers: refused — tighten on a print cut off with "…" (that is extend\'s)', str(got))
+# watchers: a claim about every case, each instance decided by cert-machine (its machine decider, then its checker); two planted
+# twins, the BB(4) and BB(5) champions, must halt exactly at their known steps; the cryptid machines are not refuted up to 10^8
+WT = lang.parse(open(os.path.join(REPO, 'corpus', 'watchers', 'machines.claim'), encoding='utf-8').read())
+WC = {i['id']: i for i in WT['items'] if i['kw'] == 'claim'}
+b4 = H.watch(WT, WC['bb4_twin'], ROOT, 1000)
+ok(b4['counterexample'] == 107 and b4['before'] == 'CERTIFIED' and b4['settled'],
+   'helpers: the planted twin BB(4) halts the watcher exactly at its known step, 107, the step before certified', b4['result'])
+WREC = {n: json.load(open(os.path.join(REPO, 'records', 'helpers', n + '.json'), encoding='utf-8'))
+        for n in ('watch-bb5-twin', 'watch-goldbach-25', 'watch-riemann-120', 'watch-zf-393')}
+ok(WREC['watch-bb5-twin']['counterexample'] == 47176870 and WREC['watch-bb5-twin']['before'] == 'CERTIFIED',
+   'helpers: the planted twin BB(5) halted the watcher exactly at 47,176,870 steps (the record)', WREC['watch-bb5-twin']['result'])
+ok(all(WREC[n]['counterexample'] is None and WREC[n]['reach'] == 10 ** 8 and not any(a['word'] != 'CERTIFIED' for a in WREC[n]['asked'])
+       for n in ('watch-goldbach-25', 'watch-riemann-120', 'watch-zf-393')),
+   'helpers: the Goldbach, Riemann and ZF machines are not refuted up to 10^8 steps — reported so, never CERTIFIED', 'three watchers')
+realww = H.Watch.word
+try:
+    H.Watch.word = lambda self, n: (self.asked.append({'n': n, 'statement': self.instance(n), 'word': 'CERTIFIED', 'certMachine': ''}) or 'CERTIFIED')
+    stuck_w = H.watch(WT, WC['bb4_twin'], ROOT, 1000)
+finally:
+    H.Watch.word = realww
+red(stuck_w['counterexample'] != 107, 'helpers: refused — a decider that never refutes misses the planted twin\'s predicted step (BB(4) at 107)', stuck_w['result'])
+try:
+    H.watch(EXH and lang.parse(EXH['E6']), [i for i in lang.parse(EXH['E6'])['items'] if i['kw'] == 'claim'][0], ROOT, 10)
+    got = None
+except Refusal as e:
+    got = e.rule
+red(got == 'watcher', 'helpers: refused — watch on a claim that is not about every case', str(got))
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

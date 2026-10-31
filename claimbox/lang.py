@@ -278,7 +278,15 @@ def statement(text, line):
         return ('forall', var, quant_range(var, rng, line), statement(body, line))
     m = re.match(r'^for every (\w+) : (.+)$', t)
     if m:
-        return ('forall', m.group(1), None, statement(m.group(2), line))
+        var, body = m.groups()
+        inner = statement(body, line)
+        if inner[0] == 'hole' and re.search(r'\b' + re.escape(var) + r'\b', body):
+            # a statement whose number is the variable (M does not halt within T steps): a template, each instance a statement
+            # once a number stands for the variable — the watcher decides instances (claimbox/helpers.py, step 7)
+            inst = statement(re.sub(r'\b' + re.escape(var) + r'\b', '1', body), line)
+            if inst[0] != 'hole':
+                inner = ('template', body, var, inst[0])
+        return ('forall', var, None, inner)
     m = re.match(r'^there is (\w+) : (.+)$', t)
     if m:
         return ('exists', m.group(1), statement(m.group(2), line))
@@ -395,6 +403,8 @@ def fmt_statement(s):
         return f'{s[1]} is a feasible solution of "{s[2]}" and its score is {fmt_bar(s[3])}'
     if k == 'machine':
         return MACHINE_FMT[s[1]['kind']](s[1])
+    if k == 'template':
+        return s[1]
     raise ValueError('a hole prints no statement')
 
 
@@ -416,6 +426,8 @@ def statement_means(s):
         return f'{s[1]} meets every condition of "{s[2]}", and the score the platform defines is {bar_words(s[3], "=")}'
     if k == 'machine':
         return MACHINE_MEANS[s[1]['kind']](s[1])
+    if k == 'template':
+        return f'"{s[1]}", with a number for {s[2]}'
     return f'not stated: hole {s[1]}, {s[2]}'
 
 
@@ -540,6 +552,8 @@ def data_in(s, out):
         out.add(s[2] if k == 'config' else s[1])
     elif k == 'decomp':
         out.add(s[1])
+    elif k == 'template':
+        data_in(statement(re.sub(r'\b' + re.escape(s[2]) + r'\b', '1', s[1]), 0), out)
     elif k == 'machine':
         for key in FILE_KEYS:
             if key in s[1]:

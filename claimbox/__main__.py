@@ -16,6 +16,8 @@
   tighten FILE[#E6] CLAIM [--digits N] [--name N]  step 7: the strongest bar cert-machine certifies (at N decimals) and its refuted neighbour,
                                                    every candidate decided by cert-machine; --name writes corpus/helpers/N.md and records/helpers/N.json
   extend FILE[#E4] CLAIM [--more K] [--name N]     the next K digits of a print cut off with "…", each the one digit cert-machine certifies
+  watch FILE CLAIM --reach N [--name N]           a claim about every case: a counterexample (the first refuted instance) or not refuted
+                                                   up to N, every instance decided by cert-machine; --name writes records/helpers/N.json
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -71,6 +73,11 @@ def main(argv=None):
     ck.add_argument('--run', action='store_true')
     ck.add_argument('--record')
     sub.add_parser('library')
+    wt = sub.add_parser('watch')
+    wt.add_argument('file')
+    wt.add_argument('claim')
+    wt.add_argument('--reach', type=int, required=True)
+    wt.add_argument('--name')
     for name in ('tighten', 'extend'):
         h = sub.add_parser(name)
         h.add_argument('file')
@@ -112,6 +119,29 @@ def main(argv=None):
                            'corpus': a.corpus, 'summary': s, 'sentences': entries}, f, indent=1, ensure_ascii=False)
                 f.write('\n')
             print('record ' + a.record)
+        return 0
+    if a.cmd == 'watch':
+        from . import helpers, lang
+        tree = lang.parse(open(a.file, encoding='utf-8').read())
+        c = next((i for i in tree['items'] if i['kw'] == 'claim' and i['id'] == a.claim), None)
+        if c is None:
+            print('REFUSED  no claim ' + a.claim)
+            return 1
+        try:
+            r = helpers.watch(tree, c, ROOT, a.reach)
+        except Refusal as e:
+            print(f'REFUSED  {e.rule}: {e.msg}')
+            return 1
+        for x in r['asked']:
+            print(f'  {x["word"]:<10} {x["statement"]}')
+        print(r['result'] + ('' if r['settled'] else '   UNSETTLED: the instance before it is not certified'))
+        if a.name:
+            os.makedirs(os.path.join(helpers.REPO, 'records', 'helpers'), exist_ok=True)
+            with open(os.path.join(helpers.REPO, 'records', 'helpers', a.name + '.json'), 'w', encoding='utf-8') as f:
+                json.dump(dict(r, what='claimbox watch: a claim about every case, every instance asked and cert-machine\'s word on it; the result is '
+                                       'a counterexample or "not refuted up to N", never CERTIFIED', file=a.file), f, indent=1, ensure_ascii=False)
+                f.write('\n')
+            print('record records/helpers/' + a.name + '.json')
         return 0
     if a.cmd in ('tighten', 'extend'):
         from . import helpers, lang

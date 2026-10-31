@@ -1,0 +1,21 @@
+{
+ "claim": "zf_393",
+ "statement": "for every T : Z does not halt within T steps",
+ "monotone": true,
+ "reach": 100000000,
+ "counterexample": null,
+ "counterexampleStatement": null,
+ "before": null,
+ "result": "not refuted up to T = 100000000",
+ "settled": true,
+ "asked": [
+  {
+   "n": 100000000,
+   "statement": "Z does not halt within 100000000 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  zf-393-100000000  [CERTIFIED]  0.001 s"
+  }
+ ],
+ "what": "claimbox watch: a claim about every case, every instance asked and cert-machine's word on it; the result is a counterexample or \"not refuted up to N\", never CERTIFIED",
+ "file": "corpus/watchers/machines.claim"
+}

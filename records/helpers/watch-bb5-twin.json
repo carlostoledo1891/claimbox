@@ -1,0 +1,177 @@
+{
+ "claim": "bb5_twin",
+ "statement": "for every T : B5 does not halt within T steps",
+ "monotone": true,
+ "reach": 100000000,
+ "counterexample": 47176870,
+ "counterexampleStatement": "B5 does not halt within 47176870 steps",
+ "before": "CERTIFIED",
+ "result": "a counterexample at T = 47176870",
+ "settled": true,
+ "asked": [
+  {
+   "n": 100000000,
+   "statement": "B5 does not halt within 100000000 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-100000000  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 50000000,
+   "statement": "B5 does not halt within 50000000 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-50000000  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 25000000,
+   "statement": "B5 does not halt within 25000000 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-25000000  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 37500000,
+   "statement": "B5 does not halt within 37500000 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-37500000  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 43750000,
+   "statement": "B5 does not halt within 43750000 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-43750000  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 46875000,
+   "statement": "B5 does not halt within 46875000 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-46875000  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 48437500,
+   "statement": "B5 does not halt within 48437500 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-48437500  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47656250,
+   "statement": "B5 does not halt within 47656250 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47656250  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47265625,
+   "statement": "B5 does not halt within 47265625 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47265625  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47070312,
+   "statement": "B5 does not halt within 47070312 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47070312  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47167968,
+   "statement": "B5 does not halt within 47167968 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47167968  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47216796,
+   "statement": "B5 does not halt within 47216796 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47216796  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47192382,
+   "statement": "B5 does not halt within 47192382 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47192382  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47180175,
+   "statement": "B5 does not halt within 47180175 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47180175  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47174071,
+   "statement": "B5 does not halt within 47174071 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47174071  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47177123,
+   "statement": "B5 does not halt within 47177123 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47177123  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47175597,
+   "statement": "B5 does not halt within 47175597 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47175597  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176360,
+   "statement": "B5 does not halt within 47176360 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47176360  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176741,
+   "statement": "B5 does not halt within 47176741 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47176741  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176932,
+   "statement": "B5 does not halt within 47176932 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47176932  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176836,
+   "statement": "B5 does not halt within 47176836 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47176836  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176884,
+   "statement": "B5 does not halt within 47176884 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47176884  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176860,
+   "statement": "B5 does not halt within 47176860 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47176860  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176872,
+   "statement": "B5 does not halt within 47176872 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47176872  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176866,
+   "statement": "B5 does not halt within 47176866 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47176866  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176869,
+   "statement": "B5 does not halt within 47176869 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-twin-47176869  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176870,
+   "statement": "B5 does not halt within 47176870 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-twin-47176870  [REFUTED]  0.0 s"
+  }
+ ],
+ "what": "claimbox watch: a claim about every case, every instance asked and cert-machine's word on it; the result is a counterexample or \"not refuted up to N\", never CERTIFIED",
+ "file": "corpus/watchers/machines.claim"
+}

@@ -7,6 +7,13 @@ certifies: the claim repaired. The pair is the result and both words are cert-ma
 whose truncation box cert-machine certifies — exactly one of the ten must be; none means the bytes do not decide that digit, two
 mean the decision does not move with the bar, and the search stops and says so.
 
+WATCH a claim about every case, `for every T : STATEMENT(T)`: each instance (a number for T) compiled and decided by cert-machine;
+its only results are a counterexample — the first instance cert-machine refutes, beside the one before it, which it certifies — or
+"not refuted up to N", never CERTIFIED. A family that is monotone in its number (a machine that does not halt within T steps
+does not within any fewer) is decided at N and, when refuted there, bisected to its first counterexample; any other is decided
+instance by instance. A machine statement is decided by cert-machine's machine decider (instruments/claimbox/tm.py --decide),
+whose row is attached as the instance's record. A planted twin — a claim known false at a predicted instance — must halt there.
+
 Each candidate is the claim with its bar replaced, quoted from a source the search writes itself, so every number still has an
 address: corpus/helpers/<name>.md holds the statements the result rests on, records/helpers/<name>.json every candidate asked and
 cert-machine's word on it. A candidate is decided from the object alone: a record decides one bar only (cert-machine 1e829d0b),
@@ -16,6 +23,7 @@ import copy
 import json
 import os
 import re
+import subprocess
 
 from . import compile as C, lang, translate as T
 from .grammar import Refusal
@@ -179,3 +187,97 @@ def write(result, name, data_var):
     kind = 'tighten' if 'tightest' in result else 'extend'
     return (f'source H = ../claimbox/corpus/helpers/{name}.md\n'
             f'claim  {result["claim"]}_{kind} over {data_var}\n  quote "{stmt}" from H\n  : {stmt}\n  proposed by search:{kind}\n')
+
+
+# ------------------------------------------------------------------------------------------------- watchers
+
+MONOTONE = ('no_halt',)               # instance families where the claim at N implies it at every smaller number
+
+
+class Watch(Search):
+    """the instances of one watcher: the template with a number for its variable, compiled from the claim's own tree"""
+
+    def __init__(self, tree, claim, root):
+        self.tree, self.claim, self.root, self.asked = tree, claim, root, []
+        t = claim['stmt'][3]
+        self.body, self.var, self.family = t[1], t[2], t[3]
+
+    def instance(self, n):
+        return re.sub(r'\b' + re.escape(self.var) + r'\b', str(n), self.body)
+
+    def word(self, n):
+        stmt = self.instance(n)
+        os.makedirs(PLANTS, exist_ok=True)
+        tag = re.sub(r'\W', '-', self.claim['id']) + '-' + str(n)
+        src = os.path.join(PLANTS, 'watch-' + tag + '.md')
+        rec = os.path.join(PLANTS, 'watch-' + tag + '.record.json')
+        objp = os.path.join(PLANTS, 'watch-' + tag + '.json')
+        with open(src, 'w', encoding='utf-8') as f:
+            f.write(stmt + '\n')
+        tree = copy.deepcopy(self.tree)
+        c = copy.deepcopy(self.claim)
+        tree['items'] = [dict(i, path=rel_of(src)) if i['kw'] == 'source' and i['name'] == c['from'] else i for i in tree['items']]
+        c.update(quote=stmt, stmt=lang.statement(stmt, c['line']), record=None, id=c['id'] + '-' + str(n))
+        try:
+            obj = C.compile_claim(tree, c, self.root)[0]['object']
+            if any(isinstance(p.get('g'), dict) and p['g'].get('where') == TM for p in obj['predicate']):
+                # the machine decider is cert-machine's: it runs the machine and writes the row the instance's record names
+                with open(objp, 'w', encoding='utf-8') as f:
+                    json.dump(obj, f)
+                subprocess.run(['python3', os.path.join(self.root, TM), '--decide', '--record', rec, objp], capture_output=True, text=True, timeout=4 * 3600)
+                row = next((r for r in json.load(open(rec, encoding='utf-8')).get('rows', []) if r.get('id') == obj['id']), None)
+                if row is None:
+                    raise Refusal('decider', 'the machine decider wrote no row for ' + obj['id'])
+                obj['record'] = {'path': rel_of(rec), 'row': obj['id'], 'value': None, 'verdict': row['verdict']}
+            line = T.check_with_cert_machine(obj, self.root)
+            w = C.word(line)
+        except Refusal as e:
+            w, line = 'refused', f'{e.rule}: {e.msg}'
+        finally:
+            for x in (src, rec, objp):
+                if os.path.exists(x):
+                    os.remove(x)
+        self.asked.append({'n': n, 'statement': stmt, 'word': w, 'certMachine': line[:160]})
+        return w
+
+
+TM = 'instruments/claimbox/tm.py'
+
+
+def watch(tree, claim, root, reach, start=1):
+    """a counterexample (the first refuted instance, the one before it certified) or not refuted up to `reach`"""
+    s = claim['stmt']
+    if s[0] != 'forall' or s[2] is not None or s[3][0] != 'template':
+        raise Refusal('watcher', 'watch takes a claim about every case whose statement has the variable for its number: for every T : … T …')
+    w = Watch(tree, claim, root)
+    machine_kind = lang.statement(w.instance(1), 0)
+    monotone = machine_kind[0] == 'machine' and machine_kind[1]['kind'] in MONOTONE
+    found = None
+    if monotone:
+        top = w.word(reach)
+        if top == 'REFUTED':
+            lo, hi = start - 1, reach                  # lo: the last instance known certified (0 steps: nothing has run)
+            while hi - lo > 1:
+                mid = (lo + hi) // 2
+                if w.word(mid) == 'REFUTED':
+                    hi = mid
+                else:
+                    lo = mid
+            found = hi
+        elif top != 'CERTIFIED':
+            raise Refusal('decider', 'the instance at ' + str(reach) + ' is not decided: ' + top)
+    else:
+        for n in range(start, reach + 1):
+            v = w.word(n)
+            if v == 'REFUTED':
+                found = n
+                break
+            if v != 'CERTIFIED':
+                raise Refusal('decider', 'the instance at ' + str(n) + ' is not decided: ' + v)
+    before = None
+    if found is not None and found - 1 >= start:
+        before = next((a['word'] for a in w.asked if a['n'] == found - 1), None) or w.word(found - 1)
+    return {'claim': claim['id'], 'statement': lang.fmt_statement(s), 'monotone': monotone, 'reach': reach,
+            'counterexample': found, 'counterexampleStatement': w.instance(found) if found is not None else None, 'before': before,
+            'result': (f'a counterexample at {w.var} = {found}' if found is not None else f'not refuted up to {w.var} = {reach}'),
+            'settled': found is None or before in (None, 'CERTIFIED'), 'asked': w.asked}

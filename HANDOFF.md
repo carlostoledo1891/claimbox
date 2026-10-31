@@ -243,7 +243,18 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    equals web/dist's, checked here with curl. COMING from cert-machine-cb: tools/run-mc100-einstein.js's agreement() measured to
    the far end of the enclosure and certs/mc100-einstein-arena.json re-recorded (no verdict expected to move) — then make drift
    (the record is read in place by the recorded route, not pinned), re-run the register and the battery.
-   NEXT: step 7's attack, then watchers; the operator's worksheet; readers for the 108 register sentences without bytes.
+   WATCHERS (step 7, continued overnight under the operator's caffeinate): lang.py reads a watcher whose statement has the
+   variable for its number as ('template', body, var, kind); helpers.Watch decides an instance by compiling it (a source the
+   watcher writes), running cert-machine's machine decider (instruments/claimbox/tm.py --decide --record, into .plants/) and
+   attaching its row as the record, then cert-machine's checker; helpers.watch: monotone families (no_halt) decided at the reach and
+   bisected, others instance by instance; `claimbox watch FILE CLAIM --reach N [--name N]`. corpus/watchers/machines.claim (+ .md):
+   the BB(4) and BB(5) champions as planted twins (cert-machine's instruments/ledger/machines) and goldbach_25, riemann_120, zf_393.
+   RESULTS (records/helpers/watch-*.json): BB(4) halted exactly at 107, BB(5) at 47,176,870 (27 instances, 3 min 13 s); the three
+   cryptid machines not refuted up to 10^8 steps (~15 s each). Battery §11: the BB(4) twin re-run, the BB(5) and the three records,
+   reds (a decider that never refutes misses the twin; watch on a bounded claim). The page's "Helpers, begun" gains the watchers.
+   make test: 512 pass, 0 fail, 118/118 reds. PLAN.md r12.
+   NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes; the coming
+   re-record of certs/mc100-einstein-arena.json (cert-machine-cb) — re-run the register then.
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)

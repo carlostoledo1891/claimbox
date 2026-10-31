@@ -1,0 +1,81 @@
+{
+ "claim": "bb4_twin",
+ "statement": "for every T : B4 does not halt within T steps",
+ "monotone": true,
+ "reach": 1000,
+ "counterexample": 107,
+ "counterexampleStatement": "B4 does not halt within 107 steps",
+ "before": "CERTIFIED",
+ "result": "a counterexample at T = 107",
+ "settled": true,
+ "asked": [
+  {
+   "n": 1000,
+   "statement": "B4 does not halt within 1000 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-twin-1000  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 500,
+   "statement": "B4 does not halt within 500 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-twin-500  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 250,
+   "statement": "B4 does not halt within 250 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-twin-250  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 125,
+   "statement": "B4 does not halt within 125 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-twin-125  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 62,
+   "statement": "B4 does not halt within 62 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-twin-62  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 93,
+   "statement": "B4 does not halt within 93 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-twin-93  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 109,
+   "statement": "B4 does not halt within 109 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-twin-109  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 101,
+   "statement": "B4 does not halt within 101 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-twin-101  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 105,
+   "statement": "B4 does not halt within 105 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-twin-105  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 107,
+   "statement": "B4 does not halt within 107 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-twin-107  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 106,
+   "statement": "B4 does not halt within 106 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-twin-106  [CERTIFIED]  0.0 s"
+  }
+ ],
+ "what": "claimbox watch: a claim about every case, every instance asked and cert-machine's word on it; the result is a counterexample or \"not refuted up to N\", never CERTIFIED",
+ "file": "corpus/watchers/machines.claim"
+}

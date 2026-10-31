@@ -119,6 +119,14 @@ to N*, with the pin and the date; never CERTIFIED. `there is VAR : statement` is
 which cert-machine decides. `for every VAR there is …` has no machine that halts exactly when it is false: hole
 `unbounded`. Asymptotic forms (`O(·)`, `o(k)`, limits) are hole `asymptotic`.
 
+A watcher's statement may have the variable for its number — `for every T : M does not halt within T steps` — and is then a
+template: each instance is the statement with a number for T. `python3 -m claimbox watch FILE CLAIM --reach N` (step 7,
+claimbox/helpers.py) decides instances with cert-machine; a family monotone in its number (a machine that does not halt within
+T steps does not within fewer) is decided at N and, when refuted, bisected to its first counterexample, the instance before it
+certified. A planted twin — the same claim over a machine known to halt at a predicted step — must halt the watcher exactly
+there: corpus/watchers/machines.claim holds the BB(4) and BB(5) champions (107 and 47,176,870 steps) beside the cryptid
+machines.
+
 ## 4 · The library
 
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —
@@ -552,5 +560,5 @@ appear here.
 | `shape:machine/ratio` `shape:machine/pct` | a printed ratio or percentage (§3.1) |
 | `rule:source` `rule:data` `rule:count` `rule:kissing-count` `rule:decider` `rule:resolution` `rule:reading` `rule:range` | holes (§6) |
 | `rule:unbounded` `rule:asymptotic` `rule:approximate` `rule:ambiguous` `rule:no-quantity` `rule:prose` `rule:empty` | holes (§6) |
-| `rule:watcher` | not a hole: a claim about every case is a watcher or a hunter (§3.2), compiled to nothing until roadmap step 7 |
+| `rule:watcher` | not a hole: a claim about every case is a watcher or a hunter (§3.2), compiled to no single object; `claimbox watch` decides its instances |
 | `rule:definition` | a name the library does not have, or has at another version (§4) |

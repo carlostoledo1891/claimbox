@@ -1,0 +1,35 @@
+-- Watchers (step 7): claims about every case, each instance decided by cert-machine (its machine decider, tm.py, then its checker).
+-- A result is a counterexample or "not refuted up to N", never CERTIFIED: python3 -m claimbox watch corpus/watchers/machines.claim CLAIM --reach N
+-- Two planted twins first, each known false at a predicted step — the watcher must halt exactly there: the BB(4) and BB(5)
+-- champions (cert-machine's instruments/ledger/machines), which halt after 107 and 47,176,870 steps.
+source W = ../claimbox/corpus/watchers/machines.md
+data   B4 = instruments/ledger/machines/bb4.tm
+read   B4 as table (Q, 2)
+data   B5 = instruments/ledger/machines/bb5.tm
+read   B5 as table (Q, 2)
+data   G = corpus/cryptids/baselines/tables/goldbach_25.txt
+read   G as table (Q, 2)
+data   R = corpus/cryptids/baselines/tables/riemann_120.txt
+read   R as table (Q, 2)
+data   Z = corpus/cryptids/baselines/tables/zf_393.txt
+read   Z as table (Q, 2)
+
+claim  bb4_twin
+  quote "for every T : B4 does not halt within T steps" from W
+  : for every T : B4 does not halt within T steps
+
+claim  bb5_twin
+  quote "for every T : B5 does not halt within T steps" from W
+  : for every T : B5 does not halt within T steps
+
+claim  goldbach_25
+  quote "for every T : G does not halt within T steps" from W
+  : for every T : G does not halt within T steps
+
+claim  riemann_120
+  quote "for every T : R does not halt within T steps" from W
+  : for every T : R does not halt within T steps
+
+claim  zf_393
+  quote "for every T : Z does not halt within T steps" from W
+  : for every T : Z does not halt within T steps

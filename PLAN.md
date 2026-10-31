@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 11, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 12, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -202,6 +202,13 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r12, 2026-10-30.** Watchers run. A watcher's statement may have its variable for its number (`for every T : M does not
+  halt within T steps`, a template); `claimbox watch` decides instances with cert-machine — its machine decider tm.py writes the
+  row, its checker the word — and a family monotone in its number is decided at the reach and bisected to its first
+  counterexample. Planted twins halt it exactly where predicted: the four-state busy-beaver champion at step 107, the five-state
+  one at 47,176,870 (27 instances, about three minutes). The Goldbach, Riemann and ZF machines of the cryptids corpus: not refuted
+  up to 10^8 steps, reported so, never certified (corpus/watchers/machines.claim, records/helpers/watch-*.json). Step 7 still to
+  do: attack (a counterexample search beyond a bounded family) and hunters (`there is`).
 - **r11, 2026-10-30.** Step 7 begun, tighten first (the operator's choice): claimbox/helpers.py, `claimbox tighten` and
   `claimbox extend`, every candidate decided by cert-machine. Results (records/helpers/): |D(1)| ≤ 0.823953160713 at twelve
   decimals (…712 refuted); the near-CUE rows max |256·S(j) − j| ≤ 1.837·10⁻⁴⁰ (the source prints 3·10⁻⁴⁰); the rounded-up lower
