@@ -1,0 +1,33 @@
+{
+ "what": "the step at which each planted twin's champion first reads the cell its mutant changes, computed by cert-machine's tm.js (its parseTable and simulate, read-only); from that step on the claim \"after T steps M has the tape and head the mutant has after T steps\" is false, before it true",
+ "tmjs": {
+  "path": "instruments/claimbox/tm.js",
+  "sha256": "7324f96960b98065f8157ccd6223612fe8b2609417b0c78c2783535a0d0e43ed"
+ },
+ "twins": {
+  "bb4": {
+   "cell": [
+    2,
+    0
+   ],
+   "firstRead": 107,
+   "haltedAt": 107,
+   "machine": "instruments/ledger/machines/bb4.tm",
+   "mutant": "corpus/attack/bb4-mutant.tm",
+   "machineSha256": "2c8e63f09baffeb210a31c831cee084975300b3a167fa68374cbb8611cccebb1",
+   "mutantSha256": "5f225e77d6a1c54035bc76d79ffc313273acd54217070f8ebe0400212d2a19b9"
+  },
+  "bb5": {
+   "cell": [
+    4,
+    0
+   ],
+   "firstRead": 47176870,
+   "haltedAt": 47176870,
+   "machine": "instruments/ledger/machines/bb5.tm",
+   "mutant": "corpus/attack/bb5-mutant.tm",
+   "machineSha256": "5116e794f281d575f672983c68dcdcb4e7fe8f15729c44f2ddab51ba2e08202d",
+   "mutantSha256": "e30d291a4cdc57b8b333a1f886906b216e117283a9c4e1f646dd030dc8e52282"
+  }
+ }
+}

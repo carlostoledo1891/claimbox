@@ -306,3 +306,55 @@ def hunt(tree, claim, root, reach, start=1):
             'witness': found, 'witnessStatement': w.instance(found) if found is not None else None, 'before': before,
             'result': (f'a witness at {w.var} = {found}' if found is not None else f'no witness up to {w.var} = {reach}'),
             'settled': found is None or before in (None, 'REFUTED'), 'asked': w.asked}
+
+
+# ------------------------------------------------------------------------------------------------- attack
+
+def schedule(start, reach):
+    """the instances attack asks first, in order: the start, every power of two between, the reach"""
+    out, p = {start, reach}, 1
+    while p <= reach:
+        if p >= start:
+            out.add(p)
+        p *= 2
+    return sorted(out)
+
+
+def attack(tree, claim, root, reach, start=1):
+    """a counterexample to a claim about every case, searched on a declared schedule (schedule()) instead of the walk 1, 2, 3, …:
+    at the first scheduled instance cert-machine refutes, bisection between it and the last scheduled instance it certified finds a
+    refuted instance beside a certified one. Its results are that counterexample — the first only when the family is monotone in
+    its number, else one counterexample, earlier instances not asked — or "not refuted at the K instances asked", never CERTIFIED"""
+    s = claim['stmt']
+    if s[0] != 'forall' or s[2] is not None or s[3][0] != 'template':
+        raise Refusal('watcher', 'attack takes a claim about every case whose statement has the variable for its number: for every T : … T …')
+    w = Watch(tree, claim, root)
+    kind = lang.statement(w.instance(1), 0)
+    monotone = kind[0] == 'machine' and kind[1]['kind'] in MONOTONE
+    lo, hi = None, None
+    for n in schedule(start, reach):
+        v = w.word(n)
+        if v == 'REFUTED':
+            hi = n
+            break
+        if v != 'CERTIFIED':
+            raise Refusal('decider', 'the instance at ' + str(n) + ' is not decided: ' + v)
+        lo = n
+    if hi is not None and lo is not None:
+        while hi - lo > 1:
+            mid = (lo + hi) // 2
+            v = w.word(mid)
+            if v == 'REFUTED':
+                hi = mid
+            elif v == 'CERTIFIED':
+                lo = mid
+            else:
+                raise Refusal('decider', 'the instance at ' + str(mid) + ' is not decided: ' + v)
+    first = hi is not None and (hi == start or monotone)
+    asked = len(w.asked)
+    return {'claim': claim['id'], 'statement': lang.fmt_statement(s), 'monotone': monotone, 'reach': reach, 'start': start,
+            'schedule': schedule(start, reach), 'counterexample': hi, 'first': first,
+            'counterexampleStatement': w.instance(hi) if hi is not None else None, 'before': 'CERTIFIED' if hi is not None and lo == hi - 1 else None,
+            'result': (f'a counterexample at {w.var} = {hi}, the instance before it certified' + ('' if first else f' (not shown to be the first: {asked} instances asked)')
+                       if hi is not None else f'not refuted at the {asked} instances asked (' + ', '.join(str(a['n']) for a in w.asked) + ')'),
+            'settled': hi is None or lo == hi - 1 or hi == start, 'asked': w.asked}

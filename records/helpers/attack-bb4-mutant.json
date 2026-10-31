@@ -1,0 +1,114 @@
+{
+ "claim": "bb4_mutant",
+ "statement": "for every T : after T steps B4 has the tape and head B4m has after T steps",
+ "monotone": false,
+ "reach": 1000,
+ "start": 1,
+ "schedule": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  32,
+  64,
+  128,
+  256,
+  512,
+  1000
+ ],
+ "counterexample": 107,
+ "first": false,
+ "counterexampleStatement": "after 107 steps B4 has the tape and head B4m has after 107 steps",
+ "before": "CERTIFIED",
+ "result": "a counterexample at T = 107, the instance before it certified (not shown to be the first: 14 instances asked)",
+ "settled": true,
+ "asked": [
+  {
+   "n": 1,
+   "statement": "after 1 steps B4 has the tape and head B4m has after 1 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-1  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 2,
+   "statement": "after 2 steps B4 has the tape and head B4m has after 2 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-2  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 4,
+   "statement": "after 4 steps B4 has the tape and head B4m has after 4 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-4  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 8,
+   "statement": "after 8 steps B4 has the tape and head B4m has after 8 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-8  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 16,
+   "statement": "after 16 steps B4 has the tape and head B4m has after 16 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-16  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 32,
+   "statement": "after 32 steps B4 has the tape and head B4m has after 32 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-32  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 64,
+   "statement": "after 64 steps B4 has the tape and head B4m has after 64 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-64  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 128,
+   "statement": "after 128 steps B4 has the tape and head B4m has after 128 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-mutant-128  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 96,
+   "statement": "after 96 steps B4 has the tape and head B4m has after 96 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-96  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 112,
+   "statement": "after 112 steps B4 has the tape and head B4m has after 112 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-mutant-112  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 104,
+   "statement": "after 104 steps B4 has the tape and head B4m has after 104 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-104  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 108,
+   "statement": "after 108 steps B4 has the tape and head B4m has after 108 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-mutant-108  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 106,
+   "statement": "after 106 steps B4 has the tape and head B4m has after 106 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb4-mutant-106  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 107,
+   "statement": "after 107 steps B4 has the tape and head B4m has after 107 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb4-mutant-107  [REFUTED]  0.0 s"
+  }
+ ],
+ "what": "claimbox attack: a claim about every case searched on a schedule, every instance asked and cert-machine's word on it; the result is a counterexample or \"not refuted at the K instances asked\", never CERTIFIED",
+ "file": "corpus/attack/machines.claim"
+}

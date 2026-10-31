@@ -2,9 +2,9 @@
  "what": "cert-machine files claimbox reads in place (read-only), pinned by sha256; corpus/register-sentences.json is the one copy made",
  "certMachine": "/Users/carlostoledo/Projects/cert-machine",
  "pins": {
-  "instruments/claimbox/check.py": "4e0d0174ab49fe7ee2ff534aa9fad99ff78a0244ed3ca32080c46042280749f7",
-  "instruments/claimbox/check.js": "54102f7e2df67375b2dc60eb20f409c11b249f6d7437dc2920ec657cf9d1c39b",
-  "instruments/claimbox/SCHEMA.md": "a99e768b19e78e851041ccb473f59e796efd16693e95c30ee4fcdf53de6a41f0",
+  "instruments/claimbox/check.py": "feb6a1754d384278f3e11470b98adae7154960f150fe25b73e387ab7f137674d",
+  "instruments/claimbox/check.js": "a3eb0636bb810d728bff3d8317bed9fe601072da7e22bff3566294a295ccd8b8",
+  "instruments/claimbox/SCHEMA.md": "59f4cda25f654d1895da6732ffed117bcd17be547c2ca8ce9815397a383bf298",
   "certs/claims-ledger.json": "42e96aa98a0c8613b255f2678bfabcc3e58de7c1a6c1344630da2f5d1ed7389f",
   "instruments/claimbox/claims/optq-1a-atris.json": "81aa154aa98190b5382b18576b8bc189136fd67d7803a3659bb396abdb67aed1",
   "instruments/claimbox/claims/optq-1a-agentdiscover.json": "e3716f8a0b4d40218c411daa801e867cf58308e08f284a7af9107186e4a1a316",

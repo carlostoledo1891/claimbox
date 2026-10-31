@@ -202,6 +202,13 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r14, 2026-10-31.** Attack, on the operator's design: a watcher's template searched on a declared schedule (the start, the
+  powers of two, the reach) and bisected between the last certified and the first refuted instance; a counterexample beside a
+  certified instance (claimed first only for a monotone family) or "not refuted at the K instances asked", never CERTIFIED.
+  Planted twins: each champion beside a one-cell mutant, false from the step the champion first reads the changed cell, that
+  step computed by cert-machine's tm.js (tools/attack_twins.py) and the instances decided by tm.py — BB(4) lands at 107 in 14
+  instances, BB(5) at 47,176,870 in 52. Step 7's helpers are built (fill not begun). cert-machine's one-bar reading (7b7287c6, the
+  operator's approval) lifted: HorizonMath's Kakeya row now gives its word, CERTIFIED; no other word moved.
 - **r13, 2026-10-31.** Register readers, batch 2, and hunters. Six more register sentences are stated over pinned bytes:
   C71 (CERTIFIED by the fei ledger's row), Gao's G and the Phi map (CERTIFIED by the polymaps ledger's rows), HorizonMath's
   thin-triangle Kakeya (REFUSED by the receiver: the row prints two bars and the checker reads the first), and EinsteinArena's

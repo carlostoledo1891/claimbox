@@ -1,0 +1,359 @@
+{
+ "claim": "bb5_mutant",
+ "statement": "for every T : after T steps B5 has the tape and head B5m has after T steps",
+ "monotone": false,
+ "reach": 100000000,
+ "start": 1,
+ "schedule": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  32,
+  64,
+  128,
+  256,
+  512,
+  1024,
+  2048,
+  4096,
+  8192,
+  16384,
+  32768,
+  65536,
+  131072,
+  262144,
+  524288,
+  1048576,
+  2097152,
+  4194304,
+  8388608,
+  16777216,
+  33554432,
+  67108864,
+  100000000
+ ],
+ "counterexample": 47176870,
+ "first": false,
+ "counterexampleStatement": "after 47176870 steps B5 has the tape and head B5m has after 47176870 steps",
+ "before": "CERTIFIED",
+ "result": "a counterexample at T = 47176870, the instance before it certified (not shown to be the first: 52 instances asked)",
+ "settled": true,
+ "asked": [
+  {
+   "n": 1,
+   "statement": "after 1 steps B5 has the tape and head B5m has after 1 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-1  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 2,
+   "statement": "after 2 steps B5 has the tape and head B5m has after 2 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-2  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 4,
+   "statement": "after 4 steps B5 has the tape and head B5m has after 4 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-4  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 8,
+   "statement": "after 8 steps B5 has the tape and head B5m has after 8 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-8  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 16,
+   "statement": "after 16 steps B5 has the tape and head B5m has after 16 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-16  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 32,
+   "statement": "after 32 steps B5 has the tape and head B5m has after 32 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-32  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 64,
+   "statement": "after 64 steps B5 has the tape and head B5m has after 64 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-64  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 128,
+   "statement": "after 128 steps B5 has the tape and head B5m has after 128 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-128  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 256,
+   "statement": "after 256 steps B5 has the tape and head B5m has after 256 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-256  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 512,
+   "statement": "after 512 steps B5 has the tape and head B5m has after 512 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-512  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 1024,
+   "statement": "after 1024 steps B5 has the tape and head B5m has after 1024 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-1024  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 2048,
+   "statement": "after 2048 steps B5 has the tape and head B5m has after 2048 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-2048  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 4096,
+   "statement": "after 4096 steps B5 has the tape and head B5m has after 4096 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-4096  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 8192,
+   "statement": "after 8192 steps B5 has the tape and head B5m has after 8192 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-8192  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 16384,
+   "statement": "after 16384 steps B5 has the tape and head B5m has after 16384 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-16384  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 32768,
+   "statement": "after 32768 steps B5 has the tape and head B5m has after 32768 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-32768  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 65536,
+   "statement": "after 65536 steps B5 has the tape and head B5m has after 65536 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-65536  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 131072,
+   "statement": "after 131072 steps B5 has the tape and head B5m has after 131072 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-131072  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 262144,
+   "statement": "after 262144 steps B5 has the tape and head B5m has after 262144 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-262144  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 524288,
+   "statement": "after 524288 steps B5 has the tape and head B5m has after 524288 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-524288  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 1048576,
+   "statement": "after 1048576 steps B5 has the tape and head B5m has after 1048576 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-1048576  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 2097152,
+   "statement": "after 2097152 steps B5 has the tape and head B5m has after 2097152 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-2097152  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 4194304,
+   "statement": "after 4194304 steps B5 has the tape and head B5m has after 4194304 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-4194304  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 8388608,
+   "statement": "after 8388608 steps B5 has the tape and head B5m has after 8388608 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-8388608  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 16777216,
+   "statement": "after 16777216 steps B5 has the tape and head B5m has after 16777216 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-16777216  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 33554432,
+   "statement": "after 33554432 steps B5 has the tape and head B5m has after 33554432 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-33554432  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 67108864,
+   "statement": "after 67108864 steps B5 has the tape and head B5m has after 67108864 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-67108864  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 50331648,
+   "statement": "after 50331648 steps B5 has the tape and head B5m has after 50331648 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-50331648  [REFUTED]  0.001 s"
+  },
+  {
+   "n": 41943040,
+   "statement": "after 41943040 steps B5 has the tape and head B5m has after 41943040 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-41943040  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 46137344,
+   "statement": "after 46137344 steps B5 has the tape and head B5m has after 46137344 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-46137344  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 48234496,
+   "statement": "after 48234496 steps B5 has the tape and head B5m has after 48234496 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-48234496  [REFUTED]  0.001 s"
+  },
+  {
+   "n": 47185920,
+   "statement": "after 47185920 steps B5 has the tape and head B5m has after 47185920 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47185920  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 46661632,
+   "statement": "after 46661632 steps B5 has the tape and head B5m has after 46661632 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-46661632  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 46923776,
+   "statement": "after 46923776 steps B5 has the tape and head B5m has after 46923776 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-46923776  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47054848,
+   "statement": "after 47054848 steps B5 has the tape and head B5m has after 47054848 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47054848  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47120384,
+   "statement": "after 47120384 steps B5 has the tape and head B5m has after 47120384 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47120384  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47153152,
+   "statement": "after 47153152 steps B5 has the tape and head B5m has after 47153152 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47153152  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47169536,
+   "statement": "after 47169536 steps B5 has the tape and head B5m has after 47169536 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47169536  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47177728,
+   "statement": "after 47177728 steps B5 has the tape and head B5m has after 47177728 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47177728  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47173632,
+   "statement": "after 47173632 steps B5 has the tape and head B5m has after 47173632 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47173632  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47175680,
+   "statement": "after 47175680 steps B5 has the tape and head B5m has after 47175680 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47175680  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176704,
+   "statement": "after 47176704 steps B5 has the tape and head B5m has after 47176704 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47176704  [CERTIFIED]  0.001 s"
+  },
+  {
+   "n": 47177216,
+   "statement": "after 47177216 steps B5 has the tape and head B5m has after 47177216 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47177216  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176960,
+   "statement": "after 47176960 steps B5 has the tape and head B5m has after 47176960 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47176960  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176832,
+   "statement": "after 47176832 steps B5 has the tape and head B5m has after 47176832 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47176832  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176896,
+   "statement": "after 47176896 steps B5 has the tape and head B5m has after 47176896 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47176896  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176864,
+   "statement": "after 47176864 steps B5 has the tape and head B5m has after 47176864 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47176864  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176880,
+   "statement": "after 47176880 steps B5 has the tape and head B5m has after 47176880 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47176880  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176872,
+   "statement": "after 47176872 steps B5 has the tape and head B5m has after 47176872 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47176872  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176868,
+   "statement": "after 47176868 steps B5 has the tape and head B5m has after 47176868 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47176868  [CERTIFIED]  0.0 s"
+  },
+  {
+   "n": 47176870,
+   "statement": "after 47176870 steps B5 has the tape and head B5m has after 47176870 steps",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-mutant-47176870  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 47176869,
+   "statement": "after 47176869 steps B5 has the tape and head B5m has after 47176869 steps",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-mutant-47176869  [CERTIFIED]  0.0 s"
+  }
+ ],
+ "what": "claimbox attack: a claim about every case searched on a schedule, every instance asked and cert-machine's word on it; the result is a counterexample or \"not refuted at the K instances asked\", never CERTIFIED",
+ "file": "corpus/attack/machines.claim"
+}

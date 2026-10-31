@@ -132,6 +132,14 @@ A hunter's statement may be a template in the same way — `there is T : M has T
 before it refuted) or *no witness up to N*; never REFUTED. Its planted twins (corpus/hunters/machines.claim) have their witness
 known before the search: the BB(4) and BB(5) champions have 4 and 5 states.
 
+`python3 -m claimbox attack FILE CLAIM --reach N` searches a watcher's template on a declared schedule instead of the walk —
+the start, every power of two, the reach — and bisects between the last instance certified and the first refuted. Its results
+are a counterexample beside a certified instance (the first only when the family is monotone in its number; otherwise
+earlier instances were not asked, and the result says so) or *not refuted at the K instances asked*, listed; never
+CERTIFIED. Its planted twins (corpus/attack/machines.claim) are each champion beside a one-cell mutant, `for every T : after T
+steps B4 has the tape and head B4m has after T steps`, false from the step the champion first reads the changed cell: that step
+is computed by cert-machine's tm.js (tools/attack_twins.py, corpus/attack/prediction.json), the instances decided by tm.py.
+
 ## 4 · The library
 
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —

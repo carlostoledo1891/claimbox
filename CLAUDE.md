@@ -85,7 +85,7 @@ claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and
                            sentence); proposers (the grammar; corpus/proposals/<corpus>{,.person,.planted,.paraphrase}.claim); the levels
                            (anchored, printed back, planted, sensitivity, vacuity, paraphrase, concord), faithfulness against a decided
                            reference, the pairs' same-error rate; `--worksheet` writes a person's blank claims once
-claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"), hunt (a witness),
+claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"), hunt (a witness), attack (a scheduled counterexample search),
                            watch (a claim about every case, instance by instance; planted twins); proposals `proposed by search:<helper>`
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object
 claimbox/__main__.py       the command line
@@ -98,7 +98,7 @@ corpus/                    register-sentences.json (lifted), calibration.json (t
                            xi-opt20.json: the optimality certificates the receiver decides),
                            riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
                            riemann-math-jobs.json (each claim with its expected outcome); register/sentences.md; proposals/ (the model's,
-                           the person's worksheet, the helpers'); helpers/ (the sources the searches wrote); watchers/machines.claim; hunters/machines.claim;
+                           the person's worksheet, the helpers'); helpers/ (the sources the searches wrote); watchers/machines.claim; hunters/machines.claim; attack/ (twins, prediction.json);
                            xx64/ and xxy/ (the x^x = 64 and x^x = y studies' claims, sources and N files)
 records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json, library-identity.json,
                            fork-605.json (`check LANGUAGE.md#E16 --run --record`); <source>-run.json +
@@ -114,6 +114,7 @@ web/                       the landing page, built the Machinidae way: grammar.c
                            drafts/ (not built), build.py → dist/ (index.html only; published by cert-machine as carlostoledo.co/claimbox/)
 tools/propose_model.py     a model as a proposer (claude-opus-5-5, the operator's $20 cap; .venv/bin/python; ledgers records/model-proposals-*);
 tools/xx_study.py          the x^x = y study (roots computed, claims written for cert-machine);
+tools/attack_twins.py      the attack twins' predictions, computed by cert-machine's tm.js (corpus/attack/prediction.json);
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the
                            story's pins (fetch, --check); tools/ceiling_lp.py an exploration in floats of the paper's bandwidth-one programme
                            at small N (not a certificate; its numbers are in mathematician.md §6); tools/xi_window.py the window search for

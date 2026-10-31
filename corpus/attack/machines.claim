@@ -1,0 +1,24 @@
+-- Attack (step 7): a claim about every case, searched on a declared schedule — the start, the powers of two, the reach — then
+-- bisected between the last certified and the first refuted instance; every instance decided by cert-machine (tm.py, then its
+-- checker). A result is a counterexample beside a certified instance, or "not refuted at the K instances asked", never CERTIFIED:
+-- python3 -m claimbox attack corpus/attack/machines.claim CLAIM --reach N
+-- The planted twins: each champion beside a one-cell mutant (its halting cell made to move on), which agree tape for tape until the
+-- champion first reads that cell — at the step corpus/attack/prediction.json holds, computed by cert-machine's tm.js
+-- (tools/attack_twins.py), never by tm.py, which decides the instances. The attack must land there.
+source A = ../claimbox/corpus/attack/machines.md
+data   B4 = instruments/ledger/machines/bb4.tm
+read   B4 as table (Q, 2)
+data   B4m = ../claimbox/corpus/attack/bb4-mutant.tm
+read   B4m as table (Q, 2)
+data   B5 = instruments/ledger/machines/bb5.tm
+read   B5 as table (Q, 2)
+data   B5m = ../claimbox/corpus/attack/bb5-mutant.tm
+read   B5m as table (Q, 2)
+
+claim  bb4_mutant
+  quote "for every T : after T steps B4 has the tape and head B4m has after T steps" from A
+  : for every T : after T steps B4 has the tape and head B4m has after T steps
+
+claim  bb5_mutant
+  quote "for every T : after T steps B5 has the tape and head B5m has after T steps" from A
+  : for every T : after T steps B5 has the tape and head B5m has after T steps

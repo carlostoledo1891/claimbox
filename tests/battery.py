@@ -1057,6 +1057,40 @@ try:
 except Refusal as e:
     got = e.rule
 red(got == 'watcher', 'helpers: refused — hunt on a claim about every case (that is watch\'s)', str(got))
+# attack (2026-10-31, the operator's design): a claim about every case searched on a declared schedule and bisected; the planted
+# twins (a champion beside its one-cell mutant) must land on the step cert-machine's tm.js predicts (tools/attack_twins.py), the
+# instances decided by tm.py
+PREDP = os.path.join(REPO, 'corpus', 'attack', 'prediction.json')
+pred_text = open(PREDP, encoding='utf-8').read()
+PRED = json.loads(pred_text)
+subprocess.run([sys.executable, os.path.join(REPO, 'tools', 'attack_twins.py')], capture_output=True, text=True, cwd=REPO)
+again_pred = open(PREDP, encoding='utf-8').read() == pred_text
+ok(again_pred and PRED['twins']['bb4']['firstRead'] == 107 and PRED['twins']['bb5']['firstRead'] == 47176870,
+   'helpers: the attack twins\' predictions reproduce from cert-machine\'s tm.js — BB(4) first reads its mutated cell at step 107, BB(5) at 47,176,870', 'tm.js')
+AT = lang.parse(open(os.path.join(REPO, 'corpus', 'attack', 'machines.claim'), encoding='utf-8').read())
+AC = {i['id']: i for i in AT['items'] if i['kw'] == 'claim'}
+a4 = H.attack(AT, AC['bb4_mutant'], ROOT, 1000)
+ok(a4['counterexample'] == PRED['twins']['bb4']['firstRead'] and a4['before'] == 'CERTIFIED' and a4['settled'] and len(a4['asked']) < 107,
+   'helpers: attack lands on the BB(4) twin\'s predicted step, 107, the step before certified, in fewer instances than the walk', a4['result'])
+A5 = json.load(open(os.path.join(REPO, 'records', 'helpers', 'attack-bb5-mutant.json'), encoding='utf-8'))
+ok(A5['counterexample'] == PRED['twins']['bb5']['firstRead'] and A5['before'] == 'CERTIFIED' and len(A5['asked']) < 64,
+   'helpers: attack landed on the BB(5) twin\'s predicted step, 47,176,870 (the record)', A5['result'])
+try:
+    H.Watch.word = lambda self, n: (self.asked.append({'n': n, 'statement': self.instance(n), 'word': 'CERTIFIED', 'certMachine': ''}) or 'CERTIFIED')
+    stuck_a = H.attack(AT, AC['bb4_mutant'], ROOT, 1000)
+    H.Watch.word = lambda self, n: (self.asked.append({'n': n, 'statement': self.instance(n), 'word': 'REFUTED', 'certMachine': ''}) or 'REFUTED')
+    eager_a = H.attack(AT, AC['bb4_mutant'], ROOT, 1000)
+finally:
+    H.Watch.word = realww
+red(stuck_a['counterexample'] is None and stuck_a['result'].startswith('not refuted at the'),
+    'helpers: refused — a decider that never refutes misses the twin; attack then says "not refuted at the K instances asked", never CERTIFIED', stuck_a['result'])
+red(eager_a['counterexample'] != PRED['twins']['bb4']['firstRead'], 'helpers: refused — a decider that refutes every instance lands off the twin\'s predicted step', eager_a['result'])
+try:
+    H.attack(HT, HC['bb4_states'], ROOT, 10)
+    got = None
+except Refusal as e:
+    got = e.rule
+red(got == 'watcher', 'helpers: refused — attack on a claim that some case holds (that is hunt\'s)', str(got))
 
 # ---- 12 · x^x = 64 (the operator's experiment, 2026-10-31: library selfpower.py) --------------------------------------------
 # the AI proposes, claimbox states, cert-machine decides: a bound on the root is one exact integer inequality; the planted

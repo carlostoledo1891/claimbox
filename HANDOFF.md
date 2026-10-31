@@ -23,9 +23,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-10-31, end of the eleventh session) — the state in one screen; the dated entries below are the history
 
-**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r13,
-LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7 under way (tighten, extend, watch and hunt built; attack to do);
-8–10 not started. Tests: `make test` → 529 pass, 0 fail, 128/128 red controls; `make drift` 15/15; recall 56/56.
+**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r14,
+LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
+begun); 8–10 not started. Tests: `make test` → 535 pass, 0 fail, 131/131 red controls; `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -57,9 +57,8 @@ cert-machine's tensor records hold none of those keys), polymaps F6/F7 (maps not
 erdos852-cstar (one enclosure, no row), the six kissing sentences of batch 1's note.
 
 **The operator's rulings on the asks to cert-machine-cb (2026-10-31, relayed by cert-machine-cb):** (b) APPROVED — one bar
-reading in the receiver, STATED_BAR (the number after the row claim's last relation), in check.py and check.js, being built there on
-lane-receiver-one-bar; when its commit lands on main: `make lift`, `make drift`, the register re-run (horizonmath-keich should then
-take its row's word), `make web`, `make test`. (a) a per-row record for the Strassen certificate: NOT approved — the ten mm-
+reading in the receiver, STATED_BAR (the number after the row claim's last relation), in check.py and check.js — landed as
+cert-machine 7b7287c6 and lifted here (below). (a) a per-row record for the Strassen certificate: NOT approved — the ten mm-
 sentences stay without a route. (c) fraction bars in `printed`: NOT approved — F4/F5 stay hole `decider`. (d) republished (above).
 Also from cert-machine: its x^x report (/reports/xx.html) now states the x^x = N reduction as DECIDED (proved in Lean, 15 theorems,
 two kernels, CI run 41221355209, certs/xx-reduction-lean.json), and carries a REFUSED claim of its own ("the root of x^x = 64 is
@@ -69,19 +68,30 @@ transcendental"). claimbox's library/selfpower.py still writes the reduction as 
 Python 3.12 by default. The person's worksheet (corpus/proposals/riemann-ai.person.claim, 46 blanks `: ?`) stays a text file; the
 operator fills it — never fill it for them.
 
+**ATTACK, BUILT (the operator's answers, asked here 2026-10-31: search watcher instances on a schedule; the twin a machine's
+state at a step, predicted by tm.js; then the one-bar lift).** helpers.attack: a watcher's template asked at the start, every power
+of two and the reach, then bisected between the last certified and the first refuted instance — a counterexample beside a
+certified instance (claimed first only for a monotone family) or "not refuted at the K instances asked", never CERTIFIED;
+`claimbox attack FILE CLAIM --reach N [--name N]`. Twins (corpus/attack/): each champion beside a one-cell mutant (its halting cell
+made to move on), `for every T : after T steps B4 has the tape and head B4m has after T steps`, false from the step the champion
+first reads that cell — computed by cert-machine's tm.js (tools/attack_twins.py runs its parseTable and simulate, read-only →
+corpus/attack/prediction.json: 107 and 47,176,870), the instances decided by tm.py. BB(4) lands at 107 in 14 instances
+(records/helpers/attack-bb4-mutant.json); BB(5) at 47,176,870 in 52 instances, about six and a half minutes (records/helpers/attack-bb5-mutant.json); battery §11 adds 3 greens, 3 reds. The language has no negated state
+statement ("is not in state X"), so the twin compares the configuration with a mutant's instead. THE ONE-BAR LIFT: cert-machine
+7b7287c6 (check.py row_bar / check.js rowBar: a valueless row's bar is the number after its claim's last relation); `make lift`
+re-pinned check.py, check.js, SCHEMA.md; the register re-run: horizonmath-keich now CERTIFIED by its row, no other word moved
+(the register: 70 CERTIFIED, 1 REFUTED, 2 REFUSED); the page's bytes unchanged (no republish needed). cert-machine notes one
+weakness it left, since (c) was not approved: a fraction bar "< 19676/1639" reads as 19676; no object prints one.
+
 **NEXT, in order.**
-1. ATTACK — not built: its design is the operator's to confirm (asked at the end of the eleventh session). The proposal: for a
-   watcher whose family is not monotone, instances chosen by a declared schedule (geometric, boundaries) instead of the walk;
-   its results "a counterexample at T = n" (REFUTED, not claimed first) or "not refuted at the K instances asked", with a
-   planted twin false only at a large instance.
-2. When lane-receiver-one-bar lands on cert-machine's main: `make lift`, `make drift`, re-run `python3 -m claimbox prose register --run --record
-   records/prose-register.json`, `make web`, `make test`.
+1. Step 7's fill (fetch a missing quantity) — not designed; or step 8 (documents that build). The operator's choice.
+2. More SOTA definitions in the library (heilbronn, min-distance, hexagons…) would decide 17 more register rows from their bytes.
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
    written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is
    never planted.
 
-**How to run (beyond CLAUDE.md's list):** `claimbox tighten|extend FILE[#E] CLAIM`, `claimbox watch|hunt FILE CLAIM --reach N`,
+**How to run (beyond CLAUDE.md's list):** `claimbox tighten|extend FILE[#E] CLAIM`, `claimbox watch|hunt|attack FILE CLAIM --reach N`,
 `claimbox prose CORPUS [--run] [--record] [--worksheet]`, `.venv/bin/python tools/propose_model.py CORPUS [--again P1,P2 |
 --planted-only | --paraphrase]` (the anthropic SDK lives in the git-ignored .venv, Python 3.12; credentials from `ant auth login`),
 `python3 tools/xx_study.py`, Chrome headless for screenshots (a 390 px check needs an iframe wrapper: Chrome's window has a minimum width).
