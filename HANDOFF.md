@@ -253,8 +253,10 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    cryptid machines not refuted up to 10^8 steps (~15 s each). Battery §11: the BB(4) twin re-run, the BB(5) and the three records,
    reds (a decider that never refutes misses the twin; watch on a bounded claim). The page's "Helpers, begun" gains the watchers.
    make test: 512 pass, 0 fail, 118/118 reds. PLAN.md r12.
-   NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes; the coming
-   re-record of certs/mc100-einstein-arena.json (cert-machine-cb) — re-run the register then.
+   THE RE-RECORD (cert-machine 6039e6f8: agreement() measured to the enclosure's far end; certs/mc100-einstein-arena.json, read in
+   place, not pinned): the register re-run with cert-machine at 7ab83014 — summary, outcomes and every word unchanged; drift 15/15;
+   make test 512 pass, 118/118. The republish from ead7e84 is HELD in cert-machine-cb's chat for the operator's approval.
+   NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)
