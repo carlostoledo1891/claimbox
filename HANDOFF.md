@@ -300,8 +300,11 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    record and re-read by the build; the visible pins (record lines, paths, digests, rigor blocks) are gone. Light and dark: the
    print register's values in grammar.css under :root[data-theme="light"] (engine.COLOURS gains exactly those eight), the theme
    pill and its two inline scripts as cert-machine's design/nav.js writes them (key "warrant-theme"); each figure has a narrow
-   drawing (.only-wide/.only-narrow), checked at 390 px in a frame with no overflow. record.py gains the derived barOf. NOT
-   PUBLISHED: cert-machine-cb shows the operator screenshots first.
+   drawing (.only-wide/.only-narrow), checked at 390 px in a frame with no overflow. record.py gains the derived barOf. The
+   operator approved it with one change: the Verify link out of the nav and footer (/verify/ stays unlinked everywhere until they
+   decide; the CSS comment naming it went too). LIVE: cert-machine 67c14f84, the bytes of claimbox b87af65 (61,314 bytes, sha256
+   9ef5e851…6e52f8d, checked here with curl). cert-machine's pin names fb4818b with "dirty": true — it published the working
+   tree's bytes moments before b87af65 landed; the bytes are b87af65's, which is the source on this side.
    make test: 530 pass, 0 fail, 132/132 reds.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
