@@ -181,8 +181,10 @@ passes. Parked behind a spend decision.
 
 ## 9 · What needs cert-machine (each in a cert-machine chat first)
 
-- A record with no value decides any bar: the receiver should hold an object's bar to the claim its record row states (or
-  require the record's value), else record-decision-mismatch (found 2026-10-30, claimbox step 6's sensitivity run).
+- ~~A record with no value decides any bar~~ — DONE in cert-machine 1e829d0b (2026-10-30): a valueless record's word decides
+  only the bar its row's claim states (same bar, same relation), else REFUSED record-decision-mismatch; lifted, held by a red.
+  Open there, for the operator: an `in` from a valueless EinsteinArena row states the half-unit box of the print, while the row
+  decided agreement only within the platform's resolution.
 - Format v4: canonical form; typed readings; a hole and its price on a REFUSED; CONFLICT from concordance only.
 - The folder carlostoledo.co/claimbox/ as a foreign zone (design/zones.js), published by tools/publish-zone.js.
 - Still open from earlier sessions: (c1) the kissing route through the wave file, (g) the two checkers' paths, (h) a

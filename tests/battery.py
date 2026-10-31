@@ -738,6 +738,20 @@ try:
 except Refusal as e:
     got = e.rule
 red(got == 'decider', 'library: refused — a recorded platform score other than the one cert-machine\'s record decides', str(got))
+# and the receiver itself (cert-machine 1e829d0b, asked by claimbox 2026-10-30): a valueless record's word decides only the bar
+# its row states — the forgery the sensitivity run found, the translator handed the record with a moved score, is REFUSED there
+RS = 'the object is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and the platform\'s score of it is 1.5027436492326166 (minimize)'
+fq = os.path.join(REPO, '.plants', 'forged-source.md')
+os.makedirs(os.path.dirname(fq), exist_ok=True)
+with open(fq, 'w', encoding='utf-8') as f:
+    f.write(RS + '\n')
+try:
+    forged = T.translate(RS, ROOT, '../claimbox/.plants/forged-source.md', 'corpus/einstein-arena/best-2.json', decider='tools/run-mc100-einstein.js',
+                         record=dict(sobj['record']), obj_id='forged-score', elements='doubles')
+    fline = T.check_with_cert_machine(forged, ROOT)
+finally:
+    os.remove(fq)
+red('record-decision-mismatch' in fline, 'cert-machine: refused — a valueless record\'s word for a score it never decided (one unit moved)', fline[:90])
 
 # ---- 9 · holes and forks (roadmap step 5) -------------------------------------------------------------------------------
 # every rule the code refuses with is a named hole (or one of the two that are not: a name to fix, a claim about every case);

@@ -214,6 +214,13 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    REPUBLISHED (approved by the operator in cert-machine-cb's chat, "wait for claimbox to finish and send live"): cert-machine
    c32aa22c, from claimbox 70e3691 (94,473 bytes, pinned in corpus/zones/claimbox.json); the live sha256 ab3a82c1…b97e552 equals
    web/dist's, checked here with curl. The receiver finding is in cert-machine's HANDOFF backlog, for the operator's word.
+   THE RECEIVER'S FIX LIFTED: cert-machine 1e829d0b (merge of lane-receiver-record-mismatch) — a valueless record's word decides
+   only the bar its row's claim states, else REFUSED record-decision-mismatch (check.py, check.js, the SMT export). make drift saw
+   check.py, check.js, SCHEMA.md; re-pinned; the calibration holds (10/10; 16/16 objects, 13 words); both prose records reproduce
+   with cert-machine's words unchanged; a new red holds the forgery (the translator handed the record with a score one unit
+   moved: REFUSED there). make test: 496 pass, 0 fail, 111/111 reds; recall 56/56. Open in cert-machine for the operator: an `in`
+   from a valueless EinsteinArena row states the half-unit box of the print, while the row decided only within the platform's
+   resolution. The page is unchanged (no republish needed).
    NEXT: the operator's worksheet; step 7; readers for the 108 register sentences whose bytes claimbox does not pin.
    numerals (each entry with a red), then the register's sentences.
 
