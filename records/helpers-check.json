@@ -1,0 +1,102 @@
+{
+ "what": "claimbox check --run of corpus/proposals/helpers.claim: per claim, its kind or its hole, and per reading the object compiled (its id, pin and reading), the definitions it rests on and cert-machine's line and word",
+ "from": "corpus/proposals/helpers.claim",
+ "claims": [
+  {
+   "id": "edge_tighten",
+   "kind": "bounded",
+   "expect": "CERTIFIED",
+   "statement": "|D(1)| ≤ 0.823953160713",
+   "readings": [
+    {
+     "reading": "integers",
+     "object": "edge-tighten",
+     "pin": {
+      "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+      "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+     },
+     "count": 256,
+     "elements": "integers",
+     "definitions": [
+      "D v1"
+     ],
+     "certMachine": "ADMITTED  edge-tighten  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+     "word": "CERTIFIED",
+     "seconds": 0.0
+    }
+   ]
+  },
+  {
+   "id": "near_cue_tighten",
+   "kind": "bounded",
+   "expect": "CERTIFIED",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.837·10⁻⁴⁰",
+   "readings": [
+    {
+     "reading": "integers",
+     "object": "near-cue-tighten",
+     "pin": {
+      "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+      "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+     },
+     "count": 256,
+     "elements": "integers",
+     "definitions": [
+      "S v1"
+     ],
+     "certMachine": "ADMITTED  near-cue-tighten  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "word": "CERTIFIED",
+     "seconds": 0.1
+    }
+   ]
+  },
+  {
+   "id": "c1c_k3072_tighten",
+   "kind": "bounded",
+   "expect": "CERTIFIED",
+   "statement": "C_1c(w) ≥ 0.41030211723",
+   "readings": [
+    {
+     "reading": "integers",
+     "object": "c1c-k3072-tighten",
+     "pin": {
+      "path": "corpus/optconst-queue/next-2026-10-18/rozetyp/previous/certificate_K3072.json",
+      "sha256": "788527a6237837e8d5d441cfab3f8b39080165fc207ae6a69678cc5f3a0fdf58"
+     },
+     "count": 3584,
+     "elements": "integers",
+     "definitions": [
+      "C_1c v1"
+     ],
+     "certMachine": "ADMITTED  c1c-k3072-tighten  []  from the object: CERTIFIED value 92043155785589760/224330199426… · CERTIFIED value 0  21.068 s  note: no record attached",
+     "word": "CERTIFIED",
+     "seconds": 21.1
+    }
+   ]
+  },
+  {
+   "id": "cmt_extend",
+   "kind": "bounded",
+   "expect": "CERTIFIED",
+   "statement": "c₁* = 0.753296067856070677…",
+   "readings": [
+    {
+     "reading": "integers",
+     "object": "cmt-extend",
+     "pin": {
+      "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+      "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+     },
+     "count": 1,
+     "elements": null,
+     "definitions": [
+      "c₁* v1"
+     ],
+     "certMachine": "ADMITTED  cmt-extend  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1549125235742885063/199894568…  0.002 s  note: no record attached",
+     "word": "CERTIFIED",
+     "seconds": 0.0
+    }
+   ]
+  }
+ ]
+}

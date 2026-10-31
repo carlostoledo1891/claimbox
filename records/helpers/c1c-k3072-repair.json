@@ -1,0 +1,41 @@
+{
+ "claim": "c1c_k3072",
+ "statement": "C_1c(w) ≥ 0.41030211724",
+ "relation": "≥",
+ "from": "0.41030211724",
+ "digits": null,
+ "repaired": true,
+ "tightest": "0.41030211723",
+ "tightestStatement": "C_1c(w) ≥ 0.41030211723",
+ "neighbour": "0.41030211724",
+ "neighbourWord": "REFUTED",
+ "settled": true,
+ "monotone": true,
+ "asked": [
+  {
+   "bar": "0.41030211724",
+   "statement": "C_1c(w) ≥ 0.41030211724",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  c1c-k3072-candidate  []  from the object: REFUTED value 92043155785589760/224330199426… · CERTIFIED value 0  20.872 s  note: no record attached"
+  },
+  {
+   "bar": "0.41030211723",
+   "statement": "C_1c(w) ≥ 0.41030211723",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  c1c-k3072-candidate  []  from the object: CERTIFIED value 92043155785589760/224330199426… · CERTIFIED value 0  20.729 s  note: no record attached"
+  },
+  {
+   "bar": "0.41030211722",
+   "statement": "C_1c(w) ≥ 0.41030211722",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  c1c-k3072-candidate  []  from the object: CERTIFIED value 92043155785589760/224330199426… · CERTIFIED value 0  20.802 s  note: no record attached"
+  },
+  {
+   "bar": "0.41030211725",
+   "statement": "C_1c(w) ≥ 0.41030211725",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  c1c-k3072-candidate  []  from the object: REFUTED value 92043155785589760/224330199426… · CERTIFIED value 0  20.934 s  note: no record attached"
+  }
+ ],
+ "what": "claimbox tighten: every candidate asked and cert-machine's word on it; the result is a proposal, its words cert-machine's"
+}

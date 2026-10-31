@@ -2483,7 +2483,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2560,7 +2560,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -3006,8 +3006,8 @@
         "in",
         "0.3808585748578584",
         [
-         "7617171497157167/20000000000000000",
-         "7617171497157169/20000000000000000"
+         "476073093572323/1250000000000000",
+         "476073343572323/1250000000000000"
         ]
        ]
       ],
@@ -3048,8 +3048,8 @@
         "in",
         "0.3808585748578584",
         [
-         "7617171497157167/20000000000000000",
-         "7617171497157169/20000000000000000"
+         "476073093572323/1250000000000000",
+         "476073343572323/1250000000000000"
         ]
        ]
       ],
@@ -3097,8 +3097,8 @@
         "in",
         "1.5027436492326165",
         [
-         "30054872984652329/20000000000000000",
-         "30054872984652331/20000000000000000"
+         "3005487278465233/2000000000000000",
+         "3005487318465233/2000000000000000"
         ]
        ]
       ],
@@ -3119,7 +3119,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ea-best-first-autocorrelation-inequality  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-mc100-ea-best-first-autocorrelation-inequality  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-8 ",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3158,8 +3158,8 @@
         "in",
         "1.2807274949642549",
         [
-         "25614549899285097/20000000000000000",
-         "25614549899285099/20000000000000000"
+         "12807264949642549/10000000000000000",
+         "12807284949642549/10000000000000000"
         ]
        ]
       ],
@@ -3180,7 +3180,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: predi",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3202,8 +3202,8 @@
         "in",
         "1.2807274949642549",
         [
-         "25614549899285097/20000000000000000",
-         "25614549899285099/20000000000000000"
+         "12807264949642549/10000000000000000",
+         "12807284949642549/10000000000000000"
         ]
        ]
       ],
@@ -3224,7 +3224,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  m-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: predi",
      "sensitivity": null,
      "vacuity": null
     }
@@ -3253,8 +3253,8 @@
         "in",
         "-0.7117091757692579",
         [
-         "-14234183515385159/20000000000000000",
-         "-14234183515385157/20000000000000000"
+         "-7117101757692579/10000000000000000",
+         "-7117081757692579/10000000000000000"
         ]
        ]
       ],
@@ -3275,7 +3275,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: pre",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3297,8 +3297,8 @@
         "in",
         "-0.7117091757692579",
         [
-         "-14234183515385159/20000000000000000",
-         "-14234183515385157/20000000000000000"
+         "-7117101757692579/10000000000000000",
+         "-7117081757692579/10000000000000000"
         ]
        ]
       ],
@@ -3319,7 +3319,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  m-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: pre",
      "sensitivity": null,
      "vacuity": null
     }
@@ -3451,8 +3451,8 @@
         "in",
         "2",
         [
-         "3/2",
-         "5/2"
+         "999999999999/500000000000",
+         "1000000000001/500000000000"
         ]
        ]
       ],
@@ -3473,7 +3473,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 relati",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3495,8 +3495,8 @@
         "in",
         "2",
         [
-         "3/2",
-         "5/2"
+         "999999999999/500000000000",
+         "1000000000001/500000000000"
         ]
        ]
       ],
@@ -3517,7 +3517,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 relati",
      "sensitivity": null,
      "vacuity": null
     }
@@ -3546,8 +3546,8 @@
         "in",
         "1.7102381876301676",
         [
-         "34204763752603351/20000000000000000",
-         "34204763752603353/20000000000000000"
+         "4275595469071143404530924581/2500000000000000000000000000",
+         "4275595469079694595469075419/2500000000000000000000000000"
         ]
        ]
       ],
@@ -3568,7 +3568,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3590,8 +3590,8 @@
         "in",
         "1.7102381876301676",
         [
-         "34204763752603351/20000000000000000",
-         "34204763752603353/20000000000000000"
+         "4275595469071143404530924581/2500000000000000000000000000",
+         "4275595469079694595469075419/2500000000000000000000000000"
         ]
        ]
       ],
@@ -3612,7 +3612,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
      "vacuity": null
     }
@@ -3641,8 +3641,8 @@
         "in",
         "0.5469062458557645",
         [
-         "10938124917115289/20000000000000000",
-         "10938124917115291/20000000000000000"
+         "1093812491709529/2000000000000000",
+         "1093812491713529/2000000000000000"
         ]
        ]
       ],
@@ -3663,7 +3663,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3685,8 +3685,8 @@
         "in",
         "0.5469062458557645",
         [
-         "10938124917115289/20000000000000000",
-         "10938124917115291/20000000000000000"
+         "1093812491709529/2000000000000000",
+         "1093812491713529/2000000000000000"
         ]
        ]
       ],
@@ -3707,7 +3707,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
      "vacuity": null
     }

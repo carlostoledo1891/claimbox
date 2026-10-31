@@ -1,0 +1,197 @@
+{
+ "claim": "edge",
+ "statement": "|D(1)| ≤ 0.82395317",
+ "relation": "≤",
+ "from": "0.82395317",
+ "digits": 12,
+ "repaired": false,
+ "tightest": "0.823953160713",
+ "tightestStatement": "|D(1)| ≤ 0.823953160713",
+ "neighbour": "0.823953160712",
+ "neighbourWord": "REFUTED",
+ "settled": true,
+ "monotone": true,
+ "asked": [
+  {
+   "bar": "0.823953170000",
+   "statement": "|D(1)| ≤ 0.823953170000",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169999",
+   "statement": "|D(1)| ≤ 0.823953169999",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169998",
+   "statement": "|D(1)| ≤ 0.823953169998",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169996",
+   "statement": "|D(1)| ≤ 0.823953169996",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169992",
+   "statement": "|D(1)| ≤ 0.823953169992",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169984",
+   "statement": "|D(1)| ≤ 0.823953169984",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169968",
+   "statement": "|D(1)| ≤ 0.823953169968",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169936",
+   "statement": "|D(1)| ≤ 0.823953169936",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169872",
+   "statement": "|D(1)| ≤ 0.823953169872",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169744",
+   "statement": "|D(1)| ≤ 0.823953169744",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953169488",
+   "statement": "|D(1)| ≤ 0.823953169488",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953168976",
+   "statement": "|D(1)| ≤ 0.823953168976",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953167952",
+   "statement": "|D(1)| ≤ 0.823953167952",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953165904",
+   "statement": "|D(1)| ≤ 0.823953165904",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953161808",
+   "statement": "|D(1)| ≤ 0.823953161808",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953153616",
+   "statement": "|D(1)| ≤ 0.823953153616",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953157712",
+   "statement": "|D(1)| ≤ 0.823953157712",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953159760",
+   "statement": "|D(1)| ≤ 0.823953159760",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160784",
+   "statement": "|D(1)| ≤ 0.823953160784",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160272",
+   "statement": "|D(1)| ≤ 0.823953160272",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160528",
+   "statement": "|D(1)| ≤ 0.823953160528",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160656",
+   "statement": "|D(1)| ≤ 0.823953160656",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160720",
+   "statement": "|D(1)| ≤ 0.823953160720",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160688",
+   "statement": "|D(1)| ≤ 0.823953160688",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160704",
+   "statement": "|D(1)| ≤ 0.823953160704",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160712",
+   "statement": "|D(1)| ≤ 0.823953160712",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160716",
+   "statement": "|D(1)| ≤ 0.823953160716",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160714",
+   "statement": "|D(1)| ≤ 0.823953160714",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160713",
+   "statement": "|D(1)| ≤ 0.823953160713",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  },
+  {
+   "bar": "0.823953160711",
+   "statement": "|D(1)| ≤ 0.823953160711",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  edge-candidate  []  from the object: REFUTED value 146998155940647117829503750779…  0.002 s  note: no record attached"
+  }
+ ],
+ "what": "claimbox tighten: every candidate asked and cert-machine's word on it; the result is a proposal, its words cert-machine's"
+}

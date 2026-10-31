@@ -18,6 +18,7 @@ subprocess on what this program emits; no code is shared).
 usage: python3 tests/battery.py           exit 0 iff every check passes and every red control fires
        python3 tests/battery.py --write   also (re)write the two records
 """
+import copy
 import json
 import os
 import re
@@ -752,6 +753,16 @@ try:
 finally:
     os.remove(fq)
 red('record-decision-mismatch' in fline, 'cert-machine: refused — a valueless record\'s word for a score it never decided (one unit moved)', fline[:90])
+# and the box: a recorded score is written with the row's box (the platform's resolution, or 1e-12 relative); the half-unit box
+# of the print claims more than the row decided, and the receiver refuses it (the operator's ruling, cert-machine df88e284)
+ok(sobj['predicate'][0].get('box', {}).get('kind') == 'resolution' and sobj['predicate'][0]['c'][0] == '3005487278465233/2000000000000000',
+   'library: a recorded platform score is written with the row\'s box, the platform\'s resolution (cert-machine\'s values)', sobj['predicate'][0]['c'][0])
+narrow = copy.deepcopy(sobj)
+narrow['predicate'][0].pop('box', None)
+narrow['predicate'][0]['c'] = [str(x) for x in grammar.box('1.5027436492326165')]
+narrow['id'] = 'narrow-box'
+nline = T.check_with_cert_machine(narrow, ROOT)
+red('record-decision-mismatch' in nline, 'cert-machine: refused — a recorded score claimed in the half-unit box, narrower than the row decided', nline[:90])
 
 # ---- 9 · holes and forks (roadmap step 5) -------------------------------------------------------------------------------
 # every rule the code refuses with is a named hole (or one of the two that are not: a name to fix, a claim about every case);
@@ -950,6 +961,54 @@ red(PR.planted_statement(c12, planted12('for every j in 0 < j < 255 : |256·S(j)
     'prose: refused — a planted run that moves the bar and also the range', 'range changed')
 red(PR.planted_statement(c5, planted_of('c₁* = 0.7532960…')) is False, 'prose: refused — a model whose statement does not move when the sentence\'s bar is moved', 'stuck')
 red(PR.planted_statement(c5, planted_of('c₁* ≥ 0.7532961')) is False, 'prose: refused — a model whose planted statement moves more than the bar', 'relation changed')
+
+# ---- 11 · helpers (claimbox/helpers.py, roadmap step 7) -------------------------------------------------------------------
+# tighten and extend propose claims by search, every candidate decided by cert-machine; the light ones are re-run and must reproduce
+# their records; a decider that does not move with the bar, or one that moves both ways, is caught
+from claimbox import helpers as H  # noqa: E402
+EXH = dict(lang.examples(open(os.path.join(REPO, 'LANGUAGE.md'), encoding='utf-8').read()))
+def helper_run(label, cid, kind, **kw):
+    t = lang.parse(EXH[label])
+    c = [i for i in t['items'] if i['kw'] == 'claim' and i['id'] == cid][0]
+    return (H.tighten if kind == 'tighten' else H.extend)(t, c, ROOT, **kw)
+for label, cid, kind, name, kw in (('E6', 'edge', 'tighten', 'edge-d1', {'digits': 12}), ('E5', 'near_cue', 'tighten', 'rows-near-cue', {'digits': 3}),
+                                   ('E4', 'cmt', 'extend', 'cmt-digits', {'more': 12})):
+    rec = json.load(open(os.path.join(REPO, 'records', 'helpers', name + '.json'), encoding='utf-8'))
+    got = helper_run(label, cid, kind, **kw)
+    same = [(a['bar'], a['word']) for a in got['asked']] == [(a['bar'], a['word']) for a in rec['asked']]
+    ok(same and got.get('tightest', got.get('extended')) == rec.get('tightest', rec.get('extended')),
+       f'helpers: {kind} {label} reproduces its record, candidate for candidate', got.get('tightestStatement') or got.get('extendedStatement'))
+ok(all(json.load(open(os.path.join(REPO, 'records', 'helpers', n + '.json'), encoding='utf-8'))['settled'] for n in ('edge-d1', 'rows-near-cue', 'c1c-k3072-repair'))
+   and json.load(open(os.path.join(REPO, 'records', 'helpers', 'cmt-digits.json'), encoding='utf-8'))['stopped'].startswith('no digit'),
+   'helpers: each tightened bar is certified beside a refuted neighbour; the digits stop where the certificate no longer decides',
+   'edge, rows, C_1c repaired; c₁* to 18 digits')
+HCHK = json.load(open(os.path.join(REPO, 'records', 'helpers-check.json'), encoding='utf-8'))
+ok(all(r['readings'][0]['word'] == 'CERTIFIED' for r in HCHK['claims']) and len(HCHK['claims']) == 4,
+   'helpers: the four proposals, checked as claims in the language (corpus/proposals/helpers.claim), are CERTIFIED by cert-machine', '4 claims')
+realw = H.Search.word
+try:
+    H.Search.word = lambda self, printed: (self.asked.append({'bar': printed, 'statement': printed, 'word': 'CERTIFIED', 'certMachine': ''}) or 'CERTIFIED')
+    stuck_t = helper_run('E6', 'edge', 'tighten')
+    stuck_e = helper_run('E4', 'cmt', 'extend', more=1)
+    flip = {'n': 0}
+    def alternating(self, printed):
+        flip['n'] += 1
+        w = 'CERTIFIED' if flip['n'] in (1, 2, 4) else 'REFUTED'
+        self.asked.append({'bar': printed, 'statement': printed, 'word': w, 'certMachine': ''})
+        return w
+    H.Search.word = alternating
+    odd_t = helper_run('E6', 'edge', 'tighten')
+finally:
+    H.Search.word = realw
+red(not stuck_t['settled'], 'helpers: refused — a decision that certifies every bar never settles a tightening (no refuted neighbour)', str(stuck_t['neighbour']))
+red(not stuck_e['settled'] and 'more than one digit' in (stuck_e['stopped'] or ''), 'helpers: refused — a decision that certifies every digit stops the extension', stuck_e['stopped'] or '')
+red(not odd_t['monotone'] and not odd_t['settled'], 'helpers: refused — a decision that does not move monotonically with the bar', json.dumps([a['word'][0] for a in odd_t['asked']]))
+try:
+    helper_run('E4', 'cmt', 'tighten')
+    got = None
+except Refusal as e:
+    got = e.rule
+red(got == 'decider', 'helpers: refused — tighten on a print cut off with "…" (that is extend\'s)', str(got))
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

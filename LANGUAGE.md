@@ -222,9 +222,22 @@ checker receives is written by the code the calibration holds. A file the langua
 that is not finite integers, or is empty), `source` (a printed number with no source). A statement that is not a claim —
 a theorem, an approximation, an order of growth, prose — is not an error: it is a hole.
 
+### 8.1 · Helpers (step 7, begun)
+
+`python3 -m claimbox tighten FILE[#E6] CLAIM [--digits N] [--name NAME]` proposes the strongest bar of a bound (≤ < ≥ >) that
+cert-machine certifies at N decimals of its mantissa (the claim's own by default), beside its neighbour one unit stronger, which
+cert-machine refutes, and two guards (one unit weaker certified, two stronger refuted); a walk that doubles away from the bar,
+then bisection; from a claim cert-machine refutes, the walk goes the other way (a repair). `extend FILE[#E4] CLAIM [--more K]`
+reads K more digits of a print cut off with "…", each the one digit of the ten whose truncation box cert-machine certifies;
+it stops when none is (the bytes do not decide the digit) or more than one is (the decision does not move with the bar).
+Every candidate is the claim with its bar replaced, quoted from a source the search writes, decided from the object alone (a
+record decides one bar only). `--name` writes the result's source (corpus/helpers/NAME.md) and record (records/helpers/NAME.json)
+and prints the proposal, `proposed by search:tighten` or `search:extend`.
+
 ## 9 · Proposals
 
-`proposed by grammar | person | model:<family>` marks a claim someone or something proposed from a sentence. It counts only
+`proposed by grammar | person | model:<family> | search:<helper>` marks a claim someone or something proposed — from a sentence,
+or, for `search:tighten` and `search:extend` (step 7, claimbox/helpers.py), from a search whose every candidate cert-machine decided. It counts only
 after validation, all of it deterministic (`python3 -m claimbox prose CORPUS`, claimbox/prose.py; roadmap step 6). Each
 proposal reaches levels:
 

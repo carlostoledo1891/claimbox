@@ -1,0 +1,738 @@
+{
+ "claim": "cmt",
+ "statement": "c₁* = 0.7532960…",
+ "from": "0.7532960",
+ "extended": "0.753296067856070677",
+ "extendedStatement": "c₁* = 0.753296067856070677…",
+ "stopped": "no digit is certified: the bytes do not decide the next one",
+ "settled": false,
+ "asked": [
+  {
+   "bar": "0.7532960",
+   "statement": "c₁* = 0.7532960…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: "
+  },
+  {
+   "bar": "0.75329600",
+   "statement": "c₁* = 0.75329600…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 23130228600661603083/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329601",
+   "statement": "c₁* = 0.75329601…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 9566168612357664683/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329602",
+   "statement": "c₁* = 0.75329602…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 15134445848769055649/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329603",
+   "statement": "c₁* = 0.75329603…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 2784138618205695483/9994728439…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329604",
+   "statement": "c₁* = 0.75329604…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1427732619375301643/7995782751…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329605",
+   "statement": "c₁* = 0.75329605…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1570385860465117249/1998945687…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606",
+   "statement": "c₁* = 0.75329606…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -857119655016039219/3997891375…  0.001 s  note: "
+  },
+  {
+   "bar": "0.75329607",
+   "statement": "c₁* = 0.75329607…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -606876378870289117/4997364219…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329608",
+   "statement": "c₁* = 0.75329608…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -8852902406908586653/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329609",
+   "statement": "c₁* = 0.75329609…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296060",
+   "statement": "c₁* = 0.753296060…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 27409825833356071263/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.753296061",
+   "statement": "c₁* = 0.753296061…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 11705967228704898773/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296062",
+   "statement": "c₁* = 0.753296062…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 19414043081463523829/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296063",
+   "statement": "c₁* = 0.753296063…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 240877370398707033/62467052749…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296064",
+   "statement": "c₁* = 0.753296064…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 2283652065914195279/7995782751…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.753296065",
+   "statement": "c₁* = 0.753296065…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 3710184476812351339/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296066",
+   "statement": "c₁* = 0.753296066…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 3422477577678428961/3997891375…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067",
+   "statement": "c₁* = 0.753296067…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -143853449566961189/9994728439…  0.002 s  note: "
+  },
+  {
+   "bar": "0.753296068",
+   "statement": "c₁* = 0.753296068…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -4573305174214118473/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.753296069",
+   "statement": "c₁* = 0.753296069…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -857119655016039219/3997891375…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960670",
+   "statement": "c₁* = 0.7532960670…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 30226884400838015893/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960671",
+   "statement": "c₁* = 0.7532960671…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 819656032027866943/12493410549…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960672",
+   "statement": "c₁* = 0.7532960672…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 22231101648945468459/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960673",
+   "statement": "c₁* = 0.7532960673…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 9116605136499597371/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960674",
+   "statement": "c₁* = 0.7532960674…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 569412755882116841/15991565503…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960675",
+   "statement": "c₁* = 0.7532960675…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 2559356880276661827/9994728439…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960676",
+   "statement": "c₁* = 0.7532960676…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 6239536145160373591/3997891375…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960677",
+   "statement": "c₁* = 0.7532960677…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1120822384607049937/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678",
+   "statement": "c₁* = 0.7532960678…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1756246606732173843/399789137…  0.002 s  note: "
+  },
+  {
+   "bar": "0.7532960679",
+   "statement": "c₁* = 0.7532960679…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -143853449566961189/9994728439…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606780",
+   "statement": "c₁* = 0.75329606780…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 18418556316194725023/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606781",
+   "statement": "c₁* = 0.75329606781…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 7210332470124225653/1998945687…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606782",
+   "statement": "c₁* = 0.75329606782…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 10422773564302177589/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606783",
+   "statement": "c₁* = 0.75329606783…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 50194392096530499/312335263745…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606784",
+   "statement": "c₁* = 0.75329606784…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 485398162481926031/79957827518…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785",
+   "statement": "c₁* = 0.75329606785…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -785450281768321781/1998945687…  0.002 s  note: "
+  },
+  {
+   "bar": "0.75329606786",
+   "statement": "c₁* = 0.75329606786…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -5568791939482917279/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606787",
+   "statement": "c₁* = 0.75329606787…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -2391670828857297749/999472843…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606788",
+   "statement": "c₁* = 0.75329606788…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -13564574691375464713/39978913…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606789",
+   "statement": "c₁* = 0.75329606789…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1756246606732173843/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067850",
+   "statement": "c₁* = 0.753296067850…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 20272016748150027833/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067851",
+   "statement": "c₁* = 0.753296067851…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 4068531343050938529/9994728439…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067852",
+   "statement": "c₁* = 0.753296067852…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 12276233996257480399/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067853",
+   "statement": "c₁* = 0.753296067853…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 4139171310155603341/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067854",
+   "statement": "c₁* = 0.753296067854…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 856090248872986593/79957827518…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067855",
+   "statement": "c₁* = 0.753296067855…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 17659991776166203/249868210996…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856",
+   "statement": "c₁* = 0.753296067856…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -3715331507527614469/399789137…  0.002 s  note: "
+  },
+  {
+   "bar": "0.753296067857",
+   "statement": "c₁* = 0.753296067857…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -3856611441736944093/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067858",
+   "statement": "c₁* = 0.753296067858…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -11711114259420161903/39978913…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067859",
+   "statement": "c₁* = 0.753296067859…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -785450281768321781/1998945687…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560",
+   "statement": "c₁* = 0.7532960678560…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1172292691759681237/399789137…  0.002 s  note: "
+  },
+  {
+   "bar": "0.7532960678561",
+   "statement": "c₁* = 0.7532960678561…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -2585092033852977477/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678562",
+   "statement": "c₁* = 0.7532960678562…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -9168075443652228671/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678563",
+   "statement": "c₁* = 0.7532960678563…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -3291491704899625597/999472843…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678564",
+   "statement": "c₁* = 0.7532960678564…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -3432771639108955221/799578275…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678565",
+   "statement": "c₁* = 0.7532960678565…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -10580874785745524911/19989456…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678566",
+   "statement": "c₁* = 0.7532960678566…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -25159640947437323539/39978913…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678567",
+   "statement": "c₁* = 0.7532960678567…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -3644691540422949657/499736421…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678568",
+   "statement": "c₁* = 0.7532960678568…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -33155423699329870973/39978913…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678569",
+   "statement": "c₁* = 0.7532960678569…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -3715331507527614469/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785600",
+   "statement": "c₁* = 0.75329606785600…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 24258095465919651083/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785601",
+   "statement": "c₁* = 0.75329606785601…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 10130102044986688683/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785602",
+   "statement": "c₁* = 0.75329606785602…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 16262312714027103649/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785603",
+   "statement": "c₁* = 0.75329606785603…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 3066105334520207483/9994728439…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606785604",
+   "statement": "c₁* = 0.75329606785604…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1653305992426911243/7995782751…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785605",
+   "statement": "c₁* = 0.75329606785605…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 2134319293094141249/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785606",
+   "statement": "c₁* = 0.75329606785606…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 270747210242008781/39978913759…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607",
+   "statement": "c₁* = 0.75329606785607…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -465893020713033117/4997364219…  0.002 s  note: "
+  },
+  {
+   "bar": "0.75329606785608",
+   "statement": "c₁* = 0.75329606785608…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -7725035541650538653/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785609",
+   "statement": "c₁* = 0.75329606785609…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1172292691759681237/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070",
+   "statement": "c₁* = 0.753296067856070…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1290419273526185907/399789137…  0.002 s  note: "
+  },
+  {
+   "bar": "0.753296067856071",
+   "statement": "c₁* = 0.753296067856071…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -661038831184057453/4997364219…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856072",
+   "statement": "c₁* = 0.753296067856072…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -9286202025418733341/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.753296067856073",
+   "statement": "c₁* = 0.753296067856073…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -6642046700682503529/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856074",
+   "statement": "c₁* = 0.753296067856074…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -691279391092451231/1599156550…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856075",
+   "statement": "c₁* = 0.753296067856075…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -5319969038314388623/999472843…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856076",
+   "statement": "c₁* = 0.753296067856076…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -25277767529203828209/39978913…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.753296067856077",
+   "statement": "c₁* = 0.753296067856077…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -14637829452575050963/19989456…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856078",
+   "statement": "c₁* = 0.753296067856078…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -33273550281096375643/39978913…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856079",
+   "statement": "c₁* = 0.753296067856079…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -465893020713033117/4997364219…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560700",
+   "statement": "c₁* = 0.7532960678560700…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 23076829648254604383/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560701",
+   "statement": "c₁* = 0.7532960678560701…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 9539469136154165333/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560702",
+   "statement": "c₁* = 0.7532960678560702…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 15081046896362056949/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560703",
+   "statement": "c₁* = 0.7532960678560703…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 173174305006496613/62467052749…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560704",
+   "statement": "c₁* = 0.7532960678560704…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1417052828893901903/7995782751…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560705",
+   "statement": "c₁* = 0.7532960678560705…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1543686384261617899/1998945687…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706",
+   "statement": "c₁* = 0.7532960678560706…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -910518607423037919/3997891375…  0.001 s  note: "
+  },
+  {
+   "bar": "0.7532960678560707",
+   "statement": "c₁* = 0.7532960678560707…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1227102495842327909/999472843…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560708",
+   "statement": "c₁* = 0.7532960678560708…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -8906301359315585353/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560709",
+   "statement": "c₁* = 0.7532960678560709…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1290419273526185907/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607060",
+   "statement": "c₁* = 0.75329606785607060…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 26875836309286084263/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607061",
+   "statement": "c₁* = 0.75329606785607061…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 11438972466669905273/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607062",
+   "statement": "c₁* = 0.75329606785607062…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 18880053557393536829/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607063",
+   "statement": "c₁* = 0.75329606785607063…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1860270272680907889/4997364219…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607064",
+   "statement": "c₁* = 0.75329606785607064…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 2176854161100197879/7995782751…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607065",
+   "statement": "c₁* = 0.75329606785607065…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 3443189714777357839/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607066",
+   "statement": "c₁* = 0.75329606785607066…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 2888488053608441961/3997891375…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607067",
+   "statement": "c₁* = 0.75329606785607067…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -277350830584457939/9994728439…  0.002 s  note: "
+  },
+  {
+   "bar": "0.75329606785607068",
+   "statement": "c₁* = 0.75329606785607068…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -5107294698284105473/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.75329606785607069",
+   "statement": "c₁* = 0.75329606785607069…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -910518607423037919/3997891375…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070670",
+   "statement": "c₁* = 0.753296067856070670…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 24886989160138145893/399789137…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070671",
+   "statement": "c₁* = 0.753296067856070671…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1305568611511992011/2498682109…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070672",
+   "statement": "c₁* = 0.753296067856070672…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 16891206408245598459/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070673",
+   "statement": "c₁* = 0.753296067856070673…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 6446657516149662371/1998945687…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070674",
+   "statement": "c₁* = 0.753296067856070674…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 355816946254122041/15991565503…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070675",
+   "statement": "c₁* = 0.753296067856070675…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 1224383070101694327/9994728439…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070676",
+   "statement": "c₁* = 0.753296067856070676…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 899640904460503591/39978913759…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070677",
+   "statement": "c₁* = 0.753296067856070677…",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1549125235742885063/199894568…  0.002 s  note: "
+  },
+  {
+   "bar": "0.753296067856070678",
+   "statement": "c₁* = 0.753296067856070678…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -7096141847432043843/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.753296067856070679",
+   "statement": "c₁* = 0.753296067856070679…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -277350830584457939/9994728439…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706770",
+   "statement": "c₁* = 0.7532960678560706770…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: CERTIFIED value 114440642422208910934/15191987… · REFUTED value 4998517668658762193/3997891375…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706771",
+   "statement": "c₁* = 0.7532960678560706771…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · REFUTED value 250156573178122119/99947284398…  0.002 s  note: no r"
+  },
+  {
+   "bar": "0.7532960678560706772",
+   "statement": "c₁* = 0.7532960678560706772…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -2997265083233785241/399789137…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706773",
+   "statement": "c₁* = 0.7532960678560706773…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -3497578229590029479/199894568…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706774",
+   "statement": "c₁* = 0.7532960678560706774…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -439721913405053307/1599156550…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706775",
+   "statement": "c₁* = 0.7532960678560706775…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1873867401384075799/499736421…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706776",
+   "statement": "c₁* = 0.7532960678560706776…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -18988830587018880109/39978913…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706777",
+   "statement": "c₁* = 0.7532960678560706777…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -11493360981482576913/19989456…  0.002 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706778",
+   "statement": "c₁* = 0.7532960678560706778…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -26984613338911427543/39978913…  0.001 s  note: no"
+  },
+  {
+   "bar": "0.7532960678560706779",
+   "statement": "c₁* = 0.7532960678560706779…",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  cmt-candidate  []  from the object: REFUTED value 114440642422208910934/15191987… · CERTIFIED value -1549125235742885063/199894568…  0.002 s  note: no"
+  }
+ ],
+ "what": "claimbox extend: every candidate asked and cert-machine's word on it; the result is a proposal, its words cert-machine's"
+}

@@ -221,7 +221,25 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    moved: REFUSED there). make test: 496 pass, 0 fail, 111/111 reds; recall 56/56. Open in cert-machine for the operator: an `in`
    from a valueless EinsteinArena row states the half-unit box of the print, while the row decided only within the platform's
    resolution. The page is unchanged (no republish needed).
-   NEXT: the operator's worksheet; step 7; readers for the 108 register sentences whose bytes claimbox does not pin.
+   THE OPERATOR'S ANSWERS (asked here, after the lift): step 7, tighten first; when cert-machine's "hold the box to the row"
+   change lands (lane-receiver-row-box; ruled there by the operator), apply it — the writer emits the row-resolution box — and
+   ask cert-machine-cb to republish (the operator approves the deploy in its chat); the operator fills the worksheet later;
+   the model budget stays claude-opus-5-5 under the $20 cap.
+   STEP 7 BEGUN (tighten first): claimbox/helpers.py — Search (each candidate: the claim with its bar replaced, quoted from a
+   source the search writes under .plants/, the record line dropped, compiled, decided by cert-machine), tighten (doubling walk
+   then bisection; two guards around the boundary; a REFUTED start is repaired by walking weaker), extend (the one digit of ten
+   whose truncation box is certified; stops on none or several), write (corpus/helpers/NAME.md, records/helpers/NAME.json, the
+   proposal block). `claimbox tighten|extend FILE[#E] CLAIM [--digits N|--more K] [--name N]`; lang.py reads `proposed by
+   search:<helper>`. RESULTS: edge |D(1)| ≤ 0.823953160713 (…712 refuted); rows ≤ 1.837·10⁻⁴⁰; C_1c ≥ 0.41030211723 (the E3
+   repair; each candidate ~21 s there); c₁* = 0.753296067856070677… (18 digits; the 19th undecided at K = 8).
+   corpus/proposals/helpers.claim, checked: 4/4 CERTIFIED (records/helpers-check.json). Battery §11: three reproductions,
+   the settled pairs, the check; reds: a decision certifying every bar (no neighbour), every digit (several), a non-monotone
+   one (the guards), tighten on an ellipsis. THE ROW BOX (cert-machine df88e284, the operator's "hold the box to the row"):
+   translate writes a recorded score (record in einstein_arena.RECORDED) as rel in, the print ± the platform's minImprovement
+   quoted from problems.json (slug_of by title), or 1e-12·max(1,|S|) with rule 1e-12-relative where it is 0 — cert-machine-cb's
+   ten values matched; a red holds the half-unit box refused. The register's words unchanged (40 CERTIFIED, 2 REFUSED: Erdős,
+   REPAIRED). make test: 507 pass, 0 fail, 116/116 reds; recall 56/56. The page gains "Helpers, begun". PLAN.md r11.
+   NEXT: step 7's attack, then watchers; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
 
 ## TASKS BACKLOG (updated 2026-10-30, THE GROWTH PLAN — claimbox stays separate and grows as cert-machine's audits need it; cert-machine's scope does not change; the three-verdict ideas saved under it, NOT ADOPTED; the eighth session's state follows)

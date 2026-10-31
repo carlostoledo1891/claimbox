@@ -13,6 +13,9 @@
   library                                          every definition a claim may use: its names, version, readings, conventions and route
   prose CORPUS [--run] [--record OUT.json] [--worksheet]         from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
                                                    their levels (anchored, printed back, planted, concord) and the outcome; --run adds cert-machine's words
+  tighten FILE[#E6] CLAIM [--digits N] [--name N]  step 7: the strongest bar cert-machine certifies (at N decimals) and its refuted neighbour,
+                                                   every candidate decided by cert-machine; --name writes corpus/helpers/N.md and records/helpers/N.json
+  extend FILE[#E4] CLAIM [--more K] [--name N]     the next K digits of a print cut off with "…", each the one digit cert-machine certifies
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -68,6 +71,13 @@ def main(argv=None):
     ck.add_argument('--run', action='store_true')
     ck.add_argument('--record')
     sub.add_parser('library')
+    for name in ('tighten', 'extend'):
+        h = sub.add_parser(name)
+        h.add_argument('file')
+        h.add_argument('claim')
+        h.add_argument('--digits', type=int)
+        h.add_argument('--more', type=int, default=3)
+        h.add_argument('--name')
     pr = sub.add_parser('prose')
     pr.add_argument('corpus')
     pr.add_argument('--run', action='store_true')
@@ -102,6 +112,34 @@ def main(argv=None):
                            'corpus': a.corpus, 'summary': s, 'sentences': entries}, f, indent=1, ensure_ascii=False)
                 f.write('\n')
             print('record ' + a.record)
+        return 0
+    if a.cmd in ('tighten', 'extend'):
+        from . import helpers, lang
+        path, _, label = a.file.partition('#')
+        text = open(path, encoding='utf-8').read()
+        text = dict(lang.examples(text)).get(label) if label else text
+        if text is None:
+            print('REFUSED  ' + path + ' has no example ' + label)
+            return 1
+        tree = lang.parse(text)
+        c = next((i for i in tree['items'] if i['kw'] == 'claim' and i['id'] == a.claim), None)
+        if c is None:
+            print('REFUSED  no claim ' + a.claim)
+            return 1
+        try:
+            r = helpers.tighten(tree, c, ROOT, digits=a.digits) if a.cmd == 'tighten' else helpers.extend(tree, c, ROOT, more=a.more)
+        except Refusal as e:
+            print(f'REFUSED  {e.rule}: {e.msg}')
+            return 1
+        for x in r['asked']:
+            print(f'  {x["word"]:<10} {x["statement"]}')
+        if a.cmd == 'tighten':
+            print(('settled   ' if r['settled'] else 'UNSETTLED ') + r['tightestStatement'] + ('   (its neighbour ' + r['neighbour'] + ': ' + str(r['neighbourWord']) + ')' if r['neighbour'] else '   (no refuted neighbour found)')
+                  + ('' if r['monotone'] else '   NOT MONOTONE: the decision does not move with the bar'))
+        else:
+            print(('settled   ' if r['settled'] else 'STOPPED   ') + r['extendedStatement'] + (f'   ({r["stopped"]})' if r['stopped'] else ''))
+        if a.name:
+            print(helpers.write(r, a.name, (c['over'] or ['?'])[0]))
         return 0
     if a.cmd == 'library':
         from . import library

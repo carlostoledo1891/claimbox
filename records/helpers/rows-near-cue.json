@@ -1,0 +1,161 @@
+{
+ "claim": "near_cue",
+ "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+ "relation": "≤",
+ "from": "3·10⁻⁴⁰",
+ "digits": 3,
+ "repaired": false,
+ "tightest": "1.837·10⁻⁴⁰",
+ "tightestStatement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.837·10⁻⁴⁰",
+ "neighbour": "1.836·10⁻⁴⁰",
+ "neighbourWord": "REFUTED",
+ "settled": true,
+ "monotone": true,
+ "asked": [
+  {
+   "bar": "3.000·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3.000·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.999·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.999·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.998·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.998·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.996·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.996·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.992·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.992·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.984·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.984·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.968·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.968·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.936·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.936·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.872·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.872·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.744·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.744·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "2.488·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 2.488·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "1.976·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.976·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "0.952·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.952·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.464·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.464·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.720·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.720·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.848·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.848·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "1.784·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.784·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.816·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.816·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.832·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.832·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.840·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.840·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "1.836·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.836·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  },
+  {
+   "bar": "1.838·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.838·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "1.837·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.837·10⁻⁴⁰",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached"
+  },
+  {
+   "bar": "1.835·10⁻⁴⁰",
+   "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.835·10⁻⁴⁰",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  near-cue-candidate  []  from the object: REFUTED (witness {\"i\": 0}, 255 violating) · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: n"
+  }
+ ],
+ "what": "claimbox tighten: every candidate asked and cert-machine's word on it; the result is a proposal, its words cert-machine's"
+}

@@ -1,0 +1,46 @@
+-- The helpers' proposals (claimbox/helpers.py, step 7): each the result of a search whose every candidate cert-machine decided
+-- (records/helpers/<name>.json); each quotes the source the search wrote (corpus/helpers/<name>.md). Proposals, never decisions:
+-- python3 -m claimbox check corpus/proposals/helpers.claim --run hands each to cert-machine.
+
+data   e = ../claimbox/corpus/riemann/zeta23/LawN256.encl.json
+read   e as integers
+use    D v1
+source HE6 = ../claimbox/corpus/helpers/edge-d1.md
+use    S v1
+source HE5 = ../claimbox/corpus/helpers/rows-near-cue.md
+data   w = corpus/optconst-queue/next-2026-10-18/rozetyp/previous/certificate_K3072.json
+read   w as integers
+use    C_1c v1
+source HE3 = ../claimbox/corpus/helpers/c1c-k3072-repair.md
+data   s = ../claimbox/corpus/riemann/zeta23/mt-series.json
+read   s as integers
+use    c₁* v1
+source HE4 = ../claimbox/corpus/helpers/cmt-digits.md
+
+-- from E6 (edge): |D(1)| ≤ 0.82395317
+claim  edge_tighten over e
+  quote "|D(1)| ≤ 0.823953160713" from HE6
+  : |D(1)| ≤ 0.823953160713
+  proposed by search:tighten
+  expect CERTIFIED
+
+-- from E5 (near_cue): for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰
+claim  near_cue_tighten over e
+  quote "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.837·10⁻⁴⁰" from HE5
+  : for every j in 0 < j < 256 : |256·S(j) - j| ≤ 1.837·10⁻⁴⁰
+  proposed by search:tighten
+  expect CERTIFIED
+
+-- from E3 (c1c_k3072): C_1c(w) ≥ 0.41030211724
+claim  c1c_k3072_tighten
+  quote "C_1c(w) ≥ 0.41030211723" from HE3
+  : C_1c(w) ≥ 0.41030211723
+  proposed by search:tighten
+  expect CERTIFIED
+
+-- from E4 (cmt): c₁* = 0.7532960…
+claim  cmt_extend over s
+  quote "c₁* = 0.753296067856070677…" from HE4
+  : c₁* = 0.753296067856070677…
+  proposed by search:extend
+  expect CERTIFIED

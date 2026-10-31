@@ -1,6 +1,6 @@
 # PLAN — claimbox, the language for cert-machine
 
-*A living plan, iterated with the operator. Revision 10, 2026-10-30. Its roadmap table (§7) is read by the landing page's
+*A living plan, iterated with the operator. Revision 11, 2026-10-30. Its roadmap table (§7) is read by the landing page's
 builder (web/), so the page and this file cannot disagree; change the table here and rebuild the page. The research
 behind it is notes/research-2026-10-30.md; the earlier brainstorms are notes/claim-court-2026-10-23.md and the growth
 plan in HANDOFF.md, which this plan absorbs.*
@@ -202,6 +202,15 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r11, 2026-10-30.** Step 7 begun, tighten first (the operator's choice): claimbox/helpers.py, `claimbox tighten` and
+  `claimbox extend`, every candidate decided by cert-machine. Results (records/helpers/): |D(1)| ≤ 0.823953160713 at twelve
+  decimals (…712 refuted); the near-CUE rows max |256·S(j) − j| ≤ 1.837·10⁻⁴⁰ (the source prints 3·10⁻⁴⁰); the rounded-up lower
+  bound C_1c ≥ 0.41030211724 repaired to …723; c₁* extended from seven digits to eighteen, 0.753296067856070677…, where the series
+  certificate (K = 8) stops deciding. The four proposals, checked as claims in the language (corpus/proposals/helpers.claim), are
+  CERTIFIED. The language reads `proposed by search:<helper>`. cert-machine's two receiver changes lifted: a valueless record
+  decides only the bar its row states (1e829d0b), and holds the box to the row (df88e284, the operator's ruling): a recorded
+  platform score is now written with the row's box (the platform's resolution, or 1e-12 relative where it declares none). Next in
+  step 7: attack (a counterexample search), then watchers (`for every`, not refuted up to N, planted twins).
 - **r10, 2026-10-30.** The register's two gaps closed. `DATA["heading"]` names one object of a file that holds many (library
   `decomposition` v1: cert-machine's tensor decider and the record row it wrote for that heading of these bytes; no heading on a
   file holding many is hole `ambiguous`). A platform problem with no verifier written here takes the recorded route (library

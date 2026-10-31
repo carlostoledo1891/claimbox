@@ -205,9 +205,21 @@ def structural(entries):
     return [dict({k: v for k, v in s.items() if k != 'what'}, note=s['what']) for s in entries]
 
 
-def resolution_box(root, data, slug, title, p):
+def slug_of(root, data, title):
+    """a platform problem's slug, read off the problems.json beside the record by its title"""
+    pjp = os.path.join(root, os.path.dirname(data), 'problems.json')
+    if not os.path.isfile(pjp):
+        return None
+    raw = open(pjp, 'rb').read().decode('utf-8', 'replace')
+    m = re.search(r'"slug":"([^"]+)","title":"' + re.escape(title) + '"', raw)
+    return m.group(1) if m else None
+
+
+def resolution_box(root, data, slug, title, p, relative=False):
     """the platform's declared resolution for a problem, quoted from the problems.json beside the record (the receiver's `box` block):
-    (box, lo, hi, the resolution as printed) — the box is the printed score p ± minImprovement"""
+    (box, lo, hi, the resolution as printed) — the box is the printed score p ± minImprovement. With `relative` (a score decided
+    by cert-machine's record, whose rows agree within the platform's resolution, or 1e-12 relative where it declares none: the
+    operator's ruling of 2026-10-30, "hold the box to the row"), a minImprovement of 0 gives t = 1e-12·max(1, |p|), exactly"""
     pj = os.path.join(os.path.dirname(data), 'problems.json')
     pjp = os.path.join(root, pj)
     if not os.path.isfile(pjp):
@@ -220,9 +232,14 @@ def resolution_box(root, data, slug, title, p):
     if not m or quote.count('"slug"') != 1 or quote.count('"minImprovement"') != 1:
         raise Refusal('resolution', 'problems.json does not print a minImprovement in the entry of ' + slug)
     hw = Fraction(m.group(1))
+    rule = None
+    if hw <= 0 and relative:
+        hw, rule = Fraction(1, 10 ** 12) * max(Fraction(1), abs(p)), '1e-12-relative'
     if hw <= 0:
         raise Refusal('resolution', 'the platform declares no resolution for "' + title + '" (minImprovement ' + m.group(1) + '): the half-unit box of the printed digits would apply, and a float64 score need not satisfy it')
     box = {'kind': 'resolution', 'key': 'minImprovement', 'halfWidth': str(hw), 'source': {'path': pj, 'sha256': sha256(pjp), 'quote': quote}}
+    if rule:
+        box['rule'] = rule
     return box, p - hw, p + hw, m.group(1)
 
 
@@ -605,6 +622,22 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             hyps.append('a decomposition of the tensor with r terms is an algorithm in r multiplications for every pair of matrices of those sizes')
             fals = ['one tensor-identity equation fails on the pinned factors', hashed]
             ref = 'no bar: the identity holds or it does not; the factors are read as ' + how_read
+        elif fam == 'score' and record and record.get('path') in RECORDED:
+            # a platform problem decided by cert-machine's record (library einstein_arena.py, RECORDED): the row decided that the
+            # exact score agrees with the print within the platform's resolution, so the box is that resolution, not the
+            # half-unit box of the digits (the operator's ruling of 2026-10-30, "hold the box to the row"; cert-machine df88e284)
+            title = shape.get('problem') or ''
+            slug = slug_of(root, data, title)
+            if slug is None:
+                raise Refusal('resolution', 'problems.json beside the record does not name "' + title + '"')
+            box, lo, hi, res = resolution_box(root, data, slug, title, grammar.exact(printed), relative=True)
+            g_named = {'named': str(shape.get('name')) + ' of the published object, as the claimant defines it', 'where': decider, 'args': ['f']}
+            preds.append({'g': g_named, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)], 'box': box,
+                          'note': 'the box is the row\'s: the printed score ± the platform\'s resolution for the problem (minImprovement ' + res +
+                                  (', 0 declared: 1e-12 relative' if box.get('rule') else '') + ', quoted from problems.json)'})
+            hyps.append('cert-machine\'s record row decided that the exact score of the pinned bytes agrees with the print within the platform\'s resolution; the object claims no narrower box')
+            fals = ['the exact score lies outside [' + str(lo) + ', ' + str(hi) + ']', hashed]
+            ref = 'the printed ' + printed + ' ± the resolution the row decided agreement within; the object is read as ' + how_read
         elif fam in ('digits', 'score'):
             named = str(shape.get('name')) + ' of the published object, as the claimant defines it'
             lo, hi = shape['c']

@@ -516,7 +516,7 @@ def claim_line(c, line, n):
             raise LangError('syntax', n, 'a record\'s verdict is one of ' + ', '.join(WORDS))
         c['record'] = {'path': m.group(1), 'row': m.group(2), 'value': m.group(3), 'verdict': m.group(4)}
         return
-    m = re.fullmatch(r'proposed by (grammar|person|model:[\w.-]+)', line)
+    m = re.fullmatch(r'proposed by (grammar|person|model:[\w.-]+|search:[\w.-]+)', line)     # search: a step-7 helper
     if m:
         c['proposed'] = m.group(1)
         return
