@@ -96,7 +96,8 @@ model's own syntax slip (it wrote the file name for the data name). The einstein
 min-distance from its bytes (the title is defined): CERTIFIED (formerly admitted undecided); its job and the identity record were
 rewritten (WRITE=1: only that job's digest moved). The register: 76 proposed, 73 CERTIFIED, 1 REFUTED, 2 REFUSED; validated 19;
 not stated 75. Battery §13: a green and two reds (scores moved one unit, a forged hull). make test 538 pass, 133/133. The page
-moved ("57 decided, 75 name the reason"): cert-machine-cb asked to republish on the operator's word. Hexagons stay a hole: the
+moved ("57 decided, 75 name the reason"): REPUBLISHED on the operator's word, cert-machine aa6c38dd from claimbox e006a0a
+(61,321 bytes, sha256 b4de5c9b…f9316a9826f, checked here with curl); the operator accepted the printed-digit reading of SOTA-table scores. Hexagons stay a hole: the
 hexagons are rotated by float angles in degrees and the receiver has no exact sine or cosine.
 
 **NEXT, in order.**
