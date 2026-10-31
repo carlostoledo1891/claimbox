@@ -50,6 +50,7 @@ from .library.step_functions import *  # noqa: F401,F403
 from .library.einstein_arena import *  # noqa: F401,F403
 from .library.zeta23 import *  # noqa: F401,F403
 from .library.kissing import *  # noqa: F401,F403
+from .library.selfpower import SELFPOWER  # noqa: E402
 
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
 
@@ -422,6 +423,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             quote = quote[max(0, quote.find(key) - 60):quote.find(key) + len(key) + 60]
 
     fam = shape['family']
+    if fam == 'bound' and str(shape.get('name')) in SELFPOWER and not decider:
+        return translate_selfpower(shape, root, source, sp, data, dp, quote, reading, obj_id, what, sentence, record)
     cert = CERTIFICATE_BY_KEY.get(ckey(shape.get('name'))) if fam in ('bound', 'digits', 'identity') and not decider else None
     text = sentence.strip()
     if cert is not None and cert.get('constant'):
@@ -653,6 +656,31 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             fals = ['the quantity computed exactly from the pinned bytes violates ' + str(shape.get('name')) + ' ' + rel_text(shape['rel']) + ' ' + printed, hashed]
             ref = 'the bar is the printed decimal taken exactly (' + str(shape['c']) + '); the object is read as ' + how_read
     return assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record)
+
+
+def translate_selfpower(shape, root, source, sp, data, dp, quote, reading, obj_id, what, sentence, record):
+    """a bound on the real root of x^x = N (library selfpower.py): N read from the pinned file, the bar's exact rational p/q, the
+    predicate p^p − N^q·q^p against 0, decided by the receiver from the object"""
+    from .library import selfpower as SP
+    try:
+        doc = json.loads(open(dp, 'rb').read().decode('utf-8'))
+    except (ValueError, UnicodeDecodeError) as e:
+        raise Refusal('data', 'the pinned file is not JSON: ' + str(e)[:60])
+    N = doc.get('N') if isinstance(doc, dict) else None
+    if isinstance(N, bool) or not isinstance(N, int) or N < 2:
+        raise Refusal('data', 'the pinned file must print the integer N > 1 of x^x = N; it prints ' + str(N)[:20])
+    if shape['rel'] not in SP.FLIP:
+        raise Refusal('decider', 'xroot takes a bound (≤ < ≥ >); an exact identity for a transcendental root is not decidable here')
+    a = Fraction(grammar.exact(shape['printed']))
+    if a <= 1:
+        raise Refusal('range', 'a bar at or below 1: the reduction holds for bars above 1 (xroot exceeds 1)')
+    pred = SP.predicate(N, a.numerator, a.denominator, shape['rel'])     # the bar is in the expression: the zero is the bar
+    domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'count': 1, 'variable': 'f',
+              'decoder': 'no array: the file prints N = ' + str(N) + ', written into the expression as a literal'}
+    hyps = [SP.SELFPOWER['xroot']['reduction']]
+    fals = ['p^p and N^q·q^p, computed exactly, stand the other way round', 'the pinned file does not hash to ' + domain['pin']['sha256'][:8] + '…']
+    ref = 'the bar is the printed ' + shape['printed'] + ', taken exactly as ' + str(a) + '; the root is decided by an exact integer inequality, no logarithm evaluated'
+    return assemble(obj_id, shape, 'bound', sentence.strip(), what, source, sp, quote, reading, domain, [pred], ref, hyps, fals, record)
 
 
 def assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record):

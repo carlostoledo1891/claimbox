@@ -1037,5 +1037,25 @@ except Refusal as e:
     got = e.rule
 red(got == 'watcher', 'helpers: refused — watch on a claim that is not about every case', str(got))
 
+# ---- 12 · x^x = 64 (the operator's experiment, 2026-10-31: library selfpower.py) --------------------------------------------
+# the AI proposes, claimbox states, cert-machine decides: a bound on the root is one exact integer inequality; the planted
+# claims one digit off are refuted; the continued-fraction brackets come from the record (each a ~2.6-million-digit comparison)
+XT = lang.parse(open(os.path.join(REPO, 'corpus', 'xx64', 'claims.claim'), encoding='utf-8').read())
+XC = {i['id']: i for i in XT['items'] if i['kw'] == 'claim'}
+xw = {cid: CP.word(T.check_with_cert_machine(CP.compile_claim(XT, XC[cid], ROOT)[0]['object'], ROOT)) for cid in ('above', 'below', 'planted_above', 'planted_below')}
+ok(xw['above'] == xw['below'] == 'CERTIFIED', 'x^x = 64: the AI\'s bracket 3.3991 < x < 3.3992 is CERTIFIED, each bound one exact integer inequality', json.dumps(xw))
+red(xw['planted_above'] == 'REFUTED', 'x^x = 64: refuted — the planted x > 3.3992', xw['planted_above'])
+red(xw['planted_below'] == 'REFUTED', 'x^x = 64: refuted — the planted x < 3.3991', xw['planted_below'])
+XREC = {r['id']: r for r in json.load(open(os.path.join(REPO, 'records', 'xx64-check.json'), encoding='utf-8'))['claims']}
+ok(all(XREC[c]['readings'][0]['word'] == 'CERTIFIED' for c in ('cf_above_8', 'cf_below_7', 'cf_above_10', 'cf_below_9')),
+   'x^x = 64: consecutive continued-fraction convergents bracket the root, 458912/135009 < x < 400097/117706 (the record)', 'four bounds')
+try:
+    XB = lang.parse(open(os.path.join(REPO, 'corpus', 'xx64', 'claims.claim'), encoding='utf-8').read().replace('xroot(n) > 3.3991', 'xroot(n) > 1'))
+    CP.compile_claim(XB, [i for i in XB['items'] if i['kw'] == 'claim'][0], ROOT)
+    got = None
+except Refusal as e:
+    got = e.rule
+red(got in ('range', 'source'), 'x^x = 64: refused — a bar the reduction does not cover (at or below 1), or one the source does not print', str(got))
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

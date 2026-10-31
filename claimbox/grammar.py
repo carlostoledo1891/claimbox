@@ -287,6 +287,11 @@ def parse(text):
     m = re.search(r'^' + NAME + r'\s*=\s*(' + NUMBER + r')\s*(?:\.\.\.|…)?\s*(<=|>=|<|>)\s*(' + NUMBER + r')' + END, t)
     if m:
         return out({'family': 'bound', 'name': m.group(1), 'rel': REL_WORD[m.group(3)], 'printed': m.group(4), 'c': exact(m.group(4)), 'valuePrinted': m.group(2)})
+    # bound with a rational bar: NAME REL p/q, an inequality only (2026-10-31: a root bracketed by continued-fraction convergents,
+    # 458912/135009 < x; an equality with a rational is the identity shape below)
+    m = re.search(r'^' + NAME + r'\s*(<=|>=|<|>)\s*(-?\d+/[1-9]\d*)' + END, t)
+    if m and not re.match(r'^K\(\d+\)$', m.group(1)):
+        return out({'family': 'bound', 'name': m.group(1), 'rel': REL_WORD[m.group(2)], 'printed': m.group(3), 'c': Fraction(m.group(3))})
     # bound: NAME REL NUMBER (a number followed by / is a rational, the identity shape's, never cut at the slash)
     m = re.search(r'^' + NAME + r'\s*' + REL + r'\s*(' + NUMBER + r')' + END, t)
     if m:

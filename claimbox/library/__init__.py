@@ -7,6 +7,7 @@ Every definition the translator knows lives in a file of its family:
     zeta23.py           the Riemann story's certificate and the mathematician's ξ′ and window certificates
     machines.py         the machine statements, decided by cert-machine's machine decider
     decompositions.py   matrix-multiplication tensor decompositions, decided by cert-machine's tensor decider and its record
+    selfpower.py        the real root of x^x = N, its bounds decided as exact integer inequalities
     common.py           the expression pieces they share
 
 This file is the registry a `.claim` file's `use NAME vN` resolves against: per definition, the names a claim may use, its
@@ -15,6 +16,7 @@ with a new version; the objects the translator writes from it are held byte for 
 MIT"""
 from .decompositions import DECIDER as TENSOR_DECIDER, RECORDS as TENSOR_RECORDS
 from .einstein_arena import PLATFORM, RECORDED, RECORDED_DECIDER
+from .selfpower import SELFPOWER
 from .machines import DECIDER, MACHINES
 from .step_functions import PRIMITIVE
 from .zeta23 import CERTIFICATE, ckey
@@ -64,6 +66,10 @@ def _entries():
                 'route': 'cert-machine\'s tensor decider, ' + TENSOR_DECIDER + ', its record read in place (' + ', '.join(TENSOR_RECORDS) + ')',
                 'conventions': ['one decomposition of a file that holds many is named by the heading the file prints it under: DATA["heading"]',
                                 'the record row is the one cert-machine wrote for that heading of these very bytes (matched by sha256)']})
+    for name, e in SELFPOWER.items():
+        out.append({'names': (name,), 'version': 'v1', 'file': 'selfpower.py', 'what': e['what'], 'readings': EXACT_DATA,
+                    'route': 'exact integer arithmetic, decided by the checker from the object: a bound p/q on xroot is p^p against N^q·q^p',
+                    'conventions': [e['reduction'], 'reads N from the file and writes it into the expression as a literal']})
     for kind, what in MACHINES.items():
         out.append({'names': (kind,), 'version': 'v1', 'file': 'machines.py', 'what': what, 'readings': ('table (Q, 2)', 'text', 'bytes'),
                     'route': 'a named function of cert-machine\'s machine decider, ' + DECIDER, 'conventions': [], 'statement': True})

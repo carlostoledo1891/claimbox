@@ -257,6 +257,15 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    place, not pinned): the register re-run with cert-machine at 7ab83014 — summary, outcomes and every word unchanged; drift 15/15;
    make test 512 pass, 118/118. REPUBLISHED on the operator's word: cert-machine 9e5c4e18, from claimbox ead7e84 (98,291
    bytes); the live sha256 d8b9b20c…8046123c equals web/dist's, checked here with curl.
+   THE x^x = 64 EXPERIMENT (2026-10-31, the operator's picture: "use AI + claimbox + cert-machine to eat the numbers"):
+   library/selfpower.py (xroot, the real root of x^x = N, N read from the pinned file; the reduction — unique root above 1, none
+   negative — written into the hypotheses, not decided); translate_selfpower writes a bound p/q as the exact predicate
+   p^p − N^q·q^p against 0; the grammar reads a rational bar on an inequality (NAME REL p/q; coverage unchanged). corpus/xx64/
+   (problem.md: the picture's equation and the AI's proposals; problem.json: N = 64; claims.claim). cert-machine's words
+   (records/xx64-check.json): 3.3991 < x < 3.3992 CERTIFIED; the planted 3.3992 and 3.3991 the wrong way REFUTED; the
+   continued-fraction convergents 58815/17303 < x < 47207/13888 and 458912/135009 < x < 400097/117706 CERTIFIED (the last two
+   2.6- and 2.2-million-digit integer comparisons, 88 s and 65 s) — x = 3.399121540… to nine certified decimals; the closed
+   form ln 64 / W(ln 64) a description only. Battery §12; make test 517 pass, 121/121.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
 
