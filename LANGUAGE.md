@@ -127,6 +127,11 @@ certified. A planted twin — the same claim over a machine known to halt at a p
 there: corpus/watchers/machines.claim holds the BB(4) and BB(5) champions (107 and 47,176,870 steps) beside the cryptid
 machines.
 
+A hunter's statement may be a template in the same way — `there is T : M has T states`. `python3 -m claimbox hunt FILE CLAIM
+--reach N` decides its instances in order; its only results are a witness (the first instance cert-machine certifies, the one
+before it refuted) or *no witness up to N*; never REFUTED. Its planted twins (corpus/hunters/machines.claim) have their witness
+known before the search: the BB(4) and BB(5) champions have 4 and 5 states.
+
 ## 4 · The library
 
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —

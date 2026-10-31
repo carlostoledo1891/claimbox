@@ -1036,6 +1036,27 @@ try:
 except Refusal as e:
     got = e.rule
 red(got == 'watcher', 'helpers: refused — watch on a claim that is not about every case', str(got))
+# hunters (2026-10-31): a claim that some case holds, each instance decided by cert-machine; two planted twins with their witness
+# known before the search (the champions' state counts) must halt exactly there; a reach below the witness answers "no witness"
+HT = lang.parse(open(os.path.join(REPO, 'corpus', 'hunters', 'machines.claim'), encoding='utf-8').read())
+HC = {i['id']: i for i in HT['items'] if i['kw'] == 'claim'}
+h4, h5, h5short = H.hunt(HT, HC['bb4_states'], ROOT, 10), H.hunt(HT, HC['bb5_states'], ROOT, 10), H.hunt(HT, HC['bb5_states'], ROOT, 3)
+ok(h4['witness'] == 4 and h5['witness'] == 5 and h4['before'] == h5['before'] == 'REFUTED' and h4['settled'] and h5['settled'],
+   'helpers: the hunter halts on the planted twins\' witnesses exactly, BB(4) at 4 states and BB(5) at 5, the count before each refuted', h4['result'] + '; ' + h5['result'])
+red(h5short['witness'] is None and h5short['result'] == 'no witness up to T = 3' and all(a['word'] == 'REFUTED' for a in h5short['asked']),
+    'helpers: a hunter that has not reached its witness says "no witness up to N", never that the claim is refuted', h5short['result'])
+try:
+    H.Watch.word = lambda self, n: (self.asked.append({'n': n, 'statement': self.instance(n), 'word': 'CERTIFIED', 'certMachine': ''}) or 'CERTIFIED')
+    stuck_h = H.hunt(HT, HC['bb5_states'], ROOT, 10)
+finally:
+    H.Watch.word = realww
+red(stuck_h['witness'] != 5, 'helpers: refused — a decider that certifies every instance halts the hunter before the planted twin\'s witness (BB(5) at 5)', stuck_h['result'])
+try:
+    H.hunt(WT, WC['bb4_twin'], ROOT, 10)
+    got = None
+except Refusal as e:
+    got = e.rule
+red(got == 'watcher', 'helpers: refused — hunt on a claim about every case (that is watch\'s)', str(got))
 
 # ---- 12 · x^x = 64 (the operator's experiment, 2026-10-31: library selfpower.py) --------------------------------------------
 # the AI proposes, claimbox states, cert-machine decides: a bound on the root is one exact integer inequality; the planted
@@ -1068,6 +1089,35 @@ YT = lang.parse(open(os.path.join(REPO, 'corpus', 'xxy', 'claims.claim'), encodi
 YC = {i['id']: i for i in YT['items'] if i['kw'] == 'claim'}
 again = {cid: CP.word(T.check_with_cert_machine(CP.compile_claim(YT, YC[cid], ROOT)[0]['object'], ROOT)) for cid in ('y64_gt', 'y64_lt', 'y27_ge', 'y64_planted_gt')}
 ok(again == {cid: yw[cid] for cid in again}, 'x^x = y: four claims re-decided here give the record\'s words', json.dumps(again))
+
+# ---- 13 · register readers, batch 2 (2026-10-31) ----------------------------------------------------------------------------
+# EinsteinArena's SOTA table: its words (WITNESSED, REPAIRED) are not the receiver's, so the circles in a rectangle are decided
+# from their bytes by the library's platform conditions — the AlphaEvolve packing CERTIFIED, the 2026 one REFUTED on 44
+# overlapping pairs (certs/easota-ledger.json counts 44 as published: its REPAIRED); a score moved past the platform's resolution
+# is refuted; a bar printed as a fraction (polymaps F4's det J = -44/9) is a hole, never an object the format refuses
+SOTA = ('source P = ../claimbox/corpus/register/sentences.md\ndata   c = corpus/easota/circles-rectangle/{who}.json\nread   c as doubles\n'
+        'claim  sota over c\n  quote "{quote}" from P\n  : c is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is {bar}\n')
+SQ = {r['id']: r['text'] for r in PR.rows_of('register')}
+def sota(who, bar, quote_bar=None):
+    t_ = lang.parse(SOTA.format(who=who, bar=bar, quote=SQ['ea-circles-' + who].replace(quote_bar or bar, bar)))
+    if quote_bar:   # a planted bar: the source the claim quotes is the register's sentence with its bar moved
+        with open(os.path.join(PR.PLANTS, 'sota-planted.md'), 'w', encoding='utf-8') as f:
+            f.write(SQ['ea-circles-' + who].replace(quote_bar, bar) + '\n')
+        t_['items'] = [dict(i, path=PR.rel_of(os.path.join(PR.PLANTS, 'sota-planted.md'))) if i['kw'] == 'source' else i for i in t_['items']]
+    line = T.check_with_cert_machine(CP.compile_claim(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)[0]['object'], ROOT)
+    return CP.word(line) + (' (44 violating)' if '44 violating' in line else '')
+os.makedirs(PR.PLANTS, exist_ok=True)
+sw = {'ae': sota('alphaevolve_2025', '2.3658321334'), 'ours': sota('ours_2026', '2.3658323759'),
+      'moved': sota('alphaevolve_2025', '2.3658321337', quote_bar='2.3658321334')}
+shutil.rmtree(PR.PLANTS, ignore_errors=True)
+ok(sw['ae'] == 'CERTIFIED', 'register batch 2: the SOTA table\'s AlphaEvolve circles in a rectangle, decided from the bytes by the platform\'s conditions', sw['ae'])
+red(sw['ours'] == 'REFUTED (44 violating)', 'register batch 2: refuted — the SOTA table\'s 2026 circles overlap, 44 pairs as published (the easota ledger\'s count)', sw['ours'])
+red(sw['moved'].startswith('REFUTED'), 'register batch 2: refuted — the AlphaEvolve score moved three units past the platform\'s resolution', sw['moved'])
+RB2 = {e['id']: e for e in RREC['sentences']}
+ok(all(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in RB2[i]['proposals']) for i in ('optconst-71', 'polymaps-gao-g', 'polymaps-chv-phi')),
+   'register batch 2: C71, Gao\'s G and the Phi map, each over the file its ledger row\'s decider read, take the row\'s word (the record)', 'three')
+red(all(RB2[i]['outcome'] == 'not stated: decider' for i in ('polymaps-gao-f4', 'polymaps-gao-f5')),
+    'register batch 2: refused — a bar printed as a fraction (det J = -44/9, 160/29): the receiver\'s format carries a printed bar as digits only', 'F4, F5')
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

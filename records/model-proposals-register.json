@@ -3,8 +3,8 @@
  "model": "claude-opus-5-5",
  "effort": "high",
  "cap": 20.0,
- "spent": 0.4528,
- "calls": 61,
+ "spent": 0.6679,
+ "calls": 81,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -13,6 +13,406 @@
   "output": 20.0
  },
  "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaeji8To2o63w44aJeRt",
+   "stopReason": "end_turn",
+   "seconds": 4.1,
+   "usage": {
+    "input": 134,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 389
+   },
+   "cost": 0.008599,
+   "raw": "{\"statement\": \"firs_alphaevolve_2025 is a feasible solution of \\\"first-autocorrelation\\\" and its score is ≤ 1.50529397\", \"hole\": \"\", \"why\": \"The sentence claims that the pinned 600-value nonnegative step function on [−1/4, 1/4] attains a first-autocorrelation constant C₁ of at most 1.50529397.\"}",
+   "answer": {
+    "statement": "firs_alphaevolve_2025 is a feasible solution of \"first-autocorrelation\" and its score is ≤ 1.50529397",
+    "hole": "",
+    "why": "The sentence claims that the pinned 600-value nonnegative step function on [−1/4, 1/4] attains a first-autocorrelation constant C₁ of at most 1.50529397."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaejivb7thdf45eXh5s4",
+   "stopReason": "end_turn",
+   "seconds": 2.5,
+   "usage": {
+    "input": 144,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 64
+   },
+   "cost": 0.002139,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence prints no value for the bound on C₁, so there is no bar to state.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence prints no value for the bound on C₁, so there is no bar to state."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejpLXS1EKT4ut5fXkY",
+   "stopReason": "end_turn",
+   "seconds": 5.3,
+   "usage": {
+    "input": 127,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 453
+   },
+   "cost": 0.009851,
+   "raw": "{\"statement\":\"ours_2026.json is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286286\",\"hole\":\"\",\"why\":\"The sentence states that the pinned nonnegative 30000-value construction for the first-autocorrelation problem attains the bound C₁ ≤ 1.50286286.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"first-autocorrelation\" and its score is 1.50286286",
+    "hole": "",
+    "why": "The sentence states that the pinned nonnegative 30000-value construction for the first-autocorrelation problem attains the bound C₁ ≤ 1.50286286."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejjGBScC1bzuk3WR5V",
+   "stopReason": "end_turn",
+   "seconds": 7.9,
+   "usage": {
+    "input": 135,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 706
+   },
+   "cost": 0.014943,
+   "raw": "{\"statement\": \"ttt_discover_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286290\", \"hole\": \"\", \"why\": \"The sentence claims the pinned 30000-value construction for EinsteinArena's first-autocorrelation problem is feasible and certifies the bound C₁ ≤ 1.50286290, which the score form expresses; the ≤ is read as the construction's score.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026 is a feasible solution of \"first-autocorrelation\" and its score is 1.50286290",
+    "hole": "",
+    "why": "The sentence claims the pinned 30000-value construction for EinsteinArena's first-autocorrelation problem is feasible and certifies the bound C₁ ≤ 1.50286290, which the score form expresses; the ≤ is read as the construction's score."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaej3egqzG4QFAogxDd1",
+   "stopReason": "end_turn",
+   "seconds": 3.2,
+   "usage": {
+    "input": 224,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 121
+   },
+   "cost": 0.010401,
+   "raw": "{\"statement\":\"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\",\"hole\":\"\",\"why\":\"The sentence gives the score Σ r = 2.3658321334 for the 21-circle rectangle packing, which matches the platform problem and the pinned construction.\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence gives the score Σ r = 2.3658321334 for the 21-circle rectangle packing, which matches the platform problem and the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaej3sbVhNbHasFCEAL3",
+   "stopReason": "end_turn",
+   "seconds": 4.2,
+   "usage": {
+    "input": 216,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 318
+   },
+   "cost": 0.014309,
+   "raw": "{\"statement\": \"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\", \"hole\": \"\", \"why\": \"The sentence claims that a feasible 21-circle packing with w + h ≤ 2 has radius sum 2.3658323759, which the platform's verifier scores on the pinned construction.\"}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence claims that a feasible 21-circle packing with w + h ≤ 2 has radius sum 2.3658323759, which the platform's verifier scores on the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejQBDuYUaD3TPZ6nus",
+   "stopReason": "end_turn",
+   "seconds": 4.2,
+   "usage": {
+    "input": 132,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 344
+   },
+   "cost": 0.007691,
+   "raw": "{\"statement\":\"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\",\"hole\":\"\",\"why\":\"The sentence gives the platform score of the pinned edges-vs-triangles construction as -0.712494, using the problem name the library supplies.\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence gives the platform score of the pinned edges-vs-triangles construction as -0.712494, using the problem name the library supplies."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejRZoik1TFAD4WUXXC",
+   "stopReason": "end_turn",
+   "seconds": 5.4,
+   "usage": {
+    "input": 124,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 461
+   },
+   "cost": 0.009999,
+   "raw": "{\"statement\": \"ours_2026.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"The sentence gives the platform's envelope score for this construction as the plain printed number -0.712256.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "The sentence gives the platform's envelope score for this construction as the plain printed number -0.712256."
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejpcQ81wF3AQZizJPk",
+   "stopReason": "end_turn",
+   "seconds": 5.7,
+   "usage": {
+    "input": 134,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 481
+   },
+   "cost": 0.010439,
+   "raw": "{\"statement\": \"alphaevolve_2025 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340925\", \"hole\": \"\", \"why\": \"The sentence reports the flat-polynomial score C⁺ of the pinned ±1 construction as exactly 1.340925.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025 is a feasible solution of \"flat-polynomials\" and its score is 1.340925",
+    "hole": "",
+    "why": "The sentence reports the flat-polynomial score C⁺ of the pinned ±1 construction as exactly 1.340925."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejuHvr5h1UUCJ1KZHu",
+   "stopReason": "end_turn",
+   "seconds": 4.4,
+   "usage": {
+    "input": 126,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 346
+   },
+   "cost": 0.007707,
+   "raw": "{\"statement\": \"flat_ours_2026 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280932\", \"hole\": \"\", \"why\": \"The sentence gives the flat-polynomials score C⁺ of the pinned ±1 construction as 1.280932.\"}",
+   "answer": {
+    "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+    "hole": "",
+    "why": "The sentence gives the flat-polynomials score C⁺ of the pinned ±1 construction as 1.280932."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaej3keSvx4o1LWWScJx",
+   "stopReason": "end_turn",
+   "seconds": 4.9,
+   "usage": {
+    "input": 121,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 352
+   },
+   "cost": 0.014609,
+   "raw": "{\"statement\": \"heil_alphaevolve_2025 is a feasible solution of \\\"heilbronn-convex\\\" and its score is 0.0278355715\", \"hole\": \"\", \"why\": \"The sentence gives the score of the pinned 14-point heilbronn-convex construction, the minimum triangle area divided by the convex-hull area, as 0.0278355715.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence gives the score of the pinned 14-point heilbronn-convex construction, the minimum triangle area divided by the convex-hull area, as 0.0278355715."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaej3XWHgYZk8fCCczBm",
+   "stopReason": "end_turn",
+   "seconds": 5.2,
+   "usage": {
+    "input": 113,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 341
+   },
+   "cost": 0.014357,
+   "raw": "{\"statement\": \"heil_ours_2026 is a feasible solution of \\\"heilbronn-convex\\\" and its score is 0.0278355805\", \"hole\": \"\", \"why\": \"The sentence gives the heilbronn-convex score (minimum triangle area over convex-hull area) of the pinned 14-point construction.\"}",
+   "answer": {
+    "statement": "heil_ours_2026 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence gives the heilbronn-convex score (minimum triangle area over convex-hull area) of the pinned 14-point construction."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaek1gtwxtvHW2zHntjw",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 134,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 261
+   },
+   "cost": 0.006039,
+   "raw": "{\"statement\": \"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\", \"hole\": \"\", \"why\": \"The sentence says the pinned construction is a valid packing of 12 unit hexagons whose score, the outer side, is 3.9419123.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "The sentence says the pinned construction is a valid packing of 12 unit hexagons whose score, the outer side, is 3.9419123."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaek1m7nJFpKcMUhbNnx",
+   "stopReason": "end_turn",
+   "seconds": 4.1,
+   "usage": {
+    "input": 126,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 336
+   },
+   "cost": 0.007507,
+   "raw": "{\"statement\": \"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\", \"hole\": \"\", \"why\": \"The sentence says the published 12-hexagon packing is feasible, with score equal to the outer side 3.9416523.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence says the published 12-hexagon packing is feasible, with score equal to the outer side 3.9416523."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaej3KM9G45wqVfuGGnp",
+   "stopReason": "end_turn",
+   "seconds": 4.7,
+   "usage": {
+    "input": 119,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 328
+   },
+   "cost": 0.014121,
+   "raw": "{\"statement\": \"alphaevolve_2025 is a feasible solution of \\\"min-distance-ratio-2d\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio of the published 16-point construction for the min-distance-ratio-2d problem, printed as 12.889266.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025 is a feasible solution of \"min-distance-ratio-2d\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio of the published 16-point construction for the min-distance-ratio-2d problem, printed as 12.889266."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgaej3yXu2RkQwuiEuhz3",
+   "stopReason": "end_turn",
+   "seconds": 4.6,
+   "usage": {
+    "input": 111,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 317
+   },
+   "cost": 0.013869,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"min-distance-ratio-2d\\\" and its score is 12.889230\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio for 16 points, which is the score of the pinned construction for min-distance-ratio-2d.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"min-distance-ratio-2d\" and its score is 12.889230",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio for 16 points, which is the score of the pinned construction for min-distance-ratio-2d."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejMB8vN793VweDp9ZZ",
+   "stopReason": "end_turn",
+   "seconds": 9.0,
+   "usage": {
+    "input": 141,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 877
+   },
+   "cost": 0.018387,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380924\", \"hole\": \"\", \"why\": \"The sentence gives the 95-step construction's upper bound for the Erdős minimum overlap problem as 0.380924, which is the score of the pinned data.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380924",
+    "hole": "",
+    "why": "The sentence gives the 95-step construction's upper bound for the Erdős minimum overlap problem as 0.380924, which is the score of the pinned data."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejHFVt6GKpub8YQcUG",
+   "stopReason": "end_turn",
+   "seconds": 7.3,
+   "usage": {
+    "input": 135,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 650
+   },
+   "cost": 0.013823,
+   "raw": "{\"statement\": \"haugland_2016.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380927\", \"hole\": \"\", \"why\": \"The sentence describes a step-function construction for the Erdős minimum overlap problem and leads with its upper-bound score of 0.380927.\"}",
+   "answer": {
+    "statement": "haugland_2016.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
+    "hole": "",
+    "why": "The sentence describes a step-function construction for the Erdős minimum overlap problem and leads with its upper-bound score of 0.380927."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejPbFezhMex7RzniMH",
+   "stopReason": "end_turn",
+   "seconds": 4.6,
+   "usage": {
+    "input": 137,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 364
+   },
+   "cost": 0.008111,
+   "raw": "{\"statement\": \"together_ai_2026.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380871\", \"hole\": \"\", \"why\": \"The sentence gives a feasible step-function construction for the Erdős minimum overlap problem and prints its score, 0.380871, as an upper bound.\"}",
+   "answer": {
+    "statement": "together_ai_2026.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
+    "hole": "",
+    "why": "The sentence gives a feasible step-function construction for the Erdős minimum overlap problem and prints its score, 0.380871, as an upper bound."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaejNpcPCvaX58NuwWLg",
+   "stopReason": "end_turn",
+   "seconds": 4.6,
+   "usage": {
+    "input": 141,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 367
+   },
+   "cost": 0.008187,
+   "raw": "{\"statement\": \"ttt_discover_2026.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380876\", \"hole\": \"\", \"why\": \"The sentence gives the pinned Erdős minimum-overlap step-function construction and the score it achieves as an upper bound, 0.380876.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
+    "hole": "",
+    "why": "The sentence gives the pinned Erdős minimum-overlap step-function construction and the score it achieves as an upper bound, 0.380876."
+   }
+  },
   {
    "tag": "kiss-alphaevolve-593",
    "model": "claude-opus-5-5",

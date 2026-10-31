@@ -100,6 +100,21 @@ KISSING_JOBS = {'kiss-alphaevolve-593': ('corpus/alphaevolve-jobs.json', 'ae-kis
                 'kiss-ea-594-winner': ('corpus/einstein-arena-jobs.json', 'ea-kissing-kissing-number-d11', 'einstein-arena')}   # states it
 # not given bytes: kiss-ea-604 (its file prints coordinates in Z[√2], a reading the library does not have), the Station's three
 # 604s and its 582 shell (one .npz holds them; no JSON of each is pinned), D4 and E8 (generated in cert-machine, not published)
+# batch 2 (2026-10-31): the sentences whose ledger row carries one of the receiver's words, each with the file its decider read
+# and that row — {register id: (the pinned file, the ledger, its row, the decider)}
+LEDGER_ROWS = {'optconst-71': ('corpus/optimization-constants/num2026/fei_c71_n18_artifact.json', 'certs/fei-ledger.json', '71', 'instruments/fei/fei.py'),
+               'horizonmath-keich-thin-triangles-128': ('corpus/horizonmath/kakeya-a2-intercepts.json', 'certs/horizonmath-ledger.json',
+                                                        'keich-thin-triangles-128', 'instruments/horizonmath/kakeya_area.py'),
+               **{'polymaps-' + r: ('corpus/polymaps/maps.json', 'certs/polymaps-ledger.json', r, 'instruments/polymaps/decide.py')
+                  for r in ('gao-g', 'gao-f4', 'gao-f5', 'chv-phi')}}
+# EinsteinArena's SOTA table (certs/easota-ledger.json): the files its rows decided, given as bytes. Its words (WITNESSED,
+# REPAIRED) are not the receiver's, so no row is attached: a claim over these bytes is decided from them by a definition in the
+# library or not at all (the circles in a rectangle: the platform's conditions; the others have none, their hole says so)
+EASOTA = 'certs/easota-ledger.json'
+# not given bytes, and why: polymaps-gao-f6 and -f7 (the full maps are not printed; maps.json holds neither), optconst-84b
+# (REPAIRED) and C42's two (PARTIAL: no receiver word, and no file of theirs pinned), erdos852-cstar (its certificate is one
+# enclosure of an infinite product, not a row; nothing in the bytes decides C*), and the Strassen certificate's ten
+# decompositions (certs/strassen-certificate.json carries no verdict, and cert-machine's tensor records hold none of its keys)
 
 
 def register_extra(root):
@@ -121,6 +136,17 @@ def register_extra(root):
             f = (r.get('certificate') or {}).get('file')
             if f and dec:
                 out['optconst-' + r['id']] = (f, None, None, dec, {'path': 'certs/sumdiff-ledger.json', 'row': r['id'], 'value': None, 'verdict': r['verdict']})
+    for rid, (data, rec, row, dec) in LEDGER_ROWS.items():
+        p = os.path.join(root, rec)
+        if os.path.isfile(p):
+            r = next((x for x in json.load(open(p, encoding='utf-8'))['rows'] if x['id'] == row), None)
+            if r is not None:
+                out[rid] = (data, None, None, dec, {'path': rec, 'row': row, 'value': None, 'verdict': r['verdict']})
+    ea = os.path.join(root, EASOTA)
+    if os.path.isfile(ea):
+        for r in json.load(open(ea, encoding='utf-8'))['rows']:
+            prob, who = r['id'].split('/')
+            out.setdefault('ea-' + prob + '-' + who, (r['file'], 'doubles' if r['file'].endswith('.json') else None, None, None, None))
     for rid, (jobs, jid, folder) in KISSING_JOBS.items():
         j = next(x for x in json.load(open(os.path.join(REPO, jobs), encoding='utf-8'))['jobs'] if x['id'] == jid)
         ref = folder + '/' + jid

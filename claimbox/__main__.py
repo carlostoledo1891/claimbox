@@ -18,6 +18,8 @@
   extend FILE[#E4] CLAIM [--more K] [--name N]     the next K digits of a print cut off with "…", each the one digit cert-machine certifies
   watch FILE CLAIM --reach N [--name N]           a claim about every case: a counterexample (the first refuted instance) or not refuted
                                                    up to N, every instance decided by cert-machine; --name writes records/helpers/N.json
+  hunt FILE CLAIM --reach N [--name N]            a claim that some case holds (there is T : …): a witness (the first certified instance)
+                                                   or no witness up to N, never REFUTED
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -73,11 +75,12 @@ def main(argv=None):
     ck.add_argument('--run', action='store_true')
     ck.add_argument('--record')
     sub.add_parser('library')
-    wt = sub.add_parser('watch')
-    wt.add_argument('file')
-    wt.add_argument('claim')
-    wt.add_argument('--reach', type=int, required=True)
-    wt.add_argument('--name')
+    for name in ('watch', 'hunt'):
+        wt = sub.add_parser(name)
+        wt.add_argument('file')
+        wt.add_argument('claim')
+        wt.add_argument('--reach', type=int, required=True)
+        wt.add_argument('--name')
     for name in ('tighten', 'extend'):
         h = sub.add_parser(name)
         h.add_argument('file')
@@ -120,7 +123,7 @@ def main(argv=None):
                 f.write('\n')
             print('record ' + a.record)
         return 0
-    if a.cmd == 'watch':
+    if a.cmd in ('watch', 'hunt'):
         from . import helpers, lang
         tree = lang.parse(open(a.file, encoding='utf-8').read())
         c = next((i for i in tree['items'] if i['kw'] == 'claim' and i['id'] == a.claim), None)
@@ -128,18 +131,20 @@ def main(argv=None):
             print('REFUSED  no claim ' + a.claim)
             return 1
         try:
-            r = helpers.watch(tree, c, ROOT, a.reach)
+            r = (helpers.watch if a.cmd == 'watch' else helpers.hunt)(tree, c, ROOT, a.reach)
         except Refusal as e:
             print(f'REFUSED  {e.rule}: {e.msg}')
             return 1
         for x in r['asked']:
             print(f'  {x["word"]:<10} {x["statement"]}')
-        print(r['result'] + ('' if r['settled'] else '   UNSETTLED: the instance before it is not certified'))
+        print(r['result'] + ('' if r['settled'] else '   UNSETTLED: the instance before it is not ' + ('certified' if a.cmd == 'watch' else 'refuted')))
         if a.name:
             os.makedirs(os.path.join(helpers.REPO, 'records', 'helpers'), exist_ok=True)
             with open(os.path.join(helpers.REPO, 'records', 'helpers', a.name + '.json'), 'w', encoding='utf-8') as f:
-                json.dump(dict(r, what='claimbox watch: a claim about every case, every instance asked and cert-machine\'s word on it; the result is '
-                                       'a counterexample or "not refuted up to N", never CERTIFIED', file=a.file), f, indent=1, ensure_ascii=False)
+                json.dump(dict(r, what=('claimbox watch: a claim about every case, every instance asked and cert-machine\'s word on it; the result is '
+                                        'a counterexample or "not refuted up to N", never CERTIFIED') if a.cmd == 'watch' else
+                                       ('claimbox hunt: a claim that some case holds, every instance asked and cert-machine\'s word on it; the result is '
+                                        'a witness or "no witness up to N", never REFUTED'), file=a.file), f, indent=1, ensure_ascii=False)
                 f.write('\n')
             print('record records/helpers/' + a.name + '.json')
         return 0

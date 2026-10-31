@@ -1,0 +1,18 @@
+-- Hunters (step 7): claims that some case holds, each instance decided by cert-machine (its machine decider, tm.py, then its checker).
+-- A result is a witness or "no witness up to N", never REFUTED: python3 -m claimbox hunt corpus/hunters/machines.claim CLAIM --reach N
+-- Two planted twins, each with its witness known before the search: the BB(4) and BB(5) champions (cert-machine's
+-- instruments/ledger/machines) have 4 and 5 states, so the hunter must halt exactly there, every smaller count refuted; asked
+-- with a reach below its witness, it must answer "no witness", never a refutation of the claim.
+source H = ../claimbox/corpus/hunters/machines.md
+data   B4 = instruments/ledger/machines/bb4.tm
+read   B4 as table (Q, 2)
+data   B5 = instruments/ledger/machines/bb5.tm
+read   B5 as table (Q, 2)
+
+claim  bb4_states
+  quote "there is T : B4 has T states" from H
+  : there is T : B4 has T states
+
+claim  bb5_states
+  quote "there is T : B5 has T states" from H
+  : there is T : B5 has T states

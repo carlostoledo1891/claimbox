@@ -1,0 +1,45 @@
+{
+ "claim": "bb5_states",
+ "statement": "there is T : B5 has T states",
+ "reach": 10,
+ "start": 1,
+ "witness": 5,
+ "witnessStatement": "B5 has 5 states",
+ "before": "REFUTED",
+ "result": "a witness at T = 5",
+ "settled": true,
+ "asked": [
+  {
+   "n": 1,
+   "statement": "B5 has 1 states",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-states-1  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 2,
+   "statement": "B5 has 2 states",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-states-2  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 3,
+   "statement": "B5 has 3 states",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-states-3  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 4,
+   "statement": "B5 has 4 states",
+   "word": "REFUTED",
+   "certMachine": "ADMITTED  bb5-states-4  [REFUTED]  0.0 s"
+  },
+  {
+   "n": 5,
+   "statement": "B5 has 5 states",
+   "word": "CERTIFIED",
+   "certMachine": "ADMITTED  bb5-states-5  [CERTIFIED]  0.0 s"
+  }
+ ],
+ "what": "claimbox hunt: a claim that some case holds, every instance asked and cert-machine's word on it; the result is a witness or \"no witness up to N\", never REFUTED",
+ "file": "corpus/hunters/machines.claim"
+}

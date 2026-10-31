@@ -21,56 +21,72 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## ★ START HERE (2026-10-31, end of the tenth session) — the state in one screen; the dated entries below are the history
+## ★ START HERE (2026-10-31, end of the eleventh session) — the state in one screen; the dated entries below are the history
 
-**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r12,
-LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7 under way (tighten, extend and watch built; attack and hunters to
-do); 8–10 not started. Tests: `make test` → 520 pass, 0 fail, 122/122 red controls; `make drift` 15/15.
+**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r13,
+LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7 under way (tighten, extend, watch and hunt built; attack to do);
+8–10 not started. Tests: `make test` → 529 pass, 0 fail, 128/128 red controls; `make drift` 15/15; recall 56/56.
 
-**Live.** carlostoledo.co/claimbox/ — the landing page, redesigned 2026-10-31 as a marketing touchpoint after cert-machine's
-/verify/ (the operator: "beautify the Claimbox page to look like we did to verify"): hook, CTAs, hero figure, three proofs,
-uses, flow, built-on cards, "Bring one claim", roadmap below; light and dark (theme pill, key "warrant-theme"); every number
-still read from a record and re-read by `python3 -m web.build --check`, only the visible pins removed. Live bytes = claimbox
+**Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
-cert-machine at /reports/xx.html, not here (one version; claimbox's draft is web/drafts/xx.*). web/dist holds index.html only:
-cert-machine's publish-zone copies all of web/dist. Publishing is always a cert-machine session's run, on the operator's word
-in that chat. THE LIVE PAGE IS NOW ONE BATCH BEHIND (the register numbers moved with readers batch 1): ask cert-machine-cb to
-republish when the operator says.
+cert-machine at /reports/xx.html. web/dist holds index.html only. Publishing is always a cert-machine session's run, on the
+operator's word in that chat. THE LIVE PAGE IS TWO BATCHES BEHIND (register readers 1 and 2 moved the register's numbers:
+"54 decided, 78 name the reason"): cert-machine-cb was asked to republish when the operator approves there.
 
-**The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-cb` (SendMessage). It
-publishes the zone, lifts claimbox's records, and made three receiver changes claimbox asked for this session (a valueless
-record decides only the bar its row states; hold the box to the row; Python 3.11+ big-int printing). After any change there:
-`make lift`, `make drift`, `make test`.
+**The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-cb` (SendMessage). After any
+change there: `make lift`, `make drift`, `make test`.
 
-**Done this session, in order (details in the dated entries below):** the model proposer run on the 80 AI phrasings
-(claude-opus-5-5; $20 cap; ~$2.1 spent in all with the register); step 6 built (relation words, Lean numerals, wrong hole fixed,
-objects quote their own sentence, sensitivity, vacuity, paraphrase, pairs; the person's worksheet; the register as a corpus);
-the register's gaps (DATA["heading"] selector, recorded platform route, row boxes); format v4 and three receiver fixes lifted;
-step 7's tighten/extend/watch (BB(4) and BB(5) twins halt at 107 and 47,176,870; three cryptid machines not refuted to 10^8);
-the x^x = 64 and x^x = y studies (library selfpower.py; 105 roots bracketed, 210 CERTIFIED, 8 planted refuted; reviewed by
-cert-machine-cb, check.js agrees); the landing-page redesign; register readers batch 1 (AlphaTensor 20, two kissing, three
-sum-difference constants).
+**Done this session (the eleventh, 2026-10-31).** REGISTER READERS, BATCH 2 (prose.LEDGER_ROWS, prose.EASOTA): six more register
+sentences stated over pinned bytes — optconst-71 (fei ledger row, CERTIFIED), polymaps-gao-g and -chv-phi (polymaps ledger rows,
+CERTIFIED), horizonmath-keich-thin-triangles-128 (REFUSED by the receiver: record-bar-mismatch, the row prints two bars and
+check.py's BAR_IN_CLAIM reads the first, 0.1091479892, where STATED_BAR reads the last), and the SOTA table's two circles in a
+rectangle, decided FROM THE BYTES by the library's platform conditions (translate.SOTA_TABLE: bytes under corpus/easota/ quote the
+resolution from the platform's own corpus/einstein-arena/problems.json): AlphaEvolve 2025 CERTIFIED, ours_2026 REFUTED on 44
+overlapping pairs (and the box, w + h − 2 = 757/2^54) — the easota ledger's own count as published (its REPAIRED). Those two are
+the model's (the grammar reads "n = 21" first: hole source). The other 17 SOTA rows now have bytes: hole `decider` (no definition)
+or `data` (.py files). translate: a JSON document with no array is read whole by a named decider (the fei truth table); a bar
+printed as a fraction with a named decider is hole `decider` (the format's `printed` holds digits only: F4 −44/9, F5 160/29).
+The model asked the 20 SOTA sentences (20 calls; register ledger now 81 calls, $0.6679). THE REGISTER NOW: 73 claims proposed
+(grammar 52, model 21), cert-machine 69 CERTIFIED, 1 REFUTED, 3 REFUSED; validated 19; not stated 78 (33 need bytes).
+HUNTERS (step 7): `there is T : STATEMENT(T)` is a template (lang.py), helpers.hunt decides instances in order — a witness (the
+first CERTIFIED, the one before REFUTED) or "no witness up to N", never REFUTED; `claimbox hunt FILE CLAIM --reach N [--name N]`;
+corpus/hunters/machines.claim: planted twins BB(4) and BB(5) "has T states" halt at 4 and 5 (records/helpers/hunt-*.json).
+Battery §11 (hunters: 1 green, 3 reds) and §13 (batch 2: 2 greens, 3 reds). PLAN.md r13; LANGUAGE.md §3.2.
+Still without bytes, and why (prose.py's comment): the mm- Strassen certificate's ten (no verdict in certs/strassen-certificate.json;
+cert-machine's tensor records hold none of those keys), polymaps F6/F7 (maps not printed), 84b (REPAIRED), C42's two (PARTIAL),
+erdos852-cstar (one enclosure, no row), the six kissing sentences of batch 1's note.
 
-**The operator's standing choices (2026-10-31).** Model budget: claude-opus-5-5 under the $20 cap. cert-machine's checker runs
-under Python 3.12 by default (translate.CHECKER_PYTHON). The person's worksheet (corpus/proposals/riemann-ai.person.claim, 46
-blank claims `: ?`) stays a text file; the operator fills it later — never fill it for them. Next build chosen: register readers.
+**Asked of cert-machine-cb (2026-10-31, NOT ruled by the operator; receiver changes are made there first):** (a) rows with a
+receiver word for the Strassen certificate's ten decompositions (then the mm- sentences take the decomposition route); (b) check.py
+reads a valueless row's bar twice, BAR_IN_CLAIM the first decimal and STATED_BAR the last relation's number — the HorizonMath row
+"= 0.1091479892... < 0.1148103258186177" is refused for the object stating its own last bar; (c) a fraction bar: `printed` holds
+digits only and STATED_BAR reads −44 of −44/9; (d) the republish, on the operator's word there.
+
+**The operator's standing choices (2026-10-31).** Model budget: claude-opus-5-5 under the $20 cap. cert-machine's checker under
+Python 3.12 by default. The person's worksheet (corpus/proposals/riemann-ai.person.claim, 46 blanks `: ?`) stays a text file; the
+operator fills it — never fill it for them.
 
 **NEXT, in order.**
-1. Register readers, batch 2: EinsteinArena's SOTA table (19 sentences, certs/easota-ledger.json; its verdict words, e.g.
-   WITNESSED, are not the receiver's — decide from the bytes where the library has the platform's verifier, else the hole
-   stays), the Strassen certificate (10, factors inline in certs/strassen-certificate.json), polymaps (6), the other optimization
-   constants (turan 2, fei 1, sumproduct 1: no file in their rows), Erdős #852, HorizonMath. Then re-run the grammar and
-   `tools/propose_model.py register --again <prefixes>` on the new rows, `python3 -m claimbox prose register --run --record
-   records/prose-register.json`, `make web`, `make test`, commit, push, and ask cert-machine-cb to republish (operator's word).
-2. Step 7's remaining helpers: attack (a counterexample search beyond a fixed family) and hunters (`there is …`).
+1. ATTACK — not built: its design is the operator's to confirm (asked at the end of the eleventh session). The proposal: for a
+   watcher whose family is not monotone, instances chosen by a declared schedule (geometric, boundaries) instead of the walk;
+   its results "a counterexample at T = n" (REFUTED, not claimed first) or "not refuted at the K instances asked", with a
+   planted twin false only at a large instance.
+2. When cert-machine-cb answers (a)–(c): `make lift`, `make drift`, re-run `python3 -m claimbox prose register --run --record
+   records/prose-register.json`, `make web`, `make test`.
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
-4. Open receiver notes, NOT adopted by the operator (keep as notes): tie a literal N to the pinned file's value; carry `printed`
-   beside a bar written into the expression.
+4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
+   written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is
+   never planted.
 
-**How to run (beyond CLAUDE.md's list):** `claimbox tighten|extend FILE[#E] CLAIM`, `claimbox watch FILE CLAIM --reach N`,
+**How to run (beyond CLAUDE.md's list):** `claimbox tighten|extend FILE[#E] CLAIM`, `claimbox watch|hunt FILE CLAIM --reach N`,
 `claimbox prose CORPUS [--run] [--record] [--worksheet]`, `.venv/bin/python tools/propose_model.py CORPUS [--again P1,P2 |
 --planted-only | --paraphrase]` (the anthropic SDK lives in the git-ignored .venv, Python 3.12; credentials from `ant auth login`),
 `python3 tools/xx_study.py`, Chrome headless for screenshots (a 390 px check needs an iframe wrapper: Chrome's window has a minimum width).
+
+## ★ THE TENTH SESSION (2026-10-31) — its START HERE, kept as history
+Done, in order: the model proposer run on the 80 AI phrasings; step 6 built; the register's gaps; format v4 and three receiver
+fixes lifted; step 7's tighten/extend/watch; the x^x = 64 and x^x = y studies; the landing-page redesign; register readers batch 1
+(AlphaTensor 20, two kissing, three sum-difference constants). Details in the entries below.
 
 ## ★ PLAN.md IS THE STATE (2026-10-30, the ninth session, a claimbox chat, on the operator's "I want a full plan … a html landing page
    for claimbox … use the Warrant Grammar … reference check, competitors, research and a plan … translated also to a roadmap section")

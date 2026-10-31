@@ -199,7 +199,7 @@ class Watch(Search):
 
     def __init__(self, tree, claim, root):
         self.tree, self.claim, self.root, self.asked = tree, claim, root, []
-        t = claim['stmt'][3]
+        t = claim['stmt'][3] if claim['stmt'][0] == 'forall' else claim['stmt'][2]     # a watcher's template, or a hunter's
         self.body, self.var, self.family = t[1], t[2], t[3]
 
     def instance(self, n):
@@ -281,3 +281,28 @@ def watch(tree, claim, root, reach, start=1):
             'counterexample': found, 'counterexampleStatement': w.instance(found) if found is not None else None, 'before': before,
             'result': (f'a counterexample at {w.var} = {found}' if found is not None else f'not refuted up to {w.var} = {reach}'),
             'settled': found is None or before in (None, 'CERTIFIED'), 'asked': w.asked}
+
+
+# ------------------------------------------------------------------------------------------------- hunters
+
+def hunt(tree, claim, root, reach, start=1):
+    """a claim that some case holds, `there is T : STATEMENT(T)`: each instance decided by cert-machine, in order from `start`;
+    its only results are a witness — the first instance cert-machine certifies, beside the one before it, which it refutes — or
+    "no witness up to N", never REFUTED (a hunter that has not halted has not shown that none exists)"""
+    s = claim['stmt']
+    if s[0] != 'exists' or s[2][0] != 'template':
+        raise Refusal('watcher', 'hunt takes a claim that some case holds, whose statement has the variable for its number: there is T : … T …')
+    w = Watch(tree, claim, root)
+    found = None
+    for n in range(start, reach + 1):
+        v = w.word(n)
+        if v == 'CERTIFIED':
+            found = n
+            break
+        if v != 'REFUTED':
+            raise Refusal('decider', 'the instance at ' + str(n) + ' is not decided: ' + v)
+    before = next((a['word'] for a in w.asked if a['n'] == found - 1), None) if found is not None and found > start else None
+    return {'claim': claim['id'], 'statement': lang.fmt_statement(s), 'reach': reach, 'start': start,
+            'witness': found, 'witnessStatement': w.instance(found) if found is not None else None, 'before': before,
+            'result': (f'a witness at {w.var} = {found}' if found is not None else f'no witness up to {w.var} = {reach}'),
+            'settled': found is None or before in (None, 'REFUTED'), 'asked': w.asked}

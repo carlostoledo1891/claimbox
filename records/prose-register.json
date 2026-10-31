@@ -3,54 +3,54 @@
  "corpus": "register",
  "summary": {
   "sentences": 132,
-  "proposals": 67,
+  "proposals": 73,
   "byKind": {
-   "grammar": 48,
-   "model:claude-opus-5-5": 19
+   "grammar": 52,
+   "model:claude-opus-5-5": 21
   },
   "perKind": {
    "grammar": {
     "proposed": 132,
-    "compiled": 48,
-    "holes": 84,
+    "compiled": 52,
+    "holes": 80,
     "faithful": 18,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 30,
+    "noReference": 34,
     "plantedHeld": 1,
     "plantedBroke": 0
    },
    "model:claude-opus-5-5": {
-    "proposed": 46,
-    "compiled": 19,
-    "holes": 27,
+    "proposed": 66,
+    "compiled": 21,
+    "holes": 45,
     "faithful": 13,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 6,
+    "noReference": 8,
     "plantedHeld": 0,
     "plantedBroke": 0
    }
   },
-  "anchored": 67,
-  "printedBack": 67,
+  "anchored": 73,
+  "printedBack": 73,
   "planted": 1,
   "faithful": 31,
   "unfaithful": 0,
   "sameValueOtherPrint": 0,
   "validated": 19,
-  "notStated": 84,
+  "notStated": 78,
   "sensitivity": {
-   "held": 2,
+   "held": 4,
    "broke": 0,
    "tight": 0,
    "slack": 0,
-   "notRun": 65
+   "notRun": 69
   },
   "vacuity": {
    "depends": 0,
    "flagged": 0,
-   "notRun": 67
+   "notRun": 73
   },
   "pairs": {
    "sentences": 19,
@@ -64,7 +64,7 @@
    "grammar": {
     "same": 0,
     "moved": 0,
-    "unread": 13
+    "unread": 17
    },
    "model:claude-opus-5-5": {
     "same": 0,
@@ -260,7 +260,7 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  17.176 s",
+     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  16.811 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -310,7 +310,7 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  19.161 s  note: no record attached",
+     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  19.572 s  note: no record attached",
      "sensitivity": null,
      "vacuity": null
     },
@@ -640,13 +640,61 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_circles_alphaevolve_2025",
+     "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+     "object": "m-ea-circles-alphaevolve-2025",
+     "decision": {
+      "pin": {
+       "path": "corpus/easota/circles-rectangle/alphaevolve_2025.json",
+       "sha256": "ede505bcbca6dbcc420e646a25ec8af8190b6370ff3aa26e2a8e9524f92d7604"
+      },
+      "count": 21,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "2.3658321334",
+        [
+         "23658321333/10000000000",
+         "4731664267/2000000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-ea-circles-alphaevolve-2025  []  from the object: CERTIFIED value 170476171431630081/72057594037… · CERTIFIED value 5385692126216525/7205759403792… · CERTIFIED value -2303304775/7205759403",
+     "sensitivity": {
+      "steps": 3,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "ea-circles-ours_2026",
@@ -657,13 +705,61 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_circles_ours_2026",
+     "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+     "object": "m-ea-circles-ours-2026",
+     "decision": {
+      "pin": {
+       "path": "corpus/easota/circles-rectangle/ours_2026.json",
+       "sha256": "6060cc9f78f9d3ad2b035b6f1c15c3bfaac36f4e75532e9a94e1f804387d2307"
+      },
+      "count": 21,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "2.3658323759",
+        [
+         "11829161879/5000000000",
+         "295729047/125000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  m-ea-circles-ours-2026  []  from the object: CERTIFIED value 21309523613215363/900719925474… · CERTIFIED value 2692846334980217/3602879701896… · REFUTED value 757/18014398509481984 · REFUTED",
+     "sensitivity": {
+      "steps": 3,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "ea-heilbronn-alphaevolve_2025",
@@ -674,13 +770,23 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"n\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_heilbronn_alphaevolve_2025",
+     "statement": "heil_alphaevolve_2025 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355715",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the library has no verifier of the platform's \"heilbronn-convex\", and cert-machine's decider has no record of it over these bytes"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider"
   },
   {
    "id": "ea-heilbronn-ours_2026",
@@ -691,13 +797,23 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"n\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_heilbronn_ours_2026",
+     "statement": "heil_ours_2026 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355805",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the library has no verifier of the platform's \"heilbronn-convex\", and cert-machine's decider has no record of it over these bytes"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider"
   },
   {
    "id": "ea-mindist-alphaevolve_2025",
@@ -708,13 +824,21 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"n\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "refused": {
+      "rule": "name",
+      "hole": "name",
+      "why": "the language cannot read the proposal: alphaevolve_2025 is not declared by a data line"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider, name"
   },
   {
    "id": "ea-mindist-ours_2026",
@@ -725,13 +849,23 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"n\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_mindist_ours_2026",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider, prose"
   },
   {
    "id": "ea-overlap-haugland_2016",
@@ -744,11 +878,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_overlap_haugland_2016",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, prose"
   },
   {
    "id": "ea-overlap-alphaevolve_2025",
@@ -761,11 +905,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_overlap_alphaevolve_2025",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, prose"
   },
   {
    "id": "ea-overlap-ttt_discover_2026",
@@ -778,11 +932,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_overlap_ttt_discover_2026",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, prose"
   },
   {
    "id": "ea-overlap-together_ai_2026",
@@ -795,11 +959,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_overlap_together_ai_2026",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, prose"
   },
   {
    "id": "ea-edges-alphaevolve_2025",
@@ -812,11 +986,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_edges_alphaevolve_2025",
+     "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the library has no verifier of the platform's \"edges-vs-triangles\", and cert-machine's decider has no record of it over these bytes"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, decider"
   },
   {
    "id": "ea-edges-ours_2026",
@@ -829,11 +1013,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_edges_ours_2026",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, prose"
   },
   {
    "id": "ea-autocorr-alphaevolve_2025",
@@ -846,11 +1040,19 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "refused": {
+      "rule": "syntax",
+      "hole": "syntax",
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50529397\""
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, syntax"
   },
   {
    "id": "ea-autocorr-alphaevolve_v2_2025",
@@ -865,6 +1067,16 @@
       "hole": "quantity",
       "why": "no printed quantity in the claim"
      }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_autocorr_alphaevolve_v2_2025",
+     "statement": null,
+     "refused": {
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence prints no value for the bound on C₁, so there is no bar to state."
+     }
     }
    ],
    "outcome": "not stated: quantity"
@@ -878,13 +1090,21 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"C₁\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "refused": {
+      "rule": "name",
+      "hole": "name",
+      "why": "the language cannot read the proposal: ttt_discover_2026 is not declared by a data line"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider, name"
   },
   {
    "id": "ea-autocorr-ours_2026",
@@ -895,13 +1115,23 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"C₁\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_autocorr_ours_2026",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider, prose"
   },
   {
    "id": "ea-flat-alphaevolve_2025",
@@ -914,11 +1144,19 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "refused": {
+      "rule": "name",
+      "hole": "name",
+      "why": "the language cannot read the proposal: alphaevolve_2025 is not declared by a data line"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, name"
   },
   {
    "id": "ea-flat-ours_2026",
@@ -931,11 +1169,21 @@
      "refused": {
       "rule": "data",
       "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_flat_ours_2026",
+     "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the library has no verifier of the platform's \"flat-polynomials\", and cert-machine's decider has no record of it over these bytes"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: data, decider"
   },
   {
    "id": "ea-hexagons-alphaevolve_2025",
@@ -946,13 +1194,23 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"the outer side\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_hexagons_alphaevolve_2025",
+     "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the library has no verifier of the platform's \"hexagon-packing\", and cert-machine's decider has no record of it over these bytes"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider"
   },
   {
    "id": "ea-hexagons-ours_2026",
@@ -963,13 +1221,23 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"the outer side\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_ea_hexagons_ours_2026",
+     "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the library has no verifier of the platform's \"hexagon-packing\", and cert-machine's decider has no record of it over these bytes"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider"
   },
   {
    "id": "ecbench-counts",
@@ -1114,7 +1382,7 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-optconst-3b  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "certMachine": "ADMITTED  p-optconst-3b  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
      "vacuity": null
     }
@@ -1225,14 +1493,45 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-optconst-71",
+     "decision": {
+      "pin": {
+       "path": "corpus/optimization-constants/num2026/fei_c71_n18_artifact.json",
+       "sha256": "57f5a1ad2bf5bcdee873413e796bc868ccc6131521af799c5eb48d5ae13267ba"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "gt",
+        "6.521845710923046575",
+        "260873828436921863/40000000000000000"
+       ]
+      ],
+      "named": [
+       "the quantity C71 bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/fei-ledger.json",
+       "71",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-optconst-71  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "optconst-84b",
@@ -1548,14 +1847,43 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-horizonmath-keich-thin-triangles-128",
+     "decision": {
+      "pin": {
+       "path": "corpus/horizonmath/kakeya-a2-intercepts.json",
+       "sha256": "b8293194b82d7a2cc9adc1a5cc4b6fe50fd5a50eead241f3c48c8341a144b463"
+      },
+      "count": 128,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "lt",
+        "0.1148103258186177",
+        "1148103258186177/10000000000000000"
+       ]
+      ],
+      "named": [
+       "the quantity Area(E) bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/horizonmath-ledger.json",
+       "keich-thin-triangles-128",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "REFUSED",
+     "certMachine": "REFUSED   p-horizonmath-keich-thin-triangles-128  record-bar-mismatch: the record decided 0.1091479892, the object states 0.1148103258186177"
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "horizonmath-gpt56-closed-forms",
@@ -1599,14 +1927,45 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-polymaps-gao-g",
+     "decision": {
+      "pin": {
+       "path": "corpus/polymaps/maps.json",
+       "sha256": "e06e4b539d5467eeb57b659d699522f32b50e8b4d3861d6cbae516446c646c04"
+      },
+      "count": 18,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "eq",
+        "2",
+        "2"
+       ]
+      ],
+      "named": [
+       "the quantity det J bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/polymaps-ledger.json",
+       "gao-g",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-polymaps-gao-g  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "polymaps-gao-f4",
@@ -1617,13 +1976,13 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the bar -44/9 is printed as a fraction, and the receiver's format carries a printed bar as decimal digits only: no route states it"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider"
   },
   {
    "id": "polymaps-gao-f5",
@@ -1634,13 +1993,13 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the bar 160/29 is printed as a fraction, and the receiver's format carries a printed bar as decimal digits only: no route states it"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "not stated: decider"
   },
   {
    "id": "polymaps-gao-f6",
@@ -1701,14 +2060,45 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-polymaps-chv-phi",
+     "decision": {
+      "pin": {
+       "path": "corpus/polymaps/maps.json",
+       "sha256": "e06e4b539d5467eeb57b659d699522f32b50e8b4d3861d6cbae516446c646c04"
+      },
+      "count": 18,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "eq",
+        "-2",
+        "-2"
+       ]
+      ],
+      "named": [
+       "the quantity det J bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/polymaps-ledger.json",
+       "chv-phi",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-polymaps-chv-phi  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "polymaps-chv-xhat18",
@@ -1762,7 +2152,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x5-r32  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x5-r32  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -1812,7 +2202,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -1966,7 +2356,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.008 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2001,7 +2391,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2078,7 +2468,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2120,7 +2510,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2197,7 +2587,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2232,7 +2622,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2274,7 +2664,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2386,7 +2776,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2463,7 +2853,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x7-r80  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x7-r80  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2505,7 +2895,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x8-r96  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x8-r96  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2605,7 +2995,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.007 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2640,7 +3030,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2682,7 +3072,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2717,7 +3107,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2759,7 +3149,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2794,7 +3184,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2940,7 +3330,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x3  [CERTIFIED]  0.001 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x3  [CERTIFIED]  0.0 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2992,7 +3382,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x5  [CERTIFIED]  0.001 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x5  [CERTIFIED]  0.0 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -3252,7 +3642,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-q-2x2x3  [CERTIFIED]  0.002 s",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x3  [CERTIFIED]  0.001 s",
      "sensitivity": null,
      "vacuity": null
     },

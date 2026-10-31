@@ -37,6 +37,7 @@ sys.path.insert(0, REPO)
 import anthropic  # noqa: E402
 
 from claimbox import lang, prose  # noqa: E402
+from claimbox.library import einstein_arena as EA  # noqa: E402
 
 MODEL = 'claude-opus-5-5'
 PRICE = {'input': 4.00, 'cache_write': 5.00, 'cache_read': 0.20, 'output': 20.00}     # $ per million tokens (5-minute cache writes)
@@ -99,7 +100,8 @@ REGISTER_SYSTEM = SYSTEM.replace("""A STATEMENT is one of:
                                                                      heading the file prints it under, exactly as the sentence quotes it,
                                                                      or by its archive key, e.g. DATA["2,2,3"])
   the N vectors of DATA form a kissing configuration in dimension D
-  DATA is a feasible solution of "TITLE" and its score is BAR  (a platform's problem, TITLE exactly as the sentence prints it)""")
+  DATA is a feasible solution of "TITLE" and its score is BAR  (a platform's problem, TITLE exactly as the sentence prints it,
+                                                                or as the library names it over the data)""")
 
 SCHEMA = {'type': 'object', 'properties': {'statement': {'type': 'string'}, 'hole': {'type': 'string', 'enum': [''] + HOLES}, 'why': {'type': 'string'}},
           'required': ['statement', 'hole', 'why'], 'additionalProperties': False}
@@ -119,6 +121,18 @@ def library_for(cfg, row):
     if row['id'].startswith('kiss-'):
         var = 'k' + re.sub(r'\D', '', os.path.basename(data))
         return (var, elements or 'decimals', [(var, 'a list of vectors, one direction each')], data)
+    if data.startswith('corpus/easota/'):
+        # EinsteinArena's SOTA table (certs/easota-ledger.json): a published construction for one of the platform's problems; the
+        # library's platform definition is offered where it has one for that problem (einstein_arena.PLATFORM, by its slug)
+        prob, who = data.split('/')[2], os.path.splitext(os.path.basename(data))[0]
+        var = re.sub(r'\W', '', prob.split('-')[0][:4] + '_' + who)
+        title = next((t for t, d in EA.PLATFORM.items() if d['slug'] == prob), None)
+        names = [(var, f'a construction published for EinsteinArena\'s problem {prob}, as the SOTA table pins it')]
+        names += [(f'"{title}"', 'the platform\'s problem of this title, its verifier written in the library: ' + EA.PLATFORM[title]['score'])] if title else []
+        return (var, elements or 'doubles', names, data)
+    if row['id'] in prose.LEDGER_ROWS:      # a file a cert-machine decider read whole; the library defines nothing over it
+        var = 'r' + re.sub(r'\W', '', os.path.splitext(os.path.basename(data))[0])[:12]
+        return (var, 'decimals', [(var, 'the file cert-machine\'s ' + os.path.basename(prose.LEDGER_ROWS[row['id']][3]) + ' read; the library defines no name over it')], data)
     var = 'x' + re.sub(r'\D', '', os.path.basename(data))
     return (var, elements or 'doubles', [(var, 'the platform\'s API record of the best solution (its "data"), read as the platform\'s verifier reads it')], data)
 

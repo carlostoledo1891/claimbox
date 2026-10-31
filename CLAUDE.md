@@ -85,7 +85,7 @@ claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and
                            sentence); proposers (the grammar; corpus/proposals/<corpus>{,.person,.planted,.paraphrase}.claim); the levels
                            (anchored, printed back, planted, sensitivity, vacuity, paraphrase, concord), faithfulness against a decided
                            reference, the pairs' same-error rate; `--worksheet` writes a person's blank claims once
-claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"),
+claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"), hunt (a witness),
                            watch (a claim about every case, instance by instance; planted twins); proposals `proposed by search:<helper>`
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object
 claimbox/__main__.py       the command line
@@ -98,7 +98,7 @@ corpus/                    register-sentences.json (lifted), calibration.json (t
                            xi-opt20.json: the optimality certificates the receiver decides),
                            riemann-sentences.json (65 sentences, each verbatim in its pinned file), riemann-jobs.json, riemann-ai-jobs.json,
                            riemann-math-jobs.json (each claim with its expected outcome); register/sentences.md; proposals/ (the model's,
-                           the person's worksheet, the helpers'); helpers/ (the sources the searches wrote); watchers/machines.claim;
+                           the person's worksheet, the helpers'); helpers/ (the sources the searches wrote); watchers/machines.claim; hunters/machines.claim;
                            xx64/ and xxy/ (the x^x = 64 and x^x = y studies' claims, sources and N files)
 records/                   calibration.json, coverage.json, recall.json, riemann-coverage.json, riemann-recall.json, library-identity.json,
                            fork-605.json (`check LANGUAGE.md#E16 --run --record`); <source>-run.json +

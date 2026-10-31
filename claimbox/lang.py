@@ -289,7 +289,14 @@ def statement(text, line):
         return ('forall', var, None, inner)
     m = re.match(r'^there is (\w+) : (.+)$', t)
     if m:
-        return ('exists', m.group(1), statement(m.group(2), line))
+        var, body = m.groups()
+        inner = statement(body, line)
+        if inner[0] == 'hole' and re.search(r'\b' + re.escape(var) + r'\b', body):
+            # the hunter's template (2026-10-31): each instance a statement once a number stands for the variable
+            inst = statement(re.sub(r'\b' + re.escape(var) + r'\b', '1', body), line)
+            if inst[0] != 'hole':
+                inner = ('template', body, var, inst[0])
+        return ('exists', var, inner)
     m = CONFIG.match(t)
     if m:
         return ('config', m.group(1), m.group(2), int(m.group(3)))

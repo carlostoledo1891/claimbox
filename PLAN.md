@@ -202,6 +202,15 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r13, 2026-10-31.** Register readers, batch 2, and hunters. Six more register sentences are stated over pinned bytes:
+  C71 (CERTIFIED by the fei ledger's row), Gao's G and the Phi map (CERTIFIED by the polymaps ledger's rows), HorizonMath's
+  thin-triangle Kakeya (REFUSED by the receiver: the row prints two bars and the checker reads the first), and EinsteinArena's
+  SOTA-table circles in a rectangle, decided from their bytes by the library's platform conditions (the platform's resolution
+  quoted from its own problems.json): AlphaEvolve's packing CERTIFIED, the 2026 one REFUTED on 44 overlapping pairs, the count
+  the SOTA ledger gives as published. The other SOTA rows have bytes and no definition (hole `decider` or `data`); a bar printed
+  as a fraction (F4, F5) has no field in the format (hole `decider`). Hunters run: `there is T : STATEMENT(T)` is a template,
+  `claimbox hunt` decides instances in order, a witness or "no witness up to N", never REFUTED; planted twins BB(4) and BB(5)
+  halt at 4 and 5 states. Step 7 still to do: attack.
 - **r12, 2026-10-30.** Watchers run. A watcher's statement may have its variable for its number (`for every T : M does not
   halt within T steps`, a template); `claimbox watch` decides instances with cert-machine — its machine decider tm.py writes the
   row, its checker the word — and a family monotone in its number is decided at the reach and bisected to its first

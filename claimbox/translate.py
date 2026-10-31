@@ -216,12 +216,20 @@ def slug_of(root, data, title):
     return m.group(1) if m else None
 
 
+PLATFORM_PROBLEMS, SOTA_TABLE = 'corpus/einstein-arena/problems.json', 'corpus/easota/'
+
+
 def resolution_box(root, data, slug, title, p, relative=False):
     """the platform's declared resolution for a problem, quoted from the problems.json beside the record (the receiver's `box` block):
     (box, lo, hi, the resolution as printed) — the box is the printed score p ± minImprovement. With `relative` (a score decided
     by cert-machine's record, whose rows agree within the platform's resolution, or 1e-12 relative where it declares none: the
     operator's ruling of 2026-10-30, "hold the box to the row"), a minImprovement of 0 gives t = 1e-12·max(1, |p|), exactly"""
     pj = os.path.join(os.path.dirname(data), 'problems.json')
+    if data.startswith(SOTA_TABLE) and not relative:
+        # the bytes of EinsteinArena's SOTA table (certs/easota-ledger.json, 2026-10-31), published for the platform's problems
+        # outside its records: the problem's resolution is the platform's, quoted from its own problems.json in cert-machine's
+        # corpus. Bytes anywhere else quote it from beside themselves or not at all
+        pj = PLATFORM_PROBLEMS
     pjp = os.path.join(root, pj)
     if not os.path.isfile(pjp):
         raise Refusal('resolution', 'the platform\'s problems.json is not beside the record (' + pj + '): its declared resolution for "' + title + '" cannot be quoted')
@@ -491,7 +499,12 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         # AI phrasing 7/paper/68, \tfrac{1}{2}(3 − 1/c_1^*) over the series certificate). The numeric families only: a platform
         # score with no verifier written keeps its recorded refusal (ea-best-prime-number-theorem, `data`)
         raise Refusal('decider', 'the quantity "' + str(shape.get('name') or fam) + '" has no primitive expression here: a decider path is needed, and none was given')
-    if doc is None:
+    if doc is not None and decider and not primitive:
+        try:
+            select_array(doc)
+        except Refusal:
+            doc = False            # a JSON document with no array (a truth table as hex, 2026-10-31): the named decider reads it whole
+    if not doc:
         select, arr, kind, shp, sizes = None, [None], 'records', ['n'], {'n': 1}
     else:
         select, arr = select_array(doc)
@@ -511,6 +524,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     decoder = 'the array at ' + (select or 'the top level') + ': ' + str(count) + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values') + ', ' + how_read
     if doc is None:
         decoder = 'a binary archive, read by the named decider; nothing is decoded here'
+    elif doc is False:
+        decoder = 'a JSON document with no array, read whole by the named decider; nothing is decoded here'
 
     domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'decoder': decoder, 'count': count, 'variable': 'f'}
     preds, hyps, fals, ref = [], [], [], ''
@@ -659,6 +674,9 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             ref = 'the printed ' + printed + ' is the box its digits allow; the object is read as ' + how_read
         else:
             named = 'the quantity ' + str(shape.get('name')) + ' bounds, as the claimant\'s certificate defines it'
+            if '/' in printed:
+                # the format's `printed` holds decimal digits and a printed bar must carry it (2026-10-31, polymaps F4's det J = -44/9)
+                raise Refusal('decider', 'the bar ' + printed + ' is printed as a fraction, and the receiver\'s format carries a printed bar as decimal digits only: no route states it')
             preds.append({'g': {'named': named, 'where': decider, 'args': ['f']}, 'rel': shape['rel'], 'printed': printed, 'c': str(shape['c'])})
             hyps.append('one admissible object gives the bound ' + str(shape.get('name')) + ' ' + rel_text(shape['rel']) + ' its value (the definition of the constant, read)')
             fals = ['the quantity computed exactly from the pinned bytes violates ' + str(shape.get('name')) + ' ' + rel_text(shape['rel']) + ' ' + printed, hashed]
