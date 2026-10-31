@@ -1,0 +1,96 @@
+<nav class="topnav"><input type="checkbox" id="navdrawer" class="nav-ck"><div class="topnav-in"><a class="brand" href="../index.html">Carlos Toledo</a><label class="nav-burger" for="navdrawer" aria-label="Toggle navigation"><span class="nb"></span></label><div class="navlinks"><a href="./" aria-current="page">claimbox</a><a href="../reports/index.html">Reports</a><a href="../grammar/index.html">Grammar</a><a href="https://github.com/carlostoledo1891/claimbox">GitHub</a></div></div></nav>
+
+<main class="page">
+<header>
+  <div class="eyebrow">claimbox · an experiment</div>
+  <h1>x<sup>x</sup> = y, by fractions</h1>
+  <p class="standfirst">An AI proposes the numbers, claimbox states them as claims, cert-machine decides them.</p>
+  <p class="deck">It began with one picture, x<sup>x</sup> = 64. The equation has one real root, and no fraction equals it. What a fraction can do is trap it: two fractions on either side, each side one comparison of two whole numbers, decided exactly. This page does that for every y to a thousand, and reads what the fractions show.</p>
+  <div class="ctas"><a href="#sixtyfour">The root of 64 →</a><a href="#every">Every root →</a><a href="#insights">What the fractions show →</a><a href="./">claimbox →</a></div>
+</header>
+
+<div class="stats" data-n="4" data-measured>
+  <div class="stat"><div class="k">roots computed</div><div class="v">{{n_roots}}</div><div class="n nonum">one for every y from 2 to 1,000, and three beside 5<sup>5</sup>, by Newton’s method in 160-digit arithmetic</div></div>
+  <div class="stat"><div class="k">roots trapped by cert-machine</div><div class="v">{{n_decided}}</div><div class="n">each between two fractions, every side one exact comparison of whole numbers</div></div>
+  <div class="stat"><div class="k">claims certified</div><div class="v">{{n_cert}} of {{n_claims}}</div><div class="n">the rest are planted brackets turned the wrong way round, all refuted: {{n_ref}} <span class="wx">×</span></div></div>
+  <div class="stat"><div class="k">roots that are fractions</div><div class="v">{{n_exact}}</div><div class="n">exactly the y of the form k<sup>k</sup>; every other root is transcendental</div></div>
+</div>
+
+<section id="sixtyfour">
+  <div class="sec-head"><span class="lab">the picture</span><h2>The root of 64, nine decimals decided</h2>
+    <p>x = ln 64 / W(ln 64), where W is Lambert’s function. That form describes the number; it decides nothing. The decimals below are decided by two fractions.</p></div>
+  <div class="claim" data-measured>
+    <dl>
+      <dt>the root, computed</dt><dd>{{x64}}</dd>
+      <dt>below it</dt><dd>{{s64_lo}} &nbsp;{{w64_lo}}&nbsp; in {{t64_lo}} s</dd>
+      <dt>above it</dt><dd>{{s64_hi}} &nbsp;{{w64_hi}}&nbsp; in {{t64_hi}} s</dd>
+    </dl>
+    <div class="why"><span class="nonum">x<sup>x</sup> grows for x above 1, so x is above a fraction p/q exactly when (p/q)<sup>p/q</sup> is below 64, that is, when p<sup>p</sup> is below 64<sup>q</sup>·q<sup>p</sup>.</span> No logarithm is evaluated. For the fraction below, each side of that comparison is a whole number of {{d64}} digits; cert-machine computes both exactly and compares them, given the reduction, which is read and not decided.</div>
+  </div>
+  <p class="bigeq nonum">458912<sup>458912</sup> &lt; 64<sup>135009</sup> · 135009<sup>458912</sup></p>
+  <p class="cap nonum">The two fractions are neighbouring convergents of the root’s continued fraction [3; 2, 1, 1, 44, 1, 14, 4, 1, 6, …]: the closest fractions for their size, on opposite sides of x. The large 44 is why 758/223 is already within two hundred-thousandths. records/xx64-check.json.</p>
+</section>
+
+<section id="every">
+  <div class="sec-head"><span class="lab">every root</span><h2>A thousand roots on one curve</h2>
+    <p>Each dot is the root of x<sup>x</sup> = y. Filled dots are trapped between fractions cert-machine decided; the hollow ones are computed only. The large dots are the roots that are whole numbers.</p></div>
+  <figure class="fig">{{fig_curve}}<p class="cap nonum">records/xxy-study.json (the roots, computed) and records/xxy-check.json (cert-machine’s words). The dotted guides fall at x = 2, 3, 4, 5, where y = 4, 27, 256, 3,125.</p></figure>
+
+  <h3>How tight each trap is</h3>
+  <p>For y up to 100, the bar is the number of decimal places the decided bracket pins down, and the dotted mark is how many the closest fraction with a denominator of at most {{dmax}} gets right. Full bars are the exact roots.</p>
+  <figure class="fig">{{fig_close}}<p class="cap nonum">The bracket’s two fractions are the last two convergents with a denominator of at most one thousand. Where the next partial quotient is large, the closest fraction is far better than its size suggests.</p></figure>
+
+  <h3>Every continued fraction, at a glance</h3>
+  <p>Each column is one root, for y from 2 to 400; each row is a partial quotient, the first at the top. The brighter a cell, the larger the quotient. A bright cell means the convergent before it is an unusually good fraction. Near 27 and 256 the bright cells pile up at the top: there, the whole number is the fraction.</p>
+  <figure class="fig">{{fig_heat}}<p class="cap nonum">Brightness grows with the logarithm of the partial quotient, up to 1,000 and above. The exact roots at 4, 27 and 256 have a single quotient, the whole number itself, and leave an empty column.</p></figure>
+
+  <h3>The roots, in detail</h3>
+  {{table_high}}
+</section>
+
+<section id="insights">
+  <div class="sec-head"><span class="lab">what the fractions show</span><h2>Four things the continued fractions say</h2>
+    <p>Read from the computed roots. The brackets that decide them are cert-machine’s; the patterns are observations, and they are labelled so.</p></div>
+
+  <h3>One: only k<sup>k</sup> has a fraction for a root</h3>
+  <p data-measured>The root is a whole number exactly at y = {{ex0}}, {{ex1}}, {{ex2}} and {{ex3}}, and cert-machine pins each one from both sides: x ≥ k and x ≤ k, both certified. For every other whole y the root is not even algebraic. If it were a fraction p/q that is not whole, x<sup>x</sup> would be irrational; if it were an irrational algebraic number, x<sup>x</sup> would be transcendental by the Gelfond–Schneider theorem. A theorem cited, not decided here. So {{n_exact}} roots are fractions, and every other one is a number no fraction will ever equal.</p>
+
+  <h3>Two: near k<sup>k</sup>, one enormous step</h3>
+  <div class="pair">
+    <figure class="fig">{{fig_near}}<p class="cap nonum">Bars: the large partial quotient each root shows. Dotted marks: k<sup>k</sup>·(1 + ln k), the slope of x<sup>x</sup> at k.</p></figure>
+    <div data-measured><p>Just off k<sup>k</sup> the root sits just off k, by about <span class="nonum">1/(k<sup>k</sup>(1 + ln k))</span>. Its continued fraction says so with one huge quotient: at y = {{y255}} it is {{n255}}, where the slope predicts {{p255}}; at y = {{y3126}} it is {{n3126}}, against {{p3126}}. The closest fraction there is the whole number k, and it is right to three or four decimals.</p></div>
+  </div>
+
+  <h3>Three: elsewhere, the roots look like typical numbers</h3>
+  <div class="pair">
+    <figure class="fig">{{fig_gk}}<p class="cap nonum">Bars: how often each partial quotient occurs among the {{pooled}} pooled from the irrational roots. Dotted marks: the Gauss–Kuzmin law.</p></figure>
+    <div data-measured><p>Pool the partial quotients of all the irrational roots and they follow the law that almost every real number obeys: <span class="nonum">a quotient of 1</span> occurs {{gk1}} of the time, against {{gk1l}}. Their geometric mean is {{geo}}, against Khinchin’s constant {{khin}}, and (ln q<sub>n</sub>)/n averages {{levy_o}}, against Lévy’s {{levy}}. The roots of x<sup>x</sup> = y keep no secret pattern in their digits. These are observations on {{n_roots}} computed roots, not a proof.</p></div>
+  </div>
+
+  <h3>Four: a few roots have fractions that are almost too good</h3>
+  <p data-measured>A large partial quotient makes the convergent just before it unusually close. The largest found is {{big_a}}, in the root for y = {{big_y}}. Its convergent sits closer to the root than any fraction of its size has a right to. For y = {{y100}}, the fraction {{c100}} is already off by only {{e100}}.</p>
+  {{table_champ}}
+</section>
+
+<section id="method">
+  <div class="sec-head"><span class="lab">how it was done</span><h2>Proposed, stated, decided</h2></div>
+  <ol class="route">
+    <li><b>The AI proposes</b>each root by Newton’s method, its continued fraction, and the fractions that bracket it (tools/xx_study.py). Computed, not trusted.</li>
+    <li><b>claimbox states</b>each bracket as a claim in its language, xroot(n) &gt; p/q. Its library turns the claim into one exact comparison of whole numbers, and reads y from a pinned file.</li>
+    <li><b>cert-machine decides</b>each comparison from the object alone, as a separate program: CERTIFIED, or REFUTED for the planted wrong brackets.</li>
+  </ol>
+  <div class="w-legend" data-n="3">
+    <div class="item"><svg viewBox="0 0 46 14" aria-hidden="true"><line x1="1" y1="7" x2="45" y2="7" stroke="var(--ink)" stroke-width="2.4"/></svg><div><div class="k">decided</div><div class="g">exact arithmetic by cert-machine, or a count from a record</div></div></div>
+    <div class="item"><svg viewBox="0 0 46 14" aria-hidden="true"><line x1="1" y1="7" x2="45" y2="7" stroke="var(--ink-2)" stroke-width="2.4" stroke-dasharray="5 4"/></svg><div><div class="k">computed</div><div class="g">a number the AI computed; nothing decided it</div></div></div>
+    <div class="item"><svg viewBox="0 0 46 14" aria-hidden="true"><defs><pattern id="w-legend-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--ink-5)" stroke-width="1"/></pattern></defs><rect x="0" y="1" width="46" height="12" fill="url(#w-legend-hatch)" stroke="var(--rule-strong)" stroke-width="1"/></svg><div><div class="k">refused</div><div class="g">no mark: ∅ and a word</div></div></div>
+  </div>
+  <div class="w-why"><span class="k">why these numbers stand as they do</span><ul>
+    <li>A root’s digits are computed. The fractions trapping it are decided, each by one exact comparison.</li>
+    <li>Uniqueness of the root rests on an argument written into the claim: x<sup>x</sup> ≤ 1 on (0, 1], increasing above 1, and no negative root. cert-machine does not decide that argument.</li>
+    <li>Every number in the text is read from a record, and the page’s build reads it again.</li>
+  </ul></div>
+  <p class="cap nonum">python3 tools/xx_study.py · python3 -m claimbox check corpus/xxy/claims.claim --run · python3 -m claimbox check corpus/xx64/claims.claim --run</p>
+</section>
+</main>
+
+<footer class="foot"><div class="foot-in"><p>Built from claimbox’s records by web/build.py; a record that stops matching a sentence refuses the page. MIT.</p><div class="foot-line"><span>Carlos Toledo · claimbox</span><a href="https://github.com/carlostoledo1891/claimbox">source</a></div></div></footer>

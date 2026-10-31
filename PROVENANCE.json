@@ -2,7 +2,7 @@
  "what": "cert-machine files claimbox reads in place (read-only), pinned by sha256; corpus/register-sentences.json is the one copy made",
  "certMachine": "/Users/carlostoledo/Projects/cert-machine",
  "pins": {
-  "instruments/claimbox/check.py": "974964a52cf65b38b84b0430a6cbd6549318d70d085595b8751731c8f14a290d",
+  "instruments/claimbox/check.py": "4e0d0174ab49fe7ee2ff534aa9fad99ff78a0244ed3ca32080c46042280749f7",
   "instruments/claimbox/check.js": "54102f7e2df67375b2dc60eb20f409c11b249f6d7437dc2920ec657cf9d1c39b",
   "instruments/claimbox/SCHEMA.md": "a99e768b19e78e851041ccb473f59e796efd16693e95c30ee4fcdf53de6a41f0",
   "certs/claims-ledger.json": "42e96aa98a0c8613b255f2678bfabcc3e58de7c1a6c1344630da2f5d1ed7389f",

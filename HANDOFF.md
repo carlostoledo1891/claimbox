@@ -266,6 +266,24 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    continued-fraction convergents 58815/17303 < x < 47207/13888 and 458912/135009 < x < 400097/117706 CERTIFIED (the last two
    2.6- and 2.2-million-digit integer comparisons, 88 s and 65 s) — x = 3.399121540… to nine certified decimals; the closed
    form ln 64 / W(ln 64) a description only. Battery §12; make test 517 pass, 121/121.
+   REVIEWED by cert-machine-cb (read-only, from a git-archive copy): check.js agrees with check.py on all eight, word for word;
+   the reduction holds with its conditions (now written into the hypothesis: N >= 2 > e^(1/e), q >= 1 in lowest terms, the
+   odd-denominator convention for x < 0); its digits and convergents recomputed independently, matching. Two receiver proposals
+   NOT adopted by the operator, kept as notes: tie the literal N to the pinned file's value; carry `printed` beside a bar written
+   into the expression. ADOPTED in cert-machine e91e8866: check.py lifts Python 3.11+'s int-to-str limit (lifted here;
+   CLAIMBOX_CHECKER_PYTHON=/opt/homebrew/bin/python3.12 runs the receiver under 3.12: cf-above-10 in ~3 s instead of 88 s).
+   THE STUDY OF x^x = y (on "extend to x^x = y, the closest fraction for each, insights, a report page"): tools/xx_study.py —
+   every y = 2..1000 (+ 3124..3126): the root by Newton in 160 digits, its continued fraction (the quotients 120 and 160 digits
+   agree on), the closest fraction with denominator <= 1000 (the last convergent), the error; records/xxy-study.json (computed).
+   105 roots (y = 2..100 and the neighbours of k^k) bracketed by their last two convergents, the k^k roots pinned by x >= k and
+   x <= k: corpus/xxy/{claims.claim, source.md, n/<y>.json}; cert-machine: 210 CERTIFIED, the 8 planted brackets REFUTED
+   (records/xxy-check.json). INSIGHTS: only y = k^k has a rational root (decided both sides; every other root transcendental by
+   Gelfond–Schneider, cited); near k^k one huge partial quotient ≈ k^k(1 + ln k) (255: 608 vs 610.9; 3126: 8155 vs 8154.5); the
+   pooled 38,922 quotients follow Gauss–Kuzmin (P(1) 0.4116 vs 0.4150), Khinchin 2.6729 vs 2.6855, Lévy 1.1777 vs 1.1866; the
+   largest quotient 4,651,670 in y = 709's root. THE PAGE: web/pages/xx.{html,py} → web/dist/xx.html (five figures drawn from
+   the records, every number in the text addressed; robots noindex), grammar.css gains .fig/.pair/.bigeq, record.py the derived
+   length/checkWords/powerDigits; the zero-count red falls back to a count set to 0 on a page with no empty count. NOT PUBLISHED.
+   make test: 530 pass, 0 fail, 132/132 reds.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
 

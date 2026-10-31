@@ -155,6 +155,13 @@ def expected(jobs, run):
     return got
 
 
+def power_digits(statement):
+    """the digits of p^p for the fraction p/q a bound's statement prints (xroot > p/q): the size of the integers compared"""
+    import math
+    p = int(re.search(r'(\d+)/\d+\s*$', statement).group(1))
+    return int(p * math.log10(p)) + 1
+
+
 DERIVED = {
     'tally': lambda path, key: tally(path)[key],
     'word': lambda path, rid: word(path, rid),
@@ -164,6 +171,9 @@ DERIVED = {
     'jobs': lambda jobs: len(load(jobs)['jobs']),
     'outcomes': lambda path, prefix: sum(1 for e in load(path)['sentences'] if e['outcome'].startswith(prefix)),
     'proposalWords': lambda path, w: sum(1 for e in load(path)['sentences'] for p in e['proposals'] if p.get('word') == w),
+    'length': lambda path, ptr: len(at(path, ptr)),
+    'powerDigits': lambda path, ptr: power_digits(at(path, ptr)),
+    'checkWords': lambda path, w: sum(1 for c in load(path)['claims'] if (c.get('readings') or [{}])[0].get('word') == w),
 }
 
 

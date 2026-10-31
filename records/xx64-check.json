@@ -20,9 +20,9 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  above  []  from the object: CERTIFIED value -23997591260104981357931372992…  0.326 s  note: no record attached",
+     "certMachine": "ADMITTED  above  []  from the object: CERTIFIED value -23997591260104981357931372992…  0.054 s  note: no record attached",
      "word": "CERTIFIED",
-     "seconds": 0.4
+     "seconds": 0.1
     }
    ]
   },
@@ -44,7 +44,7 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  below  []  from the object: CERTIFIED value 762829575382540886860142679041…  0.004 s  note: no record attached",
+     "certMachine": "ADMITTED  below  []  from the object: CERTIFIED value 762829575382540886860142679041…  0.003 s  note: no record attached",
      "word": "CERTIFIED",
      "seconds": 0.0
     }
@@ -68,7 +68,7 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  planted-above  []  from the object: REFUTED value 762829575382540886860142679041…  0.004 s  note: no record attached",
+     "certMachine": "ADMITTED  planted-above  []  from the object: REFUTED value 762829575382540886860142679041…  0.003 s  note: no record attached",
      "word": "REFUTED",
      "seconds": 0.0
     }
@@ -92,9 +92,9 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  planted-below  []  from the object: REFUTED value -23997591260104981357931372992…  0.326 s  note: no record attached",
+     "certMachine": "ADMITTED  planted-below  []  from the object: REFUTED value -23997591260104981357931372992…  0.048 s  note: no record attached",
      "word": "REFUTED",
-     "seconds": 0.4
+     "seconds": 0.1
     }
    ]
   },
@@ -116,9 +116,9 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  cf-above-8  []  from the object: CERTIFIED value -46367332732498507832798083309…  1.061 s  note: no record attached",
+     "certMachine": "ADMITTED  cf-above-8  []  from the object: CERTIFIED value -46367332732498507832798083309…  0.113 s  note: no record attached",
      "word": "CERTIFIED",
-     "seconds": 1.1
+     "seconds": 0.1
     }
    ]
   },
@@ -140,9 +140,9 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  cf-below-7  []  from the object: CERTIFIED value 760632318984775112174335784542…  0.651 s  note: no record attached",
+     "certMachine": "ADMITTED  cf-below-7  []  from the object: CERTIFIED value 760632318984775112174335784542…  0.076 s  note: no record attached",
      "word": "CERTIFIED",
-     "seconds": 0.7
+     "seconds": 0.1
     }
    ]
   },
@@ -164,9 +164,9 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  cf-above-10  []  from the object: CERTIFIED value -75703801487412566717828282107…  87.647 s  note: no record attached",
+     "certMachine": "ADMITTED  cf-above-10  []  from the object: CERTIFIED value -75703801487412566717828282107…  2.816 s  note: no record attached",
      "word": "CERTIFIED",
-     "seconds": 87.7
+     "seconds": 2.9
     }
    ]
   },
@@ -188,9 +188,9 @@
      "definitions": [
       "xroot v1"
      ],
-     "certMachine": "ADMITTED  cf-below-9  []  from the object: CERTIFIED value 495443853685401911616758911966…  64.608 s  note: no record attached",
+     "certMachine": "ADMITTED  cf-below-9  []  from the object: CERTIFIED value 495443853685401911616758911966…  2.285 s  note: no record attached",
      "word": "CERTIFIED",
-     "seconds": 64.7
+     "seconds": 2.3
     }
    ]
   }

@@ -73,7 +73,9 @@ def reds(page):
         'a number typed into a measured section': page.replace('</main>', '<p data-measured>about 400 claims</p></main>'),
         'a standing marked with no legend': head + '<body>' + body.replace('class="w-legend"', 'class="no-legend"'),
         'an empty count printed as a zero': re.sub(r'<span class="w-val w-refused" data-w="refused"([^>]*)data-fmt="none"([^>]*)>none</span>',
-                                                   r'<span class="w-val w-decided" data-w="decided"\1data-fmt="int"\2>0</span>', page, count=1),
+                                                   r'<span class="w-val w-decided" data-w="decided"\1data-fmt="int"\2>0</span>', page, count=1)
+                                            if 'data-fmt="none">none</span>' in page else   # a page with no empty count: a count set to 0
+                                            re.sub(r'(<span class="w-val w-decided"[^>]*data-fmt="int"[^>]*>)[^<]*(</span>)', r'\g<1>0\g<2>', page, count=1),
         'a count that is not its record\'s': (page[:first.start()] + first.group(1) + first.group(2) + '1' + first.group(3)
                                              + page[first.end():]) if first else None,
     }

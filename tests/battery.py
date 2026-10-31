@@ -1057,5 +1057,17 @@ except Refusal as e:
     got = e.rule
 red(got in ('range', 'source'), 'x^x = 64: refused — a bar the reduction does not cover (at or below 1), or one the source does not print', str(got))
 
+# the study of x^x = y (tools/xx_study.py): every bracket certified, every planted bracket refuted; four re-decided here
+YREC = json.load(open(os.path.join(REPO, 'records', 'xxy-check.json'), encoding='utf-8'))['claims']
+yw = {c['id']: c['readings'][0]['word'] for c in YREC}
+ok(all(w == 'CERTIFIED' for k, w in yw.items() if 'planted' not in k) and sum(1 for k in yw if 'planted' not in k) == 210,
+   'x^x = y: the 105 roots each bracketed by two fractions cert-machine certified, the four of the form k^k pinned to k (the record)', '210 claims')
+red(all(w == 'REFUTED' for k, w in yw.items() if 'planted' in k) and sum(1 for k in yw if 'planted' in k) == 8,
+    'x^x = y: refuted — the eight planted brackets turned the wrong way round (the record)', '8 claims')
+YT = lang.parse(open(os.path.join(REPO, 'corpus', 'xxy', 'claims.claim'), encoding='utf-8').read())
+YC = {i['id']: i for i in YT['items'] if i['kw'] == 'claim'}
+again = {cid: CP.word(T.check_with_cert_machine(CP.compile_claim(YT, YC[cid], ROOT)[0]['object'], ROOT)) for cid in ('y64_gt', 'y64_lt', 'y27_ge', 'y64_planted_gt')}
+ok(again == {cid: yw[cid] for cid in again}, 'x^x = y: four claims re-decided here give the record\'s words', json.dumps(again))
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

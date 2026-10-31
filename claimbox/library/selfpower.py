@@ -11,8 +11,11 @@ MIT"""
 
 SELFPOWER = {'xroot': {
     'what': 'the real root of x^x = N, N the integer the pinned file prints',
-    'reduction': 'xroot is the unique real root of x^x = N (x^x <= 1 < N on (0, 1]; x^x strictly increasing on [1, ∞); no negative real root, '
-                 '|x^x| <= e^(1/e) < N wherever x^x is real for x < 0); for a = p/q > 1, xroot > a iff a^a < N iff p^p < N^q·q^p, and xroot < a iff p^p > N^q·q^p',
+    'reduction': 'xroot is the unique real root of x^x = N for an integer N >= 2 (x^x < 1 on (0, 1) and = 1 at 1; x^x strictly increasing on '
+                 '[1/e, ∞), its derivative x^x·(ln x + 1); no negative real root: for x < 0, x^x is taken as real only at rationals of odd '
+                 'denominator in lowest terms and undefined elsewhere, and there |x^x| <= e^(1/e) ≈ 1.4447 < 2 <= N); for a bar a = p/q > 1 in '
+                 'lowest terms with q >= 1: xroot > a iff a^a < N iff (p/q)^p < N^q (both sides positive, raised to the q-th power) iff '
+                 'p^p < N^q·q^p (multiplied by q^p > 0), and xroot < a iff p^p > N^q·q^p; the non-strict forms alike (reviewed by cert-machine-cb, 2026-10-31)',
 }}
 
 # the relation on xroot, written as the relation of p^p − N^q·q^p to 0 (xroot > a iff that difference is negative)

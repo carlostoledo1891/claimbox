@@ -695,6 +695,11 @@ def assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain,
     return obj
 
 
+# the Python cert-machine's checker runs under (CLAIMBOX_CHECKER_PYTHON; default python3): its exact arithmetic is the same on every
+# version, and 3.12 compares and prints million-digit integers far faster than 3.9 (cert-machine e91e8866 lifts 3.11's digit limit)
+CHECKER_PYTHON = os.environ.get('CLAIMBOX_CHECKER_PYTHON', 'python3')
+
+
 def check_with_cert_machine(obj, root):
     """hand the object to cert-machine's checker (a subprocess, no code shared) and return its line"""
     d = tempfile.mkdtemp(prefix='claimbox-')
@@ -702,7 +707,7 @@ def check_with_cert_machine(obj, root):
     with open(tmp, 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False)
     try:
-        r = subprocess.run(['python3', os.path.join(root, 'instruments', 'claimbox', 'check.py'), tmp], capture_output=True, text=True, timeout=4 * 3600)
+        r = subprocess.run([CHECKER_PYTHON, os.path.join(root, 'instruments', 'claimbox', 'check.py'), tmp], capture_output=True, text=True, timeout=4 * 3600)
         return (r.stdout or r.stderr).strip().split('\n')[-1]
     finally:
         os.remove(tmp)
