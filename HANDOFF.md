@@ -30,8 +30,8 @@ LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7 under way (tighte
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
 cert-machine at /reports/xx.html. web/dist holds index.html only. Publishing is always a cert-machine session's run, on the
-operator's word in that chat. THE LIVE PAGE IS TWO BATCHES BEHIND (register readers 1 and 2 moved the register's numbers:
-"54 decided, 78 name the reason"): cert-machine-cb was asked to republish when the operator approves there.
+operator's word in that chat. REPUBLISHED 2026-10-31 on the operator's word: cert-machine f324493d from claimbox 9254a74 (61,322
+bytes); the live sha256 14830928…2a341e equals web/dist's, checked here with curl. The page is current.
 
 **The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-cb` (SendMessage). After any
 change there: `make lift`, `make drift`, `make test`.
@@ -56,11 +56,14 @@ Still without bytes, and why (prose.py's comment): the mm- Strassen certificate'
 cert-machine's tensor records hold none of those keys), polymaps F6/F7 (maps not printed), 84b (REPAIRED), C42's two (PARTIAL),
 erdos852-cstar (one enclosure, no row), the six kissing sentences of batch 1's note.
 
-**Asked of cert-machine-cb (2026-10-31, NOT ruled by the operator; receiver changes are made there first):** (a) rows with a
-receiver word for the Strassen certificate's ten decompositions (then the mm- sentences take the decomposition route); (b) check.py
-reads a valueless row's bar twice, BAR_IN_CLAIM the first decimal and STATED_BAR the last relation's number — the HorizonMath row
-"= 0.1091479892... < 0.1148103258186177" is refused for the object stating its own last bar; (c) a fraction bar: `printed` holds
-digits only and STATED_BAR reads −44 of −44/9; (d) the republish, on the operator's word there.
+**The operator's rulings on the asks to cert-machine-cb (2026-10-31, relayed by cert-machine-cb):** (b) APPROVED — one bar
+reading in the receiver, STATED_BAR (the number after the row claim's last relation), in check.py and check.js, being built there on
+lane-receiver-one-bar; when its commit lands on main: `make lift`, `make drift`, the register re-run (horizonmath-keich should then
+take its row's word), `make web`, `make test`. (a) a per-row record for the Strassen certificate: NOT approved — the ten mm-
+sentences stay without a route. (c) fraction bars in `printed`: NOT approved — F4/F5 stay hole `decider`. (d) republished (above).
+Also from cert-machine: its x^x report (/reports/xx.html) now states the x^x = N reduction as DECIDED (proved in Lean, 15 theorems,
+two kernels, CI run 41221355209, certs/xx-reduction-lean.json), and carries a REFUSED claim of its own ("the root of x^x = 64 is
+transcendental"). claimbox's library/selfpower.py still writes the reduction as a hypothesis, not decided — unchanged here.
 
 **The operator's standing choices (2026-10-31).** Model budget: claude-opus-5-5 under the $20 cap. cert-machine's checker under
 Python 3.12 by default. The person's worksheet (corpus/proposals/riemann-ai.person.claim, 46 blanks `: ?`) stays a text file; the
@@ -71,7 +74,7 @@ operator fills it — never fill it for them.
    watcher whose family is not monotone, instances chosen by a declared schedule (geometric, boundaries) instead of the walk;
    its results "a counterexample at T = n" (REFUTED, not claimed first) or "not refuted at the K instances asked", with a
    planted twin false only at a large instance.
-2. When cert-machine-cb answers (a)–(c): `make lift`, `make drift`, re-run `python3 -m claimbox prose register --run --record
+2. When lane-receiver-one-bar lands on cert-machine's main: `make lift`, `make drift`, re-run `python3 -m claimbox prose register --run --record
    records/prose-register.json`, `make web`, `make test`.
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
