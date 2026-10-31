@@ -282,7 +282,11 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    pooled 38,922 quotients follow Gauss–Kuzmin (P(1) 0.4116 vs 0.4150), Khinchin 2.6729 vs 2.6855, Lévy 1.1777 vs 1.1866; the
    largest quotient 4,651,670 in y = 709's root. THE PAGE: web/pages/xx.{html,py} → web/dist/xx.html (five figures drawn from
    the records, every number in the text addressed; robots noindex), grammar.css gains .fig/.pair/.bigeq, record.py the derived
-   length/checkWords/powerDigits; the zero-count red falls back to a count set to 0 on a page with no empty count. NOT PUBLISHED.
+   length/checkWords/powerDigits; the zero-count red falls back to a count set to 0 on a page with no empty count. NOT PUBLISHED
+   HERE, by the operator's ruling in cert-machine-cb's chat: the x^x = y report is served by cert-machine at /reports/xx.html
+   (rebuilt in its grammar, every bracket re-decided by its own ledger certs/xx-ledger.json, claimbox's records lifted via its
+   LIFT-claimbox.json), one version only — so claimbox's page source moved to web/drafts/ (not built; web/dist holds index.html
+   alone, the zone publishes all of web/dist), and the zone republishes index.html only.
    make test: 530 pass, 0 fail, 132/132 reds.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.
