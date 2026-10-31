@@ -96,7 +96,9 @@ REGISTER_SYSTEM = SYSTEM.replace("""A STATEMENT is one of:
   for every VAR in A < VAR < B : TERM REL BAR        (a claim over the integer rows A < VAR < B)
   DATA is a rank-R decomposition of <n,m,p> over RING          (DATA the name of the pinned file; RING as the sentence prints it)
   DATA["HEADING"] is a rank-R decomposition of <n,m,p> over RING   (one decomposition of a file that holds many, named by the
-                                                                     heading the file prints it under, exactly as the sentence quotes it)
+                                                                     heading the file prints it under, exactly as the sentence quotes it,
+                                                                     or by its archive key, e.g. DATA["2,2,3"])
+  the N vectors of DATA form a kissing configuration in dimension D
   DATA is a feasible solution of "TITLE" and its score is BAR  (a platform's problem, TITLE exactly as the sentence prints it)""")
 
 SCHEMA = {'type': 'object', 'properties': {'statement': {'type': 'string'}, 'hole': {'type': 'string', 'enum': [''] + HOLES}, 'why': {'type': 'string'}},
@@ -111,6 +113,12 @@ def library_for(cfg, row):
     data, elements = prose.context_of('register', row)[:2]
     if data.endswith('.ipynb'):
         return ('n', 'rationals', [('n', 'the results notebook: the decompositions it prints, each named by its heading')], data)
+    if data.endswith('.npz'):
+        var = 'a' + re.sub(r'\W', '', os.path.basename(data).split('_')[-1].split('.')[0])
+        return (var, 'integers', [(var, 'an archive of decompositions, each stored under its key "n,m,p" (the tensor <n,m,p>)')], data)
+    if row['id'].startswith('kiss-'):
+        var = 'k' + re.sub(r'\D', '', os.path.basename(data))
+        return (var, elements or 'decimals', [(var, 'a list of vectors, one direction each')], data)
     var = 'x' + re.sub(r'\D', '', os.path.basename(data))
     return (var, elements or 'doubles', [(var, 'the platform\'s API record of the best solution (its "data"), read as the platform\'s verifier reads it')], data)
 
@@ -308,7 +316,7 @@ def run(a, cfg, rows, client, ledger):
             done = {e['tag']: e for e in ledger.calls}
             first = {r['id']: done.get(r['id']) for r in rows}
             if a.again:
-                redo = [r for r in rows if r['id'].startswith(a.again)]
+                redo = [r for r in rows if any(r['id'].startswith(x) for x in a.again.split(','))]
                 for e in ledger.calls:
                     if e['tag'] in {r['id'] for r in redo} or e['tag'] in {r['id'] + ' planted' for r in redo}:
                         e['tag'] += ' (superseded)'

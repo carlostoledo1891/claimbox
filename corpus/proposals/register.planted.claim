@@ -1,6 +1,14 @@
 -- Written by tools/propose_model.py (claude-opus-5-5, effort high): the planted run: each sentence with its bar's last digit moved, asked again alone, the model's own statement or hole.
 -- It counts only after claimbox validates it (python3 -m claimbox prose register).
 source P = ../claimbox/corpus/register/sentences.md
+data   af2 = corpus/sources/alphatensor_f2.npz
+read   af2 as integers
+data   ar = corpus/sources/alphatensor_r.npz
+read   ar as integers
+data   k11593 = corpus/kissing/alphaevolve-d11-593.json
+read   k11593 as integers
+data   k6 = corpus/einstein-arena/best-6.json
+read   k6 as decimals
 data   n = corpus/sources/alphaevolve_mathematical_results.ipynb
 read   n as rationals
 data   x = corpus/station-v2/jacobian/construction.json
@@ -21,4 +29,10 @@ data   x24 = corpus/einstein-arena/best-24.json
 read   x24 as decimals
 data   x25 = corpus/einstein-arena/best-25.json
 read   x25 as decimals
+data   x313 = corpus/optimization-constants/mi2026/c3b_pr92/certificate_3b_13pt.json
+read   x313 as doubles
+data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
+read   x3147 as doubles
+data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
+read   x3395 as doubles
 

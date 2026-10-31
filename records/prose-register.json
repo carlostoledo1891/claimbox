@@ -3,27 +3,27 @@
  "corpus": "register",
  "summary": {
   "sentences": 132,
-  "proposals": 42,
+  "proposals": 67,
   "byKind": {
-   "grammar": 23,
+   "grammar": 48,
    "model:claude-opus-5-5": 19
   },
   "perKind": {
    "grammar": {
     "proposed": 132,
-    "compiled": 23,
-    "holes": 109,
-    "faithful": 16,
+    "compiled": 48,
+    "holes": 84,
+    "faithful": 18,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 7,
+    "noReference": 30,
     "plantedHeld": 1,
     "plantedBroke": 0
    },
    "model:claude-opus-5-5": {
-    "proposed": 24,
+    "proposed": 46,
     "compiled": 19,
-    "holes": 5,
+    "holes": 27,
     "faithful": 13,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
@@ -32,25 +32,25 @@
     "plantedBroke": 0
    }
   },
-  "anchored": 42,
-  "printedBack": 42,
+  "anchored": 67,
+  "printedBack": 67,
   "planted": 1,
-  "faithful": 29,
+  "faithful": 31,
   "unfaithful": 0,
   "sameValueOtherPrint": 0,
   "validated": 19,
-  "notStated": 109,
+  "notStated": 84,
   "sensitivity": {
    "held": 2,
    "broke": 0,
    "tight": 0,
    "slack": 0,
-   "notRun": 40
+   "notRun": 65
   },
   "vacuity": {
    "depends": 0,
    "flagged": 0,
-   "notRun": 42
+   "notRun": 67
   },
   "pairs": {
    "sentences": 19,
@@ -64,7 +64,7 @@
    "grammar": {
     "same": 0,
     "moved": 0,
-    "unread": 8
+    "unread": 13
    },
    "model:claude-opus-5-5": {
     "same": 0,
@@ -235,14 +235,47 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-kiss-alphaevolve-593",
+     "decision": {
+      "pin": {
+       "path": "corpus/kissing/alphaevolve-d11-593.json",
+       "sha256": "71e5919df80dedf1c7d9d24130b9020700541582512c676d4edbddf215125610"
+      },
+      "count": 593,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       "certs/kissing-ledger.json",
+       "alphaevolve-593",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  17.176 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_kiss_alphaevolve_593",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no statement the language reads"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: prose"
   },
   {
    "id": "kiss-ea-594-winner",
@@ -252,14 +285,45 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-kiss-ea-594-winner",
+     "decision": {
+      "pin": {
+       "path": "corpus/einstein-arena/best-6.json",
+       "sha256": "4ff52e989f3ef0b9c3f3d97ef078c6201eb4fda73eecc1bb09163094b43f27c0"
+      },
+      "count": 594,
+      "elements": "decimals",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  19.161 s  note: no record attached",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "name",
+      "hole": "name",
+      "why": "the language cannot read the proposal: x6 is not declared by a data line"
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: name"
   },
   {
    "id": "kiss-station-604-1",
@@ -1017,14 +1081,45 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-optconst-3b",
+     "decision": {
+      "pin": {
+       "path": "corpus/optimization-constants/mi2026/c3b_pr92/certificate_3b_13pt.json",
+       "sha256": "2efe99360a1ff5e3736e734ed06e5ab8e0cdcc33583ef22ece9e927e9e45365c"
+      },
+      "count": 13,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "1.77898884",
+        "44474721/25000000"
+       ]
+      ],
+      "named": [
+       "the quantity C3b bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/sumdiff-ledger.json",
+       "3b",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-optconst-3b  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "optconst-3c",
@@ -1034,14 +1129,45 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-optconst-3c",
+     "decision": {
+      "pin": {
+       "path": "corpus/optimization-constants/l2026/certificate_3c_147pt.json",
+       "sha256": "b3dc9587ba7a733a3f68b66017d7b5936f38040f8e9ca31a057bb65a6f227999"
+      },
+      "count": 147,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "1.6747338950414058",
+        "8373669475207029/5000000000000000"
+       ]
+      ],
+      "named": [
+       "the quantity C3c bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/sumdiff-ledger.json",
+       "3c",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-optconst-3c  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "optconst-3c-95",
@@ -1051,14 +1177,45 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-optconst-3c-95",
+     "decision": {
+      "pin": {
+       "path": "corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json",
+       "sha256": "2ebd7ba7a32e776ff5d271510b63a0999869fecfb148087a3d0fdd57cc4ffc3e"
+      },
+      "count": 95,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "1.6747338950208249",
+        "16747338950208249/10000000000000000"
+       ]
+      ],
+      "named": [
+       "the quantity C3c bounds, as the claimant's certificate defines it"
+      ],
+      "record": [
+       "certs/sumdiff-ledger.json",
+       "3c-95",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-optconst-3c-95  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
+     "sensitivity": null,
+     "vacuity": null
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "optconst-71",
@@ -1655,7 +1812,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -1886,7 +2043,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -1998,7 +2155,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2152,7 +2309,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2229,7 +2386,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2348,7 +2505,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x8-r96  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x8-r96  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2525,7 +2682,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2602,7 +2759,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     },
@@ -2637,7 +2794,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.006 s",
      "sensitivity": null,
      "vacuity": null
     }
@@ -2652,14 +2809,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x2x3",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,3⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x2x3",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x3  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x2x3",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank and defers it to the array's shape, so no rank R can be written without inventing a number."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-2x2x4",
@@ -2669,14 +2861,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x2x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,4⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x2x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x2x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints a rank; it defers to whatever the stored array's shape says, so there is no number to check against."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-2x3x3",
@@ -2686,14 +2913,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x3x3",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,3,3⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x3x3",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x3  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x3x3",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank and defers it to the array's shape, so there is no number R to state the decomposition claim against."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-2x2x5",
@@ -2703,14 +2965,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x2x5",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,5⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x2x5",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x2x5  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x2x5",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank and defers it to the array's shape, so there is no number to state."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-2x3x4",
@@ -2720,14 +3017,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x3x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,3,4⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x3x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x3x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank and defers it to the array's shape, so there is no number to state the decomposition claim with."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-2x3x5",
@@ -2737,14 +3069,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x3x5",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,3,5⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x3x5",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x5  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x3x5",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank and defers it to the array's shape, so no number is stated to check against."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-2x4x4",
@@ -2754,14 +3121,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-2x4x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,4,4⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-2x4x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x4x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_2x4x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank, deferring it to the array's shape, so no number can fill R."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-f2-3x3x4",
@@ -2771,14 +3173,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-f2-3x3x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_f2.npz",
+       "sha256": "70f09f349d8d2874ef0e0e089459c7320f5aa3eef277df5ffa67f573709db2da"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,3,4⟩ matrix-multiplication tensor over F2, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-f2.json",
+       "at-f2-3x3x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-f2-3x3x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_f2_3x3x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence never prints the rank; it defers to the array's shape, so there is no number to put in the rank-R claim."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-q-2x2x3",
@@ -2788,14 +3225,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x2x3",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,3⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x2x3",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x3  [CERTIFIED]  0.002 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x2x3",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never prints the rank (only 'the rank the array's shape states') or names the ring ('the ring the paper names'), so the claim is undefined."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x2x4",
@@ -2805,14 +3277,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x2x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,4⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x2x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x2x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never prints the rank (it defers to the array's shape) or names the ring (it defers to 'the paper'), so the claim's terms are left undefined."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x3x3",
@@ -2822,14 +3329,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x3x3",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,3,3⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x3x3",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x3x3  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x3x3",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never names the ring (only 'the ring the paper names') and gives no rank number, so the decomposition claim cannot be stated."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x2x5",
@@ -2839,14 +3381,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x2x5",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,5⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x2x5",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x5  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x2x5",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never states the rank (it defers to the array's shape) or the ring (it defers to an unnamed paper), so the claim cannot be written with a printed rank and ring."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x2x6",
@@ -2856,14 +3433,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x2x6",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,6⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x2x6",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x6  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x2x6",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never prints the rank and never names the ring ('the ring the paper names'), so the decomposition claim cannot be written out."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x3x4",
@@ -2873,14 +3485,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x3x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,3,4⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x3x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x3x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x3x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence prints no rank, only deferring to the array's shape, and names no ring, so there is no number to state the claim with."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-q-2x2x7",
@@ -2890,14 +3537,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x2x7",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,7⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x2x7",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x7  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x2x7",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence prints no rank and no ring; it defers to 'the array's shape' and 'the ring the paper names', so the claim's rank and ring are never defined."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x3x5",
@@ -2907,14 +3589,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x3x5",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,3,5⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x3x5",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x3x5  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x3x5",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never names the ring and gives no rank number, deferring both to the paper and the array's shape, so the claim cannot be stated."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x2x8",
@@ -2924,14 +3641,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x2x8",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,2,8⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x2x8",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x8  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x2x8",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence names no ring (only 'the ring the paper names') and prints no rank, so the decomposition claim cannot be written out."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x4x4",
@@ -2941,14 +3693,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x4x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,4,4⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x4x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x4x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x4x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence prints no rank, deferring it to the array's shape, and names no ring, so there is no bar to state the decomposition claim against."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-at-q-3x3x4",
@@ -2958,14 +3745,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-3x3x4",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨3,3,4⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-3x3x4",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-3x3x4  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_3x3x4",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence never names the ring (only 'the ring the paper names') and gives no rank, so the decomposition claim cannot be written out."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: ambiguous"
   },
   {
    "id": "mc100-at-q-2x4x5",
@@ -2975,14 +3797,49 @@
    "proposals": [
     {
      "kind": "grammar",
+     "object": "p-mc100-at-q-2x4x5",
+     "decision": {
+      "pin": {
+       "path": "corpus/sources/alphatensor_r.npz",
+       "sha256": "4d59571a2537a9472e8229176d5ebe2925f3e041ad403c095b41853026caec33"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [],
+      "named": [
+       "every tensor-identity equation of the ⟨2,4,5⟩ matrix-multiplication tensor over Q, exactly"
+      ],
+      "record": [
+       "certs/mc100-alphatensor-q.json",
+       "at-q-2x4x5",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x4x5  [CERTIFIED]  0.001 s",
+     "sensitivity": null,
+     "vacuity": null
+    },
+    {
+     "kind": "model:claude-opus-5-5",
+     "claim": "m_mc100_at_q_2x4x5",
+     "statement": null,
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
+      "rule": "quantity",
+      "hole": "quantity",
+      "why": "The sentence prints no rank (it defers to the array's shape) and names no ring (it defers to the paper), so there is no number to state the claim against."
      }
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only; model:claude-opus-5-5's proposal not stated: quantity"
   },
   {
    "id": "mc100-ea-best-erdos-min-overlap",

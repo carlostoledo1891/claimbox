@@ -1,6 +1,14 @@
 -- Written by tools/propose_model.py (claude-opus-5-5, effort high): one proposal per sentence, the model's own statement or hole.
 -- It counts only after claimbox validates it (python3 -m claimbox prose register).
 source P = ../claimbox/corpus/register/sentences.md
+data   af2 = corpus/sources/alphatensor_f2.npz
+read   af2 as integers
+data   ar = corpus/sources/alphatensor_r.npz
+read   ar as integers
+data   k11593 = corpus/kissing/alphaevolve-d11-593.json
+read   k11593 as integers
+data   k6 = corpus/einstein-arena/best-6.json
+read   k6 as decimals
 data   n = corpus/sources/alphaevolve_mathematical_results.ipynb
 read   n as rationals
 data   x = corpus/station-v2/jacobian/construction.json
@@ -21,6 +29,20 @@ data   x24 = corpus/einstein-arena/best-24.json
 read   x24 as decimals
 data   x25 = corpus/einstein-arena/best-25.json
 read   x25 as decimals
+data   x313 = corpus/optimization-constants/mi2026/c3b_pr92/certificate_3b_13pt.json
+read   x313 as doubles
+data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
+read   x3147 as doubles
+data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
+read   x3395 as doubles
+claim  m_kiss_alphaevolve_593 over k11593
+  quote "K(11) >= 593 — the May 2025 record" from P
+  : the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11
+  proposed by model:claude-opus-5-5
+claim  m_kiss_ea_594_winner over k6
+  quote "K(11) >= 594 — the solved n=594 rung, score-0 winner (solution #1492)" from P
+  : the 594 vectors of x6 form a kissing configuration in dimension 11
+  proposed by model:claude-opus-5-5
 claim  m_mc100_ae_nb_2x4x5_r32 over n
   quote "the notebook's "Rank-32 decomposition of <2,4,5> over 0.5*Z" is a decomposition of that tensor of rank 32 over that ring" from P
   : alphaevolve_mathematical_results.ipynb["Rank-32 decomposition of <2,4,5> over 0.5*Z"] is a rank-32 decomposition of <2,4,5> over 0.5*Z
@@ -80,6 +102,86 @@ claim  m_mc100_ae_nb_4x5x6_r90 over n
 claim  m_mc100_ae_nb_5x5x5_r93 over n
   quote "the notebook's "Rank-93 decomposition of <5,5,5> over Z" is a decomposition of that tensor of rank 93 over that ring" from P
   : n["Rank-93 decomposition of <5,5,5> over Z"] is a rank-93 decomposition of <5,5,5> over Z
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x2x3
+  quote "the factors stored under key 2,2,3 of alphatensor_f2.npz are a decomposition of the ⟨2,2,3⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank and defers it to the array's shape, so no rank R can be written without inventing a number."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x2x4
+  quote "the factors stored under key 2,2,4 of alphatensor_f2.npz are a decomposition of the ⟨2,2,4⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints a rank; it defers to whatever the stored array's shape says, so there is no number to check against."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x3x3
+  quote "the factors stored under key 2,3,3 of alphatensor_f2.npz are a decomposition of the ⟨2,3,3⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank and defers it to the array's shape, so there is no number R to state the decomposition claim against."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x2x5
+  quote "the factors stored under key 2,2,5 of alphatensor_f2.npz are a decomposition of the ⟨2,2,5⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank and defers it to the array's shape, so there is no number to state."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x3x4
+  quote "the factors stored under key 2,3,4 of alphatensor_f2.npz are a decomposition of the ⟨2,3,4⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank and defers it to the array's shape, so there is no number to state the decomposition claim with."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x3x5
+  quote "the factors stored under key 2,3,5 of alphatensor_f2.npz are a decomposition of the ⟨2,3,5⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank and defers it to the array's shape, so no number is stated to check against."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_2x4x4
+  quote "the factors stored under key 2,4,4 of alphatensor_f2.npz are a decomposition of the ⟨2,4,4⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank, deferring it to the array's shape, so no number can fill R."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_f2_3x3x4
+  quote "the factors stored under key 3,3,4 of alphatensor_f2.npz are a decomposition of the ⟨3,3,4⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence never prints the rank; it defers to the array's shape, so there is no number to put in the rank-R claim."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x2x3
+  quote "the factors stored under key 2,2,3 of alphatensor_r.npz are a decomposition of the ⟨2,2,3⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never prints the rank (only 'the rank the array's shape states') or names the ring ('the ring the paper names'), so the claim is undefined."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x2x4
+  quote "the factors stored under key 2,2,4 of alphatensor_r.npz are a decomposition of the ⟨2,2,4⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never prints the rank (it defers to the array's shape) or names the ring (it defers to 'the paper'), so the claim's terms are left undefined."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x3x3
+  quote "the factors stored under key 2,3,3 of alphatensor_r.npz are a decomposition of the ⟨2,3,3⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never names the ring (only 'the ring the paper names') and gives no rank number, so the decomposition claim cannot be stated."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x2x5
+  quote "the factors stored under key 2,2,5 of alphatensor_r.npz are a decomposition of the ⟨2,2,5⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never states the rank (it defers to the array's shape) or the ring (it defers to an unnamed paper), so the claim cannot be written with a printed rank and ring."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x2x6
+  quote "the factors stored under key 2,2,6 of alphatensor_r.npz are a decomposition of the ⟨2,2,6⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never prints the rank and never names the ring ('the ring the paper names'), so the decomposition claim cannot be written out."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x3x4
+  quote "the factors stored under key 2,3,4 of alphatensor_r.npz are a decomposition of the ⟨2,3,4⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole quantity "The sentence prints no rank, only deferring to the array's shape, and names no ring, so there is no number to state the claim with."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x2x7
+  quote "the factors stored under key 2,2,7 of alphatensor_r.npz are a decomposition of the ⟨2,2,7⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence prints no rank and no ring; it defers to 'the array's shape' and 'the ring the paper names', so the claim's rank and ring are never defined."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x3x5
+  quote "the factors stored under key 2,3,5 of alphatensor_r.npz are a decomposition of the ⟨2,3,5⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never names the ring and gives no rank number, deferring both to the paper and the array's shape, so the claim cannot be stated."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x2x8
+  quote "the factors stored under key 2,2,8 of alphatensor_r.npz are a decomposition of the ⟨2,2,8⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence names no ring (only 'the ring the paper names') and prints no rank, so the decomposition claim cannot be written out."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x4x4
+  quote "the factors stored under key 2,4,4 of alphatensor_r.npz are a decomposition of the ⟨2,4,4⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole quantity "The sentence prints no rank, deferring it to the array's shape, and names no ring, so there is no bar to state the decomposition claim against."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_3x3x4
+  quote "the factors stored under key 3,3,4 of alphatensor_r.npz are a decomposition of the ⟨3,3,4⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole ambiguous "The sentence never names the ring (only 'the ring the paper names') and gives no rank, so the decomposition claim cannot be written out."
+  proposed by model:claude-opus-5-5
+claim  m_mc100_at_q_2x4x5
+  quote "the factors stored under key 2,4,5 of alphatensor_r.npz are a decomposition of the ⟨2,4,5⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole quantity "The sentence prints no rank (it defers to the array's shape) and names no ring (it defers to the paper), so there is no number to state the claim against."
   proposed by model:claude-opus-5-5
 claim  m_mc100_ea_best_erdos_min_overlap over x1
   quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578584 (minimize)" from P

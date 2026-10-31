@@ -410,7 +410,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         if doc_names and shape['name'] not in doc_names:
             raise Refusal('source', 'the source never names ' + shape['name'] + ' (it names ' + ', '.join(sorted(doc_names)[:4]) + ('…' if len(doc_names) > 4 else '') + ')')
     if not printed:
-        key = shape.get('key') or (str(shape['n']) if shape.get('n') else None) or shape.get('name')
+        key = shape.get('key') or (str(shape['n']) if shape.get('n') else None) or shape.get('name') or \
+            (sentence.strip() if shape['family'] == 'decomposition' else None)     # a decomposition printing no key: the source prints the sentence
         if not key:
             raise Refusal('source', 'the claim has no printed number and no key to find in the source')
         with open(sp, 'rb') as f:
@@ -478,7 +479,9 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         try:
             doc = json.loads(f.read().decode('utf-8'))
         except (ValueError, UnicodeDecodeError) as e:
-            raise Refusal('data', 'the published bytes are not JSON: ' + str(e)[:60])
+            if not (decider and fam == 'decomposition'):
+                raise Refusal('data', 'the published bytes are not JSON: ' + str(e)[:60])
+            doc = None             # a binary archive (AlphaTensor's .npz) the named decider reads itself: no array is decoded here
     platform = PLATFORM_BY_TITLE.get(grammar.normalise(shape['problem'])) if fam == 'score' and shape.get('problem') and not decider else None
     known = fam == 'bound' and shape['name'] in PRIMITIVE and not decider
     primitive = fam == 'kissing' or known or platform is not None or cert is not None
@@ -488,13 +491,16 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         # AI phrasing 7/paper/68, \tfrac{1}{2}(3 − 1/c_1^*) over the series certificate). The numeric families only: a platform
         # score with no verifier written keeps its recorded refusal (ea-best-prime-number-theorem, `data`)
         raise Refusal('decider', 'the quantity "' + str(shape.get('name') or fam) + '" has no primitive expression here: a decider path is needed, and none was given')
-    select, arr = select_array(doc)
-    try:
-        kind, shp, sizes = inspect_array(arr)
-    except Refusal:
-        if primitive:
-            raise
-        kind, shp, sizes = 'records', ['n'], {'n': len(arr)}   # structured entries, read by the named decider
+    if doc is None:
+        select, arr, kind, shp, sizes = None, [None], 'records', ['n'], {'n': 1}
+    else:
+        select, arr = select_array(doc)
+        try:
+            kind, shp, sizes = inspect_array(arr)
+        except Refusal:
+            if primitive:
+                raise
+            kind, shp, sizes = 'records', ['n'], {'n': len(arr)}   # structured entries, read by the named decider
     if elements and kind != 'records':   # a reading of JSON numbers; structured records are the named decider's to read
         if elements == 'decimals' and kind != 'doubles':
             raise Refusal('data', 'decimals is a reading of JSON numbers; these are ' + kind)
@@ -503,6 +509,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     how_read = {'doubles': 'each JSON number as the double it denotes, exactly', 'decimals': 'each JSON number as the decimal digits printed, exactly',
                 'integers': 'each JSON integer exactly', 'rationals': 'each p/q string as the rational it names', 'records': 'structured entries, read by the named decider'}[kind]
     decoder = 'the array at ' + (select or 'the top level') + ': ' + str(count) + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values') + ', ' + how_read
+    if doc is None:
+        decoder = 'a binary archive, read by the named decider; nothing is decoded here'
 
     domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'decoder': decoder, 'count': count, 'variable': 'f'}
     preds, hyps, fals, ref = [], [], [], ''
@@ -695,9 +703,10 @@ def assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain,
     return obj
 
 
-# the Python cert-machine's checker runs under (CLAIMBOX_CHECKER_PYTHON; default python3): its exact arithmetic is the same on every
+# the Python cert-machine's checker runs under (CLAIMBOX_CHECKER_PYTHON; else Python 3.12 where installed, else python3): its exact arithmetic is the same on every
 # version, and 3.12 compares and prints million-digit integers far faster than 3.9 (cert-machine e91e8866 lifts 3.11's digit limit)
-CHECKER_PYTHON = os.environ.get('CLAIMBOX_CHECKER_PYTHON', 'python3')
+CHECKER_PYTHON = os.environ.get('CLAIMBOX_CHECKER_PYTHON') or next(
+    (p for p in ('/opt/homebrew/bin/python3.12', '/usr/local/bin/python3.12') if os.path.exists(p)), 'python3')   # the operator, 2026-10-31
 
 
 def check_with_cert_machine(obj, root):

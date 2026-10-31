@@ -305,6 +305,21 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
    decide; the CSS comment naming it went too). LIVE: cert-machine 67c14f84, the bytes of claimbox b87af65 (61,314 bytes, sha256
    9ef5e851…6e52f8d, checked here with curl). cert-machine's pin names fb4818b with "dirty": true — it published the working
    tree's bytes moments before b87af65 landed; the bytes are b87af65's, which is the source on this side.
+   THE OPERATOR'S ANSWERS (asked here, 2026-10-31): next, register readers; cert-machine's checker under Python 3.12 by default
+   (translate.CHECKER_PYTHON: CLAIMBOX_CHECKER_PYTHON, else /opt/homebrew/bin/python3.12 where it exists, else python3); the
+   person's worksheet stays a text file. REGISTER READERS, BATCH 1: prose.register_extra gives bytes to 25 more register
+   sentences — AlphaTensor's 20 decompositions (the .npz, read by cert-machine's tensor decider; the row of certs/mc100-alphatensor-
+   {q,f2}.json for each key; translate reads a binary archive as opaque when a decider reads it, and quotes a decomposition's own
+   sentence when it prints no key), two kissing sentences through the reader jobs that state them (records included), and the
+   three sum-difference constants (certs/sumdiff-ledger.json's certificate files and decider). The library's decomposition
+   route reads AlphaTensor's records and selects by archive key (DATA["2,2,3"]); the validator's record guard covers every
+   certs/ ledger (a moved bar on a recorded claim is not measurable). The model (--again mc100-at,kiss-; 61 calls, $0.4528 in
+   all on the register) names a hole for every AlphaTensor sentence — the register's sentence prints no rank ("the rank the
+   array's shape states") and, for Q, no ring: a finding about the register's wording. Not given bytes, and why: ea-604 (Z[√2]
+   coordinates, a reading the library lacks), the Station's 604s and 582 shell (one .npz, no JSON of each), D4 and E8
+   (generated, not published). The register now: 67 claims proposed, 65 CERTIFIED, 2 REFUSED; validated 19; not stated 84 (49
+   need bytes). Still to read: EinsteinArena's SOTA table (19, certs/easota-ledger.json — verdict words outside the receiver's),
+   the Strassen certificate (10, inline factors), polymaps (6), the other optimization constants (4), Erdős #852, HorizonMath.
    make test: 530 pass, 0 fail, 132/132 reds.
    NEXT: step 7's attack and hunters; the operator's worksheet; readers for the 108 register sentences without bytes.
    numerals (each entry with a red), then the register's sentences.

@@ -9,7 +9,7 @@ import json
 import os
 
 DECIDER = 'tools/run-mc100-tensors.js'
-RECORDS = ('certs/mc100-alphaevolve-nb-matmul.json',)          # cert-machine's tensor decider's records, read in place
+RECORDS = ('certs/mc100-alphaevolve-nb-matmul.json', 'certs/mc100-alphatensor-q.json', 'certs/mc100-alphatensor-f2.json')   # read in place
 
 
 def heading(rank, dims, ring):

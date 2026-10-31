@@ -3,8 +3,8 @@
  "model": "claude-opus-5-5",
  "effort": "high",
  "cap": 20.0,
- "spent": 0.2698,
- "calls": 39,
+ "spent": 0.4528,
+ "calls": 61,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -13,6 +13,46 @@
   "output": 20.0
  },
  "entries": [
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaLJik2VBNnjPLQvD4",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 80,
+    "cacheWrite": 1402,
+    "cacheRead": 0,
+    "output": 205
+   },
+   "cost": 0.01143,
+   "raw": "{\"statement\": \"the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence claims K(11) ≥ 593, which the pinned file of 593 vectors witnesses if they form a kissing configuration in dimension 11.\"}",
+   "answer": {
+    "statement": "the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence claims K(11) ≥ 593, which the pinned file of 593 vectors witnesses if they form a kissing configuration in dimension 11."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaL1cDynZoYa8nwR4h",
+   "stopReason": "end_turn",
+   "seconds": 6.4,
+   "usage": {
+    "input": 106,
+    "cacheWrite": 1402,
+    "cacheRead": 0,
+    "output": 483
+   },
+   "cost": 0.017094,
+   "raw": "{\"statement\": \"the 594 vectors of x6 form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The lower bound K(11) ≥ 594 is witnessed by the platform's best solution: 594 vectors forming a valid kissing configuration in dimension 11 (score 0).\"}",
+   "answer": {
+    "statement": "the 594 vectors of x6 form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The lower bound K(11) ≥ 594 is witnessed by the platform's best solution: 594 vectors forming a valid kissing configuration in dimension 11 (score 0)."
+   }
+  },
   {
    "tag": "mc100-ae-nb-2x4x5-r32",
    "model": "claude-opus-5-5",
@@ -611,6 +651,406 @@
     "statement": "\"Rank-93 decomposition of <5,5,5> over Z\" is a rank-93 decomposition of <5,5,5> over Z",
     "hole": "",
     "why": "The sentence claims that the named pinned decomposition is a rank-93 decomposition of the <5,5,5> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaLYrAjrbaCUyXftGr",
+   "stopReason": "end_turn",
+   "seconds": 5.1,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 1402,
+    "cacheRead": 0,
+    "output": 218
+   },
+   "cost": 0.011962,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank and defers it to the array's shape, so no rank R can be written without inventing a number.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank and defers it to the array's shape, so no rank R can be written without inventing a number."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaLFFnQDgUXbM9TPWM",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 1402,
+    "cacheRead": 0,
+    "output": 215
+   },
+   "cost": 0.011902,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints a rank; it defers to whatever the stored array's shape says, so there is no number to check against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints a rank; it defers to whatever the stored array's shape says, so there is no number to check against."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaLY7eQGq7cWtZTvL7",
+   "stopReason": "end_turn",
+   "seconds": 3.9,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 1402,
+    "cacheRead": 0,
+    "output": 198
+   },
+   "cost": 0.011562,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank and defers it to the array's shape, so there is no number to state.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank and defers it to the array's shape, so there is no number to state."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaLhXu2t9cu5M15K53",
+   "stopReason": "end_turn",
+   "seconds": 4.7,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 1402,
+    "cacheRead": 0,
+    "output": 273
+   },
+   "cost": 0.013062,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank and defers it to the array's shape, so there is no number R to state the decomposition claim against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank and defers it to the array's shape, so there is no number R to state the decomposition claim against."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZabP5jtHRAHb4Q2kJ1",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 187
+   },
+   "cost": 0.004612,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank and defers it to the array's shape, so there is no number to state the decomposition claim with.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank and defers it to the array's shape, so there is no number to state the decomposition claim with."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZac5zusMtefE5uNNdt",
+   "stopReason": "end_turn",
+   "seconds": 3.0,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 194
+   },
+   "cost": 0.004752,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank and defers it to the array's shape, so no number is stated to check against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank and defers it to the array's shape, so no number is stated to check against."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZacpuMbY3hBoe7oGjX",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 193
+   },
+   "cost": 0.004732,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank, deferring it to the array's shape, so no number can fill R.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank, deferring it to the array's shape, so no number can fill R."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZagRSkFXMRutBD9Nb1",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 148,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 224
+   },
+   "cost": 0.005352,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence never prints the rank; it defers to the array's shape, so there is no number to put in the rank-R claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence never prints the rank; it defers to the array's shape, so there is no number to put in the rank-R claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZahn3gAp1jhV6V52t4",
+   "stopReason": "end_turn",
+   "seconds": 3.7,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 285
+   },
+   "cost": 0.006612,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never prints the rank (only 'the rank the array's shape states') or names the ring ('the ring the paper names'), so the claim is undefined.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never prints the rank (only 'the rank the array's shape states') or names the ring ('the ring the paper names'), so the claim is undefined."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaoS89jn4T16UqVJ8u",
+   "stopReason": "end_turn",
+   "seconds": 5.7,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 454
+   },
+   "cost": 0.009992,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never prints the rank (it defers to the array's shape) or names the ring (it defers to 'the paper'), so the claim's terms are left undefined.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never prints the rank (it defers to the array's shape) or names the ring (it defers to 'the paper'), so the claim's terms are left undefined."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZarLzKKTXnRDCTkByK",
+   "stopReason": "end_turn",
+   "seconds": 4.9,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 375
+   },
+   "cost": 0.008412,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank (it defers to the array's shape) or the ring (it defers to an unnamed paper), so the claim cannot be written with a printed rank and ring.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank (it defers to the array's shape) or the ring (it defers to an unnamed paper), so the claim cannot be written with a printed rank and ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZatZww21M8jEjYcB7T",
+   "stopReason": "end_turn",
+   "seconds": 4.0,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 234
+   },
+   "cost": 0.005592,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never prints the rank and never names the ring (\\\"the ring the paper names\\\"), so the decomposition claim cannot be written out.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never prints the rank and never names the ring (\"the ring the paper names\"), so the decomposition claim cannot be written out."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZayTcsth5oRyh3CbCa",
+   "stopReason": "end_turn",
+   "seconds": 3.6,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 248
+   },
+   "cost": 0.005872,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence prints no rank and no ring; it defers to 'the array's shape' and 'the ring the paper names', so the claim's rank and ring are never defined.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence prints no rank and no ring; it defers to 'the array's shape' and 'the ring the paper names', so the claim's rank and ring are never defined."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZbBbd76XTJZ91sy6dx",
+   "stopReason": "end_turn",
+   "seconds": 4.7,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 338
+   },
+   "cost": 0.007672,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence names no ring (only \\\"the ring the paper names\\\") and prints no rank, so the decomposition claim cannot be written out.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence names no ring (only \"the ring the paper names\") and prints no rank, so the decomposition claim cannot be written out."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZaq47A5BNKx2xC5HyM",
+   "stopReason": "end_turn",
+   "seconds": 4.8,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 340
+   },
+   "cost": 0.007712,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never names the ring (only 'the ring the paper names') and gives no rank number, so the decomposition claim cannot be stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never names the ring (only 'the ring the paper names') and gives no rank number, so the decomposition claim cannot be stated."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZawXo3DNhza8feYcoH",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 242
+   },
+   "cost": 0.005752,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence prints no rank, only deferring to the array's shape, and names no ring, so there is no number to state the claim with.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence prints no rank, only deferring to the array's shape, and names no ring, so there is no number to state the claim with."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZbBZeXfyU8WHzBtBzh",
+   "stopReason": "end_turn",
+   "seconds": 4.2,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 320
+   },
+   "cost": 0.007312,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never names the ring and gives no rank number, deferring both to the paper and the array's shape, so the claim cannot be stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never names the ring and gives no rank number, deferring both to the paper and the array's shape, so the claim cannot be stated."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZbCN1Xp2vwd9m1K4GJ",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 260
+   },
+   "cost": 0.006112,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence prints no rank, deferring it to the array's shape, and names no ring, so there is no bar to state the decomposition claim against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence prints no rank, deferring it to the array's shape, and names no ring, so there is no bar to state the decomposition claim against."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZbDcvR2MCEVB1StQ81",
+   "stopReason": "end_turn",
+   "seconds": 4.5,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 285
+   },
+   "cost": 0.006612,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence prints no rank (it defers to the array's shape) and names no ring (it defers to the paper), so there is no number to state the claim against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence prints no rank (it defers to the array's shape) and names no ring (it defers to the paper), so there is no number to state the claim against."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011CgaZbDB8UksBypebSByAB",
+   "stopReason": "end_turn",
+   "seconds": 5.1,
+   "usage": {
+    "input": 158,
+    "cacheWrite": 0,
+    "cacheRead": 1402,
+    "output": 397
+   },
+   "cost": 0.008852,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never names the ring (only 'the ring the paper names') and gives no rank, so the decomposition claim cannot be written out.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never names the ring (only 'the ring the paper names') and gives no rank, so the decomposition claim cannot be written out."
    }
   },
   {

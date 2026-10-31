@@ -225,16 +225,22 @@ def decomposition_job(job, stmt, root):
     from .library import decompositions as D
     rank, dims, ring, key = stmt[2], stmt[3], stmt[4], stmt[5] if len(stmt) > 5 else None
     want = D.heading(rank, dims, ring)
-    if key is not None and key != want:
+    if key is not None and key != want and not re.fullmatch(r'\d+(,\d+)*', key):
         raise Refusal('source', f'the heading named, "{key}", is not the decomposition the statement states ("{want}")')
     rows = D.rows_for(root, job['data'])
     if not rows:
         raise Refusal('decider', 'cert-machine\'s tensor decider has no record of these bytes (' + ', '.join(D.RECORDS) + ')')
     if key is None and len(rows) > 1:
         raise Refusal('ambiguous', f'the file holds {len(rows)} decompositions; name one by its heading: DATA["{want}"]')
-    hit = [(p, r) for p, r in rows if f'"{want}"' in r.get('claim', '')]
+    # a row is named by its heading (a notebook's) or by its archive key (AlphaTensor's .npz: "key 2,2,3"), and then its decision
+    # must state the claim's tensor and rank
+    def states(r):
+        d = r.get('decision') or {}
+        return (not d.get('dims') or list(d['dims']) == list(dims)) and (not d.get('rank') or d['rank'] == rank)
+    hit = [(p, r) for p, r in rows if f'"{want}"' in r.get('claim', '')] or \
+          [(p, r) for p, r in rows if key and r.get('source', '').endswith(' key ' + key) and states(r)]
     if not hit:
-        raise Refusal('source', f'the decider\'s record holds no decomposition headed "{want}" for these bytes')
+        raise Refusal('source', f'the decider\'s record holds no decomposition {"keyed " + repr(key) if key else "headed " + repr(want)} with that tensor and rank for these bytes')
     path, row = hit[0]
     job = dict(job, claim=row['claim'], decider=D.DECIDER, record={'path': path, 'row': row['id'], 'value': None, 'verdict': row['verdict']})
     job.pop('heading', None)

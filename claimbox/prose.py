@@ -92,11 +92,51 @@ def register_context():
     return out
 
 
+# the register's sentences no reader job states, whose bytes cert-machine pins (2026-10-31, the operator: "register readers"):
+# AlphaTensor's decompositions, decided by cert-machine's tensor decider and the row it wrote for each npz key; kissing
+# configurations whose vectors cert-machine pins as JSON, decided from the bytes
+TENSOR_RECORDS = {'mc100-at-q-': 'certs/mc100-alphatensor-q.json', 'mc100-at-f2-': 'certs/mc100-alphatensor-f2.json'}
+KISSING_JOBS = {'kiss-alphaevolve-593': ('corpus/alphaevolve-jobs.json', 'ae-kissing-d11-593', 'alphaevolve'),     # the reader job that
+                'kiss-ea-594-winner': ('corpus/einstein-arena-jobs.json', 'ea-kissing-kissing-number-d11', 'einstein-arena')}   # states it
+# not given bytes: kiss-ea-604 (its file prints coordinates in Z[√2], a reading the library does not have), the Station's three
+# 604s and its 582 shell (one .npz holds them; no JSON of each is pinned), D4 and E8 (generated in cert-machine, not published)
+
+
+def register_extra(root):
+    out = {}
+    for prefix, rec in TENSOR_RECORDS.items():
+        p = os.path.join(root, rec)
+        if not os.path.isfile(p):
+            continue
+        for r in json.load(open(p, encoding='utf-8'))['rows']:
+            rid = 'mc100-' + r['id']
+            data = r['source'].split(' key ')[0]
+            out[rid] = (data, None, None, 'tools/run-mc100-tensors.js', {'path': rec, 'row': r['id'], 'value': None, 'verdict': r['verdict']})
+    # the optimization constants whose certificate file cert-machine's sum-difference decider read (certs/sumdiff-ledger.json)
+    sd = os.path.join(root, 'certs', 'sumdiff-ledger.json')
+    if os.path.isfile(sd):
+        led = json.load(open(sd, encoding='utf-8'))
+        dec = next(iter(led.get('code') or {}), None)
+        for r in led['rows']:
+            f = (r.get('certificate') or {}).get('file')
+            if f and dec:
+                out['optconst-' + r['id']] = (f, None, None, dec, {'path': 'certs/sumdiff-ledger.json', 'row': r['id'], 'value': None, 'verdict': r['verdict']})
+    for rid, (jobs, jid, folder) in KISSING_JOBS.items():
+        j = next(x for x in json.load(open(os.path.join(REPO, jobs), encoding='utf-8'))['jobs'] if x['id'] == jid)
+        ref = folder + '/' + jid
+        out[rid] = (j['data'], j.get('elements'), ref if os.path.isfile(os.path.join(REPO, 'records', ref + '.json')) else None,
+                    j.get('decider'), j.get('record'))
+    return out
+
+
 def context_of(corpus, row):
     """(data, elements, reference, decider, record) of a sentence"""
     cfg = CORPORA[corpus]
     if cfg['context'] is None:
-        return register_context().get(row['id'], (None, None, None, None, None))
+        ctx = register_context().get(row['id'])
+        if ctx is None:
+            ctx = register_extra(os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))).get(row['id'])
+        return ctx or (None, None, None, None, None)
     c = cfg['context'][row['claim']]
     return tuple(c) + (None, None)
 
@@ -133,13 +173,16 @@ def grammar_proposal(sentence, source, data, elements, obj_id, root, decider=Non
         except Refusal as e:
             return None, (e.rule, e.msg)
     try:
-        if record and record.get('path', '').startswith('certs/mc100-'):
+        if record and record.get('path', '').startswith('certs/'):
             # a decider's record decides the claim its row states (the recorded routes of library/decompositions.py and
             # einstein_arena.py): a sentence printing another bar is another claim, which that record never decided — the
             # receiver would take the record's word for it, since the record carries no value (found by the sensitivity runs)
-            rows = json.load(open(os.path.join(root, record['path']), encoding='utf-8'))['rows']
+            rows = json.load(open(os.path.join(root, record['path']), encoding='utf-8')).get('rows') or []
             row = next((r for r in rows if r.get('id') == record.get('row')), {})
-            mine, theirs = grammar.parse(sentence).get('printed'), grammar.parse(row.get('claim', '')).get('printed')
+            try:
+                mine, theirs = grammar.parse(sentence).get('printed'), grammar.parse(row.get('claim', '')).get('printed')
+            except Refusal:
+                mine = theirs = None
             if mine is not None and theirs is not None and grammar.value_of(mine) != grammar.value_of(theirs):
                 return None, ('recorded-bar', f'the record {record["path"]} row {record["row"]} decides the bar {theirs}; the sentence prints {mine}')
         return T.translate(sentence, root, source, data, elements=elements, obj_id=obj_id, decider=decider, record=record), None
@@ -253,6 +296,13 @@ def printed_numbers(obj):
         b = object_bar(obj)
         out = [b[1]] if b else []
     return out
+
+
+def object_shape(obj):
+    try:
+        return grammar.parse(obj['text'])
+    except Refusal:
+        return None
 
 
 def object_bar(obj):
@@ -420,8 +470,10 @@ def planted(obj, row, ctx, corpus, root):
         obj2, why = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
     finally:
         os.remove(path)
-    if obj2 is None:                         # a recorded route decides one bar only: a moved one is not measurable, not a failure
-        return None if why and why[0] == 'recorded-bar' else False
+    if obj2 is None:                         # a recorded route decides one bar only: a moved one is not measurable, not a failure;
+        if why and why[0] == 'recorded-bar':  # nor is a kissing count the bytes do not hold (n vectors cannot claim n + 1)
+            return None
+        return None if why and why[0] == 'count' and (object_shape(obj) or {}).get('family') == 'kissing' else False
     a, b = C.decision_fields(obj), C.decision_fields(obj2)
     return printed_numbers(obj2)[:1] == [moved] and a['pin'] == b['pin'] and [x[0] for x in a['ineqs']] == [x[0] for x in b['ineqs']]
 
