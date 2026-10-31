@@ -1,5 +1,5 @@
 <script>try{if(localStorage.getItem("warrant-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
-<nav class="topnav"><input type="checkbox" id="navdrawer" class="nav-ck"><div class="topnav-in"><a class="brand" href="../index.html">Carlos Toledo</a><label class="nav-burger" for="navdrawer" aria-label="Toggle navigation"><span class="nb"></span></label><div class="navlinks"><a href="./" aria-current="page">claimbox</a><a href="../verify/">Verify</a><a href="../reports/index.html">Reports</a><a href="../grammar/index.html">Grammar</a><a href="https://github.com/carlostoledo1891/claimbox">GitHub</a></div></div></nav>
+<nav class="topnav"><input type="checkbox" id="navdrawer" class="nav-ck"><div class="topnav-in"><a class="brand" href="../index.html">Carlos Toledo</a><label class="nav-burger" for="navdrawer" aria-label="Toggle navigation"><span class="nb"></span></label><div class="navlinks"><a href="./" aria-current="page">claimbox</a><a href="../reports/index.html">Reports</a><a href="../grammar/index.html">Grammar</a><a href="https://github.com/carlostoledo1891/claimbox">GitHub</a></div></div></nav>
 <div class="theme-pill" role="group" aria-label="Colour theme"><button type="button" data-t="dark">Dark</button><button type="button" data-t="light">Light</button></div>
 
 <main class="page">
@@ -118,5 +118,5 @@
 </section>
 </main>
 
-<footer class="foot"><div class="foot-in"><p>claimbox · the claim language for cert-machine · MIT</p><div class="foot-line"><span>Carlos Toledo</span><a href="https://github.com/carlostoledo1891/claimbox">source</a><a href="../verify/">verify</a></div></div></footer>
+<footer class="foot"><div class="foot-in"><p>claimbox · the claim language for cert-machine · MIT</p><div class="foot-line"><span>Carlos Toledo</span><a href="https://github.com/carlostoledo1891/claimbox">source</a></div></div></footer>
 <script>(function(){var r=document.documentElement,bs=document.querySelectorAll(".theme-pill button");function set(t,keep){if(t==="light")r.setAttribute("data-theme","light");else r.removeAttribute("data-theme");for(var i=0;i<bs.length;i++)bs[i].setAttribute("aria-pressed",String(bs[i].getAttribute("data-t")===t));if(keep){try{localStorage.setItem("warrant-theme",t)}catch(e){}document.dispatchEvent(new CustomEvent("warrant-theme",{detail:t}))}}set(r.getAttribute("data-theme")==="light"?"light":"dark",false);for(var i=0;i<bs.length;i++)bs[i].addEventListener("click",function(){set(this.getAttribute("data-t"),true)})})();</script>

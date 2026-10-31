@@ -221,7 +221,7 @@ span.w-refused::before { content: "\2205\00a0"; color: var(--ink-5); }
 @media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
 .bigeq { font-family: var(--f-mono); font-size: clamp(1.05rem, 0.8rem + 1.2vw, 1.6rem); color: var(--ink); line-height: 1.5; margin: var(--s-5) 0 0; overflow-wrap: anywhere; }
 
-/* ---- the marketing touchpoint (2026-10-31, after cert-machine's /verify/): content and visuals first; every number is still
+/* ---- the marketing touchpoint (2026-10-31): content and visuals first; every number is still
    read from its record and re-read by the build, only the visible pins go ---- */
 .theme-pill { position: fixed; top: calc(var(--nav-h) + 10px); right: var(--gutter); z-index: 40; display: flex; padding: var(--s-1); gap: var(--s-1);
   background: var(--paper); border: 1px solid var(--rule-strong); border-radius: var(--radius-pill); }
