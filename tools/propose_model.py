@@ -19,6 +19,16 @@ raw answer — is logged to records/model-proposals-<corpus>.json, and the run s
 
 Model and cap are the operator's (2026-10-30): claude-opus-5-5, $20. Credentials: the SDK's own resolution (an
 ANTHROPIC_API_KEY, or the active `ant auth login` profile).
+
+OTHER MODEL FAMILIES (2026-10-31, the operator: "can you ask through API, Runpod, Prime? … I need this automated"):
+
+    python3 tools/propose_model.py riemann-ai --provider prime --model openai/gpt-6.1-sol --family gpt-6.1-sol [--cap 3]
+
+asks the same questions — the same rules, library names and sentences, the planted run too — of a model served by Prime
+Intellect's inference gateway (OpenAI-compatible; the key of the operator's `prime` login, ~/.prime/config.json), priced at the
+gateway's own published per-token prices read at the start. Its proposals are corpus/proposals/<corpus>.model-<family>.claim
+(planted: <corpus>.planted-<family>.claim), its ledger records/model-proposals-<corpus>.<family>.json. A model of any family
+is one kind against a person: these validate nothing alone (prose.kind_class).
 """
 import argparse
 import concurrent.futures as cf
@@ -28,6 +38,8 @@ import re
 import sys
 import threading
 import time
+import urllib.error
+import urllib.request
 
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 # tools/ holds platform.py (EinsteinArena's pins), which would shadow the standard library's `platform` the SDK imports
@@ -43,6 +55,8 @@ from claimbox import lang, prose  # noqa: E402
 from claimbox.library import einstein_arena as EA  # noqa: E402
 
 MODEL = 'claude-opus-5-5'
+PROVIDER, FAMILY = 'anthropic', None          # set by --provider, --model, --family
+PRIME_CONFIG = os.path.expanduser('~/.prime/config.json')
 PRICE = {'input': 4.00, 'cache_write': 5.00, 'cache_read': 0.20, 'output': 20.00}     # $ per million tokens (5-minute cache writes)
 HOLES = list(lang.HOLES)
 
@@ -173,9 +187,41 @@ class Ledger:
             self.calls.append(entry)
 
 
+class Prime:
+    """Prime Intellect's inference gateway, OpenAI-compatible, with the key of the operator's `prime` login"""
+
+    def __init__(self):
+        cfg = json.load(open(PRIME_CONFIG, encoding='utf-8'))
+        self.url, self.key = cfg['inference_url'].rstrip('/'), cfg['api_key']
+
+    def call(self, path, body=None):
+        req = urllib.request.Request(self.url + path, data=json.dumps(body).encode('utf-8') if body is not None else None,
+                                     headers={'Authorization': 'Bearer ' + self.key, 'User-Agent': 'claimbox/1.0', 'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=900) as r:
+            return json.load(r), r.headers.get('x-request-id')
+
+    def models(self):
+        return {m['id']: m for m in self.call('/models')[0]['data']}
+
+
+def answer_of(text):
+    """the JSON answer in a reply ({"statement", "hole", "why"}), read leniently around it (a fence, a sentence before), never repaired"""
+    t = re.sub(r'^```\w*\s*|\s*```$', '', (text or '').strip())
+    for cand in (t, t[t.find('{'):t.rfind('}') + 1] if '{' in t else ''):
+        try:
+            a = json.loads(cand)
+        except ValueError:
+            continue
+        if isinstance(a, dict) and all(isinstance(a.get(k), str) for k in ('statement', 'hole', 'why')) and a['hole'] in [''] + HOLES:
+            return a
+    return None
+
+
 def ask(client, ledger, sentence, lib, tag):
     if not ledger.allow():
         return {'tag': tag, 'skipped': 'the cap would be passed'}
+    if PROVIDER == 'prime':
+        return ask_prime(client, ledger, sentence, lib, tag)
     t0 = time.time()
     try:
         r = client.beta.messages.create(
@@ -205,6 +251,39 @@ def ask(client, ledger, sentence, lib, tag):
             entry['answer'] = json.loads(text)
         except ValueError:
             entry['answer'] = None
+    ledger.add(entry)
+    return entry
+
+
+def ask_prime(client, ledger, sentence, lib, tag):
+    t0 = time.time()
+    body = {'model': MODEL, 'max_tokens': 16000, 'reasoning_effort': 'high',
+            'messages': [{'role': 'system', 'content': REGISTER_SYSTEM if lib[3] else SYSTEM}, {'role': 'user', 'content': user_message(sentence, lib)}]}
+    r, rid, err = None, None, None
+    for attempt in range(4):
+        try:
+            r, rid = client.call('/chat/completions', body)
+            break
+        except urllib.error.HTTPError as e:
+            err = f'{e.code}: ' + e.read()[:200].decode('utf-8', 'replace')
+            if e.code not in (408, 429, 500, 502, 503, 504):
+                break
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+            err = 'connection: ' + str(e)[:200]
+        time.sleep(5 * 2 ** attempt)
+    if r is None:
+        entry = {'tag': tag, 'error': err, 'cost': 0.0}
+        ledger.add(entry)
+        return entry
+    u = r.get('usage') or {}
+    choice = (r.get('choices') or [{}])[0]
+    text = (choice.get('message') or {}).get('content') or ''
+    entry = {'tag': tag, 'model': r.get('model') or MODEL, 'requestId': rid or r.get('id'), 'stopReason': choice.get('finish_reason'),
+             'seconds': round(time.time() - t0, 1),
+             'usage': {'input': u.get('prompt_tokens', 0), 'output': u.get('completion_tokens', 0),
+                       'reasoning': (u.get('completion_tokens_details') or {}).get('reasoning_tokens')},
+             'cost': round((u.get('prompt_tokens', 0) * PRICE['input'] + u.get('completion_tokens', 0) * PRICE['output']) / 1e6, 6),
+             'raw': text, 'answer': answer_of(text)}
     ledger.add(entry)
     return entry
 
@@ -242,8 +321,37 @@ def main(argv):
     ap.add_argument('--planted-only', action='store_true')
     ap.add_argument('--paraphrase', action='store_true')
     ap.add_argument('--again', metavar='ID_PREFIX', help='ask again the sentences whose id starts so; the earlier answers stay in the ledger, marked superseded')
+    ap.add_argument('--provider', choices=('anthropic', 'prime'), default='anthropic')
+    ap.add_argument('--model', help='with --provider prime: the gateway\'s model id, e.g. openai/gpt-6.1-sol')
+    ap.add_argument('--family', help='with --provider prime: the family label its proposals carry, e.g. gpt-6.1-sol')
     a = ap.parse_args(argv)
+    global MODEL, PROVIDER, FAMILY, PRICE
     cfg = dict(prose.CORPORA[a.corpus], name=a.corpus)
+    if a.provider == 'prime':
+        if not (a.model and a.family and re.fullmatch(r'[a-z0-9][a-z0-9.-]*', a.family)) or a.paraphrase:
+            print('--provider prime needs --model and --family (lower-case letters, digits, dots, dashes), and takes no --paraphrase')
+            return 2
+        MODEL, PROVIDER, FAMILY = a.model, 'prime', a.family
+        cfg['proposals'] = f'corpus/proposals/{a.corpus}.model-{FAMILY}.claim'
+        rows = prose.rows_of(a.corpus)
+        if a.corpus == 'register':
+            rows = [r for r in rows if prose.context_of('register', r)[0]]
+        client = Prime()
+        try:                               # a preflight that costs nothing: the key resolves, the model is served, its prices read
+            m = client.models()[MODEL]
+        except Exception as e:             # noqa: BLE001 — any failure here means no call is made
+            print('no call made — the gateway could not serve ' + MODEL + ': ' + str(e)[:300])
+            return 2
+        pr = m.get('pricing') or {}
+        PRICE = {'input': float(pr['input_usd_per_mtok']), 'cache_write': 0.0, 'cache_read': 0.0, 'output': float(pr['output_usd_per_mtok'])}
+        ledger = Ledger(a.cap)
+        if a.planted_only or a.again:
+            old = json.load(open(ledger_path(a.corpus), encoding='utf-8'))
+            ledger.calls, ledger.spent = list(old['entries']), old['spent']
+        try:
+            return run(a, cfg, rows, client, ledger)
+        finally:
+            save_ledger(a, ledger)
     rows = prose.rows_of(a.corpus)
     if a.corpus == 'register':               # only the sentences whose bytes claimbox pins: the others name no file to state a claim over
         rows = [r for r in rows if prose.context_of('register', r)[0]]
@@ -265,13 +373,13 @@ def main(argv):
 
 
 def ledger_path(corpus):
-    return os.path.join(REPO, 'records', 'model-proposals-' + corpus + '.json')
+    return os.path.join(REPO, 'records', 'model-proposals-' + corpus + ('.' + FAMILY if FAMILY else '') + '.json')
 
 
 def save_ledger(a, ledger):
     rec = {'what': 'every call tools/propose_model.py made for ' + a.corpus + ': the sentence it was for (its id; "planted" for the copy with the bar '
                    'moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer',
-           'model': MODEL, 'effort': 'high', 'cap': a.cap, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
+           'model': MODEL, 'provider': PROVIDER, 'family': FAMILY, 'effort': 'high', 'cap': a.cap, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
            'prices': PRICE, 'entries': sorted(ledger.calls, key=lambda e: e['tag'])}
     with open(ledger_path(a.corpus), 'w', encoding='utf-8') as f:
         json.dump(rec, f, indent=1, ensure_ascii=False)
@@ -303,6 +411,15 @@ def paraphrase_run(a, cfg, rows, client, ledger):
         f.write(head_of(a, cfg, [j[0] for j in jobs]).replace('one proposal per sentence', 'the paraphrase run: each sentence said another way (the relation before its bar '
                                         'rewritten), asked again alone') + '\n'.join(out) + '\n')
     return 0
+
+
+def claim_id(sid):
+    """a proposal's claim id: Claude's m_<sentence>, another family's x_<family>_<sentence> (the planted run is matched by it)"""
+    return ('x_' + re.sub(r'\W', '_', FAMILY) + '_' if FAMILY else 'm_') + re.sub(r'\W', '_', sid)
+
+
+def planted_path(cfg):
+    return f'corpus/proposals/{cfg["name"]}.planted-{FAMILY}.claim' if FAMILY else cfg['proposals'].replace('.claim', '.planted.claim')
 
 
 def data_for(cfg, row):
@@ -370,13 +487,13 @@ def run(a, cfg, rows, client, ledger):
             if not e or not e.get('answer'):
                 continue
             var = library_for(cfg, r)[0]
-            out.append(claim_block('m_' + re.sub(r'\W', '_', r['id']), var, sentences[r['id']], e['answer'], e['model']))
+            out.append(claim_block(claim_id(r['id']), var, sentences[r['id']], e['answer'], FAMILY or e['model']))
         return '\n'.join(out) + '\n'
 
     texts = {r['id']: r['text'] for r in rows}
     with open(os.path.join(REPO, cfg['proposals']), 'w', encoding='utf-8') as f:
         f.write(head + blocks(first, texts))
-    with open(os.path.join(REPO, cfg['proposals'].replace('.claim', '.planted.claim')), 'w', encoding='utf-8') as f:
+    with open(os.path.join(REPO, planted_path(cfg)), 'w', encoding='utf-8') as f:
         f.write(head.replace('one proposal per sentence', 'the planted run: each sentence with its bar\'s last digit moved, asked again alone')
                 + blocks(planted, {j[0]['id']: j[1] for j in planted_jobs}))
     return 0

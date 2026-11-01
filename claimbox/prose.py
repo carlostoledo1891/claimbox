@@ -294,11 +294,11 @@ def read_file(p, root, out):
 
 def planted_claims(corpus):
     """the planted run of a proposer that writes files (a program asking a model): {claim id: the claim}, read from
-    <proposals>.planted.claim — each sentence asked again with its bar's last digit moved"""
-    p = os.path.join(REPO, CORPORA[corpus]['proposals'].replace('.claim', '.planted.claim'))
-    if not os.path.isfile(p):
-        return {}
-    return {c['id']: c for tree, c in proposal_blocks(p) if tree is not None}
+    <proposals>.planted.claim and every other family's <corpus>.planted-<family>.claim — each sentence asked again with its bar's
+    last digit moved (claim ids differ by family: m_… Claude's, x_<family>_… another's)"""
+    paths = [os.path.join(REPO, CORPORA[corpus]['proposals'].replace('.claim', '.planted.claim'))]
+    paths += sorted(glob.glob(os.path.join(REPO, 'corpus', 'proposals', corpus + '.planted-*.claim')))
+    return {c['id']: c for p in paths if os.path.isfile(p) for tree, c in proposal_blocks(p) if tree is not None}
 
 
 def bar_printed(stmt):

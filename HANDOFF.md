@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r15,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 541 pass, 0 fail, 134/134 red controls; `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 543 pass, 0 fail, 135/135 red controls; `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -115,8 +115,25 @@ statement shown, `*` marking the person's worksheet blanks — the person reads 
 SDK only when it calls a model. Battery §10: the prompt reproduces; a forged reply (a reading changed, a quote edited) — red;
 every family file names its prompt. make test 541 pass, 0 fail, 134/134.
 
+**AUTOMATED THROUGH PRIME INTELLECT (2026-10-31, the operator: "can you ask through API, Runpod, Prime? … I need this
+automated").** tools/propose_model.py --provider prime --model ID --family F [--cap 3]: the same SYSTEM, library names and sentences
+Claude is asked, the planted run too, through Prime Intellect's OpenAI-compatible gateway (api.pinference.ai, the key of the
+operator's `prime` login in ~/.prime/config.json; Cloudflare refuses a request without a User-Agent), priced at the gateway's
+published per-token prices read at the start (a free /models preflight). Outputs: corpus/proposals/riemann-ai.model-F.claim,
+riemann-ai.planted-F.claim (claim ids x_F_…; prose.planted_claims reads every family's), records/model-proposals-riemann-ai.F.json.
+RUN: openai/gpt-6.1-sol 128 calls $0.4199, google/gemini-4-argon 135 calls $1.9505 (caps $3 each; no error, every answer parsed).
+RESULT (records/prose-riemann-ai.json): stated / equal to the reference / planted held / planted broke — Claude 53/41/51/2,
+Gemini 51/40/51/0, GPT 44/36/41/3; every claim any family stated is CERTIFIED; no family unfaithful except the shared readings
+(2/blog/19's 0.000…3 for 3·10⁻⁴⁰ printed another way, and the exact p₀ identity on 4/assistant/37 and 4/blog/38). Validated
+stays 3 (families are one kind). `prose riemann-ai --disputed`: 12 sentences read differently, 7 of them worksheet blanks.
+FOUND, for the operator: the sentence rule is strict — every proposal must pass every check — so GPT's planted breaks turned
+2/assistant/17 and 6/paper/50 from "one kind only" to "refused: a proposal fails planted"; more writers can only lower the
+count. The page's "model's claims" figure now counts Claude's alone (web/pages/index.py), as its words say. make test 543 pass,
+0 fail, 135/135.
+
 **NEXT, in order.**
-0. When the operator brings the two replies: ingest each, `python3 -m claimbox prose riemann-ai --run --record
+0. The operator's ruling on the strict rule (judge per proposal, or keep it), then the worksheet: the 7 disputed blanks first.
+   When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
 1. The operator's choice: step 7's fill (not designed), step 8 (documents that build), or the SOTA table's .py-published problems
    (Erdős overlap, edges vs triangles, flat polynomials: a reader for their literal arrays first) and the first autocorrelation

@@ -840,6 +840,7 @@ def prose_with(proposals):
     saved = dict(PR.CORPORA['riemann-ai'])
     PR.CORPORA['riemann-ai']['proposals'] = os.path.relpath(path, REPO)
     PR.CORPORA['riemann-ai']['person'] = None
+    PR.CORPORA['riemann-ai']['models'] = None     # the other families' files stay out of these planted runs
     try:
         return {e['id']: e for e in PR.run('riemann-ai', ROOT)}
     finally:
@@ -880,9 +881,22 @@ forged = forged.replace(WS.blocks()[1][2], WS.blocks()[1][2] + ' (edited)')
 taken, _, blank_, moved_ = WS.take(forged, 'x')
 red(len(taken) == 1 and 'decimals' not in ''.join(taken) and WS.blocks()[0][2] in taken[0] and moved_ == [WS.blocks()[1][0]] and len(blank_) == 79,
     'prose: refused — a reply cannot change a reading, a data name or a quote: only its statement lines are taken, a changed quote is reported', f'{len(taken)} taken, {len(moved_)} quote changed')
+# other model families through Prime Intellect's gateway (tools/propose_model.py --provider prime): each family's ledger adds up
+# under its cap; a reply that is not the answer's JSON, or names a hole the language does not have, is no answer — never repaired
+_pm = importlib.util.spec_from_file_location('propose_model', os.path.join(REPO, 'tools', 'propose_model.py'))
+PMOD = importlib.util.module_from_spec(_pm)
+_pm.loader.exec_module(PMOD)
+leds = {f: json.load(open(f, encoding='utf-8')) for f in sorted(glob.glob(os.path.join(REPO, 'records', 'model-proposals-riemann-ai.*.json')))}
+ok(all(L['calls'] == len(L['entries']) and abs(L['spent'] - sum(x.get('cost', 0) for x in L['entries'])) < 1e-3 and L['spent'] <= L['cap']
+       and L['provider'] == 'prime' and f.endswith('.' + L['family'] + '.json') for f, L in leds.items()),
+   'prose: every other family\'s ledger adds up under its cap, its family the file\'s', ', '.join(f'{L["family"]} {L["calls"]} calls ${L["spent"]}' for L in leds.values()) or 'none')
+red(PMOD.answer_of('{"statement": "", "hole": "vague", "why": "x"}') is None and PMOD.answer_of('the claim is |D(1)| ≤ 0.82395317') is None
+    and PMOD.answer_of('```json\n{"statement": "D(1) ≤ 1", "hole": "", "why": "x"}\n```') == {'statement': 'D(1) ≤ 1', 'hole': '', 'why': 'x'},
+    'prose: refused — a family\'s reply that is not the answer\'s JSON, or names a hole the language lacks, is no answer (a fence around it is read)', 'answer_of')
 fams = sorted(glob.glob(os.path.join(REPO, PR.CORPORA['riemann-ai']['models'])))
-ok(all(re.search(r'^-- prompt: .* sha256 [0-9a-f]{64}$', open(f, encoding='utf-8').read(), re.M) for f in fams),
-   'prose: every other model family\'s file names the prompt it answered and the reply it came from', f'{len(fams)} files')
+ok(all(re.search(r'^-- prompt: .* sha256 [0-9a-f]{64}$', open(f, encoding='utf-8').read(), re.M) or
+       open(f, encoding='utf-8').read().startswith('-- Written by tools/propose_model.py (') for f in fams),
+   'prose: every other model family\'s file says where it came from: the prompt and reply it was ingested from, or the program that asked', f'{len(fams)} files')
 real = PR.grammar_proposal
 row5 = ROW['5/tweet/45']
 o5, _ = real(S5, PR.rel_of(os.path.join(REPO, PR.CORPORA['riemann-ai']['source'])), PR.SERIES, None, 'p-5', ROOT)

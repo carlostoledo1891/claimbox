@@ -130,7 +130,7 @@ def fig_holes(narrow=False):
 
 def checks():
     d = load(PROSE)
-    mp = [p for e in d['sentences'] for p in e['proposals'] if p['kind'].startswith('model:') and 'object' in p]
+    mp = [p for e in d['sentences'] for p in e['proposals'] if p['kind'] == MK.rsplit('/', 1)[1] and 'object' in p]   # Claude's: the page's model
     return [('sentences given to the model', d['summary']['sentences']), ('stated as a claim', len(mp)),
             ('every number found in its sentence', sum(1 for p in mp if p['anchored'])),
             ('reads back with the sentence’s relation', sum(1 for p in mp if p['printedBack'])),

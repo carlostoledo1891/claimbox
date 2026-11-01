@@ -1,0 +1,2584 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "google/gemini-4-argon",
+ "provider": "prime",
+ "family": "gemini-4-argon",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 1.9505,
+ "calls": 135,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 2.0,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 10.0
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377550dd814ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 5.2,
+   "usage": {
+    "input": 945,
+    "output": 263,
+    "reasoning": 211
+   },
+   "cost": 0.00452,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the absolute value of the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute value of the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e176b371abf-GRU",
+   "stopReason": "stop",
+   "seconds": 13.0,
+   "usage": {
+    "input": 945,
+    "output": 812,
+    "reasoning": 759
+   },
+   "cost": 0.01001,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states an explicit upper bound on the absolute value of the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an explicit upper bound on the absolute value of the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377571df021b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 14.2,
+   "usage": {
+    "input": 958,
+    "output": 626,
+    "reasoning": 592
+   },
+   "cost": 0.008176,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence hedges with \\\"I checked that\\\" rather than directly stating the bound.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence hedges with \"I checked that\" rather than directly stating the bound."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775755a834d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 10.6,
+   "usage": {
+    "input": 946,
+    "output": 609,
+    "reasoning": 549
+   },
+   "cost": 0.007982,
+   "raw": "{\"statement\": \"D(1) < 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims that the edge discrepancy D(1) is strictly less than 0.82395317.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the edge discrepancy D(1) is strictly less than 0.82395317."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e3709fbc0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 8.2,
+   "usage": {
+    "input": 946,
+    "output": 502,
+    "reasoning": 442
+   },
+   "cost": 0.006912,
+   "raw": "{\"statement\": \"D(1) < 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims that the edge discrepancy D(1) is strictly less than 0.82395318.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that the edge discrepancy D(1) is strictly less than 0.82395318."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775510aadd7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 14.4,
+   "usage": {
+    "input": 950,
+    "output": 974,
+    "reasoning": 911
+   },
+   "cost": 0.01164,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims that the absolute value of the edge discrepancy D(1) is at most 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the absolute value of the edge discrepancy D(1) is at most 0.82395317."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e178b3d1abf-GRU",
+   "stopReason": "stop",
+   "seconds": 7.3,
+   "usage": {
+    "input": 950,
+    "output": 382,
+    "reasoning": 321
+   },
+   "cost": 0.00572,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states an upper bound of 0.82395318 on the absolute value of D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an upper bound of 0.82395318 on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775510e68c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 5.6,
+   "usage": {
+    "input": 954,
+    "output": 309,
+    "reasoning": 245
+   },
+   "cost": 0.004998,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims an upper bound of 0.82395317 on the absolute value of the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims an upper bound of 0.82395317 on the absolute value of the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e177f1c4d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 6.0,
+   "usage": {
+    "input": 954,
+    "output": 306,
+    "reasoning": 254
+   },
+   "cost": 0.004968,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the absolute value of the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute value of the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377550ef071b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 5.9,
+   "usage": {
+    "input": 956,
+    "output": 242,
+    "reasoning": 193
+   },
+   "cost": 0.004332,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims an upper bound on the absolute value of D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e177cf0c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 5.1,
+   "usage": {
+    "input": 956,
+    "output": 211,
+    "reasoning": 153
+   },
+   "cost": 0.004022,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence directly bounds the absolute value of D(1) by 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence directly bounds the absolute value of D(1) by 0.82395318."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775744821c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 7.1,
+   "usage": {
+    "input": 958,
+    "output": 332,
+    "reasoning": 272
+   },
+   "cost": 0.005236,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims that the absolute value of D(1) is at most 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the absolute value of D(1) is at most 0.82395317."
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e177ed41b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 7.1,
+   "usage": {
+    "input": 958,
+    "output": 326,
+    "reasoning": 266
+   },
+   "cost": 0.005176,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims that the absolute value of D(1) is at most 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that the absolute value of D(1) is at most 0.82395318."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377550fcf5d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 5.3,
+   "usage": {
+    "input": 952,
+    "output": 275,
+    "reasoning": 222
+   },
+   "cost": 0.004654,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states an explicit upper bound on the absolute value of the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states an explicit upper bound on the absolute value of the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e1779c64ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 6.0,
+   "usage": {
+    "input": 952,
+    "output": 282,
+    "reasoning": 219
+   },
+   "cost": 0.004724,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims that the absolute value of the edge discrepancy D(1) is at most 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that the absolute value of the edge discrepancy D(1) is at most 0.82395318."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775718c7ec0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 6.0,
+   "usage": {
+    "input": 966,
+    "output": 298,
+    "reasoning": 257
+   },
+   "cost": 0.004912,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence leaves undetermined whether the bound applies to D(1) itself or to |D(1)|.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence leaves undetermined whether the bound applies to D(1) itself or to |D(1)|."
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377550eab46e30-GRU",
+   "stopReason": "stop",
+   "seconds": 5.8,
+   "usage": {
+    "input": 939,
+    "output": 226,
+    "reasoning": 192
+   },
+   "cost": 0.004138,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence qualifies the bound 0.824 with \\\"about\\\".\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence qualifies the bound 0.824 with \"about\"."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377596edb00a2a-GRU",
+   "stopReason": "stop",
+   "seconds": 9.2,
+   "usage": {
+    "input": 945,
+    "output": 504,
+    "reasoning": 420
+   },
+   "cost": 0.00693,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states an explicit bound on |256·S(j) - j| for every integer j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an explicit bound on |256·S(j) - j| for every integer j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e3cfcbdf1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 10.7,
+   "usage": {
+    "input": 945,
+    "output": 707,
+    "reasoning": 623
+   },
+   "cost": 0.00896,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on |256·S(j) - j| for every integer j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an upper bound on |256·S(j) - j| for every integer j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775d08974d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 32.0,
+   "usage": {
+    "input": 948,
+    "output": 2529,
+    "reasoning": 2442
+   },
+   "cost": 0.027186,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims a uniform upper bound on |256·S(j) - j| for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a uniform upper bound on |256·S(j) - j| for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e800d424d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 50.3,
+   "usage": {
+    "input": 948,
+    "output": 3999,
+    "reasoning": 3912
+   },
+   "cost": 0.041886,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states an explicit upper bound on |256·S(j) - j| for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an explicit upper bound on |256·S(j) - j| for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775adf85ad8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 65.4,
+   "usage": {
+    "input": 954,
+    "output": 5309,
+    "reasoning": 5212
+   },
+   "cost": 0.054998,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims that for each integer row j from 1 to 255, the absolute difference between 256·S(j) and j is at most 3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims that for each integer row j from 1 to 255, the absolute difference between 256·S(j) and j is at most 3·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e686a421abf-GRU",
+   "stopReason": "stop",
+   "seconds": 126.1,
+   "usage": {
+    "input": 954,
+    "output": 10460,
+    "reasoning": 10364
+   },
+   "cost": 0.106508,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states that for each integer row j from 1 to 255, the difference between 256·S(j) and j is at most 4·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states that for each integer row j from 1 to 255, the difference between 256·S(j) and j is at most 4·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537763eb88b0290-GRU",
+   "stopReason": "stop",
+   "seconds": 10.7,
+   "usage": {
+    "input": 974,
+    "output": 641,
+    "reasoning": 519
+   },
+   "cost": 0.008358,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\", \"hole\": \"\", \"why\": \"The sentence states an explicit upper bound on |256·S(j) - j| for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "The sentence states an explicit upper bound on |256·S(j) - j| for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377ec47a17f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 10.0,
+   "usage": {
+    "input": 974,
+    "output": 553,
+    "reasoning": 433
+   },
+   "cost": 0.007478,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004\", \"hole\": \"\", \"why\": \"The sentence states an explicit inequality on |256·S(j) - j| over the integer range 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004",
+    "hole": "",
+    "why": "The sentence states an explicit inequality on |256·S(j) - j| over the integer range 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775aace7df1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 24.5,
+   "usage": {
+    "input": 963,
+    "output": 1812,
+    "reasoning": 1719
+   },
+   "cost": 0.020046,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds the deviation |256·S(j) - j| by 3·10⁻⁴⁰ for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds the deviation |256·S(j) - j| by 3·10⁻⁴⁰ for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e452d8df1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 21.8,
+   "usage": {
+    "input": 963,
+    "output": 1582,
+    "reasoning": 1496
+   },
+   "cost": 0.017746,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states an explicit bound on |256·S(j) - j| for every integer j with 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an explicit bound on |256·S(j) - j| for every integer j with 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775756f920290-GRU",
+   "stopReason": "stop",
+   "seconds": 9.0,
+   "usage": {
+    "input": 956,
+    "output": 574,
+    "reasoning": 501
+   },
+   "cost": 0.007652,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states an explicit inequality for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an explicit inequality for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e3cd82ad7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 10.9,
+   "usage": {
+    "input": 956,
+    "output": 790,
+    "reasoning": 715
+   },
+   "cost": 0.009812,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states an explicit inequality for every integer j in the range 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an explicit inequality for every integer j in the range 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377610afabf1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 13.2,
+   "usage": {
+    "input": 953,
+    "output": 849,
+    "reasoning": 760
+   },
+   "cost": 0.010396,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) - j| by 3·10⁻⁴⁰ for every integer j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) - j| by 3·10⁻⁴⁰ for every integer j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e80fd684d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 10.8,
+   "usage": {
+    "input": 953,
+    "output": 597,
+    "reasoning": 508
+   },
+   "cost": 0.007876,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) - j| by 4·10⁻⁴⁰ for each integer j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) - j| by 4·10⁻⁴⁰ for each integer j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775a0ee67d7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 17.9,
+   "usage": {
+    "input": 949,
+    "output": 1078,
+    "reasoning": 990
+   },
+   "cost": 0.012678,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) - j| by 3e-40 for every integer row j with 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) - j| by 3e-40 for every integer row j with 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e43d9fad8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 24.9,
+   "usage": {
+    "input": 949,
+    "output": 1897,
+    "reasoning": 1806
+   },
+   "cost": 0.020868,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41\", \"hole\": \"\", \"why\": \"The sentence claims the bound |256·S(j) - j| ≤ 3e-41 holds for every integer row j with 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41",
+    "hole": "",
+    "why": "The sentence claims the bound |256·S(j) - j| ≤ 3e-41 holds for every integer row j with 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775ca8e10f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 19.7,
+   "usage": {
+    "input": 956,
+    "output": 577,
+    "reasoning": 524
+   },
+   "cost": 0.007682,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence gives two different relations (< in the abstract and ≤ in Section 4) for the bound on |256·S(j) - j|.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence gives two different relations (< in the abstract and ≤ in Section 4) for the bound on |256·S(j) - j|."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53775b769e7d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 21.6,
+   "usage": {
+    "input": 933,
+    "output": 1586,
+    "reasoning": 1497
+   },
+   "cost": 0.017726,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds 256·S(j) - j by 3·10⁻⁴⁰ for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds 256·S(j) - j by 3·10⁻⁴⁰ for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377e6a2a464d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 50.4,
+   "usage": {
+    "input": 933,
+    "output": 4000,
+    "reasoning": 3911
+   },
+   "cost": 0.041866,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds 256·S(j) - j by 4·10⁻⁴⁰ for every integer j in 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds 256·S(j) - j by 4·10⁻⁴⁰ for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537764588dad8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 17.2,
+   "usage": {
+    "input": 930,
+    "output": 1239,
+    "reasoning": 1185
+   },
+   "cost": 0.01425,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states an explicit strict upper bound on the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states an explicit strict upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377edf8f7fc0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 31.8,
+   "usage": {
+    "input": 930,
+    "output": 2138,
+    "reasoning": 2086
+   },
+   "cost": 0.02324,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states an upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777469de36e30-GRU",
+   "stopReason": "stop",
+   "seconds": 7.6,
+   "usage": {
+    "input": 930,
+    "output": 233,
+    "reasoning": 202
+   },
+   "cost": 0.00419,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence states an approximate value using the word 'about'.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence states an approximate value using the word 'about'."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53776f53995d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 16.3,
+   "usage": {
+    "input": 965,
+    "output": 1232,
+    "reasoning": 1164
+   },
+   "cost": 0.01425,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states that the decimal constant c256 is strictly less than 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states that the decimal constant c256 is strictly less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/27 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377fba7ac2af11-GRU",
+   "stopReason": "stop",
+   "seconds": 26.3,
+   "usage": {
+    "input": 965,
+    "output": 1992,
+    "reasoning": 1921
+   },
+   "cost": 0.02185,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the decimal constant c256 is strictly less than 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant c256 is strictly less than 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537775b4ab9d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 20.2,
+   "usage": {
+    "input": 929,
+    "output": 1383,
+    "reasoning": 1343
+   },
+   "cost": 0.015688,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence is a hedged report of a check (\\\"We checked that...\\\") rather than a direct claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence is a hedged report of a check (\"We checked that...\") rather than a direct claim."
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377698b9b71b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 32.6,
+   "usage": {
+    "input": 933,
+    "output": 2372,
+    "reasoning": 2306
+   },
+   "cost": 0.025586,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states that the constant c256 is strictly below 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states that the constant c256 is strictly below 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/blog/24 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377f9f8f6e6e30-GRU",
+   "stopReason": "stop",
+   "seconds": 37.7,
+   "usage": {
+    "input": 933,
+    "output": 2938,
+    "reasoning": 2871
+   },
+   "cost": 0.031246,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states that the constant c256 is strictly less than 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states that the constant c256 is strictly less than 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53776815a79d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 18.6,
+   "usage": {
+    "input": 949,
+    "output": 1281,
+    "reasoning": 1215
+   },
+   "cost": 0.014708,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence bounds the decimal constant c256 from above by 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence bounds the decimal constant c256 from above by 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/docstring/23 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377f6a8c166e30-GRU",
+   "stopReason": "stop",
+   "seconds": 20.8,
+   "usage": {
+    "input": 949,
+    "output": 1535,
+    "reasoning": 1483
+   },
+   "cost": 0.017248,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states an upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377643d8d9f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 87.0,
+   "usage": {
+    "input": 942,
+    "output": 7148,
+    "reasoning": 7080
+   },
+   "cost": 0.073364,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"Lemma 4 states that the constant c256 is strictly less than 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "Lemma 4 states that the constant c256 is strictly less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377ecd4a330290-GRU",
+   "stopReason": "stop",
+   "seconds": 33.7,
+   "usage": {
+    "input": 942,
+    "output": 2600,
+    "reasoning": 2511
+   },
+   "cost": 0.027884,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"Lemma 4 bounds the constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 from above by 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "Lemma 4 bounds the constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 from above by 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53776635de0f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 22.6,
+   "usage": {
+    "input": 928,
+    "output": 1643,
+    "reasoning": 1593
+   },
+   "cost": 0.018286,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-6\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": "The sentence states an upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377f031951c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 16.6,
+   "usage": {
+    "input": 928,
+    "output": 1064,
+    "reasoning": 1014
+   },
+   "cost": 0.012496,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-7\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-7",
+    "hole": "",
+    "why": "The sentence states an upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53776f058551b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 18.3,
+   "usage": {
+    "input": 944,
+    "output": 1246,
+    "reasoning": 1179
+   },
+   "cost": 0.014348,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims that the constant c256 is strictly less than 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims that the constant c256 is strictly less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/referee/26 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377fa62e236e30-GRU",
+   "stopReason": "stop",
+   "seconds": 23.9,
+   "usage": {
+    "input": 944,
+    "output": 1741,
+    "reasoning": 1671
+   },
+   "cost": 0.019298,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the strict inequality that 2.5431317·10⁻⁶ is greater than the library constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the strict inequality that 2.5431317·10⁻⁶ is greater than the library constant c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53776b13f68d7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 49.4,
+   "usage": {
+    "input": 939,
+    "output": 3954,
+    "reasoning": 3863
+   },
+   "cost": 0.041418,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states that the decimal constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 is strictly less than 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states that the decimal constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 is strictly less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377fa56a6d4ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 91.8,
+   "usage": {
+    "input": 939,
+    "output": 7492,
+    "reasoning": 7401
+   },
+   "cost": 0.076798,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states that the decimal constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 is strictly less than 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states that the decimal constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 is strictly less than 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537776469654d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 9.8,
+   "usage": {
+    "input": 1003,
+    "output": 627,
+    "reasoning": 511
+   },
+   "cost": 0.008276,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377fec4bda066a-GRU",
+   "stopReason": "stop",
+   "seconds": 9.6,
+   "usage": {
+    "input": 1003,
+    "output": 689,
+    "reasoning": 568
+   },
+   "cost": 0.008896,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The leading claim gives the exact rational value of the simple-point fraction p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The leading claim gives the exact rational value of the simple-point fraction p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777e5efdcd8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 17.7,
+   "usage": {
+    "input": 1004,
+    "output": 1342,
+    "reasoning": 1226
+   },
+   "cost": 0.015428,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537803baf02d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 34.3,
+   "usage": {
+    "input": 1004,
+    "output": 2652,
+    "reasoning": 2533
+   },
+   "cost": 0.028528,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that p₀ equals the given rational number.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the claim that p₀ equals the given rational number."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777bacace6e30-GRU",
+   "stopReason": "stop",
+   "seconds": 14.1,
+   "usage": {
+    "input": 1011,
+    "output": 836,
+    "reasoning": 720
+   },
+   "cost": 0.010382,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777f218441b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 14.7,
+   "usage": {
+    "input": 993,
+    "output": 944,
+    "reasoning": 829
+   },
+   "cost": 0.011426,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence states the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence states the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537805edde84ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 19.2,
+   "usage": {
+    "input": 993,
+    "output": 1530,
+    "reasoning": 1415
+   },
+   "cost": 0.017286,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence states the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence states the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777a1bbdf4ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 12.8,
+   "usage": {
+    "input": 1004,
+    "output": 904,
+    "reasoning": 788
+   },
+   "cost": 0.011048,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The leading claim gives the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The leading claim gives the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377762f9774ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 14.1,
+   "usage": {
+    "input": 1009,
+    "output": 839,
+    "reasoning": 723
+   },
+   "cost": 0.010408,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537781348e30290-GRU",
+   "stopReason": "stop",
+   "seconds": 8.3,
+   "usage": {
+    "input": 1001,
+    "output": 527,
+    "reasoning": 476
+   },
+   "cost": 0.007272,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818287\", \"hole\": \"\", \"why\": \"The sentence leads with the inequality bounding p₀ by 0.6818287.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence leads with the inequality bounding p₀ by 0.6818287."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780896e51f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 9.2,
+   "usage": {
+    "input": 1001,
+    "output": 619,
+    "reasoning": 563
+   },
+   "cost": 0.008192,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818288\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that 0.6818288 is greater than or equal to p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818288",
+    "hole": "",
+    "why": "The sentence leads with the claim that 0.6818288 is greater than or equal to p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377775ebd14d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 13.2,
+   "usage": {
+    "input": 998,
+    "output": 853,
+    "reasoning": 734
+   },
+   "cost": 0.010526,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that p₀ equals the given exact rational.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the claim that p₀ equals the given exact rational."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780285d76d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 15.5,
+   "usage": {
+    "input": 998,
+    "output": 1064,
+    "reasoning": 943
+   },
+   "cost": 0.012636,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with an exact rational equality for the simple-point fraction p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact rational equality for the simple-point fraction p₀."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777d98ccfd8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 35.4,
+   "usage": {
+    "input": 1010,
+    "output": 2845,
+    "reasoning": 2811
+   },
+   "cost": 0.03047,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The text asks a question and makes an editorial comment rather than asserting a claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The text asks a question and makes an editorial comment rather than asserting a claim."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53777c82a911abf-GRU",
+   "stopReason": "stop",
+   "seconds": 32.3,
+   "usage": {
+    "input": 963,
+    "output": 2518,
+    "reasoning": 2431
+   },
+   "cost": 0.027106,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of the simple-point fraction p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of the simple-point fraction p₀."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537784da9ef0290-GRU",
+   "stopReason": "stop",
+   "seconds": 6.1,
+   "usage": {
+    "input": 856,
+    "output": 340,
+    "reasoning": 291
+   },
+   "cost": 0.005112,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780c14e1d1abf-GRU",
+   "stopReason": "stop",
+   "seconds": 6.2,
+   "usage": {
+    "input": 856,
+    "output": 307,
+    "reasoning": 259
+   },
+   "cost": 0.004782,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the leading digits of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the leading digits of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778852c8f6e30-GRU",
+   "stopReason": "stop",
+   "seconds": 10.1,
+   "usage": {
+    "input": 889,
+    "output": 354,
+    "reasoning": 305
+   },
+   "cost": 0.005318,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780f6eeda4ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 8.3,
+   "usage": {
+    "input": 889,
+    "output": 475,
+    "reasoning": 428
+   },
+   "cost": 0.006528,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the decimal expansion of c₁* up to seven digits.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the decimal expansion of c₁* up to seven digits."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377873a94c1b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 6.9,
+   "usage": {
+    "input": 853,
+    "output": 282,
+    "reasoning": 238
+   },
+   "cost": 0.004526,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence only states that c₁* is \\\"about\\\" 0.7533, which is an approximate claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence only states that c₁* is \"about\" 0.7533, which is an approximate claim."
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377863fb83c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 5.3,
+   "usage": {
+    "input": 861,
+    "output": 307,
+    "reasoning": 255
+   },
+   "cost": 0.004792,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of the Montgomery–Taylor constant c₁* truncated with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the numerical value of the Montgomery–Taylor constant c₁* truncated with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780d6ad40d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 5.2,
+   "usage": {
+    "input": 861,
+    "output": 271,
+    "reasoning": 219
+   },
+   "cost": 0.004432,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the numerical digits of the Montgomery–Taylor constant c₁* up to an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the numerical digits of the Montgomery–Taylor constant c₁* up to an ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377846ff9a1abf-GRU",
+   "stopReason": "stop",
+   "seconds": 8.5,
+   "usage": {
+    "input": 903,
+    "output": 529,
+    "reasoning": 480
+   },
+   "cost": 0.007096,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the leading decimal digits of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the leading decimal digits of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537808b28854d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 8.7,
+   "usage": {
+    "input": 903,
+    "output": 549,
+    "reasoning": 500
+   },
+   "cost": 0.007296,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the leading decimal digits of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the leading decimal digits of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377891f8b51b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 8.0,
+   "usage": {
+    "input": 861,
+    "output": 453,
+    "reasoning": 406
+   },
+   "cost": 0.006252,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the decimal expansion of c₁* up to seven digits.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the decimal expansion of c₁* up to seven digits."
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537810ddd141abf-GRU",
+   "stopReason": "stop",
+   "seconds": 12.3,
+   "usage": {
+    "input": 861,
+    "output": 895,
+    "reasoning": 847
+   },
+   "cost": 0.010672,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of c₁* cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the numerical value of c₁* cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778547e484ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 7.8,
+   "usage": {
+    "input": 882,
+    "output": 370,
+    "reasoning": 313
+   },
+   "cost": 0.005464,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence claims that the Montgomery-Taylor constant c₁* equals 0.7532960….\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence claims that the Montgomery-Taylor constant c₁* equals 0.7532960…."
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780c2ba790290-GRU",
+   "stopReason": "stop",
+   "seconds": 7.6,
+   "usage": {
+    "input": 882,
+    "output": 427,
+    "reasoning": 382
+   },
+   "cost": 0.006034,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the decimal truncation of the constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the decimal truncation of the constant c₁*."
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537788519bd1aaf-GRU",
+   "stopReason": "stop",
+   "seconds": 27.6,
+   "usage": {
+    "input": 886,
+    "output": 2013,
+    "reasoning": 1964
+   },
+   "cost": 0.021902,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of the constant c₁* truncated with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the numerical value of the constant c₁* truncated with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780f27f9dd8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 18.1,
+   "usage": {
+    "input": 886,
+    "output": 1313,
+    "reasoning": 1260
+   },
+   "cost": 0.014902,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of the Montgomery–Taylor constant c₁* cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the numerical value of the Montgomery–Taylor constant c₁* cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537787c5cac4ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 8.1,
+   "usage": {
+    "input": 857,
+    "output": 419,
+    "reasoning": 369
+   },
+   "cost": 0.005904,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of the Montgomery–Taylor constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of the Montgomery–Taylor constant c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53780e87dfbd8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 6.0,
+   "usage": {
+    "input": 857,
+    "output": 313,
+    "reasoning": 264
+   },
+   "cost": 0.004844,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim giving the truncated decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim giving the truncated decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537789ecacef1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 6.0,
+   "usage": {
+    "input": 844,
+    "output": 273,
+    "reasoning": 240
+   },
+   "cost": 0.004418,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The value of c₁* is given only as an approximation with ≈.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The value of c₁* is given only as an approximation with ≈."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778b678edc0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 11.7,
+   "usage": {
+    "input": 856,
+    "output": 723,
+    "reasoning": 664
+   },
+   "cost": 0.008942,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of the proportion 2 - 1/c₁* cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence states the numerical value of the proportion 2 - 1/c₁* cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537812add93d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 20.8,
+   "usage": {
+    "input": 856,
+    "output": 1326,
+    "reasoning": 1262
+   },
+   "cost": 0.014972,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence states the decimal expansion of the proportion 2 - 1/c₁* as 0.67251….\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence states the decimal expansion of the proportion 2 - 1/c₁* as 0.67251…."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778ff2ae4c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 10.6,
+   "usage": {
+    "input": 854,
+    "output": 532,
+    "reasoning": 478
+   },
+   "cost": 0.007028,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781937a716e30-GRU",
+   "stopReason": "stop",
+   "seconds": 9.1,
+   "usage": {
+    "input": 854,
+    "output": 561,
+    "reasoning": 507
+   },
+   "cost": 0.007318,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778c41c724ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 7.6,
+   "usage": {
+    "input": 845,
+    "output": 422,
+    "reasoning": 368
+   },
+   "cost": 0.00591,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5378163c8bd1b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 8.4,
+   "usage": {
+    "input": 845,
+    "output": 440,
+    "reasoning": 387
+   },
+   "cost": 0.00609,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of two minus the reciprocal of c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of two minus the reciprocal of c₁*."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778c41e39d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 9.5,
+   "usage": {
+    "input": 855,
+    "output": 475,
+    "reasoning": 415
+   },
+   "cost": 0.00646,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal value of the proportion 2 - 1/c₁* cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the decimal value of the proportion 2 - 1/c₁* cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537815acc8bc0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 9.1,
+   "usage": {
+    "input": 855,
+    "output": 529,
+    "reasoning": 474
+   },
+   "cost": 0.007,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical value of the proportion 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of the proportion 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778af38074ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 9.6,
+   "usage": {
+    "input": 857,
+    "output": 638,
+    "reasoning": 581
+   },
+   "cost": 0.008094,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of 2 - 1/c₁* truncated at five decimal places.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence states the numerical value of 2 - 1/c₁* truncated at five decimal places."
+   }
+  },
+  {
+   "tag": "6/paper/50 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5378111c8076e30-GRU",
+   "stopReason": "stop",
+   "seconds": 11.6,
+   "usage": {
+    "input": 857,
+    "output": 836,
+    "reasoning": 772
+   },
+   "cost": 0.010074,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value 0.67251… for the expression 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value 0.67251… for the expression 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778ff8a1b6e30-GRU",
+   "stopReason": "stop",
+   "seconds": 11.4,
+   "usage": {
+    "input": 845,
+    "output": 518,
+    "reasoning": 456
+   },
+   "cost": 0.00687,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence evaluates the lower bound 2 - 1/c₁* numerically as 0.67250….\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence evaluates the lower bound 2 - 1/c₁* numerically as 0.67250…."
+   }
+  },
+  {
+   "tag": "6/paper/58 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781988a63f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 10.9,
+   "usage": {
+    "input": 845,
+    "output": 732,
+    "reasoning": 675
+   },
+   "cost": 0.00901,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of 2 - 1/c₁* cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence states the numerical value of 2 - 1/c₁* cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778c41e3bd8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 11.6,
+   "usage": {
+    "input": 846,
+    "output": 449,
+    "reasoning": 395
+   },
+   "cost": 0.006182,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence states the leading digits of the expression 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence states the leading digits of the expression 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537815a6f794d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 8.3,
+   "usage": {
+    "input": 846,
+    "output": 431,
+    "reasoning": 368
+   },
+   "cost": 0.006002,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal expansion of 2 - 1/c₁* truncated at 0.67251.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the decimal expansion of 2 - 1/c₁* truncated at 0.67251."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537790c88dc4ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 6.3,
+   "usage": {
+    "input": 822,
+    "output": 188,
+    "reasoning": 152
+   },
+   "cost": 0.003524,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence uses an approximate relation (≈) without specifying an exact bound or rounding rule.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence uses an approximate relation (≈) without specifying an exact bound or rounding rule."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778f36aedd7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 10.9,
+   "usage": {
+    "input": 859,
+    "output": 629,
+    "reasoning": 567
+   },
+   "cost": 0.008008,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that 2 - 1/c₁* equals 0.67250….\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the claim that 2 - 1/c₁* equals 0.67250…."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537818e3daed8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 8.0,
+   "usage": {
+    "input": 859,
+    "output": 500,
+    "reasoning": 446
+   },
+   "cost": 0.006718,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal expansion claim for 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the decimal expansion claim for 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53778eadb09d7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 11.2,
+   "usage": {
+    "input": 846,
+    "output": 660,
+    "reasoning": 603
+   },
+   "cost": 0.008292,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal expansion of 2 - 1/c₁* truncated with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the decimal expansion of 2 - 1/c₁* truncated with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537817ccdbb1abf-GRU",
+   "stopReason": "stop",
+   "seconds": 7.5,
+   "usage": {
+    "input": 846,
+    "output": 419,
+    "reasoning": 365
+   },
+   "cost": 0.005882,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779313aeac0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 8.8,
+   "usage": {
+    "input": 835,
+    "output": 422,
+    "reasoning": 363
+   },
+   "cost": 0.00589,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of the expression (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of the expression (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781ac9cf4f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 7.5,
+   "usage": {
+    "input": 835,
+    "output": 442,
+    "reasoning": 385
+   },
+   "cost": 0.00609,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779624cca4d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 8.1,
+   "usage": {
+    "input": 838,
+    "output": 387,
+    "reasoning": 330
+   },
+   "cost": 0.005546,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the initial decimal digits of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the initial decimal digits of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781e30b2f1abf-GRU",
+   "stopReason": "stop",
+   "seconds": 9.9,
+   "usage": {
+    "input": 838,
+    "output": 406,
+    "reasoning": 345
+   },
+   "cost": 0.005736,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the leading digits of (3 - 1/c₁*)/2 cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the leading digits of (3 - 1/c₁*)/2 cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779416b204ae8-GRU",
+   "stopReason": "stop",
+   "seconds": 6.5,
+   "usage": {
+    "input": 836,
+    "output": 267,
+    "reasoning": 204
+   },
+   "cost": 0.004342,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence claims that (3 - 1/c₁*)/2 equals 0.83625….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims that (3 - 1/c₁*)/2 equals 0.83625…."
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781d29ca4f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 7.0,
+   "usage": {
+    "input": 836,
+    "output": 311,
+    "reasoning": 245
+   },
+   "cost": 0.004782,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states that (3 - 1/c₁*)/2 equals the truncated decimal 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states that (3 - 1/c₁*)/2 equals the truncated decimal 0.83626…."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377969fde14d0f-GRU",
+   "stopReason": "stop",
+   "seconds": 91.8,
+   "usage": {
+    "input": 831,
+    "output": 7628,
+    "reasoning": 7579
+   },
+   "cost": 0.077942,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence only states that (3 - 1/c₁*)/2 is approximately 0.836 rather than giving an exact relation.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence only states that (3 - 1/c₁*)/2 is approximately 0.836 rather than giving an exact relation."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779379e0cd7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 6.8,
+   "usage": {
+    "input": 835,
+    "output": 391,
+    "reasoning": 334
+   },
+   "cost": 0.00558,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781cbfd32c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 6.1,
+   "usage": {
+    "input": 835,
+    "output": 255,
+    "reasoning": 196
+   },
+   "cost": 0.00422,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of the expression (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of the expression (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779310fa5d7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 5.9,
+   "usage": {
+    "input": 837,
+    "output": 315,
+    "reasoning": 248
+   },
+   "cost": 0.004824,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence equates the expression (3 - 1/c₁*)/2 to the truncated decimal 0.83625….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the expression (3 - 1/c₁*)/2 to the truncated decimal 0.83625…."
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781ab6967d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 6.3,
+   "usage": {
+    "input": 837,
+    "output": 367,
+    "reasoning": 305
+   },
+   "cost": 0.005344,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence equates (3 - 1/c₁*)/2 to 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates (3 - 1/c₁*)/2 to 0.83626…."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779681d9b1b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 7.5,
+   "usage": {
+    "input": 842,
+    "output": 469,
+    "reasoning": 412
+   },
+   "cost": 0.006374,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal expansion of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal expansion of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781f20e0ad7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 9.0,
+   "usage": {
+    "input": 842,
+    "output": 483,
+    "reasoning": 416
+   },
+   "cost": 0.006514,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence equates the expression (3 - 1/c₁*)/2 to the truncated decimal 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the expression (3 - 1/c₁*)/2 to the truncated decimal 0.83626…."
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377933fe1ed8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 8.7,
+   "usage": {
+    "input": 830,
+    "output": 492,
+    "reasoning": 432
+   },
+   "cost": 0.00658,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of (3 - 1/c₁*)/2 truncated with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the numerical value of (3 - 1/c₁*)/2 truncated with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781c01eb6c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 8.6,
+   "usage": {
+    "input": 830,
+    "output": 444,
+    "reasoning": 384
+   },
+   "cost": 0.0061,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of (3 - 1/c₁*)/2 truncated with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the numerical value of (3 - 1/c₁*)/2 truncated with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779559d96f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 6.9,
+   "usage": {
+    "input": 852,
+    "output": 431,
+    "reasoning": 373
+   },
+   "cost": 0.006014,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781dcc874d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 8.5,
+   "usage": {
+    "input": 852,
+    "output": 400,
+    "reasoning": 340
+   },
+   "cost": 0.005704,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence leads with the recomputed truncated decimal expansion of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with the recomputed truncated decimal expansion of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377946dfc8f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 12.8,
+   "usage": {
+    "input": 831,
+    "output": 718,
+    "reasoning": 661
+   },
+   "cost": 0.008842,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the truncated decimal value of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal value of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53781db5f9fc0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 11.2,
+   "usage": {
+    "input": 831,
+    "output": 724,
+    "reasoning": 656
+   },
+   "cost": 0.008902,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims the distinct proportion (3 - 1/c₁*)/2 has the decimal expansion 0.83626…\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims the distinct proportion (3 - 1/c₁*)/2 has the decimal expansion 0.83626…"
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377980aea2d7eb-GRU",
+   "stopReason": "stop",
+   "seconds": 5.3,
+   "usage": {
+    "input": 913,
+    "output": 215,
+    "reasoning": 175
+   },
+   "cost": 0.003976,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence claims a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence claims a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779b898ddd8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 12.3,
+   "usage": {
+    "input": 946,
+    "output": 689,
+    "reasoning": 640
+   },
+   "cost": 0.008782,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The claims are theorems about a zero-free region for every Dirichlet L-function and the nontrivial zeros of ζ, which no finite check can decide.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claims are theorems about a zero-free region for every Dirichlet L-function and the nontrivial zeros of ζ, which no finite check can decide."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537799688a11b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 40.1,
+   "usage": {
+    "input": 908,
+    "output": 2738,
+    "reasoning": 2695
+   },
+   "cost": 0.029196,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a theorem about the infinite set of nontrivial zeros of ζ, which no finite check over the data decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a theorem about the infinite set of nontrivial zeros of ζ, which no finite check over the data decides."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377994eaaed8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 41.1,
+   "usage": {
+    "input": 921,
+    "output": 2855,
+    "reasoning": 2814
+   },
+   "cost": 0.030392,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a theorem about all nontrivial zeros of the Riemann zeta function, which no finite check can decide.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a theorem about all nontrivial zeros of the Riemann zeta function, which no finite check can decide."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537796a5e2e1b1b-GRU",
+   "stopReason": "stop",
+   "seconds": 6.8,
+   "usage": {
+    "input": 920,
+    "output": 213,
+    "reasoning": 169
+   },
+   "cost": 0.00397,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a theorem claiming a zero-free region for every Dirichlet L-function, which no finite check can decide.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a theorem claiming a zero-free region for every Dirichlet L-function, which no finite check can decide."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779df193cf1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 50.6,
+   "usage": {
+    "input": 928,
+    "output": 3514,
+    "reasoning": 3471
+   },
+   "cost": 0.036996,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The theorem makes a claim about the infinite set of nontrivial zeros of ζ(s) that no finite check can decide.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The theorem makes a claim about the infinite set of nontrivial zeros of ζ(s) that no finite check can decide."
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377994ec75c0a7-GRU",
+   "stopReason": "stop",
+   "seconds": 11.9,
+   "usage": {
+    "input": 913,
+    "output": 249,
+    "reasoning": 209
+   },
+   "cost": 0.004316,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a zero-free region for all Dirichlet L-functions, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a zero-free region for all Dirichlet L-functions, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "google/gemini-4-argon",
+   "requestId": "a53779a19fa3d8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 182.6,
+   "usage": {
+    "input": 918,
+    "output": 13954,
+    "reasoning": 13917
+   },
+   "cost": 0.141376,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"Theorem 2 is a statement about all nontrivial zeros of ζ that no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "Theorem 2 is a statement about all nontrivial zeros of ζ that no finite check decides."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377996ac8ad8a2-GRU",
+   "stopReason": "stop",
+   "seconds": 5.4,
+   "usage": {
+    "input": 912,
+    "output": 190,
+    "reasoning": 147
+   },
+   "cost": 0.003724,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a zero-free region for all Dirichlet L-functions, which cannot be decided by a finite check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a zero-free region for all Dirichlet L-functions, which cannot be decided by a finite check."
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "google/gemini-4-argon",
+   "requestId": "a5377a0598d4f1a5-GRU",
+   "stopReason": "stop",
+   "seconds": 8.8,
+   "usage": {
+    "input": 916,
+    "output": 518,
+    "reasoning": 471
+   },
+   "cost": 0.007012,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a zero-free region for all L-functions and an asymptotic proportion of zeta zeros, which no finite check can decide.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a zero-free region for all L-functions and an asymptotic proportion of zeta zeros, which no finite check can decide."
+   }
+  }
+ ]
+}

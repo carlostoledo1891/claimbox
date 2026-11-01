@@ -3,10 +3,12 @@
  "corpus": "riemann-ai",
  "summary": {
   "sentences": 80,
-  "proposals": 56,
+  "proposals": 151,
   "byKind": {
    "grammar": 3,
-   "model:claude-opus-5-5": 53
+   "model:claude-opus-5-5": 53,
+   "model:gemini-4-argon": 51,
+   "model:gpt-6.1-sol": 44
   },
   "perKind": {
    "grammar": {
@@ -30,26 +32,48 @@
     "noReference": 9,
     "plantedHeld": 51,
     "plantedBroke": 2
+   },
+   "model:gemini-4-argon": {
+    "proposed": 80,
+    "compiled": 51,
+    "holes": 29,
+    "faithful": 40,
+    "unfaithful": 2,
+    "sameValueOtherPrint": 1,
+    "noReference": 8,
+    "plantedHeld": 51,
+    "plantedBroke": 0
+   },
+   "model:gpt-6.1-sol": {
+    "proposed": 80,
+    "compiled": 44,
+    "holes": 36,
+    "faithful": 36,
+    "unfaithful": 0,
+    "sameValueOtherPrint": 1,
+    "noReference": 7,
+    "plantedHeld": 41,
+    "plantedBroke": 3
    }
   },
-  "anchored": 56,
-  "printedBack": 55,
-  "planted": 54,
-  "faithful": 44,
-  "unfaithful": 2,
-  "sameValueOtherPrint": 1,
+  "anchored": 151,
+  "printedBack": 149,
+  "planted": 146,
+  "faithful": 120,
+  "unfaithful": 4,
+  "sameValueOtherPrint": 3,
   "validated": 3,
   "notStated": 27,
   "sensitivity": {
-   "held": 54,
+   "held": 147,
    "broke": 0,
-   "tight": 17,
-   "slack": 8,
-   "notRun": 2
+   "tight": 46,
+   "slack": 24,
+   "notRun": 4
   },
   "vacuity": {
-   "depends": 47,
-   "flagged": 9,
+   "depends": 127,
+   "flagged": 24,
    "notRun": 0
   },
   "pairs": {
@@ -70,6 +94,16 @@
     "same": 40,
     "moved": 1,
     "unread": 2
+   },
+   "model:gemini-4-argon": {
+    "same": 0,
+    "moved": 0,
+    "unread": 0
+   },
+   "model:gpt-6.1-sol": {
+    "same": 0,
+    "moved": 0,
+    "unread": 0
    }
   }
  },
@@ -123,8 +157,117 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-paper-0  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.003 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-paper-0  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_paper_0",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gemini-4-argon-1-paper-0",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-paper-0  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_paper_0",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gpt-6-1-sol-1-paper-0",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-paper-0  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -193,8 +336,117 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-abstract-1  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.003 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-abstract-1  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_abstract_1",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gemini-4-argon-1-abstract-1",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-abstract-1  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_abstract_1",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gpt-6-1-sol-1-abstract-1",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-abstract-1  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -263,8 +515,117 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.003 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_readme_2",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gemini-4-argon-1-readme-2",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_readme_2",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gpt-6-1-sol-1-readme-2",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -333,8 +694,117 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_docstring_3",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gemini-4-argon-1-docstring-3",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_docstring_3",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gpt-6-1-sol-1-docstring-3",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -403,8 +873,117 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.004 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_blog_4",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gemini-4-argon-1-blog-4",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_blog_4",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gpt-6-1-sol-1-blog-4",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -447,6 +1026,26 @@
       "hole": "approximate",
       "why": "The bar 'about 0.824' is an approximate number, not an exact printed value."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_tweet_5",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence qualifies the bound 0.824 with 'about'."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_tweet_5",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The bound 0.824 is qualified by 'about'."
+     }
     }
    ],
    "outcome": "not stated: approximate, prose"
@@ -473,6 +1072,26 @@
       "rule": "ambiguous",
       "hole": "ambiguous",
       "why": "The sentence says it is unclear whether the bound 0.82395317 applies to D(1) or to |D(1)|, so the relation can be read two ways."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_referee_6",
+     "statement": null,
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence leaves undetermined whether the bound applies to D(1) itself or to |D(1)|."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_referee_6",
+     "statement": null,
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence does not specify whether the bound applies to D(1) or |D(1)|."
      }
     }
    ],
@@ -527,8 +1146,9 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-assistant-7  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-assistant-7  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -544,9 +1164,29 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_assistant_7",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence hedges with 'I checked that' rather than directly stating the bound."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_assistant_7",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence reports a check rather than directly stating a numerical claim."
+     }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "proposed, not validated: one kind of proposer only; model:gemini-4-argon's proposal not stated: prose; model:gpt-6.1-sol's proposal not stated: prose"
   },
   {
    "id": "1/paper/8",
@@ -597,8 +1237,117 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-paper-8  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-paper-8  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_paper_8",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gemini-4-argon-1-paper-8",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-paper-8  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_paper_8",
+     "statement": "|D(1)| ≤ 0.82395317",
+     "object": "x-gpt-6-1-sol-1-paper-8",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.82395317",
+        "82395317/100000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-paper-8  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -640,6 +1389,26 @@
       "rule": "decider",
       "hole": "decider",
       "why": "the quantity \"D(1)\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_1_assistant_9",
+     "statement": "D(1) < 0.82395317",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"D(1)\" has no primitive expression here: a decider path is needed, and none was given"
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_1_assistant_9",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence reports what the kernel verifies rather than directly stating the numerical claim."
      }
     }
    ],
@@ -688,8 +1457,105 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_paper_10",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gemini-4-argon-2-paper-10",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_paper_10",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gpt-6-1-sol-2-paper-10",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -752,8 +1618,105 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-abstract-11  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-abstract-11  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_abstract_11",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gemini-4-argon-2-abstract-11",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-abstract-11  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_abstract_11",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gpt-6-1-sol-2-abstract-11",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-abstract-11  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -816,8 +1779,105 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-readme-12  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.025 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-readme-12  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_readme_12",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+     "object": "x-gemini-4-argon-2-readme-12",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-readme-12  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_readme_12",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+     "object": "x-gpt-6-1-sol-2-readme-12",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-readme-12  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -880,8 +1940,105 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_docstring_13",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gemini-4-argon-2-docstring-13",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_docstring_13",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gpt-6-1-sol-2-docstring-13",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -944,8 +2101,105 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-blog-14  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-blog-14  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_blog_14",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gemini-4-argon-2-blog-14",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-blog-14  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_blog_14",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gpt-6-1-sol-2-blog-14",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-blog-14  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -988,6 +2242,26 @@
       "hole": "prose",
       "why": "no claim shape in the grammar matches"
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_tweet_15",
+     "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_tweet_15",
+     "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3×10⁻⁴⁰",
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "no claim shape in the grammar matches"
+     }
     }
    ],
    "outcome": "not stated: prose"
@@ -1015,9 +2289,29 @@
       "hole": "ambiguous",
       "why": "The sentence gives the bound on |256·S(j) − j| both as strict (<) and non-strict (≤), so the relation can be read two ways."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_referee_16",
+     "statement": null,
+     "refused": {
+      "rule": "ambiguous",
+      "hole": "ambiguous",
+      "why": "The sentence gives two different relations (< in the abstract and ≤ in Section 4) for the bound on |256·S(j) - j|."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_referee_16",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence describes how an inequality is stated and proved rather than asserting the numerical inequality itself."
+     }
     }
    ],
-   "outcome": "not stated: ambiguous"
+   "outcome": "not stated: ambiguous, prose"
   },
   {
    "id": "2/assistant/17",
@@ -1062,8 +2356,105 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_assistant_17",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gemini-4-argon-2-assistant-17",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_assistant_17",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gpt-6-1-sol-2-assistant-17",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-assistant-17  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -1081,7 +2472,7 @@
      }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "refused: a proposal fails planted"
   },
   {
    "id": "2/paper/18",
@@ -1126,8 +2517,105 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.009 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_paper_18",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gemini-4-argon-2-paper-18",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_paper_18",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+     "object": "x-gpt-6-1-sol-2-paper-18",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-paper-18  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -1197,8 +2685,119 @@
      "faithful": false,
      "sameValue": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-2-blog-19  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.008 s  note: no record attached",
+     "certMachine": "ADMITTED  m-2-blog-19  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.005 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_2_blog_19",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+     "object": "x-gemini-4-argon-2-blog-19",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.0000000000000000000000000000000000000003",
+        "3/10000000000000000000000000000000000000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": false,
+     "sameValue": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-blog-19  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.005 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "CERTIFIED",
+      "held": true,
+      "tight": false
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "REFUTED",
+       "enclosures halved": "REFUTED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_2_blog_19",
+     "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+     "object": "x-gpt-6-1-sol-2-blog-19",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.0000000000000000000000000000000000000003",
+        "3/10000000000000000000000000000000000000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": false,
+     "sameValue": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-blog-19  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.005 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "CERTIFIED",
       "held": true,
@@ -1263,6 +2862,103 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-paper-20  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_paper_20",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-paper-20",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-paper-20  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_paper_20",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gpt-6-1-sol-3-paper-20",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-paper-20  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1325,8 +3021,105 @@
      "paraphrase": "same",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-3-abstract-21  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.003 s  note: no record attached",
+     "certMachine": "ADMITTED  m-3-abstract-21  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_abstract_21",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-abstract-21",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-abstract-21  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_abstract_21",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gpt-6-1-sol-3-abstract-21",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-abstract-21  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1391,6 +3184,103 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-readme-22  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_readme_22",
+     "statement": "c256 < 2.5431316e-6",
+     "object": "x-gemini-4-argon-3-readme-22",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-readme-22  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_readme_22",
+     "statement": "c256 < 2.5431316e-6",
+     "object": "x-gpt-6-1-sol-3-readme-22",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-readme-22  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1455,6 +3345,103 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-docstring-23  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_docstring_23",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-docstring-23",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-docstring-23  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_docstring_23",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gpt-6-1-sol-3-docstring-23",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-docstring-23  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1519,6 +3506,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-blog-24  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1534,9 +3522,65 @@
       },
       "depends": false
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_blog_24",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-blog-24",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-blog-24  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "refused": {
+      "rule": "syntax",
+      "hole": "syntax",
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"2.5431316 × 10^{-6}\""
+     }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "proposed, not validated: one kind of proposer only; model:gpt-6.1-sol's proposal not stated: syntax"
   },
   {
    "id": "3/tweet/25",
@@ -1583,6 +3627,103 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-tweet-25  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_tweet_25",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-tweet-25",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-tweet-25  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_tweet_25",
+     "statement": "c256 < 2.5431316×10⁻⁶",
+     "object": "x-gpt-6-1-sol-3-tweet-25",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-tweet-25  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1645,8 +3786,105 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-3-referee-26  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-3-referee-26  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_referee_26",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-referee-26",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-referee-26  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_referee_26",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gpt-6-1-sol-3-referee-26",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-referee-26  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1711,6 +3949,103 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-3-assistant-27  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_assistant_27",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gemini-4-argon-3-assistant-27",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-3-assistant-27  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "CERTIFIED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": false
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_assistant_27",
+     "statement": "c256 < 2.5431316·10⁻⁶",
+     "object": "x-gpt-6-1-sol-3-assistant-27",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-3-assistant-27  []  from the object: CERTIFIED value -13759999999999999999999999999…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1752,6 +4087,26 @@
       "rule": "approximate",
       "hole": "approximate",
       "why": "The sentence gives only an approximate value ('about') for c256, not an exact or ellipsis-truncated print."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_abstract_28",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence states an approximate value using the word 'about'."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_abstract_28",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence describes the value as about 2.5431316·10⁻⁶."
      }
     }
    ],
@@ -1806,8 +4161,9 @@
      "paraphrase": "same",
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-3-assistant-29  []  from the object: CERTIFIED value 390625000000000000000000000000…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-3-assistant-29  []  from the object: CERTIFIED value 390625000000000000000000000000…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -1823,9 +4179,29 @@
       },
       "depends": false
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_3_assistant_29",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence is a hedged report of a check ('We checked that...') rather than a direct claim."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_3_assistant_29",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence reports a check rather than directly stating the inequality as a claim."
+     }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "proposed, not validated: one kind of proposer only; model:gemini-4-argon's proposal not stated: prose; model:gpt-6.1-sol's proposal not stated: prose"
   },
   {
    "id": "4/paper/30",
@@ -1844,6 +4220,26 @@
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_4_paper_30",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the quote does not print 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000"
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_paper_30",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the quote does not print 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000"
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_paper_30",
      "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
      "refused": {
       "rule": "source",
@@ -1877,6 +4273,26 @@
       "hole": "source",
       "why": "the source prints the bar with the relation <=, the claim says ="
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_abstract_31",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_abstract_31",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
    "outcome": "not stated: prose, source"
@@ -1898,6 +4314,26 @@
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_4_readme_32",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_readme_32",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_readme_32",
      "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
      "refused": {
       "rule": "source",
@@ -1931,6 +4367,26 @@
       "hole": "source",
       "why": "the source prints the bar with the relation <=, the claim says ="
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_docstring_33",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_docstring_33",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the source prints the bar with the relation <=, the claim says ="
+     }
     }
    ],
    "outcome": "not stated: prose, source"
@@ -1952,6 +4408,26 @@
     {
      "kind": "model:claude-opus-5-5",
      "claim": "m_4_blog_34",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the quote does not print 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000"
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_blog_34",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "refused": {
+      "rule": "source",
+      "hole": "source",
+      "why": "the quote does not print 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000"
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_blog_34",
      "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
      "refused": {
       "rule": "source",
@@ -1983,6 +4459,22 @@
       "hole": "syntax",
       "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"10909258999421303588095230195816054408197/(16·10³⁹)\""
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "refused": {
+      "rule": "syntax",
+      "hole": "syntax",
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"10909258999421303588095230195816054408197/(16·10³⁹)\""
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "refused": {
+      "rule": "syntax",
+      "hole": "syntax",
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"10909258999421303588095230195816054408197/(16·10³⁹)\""
+     }
     }
    ],
    "outcome": "not stated: prose, syntax"
@@ -2009,6 +4501,26 @@
       "rule": "prose",
       "hole": "prose",
       "why": "The sentence asks whether p₀ equals the fraction and whether a bound is strict, so it asserts no claim."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_referee_36",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The text asks a question and makes an editorial comment rather than asserting a claim."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_referee_36",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence asks whether the equality holds and how to describe the bound rather than asserting either claim."
      }
     }
    ],
@@ -2070,9 +4582,62 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_assistant_37",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "object": "x-gemini-4-argon-4-assistant-37",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": false,
+     "sameValue": false,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-4-assistant-37  []  from the object: CERTIFIED value 0  0.001 s  note: no record attached",
+     "sensitivity": null,
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "REFUTED",
+       "p0 = 0": "REFUTED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_assistant_37",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence reports a verification rather than directly stating a numerical claim."
+     }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "proposed, not validated: one kind of proposer only; model:gpt-6.1-sol's proposal not stated: prose"
   },
   {
    "id": "4/blog/38",
@@ -2130,9 +4695,62 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_blog_38",
+     "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+     "object": "x-gemini-4-argon-4-blog-38",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": false,
+     "sameValue": false,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-4-blog-38  []  from the object: CERTIFIED value 0  0.001 s  note: no record attached",
+     "sensitivity": null,
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "REFUTED",
+       "p0 = 0": "REFUTED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_blog_38",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The leading numerical claim states p₀ approximately as 0.68183."
+     }
     }
    ],
-   "outcome": "refused: a proposal fails printedBack"
+   "outcome": "refused: a proposal fails printedBack; model:gpt-6.1-sol's proposal not stated: approximate"
   },
   {
    "id": "4/paper/39",
@@ -2185,6 +4803,115 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-4-paper-39  []  from the object: CERTIFIED value 109092589994213035880952301958…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "REFUTED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_4_paper_39",
+     "statement": "p₀ ≤ 0.6818287",
+     "object": "x-gemini-4-argon-4-paper-39",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.6818287",
+        "6818287/10000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-4-paper-39  []  from the object: CERTIFIED value 109092589994213035880952301958…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "CERTIFIED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": true
+     },
+     "vacuity": {
+      "plants": {
+       "enclosures doubled": "CERTIFIED",
+       "enclosures halved": "CERTIFIED",
+       "p0 = 1": "REFUTED",
+       "p0 = 0": "CERTIFIED",
+       "tau ten times": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_4_paper_39",
+     "statement": "p₀ ≤ 0.6818287",
+     "object": "x-gpt-6-1-sol-4-paper-39",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/LawN256.encl.json",
+       "sha256": "889e4d2e9b7c8b8688a1bc215deb0f8ddab707f5bb5e1dafdc83765d14ccf229"
+      },
+      "count": 256,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "le",
+        "0.6818287",
+        "6818287/10000000"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-4-paper-39  []  from the object: CERTIFIED value 109092589994213035880952301958…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "CERTIFIED",
       "down": "REFUTED",
       "held": true,
@@ -2253,8 +4980,111 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-paper-40  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-paper-40  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_paper_40",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-paper-40",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-paper-40  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_paper_40",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-paper-40",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-paper-40  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2320,8 +5150,111 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-abstract-41  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-abstract-41  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_abstract_41",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-abstract-41",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-abstract-41  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_abstract_41",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-abstract-41",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-abstract-41  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2387,8 +5320,111 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-readme-42  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-readme-42  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_readme_42",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-readme-42",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-readme-42  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_readme_42",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-readme-42",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-readme-42  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2454,8 +5490,111 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-docstring-43  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-docstring-43  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_docstring_43",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-docstring-43",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-docstring-43  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_docstring_43",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-docstring-43",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-docstring-43  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2494,6 +5633,26 @@
       "rule": "approximate",
       "hole": "approximate",
       "why": "The value is given only as 'about 0.7533', an approximate figure rather than an exact or truncated print."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_blog_44",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence only states that c₁* is 'about' 0.7533, which is an approximate claim."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_blog_44",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The leading numerical claim describes c₁* as about 0.7533."
      }
     }
    ],
@@ -2538,8 +5697,9 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  p-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2588,8 +5748,111 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_tweet_45",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-tweet-45",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_tweet_45",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-tweet-45",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2655,8 +5918,9 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-referee-46  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-referee-46  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2669,9 +5933,70 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_referee_46",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-referee-46",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-referee-46  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_referee_46",
+     "statement": null,
+     "refused": {
+      "rule": "prose",
+      "hole": "prose",
+      "why": "The sentence requests a numerical check and confirms a symbolic equivalence rather than asserting a numerical claim."
+     }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "proposed, not validated: one kind of proposer only; model:gpt-6.1-sol's proposal not stated: prose"
   },
   {
    "id": "5/assistant/47",
@@ -2722,8 +6047,111 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_assistant_47",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-assistant-47",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_assistant_47",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-assistant-47",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-assistant-47  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2789,8 +6217,111 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  m-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_paper_48",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gemini-4-argon-5-paper-48",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_paper_48",
+     "statement": "c₁* = 0.7532960…",
+     "object": "x-gpt-6-1-sol-5-paper-48",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.7532960",
+        "47081/62500"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-paper-48  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2829,6 +6360,26 @@
       "rule": "approximate",
       "hole": "approximate",
       "why": "The value of c₁* is given only approximately (≈ 0.753296), with no exact or cut-off bar."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_5_tweet_49",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The value of c₁* is given only as an approximation with ≈."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_5_tweet_49",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The numerical value 0.753296 is marked approximate by ≈."
      }
     }
    ],
@@ -2885,6 +6436,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-paper-50  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_paper_50",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-paper-50",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-paper-50  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_paper_50",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-paper-50",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-paper-50  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2899,7 +6553,7 @@
      }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "refused: a proposal fails planted"
   },
   {
    "id": "6/abstract/51",
@@ -2952,6 +6606,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-abstract-51  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -2964,9 +6619,70 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_abstract_51",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-abstract-51",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-abstract-51  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_abstract_51",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The leading claim concerns the proportion of infinitely many zeta zeros, not a finite check over the given data."
+     }
     }
    ],
-   "outcome": "refused: a proposal fails planted"
+   "outcome": "refused: a proposal fails planted; model:gpt-6.1-sol's proposal not stated: unbounded"
   },
   {
    "id": "6/readme/52",
@@ -3019,6 +6735,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-readme-52  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_readme_52",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-readme-52",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-readme-52  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_readme_52",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-readme-52",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-readme-52  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3086,6 +6905,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-docstring-53  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_docstring_53",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-docstring-53",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-docstring-53  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_docstring_53",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-docstring-53",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-docstring-53  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3153,6 +7075,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-blog-54  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_blog_54",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-blog-54",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-blog-54  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_blog_54",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-blog-54",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-blog-54  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3210,6 +7235,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3260,6 +7286,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_tweet_55",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-tweet-55",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_tweet_55",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-tweet-55",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-tweet-55  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3327,6 +7456,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-referee-56  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_referee_56",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-referee-56",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-referee-56  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_referee_56",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-referee-56",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-referee-56  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3394,6 +7626,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-assistant-57  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_assistant_57",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-assistant-57",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-assistant-57  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_assistant_57",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gpt-6-1-sol-6-assistant-57",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-6-assistant-57  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3461,6 +7796,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-6-paper-58  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3473,9 +7809,70 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_paper_58",
+     "statement": "2 - 1/c₁* = 0.67250…",
+     "object": "x-gemini-4-argon-6-paper-58",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.67250",
+        "269/400"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-6-paper-58  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_paper_58",
+     "statement": null,
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "The library does not express the proportion of zeros that are simple and on the line."
+     }
     }
    ],
-   "outcome": "proposed, not validated: one kind of proposer only"
+   "outcome": "proposed, not validated: one kind of proposer only; model:gpt-6.1-sol's proposal not stated: decider"
   },
   {
    "id": "6/readme/59",
@@ -3499,6 +7896,26 @@
       "rule": "approximate",
       "hole": "approximate",
       "why": "The value is given with ≈, so it is approximate rather than an exact or truncated print."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_6_readme_59",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence uses an approximate relation (≈) without specifying an exact bound or rounding rule."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_6_readme_59",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence uses ≈ to state an approximate value."
      }
     }
    ],
@@ -3555,6 +7972,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-paper-60  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_paper_60",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-paper-60",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-paper-60  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_paper_60",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-paper-60",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-paper-60  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3622,6 +8142,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-abstract-61  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_abstract_61",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-abstract-61",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-abstract-61  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_abstract_61",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-abstract-61",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-abstract-61  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3689,6 +8312,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-readme-62  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_readme_62",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-readme-62",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-readme-62  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_readme_62",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-readme-62",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-readme-62  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3756,6 +8482,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-docstring-63  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_docstring_63",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-docstring-63",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-docstring-63  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_docstring_63",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-docstring-63",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-docstring-63  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3823,6 +8652,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-blog-64  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_blog_64",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-blog-64",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-blog-64  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_blog_64",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-blog-64",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-blog-64  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3890,6 +8822,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-tweet-65  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -3902,9 +8835,70 @@
       },
       "depends": true
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_tweet_65",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-tweet-65",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-tweet-65  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_tweet_65",
+     "statement": "3 - 1/c₁*/2 = 0.83625…",
+     "refused": {
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"3 - 1/c₁*/2\" has no primitive expression here: a decider path is needed, and none was given"
+     }
     }
    ],
-   "outcome": "refused: a proposal fails paraphrase"
+   "outcome": "refused: a proposal fails paraphrase; model:gpt-6.1-sol's proposal not stated: decider"
   },
   {
    "id": "7/referee/66",
@@ -3957,6 +8951,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-referee-66  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_referee_66",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-referee-66",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-referee-66  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_referee_66",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-referee-66",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-referee-66  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -4024,6 +9121,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-assistant-67  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_assistant_67",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-assistant-67",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-assistant-67  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_assistant_67",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-assistant-67",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-assistant-67  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -4081,6 +9281,7 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-7-paper-68  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -4131,6 +9332,109 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-7-paper-68  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
      "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_paper_68",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gemini-4-argon-7-paper-68",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-7-paper-68  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": {
+      "plants": {
+       "K = 2": "REFUTED",
+       "K = 4": "CERTIFIED"
+      },
+      "depends": true
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_paper_68",
+     "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+     "object": "x-gpt-6-1-sol-7-paper-68",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/riemann/zeta23/mt-series.json",
+       "sha256": "00cbd97bdd4ffa1724e90a60b8ea8eeaf39967463b89d38e45c06376a0c4fc94"
+      },
+      "count": 1,
+      "elements": null,
+      "reading": "universal",
+      "ineqs": [
+       [
+        "ge",
+        "0.83625",
+        "669/800"
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-7-paper-68  []  from the object: CERTIFIED value 191402054980668331519/22888128… · CERTIFIED value -363204494163841559/3764494816…  0.001 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
       "up": "REFUTED",
       "down": "REFUTED",
       "held": true,
@@ -4170,6 +9474,26 @@
       "hole": "approximate",
       "why": "The value 0.836 is given only approximately ('approximately'), so there is no exact bar to check against."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_7_blog_69",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence only states that (3 - 1/c₁*)/2 is approximately 0.836 rather than giving an exact relation."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_7_blog_69",
+     "statement": null,
+     "refused": {
+      "rule": "approximate",
+      "hole": "approximate",
+      "why": "The sentence describes 0.836 as approximate."
+     }
     }
    ],
    "outcome": "not stated: approximate"
@@ -4196,6 +9520,26 @@
       "rule": "unbounded",
       "hole": "unbounded",
       "why": "A zero-free region for every Dirichlet L-function is a claim about all cases, and no finite check decides it."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_paper_70",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states a theorem claiming a zero-free region for every Dirichlet L-function, which no finite check can decide."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_paper_70",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence asserts a zero-free region for every Dirichlet L-function, which no finite check decides."
      }
     }
    ],
@@ -4224,6 +9568,26 @@
       "hole": "unbounded",
       "why": "A zero-free region claim for every Dirichlet L-function is a theorem that no finite check over the data decides."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_abstract_71",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence claims a zero-free region for every Dirichlet L-function, which no finite check decides."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_abstract_71",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence claims a zero-free region for every Dirichlet L-function, which no finite check decides."
+     }
     }
    ],
    "outcome": "not stated: prose, unbounded"
@@ -4250,6 +9614,26 @@
       "rule": "unbounded",
       "hole": "unbounded",
       "why": "A zero-free region for all Dirichlet L-functions is a statement about infinitely many cases that no finite check over the data decides."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_readme_72",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states a zero-free region for all Dirichlet L-functions, which no finite check decides."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_readme_72",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence asserts a universal zero-free region that no finite check decides."
      }
     }
    ],
@@ -4278,6 +9662,26 @@
       "hole": "unbounded",
       "why": "The sentence is a theorem about all nontrivial zeros of zeta (a density statement over infinitely many zeros), which no finite check over the given data decides."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_docstring_73",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states a theorem about all nontrivial zeros of the Riemann zeta function, which no finite check can decide."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_docstring_73",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The claim concerns the infinite collection of nontrivial zeta zeros, not finitely many data rows."
+     }
     }
    ],
    "outcome": "not stated: prose, unbounded"
@@ -4305,9 +9709,29 @@
       "hole": "asymptotic",
       "why": "A proportion of all nontrivial zeta zeros is a limiting density as the height grows, which no finite check over the given data decides."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_blog_74",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states a theorem about the infinite set of nontrivial zeros of ζ, which no finite check over the data decides."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_blog_74",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The claim concerns the entire infinite set of nontrivial zeros of ζ, not a finite checkable set."
+     }
     }
    ],
-   "outcome": "not stated: asymptotic, quantity"
+   "outcome": "not stated: asymptotic, quantity, unbounded"
   },
   {
    "id": "8/tweet/75",
@@ -4331,6 +9755,26 @@
       "rule": "unbounded",
       "hole": "unbounded",
       "why": "A zero-free region for every Dirichlet L-function is a statement about all cases that no finite check over the data decides."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_tweet_75",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states a zero-free region for all Dirichlet L-functions, which cannot be decided by a finite check."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_tweet_75",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence claims an unbounded zero-free region for every Dirichlet L-function."
      }
     }
    ],
@@ -4359,6 +9803,26 @@
       "hole": "unbounded",
       "why": "The sentence concerns a theorem about the infinitely many zeros of ζ, which no finite check of the data can decide."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_referee_76",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "Theorem 2 is a statement about all nontrivial zeros of ζ that no finite check decides."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_referee_76",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The claimed fraction concerns infinitely many nontrivial zeros of ζ, so no finite check decides it."
+     }
     }
    ],
    "outcome": "not stated: prose, unbounded"
@@ -4385,6 +9849,26 @@
       "rule": "unbounded",
       "hole": "unbounded",
       "why": "The leading claim is a zero-free region for every Dirichlet L-function, which no finite check can decide."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_assistant_77",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The claims are theorems about a zero-free region for every Dirichlet L-function and the nontrivial zeros of ζ, which no finite check can decide."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_assistant_77",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The leading claim is a zero-free region for every Dirichlet L-function, which no finite check decides."
      }
     }
    ],
@@ -4413,6 +9897,26 @@
       "hole": "unbounded",
       "why": "A proportion claim over infinitely many zeta zeros is a theorem that no finite check of the given data decides."
      }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_paper_78",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The theorem makes a claim about the infinite set of nontrivial zeros of ζ(s) that no finite check can decide."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_paper_78",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence claims a proportion of all nontrivial zeta zeros, which no finite check decides."
+     }
     }
    ],
    "outcome": "not stated: prose, unbounded"
@@ -4439,6 +9943,26 @@
       "rule": "unbounded",
       "hole": "unbounded",
       "why": "The sentence states theorems about all L-functions and the proportion of zeta zeros, which no finite check of the data can decide."
+     }
+    },
+    {
+     "kind": "model:gemini-4-argon",
+     "claim": "x_gemini_4_argon_8_tweet_79",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The sentence states a zero-free region for all L-functions and an asymptotic proportion of zeta zeros, which no finite check can decide."
+     }
+    },
+    {
+     "kind": "model:gpt-6.1-sol",
+     "claim": "x_gpt_6_1_sol_8_tweet_79",
+     "statement": null,
+     "refused": {
+      "rule": "unbounded",
+      "hole": "unbounded",
+      "why": "The leading claim is a zero-free assertion about all L-functions that no finite check decides."
      }
     }
    ],
