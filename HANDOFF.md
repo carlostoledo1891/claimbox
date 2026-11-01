@@ -152,7 +152,8 @@ same in three runs, Kimi 78/80, GLM-5.3 63/78. Register: validated 27 (19 before
 (all the 2026 circles), REFUSED 12 (all Erdős min overlap: record word REPAIRED). Guide: register GPT-6.1 Sol 8 → 31 stated,
 GPT-6 Luna 21 → 26, DeepSeek 27 → 25, Mistral 23 → 23; phrasings DeepSeek 34 → 42 passed, Mistral planted breaks 1 → 5. The
 battery now takes ~12 minutes (the register re-run with cert-machine's word on ~400 proposals). make test 546 pass, 0 fail,
-136/136. The page moved (register numbers): cert-machine-cb asked to republish on the operator's word.
+136/136. The page moved (register numbers): REPUBLISHED on the operator's word, cert-machine 5b5eefcb from claimbox 397f8b1
+(61,319 bytes, sha256 955f678a…4226068, checked here with curl).
 
 **NEXT, in order.**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
