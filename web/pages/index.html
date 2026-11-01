@@ -6,9 +6,9 @@
 <header>
   <div class="eyebrow">claimbox · the claim language for cert-machine</div>
   <h1 class="hook">Claims are written in words no machine can check. claimbox states them so one can.</h1>
-  <p class="lede">claimbox turns a sentence into an exact claim: the bytes it is about, how they are read, and each bound as the exact number its digits mean. cert-machine then decides it with one of three words, CERTIFIED, REFUTED or REFUSED. When a sentence cannot be stated exactly, claimbox says why instead of guessing.</p>
+  <p class="lede">claimbox is a language, and a translator into it. A sentence from a paper, a README, a leaderboard or an AI’s answer becomes an exact claim: the bytes it is about, how they are read, and each bound as the exact number its digits mean. A person or an AI model writes the claim by its rules; claimbox checks the writing and prints it back in plain words; cert-machine decides it with one of three words, CERTIFIED, REFUTED or REFUSED. When a sentence cannot be stated exactly, the reason is named instead of a guess.</p>
   <div class="cta-row"><a class="btn primary" href="#bring">Bring one claim →</a><a class="btn mono" href="mailto:{{email}}">{{email}}</a></div>
-  <div class="jump"><a href="#evidence">The evidence</a><a href="#uses">The uses</a><a href="#how">How it works</a><a href="#built">Built on</a></div>
+  <div class="jump"><a href="#translate">See it translate</a><a href="#models">AI models write it</a><a href="#write">Write a claim</a><a href="#evidence">The evidence</a><a href="#uses">The uses</a><a href="#how">How it works</a></div>
 </header>
 
 {{fig_hero}}
@@ -17,13 +17,53 @@
   <div class="stat"><div class="k">agreement with cert-machine</div><div class="v">{{cal_agree}} of {{cal_of}}</div><div class="n">of cert-machine’s own hand-written claims, reproduced field for field</div></div>
   <div class="stat"><div class="k">planted defects caught</div><div class="v">{{rec_caught}} of {{rec_plants}}</div><div class="n">a moved digit, a flipped relation, a swapped file: each comes out refused or decided differently</div></div>
   <div class="stat"><div class="k">digits compared exactly</div><div class="v">{{d64}}</div><div class="n">for one bound on the root of <span class="nonum">x<sup>x</sup> = 64</span>, with no logarithm evaluated</div></div>
-  <div class="stat"><div class="k">where a planted twin stopped the search</div><div class="v">{{bb5}}</div><div class="n">steps: the five-state busy beaver halts there, and the watcher stopped there, as predicted</div></div>
+  <div class="stat"><div class="k">AI models writing claims</div><div class="v">{{m_fam}}</div><div class="n">each given the same rules; every claim that passed the checks, {{m_cert}} of them, came back CERTIFIED</div></div>
 </div>
+
+<section id="translate">
+  <div class="sec-head"><span class="lab">see it translate</span><h2>From the sentence an author printed to the claim a machine decides</h2>
+    <p>Real sentences, each given alone to an AI model with claimbox’s rules. The model writes the claim; claimbox prints it back from the object cert-machine receives, never from what was typed; cert-machine decides. Where a sentence states no claim a finite check can decide, the model names the hole instead.</p></div>
+  {{translations}}
+</section>
+
+<section id="models">
+  <div class="proof flip">
+    <div class="proof-text" data-measured>
+      <span class="eyebrow nonum">AI models write it · checks decide what counts</span>
+      <h2>{{m_fam}} AI models wrote claims. Every one that passed the checks held.</h2>
+      <div class="bignum">{{m_cert}} of {{m_passed}}</div>
+      <div class="bignum-k">claims that passed every check, CERTIFIED by cert-machine</div>
+      <p>Each model was given the same rules and the same {{pr_n}} AI-written sentences, one at a time, and wrote {{m_stated}} claims between them. None of the checks is a model: every number must be found in its sentence, the claim must read back with the sentence’s own relation, move exactly when one digit of its bar is moved, and stay put when the sentence is reworded. A claim that fails one is refused and named, and the others still count.</p>
+      <p>Among the claims the checks refused, {{m_caught}} was wrong, and the checks refused it before cert-machine refuted it: it is below. Asked {{m_runs}} times, <span class="nonum">Gemini 4 Argon</span> wrote the same claim, or named the same hole, for {{m_same}} of the {{pr_n}} sentences. On cert-machine’s register, {{r_fam}} models wrote {{r_passed}} claims that passed, and {{r_valid}} sentences are validated: the grammar and a model, two different kinds of writer, agree. On the AI phrasings {{pr_valid}} are, so far: every model counts as one kind of writer, and the second kind there is a person.</p>
+    </div>
+    {{fig_models}}
+  </div>
+  {{caught}}
+</section>
+
+<section id="write">
+  <div class="sec-head"><span class="lab">write a claim</span><h2>One file says what is claimed, about which bytes, read how</h2>
+    <p>The language is small: the source that prints the sentence, the data it is about and how its bytes are read, the definitions it uses, and the claim. A model gets the same rules as a person, written down once in the guide.</p></div>
+  <div class="pair">
+<pre class="code"><span class="kw">source</span> P = notes/my-paper.md
+<span class="kw">data</span>   f = corpus/my-construction.json
+<span class="kw">read</span>   f as doubles
+<span class="kw">use</span>    C_1b v1
+
+<span class="kw">claim</span>  my_bound over f
+  <span class="kw">quote</span> "the construction gives C_1b ≤ 1.5029" from P
+  : C_1b ≤ 1.5029</pre>
+    <div class="panel"><span class="eyebrow">for people and for models</span><h3>The rules, written once</h3>
+      <p>Copy the bar exactly as printed. Keep the sentence’s relation, read the right way round. Use only the names the library defines over the data. When a sentence states no exact claim, write the hole and its reason: a hole is an answer. The same text is the prompt an AI model is given.</p>
+      <div class="go"><a href="https://github.com/carlostoledo1891/claimbox/blob/main/GUIDE.md">How to write for claimbox →</a></div>
+      <div class="go"><a href="https://github.com/carlostoledo1891/claimbox/blob/main/LANGUAGE.md">The language, in full →</a></div></div>
+  </div>
+</section>
 
 <section id="evidence">
   <div class="proof">
     <div class="proof-text" data-measured>
-      <span class="eyebrow nonum">proof 1 of 3 · honesty</span>
+      <span class="eyebrow nonum">proof 1 of 2 · honesty</span>
       <h2>It says why when it cannot</h2>
       <div class="bignum">{{cov_ref}} of {{cov_ref}}</div>
       <div class="bignum-k">refusals in cert-machine’s register that name their reason</div>
@@ -34,23 +74,9 @@
 </section>
 
 <section>
-  <div class="proof flip">
-    <div class="proof-text" data-measured>
-      <span class="eyebrow nonum">proof 2 of 3 · proposals</span>
-      <h2>A model writes the claim. Checks decide whether it counts.</h2>
-      <div class="bignum">{{pr_mf}} of {{pr_m}}</div>
-      <div class="bignum-k">claims a model wrote that equal the decided answer</div>
-      <p>Given {{pr_n}} AI-written sentences one at a time, a model wrote the claim each one makes. None of the checks is a model. Every number must be found in its sentence, and the claim must read back with the sentence’s own relation. It must move exactly when one digit of the sentence’s bar is moved, and stay put when the sentence is reworded. When the model slipped on a reworded sentence, the claim was refused ({{pa_moved}}).</p>
-      <p>A sentence counts as validated only when a second, different kind of proposer agrees. Today that is {{pr_valid}}, and the next step is a person.</p>
-    </div>
-    {{fig_checks}}
-  </div>
-</section>
-
-<section>
   <div class="proof">
     <div class="proof-text" data-measured>
-      <span class="eyebrow nonum">proof 3 of 3 · exact</span>
+      <span class="eyebrow nonum">proof 2 of 2 · exact</span>
       <h2 class="nonum">x<sup>x</sup> = 64, trapped by fractions</h2>
       <div class="bignum">{{x_cert}}</div>
       <div class="bignum-k">bounds on the roots of x<sup>x</sup> = y, certified, for {{x_dec}} values of y</div>
@@ -61,7 +87,7 @@
 </section>
 
 <section id="uses">
-  <div class="sec-head"><span class="lab">the uses</span><h2>Two ways to use it</h2></div>
+  <div class="sec-head"><span class="lab">the uses</span><h2>Three ways to use it</h2></div>
   <div class="panels">
     <div class="panel"><span class="eyebrow">for anyone who publishes a number</span><h3>Say exactly what you claim</h3>
       <p>Write the claim once in claimbox: the file, its reading, the bound. claimbox prints it back in plain words from the object cert-machine decides, never from what was typed. A reader then knows exactly what was checked, and on which bytes.</p>
@@ -69,6 +95,9 @@
     <div class="panel"><span class="eyebrow">for teams whose models write claims</span><h3>Count only what holds up</h3>
       <p>Let a model propose, and let claimbox validate. Each number must be found in the source and the claim must read back with the sentence’s relation. The bar is moved and the claim must move with it; the sentence is reworded and the claim must stay put. A second kind of proposer must agree. What fails is named, not hidden.</p>
       <div class="go"><a href="#bring">Bring one claim →</a></div></div>
+    <div class="panel"><span class="eyebrow">for AI agents that cite numbers</span><h3>Write the claim, not the adjective</h3>
+      <p>Give a model the guide and a sentence; it writes the claim, or the hole and its reason. claimbox checks the writing, cert-machine decides it, and the agent reports only what came back CERTIFIED, with what it rests on.</p>
+      <div class="go"><a href="https://github.com/carlostoledo1891/claimbox/blob/main/GUIDE.md">The guide →</a></div></div>
   </div>
 </section>
 

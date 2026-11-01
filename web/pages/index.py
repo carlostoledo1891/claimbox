@@ -17,8 +17,6 @@ CAL, COV, REC = 'records/calibration.json', 'records/coverage.json', 'records/re
 CRY, RRUN = 'records/cryptids-run.json', 'records/riemann-run.json'
 PROSE, REG = 'records/prose-riemann-ai.json', 'records/prose-register.json'
 X64, XXY, XST = 'records/xx64-check.json', 'records/xxy-check.json', 'records/xxy-study.json'
-BB5 = 'records/helpers/watch-bb5-twin.json'
-MK = '/summary/perKind/model:claude-opus-5-5'
 EDGE = 'zeta23-edge'
 INK, INK2, INK3, INK4, INK5, RULE = 'var(--ink)', 'var(--ink-2)', 'var(--ink-3)', 'var(--ink-4)', 'var(--ink-5)', 'var(--rule-strong)'
 WORD_TAG = {'CERTIFIED': 'held', 'REFUTED': 'dep', 'REFUSED': 'open'}
@@ -128,38 +126,6 @@ def fig_holes(narrow=False):
     return '\n'.join(out)
 
 
-def checks():
-    d = load(PROSE)
-    mp = [p for e in d['sentences'] for p in e['proposals'] if p['kind'] == MK.rsplit('/', 1)[1] and 'object' in p]   # Claude's: the page's model
-    return [('sentences given to the model', d['summary']['sentences']), ('stated as a claim', len(mp)),
-            ('every number found in its sentence', sum(1 for p in mp if p['anchored'])),
-            ('reads back with the sentence’s relation', sum(1 for p in mp if p['printedBack'])),
-            ('moves exactly when its bar is moved', sum(1 for p in mp if p['planted'])),
-            ('stays put when the sentence is reworded', sum(1 for p in mp if p.get('paraphrase') == 'same')),
-            ('equal to the decided reference', sum(1 for p in mp if p['faithful']))]
-
-
-def fig_checks(narrow=False):
-    rows = checks()
-    W = 390 if narrow else 600
-    L = 0 if narrow else 310
-    bh, gap, top = (14, 34, 22) if narrow else (20, 14, 6)
-    H = top + len(rows) * (bh + gap) + 8
-    scale = (W - L - 40) / rows[0][1]
-    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="the model\'s claims through each check">']
-    for i, (k, v) in enumerate(rows):
-        y = top + i * (bh + gap)
-        if narrow:
-            out.append(f'<text x="0" y="{y - 6}" font-size="11">{esc(k)}</text>')
-        else:
-            out.append(f'<text x="{L - 12}" y="{y + bh / 2 + 4}" text-anchor="end" font-size="11.5">{esc(k)}</text>')
-        fill = INK3 if i == 0 else INK
-        out.append(f'<rect x="{L}" y="{y}" width="{v * scale:.1f}" height="{bh}" fill="{fill}"/>'
-                   f'<text x="{L + v * scale + 8:.1f}" y="{y + bh / 2 + 4}" font-size="11.5" class="hi">{v}</text>')
-    out.append('</svg>')
-    return '\n'.join(out)
-
-
 def fig_trap(narrow=False):
     """x^x = 64: the root on a number line, the fractions that trap it at each depth, tighter and tighter"""
     W = 390 if narrow else 560
@@ -187,6 +153,111 @@ def fig_trap(narrow=False):
     return '\n'.join(out)
 
 
+# ------------------------------------------------------------------------------------------------- translations (2026-11-01, the
+# operator: "the page do not show any translate use case. A prose/ai inserting claims based on the rules"): real sentences, the
+# claim a model wrote in the language, the claim printed back by the language's own printer, and cert-machine's word — every
+# string and every number read from the prose records
+
+NAMES = {'claude-opus-5-5': 'Claude Opus 5.5', 'gemini-4-argon': 'Gemini 4 Argon', 'gemini-3.8-flash': 'Gemini 3.8 Flash',
+         'gpt-6.1-sol': 'GPT-6.1 Sol', 'gpt-6-luna': 'GPT-6 Luna', 'gpt-oss-120b': 'GPT-OSS 120B', 'deepseek-v4-pro': 'DeepSeek V4 Pro',
+         'kimi-k3.1-pro': 'Kimi K3.1 Pro', 'qwen3.8-max': 'Qwen 3.8 Max', 'glm-5.3': 'GLM-5.3', 'grok-4.7': 'Grok 4.7',
+         'mistral-large-2512': 'Mistral Large', 'minimax-m3': 'MiniMax M3'}
+TRANSLATIONS = [   # (record, sentence id, the proposal shown, where the sentence comes from)
+    (PROSE, '1/paper/0', 'model:gemini-4-argon', 'a theorem, as a paper prints it'),
+    (PROSE, '5/tweet/45', 'model:claude-opus-5-5', 'a constant cut off with “…”, in a post'),
+    (PROSE, '2/paper/18', 'model:claude-opus-5-5', 'a bound written right to left'),
+    (REG, 'ea-circles-ours_2026', 'model:claude-opus-5-5', 'a leaderboard record'),
+    (REG, 'mc100-ae-nb-4x4x8-r96', 'model:deepseek-v4-pro', 'a results notebook'),
+    (PROSE, '8/paper/70', 'model:gemini-4-argon', 'a theorem no finite check decides'),
+]
+CAUGHT = (PROSE, '2/paper/18', 'model:minimax-m3')     # the one wrong claim: refused by the checks, refuted by cert-machine
+
+
+def word_chip(path, sid, kind):
+    from web.record import proposal
+    w = proposal(path, sid, kind).get('word')
+    return f'<span class="tag {WORD_TAG.get(w, "open")}">{derived("proposalField", path, sid, kind, "word")}</span>'
+
+
+def translation_card(path, sid, kind, where):
+    from web.record import proposal
+    fam = NAMES.get(kind.split(':', 1)[1], kind)
+    p = proposal(path, sid, kind)
+    rows = [('the sentence', derived('sentence', path, sid, how='raw', standing='computed'))]
+    if p.get('statement'):
+        rows += [('the claim', '<code>' + derived('proposalField', path, sid, kind, 'statement', how='raw') + '</code>'),
+                 ('printed back', derived('means', path, sid, kind, how='raw')),
+                 ('cert-machine', word_chip(path, sid, kind))]
+        same = derived('wroteSame', path, sid, kind)
+        foot = f'written by <span class="nonum">{esc(fam)}</span>; the same claim, passing every check, from {same} of {derived("families", path)} models'
+    else:
+        rows += [('the claim', '<span class="tag open">hole&nbsp;' + derived('proposalField', path, sid, kind, 'hole', how='raw') + '</span>'),
+                 ('why', derived('proposalField', path, sid, kind, 'why', how='raw'))]
+        foot = f'named by <span class="nonum">{esc(fam)}</span>: not a claim any finite check decides, so none is written'
+    dl = ''.join(f'<dt>{k}</dt><dd>{v}</dd>' for k, v in rows)
+    return f'<div class="claim tcard"><span class="eyebrow">{esc(where)}</span><dl>{dl}</dl><div class="why">{foot}</div></div>'
+
+
+def translations():
+    return '<div class="tgrid" data-measured>' + ''.join(translation_card(*t) for t in TRANSLATIONS) + '</div>'
+
+
+FAILS = {'anchored': 'a number it states is not printed in the sentence', 'printedBack': 'it does not read back with the sentence’s relation',
+         'planted': 'it does not move exactly when the sentence’s bar is moved', 'sensitivity': 'its word does not move as the arithmetic says when its bar moves',
+         'paraphrase': 'it moves when the sentence is reworded'}
+
+
+def fails_words(path, sid, kind):
+    from web.record import proposal
+    return '; '.join(FAILS[f] for f in proposal(path, sid, kind)['fails'])
+
+
+def caught():
+    path, sid, kind = CAUGHT
+    return (f'<div class="claim tcard caught" data-measured><span class="eyebrow">the one wrong claim, caught</span><dl>'
+            f'<dt>the sentence</dt><dd>{derived("sentence", path, sid, how="raw", standing="computed")}</dd>'
+            f'<dt><span class="nonum">{esc(NAMES[kind.split(":", 1)[1]])}</span> wrote</dt><dd><code>{derived("proposalField", path, sid, kind, "statement", how="raw")}</code></dd>'
+            f'<dt>printed back</dt><dd>{derived("means", path, sid, kind, how="raw")}</dd>'
+            f'<dt>the checks</dt><dd>refused: {fails_words(path, sid, kind)}</dd>'
+            f'<dt>cert-machine</dt><dd>{word_chip(path, sid, kind)}</dd></dl>'
+            f'<div class="why">The sentence writes its bound right to left. The model read it the wrong way round; the checks refused the claim '
+            f'before anything decided it, and cert-machine, given it anyway, refutes it.</div></div>')
+
+
+def model_rows(path=PROSE):
+    from web.record import first_runs
+    per = load(path)['summary']['perKind']
+    rows = [(NAMES.get(k.split(':', 1)[1], k), per[k]['compiled'], per[k]['passed']) for k in first_runs(path)]
+    return sorted(rows, key=lambda r: (-r[2], r[0]))
+
+
+def fig_models(narrow=False):
+    rows = model_rows()
+    W = 390 if narrow else 600
+    L = 0 if narrow else 150
+    bh, gap, top = (12, 30, 24) if narrow else (16, 10, 26)
+    H = top + len(rows) * (bh + gap) + 34
+    n = load(PROSE)['summary']['sentences']
+    scale = (W - L - 40) / n
+    hid = 'hm-n' if narrow else 'hm-w'
+    out = [f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="for each AI model, how many of the sentences it stated as a claim, and how many of those passed every check">',
+           HATCH.format(id=hid), f'<text x="{L}" y="12" font-size="11">of {n} sentences: stated as a claim, and passed every check</text>']
+    for i, (name, stated, passed) in enumerate(rows):
+        y = top + i * (bh + gap) + (12 if narrow else 0)
+        if narrow:
+            out.append(f'<text x="0" y="{y - 4}" font-size="11">{esc(name)}</text>')
+        else:
+            out.append(f'<text x="{L - 12}" y="{y + bh / 2 + 4}" text-anchor="end" font-size="11.5">{esc(name)}</text>')
+        out.append(f'<rect x="{L}" y="{y}" width="{stated * scale:.1f}" height="{bh}" fill="url(#{hid})" stroke="{INK5}"/>'
+                   f'<rect x="{L}" y="{y}" width="{passed * scale:.1f}" height="{bh}" fill="{INK}"/>'
+                   f'<text x="{L + stated * scale + 8:.1f}" y="{y + bh / 2 + 4}" font-size="11" class="hi">{passed}</text>')
+    ly = H - 12
+    out.append(f'<rect x="{L}" y="{ly - 10}" width="22" height="12" fill="{INK}"/><text x="{L + 30}" y="{ly}" font-size="11">passed every check</text>'
+               f'<rect x="{L + 170}" y="{ly - 10}" width="22" height="12" fill="url(#{hid})" stroke="{INK5}"/><text x="{L + 200}" y="{ly}" font-size="11">stated, then refused</text>')
+    out.append('</svg>')
+    return '\n'.join(out)
+
+
 # ------------------------------------------------------------------------------------------------- the secondary material
 
 def roadmap_table():
@@ -209,16 +280,18 @@ def slots():
         'cal_agree': val(CAL, '/agree'), 'cal_of': val(CAL, '/of'),
         'rec_caught': val(REC, '/caught'), 'rec_plants': val(REC, '/plants'),
         'd64': derived('powerDigits', X64, '/claims/[id=cf_above_10]/statement'),
-        'bb5': val(BB5, '/counterexample'),
         'cov_ref': val(COV, '/refused'), 'cov_n': val(COV, '/sentences'),
         'fig_holes': figure(fig_holes, 'The reasons a sentence could not be stated, across the three collections. Most need the bytes the claim is about, or print no quantity at all.'),
-        'pr_m': val(PROSE, MK + '/compiled'), 'pr_n': val(PROSE, '/summary/sentences'), 'pr_mf': val(PROSE, MK + '/faithful'),
-        'pa_moved': val(PROSE, '/summary/paraphrase/model:claude-opus-5-5/moved', count=True),
-        'pr_valid': derived('outcomes', PROSE, 'validated'),
-        'fig_checks': figure(fig_checks, 'A model, given each sentence alone, wrote the claim. Each bar is how many of its claims passed one more check. None of the checks is a model.'),
+        'pr_n': val(PROSE, '/summary/sentences'), 'pr_valid': derived('outcomes', PROSE, 'validated'),
         'x_dec': derived('length', XST, '/decidedYs'), 'x_cert': derived('checkWords', XXY, 'CERTIFIED'),
         'x_lo': derived('barOf', X64, '/claims/[id=cf_above_10]/statement'), 'x_hi': derived('barOf', X64, '/claims/[id=cf_below_9]/statement'),
         'fig_trap': figure(fig_trap, 'The root of x<sup>x</sup> = 64, trapped between fractions. Each step is one comparison of whole numbers on each side, decided exactly, with no logarithm evaluated.'),
         'edge_claim': val(RRUN, f'/rows/[id={EDGE}]/claim', 'raw', standing='computed'), 'edge_word': chip(RRUN, EDGE),
         'roadmap': roadmap_table(),
+        'translations': translations(), 'caught': caught(),
+        'm_fam': derived('families', PROSE), 'm_stated': derived('modelClaims', PROSE, 'stated'), 'm_passed': derived('modelClaims', PROSE, 'passed'),
+        'm_cert': derived('modelClaims', PROSE, 'passedCertified'), 'm_caught': derived('modelClaims', PROSE, 'refusedRefuted'),
+        'm_same': val(PROSE, '/summary/stability/gemini-4-argon/same'), 'm_runs': val(PROSE, '/summary/stability/gemini-4-argon/runs'),
+        'r_fam': derived('families', REG), 'r_passed': derived('modelClaims', REG, 'passed'), 'r_valid': derived('outcomes', REG, 'validated'),
+        'fig_models': figure(fig_models, derived('families', PROSE) + ' AI models, each given the same rules and the same sentences one at a time, wrote the claims. Each bar is how many it stated; the solid part, how many passed every check. None of the checks is a model.'),
     }

@@ -162,6 +162,43 @@ def power_digits(statement):
     return int(p * math.log10(p)) + 1
 
 
+def proposal(path, sid, kind):
+    """one proposal of one sentence in a prose record (records/prose-*.json), by the proposer's kind"""
+    e = [x for x in load(path)['sentences'] if x['id'] == sid]
+    ps = [p for p in (e[0]['proposals'] if len(e) == 1 else []) if p['kind'] == kind]
+    if len(ps) != 1:
+        raise KeyError(f'{path}: {len(ps)} proposals of {kind} for {sid}')
+    return ps[0]
+
+
+def means(statement):
+    """a statement in plain words, by the language's own printer (claimbox/lang.py)"""
+    import sys
+    if REPO not in sys.path:
+        sys.path.insert(0, REPO)
+    from claimbox import lang
+    return lang.statement_means(lang.statement(statement, 0))
+
+
+BASE = re.compile(r'^model:(.+?)(?:\.r\d+|\.guide)?$')   # a family's first run; its repeats (.r2, .r3) and its guide variant apart
+
+
+def families(path):
+    return sorted({BASE.match(k).group(1) for k in load(path)['summary']['perKind'] if BASE.match(k)})
+
+
+def first_runs(path):
+    return [k for k in load(path)['summary']['perKind'] if k.startswith('model:') and not re.search(r'\.(r\d+|guide)$', k)]
+
+
+def wrote_same(path, sid, kind):
+    """how many families, in their first run, wrote this proposal's very claim (the same object) and passed every check"""
+    ref = proposal(path, sid, kind)
+    e = [x for x in load(path)['sentences'] if x['id'] == sid][0]
+    return sum(1 for p in e['proposals'] if p['kind'] in first_runs(path) and 'object' in p and not p.get('fails')
+               and p['decision'] == ref['decision'])
+
+
 DERIVED = {
     'tally': lambda path, key: tally(path)[key],
     'word': lambda path, rid: word(path, rid),
@@ -175,6 +212,17 @@ DERIVED = {
     'powerDigits': lambda path, ptr: power_digits(at(path, ptr)),
     'barOf': lambda path, ptr: at(path, ptr).split()[-1],
     'checkWords': lambda path, w: sum(1 for c in load(path)['claims'] if (c.get('readings') or [{}])[0].get('word') == w),
+    'proposalField': lambda path, sid, kind, field: (proposal(path, sid, kind).get('refused') or {}).get(field) if field in ('why', 'hole')
+                     else proposal(path, sid, kind)[field],
+    'means': lambda path, sid, kind: means(proposal(path, sid, kind)['statement']),
+    'sentence': lambda path, sid: [x for x in load(path)['sentences'] if x['id'] == sid][0]['sentence'],
+    'outcomeOf': lambda path, sid: [x for x in load(path)['sentences'] if x['id'] == sid][0]['outcome'].split(';')[0],
+    'families': lambda path: len(families(path)),
+    'wroteSame': lambda path, sid, kind: wrote_same(path, sid, kind),
+    'modelClaims': lambda path, which: sum(1 for e in load(path)['sentences'] for p in e['proposals'] if p['kind'] in first_runs(path) and 'object' in p
+                                           and (which == 'stated' or (which == 'passed' and not p.get('fails'))
+                                                or (which == 'passedCertified' and not p.get('fails') and p.get('word') == 'CERTIFIED')
+                                                or (which == 'refusedRefuted' and p.get('fails') and p.get('word') == 'REFUTED'))),
 }
 
 
