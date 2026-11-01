@@ -155,6 +155,14 @@ battery now takes ~12 minutes (the register re-run with cert-machine's word on ~
 136/136. The page moved (register numbers): REPUBLISHED on the operator's word, cert-machine 5b5eefcb from claimbox 397f8b1
 (61,319 bytes, sha256 955f678a…4226068, checked here with curl).
 
+**THE PAGE SHOWS THE TRANSLATOR (2026-11-01, the operator: "the page do not show any translate use case. A prose/ai inserting
+claims based on the rules").** web/pages/index.{html,py}: "See it translate" (six real translations from the prose records:
+sentence, the claim a model wrote, the claim printed back by lang.statement_means, cert-machine's word, how many models wrote the
+same passing claim), "AI models write it" (the thirteen-model panel; 560 of 560 passing claims CERTIFIED; the one wrong claim
+caught), "Write a claim" (a .claim file, GUIDE.md); the lede, a third use, a new stat. record.py gains the derived proposal fields,
+means, families, modelClaims, wroteSame. Built at claimbox f600cf7 (87,170 bytes, sha256 c31ad62e…7fadd); NOT LIVE until the
+operator approves the republish in cert-machine-cb's chat.
+
 **NEXT, in order.**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
