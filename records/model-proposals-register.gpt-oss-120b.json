@@ -1,0 +1,1685 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "openai/gpt-oss-120b",
+ "provider": "prime",
+ "family": "gpt-oss-120b",
+ "effort": "high",
+ "cap": 3.0,
+ "guide": null,
+ "spent": 0.0106,
+ "calls": 99,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.013,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 0.049
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53814c95b05a4e1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 918,
+    "output": 1780,
+    "reasoning": 1741
+   },
+   "cost": 9.9e-05,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C₁ is not a term built from the given library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C₁ is not a term built from the given library names"
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537dc888bffb7e7-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53814eefae089d1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.8,
+   "usage": {
+    "input": 925,
+    "output": 2296,
+    "reasoning": 2252
+   },
+   "cost": 0.000125,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the term 'f' is not built from the provided library name\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the term 'f' is not built from the provided library name"
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537de605eb2d995-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381538ee81f229-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.7,
+   "usage": {
+    "input": 916,
+    "output": 4893,
+    "reasoning": 4822
+   },
+   "cost": 0.000252,
+   "raw": "{\n  \"statement\": \"for every i in 0 < i < 30001 : firs_ours_2026(i) ≥ 0\",\n  \"hole\": \"\",\n  \"why\": \"derived from the leading claim that f is non‑negative on 30000 sampled points\"\n}",
+   "answer": {
+    "statement": "for every i in 0 < i < 30001 : firs_ours_2026(i) ≥ 0",
+    "hole": "",
+    "why": "derived from the leading claim that f is non‑negative on 30000 sampled points"
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537de605c0c1aa6-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-autocorr-ours_2026 planted",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382d5e5bd8f264-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.0,
+   "usage": {
+    "input": 916,
+    "output": 3065,
+    "reasoning": 3023
+   },
+   "cost": 0.000162,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The claim involves C₁, which is not expressed by any provided library name\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim involves C₁, which is not expressed by any provided library name"
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381502b9d777c6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 921,
+    "output": 1916,
+    "reasoning": 1875
+   },
+   "cost": 0.000106,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The term C₁ (and f) are not defined as library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The term C₁ (and f) are not defined as library names"
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537de605be3c8ae-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53812b5aa290301-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.4,
+   "usage": {
+    "input": 976,
+    "output": 2449,
+    "reasoning": 2374
+   },
+   "cost": 0.000133,
+   "raw": "{\n  \"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\",\n  \"hole\": \"\",\n  \"why\": \"Parsed as a feasible solution claim with a numeric score.\"\n}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "Parsed as a feasible solution claim with a numeric score."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d52a1e0e16e0-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53812ff49e6ce20-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.1,
+   "usage": {
+    "input": 973,
+    "output": 4735,
+    "reasoning": 4676
+   },
+   "cost": 0.000245,
+   "raw": "{\n  \"statement\": \"Circles in a Rectangle (n = 21) = 2.3658323759\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts the total radius sum equals the given number.\"\n}",
+   "answer": {
+    "statement": "Circles in a Rectangle (n = 21) = 2.3658323759",
+    "hole": "",
+    "why": "The sentence asserts the total radius sum equals the given number."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d701bf2601d5-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538149fb9959d59-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.6,
+   "usage": {
+    "input": 916,
+    "output": 1422,
+    "reasoning": 1353
+   },
+   "cost": 8.2e-05,
+   "raw": "{\n  \"statement\": \"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\",\n  \"hole\": \"\",\n  \"why\": \"The sentence gives the platform's envelope score for the construction.\"\n}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence gives the platform's envelope score for the construction."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537dc887b47df6c-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53814a08b9c9a7f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.5,
+   "usage": {
+    "input": 913,
+    "output": 1460,
+    "reasoning": 1412
+   },
+   "cost": 8.3e-05,
+   "raw": "{\"statement\":\"edge_ours_2026 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537dc887bf8f233-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381540cf5ca4de-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 39.1,
+   "usage": {
+    "input": 916,
+    "output": 2462,
+    "reasoning": 2411
+   },
+   "cost": 0.000133,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the claim involves max_{|z|=1}|g(z)|, a quantity not expressible using the provided library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim involves max_{|z|=1}|g(z)|, a quantity not expressible using the provided library names"
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537e037ed7b01ba-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53815d36a69346c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.6,
+   "usage": {
+    "input": 913,
+    "output": 2067,
+    "reasoning": 2003
+   },
+   "cost": 0.000113,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The claim involves the quantity max_{|z|=1}|g(z)|/√71, which cannot be expressed using the given library names and allowed term constructions.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim involves the quantity max_{|z|=1}|g(z)|/√71, which cannot be expressed using the given library names and allowed term constructions."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537e037f85b02ee-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381341c98f2507-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 963,
+    "output": 1675,
+    "reasoning": 1612
+   },
+   "cost": 9.5e-05,
+   "raw": "{\"statement\":\"alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\",\"hole\":\"\",\"why\":\"direct translation of the sentence\"}",
+   "answer": {
+    "statement": "alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "direct translation of the sentence"
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d701bf1b58e3-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53813797f1fc5f6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.4,
+   "usage": {
+    "input": 960,
+    "output": 2276,
+    "reasoning": 2190
+   },
+   "cost": 0.000124,
+   "raw": "{\n  \"statement\": \"heil_ours_2026 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\",\n  \"hole\": \"\",\n  \"why\": \"The sentence reports the min triangle area / convex hull area ratio for a 14-point solution\"\n}",
+   "answer": {
+    "statement": "heil_ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence reports the min triangle area / convex hull area ratio for a 14-point solution"
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d701b9b6f717-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816357ab200f2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.1,
+   "usage": {
+    "input": 917,
+    "output": 3204,
+    "reasoning": 3132
+   },
+   "cost": 0.000169,
+   "raw": "{\n  \"statement\": \"alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\",\n  \"hole\": \"\",\n  \"why\": \"the sentence states the score equals the outer side length 3.9419123\"\n}",
+   "answer": {
+    "statement": "alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "the sentence states the score equals the outer side length 3.9419123"
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537e037eb9ef90f-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538163b5d896223-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 914,
+    "output": 1920,
+    "reasoning": 1835
+   },
+   "cost": 0.000106,
+   "raw": "{\n  \"statement\": \"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a feasible solution to the hexagon‑packing problem with a score equal to the outer side length 3.9416523\"\n}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence claims a feasible solution to the hexagon‑packing problem with a score equal to the outer side length 3.9416523"
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381395de24f223-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.8,
+   "usage": {
+    "input": 975,
+    "output": 3511,
+    "reasoning": 3438
+   },
+   "cost": 0.000185,
+   "raw": "{\"statement\":\"alphaevolve_2025.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\",\"hole\":\"\",\"why\":\"The sentence specifies the squared distance ratio for a 16‑point configuration.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence specifies the squared distance ratio for a 16‑point configuration."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d8d96c9d9a86-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53813f8de4a2550-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 972,
+    "output": 1579,
+    "reasoning": 1500
+   },
+   "cost": 9e-05,
+   "raw": "{\"statement\":\"ours_2026.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\",\"hole\":\"\",\"why\":\"The sentence asserts the squared max/min distance ratio of a 16‑point configuration is 12.889230.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "The sentence asserts the squared max/min distance ratio of a 16‑point configuration is 12.889230."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d8d96c884a13-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53814279ebe0cec-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.4,
+   "usage": {
+    "input": 921,
+    "output": 1594,
+    "reasoning": 1540
+   },
+   "cost": 9e-05,
+   "raw": "{\"statement\": \"erdo_alphaevolve_2025 ≤ 0.380924\", \"hole\": \"\", \"why\": \"The sentence states an upper bound of 0.380924 for the construction.\"}",
+   "answer": {
+    "statement": "erdo_alphaevolve_2025 ≤ 0.380924",
+    "hole": "",
+    "why": "The sentence states an upper bound of 0.380924 for the construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537dab0b810ffb4-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025 planted",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382d5e5945a46c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.1,
+   "usage": {
+    "input": 921,
+    "output": 1771,
+    "reasoning": 1735
+   },
+   "cost": 9.9e-05,
+   "raw": "{\"statement\":\"\", \"hole\":\"ambiguous\", \"why\":\"the sentence gives an upper bound without specifying the quantity it bounds\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the sentence gives an upper bound without specifying the quantity it bounds"
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538140c3f1ac6ce-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.2,
+   "usage": {
+    "input": 921,
+    "output": 2228,
+    "reasoning": 2190
+   },
+   "cost": 0.000121,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the sentence gives an upper bound without defining the quantity being bounded\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the sentence gives an upper bound without defining the quantity being bounded"
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d8d97c2bcd4e-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538145829ac4a71-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 920,
+    "output": 1945,
+    "reasoning": 1896
+   },
+   "cost": 0.000107,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"The sentence gives an informal upper bound without a formal term or relation in the required claim language\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence gives an informal upper bound without a formal term or relation in the required claim language"
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537dab0bcdaa42d-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381455deba37a6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.8,
+   "usage": {
+    "input": 923,
+    "output": 1994,
+    "reasoning": 1945
+   },
+   "cost": 0.00011,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence describes a step function and mentions an upper bound, but it does not match any of the permitted claim formats\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence describes a step function and mentions an upper bound, but it does not match any of the permitted claim formats"
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537dab0d921f1eb-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a537f85eef96a4c2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 912,
+    "output": 1369,
+    "reasoning": 1333
+   },
+   "cost": 0.000598,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"Area(E) is not defined by any library name\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "Area(E) is not defined by any library name"
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538126d498bf16f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 886,
+    "output": 1011,
+    "reasoning": 959
+   },
+   "cost": 6.1e-05,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"The term K(11) uses a name (K) that is not defined among the provided library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The term K(11) uses a name (K) that is not defined among the provided library names"
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593 (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d52a0d682507-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538126d4d851a91-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.3,
+   "usage": {
+    "input": 892,
+    "output": 1201,
+    "reasoning": 1151
+   },
+   "cost": 7e-05,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The term K(11) is not expressed by any of the provided library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The term K(11) is not expressed by any of the provided library names"
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner (superseded)",
+   "error": "429: {\"error\":{\"message\":\"Hosted model capacity is unavailable right now. Try again shortly.\",\"type\":\"rate_limit_exceeded\",\"param\":null,\"code\":\"rate_limited\"},\"request_id\":\"a537d52a2ec22144-GRU\",\"inference",
+   "cost": 0.0
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816ff9a05d249-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.4,
+   "usage": {
+    "input": 917,
+    "output": 2397,
+    "reasoning": 2354
+   },
+   "cost": 0.000129,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the ring term 0.5*Z cannot be expressed using the given library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the ring term 0.5*Z cannot be expressed using the given library names"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53817157ec10322-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 912,
+    "output": 1168,
+    "reasoning": 1079
+   },
+   "cost": 6.9e-05,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\",\n  \"hole\": \"\",\n  \"why\": \"the sentence asserts that the named decomposition in the notebook is a rank-45 decomposition of <2,4,7> over Z\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "the sentence asserts that the named decomposition in the notebook is a rank-45 decomposition of <2,4,7> over Z"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538173e3ab2f179-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 912,
+    "output": 2199,
+    "reasoning": 2100
+   },
+   "cost": 0.00012,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts that the notebook's decomposition named \\\"Rank-51 decomposition of <2,4,8> over Z\\\" is a rank‑51 decomposition of that tensor over Z\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the notebook's decomposition named \"Rank-51 decomposition of <2,4,8> over Z\" is a rank‑51 decomposition of that tensor over Z"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538174d388d9ddf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.3,
+   "usage": {
+    "input": 912,
+    "output": 1321,
+    "reasoning": 1239
+   },
+   "cost": 7.7e-05,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts that the named decomposition is a rank‑47 decomposition of the given tensor over Z.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the named decomposition is a rank‑47 decomposition of the given tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538177adf0cd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.8,
+   "usage": {
+    "input": 912,
+    "output": 1361,
+    "reasoning": 1282
+   },
+   "cost": 7.9e-05,
+   "raw": "{\"statement\":\"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\",\"hole\":\"\",\"why\":\"the sentence asserts that the named decomposition in the notebook is a rank‑23 decomposition of <3,3,3> over Z\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "the sentence asserts that the named decomposition in the notebook is a rank‑23 decomposition of <3,3,3> over Z"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53817868977b7f1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.7,
+   "usage": {
+    "input": 917,
+    "output": 2224,
+    "reasoning": 2120
+   },
+   "cost": 0.000121,
+   "raw": "{\n  \"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts that the notebook’s named decomposition is a rank‑54 decomposition of that tensor over the specified ring.\"\n}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence asserts that the notebook’s named decomposition is a rank‑54 decomposition of that tensor over the specified ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53817c95d1ce967-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.9,
+   "usage": {
+    "input": 916,
+    "output": 2699,
+    "reasoning": 2654
+   },
+   "cost": 0.000144,
+   "raw": "{\"statement\":\"\", \"hole\":\"decider\", \"why\":\"the claim involves the ring 0.5*C, which cannot be expressed using the given library name n\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim involves the ring 0.5*C, which cannot be expressed using the given library name n"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53817ea2bb680eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.9,
+   "usage": {
+    "input": 912,
+    "output": 606,
+    "reasoning": 552
+   },
+   "cost": 4.2e-05,
+   "raw": "{\"statement\":\"n[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538184768ed013c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.1,
+   "usage": {
+    "input": 912,
+    "output": 1548,
+    "reasoning": 1461
+   },
+   "cost": 8.8e-05,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\",\n  \"hole\": \"\",\n  \"why\": \"the sentence asserts that the notebook contains a rank-68 decomposition of the tensor <3,5,6> over Z\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "the sentence asserts that the notebook contains a rank-68 decomposition of the tensor <3,5,6> over Z"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538187e0cb64b9c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.0,
+   "usage": {
+    "input": 912,
+    "output": 1200,
+    "reasoning": 1115
+   },
+   "cost": 7.1e-05,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\",\n  \"hole\": \"\",\n  \"why\": \"the sentence claims the named entry is a rank‑80 decomposition of <3,5,7> over Z\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "the sentence claims the named entry is a rank‑80 decomposition of <3,5,7> over Z"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538193f9b775c96-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.7,
+   "usage": {
+    "input": 912,
+    "output": 1344,
+    "reasoning": 1266
+   },
+   "cost": 7.8e-05,
+   "raw": "{\"statement\":\"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the notebook entry is a rank‑61 decomposition of the tensor <4,4,5> over Z\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook entry is a rank‑61 decomposition of the tensor <4,4,5> over Z"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53819820e3a3b78-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.0,
+   "usage": {
+    "input": 912,
+    "output": 2476,
+    "reasoning": 2390
+   },
+   "cost": 0.000133,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts the notebook’s decomposition is a rank‑85 decomposition of <4,4,7> over Z.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence asserts the notebook’s decomposition is a rank‑85 decomposition of <4,4,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53818a58845f1a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.3,
+   "usage": {
+    "input": 916,
+    "output": 3293,
+    "reasoning": 3204
+   },
+   "cost": 0.000173,
+   "raw": "{\"statement\":\"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\",\"hole\":\"\",\"why\":\"the sentence claims that the notebook's decomposition is a rank-96 decomposition of <4,4,8> over 0.5*C\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "the sentence claims that the notebook's decomposition is a rank-96 decomposition of <4,4,8> over 0.5*C"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538198249d300e9-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 912,
+    "output": 1504,
+    "reasoning": 1429
+   },
+   "cost": 8.6e-05,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts a specific rank‑90 decomposition in the notebook.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts a specific rank‑90 decomposition in the notebook."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53819c5fbf41cf5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 70.4,
+   "usage": {
+    "input": 912,
+    "output": 1196,
+    "reasoning": 1117
+   },
+   "cost": 7e-05,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts that the named decomposition in the notebook has rank 93 over Z.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the named decomposition in the notebook has rank 93 over Z."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381a053c876ead-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 67.3,
+   "usage": {
+    "input": 933,
+    "output": 2659,
+    "reasoning": 2608
+   },
+   "cost": 0.000142,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the rank is described by the array's shape, a quantity not expressible with the provided library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is described by the array's shape, a quantity not expressible with the provided library names"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381b7e1f240191-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 416.3,
+   "usage": {
+    "input": 933,
+    "output": 2404,
+    "reasoning": 2353
+   },
+   "cost": 0.00013,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the claim references the rank via the array's shape, which cannot be expressed using the given library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim references the rank via the array's shape, which cannot be expressed using the given library names"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53825a9ad95f1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.2,
+   "usage": {
+    "input": 933,
+    "output": 2181,
+    "reasoning": 2131
+   },
+   "cost": 0.000119,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the rank is described implicitly by the array's shape, which is not a numeric constant expressible by the given library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is described implicitly by the array's shape, which is not a numeric constant expressible by the given library names"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381baa2fb252c4-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 443.1,
+   "usage": {
+    "input": 933,
+    "output": 3941,
+    "reasoning": 3887
+   },
+   "cost": 0.000205,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"the claim references the rank only as “the rank the array’s shape states”, which is not a defined numeric term\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the claim references the rank only as “the rank the array’s shape states”, which is not a defined numeric term"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538267b8d63b92f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 59.4,
+   "usage": {
+    "input": 933,
+    "output": 7394,
+    "reasoning": 7340
+   },
+   "cost": 0.000374,
+   "raw": "{\"statement\":\"\", \"hole\":\"decider\", \"why\":\"the claim refers to the rank given by the array's shape, but no numeric value or term for that rank can be expressed using the provided library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim refers to the rank given by the array's shape, but no numeric value or term for that rank can be expressed using the provided library names"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538268a88b9031b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.5,
+   "usage": {
+    "input": 933,
+    "output": 2120,
+    "reasoning": 2074
+   },
+   "cost": 0.000116,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"quantity\",\n  \"why\": \"The claim references a rank but does not provide an explicit numeric value in the sentence\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The claim references a rank but does not provide an explicit numeric value in the sentence"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538270b184a13ac-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.1,
+   "usage": {
+    "input": 933,
+    "output": 2478,
+    "reasoning": 2436
+   },
+   "cost": 0.000134,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the claimed rank is not expressed by any available library name\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claimed rank is not expressed by any available library name"
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538278f2a1aff8c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.3,
+   "usage": {
+    "input": 933,
+    "output": 1529,
+    "reasoning": 1474
+   },
+   "cost": 8.7e-05,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"quantity\",\n  \"why\": \"The sentence asserts a rank, but does not provide an explicit numeric value, so there is no concrete number to form a claim.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence asserts a rank, but does not provide an explicit numeric value, so there is no concrete number to form a claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53827bcaaacc27c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.4,
+   "usage": {
+    "input": 938,
+    "output": 2766,
+    "reasoning": 2698
+   },
+   "cost": 0.000148,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"the claim refers to the rank (determined by the array's shape) and the ring (named by the paper) without specifying them, which cannot be expressed using the given library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the claim refers to the rank (determined by the array's shape) and the ring (named by the paper) without specifying them, which cannot be expressed using the given library names"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53827eedaea0116-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.7,
+   "usage": {
+    "input": 938,
+    "output": 2831,
+    "reasoning": 2786
+   },
+   "cost": 0.000151,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the rank and the ring are not expressible with the given library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank and the ring are not expressible with the given library names"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53828a25b9ef243-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.0,
+   "usage": {
+    "input": 938,
+    "output": 2266,
+    "reasoning": 2204
+   },
+   "cost": 0.000123,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"The sentence mentions the rank determined by the array's shape and the ring named by the paper, but does not provide concrete numeric or library identifiers for those terms.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence mentions the rank determined by the array's shape and the ring named by the paper, but does not provide concrete numeric or library identifiers for those terms."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53828e73e581a93-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.9,
+   "usage": {
+    "input": 938,
+    "output": 1984,
+    "reasoning": 1938
+   },
+   "cost": 0.000109,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the claimed rank and ring are described in vague terms that are not defined as exact numeric or term expressions\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the claimed rank and ring are described in vague terms that are not defined as exact numeric or term expressions"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382a3e6fc33472-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 41.5,
+   "usage": {
+    "input": 938,
+    "output": 3687,
+    "reasoning": 3633
+   },
+   "cost": 0.000193,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the claim references the rank \\\"the array's shape states\\\" and the ring \\\"the paper names\\\" without defining them, making the terms ambiguous\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the claim references the rank \"the array's shape states\" and the ring \"the paper names\" without defining them, making the terms ambiguous"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382aa32c3db707-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.7,
+   "usage": {
+    "input": 938,
+    "output": 2217,
+    "reasoning": 2169
+   },
+   "cost": 0.000121,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"the rank and ring are referenced without being defined or given as explicit numbers or library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the rank and ring are referenced without being defined or given as explicit numbers or library names"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53828a03c958060-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 67.9,
+   "usage": {
+    "input": 938,
+    "output": 7354,
+    "reasoning": 7320
+   },
+   "cost": 0.000373,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"the sentence refers to a rank but does not provide an explicit numeric value\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "the sentence refers to a rank but does not provide an explicit numeric value"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538294a7a871b12-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 39.0,
+   "usage": {
+    "input": 938,
+    "output": 3497,
+    "reasoning": 3443
+   },
+   "cost": 0.000184,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the rank is described indirectly (by the array's shape) and cannot be expressed using any of the provided library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is described indirectly (by the array's shape) and cannot be expressed using any of the provided library names"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382a487c33f198-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.5,
+   "usage": {
+    "input": 938,
+    "output": 1805,
+    "reasoning": 1749
+   },
+   "cost": 0.000101,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The claim mentions a rank given by the array's shape, which cannot be expressed as a concrete term using the provided library names.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim mentions a rank given by the array's shape, which cannot be expressed as a concrete term using the provided library names."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382b41ce95f1d1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 50.2,
+   "usage": {
+    "input": 938,
+    "output": 2822,
+    "reasoning": 2759
+   },
+   "cost": 0.00015,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"the rank and the ring are described only in vague prose ('the array's shape' and 'the ring the paper names'), not as defined numeric or named terms\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the rank and the ring are described only in vague prose ('the array's shape' and 'the ring the paper names'), not as defined numeric or named terms"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382ba338cad48d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.6,
+   "usage": {
+    "input": 938,
+    "output": 3420,
+    "reasoning": 3371
+   },
+   "cost": 0.00018,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the claim mentions a rank and a ring that are not given as explicit numbers or expressible via the available library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim mentions a rank and a ring that are not given as explicit numbers or expressible via the available library names"
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382b507ea6d4c0-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.2,
+   "usage": {
+    "input": 938,
+    "output": 2010,
+    "reasoning": 1966
+   },
+   "cost": 0.000111,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the claim refers to a rank and a ring that are not concretely defined in the sentence\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the claim refers to a rank and a ring that are not concretely defined in the sentence"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382cb00a69f1ea-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.0,
+   "usage": {
+    "input": 920,
+    "output": 2651,
+    "reasoning": 2576
+   },
+   "cost": 0.000142,
+   "raw": "{\n  \"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts that the solution is feasible and provides its platform score\"\n}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence asserts that the solution is feasible and provides its platform score"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382c93781dfbd2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 918,
+    "output": 859,
+    "reasoning": 799
+   },
+   "cost": 5.4e-05,
+   "raw": "{\"statement\":\"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\",\"hole\":\"\",\"why\":\"the sentence claims a feasible solution with the given score\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "the sentence claims a feasible solution with the given score"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382c0abcfa9a7f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.0,
+   "usage": {
+    "input": 920,
+    "output": 1205,
+    "reasoning": 1138
+   },
+   "cost": 7.1e-05,
+   "raw": "{\n  \"statement\": \"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\",\n  \"hole\": \"\",\n  \"why\": \"extracted from the given sentence\"\n}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "extracted from the given sentence"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382c74dd52031e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 920,
+    "output": 932,
+    "reasoning": 871
+   },
+   "cost": 5.8e-05,
+   "raw": "{\"statement\":\"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\",\"hole\":\"\",\"why\":\"the sentence directly asserts feasibility and provides the exact score\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "the sentence directly asserts feasibility and provides the exact score"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382c7bee7ff1a1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 918,
+    "output": 1412,
+    "reasoning": 1341
+   },
+   "cost": 8.1e-05,
+   "raw": "{\"statement\":\"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\",\"hole\":\"\",\"why\":\"The sentence states that the object is a feasible solution of the given problem and its score is the given number.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence states that the object is a feasible solution of the given problem and its score is the given number."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382cdefa2e28b5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 922,
+    "output": 1357,
+    "reasoning": 1292
+   },
+   "cost": 7.8e-05,
+   "raw": "{\"statement\":\"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\",\"hole\":\"\",\"why\":\"The sentence claims the data is a feasible solution with that score\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence claims the data is a feasible solution with that score"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382cb6b9ecf1a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 915,
+    "output": 1090,
+    "reasoning": 1043
+   },
+   "cost": 6.5e-05,
+   "raw": "{\"statement\":\"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382d075e8f887b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.2,
+   "usage": {
+    "input": 922,
+    "output": 1631,
+    "reasoning": 1553
+   },
+   "cost": 9.2e-05,
+   "raw": "{\n  \"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\",\n  \"hole\": \"\",\n  \"why\": \"the sentence explicitly claims the object is a feasible solution and gives its exact score\"\n}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "the sentence explicitly claims the object is a feasible solution and gives its exact score"
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5382d3f196df17f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 899,
+    "output": 976,
+    "reasoning": 950
+   },
+   "cost": 6e-05,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"the sentence contains no numerical claim\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "the sentence contains no numerical claim"
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816739f8bf262-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 905,
+    "output": 1343,
+    "reasoning": 1299
+   },
+   "cost": 7.8e-05,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C3b is not a known library term and cannot be expressed using the given library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3b is not a known library term and cannot be expressed using the given library names"
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a5381693e9892bf9-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 909,
+    "output": 509,
+    "reasoning": 464
+   },
+   "cost": 3.7e-05,
+   "raw": "{\"statement\":\"\", \"hole\":\"decider\", \"why\":\"The term C3c is not a library name, so the claim cannot be expressed with the given library\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The term C3c is not a library name, so the claim cannot be expressed with the given library"
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a538169ba8544931-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 909,
+    "output": 1131,
+    "reasoning": 1095
+   },
+   "cost": 6.7e-05,
+   "raw": "{\"statement\":\"\", \"hole\":\"ambiguous\", \"why\":\"Term C3c is not defined in the provided library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "Term C3c is not defined in the provided library names"
+   }
+  },
+  {
+   "tag": "optconst-3c-95 (superseded)",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a537f85efaae5b62-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 909,
+    "output": 688,
+    "reasoning": 653
+   },
+   "cost": 0.000345,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C3c is not a defined library term\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3c is not a defined library term"
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a537f85efdfbaa89-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.1,
+   "usage": {
+    "input": 908,
+    "output": 1738,
+    "reasoning": 1702
+   },
+   "cost": 0.000734,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C71 is not expressible by any library name\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C71 is not expressible by any library name"
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816fa0c50011b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 906,
+    "output": 898,
+    "reasoning": 847
+   },
+   "cost": 5.6e-05,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The sentence refers to det J, a quantity that cannot be expressed using any of the provided library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence refers to det J, a quantity that cannot be expressed using any of the provided library names"
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816bdfb1ae1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.5,
+   "usage": {
+    "input": 910,
+    "output": 2162,
+    "reasoning": 2110
+   },
+   "cost": 0.000118,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the claim involves the Jacobian determinant and injectivity, which are not expressible with the given library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim involves the Jacobian determinant and injectivity, which are not expressible with the given library names"
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816c79f90b23d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.1,
+   "usage": {
+    "input": 910,
+    "output": 1740,
+    "reasoning": 1687
+   },
+   "cost": 9.7e-05,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the claim mentions the determinant of a Jacobian and non-injectivity, which are not expressible with any of the provided library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim mentions the determinant of a Jacobian and non-injectivity, which are not expressible with any of the provided library names"
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "openai/gpt-oss-120b",
+   "requestId": "a53816a59a7eb6a9-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 907,
+    "output": 1122,
+    "reasoning": 1082
+   },
+   "cost": 6.7e-05,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The claim involves det J, which is not defined by any library name\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim involves det J, which is not defined by any library name"
+   }
+  }
+ ]
+}

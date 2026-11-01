@@ -1,0 +1,1452 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "google/gemini-4-argon",
+ "provider": "prime",
+ "family": "gemini-4-argon",
+ "effort": "high",
+ "cap": 3.0,
+ "guide": null,
+ "spent": 2.5345,
+ "calls": 72,
+ "stoppedAtCap": true,
+ "prices": {
+  "input": 2.0,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 10.0
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d86988ccf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 101.1,
+   "usage": {
+    "input": 987,
+    "output": 8342,
+    "reasoning": 8251
+   },
+   "cost": 0.085394,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50529397\", \"hole\": \"\", \"why\": \"The sentence states that the pinned construction for the first-autocorrelation problem is a feasible nonnegative step function achieving a score of 1.50529397.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"first-autocorrelation\" and its score is 1.50529397",
+    "hole": "",
+    "why": "The sentence states that the pinned construction for the first-autocorrelation problem is a feasible nonnegative step function achieving a score of 1.50529397."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d876085fae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.9,
+   "usage": {
+    "input": 991,
+    "output": 783,
+    "reasoning": 748
+   },
+   "cost": 0.009812,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence explicitly notes that no numerical value is printed for the bound on C₁.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence explicitly notes that no numerical value is printed for the bound on C₁."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d8c51eee1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.9,
+   "usage": {
+    "input": 985,
+    "output": 2365,
+    "reasoning": 2269
+   },
+   "cost": 0.02562,
+   "raw": "{\"statement\": \"firs_ours_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286286\", \"hole\": \"\", \"why\": \"The sentence states the feasibility and upper-bound score 1.50286286 of the pinned construction firs_ours_2026 for the first-autocorrelation problem.\"}",
+   "answer": {
+    "statement": "firs_ours_2026 is a feasible solution of \"first-autocorrelation\" and its score is 1.50286286",
+    "hole": "",
+    "why": "The sentence states the feasibility and upper-bound score 1.50286286 of the pinned construction firs_ours_2026 for the first-autocorrelation problem."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d8ba7c234051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 132.7,
+   "usage": {
+    "input": 990,
+    "output": 11041,
+    "reasoning": 10951
+   },
+   "cost": 0.11239,
+   "raw": "{\"statement\": \"ttt_discover_2026.json is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286290\", \"hole\": \"\", \"why\": \"The sentence states that the pinned construction is a feasible solution to EinsteinArena's first-autocorrelation problem with score 1.50286290.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026.json is a feasible solution of \"first-autocorrelation\" and its score is 1.50286290",
+    "hole": "",
+    "why": "The sentence states that the pinned construction is a feasible solution to EinsteinArena's first-autocorrelation problem with score 1.50286290."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d44c0abb0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.2,
+   "usage": {
+    "input": 1046,
+    "output": 756,
+    "reasoning": 652
+   },
+   "cost": 0.009652,
+   "raw": "{\"statement\": \"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\", \"hole\": \"\", \"why\": \"The sentence claims that the construction for 21 non-overlapping circles in a rectangle of perimeter 4 achieves a sum of radii equal to 2.3658321334.\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence claims that the construction for 21 non-overlapping circles in a rectangle of perimeter 4 achieves a sum of radii equal to 2.3658321334."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d491fbebb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.6,
+   "usage": {
+    "input": 1042,
+    "output": 717,
+    "reasoning": 611
+   },
+   "cost": 0.009254,
+   "raw": "{\"statement\": \"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\", \"hole\": \"\", \"why\": \"The sentence claims that the construction is a feasible packing of 21 non-overlapping circles in a rectangle of semi-perimeter at most 2 with total radius 2.3658323759.\"}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence claims that the construction is a feasible packing of 21 non-overlapping circles in a rectangle of semi-perimeter at most 2 with total radius 2.3658323759."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d70819eeae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 56.5,
+   "usage": {
+    "input": 985,
+    "output": 4553,
+    "reasoning": 4462
+   },
+   "cost": 0.0475,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\", \"hole\": \"\", \"why\": \"The sentence states the platform score -0.712494 of the feasible solution in alphaevolve_2025.py for the problem edges-vs-triangles.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence states the platform score -0.712494 of the feasible solution in alphaevolve_2025.py for the problem edges-vs-triangles."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d7d8fc82030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 37.8,
+   "usage": {
+    "input": 981,
+    "output": 3006,
+    "reasoning": 2938
+   },
+   "cost": 0.032022,
+   "raw": "{\"statement\": \"edge_ours_2026 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"The sentence states the platform score of the construction for the edges-vs-triangles problem.\"}",
+   "answer": {
+    "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "The sentence states the platform score of the construction for the edges-vs-triangles problem."
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d992c8f70bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.7,
+   "usage": {
+    "input": 983,
+    "output": 2503,
+    "reasoning": 2425
+   },
+   "cost": 0.026996,
+   "raw": "{\"statement\": \"flat_alphaevolve_2025 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340925\", \"hole\": \"\", \"why\": \"The sentence claims that the AlphaEvolve flat-polynomials construction achieves a score of 1.340925.\"}",
+   "answer": {
+    "statement": "flat_alphaevolve_2025 is a feasible solution of \"flat-polynomials\" and its score is 1.340925",
+    "hole": "",
+    "why": "The sentence claims that the AlphaEvolve flat-polynomials construction achieves a score of 1.340925."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537da58c9cb1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 168.5,
+   "usage": {
+    "input": 979,
+    "output": 13963,
+    "reasoning": 13876
+   },
+   "cost": 0.141588,
+   "raw": "{\"statement\": \"ours_2026.py is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280932\", \"hole\": \"\", \"why\": \"The sentence states that the construction in ours_2026.py is a feasible solution for the flat-polynomials problem with score 1.280932.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+    "hole": "",
+    "why": "The sentence states that the construction in ours_2026.py is a feasible solution for the flat-polynomials problem with score 1.280932."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d4d45bea6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.4,
+   "usage": {
+    "input": 1034,
+    "output": 863,
+    "reasoning": 779
+   },
+   "cost": 0.010698,
+   "raw": "{\"statement\": \"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\", \"hole\": \"\", \"why\": \"The sentence states the score of the 14-point Heilbronn convex construction.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence states the score of the 14-point Heilbronn convex construction."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d4ea0d400bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 1030,
+    "output": 564,
+    "reasoning": 477
+   },
+   "cost": 0.0077,
+   "raw": "{\"statement\": \"heil_ours_2026 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\", \"hole\": \"\", \"why\": \"The sentence gives the score of the 14-point construction for the Heilbronn Problem for Convex Regions.\"}",
+   "answer": {
+    "statement": "heil_ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence gives the score of the 14-point construction for the Heilbronn Problem for Convex Regions."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dae15b298779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.4,
+   "usage": {
+    "input": 979,
+    "output": 1551,
+    "reasoning": 1466
+   },
+   "cost": 0.017468,
+   "raw": "{\"statement\": \"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\", \"hole\": \"\", \"why\": \"The sentence claims the construction is a feasible packing of 12 unit hexagons with outer side (and thus score) 3.9419123.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "The sentence claims the construction is a feasible packing of 12 unit hexagons with outer side (and thus score) 3.9419123."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537db6129da8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 33.0,
+   "usage": {
+    "input": 975,
+    "output": 2592,
+    "reasoning": 2507
+   },
+   "cost": 0.02787,
+   "raw": "{\"statement\": \"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\", \"hole\": \"\", \"why\": \"The sentence claims the construction is a feasible packing of 12 unit hexagons into an outer hexagon of side (and score) 3.9416523.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence claims the construction is a feasible packing of 12 unit hexagons into an outer hexagon of side (and score) 3.9416523."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d521d98cae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.1,
+   "usage": {
+    "input": 1049,
+    "output": 1631,
+    "reasoning": 1536
+   },
+   "cost": 0.018408,
+   "raw": "{\"statement\": \"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence states that the 16-point configuration achieves a squared max/min distance ratio of 12.889266.\"}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence states that the 16-point configuration achieves a squared max/min distance ratio of 12.889266."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d5236dc4f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 1045,
+    "output": 808,
+    "reasoning": 715
+   },
+   "cost": 0.01017,
+   "raw": "{\"statement\": \"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\", \"hole\": \"\", \"why\": \"The sentence claims that the 16-point construction achieves a squared max/min distance ratio of 12.889230.\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "The sentence claims that the 16-point construction achieves a squared max/min distance ratio of 12.889230."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d5b258f08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 88.1,
+   "usage": {
+    "input": 988,
+    "output": 7257,
+    "reasoning": 7155
+   },
+   "cost": 0.074546,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380924\", \"hole\": \"\", \"why\": \"The sentence states that the 95-step function in alphaevolve_2025.py is a feasible construction for erdos-minimum-overlap achieving an upper bound score of 0.380924.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380924",
+    "hole": "",
+    "why": "The sentence states that the 95-step function in alphaevolve_2025.py is a feasible construction for erdos-minimum-overlap achieving an upper bound score of 0.380924."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d56c1cb0ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.1,
+   "usage": {
+    "input": 988,
+    "output": 1786,
+    "reasoning": 1687
+   },
+   "cost": 0.019836,
+   "raw": "{\"statement\": \"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380927\", \"hole\": \"\", \"why\": \"The sentence claims that the 51-step function construction erdo_haugland_2016 for erdos-minimum-overlap achieves the upper bound score 0.380927.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
+    "hole": "",
+    "why": "The sentence claims that the 51-step function construction erdo_haugland_2016 for erdos-minimum-overlap achieves the upper bound score 0.380927."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d69fd9cc1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.7,
+   "usage": {
+    "input": 989,
+    "output": 1174,
+    "reasoning": 1091
+   },
+   "cost": 0.013718,
+   "raw": "{\"statement\": \"erdo_together_ai_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380871\", \"hole\": \"\", \"why\": \"The sentence claims the step-function construction is feasible for the Erdős minimum overlap problem with score 0.380871.\"}",
+   "answer": {
+    "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
+    "hole": "",
+    "why": "The sentence claims the step-function construction is feasible for the Erdős minimum overlap problem with score 0.380871."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d60f0e90ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.2,
+   "usage": {
+    "input": 990,
+    "output": 1680,
+    "reasoning": 1592
+   },
+   "cost": 0.01878,
+   "raw": "{\"statement\": \"erdo_ttt_discover_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380876\", \"hole\": \"\", \"why\": \"The sentence claims that the step-function construction is feasible for the Erdős minimum overlap problem with an upper bound score of 0.380876.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
+    "hole": "",
+    "why": "The sentence claims that the step-function construction is feasible for the Erdős minimum overlap problem with an upper bound score of 0.380876."
+   }
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dccf485bf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 991,
+    "output": 492,
+    "reasoning": 459
+   },
+   "cost": 0.006902,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name for Area(E) over the data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name for Area(E) over the data."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d44c0a5ff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.3,
+   "usage": {
+    "input": 954,
+    "output": 2029,
+    "reasoning": 1953
+   },
+   "cost": 0.022198,
+   "raw": "{\"statement\": \"the 593 vectors of k11593 form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence claims a lower bound of 593 on the kissing number in dimension 11, witnessed by the 593 vectors of k11593.\"}",
+   "answer": {
+    "statement": "the 593 vectors of k11593 form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence claims a lower bound of 593 on the kissing number in dimension 11, witnessed by the 593 vectors of k11593."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537d44c08281b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 170.5,
+   "usage": {
+    "input": 955,
+    "output": 14042,
+    "reasoning": 13972
+   },
+   "cost": 0.14233,
+   "raw": "{\"statement\": \"the 594 vectors of best-6.json form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence claims that K(11) >= 594 is witnessed by a solved n=594 kissing configuration in dimension 11.\"}",
+   "answer": {
+    "statement": "the 594 vectors of best-6.json form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence claims that K(11) >= 594 is witnessed by a solved n=594 kissing configuration in dimension 11."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dda5bfcf8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.2,
+   "usage": {
+    "input": 973,
+    "output": 1280,
+    "reasoning": 1179
+   },
+   "cost": 0.014746,
+   "raw": "{\"statement\": \"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the given heading in the notebook n has rank 32 for the tensor <2,4,5> over the ring 0.5*Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the given heading in the notebook n has rank 32 for the tensor <2,4,5> over the ring 0.5*Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ddb2595e0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.0,
+   "usage": {
+    "input": 968,
+    "output": 1121,
+    "reasoning": 1038
+   },
+   "cost": 0.013146,
+   "raw": "{\"statement\": \"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the given heading in the notebook has rank 45 for the tensor <2,4,7> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the given heading in the notebook has rank 45 for the tensor <2,4,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de102a071b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.5,
+   "usage": {
+    "input": 968,
+    "output": 927,
+    "reasoning": 845
+   },
+   "cost": 0.011206,
+   "raw": "{\"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the specified entry in the notebook is a rank-51 decomposition of the tensor <2,4,8> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims that the specified entry in the notebook is a rank-51 decomposition of the tensor <2,4,8> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de175b358779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.7,
+   "usage": {
+    "input": 968,
+    "output": 437,
+    "reasoning": 355
+   },
+   "cost": 0.006306,
+   "raw": "{\"statement\": \"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the specified entry in the notebook is a rank-47 decomposition of the tensor <2,5,6> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the specified entry in the notebook is a rank-47 decomposition of the tensor <2,5,6> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de543a3bae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.9,
+   "usage": {
+    "input": 968,
+    "output": 722,
+    "reasoning": 639
+   },
+   "cost": 0.009156,
+   "raw": "{\"statement\": \"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the given heading in the notebook has rank 23 for the tensor <3,3,3> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the given heading in the notebook has rank 23 for the tensor <3,3,3> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de70ad36f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 973,
+    "output": 405,
+    "reasoning": 307
+   },
+   "cost": 0.005996,
+   "raw": "{\"statement\": \"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the given heading in the notebook is a rank-54 decomposition of <3,4,6> over 0.5*Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the given heading in the notebook is a rank-54 decomposition of <3,4,6> over 0.5*Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de761f76b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.1,
+   "usage": {
+    "input": 973,
+    "output": 1641,
+    "reasoning": 1545
+   },
+   "cost": 0.018356,
+   "raw": "{\"statement\": \"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence claims that the specified entry in the results notebook is a rank-63 decomposition of <3,4,7> over 0.5*C.\"}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims that the specified entry in the results notebook is a rank-63 decomposition of <3,4,7> over 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de986dae1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.2,
+   "usage": {
+    "input": 968,
+    "output": 1316,
+    "reasoning": 1233
+   },
+   "cost": 0.015096,
+   "raw": "{\"statement\": \"n[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the given heading in the notebook is a rank-74 decomposition of <3,4,8> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the given heading in the notebook is a rank-74 decomposition of <3,4,8> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537de9a8819b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 968,
+    "output": 461,
+    "reasoning": 378
+   },
+   "cost": 0.006546,
+   "raw": "{\"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the given heading in the notebook is a rank-68 decomposition of <3,5,6> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the given heading in the notebook is a rank-68 decomposition of <3,5,6> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ded4bfd74051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 99.9,
+   "usage": {
+    "input": 968,
+    "output": 8214,
+    "reasoning": 8107
+   },
+   "cost": 0.084076,
+   "raw": "{\"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the decomposition under the heading \\\"Rank-80 decomposition of <3,5,7> over Z\\\" in the notebook is a rank-80 decomposition of <3,5,7> over Z.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the decomposition under the heading \"Rank-80 decomposition of <3,5,7> over Z\" in the notebook is a rank-80 decomposition of <3,5,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537df1ca9366240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.9,
+   "usage": {
+    "input": 968,
+    "output": 608,
+    "reasoning": 526
+   },
+   "cost": 0.008016,
+   "raw": "{\"statement\": \"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\", \"hole\": \"\", \"why\": \"The sentence claims that the specified entry in the notebook is a rank-61 decomposition of the <4,4,5> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims that the specified entry in the notebook is a rank-61 decomposition of the <4,4,5> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537df671a3fd884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 968,
+    "output": 369,
+    "reasoning": 288
+   },
+   "cost": 0.005626,
+   "raw": "{\"statement\": \"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the decomposition printed under the quoted heading in the notebook has rank 85 for <4,4,7> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the decomposition printed under the quoted heading in the notebook has rank 85 for <4,4,7> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537defa1ae6ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 61.6,
+   "usage": {
+    "input": 973,
+    "output": 4884,
+    "reasoning": 4785
+   },
+   "cost": 0.050786,
+   "raw": "{\"statement\": \"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence states that the named entry in the notebook is a rank-96 decomposition of the tensor <4,4,8> over the ring 0.5*C.\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence states that the named entry in the notebook is a rank-96 decomposition of the tensor <4,4,8> over the ring 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537df93bb4c8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.9,
+   "usage": {
+    "input": 968,
+    "output": 869,
+    "reasoning": 792
+   },
+   "cost": 0.010626,
+   "raw": "{\"statement\": \"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence states that the named notebook decomposition has rank 90 for tensor <4,5,6> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence states that the named notebook decomposition has rank 90 for tensor <4,5,6> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dfe45c284051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.3,
+   "usage": {
+    "input": 968,
+    "output": 530,
+    "reasoning": 447
+   },
+   "cost": 0.007236,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"The sentence states that the decomposition under the given heading in the notebook is a rank-93 decomposition of <5,5,5> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence states that the decomposition under the given heading in the notebook is a rank-93 decomposition of <5,5,5> over Z."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e0316f37b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.8,
+   "usage": {
+    "input": 990,
+    "output": 1035,
+    "reasoning": 1003
+   },
+   "cost": 0.01233,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e07afe84d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.5,
+   "usage": {
+    "input": 990,
+    "output": 1469,
+    "reasoning": 1437
+   },
+   "cost": 0.01667,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e0e0dd900bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.9,
+   "usage": {
+    "input": 990,
+    "output": 1130,
+    "reasoning": 1097
+   },
+   "cost": 0.01328,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a numerical value for the rank of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a numerical value for the rank of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e08ddc7a4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.3,
+   "usage": {
+    "input": 990,
+    "output": 789,
+    "reasoning": 757
+   },
+   "cost": 0.00987,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e0fb4c88030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.7,
+   "usage": {
+    "input": 990,
+    "output": 706,
+    "reasoning": 676
+   },
+   "cost": 0.00904,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a numerical rank for the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a numerical rank for the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e13e1b3a4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.0,
+   "usage": {
+    "input": 990,
+    "output": 1103,
+    "reasoning": 1071
+   },
+   "cost": 0.01301,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e14a4f58b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.1,
+   "usage": {
+    "input": 990,
+    "output": 986,
+    "reasoning": 953
+   },
+   "cost": 0.01184,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a numerical value for the rank of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a numerical value for the rank of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3 (superseded)",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e19bdd2d4051-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 191.1,
+   "usage": {
+    "input": 994,
+    "output": 16000,
+    "reasoning": 15997
+   },
+   "cost": 0.161988,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e1a89ea64051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 126.8,
+   "usage": {
+    "input": 994,
+    "output": 10117,
+    "reasoning": 10077
+   },
+   "cost": 0.103158,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank of the decomposition (nor does it name the ring).\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank of the decomposition (nor does it name the ring)."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e6110a7a4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 51.0,
+   "usage": {
+    "input": 994,
+    "output": 3797,
+    "reasoning": 3764
+   },
+   "cost": 0.039958,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state the rank number or the ring of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the rank number or the ring of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e6463c500bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 97.5,
+   "usage": {
+    "input": 994,
+    "output": 7571,
+    "reasoning": 7536
+   },
+   "cost": 0.077698,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state the rank number or the ring required for the decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the rank number or the ring required for the decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e8a76ddd8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 151.2,
+   "usage": {
+    "input": 994,
+    "output": 12172,
+    "reasoning": 12136
+   },
+   "cost": 0.123708,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank or print the ring of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank or print the ring of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ebaf08111d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 58.0,
+   "usage": {
+    "input": 994,
+    "output": 4216,
+    "reasoning": 4180
+   },
+   "cost": 0.044148,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank or name the ring of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank or name the ring of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e4c0ffa5030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 53.8,
+   "usage": {
+    "input": 994,
+    "output": 4224,
+    "reasoning": 4191
+   },
+   "cost": 0.044228,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state the numerical rank or the ring of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the numerical rank or the ring of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e74fdc1baef6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 58.2,
+   "usage": {
+    "input": 994,
+    "output": 4013,
+    "reasoning": 3975
+   },
+   "cost": 0.042118,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank (nor name the ring) of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank (nor name the ring) of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537e8bbca58d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 120.8,
+   "usage": {
+    "input": 994,
+    "output": 9931,
+    "reasoning": 9893
+   },
+   "cost": 0.101298,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a number for the rank (nor name the ring) of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a number for the rank (nor name the ring) of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ec58b9a2b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 127.1,
+   "usage": {
+    "input": 994,
+    "output": 10578,
+    "reasoning": 10541
+   },
+   "cost": 0.107768,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a numerical rank R (or name the ring) for the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a numerical rank R (or name the ring) for the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5 (superseded)",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ee48aba6d94e-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 207.3,
+   "usage": {
+    "input": 994,
+    "output": 16000,
+    "reasoning": 15997
+   },
+   "cost": 0.161988,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ed1978ab02fd-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 48.5,
+   "usage": {
+    "input": 994,
+    "output": 3897,
+    "reasoning": 3864
+   },
+   "cost": 0.040958,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state the numerical rank or the ring of the decomposition.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the numerical rank or the ring of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537f2ae0945d848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.8,
+   "usage": {
+    "input": 991,
+    "output": 1099,
+    "reasoning": 1017
+   },
+   "cost": 0.012972,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\", \"hole\": \"\", \"why\": \"The sentence claims that x18 is a feasible solution to the named problem with the stated exact score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence claims that x18 is a feasible solution to the named problem with the stated exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537f25a585ef38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.4,
+   "usage": {
+    "input": 988,
+    "output": 732,
+    "reasoning": 654
+   },
+   "cost": 0.009296,
+   "raw": "{\"statement\": \"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\", \"hole\": \"\", \"why\": \"The sentence claims that the solution x13 is feasible for the named problem with the given score.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence claims that the solution x13 is feasible for the named problem with the given score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537ef730e2fd848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 66.6,
+   "usage": {
+    "input": 986,
+    "output": 5446,
+    "reasoning": 5365
+   },
+   "cost": 0.056432,
+   "raw": "{\"statement\": \"best-1.json is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\", \"hole\": \"\", \"why\": \"The sentence states that the pinned file is a feasible solution to the named problem with the given exact score.\"}",
+   "answer": {
+    "statement": "best-1.json is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence states that the pinned file is a feasible solution to the named problem with the given exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537f11399631d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.8,
+   "usage": {
+    "input": 987,
+    "output": 2794,
+    "reasoning": 2714
+   },
+   "cost": 0.029914,
+   "raw": "{\"statement\": \"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\", \"hole\": \"\", \"why\": \"The sentence states that the solution record x2 is a feasible solution of the named problem with the given score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence states that the solution record x2 is a feasible solution of the named problem with the given score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537f1f3095c1d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 989,
+    "output": 989,
+    "reasoning": 909
+   },
+   "cost": 0.011868,
+   "raw": "{\"statement\": \"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\", \"hole\": \"\", \"why\": \"The sentence states that the solution x12 is feasible for the named problem and gives its exact score.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence states that the solution x12 is feasible for the named problem and gives its exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537f34afa5fd94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.3,
+   "usage": {
+    "input": 995,
+    "output": 1569,
+    "reasoning": 1483
+   },
+   "cost": 0.01768,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\", \"hole\": \"\", \"why\": \"The sentence states that the solution x24 is feasible for the named problem and achieves the given score.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence states that the solution x24 is feasible for the named problem and achieves the given score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537f310aa8ecd4e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 978,
+    "output": 615,
+    "reasoning": 545
+   },
+   "cost": 0.008106,
+   "raw": "{\"statement\": \"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\", \"hole\": \"\", \"why\": \"The sentence claims that x22 is a feasible solution of the named problem with a score of 2.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": "The sentence claims that x22 is a feasible solution of the named problem with a score of 2."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dbf85d638779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.2,
+   "usage": {
+    "input": 971,
+    "output": 1649,
+    "reasoning": 1603
+   },
+   "cost": 0.018432,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"None of the given library names expresses the lower bound on C3b certified by certificate_3b_13pt.json.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "None of the given library names expresses the lower bound on C3b certified by certificate_3b_13pt.json."
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dc2fcf250bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.4,
+   "usage": {
+    "input": 981,
+    "output": 584,
+    "reasoning": 550
+   },
+   "cost": 0.007802,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"None of the given library names expresses the lower bound on C3c.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "None of the given library names expresses the lower bound on C3c."
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dc70fc20d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.4,
+   "usage": {
+    "input": 980,
+    "output": 1932,
+    "reasoning": 1894
+   },
+   "cost": 0.02128,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"None of the library names expresses the quantity C3c or the bound certified by the data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "None of the library names expresses the quantity C3c or the bound certified by the data."
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dc95adcad884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 988,
+    "output": 431,
+    "reasoning": 397
+   },
+   "cost": 0.006286,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name over the artifact for the quantity C71.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name over the artifact for the quantity C71."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dd564d5a0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.7,
+   "usage": {
+    "input": 965,
+    "output": 845,
+    "reasoning": 806
+   },
+   "cost": 0.01038,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name over maps.json to express the Jacobian determinant or injectivity of Phi.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name over maps.json to express the Jacobian determinant or injectivity of Phi."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dd101e6ed884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.2,
+   "usage": {
+    "input": 967,
+    "output": 644,
+    "reasoning": 612
+   },
+   "cost": 0.008374,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name for the Jacobian determinant of F4.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name for the Jacobian determinant of F4."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dd2f9b89b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.9,
+   "usage": {
+    "input": 969,
+    "output": 1500,
+    "reasoning": 1460
+   },
+   "cost": 0.016938,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no names over maps.json to express the Jacobian determinant or injectivity of F5.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no names over maps.json to express the Jacobian determinant or injectivity of F5."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "google/gemini-4-argon",
+   "requestId": "a537dd04dafd030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.8,
+   "usage": {
+    "input": 963,
+    "output": 400,
+    "reasoning": 363
+   },
+   "cost": 0.005926,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name for the Jacobian determinant det J of G over maps.json.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name for the Jacobian determinant det J of G over maps.json."
+   }
+  }
+ ]
+}

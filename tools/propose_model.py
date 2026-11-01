@@ -31,6 +31,7 @@ gateway's own published per-token prices read at the start. Its proposals are co
 is one kind against a person: these validate nothing alone (prose.kind_class).
 """
 import argparse
+import hashlib
 import concurrent.futures as cf
 import json
 import os
@@ -56,6 +57,8 @@ from claimbox.library import einstein_arena as EA  # noqa: E402
 
 MODEL = 'claude-opus-5-5'
 PROVIDER, FAMILY = 'anthropic', None          # set by --provider, --model, --family
+GUIDE_MARK = '<!-- the part below, from here to the end, is what a model is given'
+GUIDE = None                                   # --guide: GUIDE.md's part for a model, given after the rules (the prompt variant)
 PRIME_CONFIG = os.path.expanduser('~/.prime/config.json')
 PRICE = {'input': 4.00, 'cache_write': 5.00, 'cache_read': 0.20, 'output': 20.00}     # $ per million tokens (5-minute cache writes)
 HOLES = list(lang.HOLES)
@@ -166,8 +169,8 @@ def user_message(sentence, lib):
 
 
 class Ledger:
-    def __init__(self, cap):
-        self.cap, self.spent, self.calls, self.lock, self.stopped = cap, 0.0, [], threading.Lock(), False
+    def __init__(self, cap, journal=None):
+        self.cap, self.spent, self.calls, self.lock, self.stopped, self.journal = cap, 0.0, [], threading.Lock(), False, journal
 
     def cost(self, u):
         cw = getattr(u, 'cache_creation_input_tokens', 0) or 0
@@ -185,6 +188,9 @@ class Ledger:
         with self.lock:
             self.spent += entry.get('cost', 0.0)
             self.calls.append(entry)
+            if self.journal:     # each call written as it is paid for: a run killed before its ledger is saved still has its costs
+                with open(self.journal, 'a', encoding='utf-8') as f:
+                    f.write(json.dumps(entry, ensure_ascii=False) + '\n')
 
 
 class Prime:
@@ -257,8 +263,11 @@ def ask(client, ledger, sentence, lib, tag):
 
 def ask_prime(client, ledger, sentence, lib, tag):
     t0 = time.time()
+    system = REGISTER_SYSTEM if lib[3] else SYSTEM
+    if GUIDE:
+        system = system.replace('\n\nAnswer with JSON only', '\n\n' + GUIDE + '\n\nAnswer with JSON only')
     body = {'model': MODEL, 'max_tokens': 16000, 'reasoning_effort': 'high',
-            'messages': [{'role': 'system', 'content': REGISTER_SYSTEM if lib[3] else SYSTEM}, {'role': 'user', 'content': user_message(sentence, lib)}]}
+            'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user_message(sentence, lib)}]}
     r, rid, err = None, None, None
     for attempt in range(4):
         try:
@@ -266,9 +275,12 @@ def ask_prime(client, ledger, sentence, lib, tag):
             break
         except urllib.error.HTTPError as e:
             err = f'{e.code}: ' + e.read()[:200].decode('utf-8', 'replace')
+            if e.code == 400 and 'reasoning_effort' in body:      # a model that takes no effort setting is asked at its default
+                body = {k: v for k, v in body.items() if k != 'reasoning_effort'}
+                continue
             if e.code not in (408, 429, 500, 502, 503, 504):
                 break
-        except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+        except (urllib.error.URLError, OSError) as e:      # a connection, a timeout (socket.timeout under 3.9 is no TimeoutError)
             err = 'connection: ' + str(e)[:200]
         time.sleep(5 * 2 ** attempt)
     if r is None:
@@ -279,6 +291,7 @@ def ask_prime(client, ledger, sentence, lib, tag):
     choice = (r.get('choices') or [{}])[0]
     text = (choice.get('message') or {}).get('content') or ''
     entry = {'tag': tag, 'model': r.get('model') or MODEL, 'requestId': rid or r.get('id'), 'stopReason': choice.get('finish_reason'),
+             'effort': body.get('reasoning_effort', 'default'),
              'seconds': round(time.time() - t0, 1),
              'usage': {'input': u.get('prompt_tokens', 0), 'output': u.get('completion_tokens', 0),
                        'reasoning': (u.get('completion_tokens_details') or {}).get('reasoning_tokens')},
@@ -324,14 +337,19 @@ def main(argv):
     ap.add_argument('--provider', choices=('anthropic', 'prime'), default='anthropic')
     ap.add_argument('--model', help='with --provider prime: the gateway\'s model id, e.g. openai/gpt-6.1-sol')
     ap.add_argument('--family', help='with --provider prime: the family label its proposals carry, e.g. gpt-6.1-sol')
+    ap.add_argument('--resume', action='store_true', help='with --provider prime: ask only the sentences the ledger holds no answer for (a run cut short), then the planted run')
+    ap.add_argument('--guide', action='store_true', help='with --provider prime: GUIDE.md\'s part for a model given after the rules (label the family <family>.guide)')
     a = ap.parse_args(argv)
-    global MODEL, PROVIDER, FAMILY, PRICE
+    global MODEL, PROVIDER, FAMILY, PRICE, GUIDE
     cfg = dict(prose.CORPORA[a.corpus], name=a.corpus)
     if a.provider == 'prime':
         if not (a.model and a.family and re.fullmatch(r'[a-z0-9][a-z0-9.-]*', a.family)) or a.paraphrase:
             print('--provider prime needs --model and --family (lower-case letters, digits, dots, dashes), and takes no --paraphrase')
             return 2
         MODEL, PROVIDER, FAMILY = a.model, 'prime', a.family
+        if a.guide:
+            text = open(os.path.join(REPO, 'GUIDE.md'), encoding='utf-8').read()
+            GUIDE = text[text.index(GUIDE_MARK):].split('-->', 1)[1].strip()
         cfg['proposals'] = f'corpus/proposals/{a.corpus}.model-{FAMILY}.claim'
         rows = prose.rows_of(a.corpus)
         if a.corpus == 'register':
@@ -344,14 +362,21 @@ def main(argv):
             return 2
         pr = m.get('pricing') or {}
         PRICE = {'input': float(pr['input_usd_per_mtok']), 'cache_write': 0.0, 'cache_read': 0.0, 'output': float(pr['output_usd_per_mtok'])}
-        ledger = Ledger(a.cap)
-        if a.planted_only or a.again:
+        journal = ledger_path(a.corpus).replace('.json', '.journal.jsonl')
+        ledger = Ledger(a.cap, journal)
+        if a.planted_only or a.again or a.resume:
             old = json.load(open(ledger_path(a.corpus), encoding='utf-8'))
             ledger.calls, ledger.spent = list(old['entries']), old['spent']
+        if a.resume:
+            answered = {e['tag'] for e in ledger.calls if e.get('answer')}
+            a.again = ','.join(r['id'] for r in rows if r['id'] not in answered) or None
+            a.planted_only = a.again is None
         try:
             return run(a, cfg, rows, client, ledger)
         finally:
             save_ledger(a, ledger)
+            if os.path.exists(journal):
+                os.remove(journal)
     rows = prose.rows_of(a.corpus)
     if a.corpus == 'register':               # only the sentences whose bytes claimbox pins: the others name no file to state a claim over
         rows = [r for r in rows if prose.context_of('register', r)[0]]
@@ -379,7 +404,8 @@ def ledger_path(corpus):
 def save_ledger(a, ledger):
     rec = {'what': 'every call tools/propose_model.py made for ' + a.corpus + ': the sentence it was for (its id; "planted" for the copy with the bar '
                    'moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer',
-           'model': MODEL, 'provider': PROVIDER, 'family': FAMILY, 'effort': 'high', 'cap': a.cap, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
+           'model': MODEL, 'provider': PROVIDER, 'family': FAMILY, 'effort': 'high', 'cap': a.cap,
+           'guide': hashlib.sha256(GUIDE.encode('utf-8')).hexdigest() if GUIDE else None, 'spent': round(ledger.spent, 4), 'calls': len(ledger.calls), 'stoppedAtCap': ledger.stopped,
            'prices': PRICE, 'entries': sorted(ledger.calls, key=lambda e: e['tag'])}
     with open(ledger_path(a.corpus), 'w', encoding='utf-8') as f:
         json.dump(rec, f, indent=1, ensure_ascii=False)

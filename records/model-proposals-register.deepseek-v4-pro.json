@@ -1,0 +1,1676 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "deepseek/deepseek-v4-pro",
+ "provider": "prime",
+ "family": "deepseek-v4-pro",
+ "effort": "high",
+ "cap": 3.0,
+ "guide": null,
+ "spent": 0.894,
+ "calls": 83,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 1.91,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 3.83
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d897aabff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.7,
+   "usage": {
+    "input": 858,
+    "output": 1959,
+    "reasoning": 1889
+   },
+   "cost": 0.009142,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The constant C₁ is not directly expressed by the library name firs_alphaevolve_2025 alone.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The constant C₁ is not directly expressed by the library name firs_alphaevolve_2025 alone."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a538126cf92bf1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 87.0,
+   "usage": {
+    "input": 944,
+    "output": 9032,
+    "reasoning": 9007
+   },
+   "cost": 0.036396,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The C₁ bound has no printed value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The C₁ bound has no printed value."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025 (superseded)",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d8ba7d948779-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 168.8,
+   "usage": {
+    "input": 944,
+    "output": 16000,
+    "reasoning": 16000
+   },
+   "cost": 0.063083,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537da3a18a4b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 40.1,
+   "usage": {
+    "input": 853,
+    "output": 3106,
+    "reasoning": 3083
+   },
+   "cost": 0.013525,
+   "raw": "{\"statement\": \"firs_ours_2026(1) ≤ 1.50286286\", \"hole\": \"\", \"why\": \"The sentence claims the first autocorrelation bound for the construction.\"}",
+   "answer": {
+    "statement": "firs_ours_2026(1) ≤ 1.50286286",
+    "hole": "",
+    "why": "The sentence claims the first autocorrelation bound for the construction."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a53816609e28b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 53.2,
+   "usage": {
+    "input": 853,
+    "output": 4444,
+    "reasoning": 4395
+   },
+   "cost": 0.01865,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C₁ is not a library name; only firs_ours_2026 is given, which is the construction, not the first-autocorrelation value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C₁ is not a library name; only firs_ours_2026 is given, which is the construction, not the first-autocorrelation value."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d91f7b8f4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 61.4,
+   "usage": {
+    "input": 859,
+    "output": 4705,
+    "reasoning": 4638
+   },
+   "cost": 0.019661,
+   "raw": "{\n  \"statement\": \"for every i in -1 < i < 30000 : firs_ttt_discover_2026(i) ≥ 0\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the 30000 sampled values of f are nonnegative.\"\n}",
+   "answer": {
+    "statement": "for every i in -1 < i < 30000 : firs_ttt_discover_2026(i) ≥ 0",
+    "hole": "",
+    "why": "The sentence leads with the claim that the 30000 sampled values of f are nonnegative."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a53814f109ecf23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 69.0,
+   "usage": {
+    "input": 938,
+    "output": 7176,
+    "reasoning": 7112
+   },
+   "cost": 0.029276,
+   "raw": "{\"statement\": \"firs_ttt_discover_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286290\", \"hole\": \"\", \"why\": \"The sentence reports the construction's feasible solution and score for the first-autocorrelation problem.\"}",
+   "answer": {
+    "statement": "firs_ttt_discover_2026 is a feasible solution of \"first-autocorrelation\" and its score is 1.50286290",
+    "hole": "",
+    "why": "The sentence reports the construction's feasible solution and score for the first-autocorrelation problem."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d44c3aabf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 918,
+    "output": 503,
+    "reasoning": 426
+   },
+   "cost": 0.00368,
+   "raw": "{\"statement\": \"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\", \"hole\": \"\", \"why\": \"The sentence claims a specific feasible solution with a given score, matching the statement format.\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence claims a specific feasible solution with a given score, matching the statement format."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d478ee97ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.1,
+   "usage": {
+    "input": 912,
+    "output": 938,
+    "reasoning": 880
+   },
+   "cost": 0.005334,
+   "raw": "{\n  \"statement\": \"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\",\n  \"hole\": \"\",\n  \"why\": \"The sentence gives the sum of radii of the circles in the construction.\"\n}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence gives the sum of radii of the circles in the construction."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d81baf838779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.8,
+   "usage": {
+    "input": 856,
+    "output": 1606,
+    "reasoning": 1542
+   },
+   "cost": 0.007786,
+   "raw": "{\n  \"statement\": \"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the platform's envelope score equals -0.712494.\"\n}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence states the platform's envelope score equals -0.712494."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d83ebcb2f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.8,
+   "usage": {
+    "input": 929,
+    "output": 1736,
+    "reasoning": 1694
+   },
+   "cost": 0.008423,
+   "raw": "{\"statement\": \"edge_ours_2026 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537da9f4f428779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.6,
+   "usage": {
+    "input": 857,
+    "output": 1994,
+    "reasoning": 1903
+   },
+   "cost": 0.009274,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The max operation is not a library term.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The max operation is not a library term."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537db349e5bf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.0,
+   "usage": {
+    "input": 851,
+    "output": 1085,
+    "reasoning": 1058
+   },
+   "cost": 0.005781,
+   "raw": "{\"statement\": \"flat_ours_2026 = 1.280932\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "flat_ours_2026 = 1.280932",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a53816a078f6f1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 52.2,
+   "usage": {
+    "input": 851,
+    "output": 4209,
+    "reasoning": 4148
+   },
+   "cost": 0.017746,
+   "raw": "{\n  \"statement\": \"flat_ours_2026 = 1.280933\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims that C⁺, the maximum normalized modulus of the polynomial with coefficients ±1, equals 1.280933 for this construction.\"\n}",
+   "answer": {
+    "statement": "flat_ours_2026 = 1.280933",
+    "hole": "",
+    "why": "The sentence claims that C⁺, the maximum normalized modulus of the polynomial with coefficients ±1, equals 1.280933 for this construction."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d483ebbf8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 906,
+    "output": 715,
+    "reasoning": 627
+   },
+   "cost": 0.004469,
+   "raw": "{\n  \"statement\": \"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the construction's score on the named problem equals the printed number.\"\n}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence claims the construction's score on the named problem equals the printed number."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d4bd3cb21b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 138.0,
+   "usage": {
+    "input": 979,
+    "output": 10014,
+    "reasoning": 9960
+   },
+   "cost": 0.040224,
+   "raw": "{\"statement\": \"heil_ours_2026 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "heil_ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537db458a7f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.1,
+   "usage": {
+    "input": 858,
+    "output": 1221,
+    "reasoning": 1128
+   },
+   "cost": 0.006315,
+   "raw": "{\"statement\": \"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\", \"hole\": \"\", \"why\": \"The sentence describes a feasible packing with outer side 3.9419123.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "The sentence describes a feasible packing with outer side 3.9419123."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537db8c388d1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.9,
+   "usage": {
+    "input": 852,
+    "output": 1023,
+    "reasoning": 944
+   },
+   "cost": 0.005545,
+   "raw": "{\"statement\": \"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\", \"hole\": \"\", \"why\": \"The sentence presents a packing of 12 unit hexagons inside a hexagon of side 3.9416523, confirming feasibility with that score.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence presents a packing of 12 unit hexagons inside a hexagon of side 3.9416523, confirming feasibility with that score."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d4c4ce904051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.0,
+   "usage": {
+    "input": 916,
+    "output": 1277,
+    "reasoning": 1208
+   },
+   "cost": 0.00664,
+   "raw": "{\"statement\": \"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence states the squared distance ratio score of the construction.\"}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence states the squared distance ratio score of the construction."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d54e3d430bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 989,
+    "output": 692,
+    "reasoning": 640
+   },
+   "cost": 0.004539,
+   "raw": "{\"statement\": \"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d5fb9aa54051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 862,
+    "output": 782,
+    "reasoning": 746
+   },
+   "cost": 0.004641,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"The sentence does not specify what quantity the upper bound 0.380924 applies to.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not specify what quantity the upper bound 0.380924 applies to."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d583a8558779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.2,
+   "usage": {
+    "input": 860,
+    "output": 1595,
+    "reasoning": 1551
+   },
+   "cost": 0.007751,
+   "raw": "{\n  \"statement\": \"erdo_haugland_2016 ≤ 0.380927\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts an upper bound for the construction.\"\n}",
+   "answer": {
+    "statement": "erdo_haugland_2016 ≤ 0.380927",
+    "hole": "",
+    "why": "The sentence asserts an upper bound for the construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a538148d296802fd-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 74.8,
+   "usage": {
+    "input": 860,
+    "output": 4185,
+    "reasoning": 4127
+   },
+   "cost": 0.017671,
+   "raw": "{\"statement\": \"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380928\", \"hole\": \"\", \"why\": \"The sentence reports the upper bound achieved by the construction.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380928",
+    "hole": "",
+    "why": "The sentence reports the upper bound achieved by the construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d72f786a1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 124.6,
+   "usage": {
+    "input": 939,
+    "output": 12488,
+    "reasoning": 12427
+   },
+   "cost": 0.049623,
+   "raw": "{\"statement\": \"erdo_together_ai_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380871\", \"hole\": \"\", \"why\": \"The sentence gives the construction's upper bound as its score for the problem.\"}",
+   "answer": {
+    "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
+    "hole": "",
+    "why": "The sentence gives the construction's upper bound as its score for the problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d6315e101b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 40.7,
+   "usage": {
+    "input": 862,
+    "output": 3372,
+    "reasoning": 3298
+   },
+   "cost": 0.014561,
+   "raw": "{\n  \"statement\": \"erdo_ttt_discover_2026 ≤ 0.380876\",\n  \"hole\": \"\",\n  \"why\": \"the sentence provides an upper bound for the constructed step function\"\n}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
+    "hole": "",
+    "why": "the sentence provides an upper bound for the constructed step function"
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a538148d1a47b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.0,
+   "usage": {
+    "input": 862,
+    "output": 1207,
+    "reasoning": 1179
+   },
+   "cost": 0.006269,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not specify what quantity has this upper bound.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not specify what quantity has this upper bound."
+   }
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dd6589e46240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.0,
+   "usage": {
+    "input": 854,
+    "output": 851,
+    "reasoning": 801
+   },
+   "cost": 0.00489,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The number 0.1091479892 is approximate, indicated by the ellipsis.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The number 0.1091479892 is approximate, indicated by the ellipsis."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d44c583a1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 824,
+    "output": 522,
+    "reasoning": 491
+   },
+   "cost": 0.003573,
+   "raw": "{\"statement\": \"the 593 vectors of k11593 form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "the 593 vectors of k11593 form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537d44c3c1f030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 161.7,
+   "usage": {
+    "input": 909,
+    "output": 15289,
+    "reasoning": 15242
+   },
+   "cost": 0.060293,
+   "raw": "{\"statement\": \"\", \"hole\": \"data\", \"why\": \"the sentence claims a K(11) witness (solution #1492), but the given data is best-6.json/k6, not that witness.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "the sentence claims a K(11) witness (solution #1492), but the given data is best-6.json/k6, not that witness."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537deca79881b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 933,
+    "output": 740,
+    "reasoning": 680
+   },
+   "cost": 0.004616,
+   "raw": "{\"statement\": \"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537defacbb91b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.0,
+   "usage": {
+    "input": 849,
+    "output": 880,
+    "reasoning": 805
+   },
+   "cost": 0.004992,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states that the named decomposition is a rank-45 decomposition of that tensor over Z.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence states that the named decomposition is a rank-45 decomposition of that tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537df0d7b20b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.9,
+   "usage": {
+    "input": 849,
+    "output": 822,
+    "reasoning": 750
+   },
+   "cost": 0.00477,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states existence of a specific decomposition with given rank and dimensions.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence states existence of a specific decomposition with given rank and dimensions."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537df457c0f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.0,
+   "usage": {
+    "input": 928,
+    "output": 656,
+    "reasoning": 589
+   },
+   "cost": 0.004285,
+   "raw": "{\"statement\": \"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts the named notebook decomposition has the stated rank, shape, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts the named notebook decomposition has the stated rank, shape, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537df51beb9f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.1,
+   "usage": {
+    "input": 849,
+    "output": 1336,
+    "reasoning": 1268
+   },
+   "cost": 0.006738,
+   "raw": "{\"statement\": \"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts that the specific data item is a rank-23 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the specific data item is a rank-23 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537df77b9834051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.5,
+   "usage": {
+    "input": 854,
+    "output": 1125,
+    "reasoning": 1050
+   },
+   "cost": 0.00594,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts the validity of the decomposition.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence asserts the validity of the decomposition."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dfc2a8ce6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.7,
+   "usage": {
+    "input": 854,
+    "output": 1022,
+    "reasoning": 908
+   },
+   "cost": 0.005545,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts the named decomposition is of the given tensor, rank 63, over the ring 0.5*C.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence asserts the named decomposition is of the given tensor, rank 63, over the ring 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dfd24a54ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 849,
+    "output": 566,
+    "reasoning": 516
+   },
+   "cost": 0.003789,
+   "raw": "{\"statement\": \"DATA[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "DATA[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dfed8ad60bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.1,
+   "usage": {
+    "input": 928,
+    "output": 415,
+    "reasoning": 365
+   },
+   "cost": 0.003362,
+   "raw": "{\"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e0054ce3d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 849,
+    "output": 726,
+    "reasoning": 645
+   },
+   "cost": 0.004402,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The decomposition of the 3x5x7 tensor over the integers is claimed to have rank 80.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The decomposition of the 3x5x7 tensor over the integers is claimed to have rank 80."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e011fb39f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 849,
+    "output": 693,
+    "reasoning": 615
+   },
+   "cost": 0.004276,
+   "raw": "{\n  \"statement\": \"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims that a specific named decomposition in the notebook is a rank-61 decomposition of the given tensor over Z.\"\n}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims that a specific named decomposition in the notebook is a rank-61 decomposition of the given tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e040a8888779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.3,
+   "usage": {
+    "input": 849,
+    "output": 669,
+    "reasoning": 603
+   },
+   "cost": 0.004184,
+   "raw": "{\"statement\": \"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence states this named decomposition has rank 85 over that ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence states this named decomposition has rank 85 over that ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e00dbb41030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.1,
+   "usage": {
+    "input": 933,
+    "output": 777,
+    "reasoning": 717
+   },
+   "cost": 0.004758,
+   "raw": "{\"statement\": \"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e0432a71ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.2,
+   "usage": {
+    "input": 849,
+    "output": 887,
+    "reasoning": 822
+   },
+   "cost": 0.005019,
+   "raw": "{\"statement\": \"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence states the decomposition has rank 90 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence states the decomposition has rank 90 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e04979fe0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 928,
+    "output": 431,
+    "reasoning": 381
+   },
+   "cost": 0.003423,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e06bfa631b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.6,
+   "usage": {
+    "input": 868,
+    "output": 937,
+    "reasoning": 909
+   },
+   "cost": 0.005247,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not print the rank as a number.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not print the rank as a number."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e093cd4e0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.2,
+   "usage": {
+    "input": 868,
+    "output": 987,
+    "reasoning": 957
+   },
+   "cost": 0.005438,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not state a specific number for the rank.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state a specific number for the rank."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e0da1a3e8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.0,
+   "usage": {
+    "input": 868,
+    "output": 1807,
+    "reasoning": 1770
+   },
+   "cost": 0.008579,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The rank is not given as a number; it is described as 'the array's shape states'.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The rank is not given as a number; it is described as 'the array's shape states'."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e09c0c586240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.9,
+   "usage": {
+    "input": 868,
+    "output": 1356,
+    "reasoning": 1320
+   },
+   "cost": 0.006851,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"the sentence does not state a specific number for the rank, only refers to the array's shape.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "the sentence does not state a specific number for the rank, only refers to the array's shape."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e0dfef6b1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.1,
+   "usage": {
+    "input": 947,
+    "output": 904,
+    "reasoning": 867
+   },
+   "cost": 0.005271,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not print the rank as a number, so no exact rank-R claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not print the rank as a number, so no exact rank-R claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e10c3fc56240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.3,
+   "usage": {
+    "input": 947,
+    "output": 1169,
+    "reasoning": 1133
+   },
+   "cost": 0.006286,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence does not print the rank as a number, only says it is the array's shape.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not print the rank as a number, only says it is the array's shape."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e1252865ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.1,
+   "usage": {
+    "input": 868,
+    "output": 1683,
+    "reasoning": 1642
+   },
+   "cost": 0.008104,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"quantity\",\n  \"why\": \"The rank is not a printed number, only described as 'the rank the array's shape states'.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The rank is not a printed number, only described as 'the rank the array's shape states'."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e15f1a46f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.9,
+   "usage": {
+    "input": 868,
+    "output": 952,
+    "reasoning": 909
+   },
+   "cost": 0.005304,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"quantity\",\n  \"why\": \"The sentence does not state the rank as a number; it refers to the rank implied by the data's shape.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the rank as a number; it refers to the rank implied by the data's shape."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a538126cf8a61d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 34.9,
+   "usage": {
+    "input": 952,
+    "output": 3620,
+    "reasoning": 3584
+   },
+   "cost": 0.015683,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The rank and ring are not stated explicitly, only deferred to the array's shape and the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and ring are not stated explicitly, only deferred to the array's shape and the paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5381346db00b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.6,
+   "usage": {
+    "input": 873,
+    "output": 938,
+    "reasoning": 895
+   },
+   "cost": 0.00526,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the ring is not specified; it is only described as 'the ring the paper names', which is not given here\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the ring is not specified; it is only described as 'the ring the paper names', which is not given here"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e38c78334051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.3,
+   "usage": {
+    "input": 873,
+    "output": 1318,
+    "reasoning": 1277
+   },
+   "cost": 0.006715,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"The sentence refers to the ring the paper names and the rank the array's shape states without specifying them.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence refers to the ring the paper names and the rank the array's shape states without specifying them."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e3f8d8176240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.8,
+   "usage": {
+    "input": 873,
+    "output": 840,
+    "reasoning": 802
+   },
+   "cost": 0.004885,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The ring is not specified; the sentence refers to 'the ring the paper names' which is undefined.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The ring is not specified; the sentence refers to 'the ring the paper names' which is undefined."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e4959b53ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.2,
+   "usage": {
+    "input": 952,
+    "output": 3307,
+    "reasoning": 3267
+   },
+   "cost": 0.014484,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The ring and rank are left implicit ('the paper names', 'the array's shape states') rather than printed exactly.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The ring and rank are left implicit ('the paper names', 'the array's shape states') rather than printed exactly."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e5e89821f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.1,
+   "usage": {
+    "input": 873,
+    "output": 1653,
+    "reasoning": 1611
+   },
+   "cost": 0.007998,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The rank and ring are not printed in the sentence; it refers to the array's shape and the paper's naming.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and ring are not printed in the sentence; it refers to the array's shape and the paper's naming."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e2cda8bf6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 75.4,
+   "usage": {
+    "input": 873,
+    "output": 1762,
+    "reasoning": 1721
+   },
+   "cost": 0.008416,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"The sentence describes a decomposition but does not state a numerical claim with an explicit rank and ring.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence describes a decomposition but does not state a numerical claim with an explicit rank and ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e44f58954051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 873,
+    "output": 844,
+    "reasoning": 802
+   },
+   "cost": 0.0049,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"the sentence describes that the factors form a decomposition, not a numerical claim with a relation and a number.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "the sentence describes that the factors form a decomposition, not a numerical claim with a relation and a number."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e577bc3a0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.0,
+   "usage": {
+    "input": 873,
+    "output": 1366,
+    "reasoning": 1311
+   },
+   "cost": 0.006899,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"The sentence does not provide a numeric rank or name the ring, instead referring to 'the rank the array's shape states' and 'the ring the paper names'.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence does not provide a numeric rank or name the ring, instead referring to 'the rank the array's shape states' and 'the ring the paper names'."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e672ac510bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 46.5,
+   "usage": {
+    "input": 952,
+    "output": 4400,
+    "reasoning": 4367
+   },
+   "cost": 0.01867,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not print the rank or the ring, only refers to them indirectly.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank or the ring, only refers to them indirectly."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e7ebbc9e1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.6,
+   "usage": {
+    "input": 873,
+    "output": 1693,
+    "reasoning": 1640
+   },
+   "cost": 0.008152,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"quantity\",\n  \"why\": \"The rank is described only as the array's shape states and the ring is only referred to as the paper names, so no specific numbers or ring identifiers are given.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The rank is described only as the array's shape states and the ring is only referred to as the paper names, so no specific numbers or ring identifiers are given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e7957c006240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.8,
+   "usage": {
+    "input": 873,
+    "output": 928,
+    "reasoning": 904
+   },
+   "cost": 0.005222,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"does not print a number for the rank\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "does not print a number for the rank"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e93bddc88779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 938,
+    "output": 573,
+    "reasoning": 525
+   },
+   "cost": 0.003986,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e915d82cae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.1,
+   "usage": {
+    "input": 858,
+    "output": 411,
+    "reasoning": 353
+   },
+   "cost": 0.003213,
+   "raw": "{\n  \"statement\": \"best-13.json is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "best-13.json is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e8790e8d8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.8,
+   "usage": {
+    "input": 858,
+    "output": 578,
+    "reasoning": 518
+   },
+   "cost": 0.003853,
+   "raw": "{\"statement\": \"DATA is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\", \"hole\": \"\", \"why\": \"The sentence claims the object is a feasible solution with a specific score.\"}",
+   "answer": {
+    "statement": "DATA is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence claims the object is a feasible solution with a specific score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e8b02e8cae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.4,
+   "usage": {
+    "input": 857,
+    "output": 509,
+    "reasoning": 453
+   },
+   "cost": 0.003586,
+   "raw": "{\"statement\": \"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\", \"hole\": \"\", \"why\": \"The sentence claims feasibility and states the numerical score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence claims feasibility and states the numerical score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e8de9e788779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.8,
+   "usage": {
+    "input": 856,
+    "output": 673,
+    "reasoning": 617
+   },
+   "cost": 0.004213,
+   "raw": "{\n  \"statement\": \"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\",\n  \"hole\": \"\",\n  \"why\": \"The sentence directly states this claim.\"\n}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence directly states this claim."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e999b8306240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.3,
+   "usage": {
+    "input": 860,
+    "output": 522,
+    "reasoning": 451
+   },
+   "cost": 0.003642,
+   "raw": "{\n  \"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\",\n  \"hole\": \"\",\n  \"why\": \"The sentence explicitly claims the object is a feasible solution with that score for the named problem.\"\n}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence explicitly claims the object is a feasible solution with that score for the named problem."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e9659c968779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 853,
+    "output": 661,
+    "reasoning": 615
+   },
+   "cost": 0.004161,
+   "raw": "{\n  \"statement\": \"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e9c708526240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 860,
+    "output": 348,
+    "reasoning": 299
+   },
+   "cost": 0.002975,
+   "raw": "{\"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537e9e99e1bf38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.0,
+   "usage": {
+    "input": 916,
+    "output": 981,
+    "reasoning": 947
+   },
+   "cost": 0.005507,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence asserts qualitative properties of the polynomial map without stating a numerical relation and bar.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence asserts qualitative properties of the polynomial map without stating a numerical relation and bar."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dba42c600bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.4,
+   "usage": {
+    "input": 843,
+    "output": 1426,
+    "reasoning": 1389
+   },
+   "cost": 0.007072,
+   "raw": "{\"statement\": \"x313 >= 1.77898884\", \"hole\": \"\", \"why\": \"The claim directly translates to an inequality involving the provided library term.\"}",
+   "answer": {
+    "statement": "x313 >= 1.77898884",
+    "hole": "",
+    "why": "The claim directly translates to an inequality involving the provided library term."
+   }
+  },
+  {
+   "tag": "optconst-3b planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a53817ad7e2fd94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.5,
+   "usage": {
+    "input": 843,
+    "output": 2186,
+    "reasoning": 2111
+   },
+   "cost": 0.009983,
+   "raw": "{\n  \"statement\": \"x313 >= 1.77898885\",\n  \"hole\": \"\",\n  \"why\": \"The claim is that the verifier's bound from the certificate is at least 1.77898885.\"\n}",
+   "answer": {
+    "statement": "x313 >= 1.77898885",
+    "hole": "",
+    "why": "The claim is that the verifier's bound from the certificate is at least 1.77898885."
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dbdcba3a0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 166.5,
+   "usage": {
+    "input": 926,
+    "output": 10795,
+    "reasoning": 10754
+   },
+   "cost": 0.043114,
+   "raw": "{\"statement\": \"x3147 is a feasible solution of \\\"C3c\\\" and its score is 1.6747338950414058\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x3147 is a feasible solution of \"C3c\" and its score is 1.6747338950414058",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dc1729616240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 82.8,
+   "usage": {
+    "input": 926,
+    "output": 8026,
+    "reasoning": 7998
+   },
+   "cost": 0.032508,
+   "raw": "{\"statement\": \"x3395 ≥ 1.6747338950208249\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x3395 ≥ 1.6747338950208249",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "optconst-3c-95 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a53817e6aff6b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 81.7,
+   "usage": {
+    "input": 847,
+    "output": 4636,
+    "reasoning": 4594
+   },
+   "cost": 0.019374,
+   "raw": "{\"statement\": \"x3395 is a feasible solution of \\\"C3c\\\" and its score is 1.6747338950208248\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x3395 is a feasible solution of \"C3c\" and its score is 1.6747338950208248",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dcd96e52ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.4,
+   "usage": {
+    "input": 846,
+    "output": 1264,
+    "reasoning": 1223
+   },
+   "cost": 0.006457,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The quantity C71 is not represented by any library name available over the data, so the comparison cannot be stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The quantity C71 is not represented by any library name available over the data, so the comparison cannot be stated."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537dec8289b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.1,
+   "usage": {
+    "input": 843,
+    "output": 703,
+    "reasoning": 658
+   },
+   "cost": 0.004303,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The library defines no name over the data, so there is no way to express det J or any quantity about Phi.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name over the data, so there is no way to express det J or any quantity about Phi."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537de1c7f7b6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.4,
+   "usage": {
+    "input": 925,
+    "output": 2359,
+    "reasoning": 2325
+   },
+   "cost": 0.010802,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The determinant det J of F4 is not expressible with the given library names.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The determinant det J of F4 is not expressible with the given library names."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537de407cb0d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.1,
+   "usage": {
+    "input": 846,
+    "output": 1122,
+    "reasoning": 1079
+   },
+   "cost": 0.005913,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"The library defines no names over the data, so the term 'det J' cannot be expressed.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no names over the data, so the term 'det J' cannot be expressed."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a537ddb6b9d6b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.0,
+   "usage": {
+    "input": 843,
+    "output": 1179,
+    "reasoning": 1147
+   },
+   "cost": 0.006126,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"det J is not expressed by any library name over maps.json.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "det J is not expressed by any library name over maps.json."
+   }
+  }
+ ]
+}

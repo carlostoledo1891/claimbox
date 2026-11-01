@@ -1,0 +1,2635 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "qwen/qwen3.8-max",
+ "provider": "prime",
+ "family": "qwen3.8-max",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 1.4881,
+ "calls": 131,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 2.0,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 6.0
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae1cccdad7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.6,
+   "usage": {
+    "input": 964,
+    "output": 373,
+    "reasoning": 325
+   },
+   "cost": 0.004166,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence leads with an explicit bound on the library quantity D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence leads with an explicit bound on the library quantity D(1)."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bff2af1e4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 964,
+    "output": 347,
+    "reasoning": 303
+   },
+   "cost": 0.00401,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence directly claims this bound on the edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence directly claims this bound on the edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae610bdad7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 51.8,
+   "usage": {
+    "input": 978,
+    "output": 2105,
+    "reasoning": 2072
+   },
+   "cost": 0.014586,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/assistant/7 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c02d4a380290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 84.0,
+   "usage": {
+    "input": 978,
+    "output": 3296,
+    "reasoning": 3249
+   },
+   "cost": 0.021732,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence asserts the absolute edge discrepancy is at most the printed constant.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence asserts the absolute edge discrepancy is at most the printed constant."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae9fff8a1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 965,
+    "output": 636,
+    "reasoning": 588
+   },
+   "cost": 0.005746,
+   "raw": "{\"statement\": \"D(1) < 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims the printed upper bound for the named discrepancy D(1).\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the printed upper bound for the named discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c04c5f116e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.8,
+   "usage": {
+    "input": 965,
+    "output": 821,
+    "reasoning": 775
+   },
+   "cost": 0.006856,
+   "raw": "{\"statement\": \"D(1) < 0.82395318\", \"hole\": \"\", \"why\": \"The sentence asserts the inequality for the named discrepancy D(1).\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence asserts the inequality for the named discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae4bfd574d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.4,
+   "usage": {
+    "input": 969,
+    "output": 599,
+    "reasoning": 548
+   },
+   "cost": 0.005532,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims the absolute value of D(1) is at most the printed number.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the absolute value of D(1) is at most the printed number."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c02bb8534ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.7,
+   "usage": {
+    "input": 969,
+    "output": 474,
+    "reasoning": 420
+   },
+   "cost": 0.004782,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims the absolute value of the edge discrepancy D(1) is at most the printed number.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims the absolute value of the edge discrepancy D(1) is at most the printed number."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae1ccb39f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.9,
+   "usage": {
+    "input": 974,
+    "output": 436,
+    "reasoning": 390
+   },
+   "cost": 0.004564,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states the edge bound for the discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states the edge bound for the discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bff2aec7d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.3,
+   "usage": {
+    "input": 974,
+    "output": 533,
+    "reasoning": 487
+   },
+   "cost": 0.005146,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence directly asserts an absolute-value bound on D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence directly asserts an absolute-value bound on D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae1ccce2d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.4,
+   "usage": {
+    "input": 981,
+    "output": 393,
+    "reasoning": 346
+   },
+   "cost": 0.00432,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence directly asserts this bound on the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence directly asserts this bound on the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bff2aec3d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.7,
+   "usage": {
+    "input": 981,
+    "output": 359,
+    "reasoning": 312
+   },
+   "cost": 0.004116,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence directly states a bound on the library quantity D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence directly states a bound on the library quantity D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae8948d3c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 981,
+    "output": 397,
+    "reasoning": 364
+   },
+   "cost": 0.004344,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c02f8e006e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.1,
+   "usage": {
+    "input": 981,
+    "output": 528,
+    "reasoning": 474
+   },
+   "cost": 0.00513,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims the absolute value of the named discrepancy D(1) is at most the printed number.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims the absolute value of the named discrepancy D(1) is at most the printed number."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae1ccf001abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 970,
+    "output": 274,
+    "reasoning": 241
+   },
+   "cost": 0.003584,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bff2af67d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 970,
+    "output": 404,
+    "reasoning": 345
+   },
+   "cost": 0.004364,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence asserts the absolute edge discrepancy D(1) is at most 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence asserts the absolute edge discrepancy D(1) is at most 0.82395318."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae5debacd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.2,
+   "usage": {
+    "input": 985,
+    "output": 733,
+    "reasoning": 694
+   },
+   "cost": 0.006368,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence says the bound may apply either to D(1) or to |D(1)|.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence says the bound may apply either to D(1) or to |D(1)|."
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ae58a85e1da1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.8,
+   "usage": {
+    "input": 959,
+    "output": 295,
+    "reasoning": 254
+   },
+   "cost": 0.003688,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says the bound is \\\"about\\\" 0.824, so the number is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says the bound is \"about\" 0.824, so the number is approximate."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537aec95a904ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.1,
+   "usage": {
+    "input": 966,
+    "output": 903,
+    "reasoning": 828
+   },
+   "cost": 0.00735,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence gives a finite universal bound on S(j) for rows 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence gives a finite universal bound on S(j) for rows 1 through 255."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c0878d0cd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.0,
+   "usage": {
+    "input": 966,
+    "output": 890,
+    "reasoning": 823
+   },
+   "cost": 0.007272,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims a finite row-by-row bound on S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a finite row-by-row bound on S(j)."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537afd12eb3c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.4,
+   "usage": {
+    "input": 968,
+    "output": 1182,
+    "reasoning": 1128
+   },
+   "cost": 0.009028,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c2395ecf1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 44.7,
+   "usage": {
+    "input": 968,
+    "output": 1847,
+    "reasoning": 1781
+   },
+   "cost": 0.013018,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts a finite row-wise bound on S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts a finite row-wise bound on S(j)."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537af4d1ed01abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 59.7,
+   "usage": {
+    "input": 972,
+    "output": 2694,
+    "reasoning": 2612
+   },
+   "cost": 0.018108,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims a uniform absolute bound on 256·S(j) − j for rows 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a uniform absolute bound on 256·S(j) − j for rows 1 through 255."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c110e8106e30-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 387.4,
+   "usage": {
+    "input": 972,
+    "output": 16000,
+    "reasoning": 16000
+   },
+   "cost": 0.097944,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b058fb27c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.5,
+   "usage": {
+    "input": 992,
+    "output": 849,
+    "reasoning": 741
+   },
+   "cost": 0.007078,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\", \"hole\": \"\", \"why\": \"The sentence states a bounded universal claim over the finite integer rows using S(j) and an exact printed bound.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "The sentence states a bounded universal claim over the finite integer rows using S(j) and an exact printed bound."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c303ec224ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.2,
+   "usage": {
+    "input": 992,
+    "output": 710,
+    "reasoning": 609
+   },
+   "cost": 0.006244,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004\", \"hole\": \"\", \"why\": \"The sentence gives a bounded finite-row inequality using the library name S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004",
+    "hole": "",
+    "why": "The sentence gives a bounded finite-row inequality using the library name S(j)."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537af2a29b64d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.7,
+   "usage": {
+    "input": 983,
+    "output": 1150,
+    "reasoning": 1096
+   },
+   "cost": 0.008866,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c0e63d3dc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 54.3,
+   "usage": {
+    "input": 983,
+    "output": 2042,
+    "reasoning": 1978
+   },
+   "cost": 0.014218,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10^(-40)\", \"hole\": \"\", \"why\": \"The sentence asserts a finite row-wise bound for S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10^(-40)",
+    "hole": "",
+    "why": "The sentence asserts a finite row-wise bound for S(j)."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537aec1efde4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.7,
+   "usage": {
+    "input": 980,
+    "output": 739,
+    "reasoning": 685
+   },
+   "cost": 0.006394,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c074fd6883e9-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.1,
+   "usage": {
+    "input": 980,
+    "output": 756,
+    "reasoning": 702
+   },
+   "cost": 0.006496,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b03d3f444d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.4,
+   "usage": {
+    "input": 978,
+    "output": 752,
+    "reasoning": 668
+   },
+   "cost": 0.006468,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims a uniform bound on |256·S(j) - j| for rows j = 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a uniform bound on |256·S(j) - j| for rows j = 1 through 255."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c239eedcd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.3,
+   "usage": {
+    "input": 978,
+    "output": 1351,
+    "reasoning": 1267
+   },
+   "cost": 0.010062,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence gives a uniform bound on |256·S(j) - j| for j = 1, ..., 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence gives a uniform bound on |256·S(j) - j| for j = 1, ..., 255."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537af072fcbc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.7,
+   "usage": {
+    "input": 966,
+    "output": 786,
+    "reasoning": 717
+   },
+   "cost": 0.006648,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\", \"hole\": \"\", \"why\": \"The sentence claims the displayed bound holds for every row j from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence claims the displayed bound holds for every row j from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c0ce797dc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 29.4,
+   "usage": {
+    "input": 966,
+    "output": 1159,
+    "reasoning": 1088
+   },
+   "cost": 0.008886,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41\", \"hole\": \"\", \"why\": \"The sentence claims a finite row-wise bound for S(j) over rows 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41",
+    "hole": "",
+    "why": "The sentence claims a finite row-wise bound for S(j) over rows 1 through 255."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537afa46b7d4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.9,
+   "usage": {
+    "input": 974,
+    "output": 1148,
+    "reasoning": 1110
+   },
+   "cost": 0.008836,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence reports how an inequality is stated and proved rather than asserting a single checkable relation.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence reports how an inequality is stated and proved rather than asserting a single checkable relation."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537af75c9ecf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.9,
+   "usage": {
+    "input": 954,
+    "output": 1339,
+    "reasoning": 1266
+   },
+   "cost": 0.009942,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts the displayed inequality for every integer row j with 0<j<256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts the displayed inequality for every integer row j with 0<j<256."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c1862ad7d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 108.9,
+   "usage": {
+    "input": 954,
+    "output": 4419,
+    "reasoning": 4356
+   },
+   "cost": 0.028422,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts this finite row-wise upper bound.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts this finite row-wise upper bound."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b0affd6f4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 41.9,
+   "usage": {
+    "input": 956,
+    "output": 1819,
+    "reasoning": 1764
+   },
+   "cost": 0.012826,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence gives an upper bound for the defined decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence gives an upper bound for the defined decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c35109e7c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.3,
+   "usage": {
+    "input": 956,
+    "output": 939,
+    "reasoning": 879
+   },
+   "cost": 0.007546,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence gives the defining expression for c256 and claims it is less than the printed decimal.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence gives the defining expression for c256 and claims it is less than the printed decimal."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b2cec8c2c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 956,
+    "output": 271,
+    "reasoning": 241
+   },
+   "cost": 0.003538,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says the constant is about the printed value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says the constant is about the printed value."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b20e2bac1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 232.6,
+   "usage": {
+    "input": 988,
+    "output": 9538,
+    "reasoning": 9467
+   },
+   "cost": 0.059204,
+   "raw": "{\"statement\": \"1/(6·256^2) + (3·10^{-40})/512 < 2.5431316·10^{-6}\", \"hole\": \"\", \"why\": \"The sentence first asserts the displayed constant expression is below the printed number.\"}",
+   "answer": {
+    "statement": "1/(6·256^2) + (3·10^{-40})/512 < 2.5431316·10^{-6}",
+    "hole": "",
+    "why": "The sentence first asserts the displayed constant expression is below the printed number."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b2fb8d42c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 75.9,
+   "usage": {
+    "input": 953,
+    "output": 3062,
+    "reasoning": 3011
+   },
+   "cost": 0.020278,
+   "raw": "{\"statement\": \"c256 < 0.0000025431316\", \"hole\": \"\", \"why\": \"The sentence asserts the given constant is less than the printed decimal.\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431316",
+    "hole": "",
+    "why": "The sentence asserts the given constant is less than the printed decimal."
+   }
+  },
+  {
+   "tag": "3/assistant/29 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c3e8ae454ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.4,
+   "usage": {
+    "input": 953,
+    "output": 843,
+    "reasoning": 809
+   },
+   "cost": 0.006964,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence reports a check rather than directly asserting the inequality as a claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence reports a check rather than directly asserting the inequality as a claim."
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b137ba576e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 72.3,
+   "usage": {
+    "input": 953,
+    "output": 3295,
+    "reasoning": 3246
+   },
+   "cost": 0.021676,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10^-6\", \"hole\": \"\", \"why\": \"The sentence asserts the combined constant is below the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10^-6",
+    "hole": "",
+    "why": "The sentence asserts the combined constant is below the printed bound."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b0d33f7c1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 50.4,
+   "usage": {
+    "input": 970,
+    "output": 2263,
+    "reasoning": 2211
+   },
+   "cost": 0.015518,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10^-6\", \"hole\": \"\", \"why\": \"The sentence asserts the defined decimal constant is strictly less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10^-6",
+    "hole": "",
+    "why": "The sentence asserts the defined decimal constant is strictly less than the printed bound."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b08298021b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 29.0,
+   "usage": {
+    "input": 964,
+    "output": 1226,
+    "reasoning": 1171
+   },
+   "cost": 0.009284,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10^-6\", \"hole\": \"\", \"why\": \"The lemma asserts the defined constant c256 is less than the printed decimal bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10^-6",
+    "hole": "",
+    "why": "The lemma asserts the defined constant c256 is less than the printed decimal bound."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b0c1d95c4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.4,
+   "usage": {
+    "input": 948,
+    "output": 1171,
+    "reasoning": 1122
+   },
+   "cost": 0.008922,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-6\", \"hole\": \"\", \"why\": \"The sentence claims the defined decimal constant is less than the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": "The sentence claims the defined decimal constant is less than the printed number."
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c36939c11abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.4,
+   "usage": {
+    "input": 948,
+    "output": 765,
+    "reasoning": 716
+   },
+   "cost": 0.006486,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-7\", \"hole\": \"\", \"why\": \"The sentence asserts the defined decimal constant is less than the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-7",
+    "hole": "",
+    "why": "The sentence asserts the defined decimal constant is less than the printed number."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b1b599e51b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 75.2,
+   "usage": {
+    "input": 970,
+    "output": 3212,
+    "reasoning": 3113
+   },
+   "cost": 0.021212,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the constant 1/(6·256²) + (3·10⁻⁴⁰)/512, named c256, is strictly less than 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant 1/(6·256²) + (3·10⁻⁴⁰)/512, named c256, is strictly less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/referee/26 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c3e22bc34ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.1,
+   "usage": {
+    "input": 970,
+    "output": 1347,
+    "reasoning": 1272
+   },
+   "cost": 0.010022,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the printed number exceeds the constant 1/(6·256²) + (3·10⁻⁴⁰)/512.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the printed number exceeds the constant 1/(6·256²) + (3·10⁻⁴⁰)/512."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b1733f4b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 55.6,
+   "usage": {
+    "input": 965,
+    "output": 2414,
+    "reasoning": 2341
+   },
+   "cost": 0.016414,
+   "raw": "{\"statement\": \"1/(6·256²) + (3·10⁻⁴⁰)/512 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence leads with this exact numerical inequality for the decimal constant.\"}",
+   "answer": {
+    "statement": "1/(6·256²) + (3·10⁻⁴⁰)/512 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with this exact numerical inequality for the decimal constant."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b3600817b1d2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.8,
+   "usage": {
+    "input": 1021,
+    "output": 831,
+    "reasoning": 713
+   },
+   "cost": 0.007028,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with an exact equality for the library quantity p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact equality for the library quantity p₀."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c42eb9a5c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.9,
+   "usage": {
+    "input": 1021,
+    "output": 1024,
+    "reasoning": 908
+   },
+   "cost": 0.008186,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the exact equality claimed for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claimed for p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b4d61b94d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.6,
+   "usage": {
+    "input": 1023,
+    "output": 691,
+    "reasoning": 576
+   },
+   "cost": 0.006192,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with an exact equality for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact equality for p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c4dceb99d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.6,
+   "usage": {
+    "input": 1023,
+    "output": 891,
+    "reasoning": 775
+   },
+   "cost": 0.007392,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b4221b31f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.1,
+   "usage": {
+    "input": 1029,
+    "output": 935,
+    "reasoning": 819
+   },
+   "cost": 0.007668,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b537dc2fd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.2,
+   "usage": {
+    "input": 1012,
+    "output": 867,
+    "reasoning": 838
+   },
+   "cost": 0.007226,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence leads with an approximate value using ≈.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence leads with an approximate value using ≈."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b3d5affcf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.3,
+   "usage": {
+    "input": 1023,
+    "output": 950,
+    "reasoning": 834
+   },
+   "cost": 0.007746,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact printed value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact printed value of p₀."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b2fb8dded7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.1,
+   "usage": {
+    "input": 1030,
+    "output": 659,
+    "reasoning": 541
+   },
+   "cost": 0.006014,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence's leading claim gives p₀ exactly as the printed fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence's leading claim gives p₀ exactly as the printed fraction."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b5958cae1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.8,
+   "usage": {
+    "input": 1021,
+    "output": 928,
+    "reasoning": 887
+   },
+   "cost": 0.00761,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818287\", \"hole\": \"\", \"why\": \"The sentence leads with the upper bound on p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence leads with the upper bound on p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c4fbca0fd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.1,
+   "usage": {
+    "input": 1021,
+    "output": 746,
+    "reasoning": 705
+   },
+   "cost": 0.006518,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818288\", \"hole\": \"\", \"why\": \"The sentence leads with the upper bound on p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818288",
+    "hole": "",
+    "why": "The sentence leads with the upper bound on p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b38b7d271b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.1,
+   "usage": {
+    "input": 1017,
+    "output": 1159,
+    "reasoning": 1043
+   },
+   "cost": 0.008988,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c474fd8fc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 33.0,
+   "usage": {
+    "input": 1017,
+    "output": 1059,
+    "reasoning": 943
+   },
+   "cost": 0.008388,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b4995a546e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 150.6,
+   "usage": {
+    "input": 1029,
+    "output": 6145,
+    "reasoning": 6109
+   },
+   "cost": 0.038928,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence asks a question and comments on a bound rather than asserting a single relation.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence asks a question and comments on a bound rather than asserting a single relation."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b460ed95d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 49.4,
+   "usage": {
+    "input": 983,
+    "output": 2053,
+    "reasoning": 1968
+   },
+   "cost": 0.014284,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\", \"hole\": \"\", \"why\": \"The sentence's leading numerical claim is the exact value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": "The sentence's leading numerical claim is the exact value of p₀."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b6243cefc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.0,
+   "usage": {
+    "input": 879,
+    "output": 1102,
+    "reasoning": 1055
+   },
+   "cost": 0.00837,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence gives the printed decimal expansion of the library constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the printed decimal expansion of the library constant c₁*."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c563bdfd6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.6,
+   "usage": {
+    "input": 879,
+    "output": 902,
+    "reasoning": 851
+   },
+   "cost": 0.00717,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the Montgomery–Taylor constant as a decimal print cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the Montgomery–Taylor constant as a decimal print cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b8289fcf1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 913,
+    "output": 663,
+    "reasoning": 618
+   },
+   "cost": 0.005804,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the displayed decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the displayed decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c6a7bc8ad7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.6,
+   "usage": {
+    "input": 913,
+    "output": 803,
+    "reasoning": 760
+   },
+   "cost": 0.006644,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The leading claim gives a cut-off decimal for the library constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The leading claim gives a cut-off decimal for the library constant c₁*."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b7960dacd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.3,
+   "usage": {
+    "input": 875,
+    "output": 376,
+    "reasoning": 337
+   },
+   "cost": 0.004006,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says c₁* is about 0.7533, an approximate value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says c₁* is about 0.7533, an approximate value."
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b7886975c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.3,
+   "usage": {
+    "input": 884,
+    "output": 1794,
+    "reasoning": 1751
+   },
+   "cost": 0.012532,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence gives the numerical value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the numerical value of c₁*."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c5f11aa24ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.6,
+   "usage": {
+    "input": 884,
+    "output": 956,
+    "reasoning": 910
+   },
+   "cost": 0.007504,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the truncated decimal print of the constant c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the truncated decimal print of the constant c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b5c2ac714ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 72.6,
+   "usage": {
+    "input": 939,
+    "output": 2915,
+    "reasoning": 2868
+   },
+   "cost": 0.019368,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence prints the decimal expansion of c₁* with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence prints the decimal expansion of c₁* with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c5433e3d0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 98.5,
+   "usage": {
+    "input": 939,
+    "output": 3847,
+    "reasoning": 3801
+   },
+   "cost": 0.02496,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the Montgomery–Taylor constant as the printed decimal prefix.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the Montgomery–Taylor constant as the printed decimal prefix."
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b84669ee4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.4,
+   "usage": {
+    "input": 890,
+    "output": 1073,
+    "reasoning": 1024
+   },
+   "cost": 0.008218,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence gives c₁* as a decimal print cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives c₁* as a decimal print cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c72e8954f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 48.7,
+   "usage": {
+    "input": 890,
+    "output": 1773,
+    "reasoning": 1722
+   },
+   "cost": 0.012418,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the value of c₁* as a decimal cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the value of c₁* as a decimal cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b6d30d87d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.2,
+   "usage": {
+    "input": 903,
+    "output": 1207,
+    "reasoning": 1163
+   },
+   "cost": 0.009048,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal printed for c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the decimal printed for c₁*."
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c572fd1b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.5,
+   "usage": {
+    "input": 903,
+    "output": 1191,
+    "reasoning": 1146
+   },
+   "cost": 0.008952,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b7d69f984ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 38.4,
+   "usage": {
+    "input": 909,
+    "output": 1674,
+    "reasoning": 1617
+   },
+   "cost": 0.011862,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence claims the constant c₁* has the printed decimal value 0.7532960….\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence claims the constant c₁* has the printed decimal value 0.7532960…."
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c6913fe61b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.8,
+   "usage": {
+    "input": 909,
+    "output": 1067,
+    "reasoning": 1013
+   },
+   "cost": 0.00822,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim that c₁* equals the printed decimal cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim that c₁* equals the printed decimal cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b7bc0c681abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.4,
+   "usage": {
+    "input": 878,
+    "output": 673,
+    "reasoning": 628
+   },
+   "cost": 0.005794,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the printed decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c637ccc0f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.9,
+   "usage": {
+    "input": 878,
+    "output": 695,
+    "reasoning": 649
+   },
+   "cost": 0.005926,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the cut-off decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the cut-off decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b88f98fd4931-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.0,
+   "usage": {
+    "input": 866,
+    "output": 583,
+    "reasoning": 550
+   },
+   "cost": 0.00523,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence gives the value with ≈, so the number is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence gives the value with ≈, so the number is approximate."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ba9b8d63c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 190.8,
+   "usage": {
+    "input": 879,
+    "output": 4856,
+    "reasoning": 4803
+   },
+   "cost": 0.030894,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence gives the value of 2 - 1/c₁* as a truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence gives the value of 2 - 1/c₁* as a truncated decimal."
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c7ab1bd3f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 312.5,
+   "usage": {
+    "input": 879,
+    "output": 11948,
+    "reasoning": 11885
+   },
+   "cost": 0.073446,
+   "raw": "{\"statement\": \"(2 - 1/c₁*)·100 ≥ 67.25\", \"hole\": \"\", \"why\": \"The sentence leads with the lower bound 67.25% for the proportion identified with 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "(2 - 1/c₁*)·100 ≥ 67.25",
+    "hole": "",
+    "why": "The sentence leads with the lower bound 67.25% for the proportion identified with 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ba47dc941abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.2,
+   "usage": {
+    "input": 877,
+    "output": 1344,
+    "reasoning": 1295
+   },
+   "cost": 0.009818,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the equality of the expression to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the equality of the expression to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cb32bc2df1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 53.0,
+   "usage": {
+    "input": 877,
+    "output": 1913,
+    "reasoning": 1859
+   },
+   "cost": 0.013232,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal expansion claimed for the expression 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the decimal expansion claimed for the expression 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b9739f264ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.6,
+   "usage": {
+    "input": 867,
+    "output": 744,
+    "reasoning": 693
+   },
+   "cost": 0.006198,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed value of two minus the reciprocal of c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the printed value of two minus the reciprocal of c₁*."
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ca4c5bfc0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.0,
+   "usage": {
+    "input": 867,
+    "output": 595,
+    "reasoning": 543
+   },
+   "cost": 0.005304,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed truncated value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b8fa0e380290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.7,
+   "usage": {
+    "input": 878,
+    "output": 1370,
+    "reasoning": 1316
+   },
+   "cost": 0.009976,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed decimal expansion of the proportion 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the printed decimal expansion of the proportion 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c9a0d8e8c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.4,
+   "usage": {
+    "input": 878,
+    "output": 886,
+    "reasoning": 834
+   },
+   "cost": 0.007072,
+   "raw": "{\"statement\": \"2 - 1 / c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1 / c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b8a36a780290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 77.8,
+   "usage": {
+    "input": 882,
+    "output": 3181,
+    "reasoning": 3129
+   },
+   "cost": 0.02085,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence prints the value of the allowed expression 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence prints the value of the allowed expression 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/paper/50 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c738599e4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 199.2,
+   "usage": {
+    "input": 882,
+    "output": 7366,
+    "reasoning": 7314
+   },
+   "cost": 0.04596,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence prints the decimal prefix of the expression 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence prints the decimal prefix of the expression 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ba896d044d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 138.7,
+   "usage": {
+    "input": 870,
+    "output": 5687,
+    "reasoning": 5637
+   },
+   "cost": 0.035862,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence gives the decimal expansion of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence gives the decimal expansion of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/paper/58 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cc10e914d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.2,
+   "usage": {
+    "input": 870,
+    "output": 1145,
+    "reasoning": 1110
+   },
+   "cost": 0.00861,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"No library name expresses the proportion of zeros that are simple and on the line.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "No library name expresses the proportion of zeros that are simple and on the line."
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b8eb2b5ef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.8,
+   "usage": {
+    "input": 869,
+    "output": 883,
+    "reasoning": 820
+   },
+   "cost": 0.007036,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that 2 - 1/c₁* begins with the printed decimal 0.67250.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the claim that 2 - 1/c₁* begins with the printed decimal 0.67250."
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537c85f3a3c4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 51.5,
+   "usage": {
+    "input": 869,
+    "output": 1467,
+    "reasoning": 1415
+   },
+   "cost": 0.01054,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the printed decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537baf7bfacf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 842,
+    "output": 131,
+    "reasoning": 101
+   },
+   "cost": 0.00247,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence uses ≈, so the number is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence uses ≈, so the number is approximate."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b9e1eaecd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 44.5,
+   "usage": {
+    "input": 879,
+    "output": 1854,
+    "reasoning": 1807
+   },
+   "cost": 0.012882,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the theorem's stated value of the proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the theorem's stated value of the proportion."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cab68fe74d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 55.4,
+   "usage": {
+    "input": 879,
+    "output": 1970,
+    "reasoning": 1917
+   },
+   "cost": 0.013578,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the theorem's printed equality for 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the theorem's printed equality for 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537b9c05ee01b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.7,
+   "usage": {
+    "input": 865,
+    "output": 869,
+    "reasoning": 817
+   },
+   "cost": 0.006944,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed decimal expansion of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the printed decimal expansion of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ca862cd1d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.6,
+   "usage": {
+    "input": 865,
+    "output": 936,
+    "reasoning": 884
+   },
+   "cost": 0.007346,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the truncated decimal value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the truncated decimal value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bb15fbe71b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.5,
+   "usage": {
+    "input": 855,
+    "output": 1056,
+    "reasoning": 1004
+   },
+   "cost": 0.008046,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states an equality with a decimal print cut off by an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states an equality with a decimal print cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cc7e18631b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 53.8,
+   "usage": {
+    "input": 855,
+    "output": 1686,
+    "reasoning": 1640
+   },
+   "cost": 0.011826,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the displayed equality for the proportion.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the displayed equality for the proportion."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bdec6c094ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.7,
+   "usage": {
+    "input": 860,
+    "output": 942,
+    "reasoning": 886
+   },
+   "cost": 0.007372,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with an equality between the given expression and a decimal cut off by an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with an equality between the given expression and a decimal cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ce48fc3ec02b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.1,
+   "usage": {
+    "input": 860,
+    "output": 471,
+    "reasoning": 435
+   },
+   "cost": 0.004546,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bd6f4adbf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.0,
+   "usage": {
+    "input": 857,
+    "output": 513,
+    "reasoning": 465
+   },
+   "cost": 0.004792,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence claims that this expression equals the displayed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims that this expression equals the displayed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cd403b9ff1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.1,
+   "usage": {
+    "input": 857,
+    "output": 420,
+    "reasoning": 362
+   },
+   "cost": 0.004234,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states that the expression (3 - 1/c₁*)/2 equals the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states that the expression (3 - 1/c₁*)/2 equals the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537be877c5e4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 851,
+    "output": 228,
+    "reasoning": 186
+   },
+   "cost": 0.00307,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says the value is approximately 0.836 rather than giving an exact claimed equality or inequality.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says the value is approximately 0.836 rather than giving an exact claimed equality or inequality."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bd600a20c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.3,
+   "usage": {
+    "input": 856,
+    "output": 341,
+    "reasoning": 293
+   },
+   "cost": 0.003758,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence gives a truncated decimal value for the displayed expression.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives a truncated decimal value for the displayed expression."
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ccda2ff00290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.3,
+   "usage": {
+    "input": 856,
+    "output": 575,
+    "reasoning": 525
+   },
+   "cost": 0.005162,
+   "raw": "{\"statement\": \"(3 - 1 / c₁*) / 2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states a truncated decimal equality for the given expression.\"}",
+   "answer": {
+    "statement": "(3 - 1 / c₁*) / 2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states a truncated decimal equality for the given expression."
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bb111e0ef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 94.5,
+   "usage": {
+    "input": 859,
+    "output": 3834,
+    "reasoning": 3785
+   },
+   "cost": 0.024722,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence gives the allowed expression equal to a cut-off decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the allowed expression equal to a cut-off decimal."
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cc156eb61abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.2,
+   "usage": {
+    "input": 859,
+    "output": 703,
+    "reasoning": 654
+   },
+   "cost": 0.005936,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims the given constant expression equals the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims the given constant expression equals the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537be619e916e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 867,
+    "output": 444,
+    "reasoning": 397
+   },
+   "cost": 0.004398,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence asserts the printed decimal value of that expression.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence asserts the printed decimal value of that expression."
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cea0de39d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.7,
+   "usage": {
+    "input": 867,
+    "output": 509,
+    "reasoning": 461
+   },
+   "cost": 0.004788,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence directly asserts this equality with the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence directly asserts this equality with the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bbc82ccd1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 113.8,
+   "usage": {
+    "input": 850,
+    "output": 4493,
+    "reasoning": 4442
+   },
+   "cost": 0.028658,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence gives the listed c₁* expression equal to a truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the listed c₁* expression equal to a truncated decimal."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cc936ed4d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 86.8,
+   "usage": {
+    "input": 850,
+    "output": 3163,
+    "reasoning": 3108
+   },
+   "cost": 0.020678,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence gives the printed decimal expansion of (3 - 1/c₁*)/2.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence gives the printed decimal expansion of (3 - 1/c₁*)/2."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bdc6bbe2d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.8,
+   "usage": {
+    "input": 871,
+    "output": 1012,
+    "reasoning": 959
+   },
+   "cost": 0.007814,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with a recomputed equality for the allowed expression with a truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with a recomputed equality for the allowed expression with a truncated decimal."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cdce1b9c4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.7,
+   "usage": {
+    "input": 871,
+    "output": 712,
+    "reasoning": 662
+   },
+   "cost": 0.006014,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence leads with the recomputed value printed with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with the recomputed value printed with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bda04c8c1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 37.0,
+   "usage": {
+    "input": 851,
+    "output": 1527,
+    "reasoning": 1475
+   },
+   "cost": 0.010864,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence gives the distinct proportion as this expression equal to the printed truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the distinct proportion as this expression equal to the printed truncated value."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537cd8b9aab1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 51.6,
+   "usage": {
+    "input": 851,
+    "output": 1869,
+    "reasoning": 1819
+   },
+   "cost": 0.012916,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence gives the value of the displayed expression as a truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence gives the value of the displayed expression as a truncated decimal."
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537be8f98380290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 932,
+    "output": 255,
+    "reasoning": 215
+   },
+   "cost": 0.003394,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It asserts a zero-free region for every Dirichlet L-function, not a finite checkable claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, not a finite checkable claim."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537befdabc91abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 39.2,
+   "usage": {
+    "input": 967,
+    "output": 1560,
+    "reasoning": 1520
+   },
+   "cost": 0.011294,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"It reports a paper's claims and says they were not checked, rather than stating a checkable relation.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "It reports a paper's claims and says they were not checked, rather than stating a checkable relation."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537beb8ab7bd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.5,
+   "usage": {
+    "input": 930,
+    "output": 414,
+    "reasoning": 372
+   },
+   "cost": 0.004344,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It is a theorem-like claim about the nontrivial zeros of ζ, not a finite checkable row statement.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It is a theorem-like claim about the nontrivial zeros of ζ, not a finite checkable row statement."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537beb61f4c1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.8,
+   "usage": {
+    "input": 943,
+    "output": 774,
+    "reasoning": 728
+   },
+   "cost": 0.00653,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It is a theorem about all nontrivial zeros of the Riemann zeta function, not a finite check over the data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It is a theorem about all nontrivial zeros of the Riemann zeta function, not a finite check over the data."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537be8cfe3ad8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.0,
+   "usage": {
+    "input": 945,
+    "output": 205,
+    "reasoning": 166
+   },
+   "cost": 0.00312,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It asserts a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bf06f8321abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.6,
+   "usage": {
+    "input": 952,
+    "output": 648,
+    "reasoning": 602
+   },
+   "cost": 0.005792,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It is a theorem about the infinitely many nontrivial zeros of ζ(s), not a finite checkable statement over the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It is a theorem about the infinitely many nontrivial zeros of ζ(s), not a finite checkable statement over the given data."
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bea87bbef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 934,
+    "output": 455,
+    "reasoning": 414
+   },
+   "cost": 0.004598,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It asserts a zero-free region for all Dirichlet L-functions, not a finite check over the data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for all Dirichlet L-functions, not a finite check over the data."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537beef3beb4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 942,
+    "output": 475,
+    "reasoning": 432
+   },
+   "cost": 0.004734,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"It reports what a theorem asserts and that an argument does not establish it, rather than stating a checkable numerical relation.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "It reports what a theorem asserts and that an argument does not establish it, rather than stating a checkable numerical relation."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bec1395cd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.7,
+   "usage": {
+    "input": 931,
+    "output": 340,
+    "reasoning": 297
+   },
+   "cost": 0.003902,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It asserts a zero-free region for every Dirichlet L-function, not a finite checkable claim over the data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, not a finite checkable claim over the data."
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537bf2b6bb9af11-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.7,
+   "usage": {
+    "input": 936,
+    "output": 422,
+    "reasoning": 386
+   },
+   "cost": 0.004404,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It claims a zero-free region for all L-functions, not a finite data check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It claims a zero-free region for all L-functions, not a finite data check."
+   }
+  }
+ ]
+}

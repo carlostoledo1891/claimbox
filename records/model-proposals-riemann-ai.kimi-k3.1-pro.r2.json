@@ -1,0 +1,2739 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "moonshotai/kimi-k3.1-pro",
+ "provider": "prime",
+ "family": "kimi-k3.1-pro.r2",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 0.5882,
+ "calls": 136,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 2.0,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 10.0
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d486ceed030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.6,
+   "usage": {
+    "input": 896,
+    "output": 148,
+    "reasoning": 96
+   },
+   "cost": 0.003272,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence explicitly bounds the absolute edge discrepancy by 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence explicitly bounds the absolute edge discrepancy by 0.82395317."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da839a394051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 896,
+    "output": 154,
+    "reasoning": 102
+   },
+   "cost": 0.003332,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states an upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4d00ba8d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 908,
+    "output": 185,
+    "reasoning": 147
+   },
+   "cost": 0.003666,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"The sentence reports a check rather than stating the bound directly.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence reports a check rather than stating the bound directly."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4f62ed6030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.2,
+   "usage": {
+    "input": 897,
+    "output": 120,
+    "reasoning": 74
+   },
+   "cost": 0.002994,
+   "raw": "{\"statement\":\"D(1) < 0.82395317\",\"hole\":\"\",\"why\":\"The sentence asserts this upper bound on D(1).\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence asserts this upper bound on D(1)."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dacffff10bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 897,
+    "output": 142,
+    "reasoning": 95
+   },
+   "cost": 0.003214,
+   "raw": "{\"statement\":\"D(1) < 0.82395318\",\"hole\":\"\",\"why\":\"The sentence states a strict upper bound on D(1).\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence states a strict upper bound on D(1)."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4adcff6030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 901,
+    "output": 173,
+    "reasoning": 114
+   },
+   "cost": 0.003532,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence bounds the absolute value of D(1) by 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute value of D(1) by 0.82395317."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537daad9ea8b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 901,
+    "output": 166,
+    "reasoning": 110
+   },
+   "cost": 0.003462,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence bounds the absolute value of D(1) by the printed constant.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence bounds the absolute value of D(1) by the printed constant."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4a828020bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 906,
+    "output": 132,
+    "reasoning": 79
+   },
+   "cost": 0.003132,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states the printed upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states the printed upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537daa6bb466240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.0,
+   "usage": {
+    "input": 906,
+    "output": 168,
+    "reasoning": 116
+   },
+   "cost": 0.003492,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence bounds the absolute edge discrepancy by the printed decimal.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence bounds the absolute edge discrepancy by the printed decimal."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d486cf036240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.3,
+   "usage": {
+    "input": 909,
+    "output": 182,
+    "reasoning": 145
+   },
+   "cost": 0.003638,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da839a404051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 909,
+    "output": 161,
+    "reasoning": 109
+   },
+   "cost": 0.003428,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence states a numerical upper bound on the absolute value of D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states a numerical upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4d3e93b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 911,
+    "output": 115,
+    "reasoning": 63
+   },
+   "cost": 0.002972,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute value of D(1) by the printed decimal.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence bounds the absolute value of D(1) by the printed decimal."
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dab3091c030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 911,
+    "output": 139,
+    "reasoning": 86
+   },
+   "cost": 0.003212,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute discrepancy is at most 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that the absolute discrepancy is at most 0.82395318."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d486cef1030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 902,
+    "output": 138,
+    "reasoning": 89
+   },
+   "cost": 0.003184,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence states the printed upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states the printed upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da839c106240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 902,
+    "output": 142,
+    "reasoning": 93
+   },
+   "cost": 0.003224,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence states an absolute-value upper bound on D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an absolute-value upper bound on D(1)."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4c9abe9030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 917,
+    "output": 203,
+    "reasoning": 153
+   },
+   "cost": 0.003864,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The bound could apply to D(1) or to |D(1)|, and the sentence does not resolve which.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The bound could apply to D(1) or to |D(1)|, and the sentence does not resolve which."
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4af8c45ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 894,
+    "output": 119,
+    "reasoning": 78
+   },
+   "cost": 0.002978,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The bound is qualified by “about,” making 0.824 approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The bound is qualified by “about,” making 0.824 approximate."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d505ee9cb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.3,
+   "usage": {
+    "input": 901,
+    "output": 298,
+    "reasoning": 230
+   },
+   "cost": 0.004782,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states a finite bound for all 255 integer rows.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a finite bound for all 255 integer rows."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dad4fd31f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.6,
+   "usage": {
+    "input": 901,
+    "output": 310,
+    "reasoning": 238
+   },
+   "cost": 0.004902,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims the stated bound for each integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims the stated bound for each integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d58f282e0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.6,
+   "usage": {
+    "input": 902,
+    "output": 306,
+    "reasoning": 239
+   },
+   "cost": 0.004864,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states an explicit bound for each finite integer row.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states an explicit bound for each finite integer row."
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db8fc91b0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.6,
+   "usage": {
+    "input": 902,
+    "output": 375,
+    "reasoning": 306
+   },
+   "cost": 0.005554,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states a finite row-wise bound with an exact printed tolerance.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a finite row-wise bound with an exact printed tolerance."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d54628b6030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.7,
+   "usage": {
+    "input": 907,
+    "output": 332,
+    "reasoning": 261
+   },
+   "cost": 0.005134,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db13d94ef1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.6,
+   "usage": {
+    "input": 907,
+    "output": 853,
+    "reasoning": 776
+   },
+   "cost": 0.010344,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence bounds the scaled form factor's deviation from j for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds the scaled form factor's deviation from j for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5d13a406240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.1,
+   "usage": {
+    "input": 903,
+    "output": 170,
+    "reasoning": 84
+   },
+   "cost": 0.003506,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\",\"hole\":\"\",\"why\":\"The sentence claims a uniform bound on the grid form factor for every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "The sentence claims a uniform bound on the grid form factor for every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dba4ddd08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 903,
+    "output": 228,
+    "reasoning": 148
+   },
+   "cost": 0.004086,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004\",\"hole\":\"\",\"why\":\"The sentence states this bound for every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004",
+    "hole": "",
+    "why": "The sentence states this bound for every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d540df856240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.3,
+   "usage": {
+    "input": 916,
+    "output": 399,
+    "reasoning": 326
+   },
+   "cost": 0.005822,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states a uniform bound for every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a uniform bound for every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db10db698779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.1,
+   "usage": {
+    "input": 916,
+    "output": 344,
+    "reasoning": 270
+   },
+   "cost": 0.005272,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims the stated absolute bound for every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims the stated absolute bound for every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d502cfea0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 908,
+    "output": 287,
+    "reasoning": 215
+   },
+   "cost": 0.004686,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound at every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound at every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dad28a821b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.5,
+   "usage": {
+    "input": 908,
+    "output": 325,
+    "reasoning": 256
+   },
+   "cost": 0.005066,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states a finite row-wise bound on the grid form factor.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a finite row-wise bound on the grid form factor."
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d59c9a3b0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.5,
+   "usage": {
+    "input": 907,
+    "output": 347,
+    "reasoning": 275
+   },
+   "cost": 0.005284,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute discrepancy at every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds the absolute discrepancy at every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dba16a084051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.4,
+   "usage": {
+    "input": 907,
+    "output": 312,
+    "reasoning": 240
+   },
+   "cost": 0.004934,
+   "raw": "{\"statement\":\"for every j in 1 < j < 256 : 4·10⁻⁴⁰ ≥ |256·S(j) - j|\",\"hole\":\"\",\"why\":\"The sentence gives the stated bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : 4·10⁻⁴⁰ ≥ |256·S(j) - j|",
+    "hole": "",
+    "why": "The sentence gives the stated bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d516cc658779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.5,
+   "usage": {
+    "input": 903,
+    "output": 403,
+    "reasoning": 328
+   },
+   "cost": 0.005836,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute near-CUE discrepancy for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds the absolute near-CUE discrepancy for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537daf3f8ced884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 903,
+    "output": 361,
+    "reasoning": 291
+   },
+   "cost": 0.005416,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4e-40\",\"hole\":\"\",\"why\":\"The sentence bounds the scaled form-factor deviation for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4e-40",
+    "hole": "",
+    "why": "The sentence bounds the scaled form-factor deviation for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d58dbfe2b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.8,
+   "usage": {
+    "input": 909,
+    "output": 534,
+    "reasoning": 466
+   },
+   "cost": 0.007158,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| < 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence leads with the strict bound over all integer rows j.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| < 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence leads with the strict bound over all integer rows j."
+   }
+  },
+  {
+   "tag": "2/referee/16 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db5638e00bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.6,
+   "usage": {
+    "input": 909,
+    "output": 365,
+    "reasoning": 294
+   },
+   "cost": 0.005468,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| < 4·10^-40\",\"hole\":\"\",\"why\":\"The sentence leads with a strict bound for every integer row j between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| < 4·10^-40",
+    "hole": "",
+    "why": "The sentence leads with a strict bound for every integer row j between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d55ebd020bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 889,
+    "output": 331,
+    "reasoning": 260
+   },
+   "cost": 0.005088,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence asserts this bound for every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts this bound for every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db3a6ab16240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.7,
+   "usage": {
+    "input": 889,
+    "output": 486,
+    "reasoning": 414
+   },
+   "cost": 0.006638,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states this upper bound at every integer row strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states this upper bound at every integer row strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5f76d004051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 887,
+    "output": 134,
+    "reasoning": 95
+   },
+   "cost": 0.003114,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dbde7c9e0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 887,
+    "output": 229,
+    "reasoning": 181
+   },
+   "cost": 0.004064,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence bounds the defined decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence bounds the defined decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6789e26f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.9,
+   "usage": {
+    "input": 887,
+    "output": 114,
+    "reasoning": 69
+   },
+   "cost": 0.002914,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The value is stated only as about 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The value is stated only as about 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6777c7cb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.3,
+   "usage": {
+    "input": 912,
+    "output": 405,
+    "reasoning": 354
+   },
+   "cost": 0.005874,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence claims the decimal constant is strictly below the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant is strictly below the printed bound."
+   }
+  },
+  {
+   "tag": "3/assistant/27 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc488d39d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.8,
+   "usage": {
+    "input": 912,
+    "output": 480,
+    "reasoning": 425
+   },
+   "cost": 0.006624,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence leads with the claim that the decimal constant is strictly below this printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant is strictly below this printed bound."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d689bb0ed884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 882,
+    "output": 453,
+    "reasoning": 405
+   },
+   "cost": 0.006294,
+   "raw": "{\"statement\":\"c256 < 0.0000025431316\",\"hole\":\"\",\"why\":\"The sentence states a strict upper bound on the constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431316",
+    "hole": "",
+    "why": "The sentence states a strict upper bound on the constant c256."
+   }
+  },
+  {
+   "tag": "3/assistant/29 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc5b8eb98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 882,
+    "output": 321,
+    "reasoning": 280
+   },
+   "cost": 0.004974,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"The sentence is phrased as a report that an inequality was checked.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence is phrased as a report that an inequality was checked."
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d61abbd9ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.8,
+   "usage": {
+    "input": 887,
+    "output": 459,
+    "reasoning": 410
+   },
+   "cost": 0.006364,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10^-6\",\"hole\":\"\",\"why\":\"The sentence states that c256 is below the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10^-6",
+    "hole": "",
+    "why": "The sentence states that c256 is below the printed bound."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6139ee0ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 899,
+    "output": 280,
+    "reasoning": 230
+   },
+   "cost": 0.004598,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound for the named decimal constant.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence gives an upper bound for the named decimal constant."
+   }
+  },
+  {
+   "tag": "3/docstring/23 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc12fb28aef6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 899,
+    "output": 231,
+    "reasoning": 181
+   },
+   "cost": 0.004108,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence bounds the named decimal constant by the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence bounds the named decimal constant by the printed number."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5eabb668779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 892,
+    "output": 236,
+    "reasoning": 186
+   },
+   "cost": 0.004144,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The lemma gives the stated strict upper bound for c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The lemma gives the stated strict upper bound for c256."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dbddcc0f6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 892,
+    "output": 252,
+    "reasoning": 201
+   },
+   "cost": 0.004304,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence states a strict upper bound on the constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states a strict upper bound on the constant c256."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5fcdc2a6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 882,
+    "output": 229,
+    "reasoning": 182
+   },
+   "cost": 0.004054,
+   "raw": "{\"statement\":\"c256 < 2.5431316e-6\",\"hole\":\"\",\"why\":\"The sentence states an upper bound on the decimal constant.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": "The sentence states an upper bound on the decimal constant."
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dbe24ddfb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 882,
+    "output": 258,
+    "reasoning": 209
+   },
+   "cost": 0.004344,
+   "raw": "{\"statement\":\"c256 < 2.5431316e-7\",\"hole\":\"\",\"why\":\"The sentence bounds the decimal constant c256 by the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-7",
+    "hole": "",
+    "why": "The sentence bounds the decimal constant c256 by the printed number."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d650dd7cf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 901,
+    "output": 304,
+    "reasoning": 254
+   },
+   "cost": 0.004842,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence claims that the printed decimal strictly exceeds c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims that the printed decimal strictly exceeds c256."
+   }
+  },
+  {
+   "tag": "3/referee/26 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc1b4af36240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.0,
+   "usage": {
+    "input": 901,
+    "output": 283,
+    "reasoning": 233
+   },
+   "cost": 0.004632,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence claims that the printed number strictly exceeds c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims that the printed number strictly exceeds c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d62c2b3bb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.2,
+   "usage": {
+    "input": 895,
+    "output": 393,
+    "reasoning": 341
+   },
+   "cost": 0.00572,
+   "raw": "{\"statement\":\"c256 < 2.5431316×10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence states this strict upper bound for the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316×10⁻⁶",
+    "hole": "",
+    "why": "The sentence states this strict upper bound for the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc17ff75030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 895,
+    "output": 337,
+    "reasoning": 285
+   },
+   "cost": 0.00516,
+   "raw": "{\"statement\":\"c256 < 2.5431317×10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence gives a strict upper bound on the decimal constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317×10⁻⁶",
+    "hole": "",
+    "why": "The sentence gives a strict upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6b58ce06240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 906,
+    "output": 144,
+    "reasoning": 76
+   },
+   "cost": 0.003252,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with an exact equality for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact equality for p₀."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc66184e6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 906,
+    "output": 199,
+    "reasoning": 129
+   },
+   "cost": 0.003802,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence leads with an exact equality for the simple-point fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact equality for the simple-point fraction."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7435cc7f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.0,
+   "usage": {
+    "input": 908,
+    "output": 435,
+    "reasoning": 366
+   },
+   "cost": 0.006166,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with an exact rational value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact rational value for p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dcab3cc78779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.5,
+   "usage": {
+    "input": 908,
+    "output": 501,
+    "reasoning": 432
+   },
+   "cost": 0.006826,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence leads with an exact rational value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact rational value for p₀."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6e9dad8ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 914,
+    "output": 218,
+    "reasoning": 149
+   },
+   "cost": 0.004008,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with an exact rational value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact rational value for p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d75f0e640bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.0,
+   "usage": {
+    "input": 899,
+    "output": 572,
+    "reasoning": 504
+   },
+   "cost": 0.007518,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence gives the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence gives the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dcccb82d0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.8,
+   "usage": {
+    "input": 899,
+    "output": 332,
+    "reasoning": 260
+   },
+   "cost": 0.005118,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence gives an exact rational value for p₀ after its decimal approximation.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence gives an exact rational value for p₀ after its decimal approximation."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6d939fab026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.5,
+   "usage": {
+    "input": 908,
+    "output": 312,
+    "reasoning": 243
+   },
+   "cost": 0.004936,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6913fd4f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 914,
+    "output": 164,
+    "reasoning": 95
+   },
+   "cost": 0.003468,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The leading claim gives the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The leading claim gives the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d76c1fdf1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 905,
+    "output": 226,
+    "reasoning": 182
+   },
+   "cost": 0.00407,
+   "raw": "{\"statement\":\"p₀ ≤ 0.6818287\",\"hole\":\"\",\"why\":\"The sentence leads with an upper bound on p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence leads with an upper bound on p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dce80f688779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 905,
+    "output": 227,
+    "reasoning": 183
+   },
+   "cost": 0.00408,
+   "raw": "{\"statement\":\"p₀ ≤ 0.6818288\",\"hole\":\"\",\"why\":\"The sentence leads with an upper bound on p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818288",
+    "hole": "",
+    "why": "The sentence leads with an upper bound on p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6c47a6d0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 902,
+    "output": 174,
+    "reasoning": 105
+   },
+   "cost": 0.003544,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc9999758779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 902,
+    "output": 254,
+    "reasoning": 185
+   },
+   "cost": 0.004344,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence leads with an exact rational value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact rational value for p₀."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d71b3cb0ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 914,
+    "output": 265,
+    "reasoning": 196
+   },
+   "cost": 0.004478,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with an exact rational equality for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact rational equality for p₀."
+   }
+  },
+  {
+   "tag": "4/referee/36 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc9f3f0d6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.5,
+   "usage": {
+    "input": 914,
+    "output": 363,
+    "reasoning": 294
+   },
+   "cost": 0.005458,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence leads with an exact equality claim for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact equality claim for p₀."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6f15871ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.1,
+   "usage": {
+    "input": 893,
+    "output": 312,
+    "reasoning": 252
+   },
+   "cost": 0.004906,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\",\"hole\":\"\",\"why\":\"The sentence leads with the exact value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": "The sentence leads with the exact value of p₀."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7a15833b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 834,
+    "output": 107,
+    "reasoning": 60
+   },
+   "cost": 0.002738,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence states the leading decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the leading decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd1698e51b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.2,
+   "usage": {
+    "input": 834,
+    "output": 134,
+    "reasoning": 85
+   },
+   "cost": 0.003008,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence states the printed decimal expansion of the Montgomery–Taylor constant.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the printed decimal expansion of the Montgomery–Taylor constant."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d80a5d0d6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.6,
+   "usage": {
+    "input": 870,
+    "output": 133,
+    "reasoning": 86
+   },
+   "cost": 0.00307,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives the truncated decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd5cce29030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 870,
+    "output": 183,
+    "reasoning": 130
+   },
+   "cost": 0.00357,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the printed decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7e6f9761b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 833,
+    "output": 153,
+    "reasoning": 113
+   },
+   "cost": 0.003196,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The value 0.7533 is stated only approximately (“about”).\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The value 0.7533 is stated only approximately (“about”)."
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7cfba508779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.0,
+   "usage": {
+    "input": 840,
+    "output": 143,
+    "reasoning": 93
+   },
+   "cost": 0.00311,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives the numerical value of c₁* with a trailing ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the numerical value of c₁* with a trailing ellipsis."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd2eaa4cb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.4,
+   "usage": {
+    "input": 840,
+    "output": 201,
+    "reasoning": 146
+   },
+   "cost": 0.00369,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the numerical value of c₁* as a truncated decimal.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the numerical value of c₁* as a truncated decimal."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7a04cbe1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 889,
+    "output": 258,
+    "reasoning": 210
+   },
+   "cost": 0.004358,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives the leading truncated decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the leading truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd0c4ffb4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 889,
+    "output": 130,
+    "reasoning": 94
+   },
+   "cost": 0.003078,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d82368cc4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.5,
+   "usage": {
+    "input": 839,
+    "output": 328,
+    "reasoning": 292
+   },
+   "cost": 0.004958,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd6c1eacae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.2,
+   "usage": {
+    "input": 839,
+    "output": 298,
+    "reasoning": 251
+   },
+   "cost": 0.004658,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence states the truncated decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the truncated decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7c088a06240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.8,
+   "usage": {
+    "input": 860,
+    "output": 225,
+    "reasoning": 176
+   },
+   "cost": 0.00397,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed truncated decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd1c3c1b0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 860,
+    "output": 176,
+    "reasoning": 128
+   },
+   "cost": 0.00348,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed truncated value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated value of c₁*."
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7fba999ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.8,
+   "usage": {
+    "input": 863,
+    "output": 333,
+    "reasoning": 284
+   },
+   "cost": 0.005056,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed truncated decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd45cd190bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 863,
+    "output": 233,
+    "reasoning": 180
+   },
+   "cost": 0.004056,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed truncated value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7f759678779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.0,
+   "usage": {
+    "input": 834,
+    "output": 200,
+    "reasoning": 152
+   },
+   "cost": 0.003668,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed truncated value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd375f2d4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.4,
+   "usage": {
+    "input": 834,
+    "output": 209,
+    "reasoning": 161
+   },
+   "cost": 0.003758,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence leads with a truncated decimal value for c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with a truncated decimal value for c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8337ef14051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 823,
+    "output": 105,
+    "reasoning": 68
+   },
+   "cost": 0.002696,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The numerical value is given only approximately with ≈.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The numerical value is given only approximately with ≈."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d85188644051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 38.1,
+   "usage": {
+    "input": 834,
+    "output": 1150,
+    "reasoning": 1091
+   },
+   "cost": 0.013168,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence identifies the proportion with 2 - 1/c₁* and prints its truncated decimal expansion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence identifies the proportion with 2 - 1/c₁* and prints its truncated decimal expansion."
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd777b294051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.7,
+   "usage": {
+    "input": 834,
+    "output": 528,
+    "reasoning": 482
+   },
+   "cost": 0.006948,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The leading claim is an unbounded density theorem about the zeros of the Riemann zeta function.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The leading claim is an unbounded density theorem about the zeros of the Riemann zeta function."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8d09b341b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.1,
+   "usage": {
+    "input": 833,
+    "output": 357,
+    "reasoning": 301
+   },
+   "cost": 0.005236,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed decimal expansion of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the printed decimal expansion of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de0d8fd1ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.5,
+   "usage": {
+    "input": 833,
+    "output": 338,
+    "reasoning": 290
+   },
+   "cost": 0.005046,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with this equality for the proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with this equality for the proportion."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8a15fc2030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 824,
+    "output": 186,
+    "reasoning": 132
+   },
+   "cost": 0.003508,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence leads with this equality for two minus the reciprocal of c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with this equality for two minus the reciprocal of c₁*."
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537ddd67a240bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.8,
+   "usage": {
+    "input": 824,
+    "output": 243,
+    "reasoning": 187
+   },
+   "cost": 0.004078,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with the truncated numerical value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the truncated numerical value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d877b9c61b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 834,
+    "output": 203,
+    "reasoning": 147
+   },
+   "cost": 0.003698,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed truncated equality for 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated equality for 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537ddb1ef01f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 834,
+    "output": 253,
+    "reasoning": 197
+   },
+   "cost": 0.004198,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with a truncated decimal value for the stated proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with a truncated decimal value for the stated proportion."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8458c62ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 837,
+    "output": 131,
+    "reasoning": 84
+   },
+   "cost": 0.002984,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It is a theorem about the proportion of all nontrivial zeta zeros, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It is a theorem about the proportion of all nontrivial zeta zeros, which no finite check decides."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d908cc0e4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.7,
+   "usage": {
+    "input": 826,
+    "output": 540,
+    "reasoning": 480
+   },
+   "cost": 0.007052,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence numerically evaluates the lower bound 2 - 1/c₁* as the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence numerically evaluates the lower bound 2 - 1/c₁* as the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "6/paper/58 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de190d7e1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 826,
+    "output": 482,
+    "reasoning": 432
+   },
+   "cost": 0.006472,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence gives the numerical value of the lower-bound constant.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence gives the numerical value of the lower-bound constant."
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d86c08bf0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 824,
+    "output": 236,
+    "reasoning": 180
+   },
+   "cost": 0.004008,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence equates 2 - 1/c₁* to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence equates 2 - 1/c₁* to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd88ec48b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.4,
+   "usage": {
+    "input": 824,
+    "output": 227,
+    "reasoning": 171
+   },
+   "cost": 0.003918,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence equates the proportion expression to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence equates the proportion expression to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d91c1939f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.0,
+   "usage": {
+    "input": 802,
+    "output": 114,
+    "reasoning": 74
+   },
+   "cost": 0.002744,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The sentence uses the approximate relation ≈ rather than an exact relation.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence uses the approximate relation ≈ rather than an exact relation."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8cebfdc4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 834,
+    "output": 287,
+    "reasoning": 229
+   },
+   "cost": 0.004538,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The leading numerical claim equates 2 - 1/c₁* with the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The leading numerical claim equates 2 - 1/c₁* with the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537ddea7c0d6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.0,
+   "usage": {
+    "input": 834,
+    "output": 255,
+    "reasoning": 206
+   },
+   "cost": 0.004218,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed equality for the proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the printed equality for the proportion."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8a47a32d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 822,
+    "output": 188,
+    "reasoning": 132
+   },
+   "cost": 0.003524,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed truncated value of 2 − 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the printed truncated value of 2 − 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dde5eea64051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 822,
+    "output": 236,
+    "reasoning": 180
+   },
+   "cost": 0.004004,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with the truncated numerical value of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the truncated numerical value of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9415deb6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.0,
+   "usage": {
+    "input": 813,
+    "output": 205,
+    "reasoning": 151
+   },
+   "cost": 0.003676,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates the distinct proportion with the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the distinct proportion with the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de4ee9bcae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.3,
+   "usage": {
+    "input": 813,
+    "output": 294,
+    "reasoning": 240
+   },
+   "cost": 0.004566,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the given expression with the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the given expression with the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9a72920f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 817,
+    "output": 197,
+    "reasoning": 141
+   },
+   "cost": 0.003604,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence states an equality with a decimal expansion cut off by an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states an equality with a decimal expansion cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537deb07c7b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 817,
+    "output": 118,
+    "reasoning": 68
+   },
+   "cost": 0.002814,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence states the leading truncated numerical equality.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the leading truncated numerical equality."
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d97d4f8cae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 815,
+    "output": 206,
+    "reasoning": 140
+   },
+   "cost": 0.00369,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates (3 - 1/c₁*)/2 with the truncated decimal 0.83625….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates (3 - 1/c₁*)/2 with the truncated decimal 0.83625…."
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de82ed1b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.3,
+   "usage": {
+    "input": 815,
+    "output": 162,
+    "reasoning": 104
+   },
+   "cost": 0.00325,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence claims that this expression equals the truncated decimal 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims that this expression equals the truncated decimal 0.83626…."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9d11ca34051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 810,
+    "output": 106,
+    "reasoning": 69
+   },
+   "cost": 0.00268,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The value 0.836 is stated only approximately.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The value 0.836 is stated only approximately."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9737a6ff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 814,
+    "output": 203,
+    "reasoning": 150
+   },
+   "cost": 0.003658,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates the stated expression to the truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the stated expression to the truncated decimal."
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de7fccca1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 814,
+    "output": 214,
+    "reasoning": 160
+   },
+   "cost": 0.003768,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the distinct proportion to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the distinct proportion to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d93fdd198779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 816,
+    "output": 182,
+    "reasoning": 128
+   },
+   "cost": 0.003452,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates the distinct proportion with the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the distinct proportion with the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de28fbad4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.1,
+   "usage": {
+    "input": 816,
+    "output": 190,
+    "reasoning": 135
+   },
+   "cost": 0.003532,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the distinct proportion expression to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the distinct proportion expression to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9c82b0f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.0,
+   "usage": {
+    "input": 824,
+    "output": 214,
+    "reasoning": 160
+   },
+   "cost": 0.003788,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates the given expression to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the given expression to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537deceab7cd884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.8,
+   "usage": {
+    "input": 824,
+    "output": 198,
+    "reasoning": 144
+   },
+   "cost": 0.003628,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the given expression to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the given expression to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d96c8cda8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.9,
+   "usage": {
+    "input": 808,
+    "output": 189,
+    "reasoning": 133
+   },
+   "cost": 0.003506,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates the given expression to an ellipsis-truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the given expression to an ellipsis-truncated decimal."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de4f7bbe030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 808,
+    "output": 221,
+    "reasoning": 162
+   },
+   "cost": 0.003826,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the stated expression with the truncated decimal 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the stated expression with the truncated decimal 0.83626…."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9a02efa8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 827,
+    "output": 162,
+    "reasoning": 108
+   },
+   "cost": 0.003274,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence leads with the recomputed value printed with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the recomputed value printed with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dea9fba0aef6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.3,
+   "usage": {
+    "input": 827,
+    "output": 194,
+    "reasoning": 145
+   },
+   "cost": 0.003594,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence leads with this truncated equality.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with this truncated equality."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d997cd568779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.9,
+   "usage": {
+    "input": 809,
+    "output": 364,
+    "reasoning": 313
+   },
+   "cost": 0.005258,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence states the value of the distinct proportion.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the value of the distinct proportion."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de8f5f79f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.0,
+   "usage": {
+    "input": 809,
+    "output": 418,
+    "reasoning": 364
+   },
+   "cost": 0.005798,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the distinct proportion to the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the distinct proportion to the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9eeeebe030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.7,
+   "usage": {
+    "input": 875,
+    "output": 80,
+    "reasoning": 30
+   },
+   "cost": 0.00255,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"It asserts a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da352bec1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.8,
+   "usage": {
+    "input": 910,
+    "output": 242,
+    "reasoning": 193
+   },
+   "cost": 0.00424,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"Both claims are unbounded assertions about zeros, including a zero-free region, not finite checks over the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "Both claims are unbounded assertions about zeros, including a zero-free region, not finite checks over the given data."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da063b6a0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 873,
+    "output": 165,
+    "reasoning": 120
+   },
+   "cost": 0.003396,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"This asserts a theorem about all nontrivial zeros of ζ, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "This asserts a theorem about all nontrivial zeros of ζ, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da0349116240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 885,
+    "output": 146,
+    "reasoning": 101
+   },
+   "cost": 0.00323,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The claim concerns all nontrivial zeta zeros, so no finite integer-row check decides it.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claim concerns all nontrivial zeta zeros, so no finite integer-row check decides it."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9e23d4d1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 885,
+    "output": 126,
+    "reasoning": 81
+   },
+   "cost": 0.00303,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da361dabd884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.2,
+   "usage": {
+    "input": 892,
+    "output": 89,
+    "reasoning": 43
+   },
+   "cost": 0.002674,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The theorem asserts a proportion for infinitely many zeta zeros, which no finite integer-row check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The theorem asserts a proportion for infinitely many zeta zeros, which no finite integer-row check decides."
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9f9fbc5ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 876,
+    "output": 144,
+    "reasoning": 99
+   },
+   "cost": 0.003192,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a zero-free region for all Dirichlet L-functions, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for all Dirichlet L-functions, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da2bc9dfd884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.0,
+   "usage": {
+    "input": 884,
+    "output": 195,
+    "reasoning": 149
+   },
+   "cost": 0.003718,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The claim concerns all nontrivial zeros of ζ, so no finite integer-row check decides it.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claim concerns all nontrivial zeros of ζ, so no finite integer-row check decides it."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da181e4cf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 874,
+    "output": 142,
+    "reasoning": 97
+   },
+   "cost": 0.003168,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537da56ee38d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 878,
+    "output": 186,
+    "reasoning": 138
+   },
+   "cost": 0.003616,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts zero-free and simplicity properties for all L-functions and zeta zeros, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts zero-free and simplicity properties for all L-functions and zeta zeros, which no finite check decides."
+   }
+  }
+ ]
+}

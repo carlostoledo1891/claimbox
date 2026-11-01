@@ -883,8 +883,30 @@ def summary(entries):
                         'flagged': sum(1 for p in made if p.get('vacuity') and not p['vacuity']['depends']),
                         'notRun': sum(1 for p in made if not p.get('vacuity'))},
             'pairs': pairs(entries),
+            'stability': stability(entries),
             'paraphrase': {k: {w: sum(1 for p in made if p['kind'] == k and p.get('paraphrase') == w) for w in ('same', 'moved', 'unread')}
                            for k in sorted({p['kind'] for p in made})}}
+
+
+def stability(entries):
+    """a family asked again (its repeat runs are the families <family>.r2, <family>.r3, …): per family, the sentences every run
+    answered and how many it answered the same way every time — the same object, or the same hole"""
+    runs = {}
+    for e in entries:
+        for p in e['proposals']:
+            if p['kind'].startswith('model:'):
+                fam = p['kind'][len('model:'):]
+                base = re.sub(r'\.r\d+$', '', fam)
+                sig = json.dumps(p['decision'], sort_keys=True) if 'object' in p else 'hole ' + (p.get('refused') or {}).get('hole', '?')
+                runs.setdefault(base, {}).setdefault(fam, {})[e['id']] = sig
+    out = {}
+    for base, fams in sorted(runs.items()):
+        if len(fams) < 2:
+            continue
+        common = set.intersection(*(set(v) for v in fams.values()))
+        same = sum(1 for sid in common if len({v[sid] for v in fams.values()}) == 1)
+        out[base] = {'runs': len(fams), 'sentences': len(common), 'same': same, 'differ': len(common) - same}
+    return out
 
 
 def pairs(entries):

@@ -1,0 +1,1644 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "minimax/minimax-m3",
+ "provider": "prime",
+ "family": "minimax-m3",
+ "effort": "high",
+ "cap": 3.0,
+ "guide": null,
+ "spent": 0.4048,
+ "calls": 83,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.3,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 1.2
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d5f7ccfeae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 64.2,
+   "usage": {
+    "input": 1033,
+    "output": 7645,
+    "reasoning": 7580
+   },
+   "cost": 0.009484,
+   "raw": "\n\n{\"statement\":\"firs_alphaevolve_2025 is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50529397\",\"hole\":\"\",\"why\":\"It states that the construction is feasible and bounds its first-autocorrelation score by 1.50529397.\"}",
+   "answer": {
+    "statement": "firs_alphaevolve_2025 is a feasible solution of \"first-autocorrelation\" and its score is 1.50529397",
+    "hole": "",
+    "why": "It states that the construction is feasible and bounds its first-autocorrelation score by 1.50529397."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d626791f1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.7,
+   "usage": {
+    "input": 1018,
+    "output": 364,
+    "reasoning": 320
+   },
+   "cost": 0.000742,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"the sentence explicitly says no value is printed for C₁, so there is no number to put on the right of the inequality.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "the sentence explicitly says no value is printed for C₁, so there is no number to put on the right of the inequality."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d6fa79896240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.9,
+   "usage": {
+    "input": 1009,
+    "output": 1526,
+    "reasoning": 1456
+   },
+   "cost": 0.002134,
+   "raw": "{\"statement\": \"firs_ours_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is ≤ 1.50286286\", \"hole\": \"\", \"why\": \"The sentence pins our 2026 construction to EinsteinArena's first-autocorrelation problem and asserts the score bound.\"}",
+   "answer": {
+    "statement": "firs_ours_2026 is a feasible solution of \"first-autocorrelation\" and its score is ≤ 1.50286286",
+    "hole": "",
+    "why": "The sentence pins our 2026 construction to EinsteinArena's first-autocorrelation problem and asserts the score bound."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d63da9bfb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 145.0,
+   "usage": {
+    "input": 1014,
+    "output": 13822,
+    "reasoning": 13626
+   },
+   "cost": 0.016891,
+   "raw": "Looking at this carefully:\n\n- The sentence describes data f (30000 values in [-1/4, 1/4], all ≥ 0) and gives an upper bound on C₁ (the first-autocorrelation, which is the library's named objective).\n- The library `firs_ttt_discover_2026` is described as \"a construction published for EinsteinArena's problem first-autocorrelation\" — a feasible solution with score C₁.\n- The leading claim is the bound on C₁.\n- The \"feasible solution\" template fits: DATA = the construction, TITLE = the problem named by the library, BAR = the score bound as printed.\n\n```json\n{\"statement\": \"firs_ttt_discover_2026 is a feasible solution of \\\"EinsteinArena's problem first-autocorrelation\\\" and its score is ≤ 1.50286290\", \"hole\": \"\", \"why\": \"\"}\n```",
+   "answer": {
+    "statement": "firs_ttt_discover_2026 is a feasible solution of \"EinsteinArena's problem first-autocorrelation\" and its score is ≤ 1.50286290",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d44bc9bfb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.2,
+   "usage": {
+    "input": 1092,
+    "output": 1682,
+    "reasoning": 1616
+   },
+   "cost": 0.002346,
+   "raw": "\n\n{\"statement\":\"alphaevolve_2025.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\",\"hole\":\"\",\"why\":\"The sentence specifies 21 disjoint circles in the stated rectangle and gives their total radius.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence specifies 21 disjoint circles in the stated rectangle and gives their total radius."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d4686ea3b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 1089,
+    "output": 587,
+    "reasoning": 522
+   },
+   "cost": 0.001031,
+   "raw": "\n\n{\"statement\":\"ours_2026.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\",\"hole\":\"\",\"why\":\"The sentence claims that the 21-circle construction is feasible and has the stated total radius.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence claims that the 21-circle construction is feasible and has the stated total radius."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d5741d6a8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.5,
+   "usage": {
+    "input": 1030,
+    "output": 3822,
+    "reasoning": 3770
+   },
+   "cost": 0.004895,
+   "raw": "\n\n{\"statement\":\"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\",\"hole\":\"\",\"why\":\"The sentence gives the published construction's exact platform envelope score.\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence gives the published construction's exact platform envelope score."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d5b85f324051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.2,
+   "usage": {
+    "input": 1005,
+    "output": 846,
+    "reasoning": 774
+   },
+   "cost": 0.001317,
+   "raw": "{\"statement\": \"edge_ours_2026 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"the sentence reports the platform's envelope score of the ours_2026 construction on the edges-vs-triangles problem as -0.712256\"}",
+   "answer": {
+    "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "the sentence reports the platform's envelope score of the ours_2026 construction on the edges-vs-triangles problem as -0.712256"
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d7573e3d6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 92.1,
+   "usage": {
+    "input": 1009,
+    "output": 7978,
+    "reasoning": 7911
+   },
+   "cost": 0.009876,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The quantity C⁺ = max_{|z|=1} |g(z)| / √71 requires a max operation over the unit circle (and polynomial evaluation at a complex z) that is not expressible with the allowed TERM syntax.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The quantity C⁺ = max_{|z|=1} |g(z)| / √71 requires a max operation over the unit circle (and polynomial evaluation at a complex z) that is not expressible with the allowed TERM syntax."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d788eb1d1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.7,
+   "usage": {
+    "input": 1006,
+    "output": 1881,
+    "reasoning": 1798
+   },
+   "cost": 0.002559,
+   "raw": "{\"statement\": \"ours_2026.py is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280932\", \"hole\": \"\", \"why\": \"The sentence reports the score C⁺ = 1.280932 achieved by the construction flat_ours_2026 (stored in ours_2026.py) for the flat-polynomials problem.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+    "hole": "",
+    "why": "The sentence reports the score C⁺ = 1.280932 achieved by the construction flat_ours_2026 (stored in ours_2026.py) for the flat-polynomials problem."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d486b92ef1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 1058,
+    "output": 363,
+    "reasoning": 280
+   },
+   "cost": 0.000753,
+   "raw": "{\"statement\": \"alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\", \"hole\": \"\", \"why\": \"the sentence reports the verified score of the pinned construction on the platform's Heilbronn-for-Convex problem at n=14.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "the sentence reports the verified score of the pinned construction on the platform's Heilbronn-for-Convex problem at n=14."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d497def88779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.5,
+   "usage": {
+    "input": 1077,
+    "output": 2019,
+    "reasoning": 1952
+   },
+   "cost": 0.002746,
+   "raw": "\n\n{\"statement\":\"ours_2026.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\",\"hole\":\"\",\"why\":\"The sentence states the normalized minimum triangle area achieved by the 14-point construction.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence states the normalized minimum triangle area achieved by the 14-point construction."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d80a2c5cb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 1009,
+    "output": 602,
+    "reasoning": 522
+   },
+   "cost": 0.001025,
+   "raw": "{\"statement\": \"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\", \"hole\": \"\", \"why\": \"The sentence reports a feasible packing of 12 unit hexagons inside a hexagon of side 3.9419123, with the score equaling that outer side.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "The sentence reports a feasible packing of 12 unit hexagons inside a hexagon of side 3.9419123, with the score equaling that outer side."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d833dbac8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 1006,
+    "output": 459,
+    "reasoning": 385
+   },
+   "cost": 0.000853,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\", \"hole\": \"\", \"why\": \"The sentence reports a feasible solution (12 unit hexagons packed into a hexagon) with the score being the outer side 3.9416523.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence reports a feasible solution (12 unit hexagons packed into a hexagon) with the score being the outer side 3.9416523."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d4a4fb8f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.9,
+   "usage": {
+    "input": 1089,
+    "output": 982,
+    "reasoning": 915
+   },
+   "cost": 0.001505,
+   "raw": "\n\n{\"statement\":\"alphaevolve_2025.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\",\"hole\":\"\",\"why\":\"The sentence gives the squared max/min distance ratio for the 16-point configuration.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio for the 16-point configuration."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d4d03a516240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1064,
+    "output": 212,
+    "reasoning": 138
+   },
+   "cost": 0.000574,
+   "raw": "{\"statement\": \"ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\", \"hole\": \"\", \"why\": \"the sentence reports the squared max/min distance ratio achieved by the data as its score on the named platform problem.\"}",
+   "answer": {
+    "statement": "ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "the sentence reports the squared max/min distance ratio achieved by the data as its score on the named platform problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d4ec381d0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.7,
+   "usage": {
+    "input": 1015,
+    "output": 1270,
+    "reasoning": 1224
+   },
+   "cost": 0.001829,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380924\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380924",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d4dd4aac0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.0,
+   "usage": {
+    "input": 1015,
+    "output": 3399,
+    "reasoning": 3295
+   },
+   "cost": 0.004383,
+   "raw": "{\"statement\": \"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380927\", \"hole\": \"\", \"why\": \"The sentence describes the step function construction (51 steps, 0 ≤ h ≤ 1, Σh = n/2) and states its upper bound value of 0.380927, which is the score of this feasible solution on the erdos-minimum-overlap problem.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
+    "hole": "",
+    "why": "The sentence describes the step function construction (51 steps, 0 ≤ h ≤ 1, Σh = n/2) and states its upper bound value of 0.380927, which is the score of this feasible solution on the erdos-minimum-overlap problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d53bbda51b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 1016,
+    "output": 850,
+    "reasoning": 805
+   },
+   "cost": 0.001325,
+   "raw": "{\"statement\": \"together_ai_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380871\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d517ded80bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 77.2,
+   "usage": {
+    "input": 1039,
+    "output": 9095,
+    "reasoning": 9051
+   },
+   "cost": 0.011226,
+   "raw": "\n\n{\"statement\":\"erdo_ttt_discover_2026 ≤ 0.380876\",\"hole\":\"\",\"why\":\"The construction is stated to provide an upper bound of 0.380876.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
+    "hole": "",
+    "why": "The construction is stated to provide an upper bound of 0.380876."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a5381b04ac42f1ff-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 130.0,
+   "usage": {
+    "input": 1039,
+    "output": 16000,
+    "reasoning": 15999
+   },
+   "cost": 0.019512,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d996fa8cf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1009,
+    "output": 270,
+    "reasoning": 224
+   },
+   "cost": 0.000627,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name over kakeya-a2-intercepts.json, so Area(E) cannot be expressed as a TERM.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name over kakeya-a2-intercepts.json, so Area(E) cannot be expressed as a TERM."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d44bea57ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 979,
+    "output": 411,
+    "reasoning": 350
+   },
+   "cost": 0.000787,
+   "raw": "{\"statement\": \"the 593 vectors of k11593 form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence claims K(11) ≥ 593, evidenced by a data file of 593 kissing-direction vectors in dimension 11.\"}",
+   "answer": {
+    "statement": "the 593 vectors of k11593 form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence claims K(11) ≥ 593, evidenced by a data file of 593 kissing-direction vectors in dimension 11."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d44bd9f8f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.6,
+   "usage": {
+    "input": 985,
+    "output": 2881,
+    "reasoning": 2814
+   },
+   "cost": 0.003753,
+   "raw": "{\"statement\": \"the 594 vectors of k6 form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence states K(11) ≥ 594, i.e., a kissing configuration of 594 unit vectors in R^11 exists, given as the data k6.\"}",
+   "answer": {
+    "statement": "the 594 vectors of k6 form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence states K(11) ≥ 594, i.e., a kissing configuration of 594 unit vectors in R^11 exists, given as the data k6."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d9e06f4cd884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 1008,
+    "output": 373,
+    "reasoning": 311
+   },
+   "cost": 0.00075,
+   "raw": "{\"statement\": \"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d9fc3d8f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 1012,
+    "output": 875,
+    "reasoning": 811
+   },
+   "cost": 0.001354,
+   "raw": "\n\n{\"statement\":\"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the notebook decomposition under the quoted heading has rank 45 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook decomposition under the quoted heading has rank 45 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da1dfa81030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1003,
+    "output": 240,
+    "reasoning": 188
+   },
+   "cost": 0.000589,
+   "raw": "{\"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da263e101b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.9,
+   "usage": {
+    "input": 1012,
+    "output": 675,
+    "reasoning": 610
+   },
+   "cost": 0.001114,
+   "raw": "\n\n{\"statement\":\"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence identifies one named notebook decomposition and asserts its rank, tensor dimensions, and coefficient ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence identifies one named notebook decomposition and asserts its rank, tensor dimensions, and coefficient ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da2efee60bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 1003,
+    "output": 772,
+    "reasoning": 720
+   },
+   "cost": 0.001227,
+   "raw": "{\"statement\": \"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da397c0af1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 1008,
+    "output": 239,
+    "reasoning": 151
+   },
+   "cost": 0.000589,
+   "raw": "{\"statement\": \"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence states that a named decomposition in the notebook is a rank-54 decomposition of the stated tensor over the stated ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence states that a named decomposition in the notebook is a rank-54 decomposition of the stated tensor over the stated ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da4afc76f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1029,
+    "output": 271,
+    "reasoning": 195
+   },
+   "cost": 0.000634,
+   "raw": "\n\n{\"statement\":\"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence identifies the notebook's named section as a rank-63 tensor decomposition over the stated ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence identifies the notebook's named section as a rank-63 tensor decomposition over the stated ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da5169a3ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1025,
+    "output": 278,
+    "reasoning": 205
+   },
+   "cost": 0.000641,
+   "raw": "\n\n{\"statement\":\"alphaevolve_mathematical_results.ipynb[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence identifies a specific notebook decomposition and states its rank, tensor dimensions, and ring.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence identifies a specific notebook decomposition and states its rank, tensor dimensions, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da60ae4d0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1003,
+    "output": 318,
+    "reasoning": 252
+   },
+   "cost": 0.000682,
+   "raw": "{\"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"the sentence states a tensor rank claim about a named decomposition in the notebook\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "the sentence states a tensor rank claim about a named decomposition in the notebook"
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da648e181b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1025,
+    "output": 344,
+    "reasoning": 272
+   },
+   "cost": 0.00072,
+   "raw": "\n\n{\"statement\":\"alphaevolve_mathematical_results.ipynb[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\",\"hole\":\"\",\"why\":\"The sentence names the notebook decomposition and states its rank, tensor dimensions, and ring.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence names the notebook decomposition and states its rank, tensor dimensions, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da74ce836240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.4,
+   "usage": {
+    "input": 1003,
+    "output": 610,
+    "reasoning": 536
+   },
+   "cost": 0.001033,
+   "raw": "{\"statement\": \"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\", \"hole\": \"\", \"why\": \"The sentence states a decomposition of a named file entry, matching the DATA[\\\"HEADING\\\"] form.\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence states a decomposition of a named file entry, matching the DATA[\"HEADING\"] form."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da793975030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1025,
+    "output": 269,
+    "reasoning": 205
+   },
+   "cost": 0.00063,
+   "raw": "\n\n{\"statement\":\"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence identifies the notebook section as a rank-85 tensor decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence identifies the notebook section as a rank-85 tensor decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da671e01b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1029,
+    "output": 375,
+    "reasoning": 295
+   },
+   "cost": 0.000759,
+   "raw": "\n\n{\"statement\":\"alphaevolve_mathematical_results.ipynb[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence identifies the notebook section as a rank-96 tensor decomposition over that ring.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence identifies the notebook section as a rank-96 tensor decomposition over that ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da7a2e591b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1003,
+    "output": 217,
+    "reasoning": 140
+   },
+   "cost": 0.000561,
+   "raw": "{\"statement\": \"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence states exactly that a named entry of the notebook is a rank-R decomposition of a specific tensor over a specific ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence states exactly that a named entry of the notebook is a rank-R decomposition of a specific tensor over a specific ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da87ce850bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.9,
+   "usage": {
+    "input": 1003,
+    "output": 311,
+    "reasoning": 244
+   },
+   "cost": 0.000674,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"The sentence states the decomposition's rank, tensor dimensions, and ring exactly.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence states the decomposition's rank, tensor dimensions, and ring exactly."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "minimax/minimax-m3",
+   "requestId": "a538126d79e4b490-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 129.1,
+   "usage": {
+    "input": 1044,
+    "output": 16000,
+    "reasoning": 15999
+   },
+   "cost": 0.019513,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3 (superseded)",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da905b15030d-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 146.3,
+   "usage": {
+    "input": 1044,
+    "output": 16000,
+    "reasoning": 15998
+   },
+   "cost": 0.019513,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537da9fe80b6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 89.6,
+   "usage": {
+    "input": 1031,
+    "output": 6105,
+    "reasoning": 6042
+   },
+   "cost": 0.007635,
+   "raw": "\n\n{\"statement\":\"af2[\\\"2,2,4\\\"] is a rank-2 decomposition of <2,2,4> over F2\",\"hole\":\"\",\"why\":\"The archive entry under key 2,2,4 is claimed to supply a rank-2 decomposition over F2.\"}",
+   "answer": {
+    "statement": "af2[\"2,2,4\"] is a rank-2 decomposition of <2,2,4> over F2",
+    "hole": "",
+    "why": "The archive entry under key 2,2,4 is claimed to supply a rank-2 decomposition over F2."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537dadeea9e8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 106.1,
+   "usage": {
+    "input": 1031,
+    "output": 7879,
+    "reasoning": 7820
+   },
+   "cost": 0.009764,
+   "raw": "\n\n{\"statement\":\"af2[\\\"2,2,5\\\"] is a rank-2 decomposition of <2,2,5> over F2\",\"hole\":\"\",\"why\":\"The sentence identifies the decomposition by its archive key and refers to the rank stated by its stored shape.\"}",
+   "answer": {
+    "statement": "af2[\"2,2,5\"] is a rank-2 decomposition of <2,2,5> over F2",
+    "hole": "",
+    "why": "The sentence identifies the decomposition by its archive key and refers to the rank stated by its stored shape."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537daa95beb0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 1022,
+    "output": 912,
+    "reasoning": 855
+   },
+   "cost": 0.001401,
+   "raw": "{\"statement\": \"\", \"hole\": \"data\", \"why\": \"The claimed rank is stated only as 'the rank the array's shape states', a quantity that must be read from the file's bytes and is not given as a number in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claimed rank is stated only as 'the rank the array's shape states', a quantity that must be read from the file's bytes and is not given as a number in the sentence."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537dcd01d131b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.7,
+   "usage": {
+    "input": 1022,
+    "output": 2505,
+    "reasoning": 2444
+   },
+   "cost": 0.003313,
+   "raw": "{\"statement\": \"\", \"hole\": \"reading\", \"why\": \"The rank is described as \\\"the rank the array's shape states\\\" but the sentence does not specify how the array's shape encodes the rank, so the numerical value of R cannot be written as the claim requires.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "reading",
+    "why": "The rank is described as \"the rank the array's shape states\" but the sentence does not specify how the array's shape encodes the rank, so the numerical value of R cannot be written as the claim requires."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537dd64581bae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 80.5,
+   "usage": {
+    "input": 1044,
+    "output": 9143,
+    "reasoning": 9079
+   },
+   "cost": 0.011285,
+   "raw": "\n\n{\"statement\":\"alphatensor_f2.npz[\\\"2,3,5\\\"] is a rank-3 decomposition of <2,3,5> over F2\",\"hole\":\"\",\"why\":\"The stored array for key 2,3,5 has shape indicating rank 3.\"}",
+   "answer": {
+    "statement": "alphatensor_f2.npz[\"2,3,5\"] is a rank-3 decomposition of <2,3,5> over F2",
+    "hole": "",
+    "why": "The stored array for key 2,3,5 has shape indicating rank 3."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537dd75ffe58779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.7,
+   "usage": {
+    "input": 1022,
+    "output": 892,
+    "reasoning": 843
+   },
+   "cost": 0.001377,
+   "raw": "{\"statement\": \"\", \"hole\": \"data\", \"why\": \"The rank is described as whatever the array's shape states, so the numerical value of R depends on the bytes of the file, which are not provided.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank is described as whatever the array's shape states, so the numerical value of R depends on the bytes of the file, which are not provided."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a538126d7bf7d848-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 108.5,
+   "usage": {
+    "input": 1044,
+    "output": 16000,
+    "reasoning": 15999
+   },
+   "cost": 0.019513,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4 (superseded)",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ddbf2c138779-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 117.1,
+   "usage": {
+    "input": 1044,
+    "output": 16000,
+    "reasoning": 15999
+   },
+   "cost": 0.019513,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537de22a9c96240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.6,
+   "usage": {
+    "input": 1048,
+    "output": 5204,
+    "reasoning": 5171
+   },
+   "cost": 0.006559,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence does not identify which ring is meant by \\\"the ring the paper names\\\".\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not identify which ring is meant by \"the ring the paper names\"."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a538151389a3f23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 66.4,
+   "usage": {
+    "input": 1048,
+    "output": 7863,
+    "reasoning": 7804
+   },
+   "cost": 0.00975,
+   "raw": "\n\n{\"statement\":\"ar[\\\"2,2,4\\\"] is a rank-7 decomposition of <2,2,4> over R\",\"hole\":\"\",\"why\":\"The sentence claims that the keyed factors give a rank-7 decomposition over the paper's named ring.\"}",
+   "answer": {
+    "statement": "ar[\"2,2,4\"] is a rank-7 decomposition of <2,2,4> over R",
+    "hole": "",
+    "why": "The sentence claims that the keyed factors give a rank-7 decomposition over the paper's named ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a53816b2fdbaf38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 122.0,
+   "usage": {
+    "input": 1048,
+    "output": 14893,
+    "reasoning": 14827
+   },
+   "cost": 0.018186,
+   "raw": "\n\n{\"statement\":\"alphatensor_r.npz[\\\"2,2,5\\\"] is a rank-10 decomposition of <2,2,5> over Z\",\"hole\":\"\",\"why\":\"The archived 2,2,5 entry contains ten rank-one factors and represents the tensor over Z.\"}",
+   "answer": {
+    "statement": "alphatensor_r.npz[\"2,2,5\"] is a rank-10 decomposition of <2,2,5> over Z",
+    "hole": "",
+    "why": "The archived 2,2,5 entry contains ten rank-one factors and represents the tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5 (superseded)",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e09b2c8b1b27-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 141.0,
+   "usage": {
+    "input": 1048,
+    "output": 16000,
+    "reasoning": 15999
+   },
+   "cost": 0.019514,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e2f06917d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 84.8,
+   "usage": {
+    "input": 1026,
+    "output": 6973,
+    "reasoning": 6928
+   },
+   "cost": 0.008675,
+   "raw": "```json\n{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence references \\\"the paper\\\" without specifying which paper or what ring it names, leaving the ring undefined.\"}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence references \"the paper\" without specifying which paper or what ring it names, leaving the ring undefined."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e44ed868b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.2,
+   "usage": {
+    "input": 1026,
+    "output": 1845,
+    "reasoning": 1781
+   },
+   "cost": 0.002522,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the rank is not given as a number (only 'the rank the array's shape states') and the ring is not named (only 'the ring the paper names'), so the required rank and ring values cannot be stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is not given as a number (only 'the rank the array's shape states') and the ring is not named (only 'the ring the paper names'), so the required rank and ring values cannot be stated."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e5022a95ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 44.9,
+   "usage": {
+    "input": 1026,
+    "output": 2922,
+    "reasoning": 2864
+   },
+   "cost": 0.003814,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the rank is referenced as 'the rank the array's shape states' and the ring as 'the ring the paper names'; neither is a specific number or term expressible in the claim format.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is referenced as 'the rank the array's shape states' and the ring as 'the ring the paper names'; neither is a specific number or term expressible in the claim format."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "minimax/minimax-m3",
+   "requestId": "a53815948f36f38c-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 140.9,
+   "usage": {
+    "input": 1048,
+    "output": 16000,
+    "reasoning": 15999
+   },
+   "cost": 0.019514,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-2x3x3 (superseded)",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537df5b5bff4051-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 146.7,
+   "usage": {
+    "input": 1048,
+    "output": 16000,
+    "reasoning": 15998
+   },
+   "cost": 0.019514,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e40c988b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.6,
+   "usage": {
+    "input": 1026,
+    "output": 644,
+    "reasoning": 593
+   },
+   "cost": 0.001081,
+   "raw": "{\"statement\": \"\", \"hole\": \"reading\", \"why\": \"the rank is given as 'the rank the array's shape states' and the ring as 'the ring the paper names', neither of which is stated in the sentence\"}",
+   "answer": {
+    "statement": "",
+    "hole": "reading",
+    "why": "the rank is given as 'the rank the array's shape states' and the ring as 'the ring the paper names', neither of which is stated in the sentence"
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a5381904feef4d3b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 81.8,
+   "usage": {
+    "input": 1048,
+    "output": 10960,
+    "reasoning": 10928
+   },
+   "cost": 0.013466,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence does not name the ring or specify which array-shape entry gives the rank.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not name the ring or specify which array-shape entry gives the rank."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5 (superseded)",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e4f299c91b27-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 112.2,
+   "usage": {
+    "input": 1048,
+    "output": 16000,
+    "reasoning": 15998
+   },
+   "cost": 0.019514,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e61b0f87ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.8,
+   "usage": {
+    "input": 1026,
+    "output": 2592,
+    "reasoning": 2535
+   },
+   "cost": 0.003418,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the ring is referenced to an unspecified paper and the rank is referenced to the array's shape rather than given as concrete numbers, so neither RING nor R can be written into the claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the ring is referenced to an unspecified paper and the rank is referenced to the array's shape rather than given as concrete numbers, so neither RING nor R can be written into the claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e7affec2ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 40.4,
+   "usage": {
+    "input": 1026,
+    "output": 3511,
+    "reasoning": 3463
+   },
+   "cost": 0.004521,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the rank is described as 'the rank the array's shape states', a quantity not expressible through the provided library name `ar`.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is described as 'the rank the array's shape states', a quantity not expressible through the provided library name `ar`."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e6fb1bd1b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 57.5,
+   "usage": {
+    "input": 1026,
+    "output": 3958,
+    "reasoning": 3905
+   },
+   "cost": 0.005057,
+   "raw": "{\"statement\": \"\", \"hole\": \"data\", \"why\": \"the rank is determined by the shape of the array at key \\\"3,3,4\\\" and the ring by the paper's naming, neither of which is given concretely\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "the rank is determined by the shape of the array at key \"3,3,4\" and the ring by the paper's naming, neither of which is given concretely"
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8b989421b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1036,
+    "output": 329,
+    "reasoning": 271
+   },
+   "cost": 0.000706,
+   "raw": "\n\n{\"statement\":\"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\",\"hole\":\"\",\"why\":\"The sentence states feasibility and gives the platform's exact score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence states feasibility and gives the platform's exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8ac3852ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1012,
+    "output": 198,
+    "reasoning": 128
+   },
+   "cost": 0.000541,
+   "raw": "{\"statement\": \"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\", \"hole\": \"\", \"why\": \"The sentence states a platform's feasible solution claim with an exact score, matching the library form using x13.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence states a platform's feasible solution claim with an exact score, matching the library form using x13."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e862de33f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.0,
+   "usage": {
+    "input": 1022,
+    "output": 823,
+    "reasoning": 768
+   },
+   "cost": 0.001294,
+   "raw": "\n\n{\"statement\":\"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\",\"hole\":\"\",\"why\":\"The sentence states the solution's feasibility and exact platform score.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence states the solution's feasibility and exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e894e8ecf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1034,
+    "output": 247,
+    "reasoning": 188
+   },
+   "cost": 0.000607,
+   "raw": "\n\n{\"statement\":\"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\",\"hole\":\"\",\"why\":\"The sentence identifies the object as a feasible solution and gives its platform score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence identifies the object as a feasible solution and gives its platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8a378bd1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1033,
+    "output": 307,
+    "reasoning": 249
+   },
+   "cost": 0.000678,
+   "raw": "\n\n{\"statement\":\"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\",\"hole\":\"\",\"why\":\"The sentence identifies the data object as feasible and gives its exact platform score.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence identifies the data object as feasible and gives its exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8cc0e80f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1015,
+    "output": 325,
+    "reasoning": 255
+   },
+   "cost": 0.000695,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\", \"hole\": \"\", \"why\": \"the sentence gives a platform problem title and its numerical score, matching the platform-statement form.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "the sentence gives a platform problem title and its numerical score, matching the platform-statement form."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8b9afcef1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1030,
+    "output": 375,
+    "reasoning": 322
+   },
+   "cost": 0.000759,
+   "raw": "\n\n{\"statement\":\"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\",\"hole\":\"\",\"why\":\"The sentence identifies the object as feasible and states its platform score.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": "The sentence identifies the object as feasible and states its platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8d48b3b1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1037,
+    "output": 229,
+    "reasoning": 170
+   },
+   "cost": 0.000586,
+   "raw": "\n\n{\"statement\":\"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\",\"hole\":\"\",\"why\":\"The sentence states feasibility and gives the platform's score exactly.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "The sentence states feasibility and gives the platform's score exactly."
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537e8e019cb6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1013,
+    "output": 234,
+    "reasoning": 208
+   },
+   "cost": 0.000585,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"The sentence asserts qualitative properties without an allowed numerical claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence asserts qualitative properties without an allowed numerical claim."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d84f39378779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.6,
+   "usage": {
+    "input": 1006,
+    "output": 1111,
+    "reasoning": 1071
+   },
+   "cost": 0.001635,
+   "raw": "\n\n{\"statement\":\"x313 ≥ 1.77898884\",\"hole\":\"\",\"why\":\"The sentence claims that the x313 best-solution value is at least the registry's lower bound.\"}",
+   "answer": {
+    "statement": "x313 ≥ 1.77898884",
+    "hole": "",
+    "why": "The sentence claims that the x313 best-solution value is at least the registry's lower bound."
+   }
+  },
+  {
+   "tag": "optconst-3b planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a5381b04afe64d3b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.9,
+   "usage": {
+    "input": 1019,
+    "output": 463,
+    "reasoning": 424
+   },
+   "cost": 0.000861,
+   "raw": "\n\n{\"statement\":\"x313 >= 1.77898885\",\"hole\":\"\",\"why\":\"The sentence states a lower-bound inequality for C3b, represented by x313.\"}",
+   "answer": {
+    "statement": "x313 >= 1.77898885",
+    "hole": "",
+    "why": "The sentence states a lower-bound inequality for C3b, represented by x313."
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d8a45c600bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.8,
+   "usage": {
+    "input": 1001,
+    "output": 1684,
+    "reasoning": 1641
+   },
+   "cost": 0.002321,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C3c is a quantity (the registry's asterisked lower bound) that none of the given library names expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3c is a quantity (the registry's asterisked lower bound) that none of the given library names expresses."
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d926e8a68779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1010,
+    "output": 733,
+    "reasoning": 693
+   },
+   "cost": 0.001183,
+   "raw": "\n\n{\"statement\":\"x3395 ≥ 1.6747338950208249\",\"hole\":\"\",\"why\":\"The sentence states that the platform's recorded value is at least the given number.\"}",
+   "answer": {
+    "statement": "x3395 ≥ 1.6747338950208249",
+    "hole": "",
+    "why": "The sentence states that the platform's recorded value is at least the given number."
+   }
+  },
+  {
+   "tag": "optconst-3c-95 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a5381b1d4c514d3b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.9,
+   "usage": {
+    "input": 1023,
+    "output": 2849,
+    "reasoning": 2797
+   },
+   "cost": 0.003726,
+   "raw": "\n\n{\"statement\":\"x3395 is a feasible solution of \\\"C3c\\\" and its score is 1.6747338950208248\",\"hole\":\"\",\"why\":\"The sentence gives the claimed score for the C3c solution.\"}",
+   "answer": {
+    "statement": "x3395 is a feasible solution of \"C3c\" and its score is 1.6747338950208248",
+    "hole": "",
+    "why": "The sentence gives the claimed score for the C3c solution."
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d956ff6c1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.7,
+   "usage": {
+    "input": 1023,
+    "output": 1493,
+    "reasoning": 1465
+   },
+   "cost": 0.002099,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The library defines no name expressing C71 over the supplied data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name expressing C71 over the supplied data."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d9d5afbf6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 995,
+    "output": 171,
+    "reasoning": 128
+   },
+   "cost": 0.000504,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence describes properties of the map (cubic, domain, injectivity, origin) without stating a relation of the required form.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence describes properties of the map (cubic, domain, injectivity, origin) without stating a relation of the required form."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d9ac2f8e4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.8,
+   "usage": {
+    "input": 1022,
+    "output": 1273,
+    "reasoning": 1241
+   },
+   "cost": 0.001834,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The map's Jacobian determinant and injectivity are not expressed by any defined library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The map's Jacobian determinant and injectivity are not expressed by any defined library name."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d9c86be8b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.0,
+   "usage": {
+    "input": 1000,
+    "output": 698,
+    "reasoning": 646
+   },
+   "cost": 0.001138,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library rmaps defines no name over maps.json, so the quantity det J = 160/29 cannot be expressed as a TERM in the available library.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library rmaps defines no name over maps.json, so the quantity det J = 160/29 cannot be expressed as a TERM in the available library."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537d9a68fdb4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 997,
+    "output": 644,
+    "reasoning": 602
+   },
+   "cost": 0.001072,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the quantity det J of a polynomial map of C^3 is not expressed by any library name over rmaps.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the quantity det J of a polynomial map of C^3 is not expressed by any library name over rmaps."
+   }
+  }
+ ]
+}

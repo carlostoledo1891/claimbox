@@ -1,0 +1,1620 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "moonshotai/kimi-k3.1-pro",
+ "provider": "prime",
+ "family": "kimi-k3.1-pro",
+ "effort": "high",
+ "cap": 3.0,
+ "guide": null,
+ "spent": 0.6461,
+ "calls": 80,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 2.0,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 10.0
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d56d29971b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.9,
+   "usage": {
+    "input": 944,
+    "output": 541,
+    "reasoning": 484
+   },
+   "cost": 0.007298,
+   "raw": "{\"statement\":\"C₁(firs_alphaevolve_2025) ≤ 1.50529397\",\"hole\":\"\",\"why\":\"The sentence claims the stated upper bound on C₁ for the pinned construction.\"}",
+   "answer": {
+    "statement": "C₁(firs_alphaevolve_2025) ≤ 1.50529397",
+    "hole": "",
+    "why": "The sentence claims the stated upper bound on C₁ for the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a538126d0810f23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.7,
+   "usage": {
+    "input": 944,
+    "output": 252,
+    "reasoning": 190
+   },
+   "cost": 0.004408,
+   "raw": "{\"statement\":\"firs_alphaevolve_2025 ≤ 1.50529398\",\"hole\":\"\",\"why\":\"The sentence claims the pinned first-autocorrelation construction has C₁ at most 1.50529398.\"}",
+   "answer": {
+    "statement": "firs_alphaevolve_2025 ≤ 1.50529398",
+    "hole": "",
+    "why": "The sentence claims the pinned first-autocorrelation construction has C₁ at most 1.50529398."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5765dfa030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.4,
+   "usage": {
+    "input": 951,
+    "output": 434,
+    "reasoning": 397
+   },
+   "cost": 0.006242,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"No numerical value is printed for the C₁ upper bound.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "No numerical value is printed for the C₁ upper bound."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5d08f41ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.5,
+   "usage": {
+    "input": 942,
+    "output": 363,
+    "reasoning": 308
+   },
+   "cost": 0.005514,
+   "raw": "{\"statement\":\"firs_ours_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is ≤ 1.50286286\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "firs_ours_2026 is a feasible solution of \"first-autocorrelation\" and its score is ≤ 1.50286286",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d592eae98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.7,
+   "usage": {
+    "input": 947,
+    "output": 421,
+    "reasoning": 361
+   },
+   "cost": 0.006104,
+   "raw": "{\"statement\":\"firs_ttt_discover_2026 ≤ 1.50286290\",\"hole\":\"\",\"why\":\"The sentence claims that the construction’s C₁ value is at most 1.50286290.\"}",
+   "answer": {
+    "statement": "firs_ttt_discover_2026 ≤ 1.50286290",
+    "hole": "",
+    "why": "The sentence claims that the construction’s C₁ value is at most 1.50286290."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a538126d0836af50-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.3,
+   "usage": {
+    "input": 947,
+    "output": 792,
+    "reasoning": 734
+   },
+   "cost": 0.009814,
+   "raw": "{\"statement\":\"C_1(firs_ttt_discover_2026) ≤ 1.50286291\",\"hole\":\"\",\"why\":\"The sentence claims the stated upper bound on C₁ for the construction.\"}",
+   "answer": {
+    "statement": "C_1(firs_ttt_discover_2026) ≤ 1.50286291",
+    "hole": "",
+    "why": "The sentence claims the stated upper bound on C₁ for the construction."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d44c1ace0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.7,
+   "usage": {
+    "input": 1001,
+    "output": 245,
+    "reasoning": 184
+   },
+   "cost": 0.004452,
+   "raw": "{\"statement\":\"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4824ff40bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.9,
+   "usage": {
+    "input": 998,
+    "output": 371,
+    "reasoning": 311
+   },
+   "cost": 0.005706,
+   "raw": "{\"statement\":\"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d53cdb3b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 941,
+    "output": 259,
+    "reasoning": 194
+   },
+   "cost": 0.004472,
+   "raw": "{\"statement\":\"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\",\"hole\":\"\",\"why\":\"The sentence gives the platform's envelope score for the pinned construction.\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence gives the platform's envelope score for the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d54e5cc11b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 938,
+    "output": 186,
+    "reasoning": 118
+   },
+   "cost": 0.003736,
+   "raw": "{\"statement\": \"edge_ours_2026 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"The sentence states the platform's envelope score for the construction.\"}",
+   "answer": {
+    "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "The sentence states the platform's envelope score for the construction."
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5d6bc306240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.6,
+   "usage": {
+    "input": 942,
+    "output": 473,
+    "reasoning": 406
+   },
+   "cost": 0.006614,
+   "raw": "{\"statement\":\"flat_alphaevolve_2025 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340925\",\"hole\":\"\",\"why\":\"The sentence certifies the ±1 construction and gives its C⁺ score.\"}",
+   "answer": {
+    "statement": "flat_alphaevolve_2025 is a feasible solution of \"flat-polynomials\" and its score is 1.340925",
+    "hole": "",
+    "why": "The sentence certifies the ±1 construction and gives its C⁺ score."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5e28f670bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.5,
+   "usage": {
+    "input": 939,
+    "output": 740,
+    "reasoning": 669
+   },
+   "cost": 0.009278,
+   "raw": "{\"statement\":\"flat_ours_2026 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280932\",\"hole\":\"\",\"why\":\"The sentence certifies a 70-coefficient ±1 polynomial and states its C⁺ score.\"}",
+   "answer": {
+    "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+    "hole": "",
+    "why": "The sentence certifies a 70-coefficient ±1 polynomial and states its C⁺ score."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4985d606240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 989,
+    "output": 260,
+    "reasoning": 177
+   },
+   "cost": 0.004578,
+   "raw": "{\"statement\":\"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\",\"hole\":\"\",\"why\":\"The sentence gives the construction's minimum-triangle to convex-hull area ratio as its score.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence gives the construction's minimum-triangle to convex-hull area ratio as its score."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4a939344051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.9,
+   "usage": {
+    "input": 986,
+    "output": 398,
+    "reasoning": 315
+   },
+   "cost": 0.005952,
+   "raw": "{\"statement\":\"heil_ours_2026 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\",\"hole\":\"\",\"why\":\"The sentence claims the construction is feasible for n = 14 and gives its exact area-ratio score.\"}",
+   "answer": {
+    "statement": "heil_ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence claims the construction is feasible for n = 14 and gives its exact area-ratio score."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6183f226240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.0,
+   "usage": {
+    "input": 943,
+    "output": 386,
+    "reasoning": 332
+   },
+   "cost": 0.005746,
+   "raw": "{\"statement\":\"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6388c53f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 940,
+    "output": 320,
+    "reasoning": 254
+   },
+   "cost": 0.00508,
+   "raw": "{\"statement\":\"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\",\"hole\":\"\",\"why\":\"The sentence claims a feasible packing whose score is the stated outer side.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence claims a feasible packing whose score is the stated outer side."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4ce7bfc4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 1000,
+    "output": 234,
+    "reasoning": 150
+   },
+   "cost": 0.00434,
+   "raw": "{\"statement\": \"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence states the squared max/min distance ratio for the 16-point construction.\"}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence states the squared max/min distance ratio for the 16-point construction."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4d2db536240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.1,
+   "usage": {
+    "input": 997,
+    "output": 421,
+    "reasoning": 345
+   },
+   "cost": 0.006204,
+   "raw": "{\"statement\":\"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\",\"hole\":\"\",\"why\":\"The sentence gives the squared max/min distance ratio for 16 points.\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio for 16 points."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5005e49d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.7,
+   "usage": {
+    "input": 947,
+    "output": 290,
+    "reasoning": 235
+   },
+   "cost": 0.004794,
+   "raw": "{\"statement\":\"erdo_alphaevolve_2025 ≤ 0.380924\",\"hole\":\"\",\"why\":\"The sentence states an upper bound of 0.380924 for the named construction.\"}",
+   "answer": {
+    "statement": "erdo_alphaevolve_2025 ≤ 0.380924",
+    "hole": "",
+    "why": "The sentence states an upper bound of 0.380924 for the named construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e13078cc8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.8,
+   "usage": {
+    "input": 947,
+    "output": 454,
+    "reasoning": 385
+   },
+   "cost": 0.006434,
+   "raw": "{\"statement\":\"erdo_alphaevolve_2025 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380925\",\"hole\":\"\",\"why\":\"The sentence claims the construction is feasible and attains the printed upper bound.\"}",
+   "answer": {
+    "statement": "erdo_alphaevolve_2025 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380925",
+    "hole": "",
+    "why": "The sentence claims the construction is feasible and attains the printed upper bound."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d4fb2c4bae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 947,
+    "output": 347,
+    "reasoning": 277
+   },
+   "cost": 0.005364,
+   "raw": "{\"statement\":\"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380927\",\"hole\":\"\",\"why\":\"The sentence gives the construction’s upper bound as its score for the named problem.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
+    "hole": "",
+    "why": "The sentence gives the construction’s upper bound as its score for the named problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d5392a6c4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.4,
+   "usage": {
+    "input": 946,
+    "output": 517,
+    "reasoning": 442
+   },
+   "cost": 0.007062,
+   "raw": "{\"statement\":\"erdo_together_ai_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is ≤ 0.380871\",\"hole\":\"\",\"why\":\"The sentence describes a feasible step-function construction and claims an upper bound of 0.380871.\"}",
+   "answer": {
+    "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is ≤ 0.380871",
+    "hole": "",
+    "why": "The sentence describes a feasible step-function construction and claims an upper bound of 0.380871."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d51e9fe10bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 949,
+    "output": 262,
+    "reasoning": 190
+   },
+   "cost": 0.004518,
+   "raw": "{\"statement\":\"erdo_ttt_discover_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380876\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound of 0.380876 for the pinned construction.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
+    "hole": "",
+    "why": "The sentence gives an upper bound of 0.380876 for the pinned construction."
+   }
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6da0eb98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.5,
+   "usage": {
+    "input": 941,
+    "output": 402,
+    "reasoning": 364
+   },
+   "cost": 0.005902,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"No library name expresses Area(E) over the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "No library name expresses Area(E) over the given data."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d44c282d1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.9,
+   "usage": {
+    "input": 912,
+    "output": 444,
+    "reasoning": 374
+   },
+   "cost": 0.006264,
+   "raw": "{\"statement\":\"the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11\",\"hole\":\"\",\"why\":\"The data gives 593 vectors forming an 11-dimensional kissing configuration, witnessing K(11) ≥ 593.\"}",
+   "answer": {
+    "statement": "the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The data gives 593 vectors forming an 11-dimensional kissing configuration, witnessing K(11) ≥ 593."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d44c19e88779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.2,
+   "usage": {
+    "input": 919,
+    "output": 331,
+    "reasoning": 262
+   },
+   "cost": 0.005148,
+   "raw": "{\"statement\": \"the 594 vectors of best-6.json form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The score-0 configuration of 594 vectors in dimension 11 witnesses K(11) ≥ 594.\"}",
+   "answer": {
+    "statement": "the 594 vectors of best-6.json form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The score-0 configuration of 594 vectors in dimension 11 witnesses K(11) ≥ 594."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d77ff97b030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 942,
+    "output": 247,
+    "reasoning": 179
+   },
+   "cost": 0.004354,
+   "raw": "{\"statement\":\"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d79118b1d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 937,
+    "output": 195,
+    "reasoning": 119
+   },
+   "cost": 0.003824,
+   "raw": "{\"statement\": \"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the named notebook decomposition has rank 45 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has rank 45 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7b42ef40bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 937,
+    "output": 223,
+    "reasoning": 152
+   },
+   "cost": 0.004104,
+   "raw": "{\"statement\":\"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence asserts the named notebook decomposition has rank 51 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence asserts the named notebook decomposition has rank 51 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7b989e4f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 937,
+    "output": 190,
+    "reasoning": 105
+   },
+   "cost": 0.003774,
+   "raw": "{\"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the named notebook heading gives a rank-47 decomposition over Z.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook heading gives a rank-47 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7e37c3cf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 937,
+    "output": 166,
+    "reasoning": 104
+   },
+   "cost": 0.003534,
+   "raw": "{\"statement\": \"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d7e9d8b96240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.9,
+   "usage": {
+    "input": 942,
+    "output": 201,
+    "reasoning": 129
+   },
+   "cost": 0.003894,
+   "raw": "{\"statement\": \"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d80becdd8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 942,
+    "output": 166,
+    "reasoning": 82
+   },
+   "cost": 0.003544,
+   "raw": "{\"statement\":\"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence identifies a named notebook decomposition and claims its tensor, rank, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence identifies a named notebook decomposition and claims its tensor, rank, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d80f3ab6030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 937,
+    "output": 244,
+    "reasoning": 171
+   },
+   "cost": 0.004314,
+   "raw": "{\"statement\":\"n[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook entry is a rank-74 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook entry is a rank-74 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d82d5c441b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 937,
+    "output": 268,
+    "reasoning": 196
+   },
+   "cost": 0.004554,
+   "raw": "{\"statement\":\"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence asserts that the named notebook decomposition has rank 68 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the named notebook decomposition has rank 68 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8399ecf6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 937,
+    "output": 232,
+    "reasoning": 159
+   },
+   "cost": 0.004194,
+   "raw": "{\"statement\":\"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook entry is a rank-80 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook entry is a rank-80 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d86a091d6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 937,
+    "output": 296,
+    "reasoning": 222
+   },
+   "cost": 0.004834,
+   "raw": "{\"statement\":\"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\",\"hole\":\"\",\"why\":\"The sentence asserts that the named notebook entry is a rank-61 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the named notebook entry is a rank-61 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8711c674051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 937,
+    "output": 223,
+    "reasoning": 142
+   },
+   "cost": 0.004104,
+   "raw": "{\"statement\":\"alphaevolve_mathematical_results.ipynb[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence asserts that the named notebook entry is a rank-85 decomposition over Z.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the named notebook entry is a rank-85 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8444a270bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 942,
+    "output": 269,
+    "reasoning": 183
+   },
+   "cost": 0.004574,
+   "raw": "{\"statement\":\"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence asserts that the named notebook entry is a rank-96 decomposition over the printed ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence asserts that the named notebook entry is a rank-96 decomposition over the printed ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d87148b5ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 937,
+    "output": 151,
+    "reasoning": 80
+   },
+   "cost": 0.003384,
+   "raw": "{\"statement\":\"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook decomposition has rank 90 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has rank 90 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8993f4b8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.0,
+   "usage": {
+    "input": 937,
+    "output": 194,
+    "reasoning": 118
+   },
+   "cost": 0.003814,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the named notebook decomposition has rank 93 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has rank 93 over Z."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8a2b8ccae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 54.8,
+   "usage": {
+    "input": 955,
+    "output": 1757,
+    "reasoning": 1677
+   },
+   "cost": 0.01948,
+   "raw": "{\"statement\":\"af2[\\\"2,2,3\\\"] is a rank-11 decomposition of <2,2,3> over F2\",\"hole\":\"\",\"why\":\"The cited archive entry is claimed to decompose the <2,2,3> tensor over F2 with the rank given by its array shape.\"}",
+   "answer": {
+    "statement": "af2[\"2,2,3\"] is a rank-11 decomposition of <2,2,3> over F2",
+    "hole": "",
+    "why": "The cited archive entry is claimed to decompose the <2,2,3> tensor over F2 with the rank given by its array shape."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8ad8c8fb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.6,
+   "usage": {
+    "input": 955,
+    "output": 970,
+    "reasoning": 932
+   },
+   "cost": 0.01161,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"The sentence does not state the decomposition's rank as a number.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the decomposition's rank as a number."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9791cde0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 47.6,
+   "usage": {
+    "input": 955,
+    "output": 1370,
+    "reasoning": 1331
+   },
+   "cost": 0.01561,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"The sentence does not give the numerical rank required for the decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not give the numerical rank required for the decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d8be78a0ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 37.6,
+   "usage": {
+    "input": 955,
+    "output": 1028,
+    "reasoning": 981
+   },
+   "cost": 0.01219,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The rank is only described as coming from the array's shape, and no library name expresses that value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is only described as coming from the array's shape, and no library name expresses that value."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9a9a90fb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 78.4,
+   "usage": {
+    "input": 955,
+    "output": 2437,
+    "reasoning": 2358
+   },
+   "cost": 0.02628,
+   "raw": "{\"statement\":\"af2[\\\"2,3,4\\\"] is a rank-20 decomposition of <2,3,4> over F2\",\"hole\":\"\",\"why\":\"The stored factors are claimed to decompose the <2,3,4> tensor over F2 at the rank given by their array shape.\"}",
+   "answer": {
+    "statement": "af2[\"2,3,4\"] is a rank-20 decomposition of <2,3,4> over F2",
+    "hole": "",
+    "why": "The stored factors are claimed to decompose the <2,3,4> tensor over F2 at the rank given by their array shape."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d9f98e101b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 75.0,
+   "usage": {
+    "input": 955,
+    "output": 2536,
+    "reasoning": 2465
+   },
+   "cost": 0.02727,
+   "raw": "{\"statement\":\"af2[\\\"2,3,5\\\"] is a rank-25 decomposition of <2,3,5> over F2\",\"hole\":\"\",\"why\":\"The sentence claims the archived factors form a decomposition of the stated tensor at the rank given by their shape.\"}",
+   "answer": {
+    "statement": "af2[\"2,3,5\"] is a rank-25 decomposition of <2,3,5> over F2",
+    "hole": "",
+    "why": "The sentence claims the archived factors form a decomposition of the stated tensor at the rank given by their shape."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537daa26abf0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 34.0,
+   "usage": {
+    "input": 955,
+    "output": 941,
+    "reasoning": 901
+   },
+   "cost": 0.01132,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"The sentence does not state the numerical rank R required for the decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence does not state the numerical rank R required for the decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db773fa44051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.0,
+   "usage": {
+    "input": 955,
+    "output": 516,
+    "reasoning": 474
+   },
+   "cost": 0.00707,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank must be read from the stored array's shape, which is not provided.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank must be read from the stored array's shape, which is not provided."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537db939cb3f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.0,
+   "usage": {
+    "input": 959,
+    "output": 611,
+    "reasoning": 571
+   },
+   "cost": 0.008028,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence specifies neither the numerical rank nor the ring named by the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence specifies neither the numerical rank nor the ring named by the paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dbce3dcd6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 44.7,
+   "usage": {
+    "input": 959,
+    "output": 1430,
+    "reasoning": 1354
+   },
+   "cost": 0.016218,
+   "raw": "{\"statement\":\"alphatensor_r.npz[\\\"2,2,4\\\"] is a rank-R decomposition of <2,2,4> over the ring the paper names\",\"hole\":\"\",\"why\":\"The sentence claims that the archived factors form a decomposition at the rank stated by the array's shape.\"}",
+   "answer": {
+    "statement": "alphatensor_r.npz[\"2,2,4\"] is a rank-R decomposition of <2,2,4> over the ring the paper names",
+    "hole": "",
+    "why": "The sentence claims that the archived factors form a decomposition at the rank stated by the array's shape."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc1d5fd1f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.7,
+   "usage": {
+    "input": 959,
+    "output": 461,
+    "reasoning": 422
+   },
+   "cost": 0.006528,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence specifies neither a numerical rank nor the name of the ring.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence specifies neither a numerical rank nor the name of the ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dc860e018779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 96.4,
+   "usage": {
+    "input": 959,
+    "output": 3156,
+    "reasoning": 3115
+   },
+   "cost": 0.033478,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence specifies neither the numerical rank nor the ring required by the decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence specifies neither the numerical rank nor the ring required by the decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd137cebae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.1,
+   "usage": {
+    "input": 959,
+    "output": 491,
+    "reasoning": 451
+   },
+   "cost": 0.006828,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence specifies neither the numerical rank nor the ring named by the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence specifies neither the numerical rank nor the ring named by the paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de155dcaae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 91.4,
+   "usage": {
+    "input": 959,
+    "output": 2877,
+    "reasoning": 2836
+   },
+   "cost": 0.030688,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence refers only indirectly to the rank and the ring, without specifying either.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence refers only indirectly to the rank and the ring, without specifying either."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dbf42c808779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 46.0,
+   "usage": {
+    "input": 959,
+    "output": 1474,
+    "reasoning": 1435
+   },
+   "cost": 0.016658,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence specifies neither the numerical rank nor the ring it refers to.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence specifies neither the numerical rank nor the ring it refers to."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dce5ff1f8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 48.5,
+   "usage": {
+    "input": 959,
+    "output": 1383,
+    "reasoning": 1335
+   },
+   "cost": 0.015748,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence specifies neither the numerical rank nor the ring, referring only to the array’s shape and an unnamed paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence specifies neither the numerical rank nor the ring, referring only to the array’s shape and an unnamed paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dd850d774051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.8,
+   "usage": {
+    "input": 959,
+    "output": 589,
+    "reasoning": 549
+   },
+   "cost": 0.007808,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The rank and ring are referred to indirectly but never specified in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and ring are referred to indirectly but never specified in the sentence."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de1ff8b2030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.3,
+   "usage": {
+    "input": 959,
+    "output": 517,
+    "reasoning": 476
+   },
+   "cost": 0.007088,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The rank and ring are only indirect references and are not specified in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and ring are only indirect references and are not specified in the sentence."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537dee069a46240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 75.6,
+   "usage": {
+    "input": 959,
+    "output": 2381,
+    "reasoning": 2302
+   },
+   "cost": 0.025728,
+   "raw": "{\"statement\":\"alphatensor_r.npz[\\\"2,4,5\\\"] is a rank-33 decomposition of <2,4,5> over ℤ\",\"hole\":\"\",\"why\":\"The sentence claims that the archive entry under key 2,4,5 is an integral decomposition whose shape gives rank 33.\"}",
+   "answer": {
+    "statement": "alphatensor_r.npz[\"2,4,5\"] is a rank-33 decomposition of <2,4,5> over ℤ",
+    "hole": "",
+    "why": "The sentence claims that the archive entry under key 2,4,5 is an integral decomposition whose shape gives rank 33."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537de98bb30f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 58.8,
+   "usage": {
+    "input": 959,
+    "output": 2003,
+    "reasoning": 1949
+   },
+   "cost": 0.021948,
+   "raw": "{\"statement\":\"alphatensor_r.npz[\\\"3,3,4\\\"] is a rank-29 decomposition of <3,3,4> over R\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "alphatensor_r.npz[\"3,3,4\"] is a rank-29 decomposition of <3,3,4> over R",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e07cfa898779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 947,
+    "output": 189,
+    "reasoning": 114
+   },
+   "cost": 0.003784,
+   "raw": "{\"statement\":\"best-18.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\",\"hole\":\"\",\"why\":\"The sentence states feasibility for the named problem and gives the platform's exact score.\"}",
+   "answer": {
+    "statement": "best-18.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence states feasibility for the named problem and gives the platform's exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e065dcb8d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.7,
+   "usage": {
+    "input": 945,
+    "output": 255,
+    "reasoning": 190
+   },
+   "cost": 0.00444,
+   "raw": "{\"statement\":\"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\",\"hole\":\"\",\"why\":\"The sentence states feasibility and an exact platform score.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence states feasibility and an exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e0087f33ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 946,
+    "output": 161,
+    "reasoning": 104
+   },
+   "cost": 0.003502,
+   "raw": "{\"statement\":\"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e02c0864f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 947,
+    "output": 213,
+    "reasoning": 144
+   },
+   "cost": 0.004024,
+   "raw": "{\"statement\":\"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\",\"hole\":\"\",\"why\":\"The sentence claims feasibility and gives the platform's exact score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence claims feasibility and gives the platform's exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e0505eae6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 944,
+    "output": 177,
+    "reasoning": 111
+   },
+   "cost": 0.003658,
+   "raw": "{\"statement\":\"best-12.json is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\",\"hole\":\"\",\"why\":\"The sentence states feasibility and an exact platform score.\"}",
+   "answer": {
+    "statement": "best-12.json is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence states feasibility and an exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e0b0fcf8d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.0,
+   "usage": {
+    "input": 948,
+    "output": 214,
+    "reasoning": 151
+   },
+   "cost": 0.004036,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e0a2a80fae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.6,
+   "usage": {
+    "input": 941,
+    "output": 174,
+    "reasoning": 122
+   },
+   "cost": 0.003622,
+   "raw": "{\"statement\":\"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e0b8bf286240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 948,
+    "output": 193,
+    "reasoning": 123
+   },
+   "cost": 0.003826,
+   "raw": "{\"statement\":\"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\",\"hole\":\"\",\"why\":\"The sentence states feasibility and the platform's exact printed score.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "The sentence states feasibility and the platform's exact printed score."
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537e0dedad20bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.0,
+   "usage": {
+    "input": 924,
+    "output": 296,
+    "reasoning": 252
+   },
+   "cost": 0.004808,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"The sentence asserts Jacobian and collision properties but makes no claim expressible in the statement language.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence asserts Jacobian and collision properties but makes no claim expressible in the statement language."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d656ef3cae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.7,
+   "usage": {
+    "input": 931,
+    "output": 452,
+    "reasoning": 403
+   },
+   "cost": 0.006382,
+   "raw": "{\"statement\":\"x313 ≥ 1.77898884\",\"hole\":\"\",\"why\":\"The sentence asserts the registry's asterisked lower bound on C3b.\"}",
+   "answer": {
+    "statement": "x313 ≥ 1.77898884",
+    "hole": "",
+    "why": "The sentence asserts the registry's asterisked lower bound on C3b."
+   }
+  },
+  {
+   "tag": "optconst-3b planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a53812a3881bd848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.1,
+   "usage": {
+    "input": 931,
+    "output": 741,
+    "reasoning": 703
+   },
+   "cost": 0.009272,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"C3b is not expressed by any available library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3b is not expressed by any available library name."
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6739fc60bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.4,
+   "usage": {
+    "input": 935,
+    "output": 515,
+    "reasoning": 448
+   },
+   "cost": 0.00702,
+   "raw": "{\"statement\":\"x3147 is a feasible solution of \\\"C3c\\\" and its score is ≥ 1.6747338950414058\",\"hole\":\"\",\"why\":\"The sentence claims that C3c's recorded solution meets the stated lower bound.\"}",
+   "answer": {
+    "statement": "x3147 is a feasible solution of \"C3c\" and its score is ≥ 1.6747338950414058",
+    "hole": "",
+    "why": "The sentence claims that C3c's recorded solution meets the stated lower bound."
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d675dac40bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.4,
+   "usage": {
+    "input": 935,
+    "output": 735,
+    "reasoning": 686
+   },
+   "cost": 0.00922,
+   "raw": "{\"statement\":\"x3395 ≥ 1.6747338950208249\",\"hole\":\"\",\"why\":\"The sentence states the printed lower bound for C3c.\"}",
+   "answer": {
+    "statement": "x3395 ≥ 1.6747338950208249",
+    "hole": "",
+    "why": "The sentence states the printed lower bound for C3c."
+   }
+  },
+  {
+   "tag": "optconst-3c-95 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537f83ccbdad848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 935,
+    "output": 280,
+    "reasoning": 215
+   },
+   "cost": 0.00467,
+   "raw": "{\"statement\":\"x3395 is a feasible solution of \\\"C3c\\\" and its score is ≥ 1.6747338950208248\",\"hole\":\"\",\"why\":\"The sentence claims a lower bound on the recorded C3c score.\"}",
+   "answer": {
+    "statement": "x3395 is a feasible solution of \"C3c\" and its score is ≥ 1.6747338950208248",
+    "hole": "",
+    "why": "The sentence claims a lower bound on the recorded C3c score."
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d6b8eb7dae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.2,
+   "usage": {
+    "input": 935,
+    "output": 387,
+    "reasoning": 352
+   },
+   "cost": 0.00574,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The library provides no term expressing C71.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library provides no term expressing C71."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d75d8ae5ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.2,
+   "usage": {
+    "input": 931,
+    "output": 986,
+    "reasoning": 945
+   },
+   "cost": 0.011722,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"No available library name expresses the Jacobian determinant or the noninjectivity claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "No available library name expresses the Jacobian determinant or the noninjectivity claim."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d714db5cb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 935,
+    "output": 309,
+    "reasoning": 270
+   },
+   "cost": 0.00496,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The library provides no term for the Jacobian determinant of F4.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library provides no term for the Jacobian determinant of F4."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d73498018779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.8,
+   "usage": {
+    "input": 935,
+    "output": 408,
+    "reasoning": 366
+   },
+   "cost": 0.00595,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"No library term expresses the map's Jacobian determinant or its non-injectivity.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "No library term expresses the map's Jacobian determinant or its non-injectivity."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a537d711ecc1ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.6,
+   "usage": {
+    "input": 932,
+    "output": 421,
+    "reasoning": 379
+   },
+   "cost": 0.006074,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"The sentence describes a polynomial map rather than stating a claim in the supported language.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence describes a polynomial map rather than stating a claim in the supported language."
+   }
+  }
+ ]
+}

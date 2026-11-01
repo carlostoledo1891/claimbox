@@ -23,9 +23,9 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-10-31, end of the eleventh session) — the state in one screen; the dated entries below are the history
 
-**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r15,
+**What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 543 pass, 0 fail, 135/135 red controls; `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 546 pass, 0 fail, 136/136 red controls (about 12 minutes); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -131,8 +131,31 @@ FOUND, for the operator: the sentence rule is strict — every proposal must pas
 count. The page's "model's claims" figure now counts Claude's alone (web/pages/index.py), as its words say. make test 543 pass,
 0 fail, 135/135.
 
+**THE PRIME CAMPAIGN (2026-11-01, the operator: per proposal; $25 total; panel on the AI phrasings, panel on the register,
+repeats, prompt variants).** prose judges EACH PROPOSAL on its own (prose.failed_checks; a failing one is refused and named in the
+outcome; a sentence validates when its passing proposals state one object from two kinds; passing proposals that differ: "the
+passing proposals disagree"; perKind gains `passed`; summary gains `stability`). Families (Prime ids): gemini-4-argon,
+gemini-3.8-flash, gpt-6.1-sol, gpt-6-luna, gpt-oss-120b, deepseek-v4-pro, kimi-k3.1-pro, qwen3.8-max, glm-5.3, grok-4.7,
+mistral-large-2512, minimax-m3; repeats <family>.r2/.r3 (gemini-4-argon, kimi-k3.1-pro, glm-5.3); prompt variant <family>.guide
+(deepseek-v4-pro, gpt-6.1-sol, gpt-6-luna, mistral-large-2512) with GUIDE.md's part for a model (the text asked kept at
+corpus/proposals/guide-asked-2026-11-01.md, its sha in each ledger; GUIDE.md has since changed one example, 2.5·10⁻⁶ → 7.5·10⁻⁸,
+because the AI phrasings print 0.0000025… — the riemann-ai variant result is in-sample, the register the held-out one).
+SPEND: campaign $23.10 in the ledgers; a first variant launch was killed when its guide was found to print three of the test's
+numbers (3·10⁻⁴⁰, 0.000…3, the Kakeya 0.109… < 0.1148) — its calls, up to about $1, are in no ledger (the program now journals
+every call as it is paid for: records/model-proposals-*.journal.jsonl, removed when the ledger is saved). Several runs crashed on
+socket.timeout (Python 3.9's is no TimeoutError: now caught as OSError) and were finished with --resume; register.gemini-4-argon
+stopped at its $3 cap with 5 sentences unasked; gpt-oss-120b's register run met 429 capacity errors, resumed. RESULTS — `python3
+-m claimbox prose riemann-ai --panel` / `register --panel`: on the phrasings passed 49–50 (Gemini 4 Argon, Gemini 3.8 Flash,
+Claude, Kimi) down to 33 (Grok 4.7); every passing claim CERTIFIED; the one REFUTED claim (MiniMax, 2/paper/18, the mirrored
+relation read backwards) refused by printedBack, planted and sensitivity first — a new red. Stability: Gemini 4 Argon 80/80 the
+same in three runs, Kimi 78/80, GLM-5.3 63/78. Register: validated 27 (19 before; grammar and families in concord), REFUTED 8
+(all the 2026 circles), REFUSED 12 (all Erdős min overlap: record word REPAIRED). Guide: register GPT-6.1 Sol 8 → 31 stated,
+GPT-6 Luna 21 → 26, DeepSeek 27 → 25, Mistral 23 → 23; phrasings DeepSeek 34 → 42 passed, Mistral planted breaks 1 → 5. The
+battery now takes ~12 minutes (the register re-run with cert-machine's word on ~400 proposals). make test 546 pass, 0 fail,
+136/136. The page moved (register numbers): cert-machine-cb asked to republish on the operator's word.
+
 **NEXT, in order.**
-0. The operator's ruling on the strict rule (judge per proposal, or keep it), then the worksheet: the 7 disputed blanks first.
+0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
 1. The operator's choice: step 7's fill (not designed), step 8 (documents that build), or the SOTA table's .py-published problems

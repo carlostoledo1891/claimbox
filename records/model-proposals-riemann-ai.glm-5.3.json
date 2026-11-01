@@ -1,0 +1,2691 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "z-ai/glm-5.3",
+ "provider": "prime",
+ "family": "glm-5.3",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 0.2003,
+ "calls": 134,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.98,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 3.08
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae1c596b6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 827,
+    "output": 88,
+    "reasoning": 45
+   },
+   "cost": 0.001081,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence directly claims the absolute edge discrepancy is at most the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence directly claims the absolute edge discrepancy is at most the printed bound."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb2bed01b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 827,
+    "output": 114,
+    "reasoning": 71
+   },
+   "cost": 0.001162,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states a single numerical bound on the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states a single numerical bound on the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae226e6b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 841,
+    "output": 106,
+    "reasoning": 65
+   },
+   "cost": 0.001151,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence only reports that the author checked the bound (\\\"I checked that\\\"), a hedge rather than a stated claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence only reports that the author checked the bound (\"I checked that\"), a hedge rather than a stated claim."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae286acdd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 828,
+    "output": 107,
+    "reasoning": 45
+   },
+   "cost": 0.001141,
+   "raw": "{\"statement\": \"D(1) < 0.82395317\", \"hole\": \"\", \"why\": \"The sentence directly claims the single inequality D(1) < 0.82395317 with D(1) a library name and the bar printed exactly.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence directly claims the single inequality D(1) < 0.82395317 with D(1) a library name and the bar printed exactly."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb6a86a1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 828,
+    "output": 75,
+    "reasoning": 18
+   },
+   "cost": 0.001042,
+   "raw": "{\"statement\": \"D(1) < 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states the kernel-verified claim that the discrepancy D(1) is below the printed bound 0.82395318.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence states the kernel-verified claim that the discrepancy D(1) is below the printed bound 0.82395318."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae204cc2c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 832,
+    "output": 114,
+    "reasoning": 60
+   },
+   "cost": 0.001166,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims the absolute value of the edge discrepancy D(1) is at most 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the absolute value of the edge discrepancy D(1) is at most 0.82395317."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb66b136e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 832,
+    "output": 135,
+    "reasoning": 93
+   },
+   "cost": 0.001231,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims the edge discrepancy's absolute value never exceeds the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims the edge discrepancy's absolute value never exceeds the printed bound."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae1c69746e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 837,
+    "output": 79,
+    "reasoning": 36
+   },
+   "cost": 0.001064,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states a single bound on the absolute edge discrepancy at 1.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states a single bound on the absolute edge discrepancy at 1."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb2c8a3c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 837,
+    "output": 78,
+    "reasoning": 34
+   },
+   "cost": 0.001061,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states the edge discrepancy's absolute value is at most the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states the edge discrepancy's absolute value is at most the printed bound."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae1c7fde3236-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 844,
+    "output": 88,
+    "reasoning": 42
+   },
+   "cost": 0.001098,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims the absolute edge discrepancy of the form factor is at most the printed decimal.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the absolute edge discrepancy of the form factor is at most the printed decimal."
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb2bed41b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 844,
+    "output": 68,
+    "reasoning": 23
+   },
+   "cost": 0.001037,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The theorem's lead claim is that the absolute edge discrepancy is at most the printed constant.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The theorem's lead claim is that the absolute edge discrepancy is at most the printed constant."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae267c324ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 843,
+    "output": 96,
+    "reasoning": 51
+   },
+   "cost": 0.001122,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The lemma states a single bound on the absolute value of the edge discrepancy D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The lemma states a single bound on the absolute value of the edge discrepancy D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb68f1af1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 843,
+    "output": 78,
+    "reasoning": 26
+   },
+   "cost": 0.001066,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The lemma states exactly that the absolute value of D(1) is at most 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The lemma states exactly that the absolute value of D(1) is at most 0.82395318."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae1c6c1c1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 833,
+    "output": 83,
+    "reasoning": 33
+   },
+   "cost": 0.001072,
+   "raw": "{\"statement\": \"|D(1)| <= 0.82395317\", \"hole\": \"\", \"why\": \"The sentence claims the absolute edge discrepancy is at most the printed bound 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| <= 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the absolute edge discrepancy is at most the printed bound 0.82395317."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb2b9bef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 833,
+    "output": 72,
+    "reasoning": 27
+   },
+   "cost": 0.001038,
+   "raw": "{\"statement\": \"|D(1)| <= 0.82395318\", \"hole\": \"\", \"why\": \"The sentence claims the edge discrepancy is bounded in absolute value by the printed number.\"}",
+   "answer": {
+    "statement": "|D(1)| <= 0.82395318",
+    "hole": "",
+    "why": "The sentence claims the edge discrepancy is bounded in absolute value by the printed number."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae2269d4d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 848,
+    "output": 195,
+    "reasoning": 139
+   },
+   "cost": 0.001432,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence itself flags that the bound 0.82395317 may apply to D(1) or to |D(1)|, so no single claim of the required form is stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence itself flags that the bound 0.82395317 may apply to D(1) or to |D(1)|, so no single claim of the required form is stated."
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae2269611abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 824,
+    "output": 177,
+    "reasoning": 134
+   },
+   "cost": 0.001353,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence hedges the bound with \\\"about\\\", so the number 0.824 is approximate and no exact claim is stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence hedges the bound with \"about\", so the number 0.824 is approximate and no exact claim is stated."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae28e805d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 831,
+    "output": 122,
+    "reasoning": 58
+   },
+   "cost": 0.00119,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims the uniform bound on all integer rows 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims the uniform bound on all integer rows 1 to 255."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeba383e4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 831,
+    "output": 426,
+    "reasoning": 349
+   },
+   "cost": 0.002126,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims the bound on all integer rows 1 to 255, which is exactly the library's domain 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims the bound on all integer rows 1 to 255, which is exactly the library's domain 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae340c7cd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 832,
+    "output": 664,
+    "reasoning": 584
+   },
+   "cost": 0.00286,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts a bounded quantitative claim over the finite row range 0 < j < 256 with the exact bound 3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts a bounded quantitative claim over the finite row range 0 < j < 256 with the exact bound 3·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aec2ff3dc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 832,
+    "output": 152,
+    "reasoning": 112
+   },
+   "cost": 0.001284,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence hedges with 'Checked:' (a report of verification) rather than stating the claim as its own assertion.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence hedges with 'Checked:' (a report of verification) rather than stating the claim as its own assertion."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae2dc80cd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 836,
+    "output": 447,
+    "reasoning": 361
+   },
+   "cost": 0.002196,
+   "raw": "{\"statement\": \"for every j in 1 < j < 255 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims a uniform bound on 256·S(j) − j over all rows 1 to 255, with cutoff exactly 3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 1 < j < 255 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a uniform bound on 256·S(j) − j over all rows 1 to 255, with cutoff exactly 3·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aebb296fd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 836,
+    "output": 541,
+    "reasoning": 460
+   },
+   "cost": 0.002486,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims the finite grid rows 1–255 satisfy |256·S(j) − j| ≤ 4×10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims the finite grid rows 1–255 satisfy |256·S(j) − j| ≤ 4×10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae395f301b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 832,
+    "output": 237,
+    "reasoning": 144
+   },
+   "cost": 0.001545,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\", \"hole\": \"\", \"why\": \"The sentence claims a bound on |256·S(j) - j| over all rows j with 0 < j < 256, with the constant printed exactly as in the text.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| over all rows j with 0 < j < 256, with the constant printed exactly as in the text."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aec82b730290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 832,
+    "output": 219,
+    "reasoning": 139
+   },
+   "cost": 0.00149,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) − j| ≤ 0.0000000000000000000000000000000000000004\", \"hole\": \"\", \"why\": \"The sentence asserts a bounded form-factor deviation over the finite row range 0 < j < 256, with the bound printed exactly.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) − j| ≤ 0.0000000000000000000000000000000000000004",
+    "hole": "",
+    "why": "The sentence asserts a bounded form-factor deviation over the finite row range 0 < j < 256, with the bound printed exactly."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae2caa3c1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 847,
+    "output": 157,
+    "reasoning": 67
+   },
+   "cost": 0.001314,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a bounded claim over the integer rows 0 < j < 256 that each form factor value satisfies |256·S(j) − j| ≤ 3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a bounded claim over the integer rows 0 < j < 256 that each form factor value satisfies |256·S(j) − j| ≤ 3·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aebb28784d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 847,
+    "output": 193,
+    "reasoning": 126
+   },
+   "cost": 0.001424,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a bounded finite claim over the integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a bounded finite claim over the integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae289aec6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 844,
+    "output": 180,
+    "reasoning": 94
+   },
+   "cost": 0.001382,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a bounded universal claim over the integer rows 0 < j < 256 about the form factor S(j) with the explicit bound 3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a bounded universal claim over the integer rows 0 < j < 256 about the form factor S(j) with the explicit bound 3·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeb7599a1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 844,
+    "output": 104,
+    "reasoning": 35
+   },
+   "cost": 0.001147,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a bounded claim over the integer rows 0<j<256 about the form factor S(j).\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a bounded claim over the integer rows 0<j<256 about the form factor S(j)."
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae35e822af11-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 842,
+    "output": 194,
+    "reasoning": 102
+   },
+   "cost": 0.001423,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts a uniform bound on |256·S(j) − j| over the finitely many integer rows j = 1,…,255, where S(j) is exactly the library's form factor.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts a uniform bound on |256·S(j) − j| over the finitely many integer rows j = 1,…,255, where S(j) is exactly the library's form factor."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aec5afccd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 842,
+    "output": 462,
+    "reasoning": 380
+   },
+   "cost": 0.002248,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence bounds |256·S(j) − j| by 4·10⁻⁴⁰ for every row j = 1,…,255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds |256·S(j) − j| by 4·10⁻⁴⁰ for every row j = 1,…,255."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae2a5e144d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 831,
+    "output": 342,
+    "reasoning": 270
+   },
+   "cost": 0.001868,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\", \"hole\": \"\", \"why\": \"The sentence claims the form factor stays within 3e-40 of the CUE value at every row j = 1, …, 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence claims the form factor stays within 3e-40 of the CUE value at every row j = 1, …, 255."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeba59a41b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 831,
+    "output": 325,
+    "reasoning": 248
+   },
+   "cost": 0.001815,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41\", \"hole\": \"\", \"why\": \"The sentence states a bounded uniform bound on the rescaled form factor over the finitely many rows 1 to 255, printed as 3e-41.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41",
+    "hole": "",
+    "why": "The sentence states a bounded uniform bound on the rescaled form factor over the finitely many rows 1 to 255, printed as 3e-41."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae31bad70290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 838,
+    "output": 494,
+    "reasoning": 433
+   },
+   "cost": 0.002343,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence reports that the bound |256·S(j) − j| versus 3·10⁻⁴⁰ is stated with < in one place and ≤ in another, so the relation itself is not fixed.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence reports that the bound |256·S(j) − j| versus 3·10⁻⁴⁰ is stated with < in one place and ≤ in another, so the relation itself is not fixed."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae2ebedb4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 819,
+    "output": 281,
+    "reasoning": 195
+   },
+   "cost": 0.001668,
+   "raw": "```json\n{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a bounded claim over the integer rows 0<j<256 comparing 256·S(j)-j against 3×10⁻⁴⁰.\"}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a bounded claim over the integer rows 0<j<256 comparing 256·S(j)-j against 3×10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aec2dcb31b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 819,
+    "output": 355,
+    "reasoning": 283
+   },
+   "cost": 0.001896,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts a uniform bound on 256·S(j) − j over all integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts a uniform bound on 256·S(j) − j over all integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae3fedb9d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 819,
+    "output": 194,
+    "reasoning": 147
+   },
+   "cost": 0.0014,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states a strict upper bound on the decimal constant the library names c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states a strict upper bound on the decimal constant the library names c256."
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aecc18111b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 819,
+    "output": 234,
+    "reasoning": 185
+   },
+   "cost": 0.001523,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence asserts the decimal constant (the library's c256) is below the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence asserts the decimal constant (the library's c256) is below the printed bound."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae4bef44d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 819,
+    "output": 123,
+    "reasoning": 73
+   },
+   "cost": 0.001181,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says the constant comes out at 'about' 2.5431316·10⁻⁶, an approximate value rather than an exact claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says the constant comes out at 'about' 2.5431316·10⁻⁶, an approximate value rather than an exact claim."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae478f9ac0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 846,
+    "output": 254,
+    "reasoning": 177
+   },
+   "cost": 0.001611,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the decimal constant 1/(6·256²)+3·10⁻⁴⁰/512 is strictly below 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant 1/(6·256²)+3·10⁻⁴⁰/512 is strictly below 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/27 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aed48dd94d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 846,
+    "output": 284,
+    "reasoning": 203
+   },
+   "cost": 0.001704,
+   "raw": "{\"statement\": \"2.5431317·10⁻⁶ > c256\", \"hole\": \"\", \"why\": \"The sentence's leading claim is that 1/(6·256²) + 3·10⁻⁴⁰/512 (i.e. c256) is strictly below 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "2.5431317·10⁻⁶ > c256",
+    "hole": "",
+    "why": "The sentence's leading claim is that 1/(6·256²) + 3·10⁻⁴⁰/512 (i.e. c256) is strictly below 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae4d2824f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 813,
+    "output": 314,
+    "reasoning": 275
+   },
+   "cost": 0.001764,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence hedges its numerical claim with 'we checked that', so it states no claim in the required form.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence hedges its numerical claim with 'we checked that', so it states no claim in the required form."
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae44bb390290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 817,
+    "output": 290,
+    "reasoning": 209
+   },
+   "cost": 0.001694,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is c256, is below 2.5431316 × 10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is c256, is below 2.5431316 × 10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/blog/24 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aed0fdc5f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 817,
+    "output": 121,
+    "reasoning": 67
+   },
+   "cost": 0.001173,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the constant c256 is below 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant c256 is below 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae42ae9f4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 832,
+    "output": 104,
+    "reasoning": 48
+   },
+   "cost": 0.001136,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the decimal constant c256 is less than 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/docstring/23 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aecec923d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 832,
+    "output": 177,
+    "reasoning": 117
+   },
+   "cost": 0.001361,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims the decimal constant c256 is less than the printed bound 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is less than the printed bound 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae3b5c231abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 826,
+    "output": 264,
+    "reasoning": 186
+   },
+   "cost": 0.001623,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The lemma claims the decimal constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 is below 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The lemma claims the decimal constant c256 = 1/(6·256²) + 3·10⁻⁴⁰/512 is below 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aec8b9c04ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 826,
+    "output": 196,
+    "reasoning": 118
+   },
+   "cost": 0.001413,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The lemma claims the constant c256 (= 1/(6·256²) + 3·10⁻⁴⁰/512) is less than 2.5431317·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The lemma claims the constant c256 (= 1/(6·256²) + 3·10⁻⁴⁰/512) is less than 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae400d79f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 812,
+    "output": 267,
+    "reasoning": 215
+   },
+   "cost": 0.001618,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-6\", \"hole\": \"\", \"why\": \"The sentence claims the decimal constant c256 is less than the printed bar 2.5431316e-6.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is less than the printed bar 2.5431316e-6."
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aecddcd21abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 812,
+    "output": 237,
+    "reasoning": 195
+   },
+   "cost": 0.001526,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-7\", \"hole\": \"\", \"why\": \"The sentence claims the decimal constant c256 is less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-7",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is less than the printed bound."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae4688d81abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 833,
+    "output": 203,
+    "reasoning": 120
+   },
+   "cost": 0.001442,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence asks to justify that the constant c256 = 1/(6·256²) + (3·10⁻⁴⁰)/512 is strictly less than the printed number 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence asks to justify that the constant c256 = 1/(6·256²) + (3·10⁻⁴⁰)/512 is strictly less than the printed number 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/referee/26 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aed41f851abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 833,
+    "output": 195,
+    "reasoning": 135
+   },
+   "cost": 0.001417,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence's leading claim is that the strict inequality c256 < 2.5431317·10⁻⁶ holds.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence's leading claim is that the strict inequality c256 < 2.5431317·10⁻⁶ holds."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae459f25d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 827,
+    "output": 653,
+    "reasoning": 567
+   },
+   "cost": 0.002822,
+   "raw": "{\"statement\": \"c256 < 2.5431316×10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence's leading claim is that the decimal constant (1/(6·256²) + 3×10⁻⁴⁰/512, i.e. c256) is strictly less than 2.5431316×10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316×10⁻⁶",
+    "hole": "",
+    "why": "The sentence's leading claim is that the decimal constant (1/(6·256²) + 3×10⁻⁴⁰/512, i.e. c256) is strictly less than 2.5431316×10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aed31ae81b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 827,
+    "output": 341,
+    "reasoning": 257
+   },
+   "cost": 0.001861,
+   "raw": "{\"statement\": \"c256 < 2.5431317×10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the decimal constant c256 (which is exactly 1/(6·256²) + 3·10⁻⁴⁰/512) is below 2.5431317×10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317×10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant c256 (which is exactly 1/(6·256²) + 3·10⁻⁴⁰/512) is below 2.5431317×10⁻⁶."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae506ba96e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 846,
+    "output": 197,
+    "reasoning": 110
+   },
+   "cost": 0.001436,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀; the ≤ 0.6818287 is only a derived consequence of that equality.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀; the ≤ 0.6818287 is only a derived consequence of that equality."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aed50bbe1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 846,
+    "output": 308,
+    "reasoning": 237
+   },
+   "cost": 0.001778,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with an exact rational equality for the library quantity p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact rational equality for the library quantity p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae5b9d490290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 848,
+    "output": 153,
+    "reasoning": 74
+   },
+   "cost": 0.001302,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀; the equality is stated first, before the upper bound.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀; the equality is stated first, before the upper bound."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aedb9c060290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 848,
+    "output": 198,
+    "reasoning": 124
+   },
+   "cost": 0.001441,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀, stated as printed.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀, stated as printed."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae564bf14ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 854,
+    "output": 211,
+    "reasoning": 129
+   },
+   "cost": 0.001487,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀; the second bound follows from it but is not the primary claim.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀; the second bound follows from it but is not the primary claim."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae5c5c4b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 838,
+    "output": 516,
+    "reasoning": 438
+   },
+   "cost": 0.002411,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence gives the decimal only as an approximation but states the exact rational value of p₀ as its claim.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence gives the decimal only as an approximation but states the exact rational value of p₀ as its claim."
+   }
+  },
+  {
+   "tag": "4/blog/38 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aedcf8454ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 838,
+    "output": 178,
+    "reasoning": 92
+   },
+   "cost": 0.001369,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence states the exact value of p₀ as that rational number; the 0.68183 is just an approximate preview of it.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence states the exact value of p₀ as that rational number; the 0.68183 is just an approximate preview of it."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae55cf2b1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 848,
+    "output": 221,
+    "reasoning": 140
+   },
+   "cost": 0.001512,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀; the trailing inequality is a second, later claim not stated here.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀; the trailing inequality is a second, later claim not stated here."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae4ffc8c4931-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 855,
+    "output": 192,
+    "reasoning": 114
+   },
+   "cost": 0.001429,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence's lead claim is the exact rational value of p₀; the second inequality follows from it.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence's lead claim is the exact rational value of p₀; the second inequality follows from it."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae5d197cf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 846,
+    "output": 231,
+    "reasoning": 175
+   },
+   "cost": 0.001541,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818287\", \"hole\": \"\", \"why\": \"The sentence leads with the bound 0.6818287 ≥ p₀; the following equality just gives p₀'s exact rational value.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence leads with the bound 0.6818287 ≥ p₀; the following equality just gives p₀'s exact rational value."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aedf9d9b0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 846,
+    "output": 435,
+    "reasoning": 369
+   },
+   "cost": 0.002169,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818288\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the simple-point fraction p₀ is at most 0.6818288; the following rational equality is a definition of p₀ rather than the leading numerical claim.\"",
+   "answer": null
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae54d99b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 842,
+    "output": 169,
+    "reasoning": 89
+   },
+   "cost": 0.001346,
+   "raw": "{\"statement\": \"p0 = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational equality for p₀; the second inequality is a separate claim not stated here.\"}",
+   "answer": {
+    "statement": "p0 = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational equality for p₀; the second inequality is a separate claim not stated here."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aed9c9f6f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 842,
+    "output": 368,
+    "reasoning": 293
+   },
+   "cost": 0.001959,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the exact claim that the simple-point fraction equals the printed rational.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact claim that the simple-point fraction equals the printed rational."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae5a6a814ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 854,
+    "output": 277,
+    "reasoning": 240
+   },
+   "cost": 0.00169,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence poses questions about whether an equality holds and whether a bound is strict, asserting no claim itself.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence poses questions about whether an equality holds and whether a bound is strict, asserting no claim itself."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae564d86f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 833,
+    "output": 250,
+    "reasoning": 181
+   },
+   "cost": 0.001586,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀; the later decimal inequality follows from it.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀; the later decimal inequality follows from it."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae63898e4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 767,
+    "output": 134,
+    "reasoning": 86
+   },
+   "cost": 0.001164,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the value of the Montgomery–Taylor constant with printed digits cut off by an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the value of the Montgomery–Taylor constant with printed digits cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aee28ed00290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 767,
+    "output": 227,
+    "reasoning": 178
+   },
+   "cost": 0.001451,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence asserts the value of the library quantity c₁*, printed cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence asserts the value of the library quantity c₁*, printed cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae6f7ad34ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 801,
+    "output": 267,
+    "reasoning": 206
+   },
+   "cost": 0.001607,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence asserts the value of the defined quantity c₁* equals the printed decimal 0.7532960... cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence asserts the value of the defined quantity c₁* equals the printed decimal 0.7532960... cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeeafc851b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 801,
+    "output": 285,
+    "reasoning": 227
+   },
+   "cost": 0.001663,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed value of c₁*, cut off with an ellipsis, as a claim about the library quantity c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the printed value of c₁*, cut off with an ellipsis, as a claim about the library quantity c₁*."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae68897c1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 764,
+    "output": 118,
+    "reasoning": 72
+   },
+   "cost": 0.001112,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence only says c₁* is about 0.7533, an approximate value, and the rest is a definition of the constant.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence only says c₁* is about 0.7533, an approximate value, and the rest is a definition of the constant."
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae685982c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 772,
+    "output": 103,
+    "reasoning": 54
+   },
+   "cost": 0.001074,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the numerical value of the Montgomery–Taylor constant, printed cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the numerical value of the Montgomery–Taylor constant, printed cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aee90b71d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 772,
+    "output": 108,
+    "reasoning": 59
+   },
+   "cost": 0.001089,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical value of the Montgomery–Taylor constant, printed cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of the Montgomery–Taylor constant, printed cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae616e621b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 826,
+    "output": 764,
+    "reasoning": 704
+   },
+   "cost": 0.003163,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence asserts the constant equals the printed decimal 0.7532960…, a checkable equality over the library name c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence asserts the constant equals the printed decimal 0.7532960…, a checkable equality over the library name c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aee1c8fbd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 826,
+    "output": 233,
+    "reasoning": 175
+   },
+   "cost": 0.001527,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence defines c₁* and prints its value cut off with an ellipsis, a checkable claim over the library name c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence defines c₁* and prints its value cut off with an ellipsis, a checkable claim over the library name c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae722f3ad7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 777,
+    "output": 706,
+    "reasoning": 641
+   },
+   "cost": 0.002936,
+   "raw": "```json\n{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence's statable claim is the printed value of the library constant c₁*; the cot identity has no number bar and cot is not in the library.\"}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence's statable claim is the printed value of the library constant c₁*; the cot identity has no number bar and cot is not in the library."
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeed1b261abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 777,
+    "output": 148,
+    "reasoning": 99
+   },
+   "cost": 0.001217,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed value of the Montgomery–Taylor constant, cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the printed value of the Montgomery–Taylor constant, cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae63cfb5c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 791,
+    "output": 254,
+    "reasoning": 206
+   },
+   "cost": 0.001558,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the value of the Montgomery–Taylor constant, printed cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the value of the Montgomery–Taylor constant, printed cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aee32f32f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 791,
+    "output": 173,
+    "reasoning": 121
+   },
+   "cost": 0.001308,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the value of c1* printed with an ellipsis, so the claim is that cut-off equality.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the value of c1* printed with an ellipsis, so the claim is that cut-off equality."
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae6d29831abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 797,
+    "output": 417,
+    "reasoning": 355
+   },
+   "cost": 0.002065,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the definite numerical claim that the Montgomery–Taylor constant equals the printed cutoff 0.7532960…, and the checker will decide it.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the definite numerical claim that the Montgomery–Taylor constant equals the printed cutoff 0.7532960…, and the checker will decide it."
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aee96c8fd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 797,
+    "output": 311,
+    "reasoning": 243
+   },
+   "cost": 0.001739,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the Montgomery–Taylor constant equals the printed (cut-off) value 0.7532961…, checkable via the library name c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the claim that the Montgomery–Taylor constant equals the printed (cut-off) value 0.7532961…, checkable via the library name c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae6b5adc6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 766,
+    "output": 192,
+    "reasoning": 144
+   },
+   "cost": 0.001342,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed value of the Montgomery–Taylor constant, cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the printed value of the Montgomery–Taylor constant, cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aee93ab84d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 766,
+    "output": 211,
+    "reasoning": 164
+   },
+   "cost": 0.001401,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the value of c₁*, printed cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the value of c₁*, printed cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae746a4c4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 755,
+    "output": 92,
+    "reasoning": 51
+   },
+   "cost": 0.001023,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence gives the value of c₁* only approximately, marked with ≈, so no exact bar can be stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence gives the value of c₁* only approximately, marked with ≈, so no exact bar can be stated."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae789fbc1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 765,
+    "output": 178,
+    "reasoning": 121
+   },
+   "cost": 0.001298,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence claims the proportion equals 2 − 1/c₁*, printed as 0.67250 with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence claims the proportion equals 2 − 1/c₁*, printed as 0.67250 with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef1c840c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 765,
+    "output": 482,
+    "reasoning": 391
+   },
+   "cost": 0.002234,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence's checkable numerical claim is that the proportion equals 2 - 1/c₁* = 0.67251…; the 'at least 67.25% of zeros' part is an unbounded theorem about all zeta zeros, but the stated numerical claim is this equality.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence's checkable numerical claim is that the proportion equals 2 - 1/c₁* = 0.67251…; the 'at least 67.25% of zeros' part is an unbounded theorem about all zeta zeros, but the stated numerical claim is this equality."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae858eee0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 763,
+    "output": 174,
+    "reasoning": 104
+   },
+   "cost": 0.001284,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence's lead claim is that the proportion of simple zeros on the critical line, written 2 − 1/c₁*, equals 0.67250 with the digits cut off.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence's lead claim is that the proportion of simple zeros on the critical line, written 2 − 1/c₁*, equals 0.67250 with the digits cut off."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef9984f0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 763,
+    "output": 215,
+    "reasoning": 139
+   },
+   "cost": 0.00141,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim that 2 − 1/c₁* equals the printed cut-off value 0.67251…, with the 67.25% remark being a restatement of it.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim that 2 − 1/c₁* equals the printed cut-off value 0.67251…, with the 67.25% remark being a restatement of it."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae805817c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 754,
+    "output": 149,
+    "reasoning": 90
+   },
+   "cost": 0.001198,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the cut-off numerical value of 2 - 1/c₁*, which is a claim with an ellipsis-printed bar.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the cut-off numerical value of 2 - 1/c₁*, which is a claim with an ellipsis-printed bar."
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef3dbf0c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 754,
+    "output": 162,
+    "reasoning": 90
+   },
+   "cost": 0.001238,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence states the numerical claim that 2 - 1/c₁* equals 0.67251…, with digits cut off by an ellipsis; the percentage restatement is approximate and secondary.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence states the numerical claim that 2 - 1/c₁* equals 0.67251…, with digits cut off by an ellipsis; the percentage restatement is approximate and secondary."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae7e697e4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 764,
+    "output": 194,
+    "reasoning": 112
+   },
+   "cost": 0.001346,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim that 2 - 1/c₁* equals 0.67250… (printed with an ellipsis); the percentage statement about zeros is a theorem-like claim no finite check decides, not the leading claim.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim that 2 - 1/c₁* equals 0.67250… (printed with an ellipsis); the percentage statement about zeros is a theorem-like claim no finite check decides, not the leading claim."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef37fac1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 764,
+    "output": 216,
+    "reasoning": 144
+   },
+   "cost": 0.001414,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the exact value of 2 - 1/c₁* printed to 0.67251 with an ellipsis; the percentage claim about all zeros is an unbounded theorem.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the exact value of 2 - 1/c₁* printed to 0.67251 with an ellipsis; the percentage claim about all zeros is an unbounded theorem."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae775ed24ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 770,
+    "output": 531,
+    "reasoning": 482
+   },
+   "cost": 0.00239,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence's leading numerical claim is the value of the proportion, printed as a cut-off decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence's leading numerical claim is the value of the proportion, printed as a cut-off decimal."
+   }
+  },
+  {
+   "tag": "6/paper/50 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aeef7ceb3236-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 770,
+    "output": 114,
+    "reasoning": 75
+   },
+   "cost": 0.001106,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"This is a theorem about the infinitely many nontrivial zeros of ζ(s), a claim no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "This is a theorem about the infinitely many nontrivial zeros of ζ(s), a claim no finite check decides."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae866cda4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 758,
+    "output": 794,
+    "reasoning": 750
+   },
+   "cost": 0.003188,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The claim bounds the proportion of simple on-the-line zeros, a quantity none of the library names expresses (only c₁* is available).}",
+   "answer": null
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae78bcabd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 755,
+    "output": 145,
+    "reasoning": 85
+   },
+   "cost": 0.001187,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the proportion equals 2 - 1/c₁*, printed as the cut-off decimal 0.67250…\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the claim that the proportion equals 2 - 1/c₁*, printed as the cut-off decimal 0.67250…"
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef28daa1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 755,
+    "output": 126,
+    "reasoning": 66
+   },
+   "cost": 0.001128,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence states the proportion equals 2 - 1/c₁*, printed as 0.67251 cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence states the proportion equals 2 - 1/c₁*, printed as 0.67251 cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae8ac80cd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.5,
+   "usage": {
+    "input": 732,
+    "output": 46,
+    "reasoning": 12
+   },
+   "cost": 0.000859,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence uses ≈, so it states an approximate value, not an exact claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence uses ≈, so it states an approximate value, not an exact claim."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae856e7fd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 765,
+    "output": 255,
+    "reasoning": 208
+   },
+   "cost": 0.001535,
+   "raw": "{\"statement\": \"2 - 1/c₁* ≥ 0.6725\", \"hole\": \"\", \"why\": \"The sentence's claim is that the proportion is at least 0.6725.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* ≥ 0.6725",
+    "hole": "",
+    "why": "The sentence's claim is that the proportion is at least 0.6725."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef94e26c663-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 765,
+    "output": 258,
+    "reasoning": 193
+   },
+   "cost": 0.001544,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the theorem's printed value of the proportion 2 − 1/c₁*, cut off with an ellipsis at 0.67250.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the theorem's printed value of the proportion 2 − 1/c₁*, cut off with an ellipsis at 0.67250."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae84ad41f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 751,
+    "output": 161,
+    "reasoning": 104
+   },
+   "cost": 0.001232,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the cut-off printed value of 2 − 1/c₁*, with the percentage consequence stated in prose.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the cut-off printed value of 2 − 1/c₁*, with the percentage consequence stated in prose."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aef70838d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 751,
+    "output": 187,
+    "reasoning": 116
+   },
+   "cost": 0.001312,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the printed numerical value of 2 − 1/c₁*, cut off with an ellipsis; the arrowed claim about all of ζ's zeros is a theorem no finite check decides.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the printed numerical value of 2 − 1/c₁*, cut off with an ellipsis; the arrowed claim about all of ζ's zeros is a theorem no finite check decides."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae8d18074ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 743,
+    "output": 147,
+    "reasoning": 83
+   },
+   "cost": 0.001181,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the distinct proportion equals (3 − 1/c₁*)/2, printed as 0.83625 with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the distinct proportion equals (3 − 1/c₁*)/2, printed as 0.83625 with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aefdeb30d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 743,
+    "output": 140,
+    "reasoning": 76
+   },
+   "cost": 0.001159,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the distinct proportion as the term (3 − 1/c₁*)/2 equal to the printed cut-off number 0.83626…\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the distinct proportion as the term (3 − 1/c₁*)/2 equal to the printed cut-off number 0.83626…"
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae973bfdc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 748,
+    "output": 111,
+    "reasoning": 58
+   },
+   "cost": 0.001075,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the leading numerical claim that the expression equals the printed truncated decimal 0.83625…\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the leading numerical claim that the expression equals the printed truncated decimal 0.83625…"
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af054dd4d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 748,
+    "output": 88,
+    "reasoning": 26
+   },
+   "cost": 0.001004,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the value of (3 - 1/c₁*)/2 as the printed truncated decimal 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the value of (3 - 1/c₁*)/2 as the printed truncated decimal 0.83626…."
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae91da081b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 745,
+    "output": 121,
+    "reasoning": 58
+   },
+   "cost": 0.001103,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence claims that three minus the reciprocal of c₁*, divided by two, equals the printed cut-off number 0.83625….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims that three minus the reciprocal of c₁*, divided by two, equals the printed cut-off number 0.83625…."
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af00bbd81abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 745,
+    "output": 128,
+    "reasoning": 69
+   },
+   "cost": 0.001124,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim that three minus the reciprocal of c₁*, divided by two, equals 0.83626…\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim that three minus the reciprocal of c₁*, divided by two, equals 0.83626…"
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae9b195dd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 740,
+    "output": 54,
+    "reasoning": 16
+   },
+   "cost": 0.000892,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says the proportion is approximately 0.836, an approximation rather than an exact printed value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says the proportion is approximately 0.836, an approximation rather than an exact printed value."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae8f2f3cd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 744,
+    "output": 92,
+    "reasoning": 29
+   },
+   "cost": 0.001012,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the value of the expression (3 - 1/c₁*)/2 as 0.83625 printed with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the value of the expression (3 - 1/c₁*)/2 as 0.83625 printed with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af00b962f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 744,
+    "output": 102,
+    "reasoning": 45
+   },
+   "cost": 0.001043,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims the distinct proportion equals 0.83626… with the print cut off by an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims the distinct proportion equals 0.83626… with the print cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae8b8d624ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 747,
+    "output": 83,
+    "reasoning": 22
+   },
+   "cost": 0.000988,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states that the expression (3 - 1/c₁*)/2 equals 0.83625 with an ellipsis cutoff.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states that the expression (3 - 1/c₁*)/2 equals 0.83625 with an ellipsis cutoff."
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aefc9b9cf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 747,
+    "output": 93,
+    "reasoning": 28
+   },
+   "cost": 0.001019,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the distinct proportion as the expression (3 - 1/c₁*)/2 equal to the printed value 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the distinct proportion as the expression (3 - 1/c₁*)/2 equal to the printed value 0.83626…."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae9a5829d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 755,
+    "output": 116,
+    "reasoning": 49
+   },
+   "cost": 0.001097,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the quantity (3 - 1/c₁*)/2 equals the printed digits 0.83625 cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the claim that the quantity (3 - 1/c₁*)/2 equals the printed digits 0.83625 cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af06da2cf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 755,
+    "output": 80,
+    "reasoning": 26
+   },
+   "cost": 0.000986,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the value of (3 - 1/c₁*)/2 printed with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the value of (3 - 1/c₁*)/2 printed with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae8e18841b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 738,
+    "output": 314,
+    "reasoning": 253
+   },
+   "cost": 0.00169,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the value of (3 - 1/c₁*)/2, printed cut off at 0.83625.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the value of (3 - 1/c₁*)/2, printed cut off at 0.83625."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af007bad1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 738,
+    "output": 202,
+    "reasoning": 147
+   },
+   "cost": 0.001345,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims the term equals 0.83626…, a print cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims the term equals 0.83626…, a print cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae9649e7d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 758,
+    "output": 135,
+    "reasoning": 66
+   },
+   "cost": 0.001159,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with the recomputed value of (3 − 1/c₁*)/2, printed with an ellipsis cutoff, while the table's rounding remark is secondary.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the recomputed value of (3 − 1/c₁*)/2, printed with an ellipsis cutoff, while the table's rounding remark is secondary."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af04dd47d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 758,
+    "output": 138,
+    "reasoning": 58
+   },
+   "cost": 0.001168,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence leads with the value of (3 − 1/c₁*)/2 printed with a trailing ellipsis, stating it equals those digits; the remark about 0.8362 being rounded is commentary, not the lead claim.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with the value of (3 − 1/c₁*)/2 printed with a trailing ellipsis, stating it equals those digits; the remark about 0.8362 being rounded is commentary, not the lead claim."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae92f9e8f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 739,
+    "output": 1460,
+    "reasoning": 1387
+   },
+   "cost": 0.005221,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence claims the expression (3 - 1/c₁*)/2 equals 0.83625 cut off with an ellipsis, and the printed digits identify this reading over the precedence reading.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims the expression (3 - 1/c₁*)/2 equals 0.83625 cut off with an ellipsis, and the printed digits identify this reading over the precedence reading."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537af029dd21b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 739,
+    "output": 987,
+    "reasoning": 919
+   },
+   "cost": 0.003764,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims the distinct-proportion value equals the expression (3 − 1/c₁*)/2, as confirmed by the printed digits 0.83626…\"}\n",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims the distinct-proportion value equals the expression (3 − 1/c₁*)/2, as confirmed by the printed digits 0.83626…"
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae9eaf3bd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.5,
+   "usage": {
+    "input": 804,
+    "output": 50,
+    "reasoning": 14
+   },
+   "cost": 0.000942,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"A zero-free region theorem for all Dirichlet L-functions, a claim no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A zero-free region theorem for all Dirichlet L-functions, a claim no finite check decides."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea5e95c6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 839,
+    "output": 124,
+    "reasoning": 60
+   },
+   "cost": 0.001204,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence reports paper-level theorems (a zero-free region for all Dirichlet L-functions and a proportion claim over all zeros), which are unbounded statements no finite check decides, and the speaker explicitly has not checked them.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence reports paper-level theorems (a zero-free region for all Dirichlet L-functions and a proportion claim over all zeros), which are unbounded statements no finite check decides, and the speaker explicitly has not checked them."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea1dbdcd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 802,
+    "output": 92,
+    "reasoning": 44
+   },
+   "cost": 0.001069,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"A claim about infinitely many nontrivial zeros of ζ is a theorem no finite check decides, and it is not a claim about the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A claim about infinitely many nontrivial zeros of ζ is a theorem no finite check decides, and it is not a claim about the given data."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea0df7e1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 815,
+    "output": 99,
+    "reasoning": 51
+   },
+   "cost": 0.001104,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence claims a proportion of the Riemann zeta function's nontrivial zeros, a quantity none of the library names over this data expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence claims a proportion of the Riemann zeta function's nontrivial zeros, a quantity none of the library names over this data expresses."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537ae9cfdf61abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 817,
+    "output": 82,
+    "reasoning": 43
+   },
+   "cost": 0.001053,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"This is a zero-free region theorem about all Dirichlet L-functions, a claim no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "This is a zero-free region theorem about all Dirichlet L-functions, a claim no finite check decides."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea87a25f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 823,
+    "output": 248,
+    "reasoning": 211
+   },
+   "cost": 0.00157,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"This is a theorem about infinitely many zeta zeros, not a checkable claim over the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "This is a theorem about infinitely many zeta zeros, not a checkable claim over the given data."
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea099fdd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 806,
+    "output": 119,
+    "reasoning": 82
+   },
+   "cost": 0.001156,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"A zero-free region claim about all Dirichlet L-functions is a universal theorem no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A zero-free region claim about all Dirichlet L-functions is a universal theorem no finite check decides."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea59e1e4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.6,
+   "usage": {
+    "input": 814,
+    "output": 70,
+    "reasoning": 32
+   },
+   "cost": 0.001013,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence describes what a theorem asserts and critiques an argument; it makes no numerical claim of the required form.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence describes what a theorem asserts and critiques an argument; it makes no numerical claim of the required form."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea53d984ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.5,
+   "usage": {
+    "input": 803,
+    "output": 60,
+    "reasoning": 21
+   },
+   "cost": 0.000972,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence states a zero-free region theorem for all Dirichlet L-functions, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states a zero-free region theorem for all Dirichlet L-functions, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537aea96f9bd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 807,
+    "output": 103,
+    "reasoning": 55
+   },
+   "cost": 0.001108,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence claims a zero-free region and a simplicity proportion for all L-functions and all zeta zeros, statements about infinitely many cases that no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence claims a zero-free region and a simplicity proportion for all L-functions and all zeta zeros, statements about infinitely many cases that no finite check decides."
+   }
+  }
+ ]
+}

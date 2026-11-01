@@ -11,7 +11,7 @@
   check FILE.claim [--run] [--record OUT.json]     each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
                                                    (a fork: every reading); FILE may be LANGUAGE.md#E16, an example; --record writes the results
   library                                          every definition a claim may use: its names, version, readings, conventions and route
-  prose CORPUS [--run] [--record OUT.json] [--worksheet | --disputed]   from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
+  prose CORPUS [--run] [--record OUT.json] [--worksheet | --disputed | --panel]   from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
                                                    their levels (anchored, printed back, planted, concord) and the outcome; --run adds cert-machine's words
   tighten FILE[#E6] CLAIM [--digits N] [--name N]  step 7: the strongest bar cert-machine certifies (at N decimals) and its refuted neighbour,
                                                    every candidate decided by cert-machine; --name writes corpus/helpers/N.md and records/helpers/N.json
@@ -97,12 +97,24 @@ def main(argv=None):
     pr.add_argument('--record')
     pr.add_argument('--worksheet', action='store_true')
     pr.add_argument('--disputed', action='store_true')
+    pr.add_argument('--panel', action='store_true')
     a = ap.parse_args(argv)
     if a.cmd == 'prose':
         from . import prose
         if a.corpus not in prose.CORPORA:
             print('REFUSED  no corpus ' + a.corpus + ' (' + ', '.join(prose.CORPORA) + ')')
             return 1
+        if a.panel:                        # every proposer kind side by side, read from the record and the model ledgers
+            rec = json.load(open(os.path.join(prose.REPO, 'records', 'prose-' + a.corpus + '.json'), encoding='utf-8'))
+            print(f'{"proposer":<34}{"stated":>7}{"passed":>7}{"faithful":>9}{"unfaithful":>11}{"planted broke":>14}{"holes":>6}{"cost $":>9}')
+            for k, v in sorted(rec['summary']['perKind'].items(), key=lambda kv: (-kv[1].get('passed', 0), kv[0])):
+                fam = k[len('model:'):] if k.startswith('model:') else None
+                lp = os.path.join(prose.REPO, 'records', 'model-proposals-' + a.corpus + ('' if fam == 'claude-opus-5-5' else '.' + str(fam)) + '.json')
+                cost = json.load(open(lp, encoding='utf-8'))['spent'] if fam and os.path.isfile(lp) else None
+                print(f'{k:<34}{v["compiled"]:>7}{v.get("passed", 0):>7}{v["faithful"]:>9}{v["unfaithful"]:>11}{v["plantedBroke"]:>14}{v["holes"]:>6}'
+                      + (f'{cost:>9.4f}' if cost is not None else f'{"":>9}'))
+            print(f'validated {rec["summary"]["validated"]} of {rec["summary"]["sentences"]}; stability ' + json.dumps(rec['summary'].get('stability', {})))
+            return 0
         if a.disputed:                     # the sentences two model families read differently, read from the record; no statement shown
             rec = json.load(open(os.path.join(prose.REPO, 'records', 'prose-' + a.corpus + '.json'), encoding='utf-8'))
             d = prose.disputed(rec)

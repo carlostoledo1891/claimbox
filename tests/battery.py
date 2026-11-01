@@ -20,6 +20,7 @@ usage: python3 tests/battery.py           exit 0 iff every check passes and ever
 """
 import copy
 import glob
+import hashlib
 import importlib.util
 import json
 import os
@@ -822,10 +823,13 @@ ok(LEDGER['calls'] == len(LEDGER['entries']) and abs(LEDGER['spent'] - sum(x['co
 mp = [p for e in PREC['sentences'] for p in e['proposals'] if p['kind'] == 'model:' + LEDGER['model']]
 ok(len(mp) == len(PREC['sentences']) and PREC['summary']['perKind']['model:' + LEDGER['model']]['proposed'] == len(mp),
    'prose: the model proposed, or named a hole, for every phrasing', f'{len(mp)} of {len(PREC["sentences"])}')
-ok(all(p.get('word') == 'CERTIFIED' for e in PREC['sentences'] for p in e['proposals'] if 'object' in p)
+ok(all(p.get('word') == 'CERTIFIED' for e in PREC['sentences'] for p in e['proposals'] if 'object' in p and not p.get('fails'))
    and all(p['anchored'] for p in mp if p.get('faithful') is False),
-   'prose: every claim proposed, of either kind, is CERTIFIED, and a model claim that differs from its decided reference states a number its own sentence prints',
-   f'{PREC["summary"]["proposals"]} claims')
+   'prose: every claim that passes the checks, of any proposer, is CERTIFIED, and a model claim that differs from its decided reference states a number its own sentence prints',
+   f'{sum(1 for e in PREC["sentences"] for p in e["proposals"] if "object" in p and not p.get("fails"))} claims')
+wrong = [(e['id'], p['kind'], p['fails']) for e in PREC['sentences'] for p in e['proposals'] if p.get('word') == 'REFUTED']
+red(wrong and all('printedBack' in f for _, _, f in wrong),
+    'prose: refused — a model claim cert-machine refutes is refused by the checks first (2/paper/18: the mirrored relation read the wrong way round)', json.dumps(wrong))
 ROW = {r['id']: r for r in PR.rows_of('riemann-ai')}
 S5, S6, S1 = ROW['5/tweet/45']['text'], ROW['6/tweet/55']['text'], ROW['1/paper/0']['text']
 HEADP = 'source P = ../claimbox/corpus/riemann/ai-phrasings.md\ndata   s = ../claimbox/corpus/riemann/zeta23/mt-series.json\nread   s as integers\n' \
@@ -886,13 +890,24 @@ red(len(taken) == 1 and 'decimals' not in ''.join(taken) and WS.blocks()[0][2] i
 _pm = importlib.util.spec_from_file_location('propose_model', os.path.join(REPO, 'tools', 'propose_model.py'))
 PMOD = importlib.util.module_from_spec(_pm)
 _pm.loader.exec_module(PMOD)
-leds = {f: json.load(open(f, encoding='utf-8')) for f in sorted(glob.glob(os.path.join(REPO, 'records', 'model-proposals-riemann-ai.*.json')))}
+leds = {f: json.load(open(f, encoding='utf-8')) for c in ('riemann-ai', 'register') for f in sorted(glob.glob(os.path.join(REPO, 'records', f'model-proposals-{c}.*.json')))}
 ok(all(L['calls'] == len(L['entries']) and abs(L['spent'] - sum(x.get('cost', 0) for x in L['entries'])) < 1e-3 and L['spent'] <= L['cap']
        and L['provider'] == 'prime' and f.endswith('.' + L['family'] + '.json') for f, L in leds.items()),
    'prose: every other family\'s ledger adds up under its cap, its family the file\'s', ', '.join(f'{L["family"]} {L["calls"]} calls ${L["spent"]}' for L in leds.values()) or 'none')
 red(PMOD.answer_of('{"statement": "", "hole": "vague", "why": "x"}') is None and PMOD.answer_of('the claim is |D(1)| ≤ 0.82395317') is None
     and PMOD.answer_of('```json\n{"statement": "D(1) ≤ 1", "hole": "", "why": "x"}\n```') == {'statement': 'D(1) ≤ 1', 'hole': '', 'why': 'x'},
     'prose: refused — a family\'s reply that is not the answer\'s JSON, or names a hole the language lacks, is no answer (a fence around it is read)', 'answer_of')
+# the prompt variant (tools/propose_model.py --guide): GUIDE.md's part for a model, whose examples print no number any AI phrasing
+# prints — the guide teaches the language, never the test's answers
+gtext = open(os.path.join(REPO, 'GUIDE.md'), encoding='utf-8').read()
+gpart = gtext[gtext.index(PMOD.GUIDE_MARK):]
+ai_text = open(os.path.join(REPO, PR.CORPORA['riemann-ai']['source']), encoding='utf-8').read()
+leak = [n for n in set(re.findall(r'\d+\.\d{3,}', gpart)) if n in ai_text]
+ok(not leak and '## For a model' in gpart, 'prose: the guide a model is given prints no number of the AI phrasings it is measured on', ', '.join(leak) or 'no number shared')
+asked = open(os.path.join(REPO, 'corpus', 'proposals', 'guide-asked-2026-11-01.md'), encoding='utf-8').read().strip()
+ok(all(L['guide'] == hashlib.sha256(asked.encode('utf-8')).hexdigest() for f, L in leds.items() if f.endswith('.guide.json')),
+   'prose: every prompt-variant run names the guide text it was given, kept byte for byte (corpus/proposals/guide-asked-2026-11-01.md)',
+   f'{sum(1 for f in leds if f.endswith(".guide.json"))} runs')
 fams = sorted(glob.glob(os.path.join(REPO, PR.CORPORA['riemann-ai']['models'])))
 ok(all(re.search(r'^-- prompt: .* sha256 [0-9a-f]{64}$', open(f, encoding='utf-8').read(), re.M) or
        open(f, encoding='utf-8').read().startswith('-- Written by tools/propose_model.py (') for f in fams),
@@ -944,7 +959,7 @@ red("model:claude-opus-5-5's proposal fails paraphrase" in [e['outcome'] for e i
     'prose: refused — 7/tweet/65, where the model wrote 3 - 1/c₁* / 2 for (3 - 1/c₁*)/2 on the paraphrase (the record)', 'paraphrase')
 # sensitivity and vacuity (run with cert-machine): the record's, then a translation that ignores its bar, and one that ignores its bytes
 SV = PREC['summary']
-ok(SV['sensitivity']['broke'] == 0 and SV['sensitivity']['held'] > 0 and all(
+ok(all(p['sensitivity']['held'] or p.get('fails') for e in PREC['sentences'] for p in e['proposals'] if p.get('sensitivity')) and SV['sensitivity']['held'] > 0 and all(
        p['vacuity']['depends'] == (not e['id'].startswith('3/')) for e in PREC['sentences'] for p in e['proposals'] if p.get('vacuity')),
    'prose: every claim\'s word moves as the arithmetic says when its bar moves one unit; every claim but the decimal constant\'s depends on its bytes '
    '(c256 is arithmetic on a library constant: no plant of the file moves it, flagged)', json.dumps(SV['sensitivity']) + ' ' + json.dumps(SV['vacuity']))
@@ -1205,7 +1220,7 @@ red(sw['hforged'].startswith('REFUTED'), 'SOTA definitions: refuted — a forged
 RB2 = {e['id']: e for e in RREC['sentences']}
 ok(all(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in RB2[i]['proposals']) for i in ('optconst-71', 'polymaps-gao-g', 'polymaps-chv-phi')),
    'register batch 2: C71, Gao\'s G and the Phi map, each over the file its ledger row\'s decider read, take the row\'s word (the record)', 'three')
-red(all(RB2[i]['outcome'] == 'not stated: decider' for i in ('polymaps-gao-f4', 'polymaps-gao-f5')),
+red(all(RB2[i]['outcome'].startswith('not stated') and RB2[i]['proposals'][0]['refused']['rule'] == 'decider' for i in ('polymaps-gao-f4', 'polymaps-gao-f5')),
     'register batch 2: refused — a bar printed as a fraction (det J = -44/9, 160/29): the receiver\'s format carries a printed bar as digits only', 'F4, F5')
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')

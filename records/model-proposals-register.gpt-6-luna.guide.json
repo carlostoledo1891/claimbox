@@ -1,0 +1,1540 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "openai/gpt-6-luna",
+ "provider": "prime",
+ "family": "gpt-6-luna.guide",
+ "effort": "high",
+ "cap": 3.0,
+ "guide": "556fdd758b740d304af901c8eef3f74fcc5d8e9c375581051f86198f4e08b9e1",
+ "spent": 0.0341,
+ "calls": 76,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.1,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 0.5
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8b4ae716240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 1738,
+    "output": 589,
+    "reasoning": 560
+   },
+   "cost": 0.000468,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"C₁ is not expressed by the supplied library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C₁ is not expressed by the supplied library name."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8d689d20bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.5,
+   "usage": {
+    "input": 1745,
+    "output": 956,
+    "reasoning": 930
+   },
+   "cost": 0.000652,
+   "raw": "{\"statement\":\"\",\"hole\":\"quantity\",\"why\":\"No bound value is printed for C₁.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "No bound value is printed for C₁."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8e64fa6ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 1736,
+    "output": 1914,
+    "reasoning": 1883
+   },
+   "cost": 0.001131,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"C₁ is not a quantity expressed by the provided library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C₁ is not a quantity expressed by the provided library name."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8ddb8861b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 1741,
+    "output": 704,
+    "reasoning": 675
+   },
+   "cost": 0.000526,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"“C₁” is never defined in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "“C₁” is never defined in the sentence."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d7d0da848779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 1796,
+    "output": 519,
+    "reasoning": 453
+   },
+   "cost": 0.000439,
+   "raw": "{\"statement\":\"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\",\"hole\":\"\",\"why\":\"The sentence states the construction’s score for the named circle-packing problem.\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence states the construction’s score for the named circle-packing problem."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d7ed0b8a1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 1793,
+    "output": 414,
+    "reasoning": 347
+   },
+   "cost": 0.000386,
+   "raw": "{\"statement\":\"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\",\"hole\":\"\",\"why\":\"The sentence states a feasible 21-circle arrangement and gives its total-radii score.\"}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence states a feasible 21-circle arrangement and gives its total-radii score."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d87fbbaa0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.4,
+   "usage": {
+    "input": 1736,
+    "output": 852,
+    "reasoning": 796
+   },
+   "cost": 0.0006,
+   "raw": "{\"statement\":\"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\",\"hole\":\"\",\"why\":\"The sentence gives the platform envelope score for the named construction.\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence gives the platform envelope score for the named construction."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8a52d62f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 1733,
+    "output": 997,
+    "reasoning": 942
+   },
+   "cost": 0.000672,
+   "raw": "{\"statement\":\"ours_2026.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\",\"hole\":\"\",\"why\":\"The sentence gives the platform score for the named data and problem.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "The sentence gives the platform score for the named data and problem."
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d90a1ef1ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.9,
+   "usage": {
+    "input": 1736,
+    "output": 1141,
+    "reasoning": 1088
+   },
+   "cost": 0.000744,
+   "raw": "{\"statement\":\"flat_alphaevolve_2025 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340925\",\"hole\":\"\",\"why\":\"The sentence gives the construction’s score for flat-polynomials.\"}",
+   "answer": {
+    "statement": "flat_alphaevolve_2025 is a feasible solution of \"flat-polynomials\" and its score is 1.340925",
+    "hole": "",
+    "why": "The sentence gives the construction’s score for flat-polynomials."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d91e9cd3f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.1,
+   "usage": {
+    "input": 1733,
+    "output": 872,
+    "reasoning": 815
+   },
+   "cost": 0.000609,
+   "raw": "{\"statement\":\"flat_ours_2026 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280932\",\"hole\":\"\",\"why\":\"The sentence gives the score of the ±1-coefficient construction for flat-polynomials.\"}",
+   "answer": {
+    "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+    "hole": "",
+    "why": "The sentence gives the score of the ±1-coefficient construction for flat-polynomials."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d7ed5f6f8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1783,
+    "output": 481,
+    "reasoning": 411
+   },
+   "cost": 0.000419,
+   "raw": "{\"statement\":\"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\",\"hole\":\"\",\"why\":\"The sentence gives the 14-point construction’s score for the named problem.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence gives the 14-point construction’s score for the named problem."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8023b971b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.3,
+   "usage": {
+    "input": 1780,
+    "output": 1948,
+    "reasoning": 1883
+   },
+   "cost": 0.001152,
+   "raw": "{\"statement\":\"ours_2026 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\",\"hole\":\"\",\"why\":\"The sentence gives the data’s score for the named platform problem.\"}",
+   "answer": {
+    "statement": "ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence gives the data’s score for the named platform problem."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d94d2be74051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.1,
+   "usage": {
+    "input": 1737,
+    "output": 668,
+    "reasoning": 608
+   },
+   "cost": 0.000508,
+   "raw": "{\"statement\":\"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\",\"hole\":\"\",\"why\":\"The sentence claims the construction is feasible and gives its outer side as the score.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "The sentence claims the construction is feasible and gives its outer side as the score."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d95128078779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 1734,
+    "output": 591,
+    "reasoning": 538
+   },
+   "cost": 0.000469,
+   "raw": "{\"statement\":\"ours_2026.json is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\",\"hole\":\"\",\"why\":\"The sentence gives a feasible packing and its outer-side score.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence gives a feasible packing and its outer-side score."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8037ca2b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1795,
+    "output": 267,
+    "reasoning": 201
+   },
+   "cost": 0.000313,
+   "raw": "{\"statement\":\"alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\",\"hole\":\"\",\"why\":\"The sentence gives the squared distance ratio score for the platform problem.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence gives the squared distance ratio score for the platform problem."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d80f5d2e4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.0,
+   "usage": {
+    "input": 1792,
+    "output": 2238,
+    "reasoning": 2174
+   },
+   "cost": 0.001298,
+   "raw": "{\"statement\":\"ours_2026.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\",\"hole\":\"\",\"why\":\"The printed squared distance ratio is the platform problem’s score.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "The printed squared distance ratio is the platform problem’s score."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d832aa43ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.7,
+   "usage": {
+    "input": 1741,
+    "output": 1001,
+    "reasoning": 943
+   },
+   "cost": 0.000675,
+   "raw": "{\"statement\":\"erdo_alphaevolve_2025 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is ≤ 0.380924\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound for the construction’s score.\"}",
+   "answer": {
+    "statement": "erdo_alphaevolve_2025 is a feasible solution of \"erdos-minimum-overlap\" and its score is ≤ 0.380924",
+    "hole": "",
+    "why": "The sentence gives an upper bound for the construction’s score."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d817cec68779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1741,
+    "output": 281,
+    "reasoning": 235
+   },
+   "cost": 0.000315,
+   "raw": "{\"statement\":\"erdo_haugland_2016 ≤ 0.380927\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound of 0.380927 for the named construction.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 ≤ 0.380927",
+    "hole": "",
+    "why": "The sentence gives an upper bound of 0.380927 for the named construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db71686c6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 1741,
+    "output": 891,
+    "reasoning": 831
+   },
+   "cost": 0.00062,
+   "raw": "{\"statement\":\"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380928\",\"hole\":\"\",\"why\":\"The step-function construction gives an upper bound for the named minimization problem.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380928",
+    "hole": "",
+    "why": "The step-function construction gives an upper bound for the named minimization problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8690825f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.0,
+   "usage": {
+    "input": 1740,
+    "output": 2384,
+    "reasoning": 2351
+   },
+   "cost": 0.001366,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The sentence gives an upper bound but no library name for the quantity it bounds.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence gives an upper bound but no library name for the quantity it bounds."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d8680dce8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 1743,
+    "output": 937,
+    "reasoning": 879
+   },
+   "cost": 0.000643,
+   "raw": "{\"statement\":\"erdo_ttt_discover_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380876\",\"hole\":\"\",\"why\":\"The construction provides the stated upper bound for the named problem.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
+    "hole": "",
+    "why": "The construction provides the stated upper bound for the named problem."
+   }
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d984c9181b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1732,
+    "output": 230,
+    "reasoning": 202
+   },
+   "cost": 0.000288,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"Area(E) is not expressed by any library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "Area(E) is not expressed by any library name."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d7d0ddbf4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 1706,
+    "output": 544,
+    "reasoning": 515
+   },
+   "cost": 0.000443,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"K(11) is not one of the library quantities.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "K(11) is not one of the library quantities."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d7d0cf2a6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1712,
+    "output": 441,
+    "reasoning": 411
+   },
+   "cost": 0.000392,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"K(11) is not expressed by any library name provided.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "K(11) is not expressed by any library name provided."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9b2a8914051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1737,
+    "output": 285,
+    "reasoning": 225
+   },
+   "cost": 0.000316,
+   "raw": "{\"statement\":\"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9b40bb41b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1732,
+    "output": 266,
+    "reasoning": 201
+   },
+   "cost": 0.000306,
+   "raw": "{\"statement\":\"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook entry is a rank-45 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook entry is a rank-45 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9c69e2e8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 1732,
+    "output": 223,
+    "reasoning": 158
+   },
+   "cost": 0.000285,
+   "raw": "{\"statement\":\"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook entry is a rank-51 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook entry is a rank-51 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9c80d09ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 1732,
+    "output": 211,
+    "reasoning": 147
+   },
+   "cost": 0.000279,
+   "raw": "{\"statement\":\"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence states a decomposition claim for the notebook entry named by that heading.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence states a decomposition claim for the notebook entry named by that heading."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9d50a25b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.6,
+   "usage": {
+    "input": 1732,
+    "output": 219,
+    "reasoning": 155
+   },
+   "cost": 0.000283,
+   "raw": "{\"statement\":\"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\",\"hole\":\"\",\"why\":\"The sentence states a rank-23 decomposition claim for the named notebook heading.\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence states a rank-23 decomposition claim for the named notebook heading."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9d93935ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1737,
+    "output": 248,
+    "reasoning": 172
+   },
+   "cost": 0.000298,
+   "raw": "{\"statement\":\"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook decomposition has the stated rank, tensor, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has the stated rank, tensor, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9e5389e4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1736,
+    "output": 281,
+    "reasoning": 210
+   },
+   "cost": 0.000314,
+   "raw": "{\"statement\":\"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence claims a rank-63 decomposition under the quoted notebook heading.\"}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims a rank-63 decomposition under the quoted notebook heading."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9ec3b58ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 1732,
+    "output": 327,
+    "reasoning": 264
+   },
+   "cost": 0.000337,
+   "raw": "{\"statement\":\"n[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\",\"hole\":\"\",\"why\":\"The sentence states a rank-74 decomposition claim for the quoted heading.\"}",
+   "answer": {
+    "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence states a rank-74 decomposition claim for the quoted heading."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9fa88848779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1732,
+    "output": 196,
+    "reasoning": 130
+   },
+   "cost": 0.000271,
+   "raw": "{\"statement\":\"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named notebook entry is a rank-68 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named notebook entry is a rank-68 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9ff7d33f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 1732,
+    "output": 293,
+    "reasoning": 227
+   },
+   "cost": 0.00032,
+   "raw": "{\"statement\":\"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\",\"hole\":\"\",\"why\":\"The sentence states that the named notebook entry is a rank-80 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence states that the named notebook entry is a rank-80 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da0d9e4f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1732,
+    "output": 180,
+    "reasoning": 117
+   },
+   "cost": 0.000263,
+   "raw": "{\"statement\":\"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook decomposition has rank 61 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has rank 61 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da12fd328779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1732,
+    "output": 298,
+    "reasoning": 232
+   },
+   "cost": 0.000322,
+   "raw": "{\"statement\":\"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\",\"hole\":\"\",\"why\":\"The sentence claims that the named notebook entry is a rank-85 decomposition over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims that the named notebook entry is a rank-85 decomposition over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da02f8f66240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1736,
+    "output": 239,
+    "reasoning": 171
+   },
+   "cost": 0.000293,
+   "raw": "{\"statement\":\"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook entry is that decomposition.\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims the named notebook entry is that decomposition."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da1529110bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1732,
+    "output": 187,
+    "reasoning": 124
+   },
+   "cost": 0.000267,
+   "raw": "{\"statement\":\"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\",\"hole\":\"\",\"why\":\"The sentence claims the named notebook decomposition has rank 90 over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has rank 90 over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da1c8cb3f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1732,
+    "output": 183,
+    "reasoning": 120
+   },
+   "cost": 0.000265,
+   "raw": "{\"statement\":\"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\",\"hole\":\"\",\"why\":\"The sentence claims this named notebook decomposition has the stated rank and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence claims this named notebook decomposition has the stated rank and ring."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da260974f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1753,
+    "output": 552,
+    "reasoning": 516
+   },
+   "cost": 0.000451,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claimed rank depends on the array's contents or shape, which are not stated in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claimed rank depends on the array's contents or shape, which are not stated in the sentence."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da2859278779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.8,
+   "usage": {
+    "input": 1753,
+    "output": 280,
+    "reasoning": 249
+   },
+   "cost": 0.000315,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claim depends on the array contents and shape, which are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claim depends on the array contents and shape, which are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da4078806240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.2,
+   "usage": {
+    "input": 1753,
+    "output": 372,
+    "reasoning": 341
+   },
+   "cost": 0.000361,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank depends on the array’s shape, whose bytes are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank depends on the array’s shape, whose bytes are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da2b38ecf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 1753,
+    "output": 463,
+    "reasoning": 431
+   },
+   "cost": 0.000407,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank depends on the array shape in the file, which is not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank depends on the array shape in the file, which is not given."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da457a7d6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 1753,
+    "output": 424,
+    "reasoning": 389
+   },
+   "cost": 0.000387,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank is given only by the array’s shape, which is not stated in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank is given only by the array’s shape, which is not stated in the sentence."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da4c2fa54051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1753,
+    "output": 300,
+    "reasoning": 266
+   },
+   "cost": 0.000325,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank is specified by the array's shape, but the array data are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank is specified by the array's shape, but the array data are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da5aadbe4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1753,
+    "output": 200,
+    "reasoning": 170
+   },
+   "cost": 0.000275,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank depends on the array shape in bytes that are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank depends on the array shape in bytes that are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da62494a4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.0,
+   "usage": {
+    "input": 1753,
+    "output": 236,
+    "reasoning": 205
+   },
+   "cost": 0.000293,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank depends on the array shape in file bytes that are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank depends on the array shape in file bytes that are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da6c8db98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.9,
+   "usage": {
+    "input": 1758,
+    "output": 1265,
+    "reasoning": 1236
+   },
+   "cost": 0.000808,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence does not name the ring or give the rank.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not name the ring or give the rank."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da7b9ce20bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.9,
+   "usage": {
+    "input": 1758,
+    "output": 970,
+    "reasoning": 933
+   },
+   "cost": 0.000661,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claimed rank depends on the stored array shape, and the sentence does not give the paper’s ring.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claimed rank depends on the stored array shape, and the sentence does not give the paper’s ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537daa969b81b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1758,
+    "output": 419,
+    "reasoning": 386
+   },
+   "cost": 0.000385,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank and decomposition depend on the contents of a file whose bytes are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank and decomposition depend on the contents of a file whose bytes are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537dab0aec86240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 1758,
+    "output": 348,
+    "reasoning": 315
+   },
+   "cost": 0.00035,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank and ring depend on the contents of a file whose bytes are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank and ring depend on the contents of a file whose bytes are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537dac66e158779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 1758,
+    "output": 983,
+    "reasoning": 950
+   },
+   "cost": 0.000667,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claim depends on factors and array shape in a file whose bytes are not provided.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claim depends on factors and array shape in a file whose bytes are not provided."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537daf938b20bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.7,
+   "usage": {
+    "input": 1758,
+    "output": 402,
+    "reasoning": 373
+   },
+   "cost": 0.000377,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank depends on the array bytes, which are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank depends on the array bytes, which are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537da839a374051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.1,
+   "usage": {
+    "input": 1758,
+    "output": 277,
+    "reasoning": 248
+   },
+   "cost": 0.000314,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claim depends on the array bytes, which are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claim depends on the array bytes, which are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537dab9a88df1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.2,
+   "usage": {
+    "input": 1758,
+    "output": 774,
+    "reasoning": 740
+   },
+   "cost": 0.000563,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The rank depends on the array contents, and the referenced file's bytes are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank depends on the array contents, and the referenced file's bytes are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537dacc399a6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1758,
+    "output": 883,
+    "reasoning": 852
+   },
+   "cost": 0.000617,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claim depends on the array contents and shape, which are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claim depends on the array contents and shape, which are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537dafc8a11d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.3,
+   "usage": {
+    "input": 1758,
+    "output": 1064,
+    "reasoning": 1034
+   },
+   "cost": 0.000708,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The rank and ring are only referred to indirectly, not specified.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and ring are only referred to indirectly, not specified."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db1028ecd884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 1758,
+    "output": 439,
+    "reasoning": 403
+   },
+   "cost": 0.000395,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claim depends on the array’s shape and the paper’s named ring, which are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claim depends on the array’s shape and the paper’s named ring, which are not given."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537dafee8618779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 1758,
+    "output": 319,
+    "reasoning": 287
+   },
+   "cost": 0.000335,
+   "raw": "{\"statement\":\"\",\"hole\":\"data\",\"why\":\"The claim depends on the file's factors and shape, which are not given.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The claim depends on the file's factors and shape, which are not given."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db3d7b291b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1740,
+    "output": 153,
+    "reasoning": 92
+   },
+   "cost": 0.000251,
+   "raw": "{\"statement\":\"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\",\"hole\":\"\",\"why\":\"The sentence gives the platform solution's score as an exact value.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence gives the platform solution's score as an exact value."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db3cc802030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1738,
+    "output": 128,
+    "reasoning": 69
+   },
+   "cost": 0.000238,
+   "raw": "{\"statement\":\"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\",\"hole\":\"\",\"why\":\"The sentence states a feasible-solution claim and gives its score.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence states a feasible-solution claim and gives its score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db1d0dd08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 1740,
+    "output": 180,
+    "reasoning": 122
+   },
+   "cost": 0.000264,
+   "raw": "{\"statement\":\"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\",\"hole\":\"\",\"why\":\"The sentence gives a feasible solution and its exact score.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence gives a feasible solution and its exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db2c8b53f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1740,
+    "output": 204,
+    "reasoning": 145
+   },
+   "cost": 0.000276,
+   "raw": "{\"statement\":\"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\",\"hole\":\"\",\"why\":\"The sentence gives the platform solution title and its exact score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence gives the platform solution title and its exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db3068d48779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1738,
+    "output": 142,
+    "reasoning": 86
+   },
+   "cost": 0.000245,
+   "raw": "{\"statement\":\"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\",\"hole\":\"\",\"why\":\"The sentence gives the platform score as an exact value.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence gives the platform score as an exact value."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db4adde0d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1742,
+    "output": 220,
+    "reasoning": 162
+   },
+   "cost": 0.000284,
+   "raw": "{\"statement\":\"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\",\"hole\":\"\",\"why\":\"The sentence states the platform solution’s score.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence states the platform solution’s score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db41a9ed030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1735,
+    "output": 150,
+    "reasoning": 97
+   },
+   "cost": 0.000249,
+   "raw": "{\"statement\":\"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\",\"hole\":\"\",\"why\":\"The sentence states feasibility and a score of 2.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": "The sentence states feasibility and a score of 2."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db4c8ef1ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1742,
+    "output": 128,
+    "reasoning": 68
+   },
+   "cost": 0.000238,
+   "raw": "{\"statement\":\"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\",\"hole\":\"\",\"why\":\"The sentence states the platform score as an exact value.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "The sentence states the platform score as an exact value."
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537db5c5eb9f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1719,
+    "output": 297,
+    "reasoning": 268
+   },
+   "cost": 0.00032,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"It asserts properties without stating a claim in the required form.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "It asserts properties without stating a claim in the required form."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9548de64051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 1725,
+    "output": 225,
+    "reasoning": 194
+   },
+   "cost": 0.000285,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"C3b is a quantity none of the given library names expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3b is a quantity none of the given library names expresses."
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d96b1e2c6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 1729,
+    "output": 544,
+    "reasoning": 513
+   },
+   "cost": 0.000445,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"C3c is not a quantity expressed by the available library names.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3c is not a quantity expressed by the available library names."
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d96d3976b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.0,
+   "usage": {
+    "input": 1729,
+    "output": 284,
+    "reasoning": 255
+   },
+   "cost": 0.000315,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"C3c is not expressed by the library names provided.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C3c is not expressed by the library names provided."
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9780dd6ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1728,
+    "output": 97,
+    "reasoning": 71
+   },
+   "cost": 0.000221,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The library defines no name for C71.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name for C71."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9b1dcc8ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 1726,
+    "output": 692,
+    "reasoning": 662
+   },
+   "cost": 0.000519,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The determinant and injectivity claim use quantities no library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The determinant and injectivity claim use quantities no library name expresses."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d98d59250bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 1730,
+    "output": 693,
+    "reasoning": 665
+   },
+   "cost": 0.000519,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The library defines no name for the map’s determinant.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name for the map’s determinant."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d997bd538779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.2,
+   "usage": {
+    "input": 1730,
+    "output": 392,
+    "reasoning": 365
+   },
+   "cost": 0.000369,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The determinant is not expressed by any library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The determinant is not expressed by any library name."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a537d9866ff1ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 1727,
+    "output": 749,
+    "reasoning": 720
+   },
+   "cost": 0.000547,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The determinant is not a quantity expressed by any library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The determinant is not a quantity expressed by any library name."
+   }
+  }
+ ]
+}

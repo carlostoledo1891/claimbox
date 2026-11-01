@@ -1,0 +1,111 @@
+-- Written by tools/propose_model.py (deepseek/deepseek-v4-pro, effort high): the planted run: each sentence with its bar's last digit moved, asked again alone, the model's own statement or hole.
+-- It counts only after claimbox validates it (python3 -m claimbox prose register).
+source P = ../claimbox/corpus/register/sentences.md
+data   af2 = corpus/sources/alphatensor_f2.npz
+read   af2 as integers
+data   ar = corpus/sources/alphatensor_r.npz
+read   ar as integers
+data   circ_alphaevolve_2025 = corpus/easota/circles-rectangle/alphaevolve_2025.json
+read   circ_alphaevolve_2025 as doubles
+data   circ_ours_2026 = corpus/easota/circles-rectangle/ours_2026.json
+read   circ_ours_2026 as doubles
+data   edge_alphaevolve_2025 = corpus/easota/edges-vs-triangles/alphaevolve_2025.py
+read   edge_alphaevolve_2025 as doubles
+data   edge_ours_2026 = corpus/easota/edges-vs-triangles/ours_2026.py
+read   edge_ours_2026 as doubles
+data   erdo_alphaevolve_2025 = corpus/easota/erdos-minimum-overlap/alphaevolve_2025.py
+read   erdo_alphaevolve_2025 as doubles
+data   erdo_haugland_2016 = corpus/easota/erdos-minimum-overlap/haugland_2016.py
+read   erdo_haugland_2016 as doubles
+data   erdo_together_ai_2026 = corpus/easota/erdos-minimum-overlap/together_ai_2026.py
+read   erdo_together_ai_2026 as doubles
+data   erdo_ttt_discover_2026 = corpus/easota/erdos-minimum-overlap/ttt_discover_2026.py
+read   erdo_ttt_discover_2026 as doubles
+data   firs_alphaevolve_2025 = corpus/easota/first-autocorrelation/alphaevolve_2025.py
+read   firs_alphaevolve_2025 as doubles
+data   firs_alphaevolve_v2_2025 = corpus/easota/first-autocorrelation/alphaevolve_v2_2025.json
+read   firs_alphaevolve_v2_2025 as doubles
+data   firs_ours_2026 = corpus/easota/first-autocorrelation/ours_2026.json
+read   firs_ours_2026 as doubles
+data   firs_ttt_discover_2026 = corpus/easota/first-autocorrelation/ttt_discover_2026.json
+read   firs_ttt_discover_2026 as doubles
+data   flat_alphaevolve_2025 = corpus/easota/flat-polynomials/alphaevolve_2025.py
+read   flat_alphaevolve_2025 as doubles
+data   flat_ours_2026 = corpus/easota/flat-polynomials/ours_2026.py
+read   flat_ours_2026 as doubles
+data   heil_alphaevolve_2025 = corpus/easota/heilbronn-convex/alphaevolve_2025.json
+read   heil_alphaevolve_2025 as doubles
+data   heil_ours_2026 = corpus/easota/heilbronn-convex/ours_2026.json
+read   heil_ours_2026 as doubles
+data   hexa_alphaevolve_2025 = corpus/easota/hexagon-packing/alphaevolve_2025.json
+read   hexa_alphaevolve_2025 as doubles
+data   hexa_ours_2026 = corpus/easota/hexagon-packing/ours_2026.json
+read   hexa_ours_2026 as doubles
+data   k11593 = corpus/kissing/alphaevolve-d11-593.json
+read   k11593 as integers
+data   k6 = corpus/einstein-arena/best-6.json
+read   k6 as decimals
+data   min_alphaevolve_2025 = corpus/easota/min-distance-ratio-2d/alphaevolve_2025.json
+read   min_alphaevolve_2025 as doubles
+data   min_ours_2026 = corpus/easota/min-distance-ratio-2d/ours_2026.json
+read   min_ours_2026 as doubles
+data   n = corpus/sources/alphaevolve_mathematical_results.ipynb
+read   n as rationals
+data   rfei_c71_n18_ = corpus/optimization-constants/num2026/fei_c71_n18_artifact.json
+read   rfei_c71_n18_ as decimals
+data   rkakeyaa2inte = corpus/horizonmath/kakeya-a2-intercepts.json
+read   rkakeyaa2inte as decimals
+data   rmaps = corpus/polymaps/maps.json
+read   rmaps as decimals
+data   x = corpus/station-v2/jacobian/construction.json
+read   x as doubles
+data   x1 = corpus/einstein-arena/best-1.json
+read   x1 as doubles
+data   x12 = corpus/einstein-arena/best-12.json
+read   x12 as doubles
+data   x13 = corpus/einstein-arena/best-13.json
+read   x13 as doubles
+data   x18 = corpus/einstein-arena/best-18.json
+read   x18 as doubles
+data   x2 = corpus/einstein-arena/best-2.json
+read   x2 as doubles
+data   x22 = corpus/einstein-arena/best-22.json
+read   x22 as decimals
+data   x24 = corpus/einstein-arena/best-24.json
+read   x24 as decimals
+data   x25 = corpus/einstein-arena/best-25.json
+read   x25 as decimals
+data   x313 = corpus/optimization-constants/mi2026/c3b_pr92/certificate_3b_13pt.json
+read   x313 as doubles
+data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
+read   x3147 as doubles
+data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
+read   x3395 as doubles
+claim  x_deepseek_v4_pro_ea_overlap_haugland_2016 over erdo_haugland_2016
+  quote "a step function h with 51 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380928" from P
+  : erdo_haugland_2016 is a feasible solution of "erdos-minimum-overlap" and its score is 0.380928
+  proposed by model:deepseek-v4-pro
+claim  x_deepseek_v4_pro_ea_overlap_ttt_discover_2026
+  quote "a step function h with 600 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380877" from P
+  hole ambiguous "The sentence does not specify what quantity has this upper bound."
+  proposed by model:deepseek-v4-pro
+claim  x_deepseek_v4_pro_ea_autocorr_ttt_discover_2026 over firs_ttt_discover_2026
+  quote "f ≥ 1 as 30000 values on [−1/4, 1/4]: C₁ ≤ 1.50286290" from P
+  : firs_ttt_discover_2026 is a feasible solution of "first-autocorrelation" and its score is 1.50286290
+  proposed by model:deepseek-v4-pro
+claim  x_deepseek_v4_pro_ea_autocorr_ours_2026
+  quote "f ≥ 0 as 30000 values on [−1/4, 1/4]: C₁ ≤ 1.50286287" from P
+  hole decider "C₁ is not a library name; only firs_ours_2026 is given, which is the construction, not the first-autocorrelation value."
+  proposed by model:deepseek-v4-pro
+claim  x_deepseek_v4_pro_ea_flat_ours_2026 over flat_ours_2026
+  quote "70 coefficients ±1: C⁺ = max_{|z|=1} |g(z)| / √71 = 1.280933" from P
+  : flat_ours_2026 = 1.280933
+  proposed by model:deepseek-v4-pro
+claim  x_deepseek_v4_pro_optconst_3b over x313
+  quote "C3b >= 1.77898885 (the registry's asterisked lower bound)" from P
+  : x313 >= 1.77898885
+  proposed by model:deepseek-v4-pro
+claim  x_deepseek_v4_pro_optconst_3c_95 over x3395
+  quote "C3c >= 1.6747338950208248 (superseded in the registry)" from P
+  : x3395 is a feasible solution of "C3c" and its score is 1.6747338950208248
+  proposed by model:deepseek-v4-pro

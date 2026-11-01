@@ -13,6 +13,7 @@ claim a named hole or a fork instead of a guess. claimbox never decides.
 
 - [PLAN.md](PLAN.md): what claimbox is, how it works at the end, the ten commitments, the roadmap.
 - [LANGUAGE.md](LANGUAGE.md): the language, written down (roadmap step 1), with twenty decided claims as examples.
+- [GUIDE.md](GUIDE.md): how to write for claimbox, for people and for models.
 - [web/](web/): the landing page, built from the run records (`make web`; `python3 -m web.build --check` re-reads every
   value). To be served at carlostoledo.co/claimbox/.
 - [notes/research-2026-10-30.md](notes/research-2026-10-30.md): the neighbours, the literature, what changes the design.

@@ -1,0 +1,1575 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "qwen/qwen3.8-max",
+ "provider": "prime",
+ "family": "qwen3.8-max",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 1.6986,
+ "calls": 78,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 2.0,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 6.0
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e0e78df5f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 138.6,
+   "usage": {
+    "input": 997,
+    "output": 5649,
+    "reasoning": 5590
+   },
+   "cost": 0.035888,
+   "raw": "{\"statement\": \"firs_alphaevolve_2025 ≤ 1.50529397\", \"hole\": \"\", \"why\": \"The sentence claims the published first-autocorrelation construction has C₁ at most the printed value.\"}",
+   "answer": {
+    "statement": "firs_alphaevolve_2025 ≤ 1.50529397",
+    "hole": "",
+    "why": "The sentence claims the published first-autocorrelation construction has C₁ at most the printed value."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_2025 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a5380593080af23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 68.7,
+   "usage": {
+    "input": 997,
+    "output": 2758,
+    "reasoning": 2726
+   },
+   "cost": 0.018542,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The quantity C₁ is not expressed by any given library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The quantity C₁ is not expressed by any given library name."
+   }
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e3634f4fb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 33.4,
+   "usage": {
+    "input": 999,
+    "output": 1333,
+    "reasoning": 1293
+   },
+   "cost": 0.009996,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence gives an inequality with no printed right-hand value, so it makes no complete checkable claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence gives an inequality with no printed right-hand value, so it makes no complete checkable claim."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e4330e69030d-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 382.8,
+   "usage": {
+    "input": 996,
+    "output": 16000,
+    "reasoning": 16000
+   },
+   "cost": 0.097992,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e9032f476240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 374.0,
+   "usage": {
+    "input": 1001,
+    "output": 7467,
+    "reasoning": 7395
+   },
+   "cost": 0.046804,
+   "raw": "{\"statement\": \"firs_ttt_discover_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286290\", \"hole\": \"\", \"why\": \"The sentence reports the pinned construction's first-autocorrelation score bound C₁.\"}",
+   "answer": {
+    "statement": "firs_ttt_discover_2026 is a feasible solution of \"first-autocorrelation\" and its score is 1.50286290",
+    "hole": "",
+    "why": "The sentence reports the pinned construction's first-autocorrelation score bound C₁."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d44bbce04051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 40.2,
+   "usage": {
+    "input": 1056,
+    "output": 1698,
+    "reasoning": 1606
+   },
+   "cost": 0.0123,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\", \"hole\": \"\", \"why\": \"The sentence claims the 21-circle configuration satisfies the constraints and has total radius 2.3658321334.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence claims the 21-circle configuration satisfies the constraints and has total radius 2.3658321334."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d546bcee8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 50.5,
+   "usage": {
+    "input": 1053,
+    "output": 1988,
+    "reasoning": 1910
+   },
+   "cost": 0.014034,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\", \"hole\": \"\", \"why\": \"The sentence asserts a valid 21-circle packing with the printed sum of radii.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence asserts a valid 21-circle packing with the printed sum of radii."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e06c2a781b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 151.0,
+   "usage": {
+    "input": 994,
+    "output": 6185,
+    "reasoning": 6115
+   },
+   "cost": 0.039098,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\", \"hole\": \"\", \"why\": \"The sentence gives the platform score for the data identified as an edges-vs-triangles construction.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence gives the platform score for the data identified as an edges-vs-triangles construction."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e09e482ed884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 113.3,
+   "usage": {
+    "input": 991,
+    "output": 4766,
+    "reasoning": 4701
+   },
+   "cost": 0.030578,
+   "raw": "{\"statement\": \"ours_2026.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"The sentence gives the platform envelope score for the pinned data on the named problem.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "The sentence gives the platform envelope score for the pinned data on the named problem."
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e44a098b1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 82.3,
+   "usage": {
+    "input": 994,
+    "output": 3268,
+    "reasoning": 3204
+   },
+   "cost": 0.021596,
+   "raw": "{\"statement\": \"flat_alphaevolve_2025 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340925\", \"hole\": \"\", \"why\": \"The sentence reports the normalized maximum modulus score of the flat-polynomial construction.\"}",
+   "answer": {
+    "statement": "flat_alphaevolve_2025 is a feasible solution of \"flat-polynomials\" and its score is 1.340925",
+    "hole": "",
+    "why": "The sentence reports the normalized maximum modulus score of the flat-polynomial construction."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537e64c4c7e1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 164.2,
+   "usage": {
+    "input": 991,
+    "output": 6632,
+    "reasoning": 6560
+   },
+   "cost": 0.041774,
+   "raw": "{\"statement\": \"ours_2026.py is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280932\", \"hole\": \"\", \"why\": \"The sentence reports the flat-polynomials score C⁺ for the data as 1.280932.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
+    "hole": "",
+    "why": "The sentence reports the flat-polynomials score C⁺ for the data as 1.280932."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d5754d250bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 54.7,
+   "usage": {
+    "input": 1046,
+    "output": 2341,
+    "reasoning": 2251
+   },
+   "cost": 0.016138,
+   "raw": "{\"statement\": \"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355715\", \"hole\": \"\", \"why\": \"The sentence states the n=14 minimum-triangle-area-to-hull-area score for the alphaevolve construction.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
+    "hole": "",
+    "why": "The sentence states the n=14 minimum-triangle-area-to-hull-area score for the alphaevolve construction."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d6824bf74051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 74.1,
+   "usage": {
+    "input": 1043,
+    "output": 3086,
+    "reasoning": 3006
+   },
+   "cost": 0.020602,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355805\", \"hole\": \"\", \"why\": \"The sentence states the 14-point minimum-triangle-over-hull score.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
+    "hole": "",
+    "why": "The sentence states the 14-point minimum-triangle-over-hull score."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ea4ec9b9f38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 213.6,
+   "usage": {
+    "input": 994,
+    "output": 9575,
+    "reasoning": 9508
+   },
+   "cost": 0.059438,
+   "raw": "{\"statement\": \"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419123\", \"hole\": \"\", \"why\": \"The sentence claims a feasible packing with score equal to the printed outer side.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
+    "hole": "",
+    "why": "The sentence claims a feasible packing with score equal to the printed outer side."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ed3dad0df1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 104.0,
+   "usage": {
+    "input": 991,
+    "output": 4433,
+    "reasoning": 4365
+   },
+   "cost": 0.02858,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\", \"hole\": \"\", \"why\": \"The sentence describes a feasible hexagon-packing configuration and gives the outer side as the score.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence describes a feasible hexagon-packing configuration and gives the outer side as the score."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d682de428779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 42.4,
+   "usage": {
+    "input": 1055,
+    "output": 1847,
+    "reasoning": 1759
+   },
+   "cost": 0.013192,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio for 16 points, which is the score of the named problem.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio for 16 points, which is the score of the named problem."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d6cb59cd1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 34.9,
+   "usage": {
+    "input": 1052,
+    "output": 1485,
+    "reasoning": 1404
+   },
+   "cost": 0.011014,
+   "raw": "{\"statement\": \"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889230\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio score for the 16-point construction.\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio score for the 16-point construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d7a579e80bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 367.5,
+   "usage": {
+    "input": 998,
+    "output": 15107,
+    "reasoning": 15051
+   },
+   "cost": 0.092638,
+   "raw": "{\"statement\": \"erdo_alphaevolve_2025 = 0.380924\", \"hole\": \"\", \"why\": \"The sentence reports the construction's upper-bound value as 0.380924.\"}",
+   "answer": {
+    "statement": "erdo_alphaevolve_2025 = 0.380924",
+    "hole": "",
+    "why": "The sentence reports the construction's upper-bound value as 0.380924."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a5380592fdccf1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 163.9,
+   "usage": {
+    "input": 998,
+    "output": 6916,
+    "reasoning": 6869
+   },
+   "cost": 0.043492,
+   "raw": "{\"statement\": \"erdo_alphaevolve_2025 ≤ 0.380925\", \"hole\": \"\", \"why\": \"The sentence gives an upper bound for the named construction.\"}",
+   "answer": {
+    "statement": "erdo_alphaevolve_2025 ≤ 0.380925",
+    "hole": "",
+    "why": "The sentence gives an upper bound for the named construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d78bebbdae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 172.6,
+   "usage": {
+    "input": 998,
+    "output": 7065,
+    "reasoning": 6998
+   },
+   "cost": 0.044386,
+   "raw": "{\"statement\": \"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380927\", \"hole\": \"\", \"why\": \"The sentence reports the pinned construction's upper-bound score for the named problem.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
+    "hole": "",
+    "why": "The sentence reports the pinned construction's upper-bound score for the named problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537dbc2fadff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 210.6,
+   "usage": {
+    "input": 998,
+    "output": 8765,
+    "reasoning": 8701
+   },
+   "cost": 0.054586,
+   "raw": "{\"statement\": \"together_ai_2026.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380871\", \"hole\": \"\", \"why\": \"The sentence gives the upper-bound score for the pinned construction.\"}",
+   "answer": {
+    "statement": "together_ai_2026.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
+    "hole": "",
+    "why": "The sentence gives the upper-bound score for the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d8518d9b030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 331.9,
+   "usage": {
+    "input": 1001,
+    "output": 13183,
+    "reasoning": 13136
+   },
+   "cost": 0.0811,
+   "raw": "{\"statement\": \"erdo_ttt_discover_2026 ≤ 0.380876\", \"hole\": \"\", \"why\": \"The sentence gives an upper bound for the construction.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
+    "hole": "",
+    "why": "The sentence gives an upper bound for the construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a53805930e611d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 200.3,
+   "usage": {
+    "input": 1001,
+    "output": 8551,
+    "reasoning": 8484
+   },
+   "cost": 0.053308,
+   "raw": "{\"statement\": \"ttt_discover_2026.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380877\", \"hole\": \"\", \"why\": \"The sentence reports the construction's upper-bound score for the named problem.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380877",
+    "hole": "",
+    "why": "The sentence reports the construction's upper-bound score for the named problem."
+   }
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537efc7b90b4d3b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 69.4,
+   "usage": {
+    "input": 999,
+    "output": 3118,
+    "reasoning": 3092
+   },
+   "cost": 0.020706,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"Area(E) is not expressed by any provided library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "Area(E) is not expressed by any provided library name."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d44ba9c58779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 90.7,
+   "usage": {
+    "input": 965,
+    "output": 3628,
+    "reasoning": 3566
+   },
+   "cost": 0.023698,
+   "raw": "{\"statement\": \"the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence gives a kissing-number lower bound witnessed by the 11-dimensional vector data.\"}",
+   "answer": {
+    "statement": "the 593 vectors of alphaevolve-d11-593.json form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence gives a kissing-number lower bound witnessed by the 11-dimensional vector data."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537d44bba0dae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 47.6,
+   "usage": {
+    "input": 967,
+    "output": 1733,
+    "reasoning": 1694
+   },
+   "cost": 0.012332,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The leading quantity K(11) is not expressible with the allowed library name k6.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The leading quantity K(11) is not expressible with the allowed library name k6."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f2982cf4f1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.7,
+   "usage": {
+    "input": 987,
+    "output": 946,
+    "reasoning": 863
+   },
+   "cost": 0.00765,
+   "raw": "{\"statement\": \"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence asserts that the named notebook decomposition has rank 32 for that tensor over that ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence asserts that the named notebook decomposition has rank 32 for that tensor over that ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f2acce05d94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.5,
+   "usage": {
+    "input": 982,
+    "output": 492,
+    "reasoning": 423
+   },
+   "cost": 0.004916,
+   "raw": "{\"statement\": \"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence names a notebook decomposition and asserts its rank, tensor, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence names a notebook decomposition and asserts its rank, tensor, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f2fa9bfcf23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 982,
+    "output": 420,
+    "reasoning": 358
+   },
+   "cost": 0.004484,
+   "raw": "{\"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence directly states the named decomposition claim.\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence directly states the named decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f2ff5b57cd4e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.4,
+   "usage": {
+    "input": 982,
+    "output": 1224,
+    "reasoning": 1147
+   },
+   "cost": 0.009308,
+   "raw": "{\"statement\": \"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts that the notebook entry under that heading is a rank-47 decomposition of the stated tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the notebook entry under that heading is a rank-47 decomposition of the stated tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f319d93bf38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.2,
+   "usage": {
+    "input": 982,
+    "output": 500,
+    "reasoning": 429
+   },
+   "cost": 0.004964,
+   "raw": "{\"statement\": \"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts that the named notebook decomposition has the stated rank, tensor, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the named notebook decomposition has the stated rank, tensor, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f33518c2b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.7,
+   "usage": {
+    "input": 987,
+    "output": 865,
+    "reasoning": 786
+   },
+   "cost": 0.007164,
+   "raw": "{\"statement\": \"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence names a notebook decomposition and asserts its rank, tensor, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence names a notebook decomposition and asserts its rank, tensor, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f36bfb48d94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 69.5,
+   "usage": {
+    "input": 986,
+    "output": 2954,
+    "reasoning": 2863
+   },
+   "cost": 0.019696,
+   "raw": "{\"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence claims the named notebook entry is a rank-63 decomposition of that tensor over that ring.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims the named notebook entry is a rank-63 decomposition of that tensor over that ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f3a408bdf23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.1,
+   "usage": {
+    "input": 982,
+    "output": 1141,
+    "reasoning": 1059
+   },
+   "cost": 0.00881,
+   "raw": "{\"statement\": \"alphaevolve_mathematical_results.ipynb[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the named notebook decomposition is a rank-74 decomposition of that tensor over Z.\"}",
+   "answer": {
+    "statement": "alphaevolve_mathematical_results.ipynb[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition is a rank-74 decomposition of that tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f3aa783df23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 982,
+    "output": 516,
+    "reasoning": 446
+   },
+   "cost": 0.00506,
+   "raw": "{\"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts the named notebook decomposition has the stated rank, tensor, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts the named notebook decomposition has the stated rank, tensor, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f3f13e3af38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.5,
+   "usage": {
+    "input": 982,
+    "output": 684,
+    "reasoning": 608
+   },
+   "cost": 0.006068,
+   "raw": "{\"statement\": \"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\", \"hole\": \"\", \"why\": \"The sentence names a notebook heading and claims it is a rank-80 decomposition of that tensor over that ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence names a notebook heading and claims it is a rank-80 decomposition of that tensor over that ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f4651d78b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 48.6,
+   "usage": {
+    "input": 982,
+    "output": 2117,
+    "reasoning": 2048
+   },
+   "cost": 0.014666,
+   "raw": "{\"statement\": \"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the named notebook decomposition has that rank for that tensor and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims the named notebook decomposition has that rank for that tensor and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f4a49909f38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.3,
+   "usage": {
+    "input": 982,
+    "output": 596,
+    "reasoning": 524
+   },
+   "cost": 0.00554,
+   "raw": "{\"statement\": \"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence states that the named notebook decomposition has the claimed rank for the stated tensor and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence states that the named notebook decomposition has the claimed rank for the stated tensor and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f4536b3bcd4e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.0,
+   "usage": {
+    "input": 986,
+    "output": 585,
+    "reasoning": 505
+   },
+   "cost": 0.005482,
+   "raw": "{\"statement\": \"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence names a headed decomposition in the notebook and asserts its rank, tensor, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence names a headed decomposition in the notebook and asserts its rank, tensor, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f4fe3f2ed848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.9,
+   "usage": {
+    "input": 982,
+    "output": 790,
+    "reasoning": 720
+   },
+   "cost": 0.006704,
+   "raw": "{\"statement\": \"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts the named notebook decomposition has the stated tensor, rank, and ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts the named notebook decomposition has the stated tensor, rank, and ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f51e78a54d3b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.4,
+   "usage": {
+    "input": 982,
+    "output": 585,
+    "reasoning": 517
+   },
+   "cost": 0.005474,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"The sentence names a notebook heading and claims it gives that exact rank decomposition.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence names a notebook heading and claims it gives that exact rank decomposition."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f56c1edcd848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 55.8,
+   "usage": {
+    "input": 997,
+    "output": 2313,
+    "reasoning": 2276
+   },
+   "cost": 0.015872,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only as the array's shape, which no allowed library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only as the array's shape, which no allowed library name expresses."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f5748d04d848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 43.1,
+   "usage": {
+    "input": 997,
+    "output": 1761,
+    "reasoning": 1720
+   },
+   "cost": 0.01256,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only as what the array's shape states, and no provided library name expresses that quantity.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only as what the array's shape states, and no provided library name expresses that quantity."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f681fa4ef38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 58.1,
+   "usage": {
+    "input": 997,
+    "output": 2322,
+    "reasoning": 2279
+   },
+   "cost": 0.015926,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only as whatever the array's shape states, and no allowed library name expresses that shape-derived rank.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only as whatever the array's shape states, and no allowed library name expresses that shape-derived rank."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f594eae6b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 52.3,
+   "usage": {
+    "input": 997,
+    "output": 2090,
+    "reasoning": 2053
+   },
+   "cost": 0.014534,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the rank is given only as the array's shape, which no allowed library term expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the rank is given only as the array's shape, which no allowed library term expresses."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f6c909bf02fd-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 65.2,
+   "usage": {
+    "input": 997,
+    "output": 2750,
+    "reasoning": 2711
+   },
+   "cost": 0.018494,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only as the array's shape, and no allowed library name expresses that quantity.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only as the array's shape, and no allowed library name expresses that quantity."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f6dc08ee1d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.9,
+   "usage": {
+    "input": 997,
+    "output": 1468,
+    "reasoning": 1429
+   },
+   "cost": 0.010802,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is specified only as the array's shape, and no provided library name expresses that quantity.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is specified only as the array's shape, and no provided library name expresses that quantity."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f7bcac00f38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 56.8,
+   "usage": {
+    "input": 997,
+    "output": 2441,
+    "reasoning": 2404
+   },
+   "cost": 0.01664,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only as the array's shape, which no allowed library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only as the array's shape, which no allowed library name expresses."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f7ed5f04b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 114.1,
+   "usage": {
+    "input": 997,
+    "output": 4662,
+    "reasoning": 4622
+   },
+   "cost": 0.029966,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only by the array's shape, which no allowed library name expresses as a number.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only by the array's shape, which no allowed library name expresses as a number."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f860bd97d94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 71.6,
+   "usage": {
+    "input": 1002,
+    "output": 3006,
+    "reasoning": 2970
+   },
+   "cost": 0.02004,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not print the rank number or the ring name needed for a decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank number or the ring name needed for a decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f91f98dc1d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 59.7,
+   "usage": {
+    "input": 1002,
+    "output": 2462,
+    "reasoning": 2421
+   },
+   "cost": 0.016776,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not print the rank number or the ring name, referring only to the array shape and the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank number or the ring name, referring only to the array shape and the paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fa94b919f1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 154.4,
+   "usage": {
+    "input": 1002,
+    "output": 6502,
+    "reasoning": 6470
+   },
+   "cost": 0.041016,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not give an explicit rank number or name the ring.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not give an explicit rank number or name the ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fab68b39d94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 51.5,
+   "usage": {
+    "input": 1002,
+    "output": 2110,
+    "reasoning": 2070
+   },
+   "cost": 0.014664,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the sentence does not print the rank or the ring, referring only to the array's shape and the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the sentence does not print the rank or the ring, referring only to the array's shape and the paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fbf8a8e3b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 30.4,
+   "usage": {
+    "input": 1002,
+    "output": 1174,
+    "reasoning": 1138
+   },
+   "cost": 0.009048,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not print the rank number or the ring name required for the decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank number or the ring name required for the decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fcbf6f30cd4e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.3,
+   "usage": {
+    "input": 1002,
+    "output": 976,
+    "reasoning": 934
+   },
+   "cost": 0.00786,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not give the rank number or name the ring, only referring to the array's shape and the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not give the rank number or name the ring, only referring to the array's shape and the paper."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fa202aaaf38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 41.5,
+   "usage": {
+    "input": 1002,
+    "output": 1689,
+    "reasoning": 1652
+   },
+   "cost": 0.012138,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not print the rank number or name the ring, leaving the decomposition statement undefined.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank number or name the ring, leaving the decomposition statement undefined."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fb238e87f1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 65.9,
+   "usage": {
+    "input": 1002,
+    "output": 2894,
+    "reasoning": 2859
+   },
+   "cost": 0.019368,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not print the rank number or the ring name, only indirect descriptions.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank number or the ring name, only indirect descriptions."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fcb6a9564d3b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 145.9,
+   "usage": {
+    "input": 1002,
+    "output": 5866,
+    "reasoning": 5829
+   },
+   "cost": 0.0372,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is given only as the array's shape, which no provided library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is given only as the array's shape, which no provided library name expresses."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fd5d6d11f38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 171.3,
+   "usage": {
+    "input": 1002,
+    "output": 6384,
+    "reasoning": 6354
+   },
+   "cost": 0.040308,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The rank and the ring are not given as explicit values.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and the ring are not given as explicit values."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a538002368aef23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 29.5,
+   "usage": {
+    "input": 1002,
+    "output": 1147,
+    "reasoning": 1111
+   },
+   "cost": 0.008886,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence does not specify the rank number or the ring name needed for the decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not specify the rank number or the ring name needed for the decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537fe5ae90cf23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 73.2,
+   "usage": {
+    "input": 1002,
+    "output": 2457,
+    "reasoning": 2423
+   },
+   "cost": 0.016746,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence does not print the rank or the ring, only refers to the array shape and the paper.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence does not print the rank or the ring, only refers to the array shape and the paper."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a538034d69afd848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 55.6,
+   "usage": {
+    "input": 1002,
+    "output": 2283,
+    "reasoning": 2203
+   },
+   "cost": 0.015702,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\", \"hole\": \"\", \"why\": \"The sentence asserts the recorded solution is feasible for that problem and has that exact platform score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence asserts the recorded solution is feasible for that problem and has that exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a538026f7ae6f23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.5,
+   "usage": {
+    "input": 999,
+    "output": 1555,
+    "reasoning": 1479
+   },
+   "cost": 0.011328,
+   "raw": "{\"statement\": \"best-13.json is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\", \"hole\": \"\", \"why\": \"The sentence claims feasibility for the named platform problem and gives the exact score.\"}",
+   "answer": {
+    "statement": "best-13.json is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence claims feasibility for the named platform problem and gives the exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a5380046dc1bf1ff-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 135.2,
+   "usage": {
+    "input": 998,
+    "output": 5374,
+    "reasoning": 5302
+   },
+   "cost": 0.03424,
+   "raw": "{\"statement\": \"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\", \"hole\": \"\", \"why\": \"The sentence states feasibility and an exact platform score for x1.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence states feasibility and an exact platform score for x1."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a53800dc1f5ed94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 100.4,
+   "usage": {
+    "input": 999,
+    "output": 4042,
+    "reasoning": 3972
+   },
+   "cost": 0.02625,
+   "raw": "{\"statement\": \"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\", \"hole\": \"\", \"why\": \"The sentence asserts feasibility and the exact platform score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence asserts feasibility and the exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a538018c1bb0f23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.4,
+   "usage": {
+    "input": 999,
+    "output": 1496,
+    "reasoning": 1419
+   },
+   "cost": 0.010974,
+   "raw": "{\"statement\": \"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\", \"hole\": \"\", \"why\": \"The sentence claims the object x12 is feasible for that problem with that exact score.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence claims the object x12 is feasible for that problem with that exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a5380393ad7d02fd-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.6,
+   "usage": {
+    "input": 1005,
+    "output": 823,
+    "reasoning": 744
+   },
+   "cost": 0.006948,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\", \"hole\": \"\", \"why\": \"The sentence claims feasibility and the exact platform score for the given object.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence claims feasibility and the exact platform score for the given object."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a538034fe9b9f23f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 58.4,
+   "usage": {
+    "input": 988,
+    "output": 2522,
+    "reasoning": 2447
+   },
+   "cost": 0.017108,
+   "raw": "{\n  \"statement\": \"best-22.json is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the given object is feasible for that problem and has score 2.\"\n}",
+   "answer": {
+    "statement": "best-22.json is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": "The sentence claims the given object is feasible for that problem and has score 2."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a538041a9809b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 60.2,
+   "usage": {
+    "input": 1005,
+    "output": 2578,
+    "reasoning": 2500
+   },
+   "cost": 0.017478,
+   "raw": "{\"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\", \"hole\": \"\", \"why\": \"The sentence asserts feasibility and the exact platform score for the object.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "The sentence asserts feasibility and the exact platform score for the object."
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a53804a93fbb1d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.3,
+   "usage": {
+    "input": 967,
+    "output": 224,
+    "reasoning": 194
+   },
+   "cost": 0.003278,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence asserts properties and collisions but gives no numerical claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence asserts properties and collisions but gives no numerical claim."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ed8b3c92b490-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 55.7,
+   "usage": {
+    "input": 981,
+    "output": 2497,
+    "reasoning": 2465
+   },
+   "cost": 0.016944,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the quantity C3b is not expressed by any given library name\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the quantity C3b is not expressed by any given library name"
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537eee72fa2f38c-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.0,
+   "usage": {
+    "input": 991,
+    "output": 916,
+    "reasoning": 883
+   },
+   "cost": 0.007478,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The quantity C3c is not expressed by any provided library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The quantity C3c is not expressed by any provided library name."
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ef76dc0f1d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 111.8,
+   "usage": {
+    "input": 990,
+    "output": 4837,
+    "reasoning": 4802
+   },
+   "cost": 0.031002,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The quantity C3c is not expressed by any of the given library names.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The quantity C3c is not expressed by any of the given library names."
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537ef85c90d02fd-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 71.2,
+   "usage": {
+    "input": 993,
+    "output": 3049,
+    "reasoning": 3015
+   },
+   "cost": 0.02028,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C71 is not expressed by any provided library name over the data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C71 is not expressed by any provided library name over the data."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f2318f5d1d23-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.7,
+   "usage": {
+    "input": 976,
+    "output": 754,
+    "reasoning": 714
+   },
+   "cost": 0.006476,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence's numerical quantity is the determinant of Phi's Jacobian, which no given library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence's numerical quantity is the determinant of Phi's Jacobian, which no given library name expresses."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f1794d4dd848-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.9,
+   "usage": {
+    "input": 979,
+    "output": 1949,
+    "reasoning": 1911
+   },
+   "cost": 0.013652,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The determinant of the Jacobian of F4 is not a library-defined quantity over rmaps.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The determinant of the Jacobian of F4 is not a library-defined quantity over rmaps."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f228a9c7cd4e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 34.4,
+   "usage": {
+    "input": 981,
+    "output": 1402,
+    "reasoning": 1365
+   },
+   "cost": 0.010374,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence claims a value for det J, but no provided library name expresses that quantity.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence claims a value for det J, but no provided library name expresses that quantity."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a537f1428e6dd94e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.8,
+   "usage": {
+    "input": 975,
+    "output": 1421,
+    "reasoning": 1379
+   },
+   "cost": 0.010476,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence’s numerical quantity, det J = 2, is not expressed by any library name over rmaps.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence’s numerical quantity, det J = 2, is not expressed by any library name over rmaps."
+   }
+  }
+ ]
+}

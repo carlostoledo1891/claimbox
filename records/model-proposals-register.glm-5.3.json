@@ -1,0 +1,1555 @@
+{
+ "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "z-ai/glm-5.3",
+ "provider": "prime",
+ "family": "glm-5.3",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 0.2073,
+ "calls": 77,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.98,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 3.08
+ },
+ "entries": [
+  {
+   "tag": "ea-autocorr-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4834b8f4051-GRU",
+   "stopReason": "length",
+   "effort": "high",
+   "seconds": 71.0,
+   "usage": {
+    "input": 873,
+    "output": 16000,
+    "reasoning": 16000
+   },
+   "cost": 0.050136,
+   "raw": "",
+   "answer": null
+  },
+  {
+   "tag": "ea-autocorr-alphaevolve_v2_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d48d59a44051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 878,
+    "output": 83,
+    "reasoning": 46
+   },
+   "cost": 0.001116,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence prints no value for C₁, so there is no bar to state a claim against.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence prints no value for C₁, so there is no bar to state a claim against."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4924dfe8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 871,
+    "output": 578,
+    "reasoning": 485
+   },
+   "cost": 0.002634,
+   "raw": "{\"statement\": \"firs_ours_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is ≤ 1.50286286\", \"hole\": \"\", \"why\": \"The sentence pins the published construction (nonnegative on [−1/4,1/4] at its 30000 sample values, i.e. feasible) and leads with the bound on its objective value C₁.\"}",
+   "answer": {
+    "statement": "firs_ours_2026 is a feasible solution of \"first-autocorrelation\" and its score is ≤ 1.50286286",
+    "hole": "",
+    "why": "The sentence pins the published construction (nonnegative on [−1/4,1/4] at its 30000 sample values, i.e. feasible) and leads with the bound on its objective value C₁."
+   }
+  },
+  {
+   "tag": "ea-autocorr-ttt_discover_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d48de9ee030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 876,
+    "output": 820,
+    "reasoning": 715
+   },
+   "cost": 0.003384,
+   "raw": "```json\n{\"statement\": \"firs_ttt_discover_2026 is a feasible solution of \\\"first-autocorrelation\\\" and its score is ≤ 1.50286290\", \"hole\": \"\", \"why\": \"The sentence pins the published construction for the first-autocorrelation problem, asserting feasibility (f ≥ 0 sampled as 30000 values on the interval) and a first autocorrelation C₁ at most 1.50286290.\"}\n```",
+   "answer": {
+    "statement": "firs_ttt_discover_2026 is a feasible solution of \"first-autocorrelation\" and its score is ≤ 1.50286290",
+    "hole": "",
+    "why": "The sentence pins the published construction for the first-autocorrelation problem, asserting feasibility (f ≥ 0 sampled as 30000 values on the interval) and a first autocorrelation C₁ at most 1.50286290."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d44bb9d1f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 929,
+    "output": 171,
+    "reasoning": 79
+   },
+   "cost": 0.001437,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321334\", \"hole\": \"\", \"why\": \"The sentence claims a packing of 21 disjoint circles with bounding box w + h ≤ 2 achieving total radius 2.3658321334, which is the platform's problem and its score.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
+    "hole": "",
+    "why": "The sentence claims a packing of 21 disjoint circles with bounding box w + h ≤ 2 achieving total radius 2.3658321334, which is the platform's problem and its score."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d452296eb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 927,
+    "output": 241,
+    "reasoning": 156
+   },
+   "cost": 0.001651,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759\", \"hole\": \"\", \"why\": \"The sentence pins the file as 21 disjoint circles in a bounding box with w + h ≤ 2 and states the sum of radii exactly as the problem's score.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
+    "hole": "",
+    "why": "The sentence pins the file as 21 disjoint circles in a bounding box with w + h ≤ 2 and states the sum of radii exactly as the problem's score."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4745f516240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 870,
+    "output": 496,
+    "reasoning": 420
+   },
+   "cost": 0.00238,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712494\", \"hole\": \"\", \"why\": \"The sentence leads with the platform's envelope score for the 100-row data on the edges-vs-triangles problem, printed with '=' as an exact bar.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
+    "hole": "",
+    "why": "The sentence leads with the platform's envelope score for the 100-row data on the edges-vs-triangles problem, printed with '=' as an exact bar."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4810ca71b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 866,
+    "output": 504,
+    "reasoning": 429
+   },
+   "cost": 0.002401,
+   "raw": "{\"statement\": \"ours_2026.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712256\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the pinned data's score on EinsteinArena's edges-vs-triangles problem equals -0.712256, exactly as printed.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
+    "hole": "",
+    "why": "The sentence leads with the claim that the pinned data's score on EinsteinArena's edges-vs-triangles problem equals -0.712256, exactly as printed."
+   }
+  },
+  {
+   "tag": "ea-flat-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4a1fb2eae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 870,
+    "output": 412,
+    "reasoning": 378
+   },
+   "cost": 0.002122,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The claimed value is a continuous maximum over the unit circle, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claimed value is a continuous maximum over the unit circle, which no finite check decides."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4a3f95df1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 867,
+    "output": 407,
+    "reasoning": 365
+   },
+   "cost": 0.002103,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The claim is a supremum of a polynomial on the unit circle, a quantity the library name and the term language cannot express.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim is a supremum of a polynomial on the unit circle, a quantity the library name and the term language cannot express."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d45259756240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 921,
+    "output": 502,
+    "reasoning": 430
+   },
+   "cost": 0.002449,
+   "raw": "{\"statement\": \"\\\"Heilbronn Problem for Convex Regions (n = 14)\\\" = 0.0278355715\", \"hole\": \"\", \"why\": \"The sentence claims the value of the Heilbronn convex-region problem with n = 14 equals 0.0278355715.\"}",
+   "answer": {
+    "statement": "\"Heilbronn Problem for Convex Regions (n = 14)\" = 0.0278355715",
+    "hole": "",
+    "why": "The sentence claims the value of the Heilbronn convex-region problem with n = 14 equals 0.0278355715."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4579d894051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 918,
+    "output": 395,
+    "reasoning": 321
+   },
+   "cost": 0.002116,
+   "raw": "{\"statement\": \"\\\"Heilbronn Problem for Convex Regions (n = 14)\\\" = 0.0278355805\", \"hole\": \"\", \"why\": \"The sentence states the value of the min triangle area / convex-hull area, which is exactly the quantity the library problem name denotes, as the number it prints.\"}",
+   "answer": {
+    "statement": "\"Heilbronn Problem for Convex Regions (n = 14)\" = 0.0278355805",
+    "hole": "",
+    "why": "The sentence states the value of the min triangle area / convex-hull area, which is exactly the quantity the library problem name denotes, as the number it prints."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4ad1f41ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 872,
+    "output": 533,
+    "reasoning": 459
+   },
+   "cost": 0.002496,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"hexagon-packing\\\" and its score is = 3.9419123\", \"hole\": \"\", \"why\": \"The sentence pins the data as a feasible hexagon-packing solution whose score equals the printed outer side 3.9419123.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"hexagon-packing\" and its score is = 3.9419123",
+    "hole": "",
+    "why": "The sentence pins the data as a feasible hexagon-packing solution whose score equals the printed outer side 3.9419123."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4b32fb00bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 869,
+    "output": 360,
+    "reasoning": 287
+   },
+   "cost": 0.00196,
+   "raw": "{\"statement\": \"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416523\", \"hole\": \"\", \"why\": \"The sentence pins the construction for the hexagon-packing problem and states its score as the outer side 3.9416523.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
+    "hole": "",
+    "why": "The sentence pins the construction for the hexagon-packing problem and states its score as the outer side 3.9416523."
+   }
+  },
+  {
+   "tag": "ea-mindist-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4595e0ff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 930,
+    "output": 236,
+    "reasoning": 146
+   },
+   "cost": 0.001638,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889266\", \"hole\": \"\", \"why\": \"The sentence pins the squared max/min distance ratio of the 16-point configuration to 12.889266, which is the score of the platform's named problem.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889266",
+    "hole": "",
+    "why": "The sentence pins the squared max/min distance ratio of the 16-point configuration to 12.889266, which is the score of the platform's named problem."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d45e9992b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 926,
+    "output": 143,
+    "reasoning": 71
+   },
+   "cost": 0.001348,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is = 12.889230\", \"hole\": \"\", \"why\": \"The sentence pins the data file's score on the platform's problem to the exact number printed.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is = 12.889230",
+    "hole": "",
+    "why": "The sentence pins the data file's score on the platform's problem to the exact number printed."
+   }
+  },
+  {
+   "tag": "ea-overlap-alphaevolve_2025",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d462ee438779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.9,
+   "usage": {
+    "input": 875,
+    "output": 1735,
+    "reasoning": 1653
+   },
+   "cost": 0.006201,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score ≤ 0.380924\", \"hole\": \"\", \"why\": \"The sentence leads with a construction (a step function meeting the feasibility conditions) whose value gives the upper bound 0.380924 for the erdos-minimum-overlap problem.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"erdos-minimum-overlap\" and its score ≤ 0.380924",
+    "hole": "",
+    "why": "The sentence leads with a construction (a step function meeting the feasibility conditions) whose value gives the upper bound 0.380924 for the erdos-minimum-overlap problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d45feb3bb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 875,
+    "output": 662,
+    "reasoning": 611
+   },
+   "cost": 0.002896,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence says 'upper bound 0.380927' but never states a quantity built from the library names that is bounded, so no TERM REL BAR claim is determined.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence says 'upper bound 0.380927' but never states a quantity built from the library names that is bounded, so no TERM REL BAR claim is determined."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d46dcc476240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 874,
+    "output": 842,
+    "reasoning": 769
+   },
+   "cost": 0.00345,
+   "raw": "{\"statement\": \"erdo_together_ai_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is ≤ 0.380871\", \"hole\": \"\", \"why\": \"The sentence pins the construction for erdos-minimum-overlap and gives its score as at most 0.380871.\"}",
+   "answer": {
+    "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is ≤ 0.380871",
+    "hole": "",
+    "why": "The sentence pins the construction for erdos-minimum-overlap and gives its score as at most 0.380871."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4637e164051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 877,
+    "output": 394,
+    "reasoning": 340
+   },
+   "cost": 0.002073,
+   "raw": "{\"statement\": \"erdo_ttt_discover_2026 ≤ 0.380876\", \"hole\": \"\", \"why\": \"The sentence pins the construction for erdos-minimum-overlap to the upper bound 0.380876 it prints.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
+    "hole": "",
+    "why": "The sentence pins the construction for erdos-minimum-overlap to the upper bound 0.380876 it prints."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026 planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d63efb65b026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 877,
+    "output": 690,
+    "reasoning": 612
+   },
+   "cost": 0.002985,
+   "raw": "{\"statement\": \"ttt_discover_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is ≤ 0.380877\", \"hole\": \"\", \"why\": \"The sentence pins the pinned construction for the erdos-minimum-overlap problem and claims its score as the stated upper bound 0.380877.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is ≤ 0.380877",
+    "hole": "",
+    "why": "The sentence pins the pinned construction for the erdos-minimum-overlap problem and claims its score as the stated upper bound 0.380877."
+   }
+  },
+  {
+   "tag": "horizonmath-keich-thin-triangles-128",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d50479014051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 873,
+    "output": 395,
+    "reasoning": 339
+   },
+   "cost": 0.002072,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The quantity Area(E) is not expressible as a term from the given library names (only rkakeyaa2inte is provided and the library defines no numerical name over the data).\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The quantity Area(E) is not expressible as a term from the given library names (only rkakeyaa2inte is provided and the library defines no numerical name over the data)."
+   }
+  },
+  {
+   "tag": "kiss-alphaevolve-593",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d44bbedd6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 841,
+    "output": 136,
+    "reasoning": 78
+   },
+   "cost": 0.001243,
+   "raw": "{\"statement\": \"The 593 vectors of k11593 form a kissing configuration in dimension 11\", \"hole\": \"\", \"why\": \"The sentence claims K(11) ≥ 593, which the data establishes via 593 kissing vectors in dimension 11.\"}",
+   "answer": {
+    "statement": "The 593 vectors of k11593 form a kissing configuration in dimension 11",
+    "hole": "",
+    "why": "The sentence claims K(11) ≥ 593, which the data establishes via 593 kissing vectors in dimension 11."
+   }
+  },
+  {
+   "tag": "kiss-ea-594-winner",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d44bba3f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 848,
+    "output": 359,
+    "reasoning": 299
+   },
+   "cost": 0.001937,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The claim K(11) >= 594 is about a dimension-11 quantity, but the only library name is k6, a list of vectors in dimension 6, which cannot express K(11).\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim K(11) >= 594 is about a dimension-11 quantity, but the only library name is k6, a list of vectors in dimension 6, which cannot express K(11)."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x5-r32",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5249e57ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 870,
+    "output": 194,
+    "reasoning": 107
+   },
+   "cost": 0.00145,
+   "raw": "{\"statement\": \"n[\\\"Rank-32 decomposition of <2,4,5> over 0.5*Z\\\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's named decomposition is a rank-32 decomposition of the <2,4,5> tensor over the printed ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-32 decomposition of <2,4,5> over 0.5*Z\"] is a rank-32 decomposition of <2,4,5> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims the notebook's named decomposition is a rank-32 decomposition of the <2,4,5> tensor over the printed ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x7-r45",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d52a58060bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 865,
+    "output": 180,
+    "reasoning": 103
+   },
+   "cost": 0.001402,
+   "raw": "{\"statement\": \"n[\\\"Rank-45 decomposition of <2,4,7> over Z\\\"] is a rank-45 decomposition of <2,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook entry named by that heading is a rank-45 decomposition of the <2,4,7> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-45 decomposition of <2,4,7> over Z\"] is a rank-45 decomposition of <2,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook entry named by that heading is a rank-45 decomposition of the <2,4,7> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x4x8-r51",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d52baf016240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 865,
+    "output": 138,
+    "reasoning": 63
+   },
+   "cost": 0.001273,
+   "raw": "{\"statement\": \"n[\\\"Rank-51 decomposition of <2,4,8> over Z\\\"] is a rank-51 decomposition of <2,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's named entry is a rank-51 decomposition of the <2,4,8> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-51 decomposition of <2,4,8> over Z\"] is a rank-51 decomposition of <2,4,8> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook's named entry is a rank-51 decomposition of the <2,4,8> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-2x5x6-r47",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5314ecbb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 865,
+    "output": 135,
+    "reasoning": 65
+   },
+   "cost": 0.001264,
+   "raw": "{\"statement\": \"n[\\\"Rank-47 decomposition of <2,5,6> over Z\\\"] is a rank-47 decomposition of <2,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's headed decomposition is a rank-47 decomposition of the stated tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-47 decomposition of <2,5,6> over Z\"] is a rank-47 decomposition of <2,5,6> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook's headed decomposition is a rank-47 decomposition of the stated tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x3x3-r23",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5317f224051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 865,
+    "output": 538,
+    "reasoning": 461
+   },
+   "cost": 0.002505,
+   "raw": "{\"statement\": \"n[\\\"Rank-23 decomposition of <3,3,3> over Z\\\"] is a rank-23 decomposition of <3,3,3> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's named decomposition is a rank-23 decomposition of the <3,3,3> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-23 decomposition of <3,3,3> over Z\"] is a rank-23 decomposition of <3,3,3> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook's named decomposition is a rank-23 decomposition of the <3,3,3> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x6-r54",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d537f844ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 870,
+    "output": 281,
+    "reasoning": 191
+   },
+   "cost": 0.001718,
+   "raw": "{\"statement\": \"n[\\\"Rank-54 decomposition of <3,4,6> over 0.5*Z\\\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z\", \"hole\": \"\", \"why\": \"The sentence claims that the notebook entry under that heading is a rank-54 decomposition of <3,4,6> over 0.5*Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-54 decomposition of <3,4,6> over 0.5*Z\"] is a rank-54 decomposition of <3,4,6> over 0.5*Z",
+    "hole": "",
+    "why": "The sentence claims that the notebook entry under that heading is a rank-54 decomposition of <3,4,6> over 0.5*Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x7-r63",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5420a16ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 869,
+    "output": 173,
+    "reasoning": 82
+   },
+   "cost": 0.001384,
+   "raw": "{\"statement\": \"n[\\\"Rank-63 decomposition of <3,4,7> over 0.5*C\\\"] is a rank-63 decomposition of <3,4,7> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's heading-named decomposition is a rank-63 decomposition of <3,4,7> over the ring 0.5*C.\"}",
+   "answer": {
+    "statement": "n[\"Rank-63 decomposition of <3,4,7> over 0.5*C\"] is a rank-63 decomposition of <3,4,7> over 0.5*C",
+    "hole": "",
+    "why": "The sentence claims the notebook's heading-named decomposition is a rank-63 decomposition of <3,4,7> over the ring 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x4x8-r74",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d54498ee6240-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.0,
+   "usage": {
+    "input": 865,
+    "output": 154,
+    "reasoning": 87
+   },
+   "cost": 0.001322,
+   "raw": "{\"statement\": \"n[\\\"Rank-74 decomposition of <3,4,8> over Z\\\"] is a rank-74 decomposition of <3,4,8> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts the notebook's named decomposition is a rank-74 decomposition of that tensor over that ring.\"}",
+   "answer": {
+    "statement": "n[\"Rank-74 decomposition of <3,4,8> over Z\"] is a rank-74 decomposition of <3,4,8> over Z",
+    "hole": "",
+    "why": "The sentence asserts the notebook's named decomposition is a rank-74 decomposition of that tensor over that ring."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x6-r68",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5498e9e0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 865,
+    "output": 258,
+    "reasoning": 186
+   },
+   "cost": 0.001642,
+   "raw": "{\"statement\": \"n[\\\"Rank-68 decomposition of <3,5,6> over Z\\\"] is a rank-68 decomposition of <3,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts the notebook entry under that heading is a rank-68 decomposition of <3,5,6> over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-68 decomposition of <3,5,6> over Z\"] is a rank-68 decomposition of <3,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts the notebook entry under that heading is a rank-68 decomposition of <3,5,6> over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-3x5x7-r80",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d54ace2cb026-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 865,
+    "output": 167,
+    "reasoning": 97
+   },
+   "cost": 0.001362,
+   "raw": "{\"statement\": \"n[\\\"Rank-80 decomposition of <3,5,7> over Z\\\"] is a rank-80 decomposition of <3,5,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's named decomposition is a rank-80 decomposition of the tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-80 decomposition of <3,5,7> over Z\"] is a rank-80 decomposition of <3,5,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook's named decomposition is a rank-80 decomposition of the tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x5-r61",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d552ba7daef6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 865,
+    "output": 160,
+    "reasoning": 81
+   },
+   "cost": 0.00134,
+   "raw": "{\"statement\": \"n[\\\"Rank-61 decomposition of <4,4,5> over Z\\\"] is a rank-61 decomposition of <4,4,5> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook entry under that heading is a rank-61 decomposition of the <4,4,5> tensor over the integers.\"}",
+   "answer": {
+    "statement": "n[\"Rank-61 decomposition of <4,4,5> over Z\"] is a rank-61 decomposition of <4,4,5> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook entry under that heading is a rank-61 decomposition of the <4,4,5> tensor over the integers."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x7-r85",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d558ba2dae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 865,
+    "output": 253,
+    "reasoning": 176
+   },
+   "cost": 0.001627,
+   "raw": "{\"statement\": \"n[\\\"Rank-85 decomposition of <4,4,7> over Z\\\"] is a rank-85 decomposition of <4,4,7> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the named decomposition in the notebook is a rank-85 decomposition of the <4,4,7> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-85 decomposition of <4,4,7> over Z\"] is a rank-85 decomposition of <4,4,7> over Z",
+    "hole": "",
+    "why": "The sentence claims the named decomposition in the notebook is a rank-85 decomposition of the <4,4,7> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x4x8-r96",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d551eae90bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 869,
+    "output": 168,
+    "reasoning": 78
+   },
+   "cost": 0.001369,
+   "raw": "{\"statement\": \"n[\\\"Rank-96 decomposition of <4,4,8> over 0.5*C\\\"] is a rank-96 decomposition of <4,4,8> over 0.5*C\", \"hole\": \"\", \"why\": \"The sentence asserts the named decomposition in the notebook is a rank-96 decomposition of <4,4,8> over the ring 0.5*C.\"}",
+   "answer": {
+    "statement": "n[\"Rank-96 decomposition of <4,4,8> over 0.5*C\"] is a rank-96 decomposition of <4,4,8> over 0.5*C",
+    "hole": "",
+    "why": "The sentence asserts the named decomposition in the notebook is a rank-96 decomposition of <4,4,8> over the ring 0.5*C."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-4x5x6-r90",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d55a1be64051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 865,
+    "output": 392,
+    "reasoning": 313
+   },
+   "cost": 0.002055,
+   "raw": "{\"statement\": \"n[\\\"Rank-90 decomposition of <4,5,6> over Z\\\"] is a rank-90 decomposition of <4,5,6> over Z\", \"hole\": \"\", \"why\": \"The sentence asserts that the notebook's entry under that heading is a rank-90 decomposition of the <4,5,6> tensor over Z.\"}",
+   "answer": {
+    "statement": "n[\"Rank-90 decomposition of <4,5,6> over Z\"] is a rank-90 decomposition of <4,5,6> over Z",
+    "hole": "",
+    "why": "The sentence asserts that the notebook's entry under that heading is a rank-90 decomposition of the <4,5,6> tensor over Z."
+   }
+  },
+  {
+   "tag": "mc100-ae-nb-5x5x5-r93",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5625fdff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 865,
+    "output": 133,
+    "reasoning": 56
+   },
+   "cost": 0.001257,
+   "raw": "{\"statement\": \"n[\\\"Rank-93 decomposition of <5,5,5> over Z\\\"] is a rank-93 decomposition of <5,5,5> over Z\", \"hole\": \"\", \"why\": \"The sentence claims the notebook's heading-named entry is a rank-93 decomposition of <5,5,5> over the integers.\"}",
+   "answer": {
+    "statement": "n[\"Rank-93 decomposition of <5,5,5> over Z\"] is a rank-93 decomposition of <5,5,5> over Z",
+    "hole": "",
+    "why": "The sentence claims the notebook's heading-named entry is a rank-93 decomposition of <5,5,5> over the integers."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x3",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5685f71030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 882,
+    "output": 363,
+    "reasoning": 314
+   },
+   "cost": 0.001982,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The rank is not stated as a number but as \\\"whatever the array's shape states,\\\" so the sentence never fixes the R of a rank-R decomposition claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank is not stated as a number but as \"whatever the array's shape states,\" so the sentence never fixes the R of a rank-R decomposition claim."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d568a8c4f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 882,
+    "output": 1386,
+    "reasoning": 1340
+   },
+   "cost": 0.005133,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The rank is specified only as whatever the array's shape states, a data-derived quantity the sentence never prints as a number and no library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The rank is specified only as whatever the array's shape states, a data-derived quantity the sentence never prints as a number and no library name expresses."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x2x5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5842a351b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 882,
+    "output": 510,
+    "reasoning": 464
+   },
+   "cost": 0.002435,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank as a number; it defers to the array's shape, so the claim's rank is not given in the sentence.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank as a number; it defers to the array's shape, so the claim's rank is not given in the sentence."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x3",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5766eac0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 882,
+    "output": 512,
+    "reasoning": 464
+   },
+   "cost": 0.002441,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank as a number; it defers to whatever the stored array's shape happens to be, so no rank-R claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank as a number; it defers to whatever the stored array's shape happens to be, so no rank-R claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5950b518779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 882,
+    "output": 405,
+    "reasoning": 355
+   },
+   "cost": 0.002112,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank as a number; it defers to 'the rank the array's shape states', a quantity the sentence does not define or print.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank as a number; it defers to 'the rank the array's shape states', a quantity the sentence does not define or print."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x3x5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5965b838779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 882,
+    "output": 493,
+    "reasoning": 444
+   },
+   "cost": 0.002383,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank as a number, deferring to 'the rank the array's shape states', so no concrete rank-R can be written in the claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank as a number, deferring to 'the rank the array's shape states', so no concrete rank-R can be written in the claim."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-2x4x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5a11fd3d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 882,
+    "output": 373,
+    "reasoning": 325
+   },
+   "cost": 0.002013,
+   "raw": "{\"statement\": \"\", \"hole\": \"data\", \"why\": \"The rank is whatever the array's shape in the file says, and the sentence gives no number for it, so the rank cannot be stated from the sentence alone.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "data",
+    "why": "The rank is whatever the array's shape in the file says, and the sentence gives no number for it, so the rank cannot be stated from the sentence alone."
+   }
+  },
+  {
+   "tag": "mc100-at-f2-3x3x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5a63e7df1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 882,
+    "output": 253,
+    "reasoning": 208
+   },
+   "cost": 0.001644,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank as a number, defining it only by the array's shape, so no rank-R claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank as a number, defining it only by the array's shape, so no rank-R claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x3",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5ad681df1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 887,
+    "output": 508,
+    "reasoning": 448
+   },
+   "cost": 0.002434,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence gives neither the rank as a number (it defers to 'the array's shape') nor the ring as printed (it defers to 'the paper'), so no statement of the required form can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence gives neither the rank as a number (it defers to 'the array's shape') nor the ring as printed (it defers to 'the paper'), so no statement of the required form can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5afbe9f0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 887,
+    "output": 237,
+    "reasoning": 179
+   },
+   "cost": 0.001599,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank or the ring: 'the rank the array's shape states' and 'the ring the paper names' leave both R and RING undefined, so no exact claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank or the ring: 'the rank the array's shape states' and 'the ring the paper names' leave both R and RING undefined, so no exact claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5c0cb688779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 887,
+    "output": 149,
+    "reasoning": 92
+   },
+   "cost": 0.001328,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The rank and the ring are not stated but only pointed at ('the array's shape states', 'the ring the paper names'), so the claim cannot be written with a definite R and RING.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The rank and the ring are not stated but only pointed at ('the array's shape states', 'the ring the paper names'), so the claim cannot be written with a definite R and RING."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x6",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5c3cc8f030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 887,
+    "output": 380,
+    "reasoning": 320
+   },
+   "cost": 0.00204,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never prints the rank or the ring; it refers to them only indirectly (\\\"the array's shape states\\\", \\\"the ring the paper names\\\"), so the claim cannot be written with the required rank and ring.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never prints the rank or the ring; it refers to them only indirectly (\"the array's shape states\", \"the ring the paper names\"), so the claim cannot be written with the required rank and ring."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x7",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5d53e714051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 887,
+    "output": 185,
+    "reasoning": 129
+   },
+   "cost": 0.001439,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence names neither the rank nor the ring explicitly ('the rank the array's shape states', 'the ring the paper names'), so the claim cannot be written with definite R and RING.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence names neither the rank nor the ring explicitly ('the rank the array's shape states', 'the ring the paper names'), so the claim cannot be written with definite R and RING."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x2x8",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5dc49bbf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 887,
+    "output": 1012,
+    "reasoning": 957
+   },
+   "cost": 0.003986,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence names neither the ring (it defers to an unnamed paper) nor the rank (it defers to the array's shape), so no definite claim of the required form can be stated.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence names neither the ring (it defers to an unnamed paper) nor the rank (it defers to the array's shape), so no definite claim of the required form can be stated."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x3",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5ba8efe1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 887,
+    "output": 234,
+    "reasoning": 182
+   },
+   "cost": 0.00159,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence names neither the rank nor the ring as printed facts, referring only to 'the array's shape' and 'the paper', which the sentence never defines or states.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence names neither the rank nor the ring as printed facts, referring only to 'the array's shape' and 'the paper', which the sentence never defines or states."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5ca093ad884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 887,
+    "output": 373,
+    "reasoning": 324
+   },
+   "cost": 0.002018,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank (it defers to the array's shape) nor names the ring, so no definite rank-R-over-RING claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank (it defers to the array's shape) nor names the ring, so no definite rank-R-over-RING claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x3x5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5d97acc0bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 887,
+    "output": 285,
+    "reasoning": 228
+   },
+   "cost": 0.001747,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence gives neither the rank (deferring to \\\"the array's shape\\\") nor the ring (deferring to \\\"the paper\\\") as concrete values, so no statement of the required form can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence gives neither the rank (deferring to \"the array's shape\") nor the ring (deferring to \"the paper\") as concrete values, so no statement of the required form can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5e66e324051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 887,
+    "output": 488,
+    "reasoning": 444
+   },
+   "cost": 0.002372,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence refers to a rank and a ring that it never states, so no concrete rank-R or RING can be written into the claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence refers to a rank and a ring that it never states, so no concrete rank-R or RING can be written into the claim."
+   }
+  },
+  {
+   "tag": "mc100-at-q-2x4x5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5fd59c5d884-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 887,
+    "output": 253,
+    "reasoning": 205
+   },
+   "cost": 0.001649,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank or names the ring, deferring to the array's shape and an unnamed paper, so no definite claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank or names the ring, deferring to the array's shape and an unnamed paper, so no definite claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-at-q-3x3x4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5f85d808779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 887,
+    "output": 390,
+    "reasoning": 341
+   },
+   "cost": 0.00207,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"The sentence never states the rank number or the ring, referring only indirectly to the array's shape and an unnamed paper, so no exact claim can be written.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence never states the rank number or the ring, referring only indirectly to the array's shape and an unnamed paper, so no exact claim can be written."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-circles-rectangle",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d60e19398779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 878,
+    "output": 207,
+    "reasoning": 138
+   },
+   "cost": 0.001498,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098576\", \"hole\": \"\", \"why\": \"The sentence states feasibility of the platform record for the named problem with an exact printed score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098576",
+    "hole": "",
+    "why": "The sentence states feasibility of the platform record for the named problem with an exact printed score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d60b28c00bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 876,
+    "output": 104,
+    "reasoning": 40
+   },
+   "cost": 0.001179,
+   "raw": "{\"statement\": \"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692579\", \"hole\": \"\", \"why\": \"The sentence claims feasibility of the platform problem and the exact score printed.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
+    "hole": "",
+    "why": "The sentence claims feasibility of the platform problem and the exact score printed."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d6055ebff1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 877,
+    "output": 115,
+    "reasoning": 48
+   },
+   "cost": 0.001214,
+   "raw": "{\"statement\": \"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578584\", \"hole\": \"\", \"why\": \"The sentence states a feasibility and score claim for the platform's best-solution record.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
+    "hole": "",
+    "why": "The sentence states a feasibility and score claim for the platform's best-solution record."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d6065ccf1b27-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 878,
+    "output": 120,
+    "reasoning": 42
+   },
+   "cost": 0.00123,
+   "raw": "{\"statement\": \"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326165\", \"hole\": \"\", \"why\": \"The sentence makes exactly this claim: the platform's record x2 is feasible for the named problem and its score is the stated number.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
+    "hole": "",
+    "why": "The sentence makes exactly this claim: the platform's record x2 is feasible for the named problem and its score is the stated number."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-flat-polynomials",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d609ecd1f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.7,
+   "usage": {
+    "input": 875,
+    "output": 85,
+    "reasoning": 16
+   },
+   "cost": 0.001119,
+   "raw": "{\"statement\": \"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642549\", \"hole\": \"\", \"why\": \"The sentence claims the pinned record is a feasible solution of the named platform problem with the stated score.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642549",
+    "hole": "",
+    "why": "The sentence claims the pinned record is a feasible solution of the named platform problem with the stated score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d614f9acae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 879,
+    "output": 160,
+    "reasoning": 85
+   },
+   "cost": 0.001354,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301676\", \"hole\": \"\", \"why\": \"The sentence pins the API record x24 as a feasible solution of the named problem with the exact score as printed.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
+    "hole": "",
+    "why": "The sentence pins the API record x24 as a feasible solution of the named problem with the exact score as printed."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d60fc9858779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.8,
+   "usage": {
+    "input": 869,
+    "output": 126,
+    "reasoning": 63
+   },
+   "cost": 0.00124,
+   "raw": "{\"statement\": \"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 2\", \"hole\": \"\", \"why\": \"The sentence claims the pinned data is a feasible solution of the named platform problem with score 2.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 2",
+    "hole": "",
+    "why": "The sentence claims the pinned data is a feasible solution of the named platform problem with score 2."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d615aa888779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 880,
+    "output": 184,
+    "reasoning": 115
+   },
+   "cost": 0.001429,
+   "raw": "{\"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\", \"hole\": \"\", \"why\": \"The sentence states a feasibility claim with a printed score for the given data record.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": "The sentence states a feasibility claim with a printed score for the given data record."
+   }
+  },
+  {
+   "tag": "mc100-st-jacobian",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d61b9f480bc1-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 0.9,
+   "usage": {
+    "input": 852,
+    "output": 124,
+    "reasoning": 83
+   },
+   "cost": 0.001217,
+   "raw": "{\"statement\": \"\", \"hole\": \"quantity\", \"why\": \"The sentence asserts properties (Jacobian property, collisions) but prints no number to serve as a bar for any claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "quantity",
+    "why": "The sentence asserts properties (Jacobian property, collisions) but prints no number to serve as a bar for any claim."
+   }
+  },
+  {
+   "tag": "optconst-3b",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4b9bcb28779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.0,
+   "usage": {
+    "input": 861,
+    "output": 2468,
+    "reasoning": 2390
+   },
+   "cost": 0.008445,
+   "raw": "{\"statement\": \"x313 is a feasible solution of \\\"C3b\\\" and its score ≥ 1.77898884\", \"hole\": \"\", \"why\": \"The sentence claims the best solution for problem C3b, recorded by the platform as x313, is feasible and scores at least the printed bound 1.77898884.\"}",
+   "answer": {
+    "statement": "x313 is a feasible solution of \"C3b\" and its score ≥ 1.77898884",
+    "hole": "",
+    "why": "The sentence claims the best solution for problem C3b, recorded by the platform as x313, is feasible and scores at least the printed bound 1.77898884."
+   }
+  },
+  {
+   "tag": "optconst-3c",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4c19e218779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 868,
+    "output": 940,
+    "reasoning": 882
+   },
+   "cost": 0.003746,
+   "raw": "{\"statement\": \"x3147 ≥ 1.6747338950414058\", \"hole\": \"\", \"why\": \"The sentence claims the platform's recorded best solution for C3c has a score at least the printed registry bound.\"}",
+   "answer": {
+    "statement": "x3147 ≥ 1.6747338950414058",
+    "hole": "",
+    "why": "The sentence claims the platform's recorded best solution for C3c has a score at least the printed registry bound."
+   }
+  },
+  {
+   "tag": "optconst-3c planted",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d63ee8ba4051-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 868,
+    "output": 115,
+    "reasoning": 60
+   },
+   "cost": 0.001205,
+   "raw": "{\"statement\": \"x3147 ≥ 1.6747338950414059\", \"hole\": \"\", \"why\": \"The sentence claims the platform's recorded best solution value C3c is at least the printed bound.\"}",
+   "answer": {
+    "statement": "x3147 ≥ 1.6747338950414059",
+    "hole": "",
+    "why": "The sentence claims the platform's recorded best solution value C3c is at least the printed bound."
+   }
+  },
+  {
+   "tag": "optconst-3c-95",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d4e51bb1ae01-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 868,
+    "output": 573,
+    "reasoning": 513
+   },
+   "cost": 0.002615,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence quantifies the problem value C3c, which is not among the library names (only x3395, the solution record, is given), so the claim cannot be written as a term.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence quantifies the problem value C3c, which is not among the library names (only x3395, the solution record, is given), so the claim cannot be written as a term."
+   }
+  },
+  {
+   "tag": "optconst-71",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5009dc9f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 868,
+    "output": 177,
+    "reasoning": 147
+   },
+   "cost": 0.001396,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"C71 is not a quantity any of the given library names expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "C71 is not a quantity any of the given library names expresses."
+   }
+  },
+  {
+   "tag": "polymaps-chv-phi",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d51dcdb7f1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 860,
+    "output": 287,
+    "reasoning": 239
+   },
+   "cost": 0.001727,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The library defines no name over rmaps, so the determinant, injectivity, and other properties of the map in the file cannot be expressed for the checker.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The library defines no name over rmaps, so the determinant, injectivity, and other properties of the map in the file cannot be expressed for the checker."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f4",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d514189bf1d6-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 863,
+    "output": 203,
+    "reasoning": 152
+   },
+   "cost": 0.001471,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The claim det J = -44/9 for the map in rmaps needs a Jacobian-determinant name, and the library defines no name over rmaps.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The claim det J = -44/9 for the map in rmaps needs a Jacobian-determinant name, and the library defines no name over rmaps."
+   }
+  },
+  {
+   "tag": "polymaps-gao-f5",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d5163c4c8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 863,
+    "output": 376,
+    "reasoning": 328
+   },
+   "cost": 0.002004,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence claims a property (det J = 160/29, non-injectivity) of a polynomial map that no library name over maps.json expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence claims a property (det J = 160/29, non-injectivity) of a polynomial map that no library name over maps.json expresses."
+   }
+  },
+  {
+   "tag": "polymaps-gao-g",
+   "model": "z-ai/glm-5.3",
+   "requestId": "a537d508ce90030d-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 860,
+    "output": 243,
+    "reasoning": 191
+   },
+   "cost": 0.001591,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The sentence describes a map (det J = 2, not injective) but the library defines no name over rmaps, so no term or relation can express this claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The sentence describes a map (det J = 2, not injective) but the library defines no name over rmaps, so no term or relation can express this claim."
+   }
+  }
+ ]
+}

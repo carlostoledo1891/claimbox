@@ -202,6 +202,14 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r16, 2026-11-01.** Many model families write; each proposal is judged on its own (the operator: "per proposal"). Through
+  Prime Intellect's gateway (tools/propose_model.py --provider prime; the operator's $25 campaign): twelve more families on the 80
+  AI phrasings and ten on the register, three of them asked three times, four with GUIDE.md's part for a model. On the
+  phrasings, Gemini 4 Argon, Gemini 3.8 Flash, Claude and Kimi K3.1 Pro pass the checks on 49–50 claims each, Grok 4.7 on 33;
+  every claim that passes is CERTIFIED, and the one claim cert-machine refutes (MiniMax M3 reading `3·10⁻⁴⁰ ≥ |…|` the wrong way
+  round) is refused by the checks first. Gemini 4 Argon answers all 80 the same in three runs, Kimi 78, GLM-5.3 63. On the
+  register the grammar and the families now agree on 27 sentences (19 before). The guide helps some families and not others
+  (GPT-6.1 Sol states 31 register claims with it, 8 without; Mistral's planted breaks rise from 1 to 5). GUIDE.md written.
 - **r15, 2026-10-31.** SOTA definitions (the operator's choice: the JSON-published problems first). The library gains the
   minimum distance ratio (the platform's pinned verifier: max over pairs of the squared distance over min, distinct to 10^-12)
   and the Heilbronn problem for convex regions (the SOTA table's verifier, the platform having added it after the pinned commit:

@@ -1,0 +1,2699 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "minimax/minimax-m3",
+ "provider": "prime",
+ "family": "minimax-m3",
+ "effort": "high",
+ "cap": 3.0,
+ "spent": 0.1519,
+ "calls": 134,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.3,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 1.2
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae1bcc17c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 965,
+    "output": 261,
+    "reasoning": 198
+   },
+   "cost": 0.000603,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence asserts the bound |D(1)| ≤ 0.82395317, with D(1) supplied by the library and the bar written exactly as printed.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence asserts the bound |D(1)| ≤ 0.82395317, with D(1) supplied by the library and the bar written exactly as printed."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1b98b851b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 965,
+    "output": 243,
+    "reasoning": 191
+   },
+   "cost": 0.000581,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence asserts the edge discrepancy D(1) is bounded in absolute value by 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence asserts the edge discrepancy D(1) is bounded in absolute value by 0.82395318."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae3ee8ae0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.9,
+   "usage": {
+    "input": 999,
+    "output": 230,
+    "reasoning": 192
+   },
+   "cost": 0.000576,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence claims this inequality for the library quantity D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims this inequality for the library quantity D(1)."
+   }
+  },
+  {
+   "tag": "1/assistant/7 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1cf5b48d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 999,
+    "output": 157,
+    "reasoning": 121
+   },
+   "cost": 0.000488,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence states this bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states this bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae459e52d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 975,
+    "output": 368,
+    "reasoning": 335
+   },
+   "cost": 0.000734,
+   "raw": "\n\n{\"statement\":\"D(1) < 0.82395317\",\"hole\":\"\",\"why\":\"The sentence explicitly claims this inequality for the given discrepancy.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence explicitly claims this inequality for the given discrepancy."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1d5398ec0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 966,
+    "output": 223,
+    "reasoning": 173
+   },
+   "cost": 0.000557,
+   "raw": "{\"statement\": \"D(1) < 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states an inequality between the library term D(1) and the printed number 0.82395318.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence states an inequality between the library term D(1) and the printed number 0.82395318."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae2f1ed61abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 992,
+    "output": 253,
+    "reasoning": 213
+   },
+   "cost": 0.000601,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute edge discrepancy does not exceed the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the absolute edge discrepancy does not exceed the printed bound."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1cceb46d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 992,
+    "output": 614,
+    "reasoning": 572
+   },
+   "cost": 0.001034,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute discrepancy at 1 is at most the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that the absolute discrepancy at 1 is at most the printed bound."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae1bc9ccf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 976,
+    "output": 264,
+    "reasoning": 208
+   },
+   "cost": 0.00061,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence directly states the bound as an inequality using the library name D(1) and the printed number 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence directly states the bound as an inequality using the library name D(1) and the printed number 0.82395317."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1b98f446e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 998,
+    "output": 460,
+    "reasoning": 424
+   },
+   "cost": 0.000851,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence explicitly states the edge bound as an inequality.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence explicitly states the edge bound as an inequality."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae1bcb24d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 999,
+    "output": 197,
+    "reasoning": 154
+   },
+   "cost": 0.000536,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute edge discrepancy is at most 0.82395317.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the absolute edge discrepancy is at most 0.82395317."
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1b98b8dc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 977,
+    "output": 276,
+    "reasoning": 226
+   },
+   "cost": 0.000624,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence's leading claim is the inequality bounding |D(1)| by 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence's leading claim is the inequality bounding |D(1)| by 0.82395318."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae442afb0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 987,
+    "output": 304,
+    "reasoning": 267
+   },
+   "cost": 0.000661,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute discrepancy does not exceed the stated bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the absolute discrepancy does not exceed the stated bound."
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1d37df61b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 987,
+    "output": 281,
+    "reasoning": 236
+   },
+   "cost": 0.000633,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute value of D(1) does not exceed 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that the absolute value of D(1) does not exceed 0.82395318."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae1bcb20d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 993,
+    "output": 180,
+    "reasoning": 143
+   },
+   "cost": 0.000514,
+   "raw": "\n\n{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence states an upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1b99d121abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.2,
+   "usage": {
+    "input": 971,
+    "output": 189,
+    "reasoning": 107
+   },
+   "cost": 0.000518,
+   "raw": "{\"statement\": \"for every VAR in 0 < VAR < 256 : |D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states the bound |D(1)| ≤ 0.82395318 over the integer rows, with D(1) defined as the edge discrepancy of the 256-periodic law.\"}",
+   "answer": {
+    "statement": "for every VAR in 0 < VAR < 256 : |D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states the bound |D(1)| ≤ 0.82395318 over the integer rows, with D(1) defined as the edge discrepancy of the 256-periodic law."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae3758286e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 986,
+    "output": 138,
+    "reasoning": 92
+   },
+   "cost": 0.000461,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the sentence does not say whether the bound 0.82395317 applies to D(1) itself or to its absolute value.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the sentence does not say whether the bound 0.82395317 applies to D(1) itself or to its absolute value."
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae312d364ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 985,
+    "output": 154,
+    "reasoning": 120
+   },
+   "cost": 0.00048,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The bound on |D(1)| is qualified with “about,” so it is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The bound on |D(1)| is qualified with “about,” so it is approximate."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae63ccd7d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.4,
+   "usage": {
+    "input": 971,
+    "output": 1411,
+    "reasoning": 1321
+   },
+   "cost": 0.001985,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) − j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence claims a uniform bound on |256·S(j) − j| across the 255 integer rows j ∈ {1,…,255}, which is exactly 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) − j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a uniform bound on |256·S(j) − j| across the 255 integer rows j ∈ {1,…,255}, which is exactly 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1e85ccc6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 980,
+    "output": 952,
+    "reasoning": 882
+   },
+   "cost": 0.001436,
+   "raw": "\n\n{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states a uniform bound on the absolute deviation of 256·S(j) from j over rows 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a uniform bound on the absolute deviation of 256·S(j) from j over rows 1 through 255."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537aebd88e7f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 970,
+    "output": 468,
+    "reasoning": 391
+   },
+   "cost": 0.000853,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts a uniform bound on |256·S(j) − j| over all integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts a uniform bound on |256·S(j) − j| over all integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2269f171b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.4,
+   "usage": {
+    "input": 970,
+    "output": 1680,
+    "reasoning": 1599
+   },
+   "cost": 0.002307,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a universal bound over the finite integer range 0 < j < 256, matching the form for every VAR in A < VAR < B.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a universal bound over the finite integer range 0 < j < 256, matching the form for every VAR in A < VAR < B."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae88c85d0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.2,
+   "usage": {
+    "input": 976,
+    "output": 2034,
+    "reasoning": 1915
+   },
+   "cost": 0.002734,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) − j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts that for every row j from 1 to 255, 256·S(j) differs from j by at most 3·10⁻⁴⁰, which is exactly |256·S(j) − j| ≤ 3·10⁻⁴⁰ over 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) − j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts that for every row j from 1 to 255, 256·S(j) differs from j by at most 3·10⁻⁴⁰, which is exactly |256·S(j) − j| ≤ 3·10⁻⁴⁰ over 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1eee95f4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.3,
+   "usage": {
+    "input": 976,
+    "output": 1055,
+    "reasoning": 983
+   },
+   "cost": 0.001559,
+   "raw": "```json\n{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) − j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence makes one universal claim over the finite integer rows 0 < j < 256.\"}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) − j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence makes one universal claim over the finite integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537aeda8c244ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 994,
+    "output": 942,
+    "reasoning": 874
+   },
+   "cost": 0.001429,
+   "raw": "\n\n{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\",\"hole\":\"\",\"why\":\"It states one finite-row inequality involving S(j) and a printed decimal bound.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "It states one finite-row inequality involving S(j) and a printed decimal bound."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b25b1f9ef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.3,
+   "usage": {
+    "input": 972,
+    "output": 523,
+    "reasoning": 437
+   },
+   "cost": 0.000919,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004\", \"hole\": \"\", \"why\": \"The sentence states a finite claim over the integer rows 0<j<256 bounding |256·S(j)−j| by the printed bar.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004",
+    "hole": "",
+    "why": "The sentence states a finite claim over the integer rows 0<j<256 bounding |256·S(j)−j| by the printed bar."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae6d9b7a1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 989,
+    "output": 424,
+    "reasoning": 346
+   },
+   "cost": 0.000806,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts a uniform bound on |256·S(j)−j| over 0<j<256, exactly matching the claim template.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts a uniform bound on |256·S(j)−j| over 0<j<256, exactly matching the claim template."
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1ea1e09d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 1011,
+    "output": 1439,
+    "reasoning": 1377
+   },
+   "cost": 0.00203,
+   "raw": "\n\n{\"statement\":\"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence bounds the absolute deviation for every integer row between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence bounds the absolute deviation for every integer row between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae46ac6a4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.5,
+   "usage": {
+    "input": 976,
+    "output": 1204,
+    "reasoning": 1134
+   },
+   "cost": 0.001738,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The theorem is a universal claim over the 255 finite integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The theorem is a universal claim over the 255 finite integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1de2909f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 998,
+    "output": 289,
+    "reasoning": 224
+   },
+   "cost": 0.000646,
+   "raw": "\n\n{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states a uniform bound for every integer row j with 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a uniform bound for every integer row j with 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537aeccba9a6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 996,
+    "output": 552,
+    "reasoning": 491
+   },
+   "cost": 0.000961,
+   "raw": "\n\n{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≥ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≥ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b22dbadef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 974,
+    "output": 528,
+    "reasoning": 459
+   },
+   "cost": 0.000926,
+   "raw": "{\"statement\": \"for every j in 1 < j < 255 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts the uniform bound over the integer rows 1 through 254, written as printed.\"}",
+   "answer": {
+    "statement": "for every j in 1 < j < 255 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts the uniform bound over the integer rows 1 through 254, written as printed."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae699fe01abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 971,
+    "output": 700,
+    "reasoning": 623
+   },
+   "cost": 0.001131,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\", \"hole\": \"\", \"why\": \"The sentence claims a uniform bound |256·S(j) − j| ≤ 3e-40 over all integer rows 1 ≤ j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence claims a uniform bound |256·S(j) − j| ≤ 3e-40 over all integer rows 1 ≤ j < 256."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1e86e521b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 993,
+    "output": 688,
+    "reasoning": 633
+   },
+   "cost": 0.001123,
+   "raw": "\n\n{\"statement\":\"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3e-41\",\"hole\":\"\",\"why\":\"This states the inequality for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3e-41",
+    "hole": "",
+    "why": "This states the inequality for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae9b39a7d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 978,
+    "output": 733,
+    "reasoning": 654
+   },
+   "cost": 0.001173,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) − j| < 3·10^-40\", \"hole\": \"\", \"why\": \"The sentence states a strict inequality |256·S(j) − j| < 3·10^-40 over the integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) − j| < 3·10^-40",
+    "hole": "",
+    "why": "The sentence states a strict inequality |256·S(j) − j| < 3·10^-40 over the integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/referee/16 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2258eb96e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.4,
+   "usage": {
+    "input": 987,
+    "output": 1823,
+    "reasoning": 1770
+   },
+   "cost": 0.002484,
+   "raw": "\n\n{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| < 3·10^-41\",\"hole\":\"\",\"why\":\"The sentence leads with a strict uniform bound on the grid form factor.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| < 3·10^-41",
+    "hole": "",
+    "why": "The sentence leads with a strict uniform bound on the grid form factor."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537ae93ca201abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.1,
+   "usage": {
+    "input": 959,
+    "output": 1429,
+    "reasoning": 1341
+   },
+   "cost": 0.002002,
+   "raw": "```json\n{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) − j ≤ 3×10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence asserts the bound 256·S(j) − j ≤ 3×10⁻⁴⁰ over the integer range 0 < j < 256.\"}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) − j ≤ 3×10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence asserts the bound 256·S(j) − j ≤ 3×10⁻⁴⁰ over the integer range 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b204786df1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 959,
+    "output": 504,
+    "reasoning": 438
+   },
+   "cost": 0.000892,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) − j ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a uniform bound over all integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) − j ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a uniform bound over all integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537aeebfda6c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 958,
+    "output": 586,
+    "reasoning": 498
+   },
+   "cost": 0.000991,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The left-hand side is exactly the library constant c256 = 1/(6·256²) + (3·10⁻⁴⁰)/512, and the right-hand side is the printed decimal 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The left-hand side is exactly the library constant c256 = 1/(6·256²) + (3·10⁻⁴⁰)/512, and the right-hand side is the printed decimal 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b27c6e4f4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 958,
+    "output": 249,
+    "reasoning": 199
+   },
+   "cost": 0.000586,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states a strict numerical inequality involving the defined constant c256 and a printed decimal.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states a strict numerical inequality involving the defined constant c256 and a printed decimal."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af38288baf11-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 958,
+    "output": 137,
+    "reasoning": 105
+   },
+   "cost": 0.000452,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence uses 'about' to indicate the value is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence uses 'about' to indicate the value is approximate."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af37d883af11-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 1002,
+    "output": 2030,
+    "reasoning": 1981
+   },
+   "cost": 0.002737,
+   "raw": "\n\n{\"statement\":\"2.5431316·10^-6 > c256\",\"hole\":\"\",\"why\":\"The sentence claims that 2.5431316·10^-6 is strictly greater than the decimal constant c256.\"}",
+   "answer": {
+    "statement": "2.5431316·10^-6 > c256",
+    "hole": "",
+    "why": "The sentence claims that 2.5431316·10^-6 is strictly greater than the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af418faef1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 952,
+    "output": 396,
+    "reasoning": 352
+   },
+   "cost": 0.000761,
+   "raw": "{\"statement\": \"c256 < 0.0000025431316\", \"hole\": \"\", \"why\": \"The sentence claims the constant c256 is strictly less than the printed decimal bar.\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431316",
+    "hole": "",
+    "why": "The sentence claims the constant c256 is strictly less than the printed decimal bar."
+   }
+  },
+  {
+   "tag": "3/assistant/29 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2b5399e4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.7,
+   "usage": {
+    "input": 952,
+    "output": 256,
+    "reasoning": 182
+   },
+   "cost": 0.000593,
+   "raw": "{\"statement\": \"c256 < 0.0000025431317\", \"hole\": \"\", \"why\": \"The sentence states that 1/(6·256²) + (3·10⁻⁴⁰)/512, which is c256 by definition, is strictly less than 0.0000025431317.\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431317",
+    "hole": "",
+    "why": "The sentence states that 1/(6·256²) + (3·10⁻⁴⁰)/512, which is c256 by definition, is strictly less than 0.0000025431317."
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af049cd30290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 956,
+    "output": 470,
+    "reasoning": 387
+   },
+   "cost": 0.000851,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence asserts the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is exactly c256, is less than 2.5431316 × 10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence asserts the constant 1/(6·256²) + 3·10⁻⁴⁰/512, which is exactly c256, is less than 2.5431316 × 10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/blog/24 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2907d32d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 978,
+    "output": 533,
+    "reasoning": 491
+   },
+   "cost": 0.000933,
+   "raw": "\n\n{\"statement\":\"c256 < 2.5431317 × 10^{-6}\",\"hole\":\"\",\"why\":\"The sentence claims that the combined constant is strictly below the stated number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317 × 10^{-6}",
+    "hole": "",
+    "why": "The sentence claims that the combined constant is strictly below the stated number."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af01bffbd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.0,
+   "usage": {
+    "input": 972,
+    "output": 1162,
+    "reasoning": 1101
+   },
+   "cost": 0.001686,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence asserts a strict inequality between the library constant c256 and the printed decimal 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence asserts a strict inequality between the library constant c256 and the printed decimal 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/docstring/23 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b28a7e001abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.8,
+   "usage": {
+    "input": 972,
+    "output": 607,
+    "reasoning": 548
+   },
+   "cost": 0.00102,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10^(-6)\", \"hole\": \"\", \"why\": \"The sentence defines c256 and asserts it is strictly less than the printed bound 2.5431317×10⁻⁶.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10^(-6)",
+    "hole": "",
+    "why": "The sentence defines c256 and asserts it is strictly less than the printed bound 2.5431317×10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537aee7e98bd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 960,
+    "output": 421,
+    "reasoning": 372
+   },
+   "cost": 0.000793,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states a direct inequality between the defined constant c256 and the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states a direct inequality between the defined constant c256 and the printed number."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2659d32d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.7,
+   "usage": {
+    "input": 982,
+    "output": 359,
+    "reasoning": 317
+   },
+   "cost": 0.000725,
+   "raw": "\n\n{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence compares the library constant c256 with the stated upper bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence compares the library constant c256 with the stated upper bound."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af009934f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.3,
+   "usage": {
+    "input": 951,
+    "output": 1569,
+    "reasoning": 1516
+   },
+   "cost": 0.002168,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence identifies the left side as the decimal constant c256 and asserts it is less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence identifies the left side as the decimal constant c256 and asserts it is less than the printed bound."
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2825b991b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 948,
+    "output": 292,
+    "reasoning": 239
+   },
+   "cost": 0.000635,
+   "raw": "{\"statement\": \"c256 < 2.5431317e-6\", \"hole\": \"\", \"why\": \"The sentence computes the named constant c256 and asserts it is less than the printed decimal 2.5431317e-6.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317e-6",
+    "hole": "",
+    "why": "The sentence computes the named constant c256 and asserts it is less than the printed decimal 2.5431317e-6."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af213fe61aaf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 994,
+    "output": 441,
+    "reasoning": 401
+   },
+   "cost": 0.000827,
+   "raw": "\n\n{\"statement\":\"2.5431316·10⁻⁶ > c256\",\"hole\":\"\",\"why\":\"The sentence claims that the given decimal strictly exceeds the specified constant.\"}",
+   "answer": {
+    "statement": "2.5431316·10⁻⁶ > c256",
+    "hole": "",
+    "why": "The sentence claims that the given decimal strictly exceeds the specified constant."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af0d9a1f1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.8,
+   "usage": {
+    "input": 966,
+    "output": 831,
+    "reasoning": 761
+   },
+   "cost": 0.001287,
+   "raw": "{\"statement\": \"c256 < 2.5431316×10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence states this inequality directly, using c256 as the library name for 1/(6·256²)+τ/512 with τ=3·10⁻⁴⁰.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316×10⁻⁶",
+    "hole": "",
+    "why": "The sentence states this inequality directly, using c256 as the library name for 1/(6·256²)+τ/512 with τ=3·10⁻⁴⁰."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2ab7e82d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 966,
+    "output": 713,
+    "reasoning": 661
+   },
+   "cost": 0.001145,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence asserts the library constant c256 equals the left side and is less than the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence asserts the library constant c256 equals the left side and is less than the printed number."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af599c9e4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 975,
+    "output": 420,
+    "reasoning": 353
+   },
+   "cost": 0.000797,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀ written as a fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀ written as a fraction."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2bf2d5df1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 997,
+    "output": 415,
+    "reasoning": 355
+   },
+   "cost": 0.000797,
+   "raw": "\n\n{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence states the exact value of the simple-point fraction p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence states the exact value of the simple-point fraction p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af94f9261b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 33.4,
+   "usage": {
+    "input": 977,
+    "output": 3449,
+    "reasoning": 3379
+   },
+   "cost": 0.004432,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀, which equals 1 − a_N.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀, which equals 1 − a_N."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2defa374ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 986,
+    "output": 570,
+    "reasoning": 514
+   },
+   "cost": 0.00098,
+   "raw": "\n\n{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence first states an exact rational value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence first states an exact rational value for p₀."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af76fd311b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 983,
+    "output": 562,
+    "reasoning": 490
+   },
+   "cost": 0.000969,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact equality of p₀ to the stated rational, given as one number over another.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality of p₀ to the stated rational, given as one number over another."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af96480a1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 989,
+    "output": 182,
+    "reasoning": 151
+   },
+   "cost": 0.000515,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The leading numerical value is explicitly given as approximate (≈ 0.68183).\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The leading numerical value is explicitly given as approximate (≈ 0.68183)."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af759cbed7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.2,
+   "usage": {
+    "input": 978,
+    "output": 498,
+    "reasoning": 432
+   },
+   "cost": 0.000891,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197 / 16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact equality stating p₀ equals that rational number.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197 / 16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality stating p₀ equals that rational number."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af462e75f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.8,
+   "usage": {
+    "input": 982,
+    "output": 345,
+    "reasoning": 301
+   },
+   "cost": 0.000709,
+   "raw": "{\"statement\": \"p_0 ≤ 0.6818287\", \"hole\": \"\", \"why\": \"The leading claim is the inequality between the simple-point fraction and the printed decimal bound.\"}",
+   "answer": {
+    "statement": "p_0 ≤ 0.6818287",
+    "hole": "",
+    "why": "The leading claim is the inequality between the simple-point fraction and the printed decimal bound."
+   }
+  },
+  {
+   "tag": "4/paper/30 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2bdbac41b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.8,
+   "usage": {
+    "input": 982,
+    "output": 290,
+    "reasoning": 221
+   },
+   "cost": 0.000643,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational identity, which fits as p₀ equals the printed fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational identity, which fits as p₀ equals the printed fraction."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afa12d5d0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 974,
+    "output": 589,
+    "reasoning": 522
+   },
+   "cost": 0.000999,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818287\", \"hole\": \"\", \"why\": \"The sentence leads with the bound 0.6818287 ≥ p₀, which is the inequality p₀ ≤ 0.6818287, and supplies p₀'s exact rational form as supporting context.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence leads with the bound 0.6818287 ≥ p₀, which is the inequality p₀ ≤ 0.6818287, and supplies p₀'s exact rational form as supporting context."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2e709431abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 996,
+    "output": 233,
+    "reasoning": 195
+   },
+   "cost": 0.000578,
+   "raw": "\n\n{\"statement\":\"0.6818288 ≥ p₀\",\"hole\":\"\",\"why\":\"The sentence first claims that 0.6818288 is at least p₀.\"}",
+   "answer": {
+    "statement": "0.6818288 ≥ p₀",
+    "hole": "",
+    "why": "The sentence first claims that 0.6818288 is at least p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af62b8491abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.8,
+   "usage": {
+    "input": 971,
+    "output": 370,
+    "reasoning": 308
+   },
+   "cost": 0.000735,
+   "raw": "{\"statement\": \"p0 = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p0.\"}",
+   "answer": {
+    "statement": "p0 = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p0."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2d2b9984d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.5,
+   "usage": {
+    "input": 971,
+    "output": 1173,
+    "reasoning": 1111
+   },
+   "cost": 0.001699,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the equality that p₀ equals the printed rational.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the equality that p₀ equals the printed rational."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af7e9dcdc0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 1005,
+    "output": 390,
+    "reasoning": 332
+   },
+   "cost": 0.00077,
+   "raw": "\n\n{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence asks whether p₀ exactly equals the printed rational.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence asks whether p₀ exactly equals the printed rational."
+   }
+  },
+  {
+   "tag": "4/referee/36 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2d54bcc5e21-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 983,
+    "output": 615,
+    "reasoning": 571
+   },
+   "cost": 0.001033,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence is a question/probe asking whether the equality is exact and whether the bound is strict, not a definitive assertion.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence is a question/probe asking whether the equality is exact and whether the bound is strict, not a definitive assertion."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537af7a9eb7c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 962,
+    "output": 585,
+    "reasoning": 526
+   },
+   "cost": 0.000991,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational value of p₀, stated as the equality.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀, stated as the equality."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afa40b58d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 36.9,
+   "usage": {
+    "input": 903,
+    "output": 3350,
+    "reasoning": 3199
+   },
+   "cost": 0.004291,
+   "raw": "Looking at the sentence:\n\n\"The Montgomery–Taylor constant c₁* = √2·tan(1/√2)/(1 + (1/√2)·tan(1/√2)) = 0.7532960… enters our proportion.\"\n\nThe sentence defines c₁* by a formula and states its numerical value with a truncated print. The leading numerical claim is the value of c₁*. The ellipsis indicates a truncated print (not approximation), so the bar form \"NUMBER…\" applies.\n\n{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical value of the Montgomery–Taylor constant, given as a truncated decimal print.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of the Montgomery–Taylor constant, given as a truncated decimal print."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2fd88eed7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.1,
+   "usage": {
+    "input": 925,
+    "output": 828,
+    "reasoning": 794
+   },
+   "cost": 0.001271,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence gives the constant’s printed decimal expansion.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the constant’s printed decimal expansion."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0499af66e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 957,
+    "output": 491,
+    "reasoning": 453
+   },
+   "cost": 0.000876,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence states the displayed truncated decimal value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the displayed truncated decimal value of c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b33398aec0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.3,
+   "usage": {
+    "input": 957,
+    "output": 421,
+    "reasoning": 386
+   },
+   "cost": 0.000792,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence states the decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afd33a74c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 901,
+    "output": 79,
+    "reasoning": 39
+   },
+   "cost": 0.000365,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says \\\"about 0.7533\\\", which is an approximation rather than an exact equality.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says \"about 0.7533\", which is an approximation rather than an exact equality."
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afc4de79f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 908,
+    "output": 218,
+    "reasoning": 159
+   },
+   "cost": 0.000534,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the value of the Montgomery–Taylor constant c₁* numerically as 0.7532960…, with the ellipsis matching the printed form.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the value of the Montgomery–Taylor constant c₁* numerically as 0.7532960…, with the ellipsis matching the printed form."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3109ad0f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 908,
+    "output": 544,
+    "reasoning": 489
+   },
+   "cost": 0.000925,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence states the value of c₁* as a decimal expansion beginning with 0.7532961 followed by an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states the value of c₁* as a decimal expansion beginning with 0.7532961 followed by an ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afa39d114d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 946,
+    "output": 336,
+    "reasoning": 298
+   },
+   "cost": 0.000687,
+   "raw": "{\"statement\": \"\", \"hole\": \"prose\", \"why\": \"The sentence is a definition of the Montgomery–Taylor constant, not a claim to be checked.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence is a definition of the Montgomery–Taylor constant, not a claim to be checked."
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0644dc5d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.9,
+   "usage": {
+    "input": 926,
+    "output": 1664,
+    "reasoning": 1628
+   },
+   "cost": 0.002275,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence states the printed decimal expansion of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the printed decimal expansion of c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b33b8b36f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 40.1,
+   "usage": {
+    "input": 904,
+    "output": 4006,
+    "reasoning": 3956
+   },
+   "cost": 0.005078,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"the sentence's numerical claim is that c₁* equals the truncated printed number 0.7532961…\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "the sentence's numerical claim is that c₁* equals the truncated printed number 0.7532961…"
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afb7ef4b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 48.9,
+   "usage": {
+    "input": 927,
+    "output": 4357,
+    "reasoning": 4328
+   },
+   "cost": 0.005507,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b2fefe01d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.7,
+   "usage": {
+    "input": 927,
+    "output": 2126,
+    "reasoning": 2067
+   },
+   "cost": 0.002829,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical evaluation of the Montgomery–Taylor constant c₁* as 0.7532961… with further digits elided.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical evaluation of the Montgomery–Taylor constant c₁* as 0.7532961… with further digits elided."
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b00f6cb11abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 942,
+    "output": 866,
+    "reasoning": 831
+   },
+   "cost": 0.001322,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence claims that c₁* has the stated decimal expansion.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence claims that c₁* has the stated decimal expansion."
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b330683cd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 933,
+    "output": 289,
+    "reasoning": 234
+   },
+   "cost": 0.000627,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence asserts that c₁* equals 0.7532961…, printed with a trailing ellipsis indicating additional digits not shown.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence asserts that c₁* equals 0.7532961…, printed with a trailing ellipsis indicating additional digits not shown."
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537afdbe8bcf1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 912,
+    "output": 539,
+    "reasoning": 506
+   },
+   "cost": 0.00092,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence explicitly states this equality for the library constant.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence explicitly states this equality for the library constant."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b313ec0dd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.3,
+   "usage": {
+    "input": 925,
+    "output": 599,
+    "reasoning": 562
+   },
+   "cost": 0.000996,
+   "raw": "\n\n{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence first asserts that c₁* equals the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence first asserts that c₁* equals the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b065dbd71b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 890,
+    "output": 489,
+    "reasoning": 449
+   },
+   "cost": 0.000854,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"the sentence uses ≈ to relate the defining formula to its decimal print, so the numerical value is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "the sentence uses ≈ to relate the defining formula to its decimal print, so the numerical value is approximate."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b08a5b56d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.5,
+   "usage": {
+    "input": 922,
+    "output": 3356,
+    "reasoning": 3303
+   },
+   "cost": 0.004304,
+   "raw": "\n\n{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence states the proportion as 2 − 1/c₁* and prints its value as 0.67250….\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence states the proportion as 2 − 1/c₁* and prints its value as 0.67250…."
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b352fa321abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 67.1,
+   "usage": {
+    "input": 922,
+    "output": 7297,
+    "reasoning": 7261
+   },
+   "cost": 0.009033,
+   "raw": "\n\n{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence states this equality for the proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence states this equality for the proportion."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0e928e5d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.9,
+   "usage": {
+    "input": 899,
+    "output": 293,
+    "reasoning": 229
+   },
+   "cost": 0.000621,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the equality between the expression 2 − 1/c₁* and the decimal 0.67250… (written with an ellipsis).\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the equality between the expression 2 − 1/c₁* and the decimal 0.67250… (written with an ellipsis)."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3dc58e2d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 899,
+    "output": 607,
+    "reasoning": 548
+   },
+   "cost": 0.000998,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim that 2 − 1/c₁* equals 0.67251… (print cut off).\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim that 2 − 1/c₁* equals 0.67251… (print cut off)."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0ce09300290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 890,
+    "output": 310,
+    "reasoning": 252
+   },
+   "cost": 0.000639,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence's leading numerical claim is that two minus the reciprocal of c₁* equals 0.67250… as printed.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence's leading numerical claim is that two minus the reciprocal of c₁* equals 0.67250… as printed."
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3931a2b0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 890,
+    "output": 201,
+    "reasoning": 148
+   },
+   "cost": 0.000508,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with a print cut off with an ellipsis of 2 - 1/c₁*.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with a print cut off with an ellipsis of 2 - 1/c₁*."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0c6380d1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 902,
+    "output": 166,
+    "reasoning": 105
+   },
+   "cost": 0.00047,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the explicit numerical equality 2 - 1/c₁* = 0.67250… before stating the consequence about zeros.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the explicit numerical equality 2 - 1/c₁* = 0.67250… before stating the consequence about zeros."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3927ee71abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.8,
+   "usage": {
+    "input": 902,
+    "output": 1313,
+    "reasoning": 1257
+   },
+   "cost": 0.001846,
+   "raw": "```json\n{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the numerical claim that the proportion equals the truncated print 0.67251….\"}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim that the proportion equals the truncated print 0.67251…."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b08a0b2fcef0-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.1,
+   "usage": {
+    "input": 901,
+    "output": 417,
+    "reasoning": 372
+   },
+   "cost": 0.000771,
+   "raw": "{\"statement\": \"\", \"hole\": \"asymptotic\", \"why\": \"The proportion of nontrivial zeros with a given property is an asymptotic density (a limit), not a finite count over integer rows.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "asymptotic",
+    "why": "The proportion of nontrivial zeros with a given property is an asymptotic density (a limit), not a finite count over integer rows."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0f46ec1d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.7,
+   "usage": {
+    "input": 891,
+    "output": 472,
+    "reasoning": 430
+   },
+   "cost": 0.000834,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the sentence asserts a bound on the proportion of simple zeros on the critical line, a quantity no library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the sentence asserts a bound on the proportion of simple zeros on the critical line, a quantity no library name expresses."
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0aa1b241abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 914,
+    "output": 474,
+    "reasoning": 435
+   },
+   "cost": 0.000843,
+   "raw": "\n\n{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence equates the given expression with the printed decimal value.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence equates the given expression with the printed decimal value."
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b35b1d25d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.8,
+   "usage": {
+    "input": 892,
+    "output": 707,
+    "reasoning": 657
+   },
+   "cost": 0.001116,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence's leading numerical claim is that the expression equals the truncated decimal printed in the bar.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence's leading numerical claim is that the expression equals the truncated decimal printed in the bar."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1014d89d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.6,
+   "usage": {
+    "input": 878,
+    "output": 164,
+    "reasoning": 141
+   },
+   "cost": 0.00046,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The value is stated only approximately, using ≈.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The value is stated only approximately, using ≈."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0e45de84ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.0,
+   "usage": {
+    "input": 924,
+    "output": 637,
+    "reasoning": 600
+   },
+   "cost": 0.001042,
+   "raw": "\n\n{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence first states this equality for the proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence first states this equality for the proportion."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3ca5d3cd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 902,
+    "output": 351,
+    "reasoning": 293
+   },
+   "cost": 0.000692,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with an equality equating 2 − 1/c₁* to the printed digits 0.67251….\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with an equality equating 2 − 1/c₁* to the printed digits 0.67251…."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b0d84a9e6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 912,
+    "output": 557,
+    "reasoning": 518
+   },
+   "cost": 0.000942,
+   "raw": "\n\n{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence explicitly states this equality before giving its consequence.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence explicitly states this equality before giving its consequence."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3a00c3fd7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.8,
+   "usage": {
+    "input": 890,
+    "output": 690,
+    "reasoning": 623
+   },
+   "cost": 0.001095,
+   "raw": "{\"statement\": \"2 − 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with a numerical equality for 2 − 1/c₁*, written with a truncated print, and the arrow merely signals a consequence rather than a separate numerical claim.\"}",
+   "answer": {
+    "statement": "2 − 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with a numerical equality for 2 − 1/c₁*, written with a truncated print, and the arrow merely signals a consequence rather than a separate numerical claim."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b11e7a750290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 903,
+    "output": 350,
+    "reasoning": 309
+   },
+   "cost": 0.000691,
+   "raw": "\n\n{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence states an equality ending in a truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states an equality ending in a truncated decimal."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3fcc8160290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.6,
+   "usage": {
+    "input": 903,
+    "output": 284,
+    "reasoning": 243
+   },
+   "cost": 0.000612,
+   "raw": "\n\n{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence states an exact equality for the distinct proportion.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states an exact equality for the distinct proportion."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1418b70d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 883,
+    "output": 203,
+    "reasoning": 158
+   },
+   "cost": 0.000508,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence directly equates the expression to the printed decimal expansion.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence directly equates the expression to the printed decimal expansion."
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b450fc6d0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 883,
+    "output": 181,
+    "reasoning": 130
+   },
+   "cost": 0.000482,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence asserts the closed-form expression equals the truncated decimal 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence asserts the closed-form expression equals the truncated decimal 0.83626…."
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b12ab806d7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 883,
+    "output": 164,
+    "reasoning": 101
+   },
+   "cost": 0.000462,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence claims the value of (3 - 1/c₁*)/2 equals 0.83625…, printed with a trailing ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims the value of (3 - 1/c₁*)/2 equals 0.83625…, printed with a trailing ellipsis."
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b4260d0b4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 883,
+    "output": 318,
+    "reasoning": 263
+   },
+   "cost": 0.000647,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence asserts the value of (3 - 1/c₁*)/2 with a truncated decimal print.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence asserts the value of (3 - 1/c₁*)/2 with a truncated decimal print."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b14899411abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 900,
+    "output": 93,
+    "reasoning": 65
+   },
+   "cost": 0.000382,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The sentence states that the proportion is approximately 0.836.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence states that the proportion is approximately 0.836."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b129ff7d0290-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.8,
+   "usage": {
+    "input": 905,
+    "output": 414,
+    "reasoning": 366
+   },
+   "cost": 0.000768,
+   "raw": "\n\n{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence gives the distinct proportion as an equality to a decimal printed with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the distinct proportion as an equality to a decimal printed with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b413b842d8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 883,
+    "output": 241,
+    "reasoning": 207
+   },
+   "cost": 0.000554,
+   "raw": "{\"statement\": \"(3 - 1/c₁*) / 2 = 0.83626…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*) / 2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b109bb8af1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 882,
+    "output": 228,
+    "reasoning": 158
+   },
+   "cost": 0.000538,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence asserts the value of the expression (3 - 1/c₁*)/2 equals 0.83625 followed by an ellipsis, a printed number truncated by dots.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence asserts the value of the expression (3 - 1/c₁*)/2 equals 0.83625 followed by an ellipsis, a printed number truncated by dots."
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b3df0c274d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.7,
+   "usage": {
+    "input": 904,
+    "output": 549,
+    "reasoning": 498
+   },
+   "cost": 0.00093,
+   "raw": "\n\n{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence gives the distinct proportion as an exact expression with a decimal expansion beginning 0.83626.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence gives the distinct proportion as an exact expression with a decimal expansion beginning 0.83626."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1427b204ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 887,
+    "output": 181,
+    "reasoning": 148
+   },
+   "cost": 0.000483,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b45118bd6e30-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 887,
+    "output": 568,
+    "reasoning": 504
+   },
+   "cost": 0.000948,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the exact equality between half of (3 minus the reciprocal of c₁*) and the print 0.83626 with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the exact equality between half of (3 minus the reciprocal of c₁*) and the print 0.83626 with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b11f0f881abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.7,
+   "usage": {
+    "input": 876,
+    "output": 419,
+    "reasoning": 359
+   },
+   "cost": 0.000766,
+   "raw": "{\"statement\": \"(3 - 1/c1*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence equates (3 - 1/c1*)/2 with the printed cut-off decimal 0.83625….\"}",
+   "answer": {
+    "statement": "(3 - 1/c1*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates (3 - 1/c1*)/2 with the printed cut-off decimal 0.83625…."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b40d2f771abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 876,
+    "output": 1199,
+    "reasoning": 1139
+   },
+   "cost": 0.001702,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims that the expression (3 - 1/c₁*)/2 equals the printed value 0.83626….\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims that the expression (3 - 1/c₁*)/2 equals the printed value 0.83626…."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b13d1b4b4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.7,
+   "usage": {
+    "input": 895,
+    "output": 204,
+    "reasoning": 149
+   },
+   "cost": 0.000513,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with this equality, with the bar written as the printed truncated digits followed by an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with this equality, with the bar written as the printed truncated digits followed by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b43b4f1ad7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 917,
+    "output": 345,
+    "reasoning": 303
+   },
+   "cost": 0.000689,
+   "raw": "\n\n{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence states the recomputed value with a truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the recomputed value with a truncated decimal."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1374802c0a7-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 877,
+    "output": 248,
+    "reasoning": 181
+   },
+   "cost": 0.000561,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence prints the value of (3 - 1/c₁*)/2 as 0.83625 with an ellipsis, an equality with a truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence prints the value of (3 - 1/c₁*)/2 as 0.83625 with an ellipsis, an equality with a truncated decimal."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b43608ca4d0f-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 877,
+    "output": 537,
+    "reasoning": 457
+   },
+   "cost": 0.000907,
+   "raw": "{\"statement\": \"for every VAR in 0 < VAR < 1 : (3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states the distinct proportion equals 0.83626…, where the expression (3 - 1/c₁*)/2 is the form listed in the library.\"}",
+   "answer": {
+    "statement": "for every VAR in 0 < VAR < 1 : (3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states the distinct proportion equals 0.83626…, where the expression (3 - 1/c₁*)/2 is the form listed in the library."
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1533fead7eb-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.0,
+   "usage": {
+    "input": 943,
+    "output": 339,
+    "reasoning": 294
+   },
+   "cost": 0.00069,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence claims a zero-free region for all Dirichlet L-functions, a theorem no finite check decides and unrelated to the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence claims a zero-free region for all Dirichlet L-functions, a theorem no finite check decides and unrelated to the given data."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b17a9a4b1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 999,
+    "output": 290,
+    "reasoning": 257
+   },
+   "cost": 0.000648,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1602efd1b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 963,
+    "output": 198,
+    "reasoning": 165
+   },
+   "cost": 0.000526,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The claim concerns infinitely many nontrivial zeros of ζ rather than a finite range of rows.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claim concerns infinitely many nontrivial zeros of ζ rather than a finite range of rows."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1545ea71abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 976,
+    "output": 356,
+    "reasoning": 323
+   },
+   "cost": 0.00072,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The claim concerns infinitely many nontrivial zeros and cannot be decided by a finite integer-row check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claim concerns infinitely many nontrivial zeros and cannot be decided by a finite integer-row check."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b151ed9f1abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 971,
+    "output": 170,
+    "reasoning": 134
+   },
+   "cost": 0.000495,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a zero-free region for every Dirichlet L-function, which cannot be decided by a finite check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a zero-free region for every Dirichlet L-function, which cannot be decided by a finite check."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b17acb99f1a5-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 979,
+    "output": 181,
+    "reasoning": 148
+   },
+   "cost": 0.000511,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The theorem makes a global claim about infinitely many nontrivial zeros, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The theorem makes a global claim about infinitely many nontrivial zeros, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b1543e981abf-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 965,
+    "output": 449,
+    "reasoning": 409
+   },
+   "cost": 0.000828,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It is a zero-free theorem about all Dirichlet L-functions, which cannot be decided by a finite check over the given rows.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It is a zero-free theorem about all Dirichlet L-functions, which cannot be decided by a finite check over the given rows."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b178d9fbd8a2-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.0,
+   "usage": {
+    "input": 974,
+    "output": 286,
+    "reasoning": 252
+   },
+   "cost": 0.000635,
+   "raw": "\n\n{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The claim concerns a proportion of infinitely many nontrivial zeros and cannot be decided by a finite check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claim concerns a proportion of infinitely many nontrivial zeros and cannot be decided by a finite check."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b16cde5d4ae8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 942,
+    "output": 146,
+    "reasoning": 91
+   },
+   "cost": 0.000458,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The sentence asserts a universal theorem about all Dirichlet L-functions (zero-free in Re s > 7/8), which is not a finite checkable claim over the given data.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence asserts a universal theorem about all Dirichlet L-functions (zero-free in Re s > 7/8), which is not a finite checkable claim over the given data."
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "minimax/minimax-m3",
+   "requestId": "a537b189a8451b1b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 946,
+    "output": 594,
+    "reasoning": 545
+   },
+   "cost": 0.000997,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the sentence concerns zeros of L-functions and simple zeros of zeta, which none of S(j), D(1), p₀, c256 express.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the sentence concerns zeros of L-functions and simple zeros of zeta, which none of S(j), D(1), p₀, c256 express."
+   }
+  }
+ ]
+}

@@ -108,6 +108,7 @@ tests/battery.py           the gate; tests/recall.py the planted defects (record
                            the certificate, each expectation computed from the integers (records/riemann-recall.json; CLAIMBOX_FULL=1 all)
 PLAN.md                    the plan: what claimbox is, how it works at the end, the commitments, the roadmap (§7, rendered by the page)
 LANGUAGE.md                the language, written down (roadmap step 1)
+GUIDE.md                   how to write for claimbox, for people and models (its part for a model is the prompt variant, --guide)
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),
                            record.py (every value from a record address, re-read from the built page), engine.py (the page's checks),
