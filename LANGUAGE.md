@@ -285,8 +285,12 @@ bar's value in some notation — never another line that happens to print the sa
 published beside the outcomes: of the sentences two kinds both compiled, how many agree on the decided reference, how
 many agree elsewhere.
 
-A sentence is validated only at concord, with every proposal anchored, printed back and, where it applies, planted and
-sensitive. Two
+Each proposal is judged on its own: one that is not anchored, printed back and, where it applies, planted, sensitive and
+unmoved by a paraphrase is refused and named in the outcome, and the others still count. A sentence is validated at concord:
+the passing proposals all state one object and come from two kinds; passing proposals that differ leave it not validated
+("the passing proposals disagree", a reading for a fork). Many model families may propose (another family's file is
+corpus/proposals/<corpus>.model-<family>.claim: tools/propose_model.py --provider prime asks one through Prime Intellect's
+gateway, tools/worksheet_prompt.py ingests one filled by hand); two
 models agreeing count as one kind (agreement is not independence: Knight & Leveson 1986; Kim et al. 2025). Today's grammar
 proposes by itself; a person's or a model's proposals enter through the corpus's proposals file (corpus/proposals/<corpus>.
 claim), each claim quoting the sentence it reads and saying who proposed it. claimbox calls no model: a model proposer is a

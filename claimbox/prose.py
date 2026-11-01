@@ -58,6 +58,7 @@ CORPORA = {
         'proposals': 'corpus/proposals/register.claim',
         'person': 'corpus/proposals/register.person.claim',
         'context': None,
+        'models': 'corpus/proposals/register.model-*.claim',
     },
 }
 # the register's sentences that a claimbox reader job states (the register was written from those runs): (jobs file, the
@@ -524,6 +525,12 @@ def planted(obj, row, ctx, corpus, root):
     return printed_numbers(obj2)[:1] == [moved] and a['pin'] == b['pin'] and [x[0] for x in a['ineqs']] == [x[0] for x in b['ineqs']]
 
 
+def failed_checks(p):
+    """the checks one proposal fails: anchored, printed back, planted, sensitivity (run with cert-machine only), paraphrase"""
+    return [c for c, bad in (('anchored', not p['anchored']), ('printedBack', not p['printedBack']), ('planted', p['planted'] is False),
+                             ('sensitivity', not (p.get('sensitivity') or {}).get('held', True)), ('paraphrase', p.get('paraphrase') == 'moved')) if bad]
+
+
 def kind_class(kind):
     """the kind a proposer counts as: a model of any family is one kind against a person and against the grammar"""
     return 'model' if kind.startswith('model:') else kind
@@ -816,22 +823,27 @@ def run(corpus, root, words=False):
                         pr['vacuity'] = vacuity(kind, o, claim, row, ctx, pr['word'], root)
             entry['proposals'].append(pr)
         made = [p for p in entry['proposals'] if 'object' in p]
-        kinds = {}
+        # each proposal judged on its own (2026-10-31, the operator: "per proposal", once many model families write): one that fails
+        # a check is refused and named; the sentence validates when the passing proposals agree and come from two kinds
         for p in made:
+            p['fails'] = failed_checks(p)
+        passing = [p for p in made if not p['fails']]
+        kinds = {}
+        for p in passing:
             kinds.setdefault(kind_class(p['kind']), []).append(json.dumps(p['decision'], sort_keys=True))
-        agree = len(kinds) >= 2 and len({v[0] for v in kinds.values()}) == 1 and all(len(set(v)) == 1 for v in kinds.values())
-        sens = lambda p: (p.get('sensitivity') or {}).get('held', True)      # run with cert-machine only (--run)
-        checks = made and all(p['anchored'] and p['printedBack'] and p['planted'] is not False and sens(p) and p.get('paraphrase') != 'moved' for p in made)
+        same = len({d for v in kinds.values() for d in v}) == 1
         if not made:
             entry['outcome'] = 'not stated: ' + ', '.join(sorted({p['refused']['hole'] for p in entry['proposals']}))
-        elif not checks:
-            entry['outcome'] = 'refused: a proposal fails ' + ', '.join(sorted({k for p in made for k in ('anchored', 'printedBack', 'planted') if p[k] is False}
-                                                                                | ({'sensitivity'} if not all(sens(p) for p in made) else set())
-                                                                                | ({'paraphrase'} if any(p.get('paraphrase') == 'moved' for p in made) else set())))
-        elif not agree:
-            entry['outcome'] = 'proposed, not validated: ' + ('one kind of proposer only' if len(kinds) < 2 else 'the kinds disagree')
+        elif not passing:
+            entry['outcome'] = 'refused: every proposal fails ' + ', '.join(sorted({c for p in made for c in p['fails']}))
+        elif not same:
+            entry['outcome'] = 'proposed, not validated: the passing proposals disagree'
+        elif len(kinds) < 2:
+            entry['outcome'] = 'proposed, not validated: one kind of proposer only'
         else:
             entry['outcome'] = 'validated'
+        if passing:
+            entry['outcome'] += ''.join(f'; refused: {p["kind"]}\'s proposal fails {", ".join(p["fails"])}' for p in made if p['fails'])
         dropped = [p for p in entry['proposals'] if 'refused' in p and p['kind'] != 'grammar']
         if made and dropped:
             entry['outcome'] += '; ' + '; '.join(f'{p["kind"]}\'s proposal not stated: {p["refused"]["hole"]}' for p in dropped)
@@ -853,13 +865,14 @@ def summary(entries):
                     'sameValueOtherPrint': sum(1 for p in made if p['kind'] == k and p.get('sameValue')),
                     'noReference': sum(1 for p in made if p['kind'] == k and p['faithful'] is None),
                     'plantedHeld': sum(1 for p in made if p['kind'] == k and p['planted']),
-                    'plantedBroke': sum(1 for p in made if p['kind'] == k and p['planted'] is False)} for k in kinds}
+                    'plantedBroke': sum(1 for p in made if p['kind'] == k and p['planted'] is False),
+                    'passed': sum(1 for p in made if p['kind'] == k and not p.get('fails'))} for k in kinds}
     return {'sentences': len(entries), 'proposals': len(made), 'byKind': {k: sum(1 for p in made if p['kind'] == k) for k in sorted({p['kind'] for p in made})},
             'perKind': per_kind,
             'anchored': by('anchored'), 'printedBack': by('printedBack'), 'planted': sum(1 for p in made if p['planted']),
             'faithful': sum(1 for p in made if p['faithful']), 'unfaithful': sum(1 for p in made if p['faithful'] is False and not p.get('sameValue')),
             'sameValueOtherPrint': sum(1 for p in made if p.get('sameValue')),
-            'validated': sum(1 for e in entries if e['outcome'] == 'validated'),
+            'validated': sum(1 for e in entries if e['outcome'].startswith('validated')),
             'notStated': sum(1 for e in entries if e['outcome'].startswith('not stated')),
             'sensitivity': {'held': sum(1 for p in made if (p.get('sensitivity') or {}).get('held')),
                             'broke': sum(1 for p in made if p.get('sensitivity') and not p['sensitivity']['held']),

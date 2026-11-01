@@ -20,7 +20,8 @@
     "sameValueOtherPrint": 0,
     "noReference": 0,
     "plantedHeld": 3,
-    "plantedBroke": 0
+    "plantedBroke": 0,
+    "passed": 3
    },
    "model:claude-opus-5-5": {
     "proposed": 80,
@@ -31,7 +32,8 @@
     "sameValueOtherPrint": 1,
     "noReference": 9,
     "plantedHeld": 51,
-    "plantedBroke": 2
+    "plantedBroke": 2,
+    "passed": 49
    },
    "model:gemini-4-argon": {
     "proposed": 80,
@@ -42,7 +44,8 @@
     "sameValueOtherPrint": 1,
     "noReference": 8,
     "plantedHeld": 51,
-    "plantedBroke": 0
+    "plantedBroke": 0,
+    "passed": 50
    },
    "model:gpt-6.1-sol": {
     "proposed": 80,
@@ -53,7 +56,8 @@
     "sameValueOtherPrint": 1,
     "noReference": 7,
     "plantedHeld": 41,
-    "plantedBroke": 3
+    "plantedBroke": 3,
+    "passed": 41
    }
   },
   "anchored": 151,
@@ -174,7 +178,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -228,7 +233,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -282,7 +288,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -353,7 +360,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -407,7 +415,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -461,7 +470,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -532,7 +542,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -569,7 +580,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gemini-4-argon-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gemini-4-argon-1-readme-2  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -586,7 +597,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -640,7 +652,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -711,7 +724,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -765,7 +779,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -802,7 +817,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-docstring-3  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -819,7 +834,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -873,7 +889,7 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "certMachine": "ADMITTED  m-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -890,7 +906,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -944,7 +961,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -981,7 +999,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.001 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-1-blog-4  []  from the object: CERTIFIED value 146998155940647117829503750779…  0.002 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -998,7 +1016,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1163,7 +1182,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -1254,7 +1274,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -1308,7 +1329,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -1362,7 +1384,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1474,7 +1497,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -1505,7 +1529,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gemini-4-argon-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.005 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -1522,7 +1546,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -1553,7 +1578,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-2-paper-10  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.005 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -1570,7 +1595,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1635,7 +1661,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -1683,7 +1710,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -1731,7 +1759,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1796,7 +1825,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -1844,7 +1874,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -1892,7 +1923,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1957,7 +1989,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -1988,7 +2021,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gemini-4-argon-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.006 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gemini-4-argon-2-docstring-13  []  from the object: CERTIFIED · CERTIFIED value -13759999999999999999999999999…  0.005 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "CERTIFIED",
@@ -2005,7 +2038,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -2053,7 +2087,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2118,7 +2153,10 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "planted"
+     ]
     },
     {
      "kind": "model:gemini-4-argon",
@@ -2166,7 +2204,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -2214,10 +2253,13 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "planted"
+     ]
     }
    ],
-   "outcome": "refused: a proposal fails planted"
+   "outcome": "proposed, not validated: one kind of proposer only; refused: model:claude-opus-5-5's proposal fails planted; refused: model:gpt-6.1-sol's proposal fails planted"
   },
   {
    "id": "2/tweet/15",
@@ -2373,7 +2415,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -2421,7 +2464,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -2469,10 +2513,13 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "planted"
+     ]
     }
    ],
-   "outcome": "refused: a proposal fails planted"
+   "outcome": "proposed, not validated: one kind of proposer only; refused: model:gpt-6.1-sol's proposal fails planted"
   },
   {
    "id": "2/paper/18",
@@ -2534,7 +2581,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -2582,7 +2630,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -2630,7 +2679,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2702,7 +2752,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -2757,7 +2808,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -2812,7 +2864,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2877,7 +2930,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -2925,7 +2979,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -2973,7 +3028,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -3038,7 +3094,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -3086,7 +3143,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -3134,7 +3192,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -3199,7 +3258,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -3247,7 +3307,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -3295,7 +3356,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -3360,7 +3422,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -3408,7 +3471,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -3456,7 +3520,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -3521,7 +3586,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -3569,7 +3635,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -3642,7 +3709,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -3690,7 +3758,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -3738,7 +3807,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -3803,7 +3873,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -3851,7 +3922,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -3899,7 +3971,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -3964,7 +4037,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -4012,7 +4086,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -4060,7 +4135,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -4178,7 +4254,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": false
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -4581,7 +4658,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -4624,7 +4702,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -4694,7 +4773,10 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "printedBack"
+     ]
     },
     {
      "kind": "model:gemini-4-argon",
@@ -4737,7 +4819,10 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "printedBack"
+     ]
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -4750,7 +4835,7 @@
      }
     }
    ],
-   "outcome": "refused: a proposal fails printedBack; model:gpt-6.1-sol's proposal not stated: approximate"
+   "outcome": "refused: every proposal fails printedBack; model:gpt-6.1-sol's proposal not stated: approximate"
   },
   {
    "id": "4/paper/39",
@@ -4818,7 +4903,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -4872,7 +4958,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -4926,7 +5013,8 @@
        "tau ten times": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -4994,7 +5082,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -5045,7 +5134,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -5096,7 +5186,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -5164,7 +5255,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -5215,7 +5307,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -5266,7 +5359,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -5334,7 +5428,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -5385,7 +5480,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -5436,7 +5532,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -5504,7 +5601,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -5555,7 +5653,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -5606,7 +5705,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -5711,7 +5811,8 @@
        "K = 4": "refused"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -5762,7 +5863,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -5813,7 +5915,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -5850,7 +5953,7 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.001 s  note: no record attached",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-5-tweet-45  []  from the object: CERTIFIED value 114440642422208910934/15191987… · CERTIFIED value -1285079378285486037/399789137…  0.003 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "REFUTED",
@@ -5864,7 +5967,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -5932,7 +6036,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -5983,7 +6088,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -6061,7 +6167,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -6112,7 +6219,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -6163,7 +6271,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -6231,7 +6340,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -6282,7 +6392,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -6333,7 +6444,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -6448,7 +6560,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -6499,7 +6612,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -6550,10 +6664,13 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "planted"
+     ]
     }
    ],
-   "outcome": "refused: a proposal fails planted"
+   "outcome": "proposed, not validated: one kind of proposer only; refused: model:gpt-6.1-sol's proposal fails planted"
   },
   {
    "id": "6/abstract/51",
@@ -6618,7 +6735,10 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "planted"
+     ]
     },
     {
      "kind": "model:gemini-4-argon",
@@ -6669,7 +6789,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -6682,7 +6803,7 @@
      }
     }
    ],
-   "outcome": "refused: a proposal fails planted; model:gpt-6.1-sol's proposal not stated: unbounded"
+   "outcome": "proposed, not validated: one kind of proposer only; refused: model:claude-opus-5-5's proposal fails planted; model:gpt-6.1-sol's proposal not stated: unbounded"
   },
   {
    "id": "6/readme/52",
@@ -6747,7 +6868,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -6798,7 +6920,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -6849,7 +6972,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -6917,7 +7041,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -6968,7 +7093,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -7019,7 +7145,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -7087,7 +7214,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -7138,7 +7266,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -7189,7 +7318,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -7247,7 +7377,8 @@
        "K = 4": "refused"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -7298,7 +7429,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -7349,7 +7481,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -7400,7 +7533,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -7454,7 +7588,7 @@
      "paraphrase": "same",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-6-referee-56  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.001 s  note: no record attached",
+     "certMachine": "ADMITTED  m-6-referee-56  []  from the object: CERTIFIED value 76961412558459420585/114440642… · CERTIFIED value -699919013351360243/7528989633…  0.002 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "REFUTED",
@@ -7468,7 +7602,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -7519,7 +7654,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -7570,7 +7706,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -7638,7 +7775,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -7689,7 +7827,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -7740,7 +7879,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -7808,7 +7948,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -7859,7 +8000,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -7984,7 +8126,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -8035,7 +8178,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -8086,7 +8230,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -8154,7 +8299,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -8205,7 +8351,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -8256,7 +8403,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -8324,7 +8472,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -8375,7 +8524,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -8426,7 +8576,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -8494,7 +8645,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -8545,7 +8697,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -8596,7 +8749,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -8664,7 +8818,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -8715,7 +8870,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -8766,7 +8922,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -8834,7 +8991,10 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": [
+      "paraphrase"
+     ]
     },
     {
      "kind": "model:gemini-4-argon",
@@ -8885,7 +9045,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -8898,7 +9059,7 @@
      }
     }
    ],
-   "outcome": "refused: a proposal fails paraphrase; model:gpt-6.1-sol's proposal not stated: decider"
+   "outcome": "proposed, not validated: one kind of proposer only; refused: model:claude-opus-5-5's proposal fails paraphrase; model:gpt-6.1-sol's proposal not stated: decider"
   },
   {
    "id": "7/referee/66",
@@ -8963,7 +9124,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -9014,7 +9176,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -9065,7 +9228,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -9133,7 +9297,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -9184,7 +9349,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -9235,7 +9401,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -9293,7 +9460,8 @@
        "K = 4": "refused"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -9344,7 +9512,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gemini-4-argon",
@@ -9395,7 +9564,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -9446,7 +9616,8 @@
        "K = 4": "CERTIFIED"
       },
       "depends": true
-     }
+     },
+     "fails": []
     }
    ],
    "outcome": "validated"

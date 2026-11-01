@@ -18,7 +18,8 @@
     "sameValueOtherPrint": 0,
     "noReference": 34,
     "plantedHeld": 1,
-    "plantedBroke": 0
+    "plantedBroke": 0,
+    "passed": 52
    },
    "model:claude-opus-5-5": {
     "proposed": 66,
@@ -29,7 +30,8 @@
     "sameValueOtherPrint": 0,
     "noReference": 11,
     "plantedHeld": 0,
-    "plantedBroke": 0
+    "plantedBroke": 0,
+    "passed": 24
    }
   },
   "anchored": 76,
@@ -260,9 +262,10 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  16.438 s",
+     "certMachine": "ADMITTED  p-kiss-alphaevolve-593  [CERTIFIED]  from the object: CERTIFIED  17.183 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -310,9 +313,10 @@
      "paraphrase": "unread",
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  18.269 s  note: no record attached",
+     "certMachine": "ADMITTED  p-kiss-ea-594-winner  []  from the object: CERTIFIED  19.877 s  note: no record attached",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -691,7 +695,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -756,7 +761,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -821,7 +827,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -903,7 +910,7 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-ea-mindist-alphaevolve-2025  []  from the object: CERTIFIED value 404020058100786265686230296126… · CERTIFIED value 291927404893437366208277516928…  0.004 s  note: no record attached",
+     "certMachine": "ADMITTED  m-ea-mindist-alphaevolve-2025  []  from the object: CERTIFIED value 404020058100786265686230296126… · CERTIFIED value 291927404893437366208277516928…  0.005 s  note: no record attached",
      "sensitivity": {
       "steps": 1,
       "up": "REFUTED",
@@ -911,7 +918,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -976,7 +984,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1498,7 +1507,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-optconst-3b  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1546,7 +1556,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-optconst-3c  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1594,7 +1605,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-optconst-3c-95  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1642,7 +1654,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-optconst-71  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -1996,7 +2009,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-horizonmath-keich-thin-triangles-128  [CERTIFIED]  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2078,7 +2092,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-polymaps-gao-g  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2211,7 +2226,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-polymaps-chv-phi  [CERTIFIED]  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "proposed, not validated: one kind of proposer only"
@@ -2268,9 +2284,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x5-r32  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x5-r32  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2318,9 +2335,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2353,9 +2371,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x7-r45  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2397,7 +2416,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2430,9 +2450,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x4x8-r51  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2472,9 +2493,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.007 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2507,9 +2529,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-2x5x6-r47  [CERTIFIED]  0.007 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2549,9 +2572,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2584,9 +2608,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x3x3-r23  [CERTIFIED]  0.008 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2626,9 +2651,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2661,9 +2687,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x6-r54  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2703,9 +2730,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2740,7 +2768,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x7-r63  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2782,7 +2811,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2815,9 +2845,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-3x4x8-r74  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2859,7 +2890,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2894,7 +2926,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x6-r68  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -2936,7 +2969,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ae-nb-3x5x7-r80  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -2971,7 +3005,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ae-nb-3x5x7-r80  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -3011,9 +3046,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x8-r96  [CERTIFIED]  0.006 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x8-r96  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3061,9 +3097,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x5-r61  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x5-r61  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3111,9 +3148,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3146,9 +3184,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  m-mc100-ae-nb-4x4x7-r85  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -3188,9 +3227,10 @@
      "paraphrase": null,
      "faithful": true,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.005 s",
+     "certMachine": "ADMITTED  p-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.006 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3225,7 +3265,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ae-nb-4x5x6-r90  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -3267,7 +3308,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3302,7 +3344,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ae-nb-5x5x5-r93  [CERTIFIED]  0.005 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -3344,7 +3387,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-f2-2x2x3  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3396,7 +3440,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-f2-2x2x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3448,7 +3493,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-f2-2x3x3  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3500,7 +3546,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-f2-2x2x5  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3552,7 +3599,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-f2-2x3x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3602,9 +3650,10 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x5  [CERTIFIED]  0.0 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-2x3x5  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3656,7 +3705,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-f2-2x4x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3706,9 +3756,10 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-f2-3x3x4  [CERTIFIED]  0.0 s",
+     "certMachine": "ADMITTED  p-mc100-at-f2-3x3x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3760,7 +3811,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x2x3  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3812,7 +3864,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x2x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3864,7 +3917,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x3x3  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3916,7 +3970,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x2x5  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -3968,7 +4023,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x2x6  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4020,7 +4076,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x3x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4072,7 +4129,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x2x7  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4124,7 +4182,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x3x5  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4174,9 +4233,10 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  p-mc100-at-q-2x2x8  [CERTIFIED]  0.001 s",
+     "certMachine": "ADMITTED  p-mc100-at-q-2x2x8  [CERTIFIED]  0.002 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4228,7 +4288,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x4x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4280,7 +4341,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-3x3x4  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4332,7 +4394,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-at-q-2x4x5  [CERTIFIED]  0.001 s",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4391,7 +4454,8 @@
      "paraphrase": "unread",
      "faithful": null,
      "word": "REFUSED",
-     "certMachine": "REFUSED   p-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'"
+     "certMachine": "REFUSED   p-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4433,7 +4497,8 @@
      "paraphrase": null,
      "faithful": null,
      "word": "REFUSED",
-     "certMachine": "REFUSED   m-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'"
+     "certMachine": "REFUSED   m-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -4484,7 +4549,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ea-best-first-autocorrelation-inequality  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-8 ",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4545,7 +4611,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: predi",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4587,9 +4654,10 @@
      "paraphrase": null,
      "faithful": null,
      "word": "CERTIFIED",
-     "certMachine": "ADMITTED  m-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: predi",
+     "certMachine": "ADMITTED  m-mc100-ea-best-flat-polynomials  [CERTIFIED]  0.004 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: predi",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -4640,7 +4708,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: pre",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4684,7 +4753,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ea-best-edges-vs-triangles  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.000001  note: pre",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -4739,7 +4809,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4787,7 +4858,8 @@
       "held": true,
       "tight": null
      },
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -4838,7 +4910,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 relati",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4882,7 +4955,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 relati",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -4933,7 +5007,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -4977,7 +5052,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d11-605  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"
@@ -5028,7 +5104,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  p-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     },
     {
      "kind": "model:claude-opus-5-5",
@@ -5072,7 +5149,8 @@
      "word": "CERTIFIED",
      "certMachine": "ADMITTED  m-mc100-ea-best-kissing-number-d12-842  [CERTIFIED]  0.001 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement is 0: 10^-12 re",
      "sensitivity": null,
-     "vacuity": null
+     "vacuity": null,
+     "fails": []
     }
    ],
    "outcome": "validated"

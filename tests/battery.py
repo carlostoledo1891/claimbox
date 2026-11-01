@@ -862,7 +862,7 @@ got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* = 0.753296
 red(got['5/tweet/45']['outcome'] != 'validated' and "person's proposal not stated: source" in got['5/tweet/45']['outcome'],
     'prose: refused — a proposal whose bar the sentence does not print', got['5/tweet/45']['outcome'])
 got = prose_with(f'claim  p5 over s\n  quote "{S5}" from P\n  : c₁* ≥ 0.7532960\n  proposed by person\n')
-red(got['5/tweet/45']['outcome'].startswith('refused') and 'printedBack' in got['5/tweet/45']['outcome'],
+red(not got['5/tweet/45']['outcome'].startswith('validated') and "person's proposal fails printedBack" in got['5/tweet/45']['outcome'],
     'prose: refused — a proposal that weakens the sentence (≥ where it prints = …): it does not read back as the sentence', got['5/tweet/45']['outcome'])
 got = prose_with(f'claim  q1 over e\n  quote "{S1}" from P\n  : |D(1)| ≤ 0.82395317\n  proposed by model:alpha\n'
                  f'claim  q2 over e\n  quote "{S1}" from P\n  : |D(1)| ≤ 0.82395317\n  proposed by model:beta\n')
@@ -940,8 +940,7 @@ def para_of(stmt):
     return [i for i in t_['items'] if i['kw'] == 'claim'][0]
 ok(PR.paraphrased_statement(c45, para_of('c₁* = 0.7532960…')) == 'same', 'prose: a model that states the same claim on the paraphrase holds it', para5[:50])
 red(PR.paraphrased_statement(c45, para_of('c₁* ≥ 0.7532960')) == 'moved', 'prose: refused — a model whose claim moves when the sentence is said another way', 'relation changed')
-red([e['outcome'] for e in PREC['sentences'] if e['id'] == '7/tweet/65'][0].startswith('refused') and 'paraphrase' in
-    [e['outcome'] for e in PREC['sentences'] if e['id'] == '7/tweet/65'][0],
+red("model:claude-opus-5-5's proposal fails paraphrase" in [e['outcome'] for e in PREC['sentences'] if e['id'] == '7/tweet/65'][0],
     'prose: refused — 7/tweet/65, where the model wrote 3 - 1/c₁* / 2 for (3 - 1/c₁*)/2 on the paraphrase (the record)', 'paraphrase')
 # sensitivity and vacuity (run with cert-machine): the record's, then a translation that ignores its bar, and one that ignores its bytes
 SV = PREC['summary']
