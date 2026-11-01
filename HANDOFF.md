@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r15,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 538 pass, 0 fail, 133/133 red controls; `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 541 pass, 0 fail, 134/134 red controls; `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -100,7 +100,24 @@ moved ("57 decided, 75 name the reason"): REPUBLISHED on the operator's word, ce
 (61,321 bytes, sha256 b4de5c9b…f9316a9826f, checked here with curl); the operator accepted the printed-digit reading of SOTA-table scores. Hexagons stay a hole: the
 hexagons are rotated by float angles in degrees and the receiver has no exact sine or cosine.
 
+**OTHER MODEL FAMILIES, BY HAND (2026-10-31, the operator: "send a prompt to 2 other LLMs asking for their worksheets"; "AI will be
+the most used writers for claimbox. Go ahead.").** tools/worksheet_prompt.py writes corpus/proposals/riemann-ai.worksheet-prompt.md —
+the statement rules and library names exactly as tools/propose_model.py gives them to Claude (one source), and all 80 phrasings
+as blank claims `proposed by model:FAMILY`, no other proposer's statement, no reference. The operator pastes it into another
+model's chat, saves the reply to a file and runs `python3 tools/worksheet_prompt.py ingest FAMILY REPLY --model "NAME"`: the reply
+is kept as it came (corpus/proposals/replies/riemann-ai.model-FAMILY.txt), only each claim's statement or hole line is taken,
+under this program's declarations, claim lines and quotes (a reply cannot change a reading, a data name or a sentence; a changed
+quote is reported), into corpus/proposals/riemann-ai.model-FAMILY.claim with its provenance (family, the model as the operator
+names it, date, the prompt's and the reply's sha256). prose reads every such file (CORPORA['riemann-ai']['models']). A model of
+any family is ONE KIND against a person (the operator was told, and chose to go ahead): these validate nothing alone; they are
+measured, and `python3 -m claimbox prose riemann-ai --disputed` lists the sentences two families read differently, with no
+statement shown, `*` marking the person's worksheet blanks — the person reads those first. tools/propose_model.py imports the
+SDK only when it calls a model. Battery §10: the prompt reproduces; a forged reply (a reading changed, a quote edited) — red;
+every family file names its prompt. make test 541 pass, 0 fail, 134/134.
+
 **NEXT, in order.**
+0. When the operator brings the two replies: ingest each, `python3 -m claimbox prose riemann-ai --run --record
+   records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
 1. The operator's choice: step 7's fill (not designed), step 8 (documents that build), or the SOTA table's .py-published problems
    (Erdős overlap, edges vs triangles, flat polynomials: a reader for their literal arrays first) and the first autocorrelation
    (30,000 values: past the receiver's quadratic evaluator).

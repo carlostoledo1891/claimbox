@@ -34,7 +34,10 @@ REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 sys.path[:] = [x for x in sys.path if os.path.abspath(x or '.') != os.path.dirname(os.path.abspath(__file__))]
 sys.path.insert(0, REPO)
 
-import anthropic  # noqa: E402
+try:
+    import anthropic  # noqa: E402
+except ImportError:      # the texts below are read by tools/worksheet_prompt.py, which calls no model
+    anthropic = None
 
 from claimbox import lang, prose  # noqa: E402
 from claimbox.library import einstein_arena as EA  # noqa: E402

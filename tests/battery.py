@@ -19,6 +19,8 @@ usage: python3 tests/battery.py           exit 0 iff every check passes and ever
        python3 tests/battery.py --write   also (re)write the two records
 """
 import copy
+import glob
+import importlib.util
 import json
 import os
 import re
@@ -865,6 +867,22 @@ got = prose_with(f'claim  q1 over e\n  quote "{S1}" from P\n  : |D(1)| ≤ 0.823
                  f'claim  q2 over e\n  quote "{S1}" from P\n  : |D(1)| ≤ 0.82395317\n  proposed by model:beta\n')
 red(got['1/paper/0']['outcome'] == 'proposed, not validated: one kind of proposer only', 'prose: two model families agreeing count as one kind, not as concord',
     got['1/paper/0']['outcome'])
+# other model families, by hand (tools/worksheet_prompt.py, 2026-10-31): the prompt is written from the corpus and the rules Claude
+# is given; an ingested reply keeps only its statement lines, under this program's declarations and quotes; each family's file names
+# the prompt it answered
+_ws = importlib.util.spec_from_file_location('worksheet_prompt', os.path.join(REPO, 'tools', 'worksheet_prompt.py'))
+WS = importlib.util.module_from_spec(_ws)
+_ws.loader.exec_module(WS)
+ok(open(WS.PROMPT, encoding='utf-8').read() == WS.prompt() and len(WS.blocks()) == 80,
+   'prose: the worksheet prompt for other model families is written from the corpus and the rules Claude is given, byte for byte', '80 blanks')
+forged = WS.worksheet().replace('read   e as integers', 'read   e as decimals').replace('  : ?', '  : D(1) ≤ 1', 1)
+forged = forged.replace(WS.blocks()[1][2], WS.blocks()[1][2] + ' (edited)')
+taken, _, blank_, moved_ = WS.take(forged, 'x')
+red(len(taken) == 1 and 'decimals' not in ''.join(taken) and WS.blocks()[0][2] in taken[0] and moved_ == [WS.blocks()[1][0]] and len(blank_) == 79,
+    'prose: refused — a reply cannot change a reading, a data name or a quote: only its statement lines are taken, a changed quote is reported', f'{len(taken)} taken, {len(moved_)} quote changed')
+fams = sorted(glob.glob(os.path.join(REPO, PR.CORPORA['riemann-ai']['models'])))
+ok(all(re.search(r'^-- prompt: .* sha256 [0-9a-f]{64}$', open(f, encoding='utf-8').read(), re.M) for f in fams),
+   'prose: every other model family\'s file names the prompt it answered and the reply it came from', f'{len(fams)} files')
 real = PR.grammar_proposal
 row5 = ROW['5/tweet/45']
 o5, _ = real(S5, PR.rel_of(os.path.join(REPO, PR.CORPORA['riemann-ai']['source'])), PR.SERIES, None, 'p-5', ROOT)

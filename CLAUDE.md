@@ -114,6 +114,7 @@ web/                       the landing page, built the Machinidae way: grammar.c
                            pages/index.{html,py} (a marketing touchpoint since 2026-10-31: visible pins removed, every number still read),
                            drafts/ (not built), build.py → dist/ (index.html only; published by cert-machine as carlostoledo.co/claimbox/)
 tools/propose_model.py     a model as a proposer (claude-opus-5-5, the operator's $20 cap; .venv/bin/python; ledgers records/model-proposals-*);
+tools/worksheet_prompt.py  the worksheet prompt other model families fill by hand, and `ingest FAMILY REPLY` (proposals/riemann-ai.model-*.claim);
 tools/xx_study.py          the x^x = y study (roots computed, claims written for cert-machine);
 tools/attack_twins.py      the attack twins' predictions, computed by cert-machine's tm.js (corpus/attack/prediction.json);
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the

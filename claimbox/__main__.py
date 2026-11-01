@@ -11,7 +11,7 @@
   check FILE.claim [--run] [--record OUT.json]     each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
                                                    (a fork: every reading); FILE may be LANGUAGE.md#E16, an example; --record writes the results
   library                                          every definition a claim may use: its names, version, readings, conventions and route
-  prose CORPUS [--run] [--record OUT.json] [--worksheet]         from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
+  prose CORPUS [--run] [--record OUT.json] [--worksheet | --disputed]   from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
                                                    their levels (anchored, printed back, planted, concord) and the outcome; --run adds cert-machine's words
   tighten FILE[#E6] CLAIM [--digits N] [--name N]  step 7: the strongest bar cert-machine certifies (at N decimals) and its refuted neighbour,
                                                    every candidate decided by cert-machine; --name writes corpus/helpers/N.md and records/helpers/N.json
@@ -29,6 +29,7 @@ its checker verifies what this program emits (--check), and its deciders decide;
 import argparse
 import json
 import os
+import re
 import sys
 
 from . import grammar, translate as T
@@ -95,12 +96,23 @@ def main(argv=None):
     pr.add_argument('--run', action='store_true')
     pr.add_argument('--record')
     pr.add_argument('--worksheet', action='store_true')
+    pr.add_argument('--disputed', action='store_true')
     a = ap.parse_args(argv)
     if a.cmd == 'prose':
         from . import prose
         if a.corpus not in prose.CORPORA:
             print('REFUSED  no corpus ' + a.corpus + ' (' + ', '.join(prose.CORPORA) + ')')
             return 1
+        if a.disputed:                     # the sentences two model families read differently, read from the record; no statement shown
+            rec = json.load(open(os.path.join(prose.REPO, 'records', 'prose-' + a.corpus + '.json'), encoding='utf-8'))
+            d = prose.disputed(rec)
+            pp = os.path.join(prose.REPO, prose.CORPORA[a.corpus].get('person') or '-')
+            sheet = open(pp, encoding='utf-8').read() if os.path.isfile(pp) else ''
+            for sid, fams in d:   # * a blank of the person's worksheet: read it first
+                mark = '*' if 'claim  h_' + re.sub(r'\W', '_', sid) + ' ' in sheet else ' '
+                print(f'{mark} {sid:<18} {", ".join(fams)}')
+            print(f'{len(d)} sentences read differently by two model families (* in the person\'s worksheet)')
+            return 0
         if a.worksheet:                    # a person's blank claims, never written over a worksheet already begun
             path = os.path.join(prose.REPO, prose.CORPORA[a.corpus]['person'])
             if os.path.exists(path):

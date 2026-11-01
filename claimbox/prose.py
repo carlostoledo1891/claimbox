@@ -21,6 +21,7 @@ today's grammar may propose, and all of them are held to the same checks (commit
     run(corpus) -> the record of one corpus: per sentence, its proposals, their levels, the reference and the outcome
 """
 import copy
+import glob
 import hashlib
 import json
 import os
@@ -44,6 +45,7 @@ CORPORA = {
         'source': 'corpus/riemann/ai-phrasings.md',
         'proposals': 'corpus/proposals/riemann-ai.claim',
         'person': 'corpus/proposals/riemann-ai.person.claim',      # a person's, written apart from the model's (--worksheet)
+        'models': 'corpus/proposals/riemann-ai.model-*.claim',     # other model families', filled by hand (tools/worksheet_prompt.py)
         'context': {1: (LAW, 'integers', 'riemann/zeta23-edge'), 2: (LAW, 'integers', 'riemann/zeta23-rows'), 3: (LAW, 'integers', None),
                     4: (LAW, 'integers', 'riemann/zeta23-p0'), 5: (SERIES, None, 'riemann/zeta23-cmt'), 6: (SERIES, None, 'riemann/zeta23-mt-simple'),
                     7: (SERIES, None, 'riemann/zeta23-mt-distinct'), 8: (None, None, None)},
@@ -256,6 +258,22 @@ def file_proposals(corpus, root):
         p = os.path.join(REPO, CORPORA[corpus][key]) if CORPORA[corpus].get(key) else None
         if p and os.path.isfile(p):
             read_file(p, root, out)
+    for p in sorted(glob.glob(os.path.join(REPO, CORPORA[corpus].get('models') or '-'))):
+        read_file(p, root, out)
+    return out
+
+
+def disputed(record):
+    """the sentences two model families read differently — one states what the other does not, or both state, differently, or name
+    different holes: [(sentence id, the families)], with no family's statement (a person reads these first, written apart)"""
+    out = []
+    for e in record['sentences']:
+        sig = {}
+        for p in e['proposals']:
+            if p['kind'].startswith('model:'):
+                sig[p['kind']] = json.dumps(p['decision'], sort_keys=True) if 'object' in p else 'hole ' + (p.get('refused') or {}).get('hole', '?')
+        if len(sig) > 1 and len(set(sig.values())) > 1:
+            out.append((e['id'], sorted(k[len('model:'):] for k in sig)))
     return out
 
 
