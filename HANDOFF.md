@@ -160,8 +160,8 @@ claims based on the rules").** web/pages/index.{html,py}: "See it translate" (si
 sentence, the claim a model wrote, the claim printed back by lang.statement_means, cert-machine's word, how many models wrote the
 same passing claim), "AI models write it" (the thirteen-model panel; 560 of 560 passing claims CERTIFIED; the one wrong claim
 caught), "Write a claim" (a .claim file, GUIDE.md); the lede, a third use, a new stat. record.py gains the derived proposal fields,
-means, families, modelClaims, wroteSame. Built at claimbox f600cf7 (87,170 bytes, sha256 c31ad62e…7fadd); NOT LIVE until the
-operator approves the republish in cert-machine-cb's chat.
+means, families, modelClaims, wroteSame. Built at claimbox f600cf7 (87,170 bytes, sha256 c31ad62e…7fadd). LIVE on the operator's word:
+cert-machine 4b9a6e51, pinned from claimbox d862998 (the HANDOFF commit after it; web/dist the same bytes), checked here with curl.
 
 **NEXT, in order.**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
