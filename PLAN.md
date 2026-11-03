@@ -202,6 +202,9 @@ passes. Parked behind a spend decision.
   Open there, for the operator: an `in` from a valueless EinsteinArena row states the half-unit box of the print, while the row
   decided agreement only within the platform's resolution.
 - Format v4: canonical form; typed readings; a hole and its price on a REFUSED; CONFLICT from concordance only.
+- `Index` with three indices (or a `select` that decodes one slice of a 3-D array): the Station's three 604-point kissing
+  configurations are one array of 3 × 604 × 11 integer pairs (corpus/kissing/station-d11-604.json); with it, the Z[√2] route
+  decides them as it decides EinsteinArena's 604 (2026-11-02).
 - A `Product` (and `Sum`) over many rationals evaluated as integers — numerator and denominator apart, one reduction at the end —
   or a prime-product decider: the Erdős #852 constant C* = ½(∏_{p≥3}(1 + 1/(p−1)³) − 1) needs 33,859 factors to refute its
   published 0.0752403861777 from the bytes (cert-machine's own certificate does it with one integer inequality); the checker's

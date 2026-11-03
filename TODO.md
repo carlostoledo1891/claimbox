@@ -87,4 +87,5 @@ the words by object sha256 (records/prose-*.json already hold them) and re-decid
 Erdős min overlap is REFUSED by the receiver because cert-machine's record word is REPAIRED — a cert-machine question whether a
 repaired row should expose the repaired claim's word (ask, do not change); ~~the kissing sentences without JSON bytes (Z[√2] reading)~~ — DONE 2026-11-02 for the
 headline K(11) ≥ 604: the reading `Z[√2] pairs`, the condition over integer pairs with √2 trapped between two convergents, CERTIFIED
-from the bytes in 94 s; the Station's three 604s (one 3-D array, no selector for a configuration) stay holes.
+from the bytes in 94 s; the Station's three 604s stay holes: their file is one 3-D array (3 × 604 × 11 pairs) and the receiver's `Index` takes
+two indices — a receiver ask (three indices, or a selector that decodes one configuration), not a claimbox change.
