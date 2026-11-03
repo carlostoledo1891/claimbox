@@ -26,13 +26,20 @@ check holds for the text asked (corpus/proposals/guide-asked-*.md), and the page
 
 ## B. The roadmap
 
-**4. Step 7, fill.** The last helper: a hole of kind `data` or `decider` names what would state the claim; fill fetches it where
+**4. SCOPED DOWN 2026-11-02 — Step 7, fill.** Measured first: following cert-machine's claims-ledger (decidedFrom → the
+certs file → the row) reaches a row for 23 of the 24 register sentences a template would state, but bytes for none the readers do
+not already give (kissing rows name sources, not files; Strassen rows carry no word; 84b, C42, F7 carry words the receiver does
+not take). Fill on today's register states nothing new; its honest form is the generic provenance-chain finder replacing the hand
+lists in prose.py (LEDGER_ROWS, EASOTA, KISSING_JOBS), to build when a corpus gives it something to find. The last helper: a hole of kind `data` or `decider` names what would state the claim; fill fetches it where
 it can (more digits of a print from the certificate; the bytes a sentence names, from a pinned source) and proposes the claim
 `proposed by search:fill`. Why: 33 register sentences need their bytes and 14 need a decider; today each is a dead end. Design
 first (what fill may fetch — only pinned, never the web), then build with planted twins (a fill that fetches the wrong file must be
 refused by the pin). Checked by: every filled claim decided by cert-machine; a planted wrong fill caught.
 
-**5. Step 8, documents that build.** A report whose numbers are claims; the build refuses when one is refuted or its record
+**5. BEGUN 2026-11-02 — Step 8, documents that build.** `python3 -m claimbox doc FILE.md [--build OUT]` (claimbox/doc.py): a
+Markdown document names decided claims by record address and states cert-machine's word beside each; the build refuses when a
+word is not the record's or a claim moved. USE-CASES.md is the first instance (the battery builds it, with two reds). Next: the
+x^x report as a claimbox draft whose every number is an address, and a number slot (`{{records/…#id/field}}`) beside the word. A report whose numbers are claims; the build refuses when one is refuted or its record
 moves. The landing page is the small first instance. Why: it is what a reader of a paper or a README actually wants — a document
 that cannot drift from what was checked. First instance: the x^x = y report (web/drafts/xx.*) rebuilt so each number is a claim
 `check`ed at build. Checked by: a planted moved digit in the source fails the build.
@@ -51,7 +58,9 @@ readings mattering less. First: a design note in PLAN.md for the operator's ruli
 — a hole today, decidable from the object with cert-machine's `Product`, no receiver change. Checked by: C* decided; the
 published 0.0752403861777 REFUTED as cert-machine's ledger says.
 
-**8. Pythagorean repair of the hexagon packing.** Angles printed in degrees have no exact sine; a rational rotation from a
+**8. BLOCKED on the receiver (2026-11-02) — Pythagorean repair of the hexagon packing.** A rational rotation makes the angle exact,
+but a regular hexagon's own vertices sit at 60° steps: coordinates in Q(√3), and the expression language has no √3. cert-machine's
+verifier decides it exactly; the receiver would need a Sqrt head or the hexagon decider as a named route. Angles printed in degrees have no exact sine; a rational rotation from a
 Pythagorean triple traps each angle. Why: two SOTA rows, and the first instance of a trap as repair (the claim decided on a nearby
 exact object, labelled as a repair). Checked by: the repaired packing CERTIFIED or REFUTED from its bytes; a planted overlap caught.
 

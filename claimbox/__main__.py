@@ -11,6 +11,7 @@
   check FILE.claim [--run] [--record OUT.json]     each claim compiled to cert-machine's object and printed back from it; --run hands it to the checker
                                                    (a fork: every reading); FILE may be LANGUAGE.md#E16, an example; --record writes the results
   library                                          every definition a claim may use: its names, version, readings, conventions and route
+  doc FILE.md [--build OUT.md]                      step 8: a document naming decided claims by record address, each word re-read; refused when one moved
   prose CORPUS [--run] [--record OUT.json] [--worksheet | --disputed | --panel]   from prose to claims: every sentence's proposals (the grammar's, the proposals file's),
                                                    their levels (anchored, printed back, planted, concord) and the outcome; --run adds cert-machine's words
   tighten FILE[#E6] CLAIM [--digits N] [--name N]  step 7: the strongest bar cert-machine certifies (at N decimals) and its refuted neighbour,
@@ -78,6 +79,9 @@ def main(argv=None):
     ck.add_argument('--run', action='store_true')
     ck.add_argument('--record')
     sub.add_parser('library')
+    dc = sub.add_parser('doc')
+    dc.add_argument('file')
+    dc.add_argument('--build')
     for name in ('watch', 'hunt', 'attack'):
         wt = sub.add_parser(name)
         wt.add_argument('file')
@@ -210,6 +214,26 @@ def main(argv=None):
     if a.cmd == 'library':
         from . import library
         sys.stdout.write(library.listing())
+        return 0
+    if a.cmd == 'doc':                          # step 8: a document whose words are claims; it builds only when every word is its record's
+        from . import doc
+        text = open(a.file, encoding='utf-8').read()
+        try:
+            rows = doc.read(text)
+            bad = doc.check(text)
+        except doc.DocError as e:
+            print('REFUSED  ' + str(e))
+            return 1
+        for n, addr, stated, held in rows:
+            print(f'  line {n:<4} {addr:<64} {held or "no word"}' + ('' if not stated else '   stated ' + ', '.join(stated)))
+        if bad:
+            print('REFUSED  the document does not build:\n  ' + '\n  '.join(bad))
+            return 1
+        print(f'{len(rows)} addresses, every word the record\'s')
+        if a.build:
+            with open(a.build, 'w', encoding='utf-8') as f:
+                f.write(doc.build(text))
+            print('built ' + a.build)
         return 0
     if a.cmd == 'check':
         from . import lang, compile as C

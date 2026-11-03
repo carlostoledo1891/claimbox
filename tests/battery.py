@@ -1151,32 +1151,22 @@ except Refusal as e:
     got = e.rule
 red(got == 'watcher', 'helpers: refused — attack on a claim that some case holds (that is hunt\'s)', str(got))
 
-# USE-CASES.md (2026-11-02): every record address it names resolves, and every word it states beside one is the record's
+# USE-CASES.md (2026-11-02) is a document that builds (claimbox/doc.py, step 8 begun): every record address it names resolves and
+# every word it states is its record's; a copy stating the wrong word, or naming a claim that is not there, does not build
+from claimbox import doc as DOC  # noqa: E402
 UC = open(os.path.join(REPO, 'USE-CASES.md'), encoding='utf-8').read()
-uc_bad = []
-for path, frag in re.findall(r'`(records/[\w./-]+\.json)(?:#([\w./-]+))?`', UC):
-    try:
-        d = json.load(open(os.path.join(REPO, path), encoding='utf-8'))
-        if frag:
-            rows = d.get('rows') or d.get('sentences') or d.get('claims') or []
-            if not any(r.get('id') == frag for r in rows):
-                uc_bad.append(path + '#' + frag)
-    except FileNotFoundError:
-        uc_bad.append(path)
-for frag in re.findall(r'`#([\w./-]+)`', UC):      # `#id` after a named file: of records/xx64-check.json
-    if not any(c['id'] == frag for c in json.load(open(os.path.join(REPO, 'records', 'xx64-check.json'), encoding='utf-8'))['claims']):
-        uc_bad.append('#' + frag)
-ok(not uc_bad, 'USE-CASES.md: every record address it names resolves', ', '.join(uc_bad) or f'{len(re.findall(r"`records/", UC))} addresses')
-uc_words = {'math-mt-distinct-0.8362': ('records/riemann-math-run.json', 'REFUTED'), 'ea-circles-ours_2026': ('records/prose-register.json', 'REFUTED'),
-            'mc100-ae-nb-4x4x8-r96': ('records/prose-register.json', 'CERTIFIED')}
-def uc_word(path, rid):
-    d = json.load(open(os.path.join(REPO, path), encoding='utf-8'))
-    if 'sentences' in d:
-        e = [x for x in d['sentences'] if x['id'] == rid][0]
-        return {p.get('word') for p in e['proposals'] if 'object' in p and not p.get('fails')}
-    from web.record import word
-    return {word(path, rid)}
-ok(all(uc_word(p_, rid) == {w} for rid, (p_, w) in uc_words.items()), 'USE-CASES.md: the words it states are the records\' words', ', '.join(uc_words))
+uc_rows = DOC.read(UC)
+ok(uc_rows and not DOC.check(UC) and sum(1 for r in uc_rows if r[2]) >= 4, 'USE-CASES.md: every record address resolves and every word it states is its record\'s (claimbox doc)',
+   f'{len(uc_rows)} addresses, {sum(1 for r in uc_rows if r[2])} with a word')
+red(DOC.check(UC.replace('**REFUTED**. The constant is 0.83625035', '**CERTIFIED**. The constant is 0.83625035')),
+    'doc: refused — a document that says CERTIFIED of the 0.8362 claim its record refutes does not build', 'math-mt-distinct-0.8362')
+try:
+    DOC.read(UC.replace('#math-mt-distinct-0.8362', '#math-mt-distinct-0.8363'))
+    got = None
+except DOC.DocError as e:
+    got = str(e)
+red(got is not None, 'doc: refused — a document naming a claim its record does not hold', str(got)[:60])
+ok(DOC.build(UC) == UC, 'doc: USE-CASES.md built is USE-CASES.md — every word already its record\'s', 'byte for byte')
 
 # the template pilot (tools/templates.py, TODO.md item 9): the record's counts hold, and a REFUTED object with one failing
 # predicate rests on that predicate alone — dropped, the word flips; dropping any other keeps it

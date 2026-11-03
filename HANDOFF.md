@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 550 pass, 0 fail, 137/137 red controls (85 s; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 555 pass, 0 fail, 140/140 red controls (85 s; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -189,6 +189,15 @@ the AI-phrasing proposals are tight at their last digit, 196 slack; the register
 counts and the packing's single load-bearing predicate (a red). ITEM 7: the design note is PLAN.md §5.1 (for the operator's
 ruling: `in (a, b)` as the core, or traps as a library family); C* as a prime-product trap is BLOCKED — the receiver's Product
 normalises a Fraction every step, 33,859 factors is hours (PLAN.md §9 asks for an integer product or a decider).
+
+STEP 8 BEGUN (item 5): claimbox/doc.py, `python3 -m claimbox doc FILE.md [--build OUT]` — a Markdown document names decided claims
+by record address and states cert-machine's word beside each (a paragraph pairs words with addresses in order, or states the set
+its records hold); the build refuses a word that is not its record's or a claim that moved; USE-CASES.md is the first instance
+(the battery builds it; two reds). ITEM 4 SCOPED DOWN: the provenance chain (claims-ledger → certs file → row) reaches a row for
+23 of the 24 register sentences a template would state and bytes for none the readers do not already give — fill states nothing
+new on today's register (TODO.md). ITEM 8 BLOCKED: a hexagon's vertices live in Q(√3); no √3 in the receiver's language. Asked of
+cert-machine-5b for the operator: a REPAIRED row's word for the claim it decided (Erdős overlap: 14 proposals REFUSED), an
+integer Product (C*). make test 555 pass, 0 fail, 140/140. The page: unchanged since 746d1cb's republish.
 
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
