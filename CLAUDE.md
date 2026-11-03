@@ -77,10 +77,12 @@ claimbox/translate.py      shape + page + bytes (+ decider, record) → the obje
                            enclosures; the Montgomery–Taylor constant as a closed form the receiver admits and cannot decide)
 claimbox/readers/          structural readers of real sources: registry.py (the registry's pages), einsteinarena.py (with the reading each
                            verifier makes of the bytes), alphaevolve.py, qiushi.py, station.py, funsearch.py, zeta23.py (LawN256.lean's
-                           integers decoded into JSON beside it, one job per claim the sources print; EnclOK skipped: bytes not published)
+                           integers decoded into JSON beside it, one job per claim the sources print; EnclOK skipped: bytes not published),
+                           easota_py.py (the SOTA table's Python-published arrays decoded into corpus/easota/, nothing evaluated)
 claimbox/lang.py           the language of LANGUAGE.md: a .claim file read into a tree, printed back (canonical) and in plain words;
                            malformed files refused with the rule, statements that are not claims made holes
-claimbox/library/          the definitions, one file per family (step_functions, einstein_arena with its RECORDED route, kissing (and Z[√2] pairs), zeta23,
+claimbox/library/          the definitions, one file per family (step_functions, einstein_arena with its RECORDED route and C_1a/C_1b under the
+                           platform's titles capped at 4,000 values (the receiver's evaluator is quadratic), kissing (and Z[√2] pairs), zeta23,
                            machines, decompositions (DATA["heading"|"key"], cert-machine's tensor records), selfpower (xroot, x^x = N); common pieces);
                            __init__.py the registry `use NAME vN` resolves against; the objects held byte for byte (records/library-identity.json)
 claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and register (register_context/register_extra: the bytes per
@@ -94,6 +96,7 @@ claimbox/doc.py            step 8: a Markdown document naming decided claims by 
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
+                           easota/ (the SOTA table's nine Python-published files decoded to JSON, each with its source's sha256),
                            platform/einstein-arena/ (the platform's 29 problem definitions, pinned by tools/platform.py: PINS.json),
                            riemann/ (the story's 25 pinned sources + the video's captions, PINS.json by tools/riemann.py; ai-phrasings.json,
                            ai-claims.md: AI-written inputs, not sources of truth; mathematician.md: the session's own claims with their

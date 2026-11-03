@@ -31,7 +31,8 @@ refused — so write exactly what the sentence says, no more and no less.
    value and then a bound ("X = 4.21… < 4.3") leads with its first claim.
 2. **Copy the bar exactly as printed.** The digits and their form: `7.5·10⁻⁸` stays `7.5·10⁻⁸` (never `0.000000075`), a fraction
    stays a fraction, `1.50529397` keeps its trailing digits. A number cut off with "…" or `\ldots` is written `= DIGITS…`; a
-   number the sentence calls rounded is `published as NUMBER`. Never round, extend, shorten or convert.
+   number the sentence calls rounded is `published as NUMBER`; a score a table prints as a bound ("upper bound 0.380927")
+   is `its score is at most 0.380927`. Never round, extend, shorten or convert.
 3. **Keep the sentence's relation, read the right way round.** `7·10⁻⁹ ≥ |x|` says `|x| ≤ 7·10⁻⁹`; "at most", "does not
    exceed", "never exceeds" are ≤; "below", "less than" are <; "at least" is ≥; "exceeds", "above" are >. "Equals", "is", a
    colon before a printed value are =.

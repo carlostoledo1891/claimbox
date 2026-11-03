@@ -44,7 +44,12 @@ moves. The landing page is the small first instance. Why: it is what a reader of
 that cannot drift from what was checked. First instance: the x^x = y report (web/drafts/xx.*) rebuilt so each number is a claim
 `check`ed at build. Checked by: a planted moved digit in the source fails the build.
 
-**6. More of the register from its bytes.** The SOTA table's .py-published problems (Erdős overlap, edges vs triangles, flat
+**6. READER DONE 2026-11-03 (claimbox/readers/easota_py.py: nine files decoded; the four overlap rows and the 600-point
+autocorrelation decided by C_1b and C_1a under the platform's titles, "at most BAR" for the table's ceiling prints; flat polynomials
+and edges vs triangles stay holes `decider` with their reasons in the library; the functional route CAPPED at 4,000 values — the
+receiver's exact evaluator is quadratic in the count, 1,319 values in 7 s, 30,000 about an hour — so the two 30,000-value
+autocorrelation rows are holes until the receiver reads the SOTA ledger's words (PLAN.md §9); the thirteen model families all wrote
+the table's ceiling prints as rounding boxes, which cert-machine refutes: those sentences now read "refused", not "not stated") — More of the register from its bytes.** The SOTA table's .py-published problems (Erdős overlap, edges vs triangles, flat
 polynomials: 8 rows) need a reader for their literal arrays; the first autocorrelation (30,000 values) needs cert-machine's
 decider, not the checker's quadratic evaluator; hexagon packing needs exact rotations (Pythagorean, see 8). Why: 75 register
 sentences are not stated, 33 for want of bytes. Checked by: each new row's planted score refuted, the register's validated count.
@@ -84,8 +89,9 @@ the words by object sha256 (records/prose-*.json already hold them) and re-decid
 `CLAIMBOX_FULL=1` for everything. Checked by: the same 546 passes in under three minutes.
 
 **13. Loose ends, each small.** ~~register.gemini-4-argon 5 sentences short~~ (resumed 2026-11-02);
-Erdős min overlap is REFUSED by the receiver because cert-machine's record word is REPAIRED — a cert-machine question whether a
-repaired row should expose the repaired claim's word (ask, do not change); ~~the kissing sentences without JSON bytes (Z[√2] reading)~~ — DONE 2026-11-02 for the
+~~Erdős min overlap is REFUSED by the receiver because cert-machine's record word is REPAIRED~~ — since 2026-11-03 the platform's
+overlap best (3,584 values) is decided from its bytes by C_1b, CERTIFIED, no record needed; the ask that remains is the SOTA ledger's
+words as record words (PLAN.md §9); ~~the kissing sentences without JSON bytes (Z[√2] reading)~~ — DONE 2026-11-02 for the
 headline K(11) ≥ 604: the reading `Z[√2] pairs`, the condition over integer pairs with √2 trapped between two convergents, CERTIFIED
 from the bytes in 94 s; the Station's three 604s stay holes: their file is one 3-D array (3 × 604 × 11 pairs) and the receiver's `Index` takes
 two indices — a receiver ask (three indices, or a selector that decodes one configuration), not a claimbox change.

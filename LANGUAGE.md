@@ -64,6 +64,7 @@ bar         := NUMBER                       the exact rational the digits mean
              | NUMBER …                     an ellipsis: the truncation box [p, p + unit)
              | published as NUMBER          a rounding: the half-unit box of the last digit
              | within RESOLUTION of NUMBER  the box a platform declares (the resolution quoted from its source)
+             | at most NUMBER | at least NUMBER   a score claimed as a bound, the number taken exactly (a table that prints ceilings)
 term        := QUANTITY | NAME(args) | NUMBER | term OP term | |term| | (term)
              | max over i in RANGE of term | min over … | sum over … | product over …
 configuration := the N vectors of DATA form a kissing configuration in dimension D
@@ -145,7 +146,9 @@ is computed by cert-machine's tm.js (tools/attack_twins.py, corpus/attack/predic
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —
 `step_functions.py` (C_1a, C_1b, C_1c, C_1d), `einstein_arena.py` (seven platform scores, written from the platform's own
 verifiers, the convex Heilbronn problem from the SOTA table's; over the SOTA table's bytes a score's box is the half unit of
-its print), `kissing.py` (the kissing condition over a numeric reading, and over `Z[√2] pairs` with √2 trapped between two
+its print, or the bound as printed when the claim says `at most`; the first autocorrelation and the minimum overlap are the
+registry's C_1a and C_1b under the platform's titles, and the table's Python-published files are decoded by
+claimbox.readers.easota_py into JSON beside them, so `decimals` is a reading of those bytes too), `kissing.py` (the kissing condition over a numeric reading, and over `Z[√2] pairs` with √2 trapped between two
 convergents), `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
 (the machine statements), `decompositions.py` (matrix-multiplication tensor decompositions, decided by cert-machine's tensor
 decider and its record) — and its registry, `claimbox/library/__init__.py`, lists every definition with:

@@ -38,12 +38,14 @@ def _entries():
                     'route': 'an exact expression over the cells, decided by the checker from the object',
                     'conventions': [s['what'] for s in e['structural']] + [_first(e['reduction'])]})
     for title, e in PLATFORM.items():
-        out.append({'names': (title,), 'version': 'v1', 'file': 'einstein_arena.py', 'what': e['score'], 'readings': (e['elements'],),
+        out.append({'names': (title,) + tuple(e.get('aliases', ())), 'version': 'v1', 'file': 'einstein_arena.py', 'what': e['score'], 'readings': (e['elements'],) + tuple(e.get('also', ())),
                     'route': ('the SOTA table\'s verifier (' + e['verifier'] + '), written as exact predicates over the bytes' if e.get('verifier') else
                               'the platform\'s own verifier, written as exact predicates over the bytes'),
                     'conventions': ['the bytes are read as the platform\'s verifier reads them: ' + e['elements'],
-                                    'the score\'s box is the platform\'s declared resolution; over the SOTA table\'s bytes, the half-unit box of its print'
+                                    'the score\'s box is the platform\'s declared resolution; over the SOTA table\'s bytes, the half-unit box of its print, or the bound as printed ("at most BAR")'
                                     if e['resolution'] else 'an integer score is held exactly']
+                    + (['the SOTA table\'s bytes are printed decimals: they may also be read as decimals, the digits exactly (the easota ledger\'s reading); the two readings are a fork'] if e.get('also') else [])
+                    + ([f'decided from the object over at most {e["cap"]:,} values (the receiver\'s exact evaluator is quadratic in the count); a larger array goes by cert-machine\'s own decider and its record, or is a hole'] if e.get('cap') else [])
                     + [s['what'] for s in e['structural']]})
     out.append({'names': ('platform score, recorded',), 'version': 'v1', 'file': 'einstein_arena.py',
                 'what': 'the score of a platform problem with no verifier written here, as cert-machine\'s decider recorded it', 'readings': NUMERIC,
@@ -101,7 +103,7 @@ def lookup(name):
 def platform(title):
     """a platform problem's definition: its verifier written here, else the recorded route (cert-machine's decider and its record)"""
     for e in ENTRIES:
-        if e['file'] == 'einstein_arena.py' and e['names'][0] == title:
+        if e['file'] == 'einstein_arena.py' and title in e['names']:      # the platform's title, or the SOTA table's folder name (an alias)
             return e
     return None
 

@@ -3,35 +3,35 @@
  "corpus": "register",
  "summary": {
   "sentences": 132,
-  "proposals": 404,
+  "proposals": 419,
   "byKind": {
    "grammar": 53,
    "model:claude-opus-5-5": 24,
-   "model:deepseek-v4-pro": 27,
-   "model:deepseek-v4-pro.guide": 25,
-   "model:gemini-4-argon": 28,
+   "model:deepseek-v4-pro": 28,
+   "model:deepseek-v4-pro.guide": 26,
+   "model:gemini-4-argon": 31,
    "model:glm-5.3": 23,
    "model:gpt-6-luna": 21,
-   "model:gpt-6-luna.guide": 26,
+   "model:gpt-6-luna.guide": 27,
    "model:gpt-6.1-sol": 8,
    "model:gpt-6.1-sol.guide": 31,
    "model:gpt-oss-120b": 21,
-   "model:kimi-k3.1-pro": 28,
-   "model:minimax-m3": 22,
-   "model:mistral-large-2512": 23,
+   "model:kimi-k3.1-pro": 30,
+   "model:minimax-m3": 24,
+   "model:mistral-large-2512": 27,
    "model:mistral-large-2512.guide": 23,
-   "model:qwen3.8-max": 21
+   "model:qwen3.8-max": 22
   },
   "perKind": {
    "grammar": {
     "proposed": 132,
     "compiled": 53,
     "holes": 79,
-    "faithful": 18,
+    "faithful": 19,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 35,
-    "plantedHeld": 1,
+    "noReference": 34,
+    "plantedHeld": 2,
     "plantedBroke": 0,
     "passed": 53
    },
@@ -39,58 +39,58 @@
     "proposed": 66,
     "compiled": 24,
     "holes": 42,
-    "faithful": 13,
+    "faithful": 14,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 11,
+    "noReference": 10,
     "plantedHeld": 9,
     "plantedBroke": 1,
     "passed": 23
    },
    "model:deepseek-v4-pro": {
     "proposed": 75,
-    "compiled": 27,
-    "holes": 48,
+    "compiled": 28,
+    "holes": 47,
     "faithful": 15,
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
-    "noReference": 11,
+    "noReference": 12,
     "plantedHeld": 9,
-    "plantedBroke": 1,
+    "plantedBroke": 2,
     "passed": 26
    },
    "model:deepseek-v4-pro.guide": {
     "proposed": 75,
-    "compiled": 25,
-    "holes": 50,
+    "compiled": 26,
+    "holes": 49,
     "faithful": 13,
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
-    "noReference": 11,
+    "noReference": 12,
     "plantedHeld": 0,
     "plantedBroke": 0,
     "passed": 25
    },
    "model:gemini-4-argon": {
     "proposed": 74,
-    "compiled": 28,
-    "holes": 46,
+    "compiled": 31,
+    "holes": 43,
     "faithful": 15,
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
-    "noReference": 12,
-    "plantedHeld": 11,
-    "plantedBroke": 0,
+    "noReference": 15,
+    "plantedHeld": 12,
+    "plantedBroke": 2,
     "passed": 28
    },
    "model:glm-5.3": {
     "proposed": 74,
     "compiled": 23,
     "holes": 51,
-    "faithful": 16,
+    "faithful": 17,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 7,
+    "noReference": 6,
     "plantedHeld": 7,
     "plantedBroke": 0,
     "passed": 23
@@ -99,19 +99,19 @@
     "proposed": 75,
     "compiled": 21,
     "holes": 54,
-    "faithful": 13,
+    "faithful": 14,
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
-    "noReference": 7,
+    "noReference": 6,
     "plantedHeld": 7,
     "plantedBroke": 0,
     "passed": 21
    },
    "model:gpt-6-luna.guide": {
     "proposed": 75,
-    "compiled": 26,
-    "holes": 49,
-    "faithful": 16,
+    "compiled": 27,
+    "holes": 48,
+    "faithful": 17,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
     "noReference": 10,
@@ -135,10 +135,10 @@
     "proposed": 75,
     "compiled": 31,
     "holes": 44,
-    "faithful": 17,
+    "faithful": 18,
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
-    "noReference": 13,
+    "noReference": 12,
     "plantedHeld": 0,
     "plantedBroke": 0,
     "passed": 31
@@ -147,47 +147,47 @@
     "proposed": 75,
     "compiled": 21,
     "holes": 54,
-    "faithful": 13,
+    "faithful": 14,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 8,
+    "noReference": 7,
     "plantedHeld": 8,
     "plantedBroke": 0,
     "passed": 21
    },
    "model:kimi-k3.1-pro": {
     "proposed": 75,
-    "compiled": 28,
-    "holes": 47,
-    "faithful": 13,
+    "compiled": 30,
+    "holes": 45,
+    "faithful": 14,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 15,
-    "plantedHeld": 9,
+    "noReference": 16,
+    "plantedHeld": 11,
     "plantedBroke": 1,
     "passed": 27
    },
    "model:minimax-m3": {
     "proposed": 72,
-    "compiled": 22,
-    "holes": 50,
-    "faithful": 14,
+    "compiled": 24,
+    "holes": 48,
+    "faithful": 15,
     "unfaithful": 0,
     "sameValueOtherPrint": 1,
-    "noReference": 7,
+    "noReference": 8,
     "plantedHeld": 6,
-    "plantedBroke": 1,
+    "plantedBroke": 3,
     "passed": 21
    },
    "model:mistral-large-2512": {
     "proposed": 75,
-    "compiled": 23,
-    "holes": 52,
-    "faithful": 12,
+    "compiled": 27,
+    "holes": 48,
+    "faithful": 13,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 11,
-    "plantedHeld": 12,
+    "noReference": 14,
+    "plantedHeld": 16,
     "plantedBroke": 0,
     "passed": 23
    },
@@ -195,53 +195,53 @@
     "proposed": 75,
     "compiled": 23,
     "holes": 52,
-    "faithful": 14,
+    "faithful": 15,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 9,
+    "noReference": 8,
     "plantedHeld": 0,
     "plantedBroke": 0,
     "passed": 23
    },
    "model:qwen3.8-max": {
     "proposed": 74,
-    "compiled": 21,
-    "holes": 53,
-    "faithful": 14,
+    "compiled": 22,
+    "holes": 52,
+    "faithful": 15,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
     "noReference": 7,
     "plantedHeld": 7,
-    "plantedBroke": 1,
+    "plantedBroke": 2,
     "passed": 20
    }
   },
-  "anchored": 404,
-  "printedBack": 404,
-  "planted": 87,
-  "faithful": 222,
+  "anchored": 419,
+  "printedBack": 405,
+  "planted": 95,
+  "faithful": 234,
   "unfaithful": 0,
   "sameValueOtherPrint": 6,
   "validated": 27,
-  "notStated": 73,
+  "notStated": 68,
   "sensitivity": {
-   "held": 67,
-   "broke": 0,
+   "held": 85,
+   "broke": 9,
    "tight": 0,
    "slack": 4,
-   "notRun": 337
+   "notRun": 325
   },
   "vacuity": {
    "depends": 0,
    "flagged": 0,
-   "notRun": 404
+   "notRun": 419
   },
   "pairs": {
    "sentences": 28,
    "agree": 27,
-   "agreeOnReference": 17,
+   "agreeOnReference": 18,
    "agreeElsewhere": 0,
-   "agreeNoReference": 10,
+   "agreeNoReference": 9,
    "disagree": 1
   },
   "stability": {},
@@ -4320,9 +4320,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"a step function h with 51 steps, 0 <= h <= 1, Σh = n/2\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4340,9 +4340,9 @@
      "claim": "x_deepseek_v4_pro_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 ≤ 0.380927",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_haugland_2016\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4350,20 +4350,62 @@
      "claim": "x_deepseek_v4_pro_guide_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 ≤ 0.380927",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_haugland_2016\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
      "kind": "model:gemini-4-argon",
      "claim": "x_gemini_4_argon_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-gemini-4-argon-ea-overlap-haugland-2016",
+     "sha256": "a9cd94ccd893f33be2ddeac506ce9bb1b05bd5a8b3461007a56e86845a8e6f92",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/haugland_2016.json",
+       "sha256": "8bfea8794a71d735acaa00e50471fdad7298f4357fdd805032e6cea221b3528c"
+      },
+      "count": 51,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380927",
+        [
+         "761853/2000000",
+         "152371/400000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-ea-overlap-haugland-2016  []  from the object: CERTIFIED value 131698679725467264028779747667… · CERTIFIED value 0 · REFUTED value 761/58798996734949195015  0.027 s  note: n",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack"
+     ]
     },
     {
      "kind": "model:glm-5.3",
@@ -4390,9 +4432,9 @@
      "claim": "x_gpt_6_luna_guide_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 ≤ 0.380927",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_haugland_2016\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4429,54 +4471,224 @@
      "kind": "model:kimi-k3.1-pro",
      "claim": "x_kimi_k3_1_pro_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-kimi-k3-1-pro-ea-overlap-haugland-2016",
+     "sha256": "74a1b67d83fb5385fc1613040bb3b7f9aa1b622c3c98b476a7133302430b28a1",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/haugland_2016.json",
+       "sha256": "8bfea8794a71d735acaa00e50471fdad7298f4357fdd805032e6cea221b3528c"
+      },
+      "count": 51,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380927",
+        [
+         "761853/2000000",
+         "152371/400000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-kimi-k3-1-pro-ea-overlap-haugland-2016  []  from the object: CERTIFIED value 131698679725467264028779747667… · CERTIFIED value 0 · REFUTED value 761/58798996734949195015  0.027 s  note: no",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack"
+     ]
     },
     {
      "kind": "model:minimax-m3",
      "claim": "x_minimax_m3_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-minimax-m3-ea-overlap-haugland-2016",
+     "sha256": "c30a68de815ebf11fec7a1979d3f84a50117cf4a1e47ebbd42c331dc75f72ae6",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/haugland_2016.json",
+       "sha256": "8bfea8794a71d735acaa00e50471fdad7298f4357fdd805032e6cea221b3528c"
+      },
+      "count": 51,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380927",
+        [
+         "761853/2000000",
+         "152371/400000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-minimax-m3-ea-overlap-haugland-2016  []  from the object: CERTIFIED value 131698679725467264028779747667… · CERTIFIED value 0 · REFUTED value 761/58798996734949195015  0.027 s  note: no re",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "planted"
+     ]
     },
     {
      "kind": "model:mistral-large-2512",
      "claim": "x_mistral_large_2512_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-mistral-large-2512-ea-overlap-haugland-2016",
+     "sha256": "a656e451ff626b6a61e650a441e4481d6cacf43e8ca0fc9fd9efbc529a0770b1",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/haugland_2016.json",
+       "sha256": "8bfea8794a71d735acaa00e50471fdad7298f4357fdd805032e6cea221b3528c"
+      },
+      "count": 51,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380927",
+        [
+         "761853/2000000",
+         "152371/400000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-mistral-large-2512-ea-overlap-haugland-2016  []  from the object: CERTIFIED value 131698679725467264028779747667… · CERTIFIED value 0 · REFUTED value 761/58798996734949195015  0.027 s  not",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack"
+     ]
     },
     {
      "kind": "model:mistral-large-2512.guide",
      "claim": "x_mistral_large_2512_guide_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 ≤ 0.380927",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_haugland_2016\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
      "kind": "model:qwen3.8-max",
      "claim": "x_qwen3_8_max_ea_overlap_haugland_2016",
      "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-qwen3-8-max-ea-overlap-haugland-2016",
+     "sha256": "ce26be3d7a6bceedb070319c98b61f4f9d83653645a8d9efad6bc9ccafc527eb",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/haugland_2016.json",
+       "sha256": "8bfea8794a71d735acaa00e50471fdad7298f4357fdd805032e6cea221b3528c"
+      },
+      "count": 51,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380927",
+        [
+         "761853/2000000",
+         "152371/400000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-qwen3-8-max-ea-overlap-haugland-2016  []  from the object: CERTIFIED value 131698679725467264028779747667… · CERTIFIED value 0 · REFUTED value 761/58798996734949195015  0.027 s  note: no r",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "planted"
+     ]
     }
    ],
-   "outcome": "not stated: ambiguous, count, data, decider, prose"
+   "outcome": "refused: every proposal fails planted, printedBack; model:claude-opus-5-5's proposal not stated: prose; model:deepseek-v4-pro's proposal not stated: decider; model:deepseek-v4-pro.guide's proposal not stated: decider; model:glm-5.3's proposal not stated: ambiguous; model:gpt-6-luna's proposal not stated: prose; model:gpt-6-luna.guide's proposal not stated: decider; model:gpt-6.1-sol's proposal not stated: count; model:gpt-6.1-sol.guide's proposal not stated: decider; model:gpt-oss-120b's proposal not stated: ambiguous; model:mistral-large-2512.guide's proposal not stated: decider"
   },
   {
    "id": "ea-overlap-alphaevolve_2025",
@@ -4487,9 +4699,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"a step function h with 95 steps, 0 <= h <= 1, Σh = n/2\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4555,7 +4767,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 0.380924\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 0.380924\""
      }
     },
     {
@@ -4583,9 +4795,9 @@
      "claim": "x_gpt_oss_120b_ea_overlap_alphaevolve_2025",
      "statement": "erdo_alphaevolve_2025 ≤ 0.380924",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_alphaevolve_2025\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4593,9 +4805,9 @@
      "claim": "x_kimi_k3_1_pro_ea_overlap_alphaevolve_2025",
      "statement": "erdo_alphaevolve_2025 ≤ 0.380924",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_alphaevolve_2025\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4612,20 +4824,63 @@
      "kind": "model:mistral-large-2512",
      "claim": "x_mistral_large_2512_ea_overlap_alphaevolve_2025",
      "statement": "erdo_alphaevolve_2025 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380924",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-mistral-large-2512-ea-overlap-alphaevolve-2025",
+     "sha256": "2680b14c47fc3d4c9f91f3b66bda724eba8424a01303e58d87e6474187e83f72",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/alphaevolve_2025.json",
+       "sha256": "dbc128ba6c27bb0d960b64cc54dac7732ffed4824e5dfb061f788450b04b6c0f"
+      },
+      "count": 95,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380924",
+        [
+         "761847/2000000",
+         "761849/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-mistral-large-2512-ea-overlap-alphaevolve-2025  []  from the object: REFUTED value 329278734110570123235339478220… · CERTIFIED value 0 · CERTIFIED value -223181244722614395552711491/2…  0.",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:mistral-large-2512.guide",
      "claim": "x_mistral_large_2512_guide_ea_overlap_alphaevolve_2025",
      "statement": "erdo_alphaevolve_2025 ≤ 0.380924",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_alphaevolve_2025\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4639,7 +4894,7 @@
      }
     }
    ],
-   "outcome": "not stated: ambiguous, data, decider, prose, source, syntax"
+   "outcome": "refused: every proposal fails printedBack, sensitivity; model:claude-opus-5-5's proposal not stated: prose; model:deepseek-v4-pro's proposal not stated: ambiguous; model:deepseek-v4-pro.guide's proposal not stated: ambiguous; model:gemini-4-argon's proposal not stated: prose; model:glm-5.3's proposal not stated: syntax; model:gpt-6-luna's proposal not stated: prose; model:gpt-6-luna.guide's proposal not stated: syntax; model:gpt-6.1-sol's proposal not stated: prose; model:gpt-6.1-sol.guide's proposal not stated: decider; model:gpt-oss-120b's proposal not stated: decider; model:kimi-k3.1-pro's proposal not stated: decider; model:minimax-m3's proposal not stated: prose; model:mistral-large-2512.guide's proposal not stated: decider; model:qwen3.8-max's proposal not stated: source"
   },
   {
    "id": "ea-overlap-ttt_discover_2026",
@@ -4650,9 +4905,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"a step function h with 600 steps, 0 <= h <= 1, Σh = n/2\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4670,9 +4925,9 @@
      "claim": "x_deepseek_v4_pro_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_ttt_discover_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4689,20 +4944,64 @@
      "kind": "model:gemini-4-argon",
      "claim": "x_gemini_4_argon_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-gemini-4-argon-ea-overlap-ttt-discover-2026",
+     "sha256": "6d2694772d9049af5c0190c6be0cfc35ce8c16f1a75a80f0a28d005465c76629",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/ttt_discover_2026.json",
+       "sha256": "d60c743254580a2e58fcc84defacf2a7e1fb01cc001b22b977ecae45ec9e895b"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380876",
+        [
+         "761751/2000000",
+         "761753/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-ea-overlap-ttt-discover-2026  []  from the object: REFUTED value 927008317610999032889703149182… · CERTIFIED value 1/4503599627370496 · CERTIFIED value -81329740651/30023997",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "planted",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:glm-5.3",
      "claim": "x_glm_5_3_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_ttt_discover_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4719,11 +5018,54 @@
      "kind": "model:gpt-6-luna.guide",
      "claim": "x_gpt_6_luna_guide_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-gpt-6-luna-guide-ea-overlap-ttt-discover-2026",
+     "sha256": "c1c0e0333835c729f4521e217fdc98dcd0d926414481aaa8bcc450322276a1fc",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/ttt_discover_2026.json",
+       "sha256": "d60c743254580a2e58fcc84defacf2a7e1fb01cc001b22b977ecae45ec9e895b"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380876",
+        [
+         "761751/2000000",
+         "761753/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-gpt-6-luna-guide-ea-overlap-ttt-discover-2026  []  from the object: REFUTED value 927008317610999032889703149182… · CERTIFIED value 1/4503599627370496 · CERTIFIED value -81329740651/300239",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:gpt-6.1-sol",
@@ -4759,40 +5101,126 @@
      "kind": "model:kimi-k3.1-pro",
      "claim": "x_kimi_k3_1_pro_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-kimi-k3-1-pro-ea-overlap-ttt-discover-2026",
+     "sha256": "4ee64bf6071331be7e51e483f4cbd34f901d31cfff32a68f7b1a207f94e9a7de",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/ttt_discover_2026.json",
+       "sha256": "d60c743254580a2e58fcc84defacf2a7e1fb01cc001b22b977ecae45ec9e895b"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380876",
+        [
+         "761751/2000000",
+         "761753/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-kimi-k3-1-pro-ea-overlap-ttt-discover-2026  []  from the object: REFUTED value 927008317610999032889703149182… · CERTIFIED value 1/4503599627370496 · CERTIFIED value -81329740651/300239975",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:minimax-m3",
      "claim": "x_minimax_m3_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_ttt_discover_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
      "kind": "model:mistral-large-2512",
      "claim": "x_mistral_large_2512_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-mistral-large-2512-ea-overlap-ttt-discover-2026",
+     "sha256": "f5edd80516c061a9df88020d7fe6fe3539ab8a26d879340c6b5a720b64d433e8",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/ttt_discover_2026.json",
+       "sha256": "d60c743254580a2e58fcc84defacf2a7e1fb01cc001b22b977ecae45ec9e895b"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380876",
+        [
+         "761751/2000000",
+         "761753/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-mistral-large-2512-ea-overlap-ttt-discover-2026  []  from the object: REFUTED value 927008317610999032889703149182… · CERTIFIED value 1/4503599627370496 · CERTIFIED value -81329740651/3002",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:mistral-large-2512.guide",
      "claim": "x_mistral_large_2512_guide_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_ttt_discover_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4800,13 +5228,13 @@
      "claim": "x_qwen3_8_max_ea_overlap_ttt_discover_2026",
      "statement": "erdo_ttt_discover_2026 ≤ 0.380876",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_ttt_discover_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     }
    ],
-   "outcome": "not stated: data, decider, prose"
+   "outcome": "refused: every proposal fails planted, printedBack, sensitivity; model:claude-opus-5-5's proposal not stated: prose; model:deepseek-v4-pro's proposal not stated: decider; model:deepseek-v4-pro.guide's proposal not stated: decider; model:glm-5.3's proposal not stated: decider; model:gpt-6-luna's proposal not stated: prose; model:gpt-6.1-sol's proposal not stated: prose; model:gpt-6.1-sol.guide's proposal not stated: decider; model:gpt-oss-120b's proposal not stated: prose; model:minimax-m3's proposal not stated: decider; model:mistral-large-2512.guide's proposal not stated: decider; model:qwen3.8-max's proposal not stated: decider"
   },
   {
    "id": "ea-overlap-together_ai_2026",
@@ -4817,9 +5245,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"a step function h with 600 steps, 0 <= h <= 1, Σh = n/2\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4836,38 +5264,169 @@
      "kind": "model:deepseek-v4-pro",
      "claim": "x_deepseek_v4_pro_ea_overlap_together_ai_2026",
      "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-deepseek-v4-pro-ea-overlap-together-ai-2026",
+     "sha256": "f3e585cd1cec005c5791cf470da93646a9129acbf7e2a985c693477108d0a979",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/together_ai_2026.json",
+       "sha256": "1f6345c04fc452bdd7e4f86e9f960d9fc7c5996cc90c5554d9081b7d5cf11019"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380871",
+        [
+         "761741/2000000",
+         "761743/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-deepseek-v4-pro-ea-overlap-together-ai-2026  []  from the object: REFUTED value 262656923679714663975789788145… · CERTIFIED value 7681330291729527/1237940039285… · CERTIFIED value -3651655",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "planted",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:deepseek-v4-pro.guide",
      "claim": "x_deepseek_v4_pro_guide_ea_overlap_together_ai_2026",
      "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-deepseek-v4-pro-guide-ea-overlap-together-ai-2026",
+     "sha256": "27c676c2e172b08923a6f2a5a603aa4db5078e1bb824d19965005e69ee1664ae",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/together_ai_2026.json",
+       "sha256": "1f6345c04fc452bdd7e4f86e9f960d9fc7c5996cc90c5554d9081b7d5cf11019"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380871",
+        [
+         "761741/2000000",
+         "761743/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": null,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-deepseek-v4-pro-guide-ea-overlap-together-ai-2026  []  from the object: REFUTED value 262656923679714663975789788145… · CERTIFIED value 7681330291729527/1237940039285… · CERTIFIED value -3",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:gemini-4-argon",
      "claim": "x_gemini_4_argon_ea_overlap_together_ai_2026",
      "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-gemini-4-argon-ea-overlap-together-ai-2026",
+     "sha256": "8a8e00c7adc52d6ba83eddf420b35f9eeb63531b6f52adbd4e5d6238fbb73429",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/together_ai_2026.json",
+       "sha256": "1f6345c04fc452bdd7e4f86e9f960d9fc7c5996cc90c5554d9081b7d5cf11019"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380871",
+        [
+         "761741/2000000",
+         "761743/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-gemini-4-argon-ea-overlap-together-ai-2026  []  from the object: REFUTED value 262656923679714663975789788145… · CERTIFIED value 7681330291729527/1237940039285… · CERTIFIED value -36516553",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "planted",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:glm-5.3",
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 0.380871\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 0.380871\""
      }
     },
     {
@@ -4925,7 +5484,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 0.380871\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 0.380871\""
      }
     },
     {
@@ -4940,20 +5499,63 @@
      "kind": "model:mistral-large-2512",
      "claim": "x_mistral_large_2512_ea_overlap_together_ai_2026",
      "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"erdos-minimum-overlap\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-mistral-large-2512-ea-overlap-together-ai-2026",
+     "sha256": "e2a993749de8e959b443814748f6e5b3807f99f6382fd4739ce680c1f5863fdc",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/erdos-minimum-overlap/together_ai_2026.json",
+       "sha256": "1f6345c04fc452bdd7e4f86e9f960d9fc7c5996cc90c5554d9081b7d5cf11019"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "0.380871",
+        [
+         "761741/2000000",
+         "761743/2000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": false,
+     "planted": true,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "REFUTED",
+     "certMachine": "ADMITTED  x-mistral-large-2512-ea-overlap-together-ai-2026  []  from the object: REFUTED value 262656923679714663975789788145… · CERTIFIED value 7681330291729527/1237940039285… · CERTIFIED value -3651",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "CERTIFIED",
+      "held": false,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "printedBack",
+      "sensitivity"
+     ]
     },
     {
      "kind": "model:mistral-large-2512.guide",
      "claim": "x_mistral_large_2512_guide_ea_overlap_together_ai_2026",
      "statement": "erdo_together_ai_2026 ≤ 0.380871",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"erdo_together_ai_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -4967,7 +5569,7 @@
      }
     }
    ],
-   "outcome": "not stated: ambiguous, data, decider, name, prose, syntax"
+   "outcome": "refused: every proposal fails planted, printedBack, sensitivity; model:claude-opus-5-5's proposal not stated: prose; model:glm-5.3's proposal not stated: syntax; model:gpt-6-luna's proposal not stated: ambiguous; model:gpt-6-luna.guide's proposal not stated: decider; model:gpt-6.1-sol's proposal not stated: prose; model:gpt-6.1-sol.guide's proposal not stated: decider; model:gpt-oss-120b's proposal not stated: prose; model:kimi-k3.1-pro's proposal not stated: syntax; model:minimax-m3's proposal not stated: name; model:mistral-large-2512.guide's proposal not stated: decider; model:qwen3.8-max's proposal not stated: prose"
   },
   {
    "id": "ea-edges-alphaevolve_2025",
@@ -4978,9 +5580,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"the platform's envelope score\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -5130,7 +5732,7 @@
      }
     }
    ],
-   "outcome": "not stated: data, decider, name, prose, syntax"
+   "outcome": "not stated: decider, name, prose, syntax"
   },
   {
    "id": "ea-edges-ours_2026",
@@ -5141,9 +5743,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"the platform's envelope score\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -5295,7 +5897,7 @@
      }
     }
    ],
-   "outcome": "not stated: data, decider, prose, syntax"
+   "outcome": "not stated: decider, prose, syntax"
   },
   {
    "id": "ea-autocorr-alphaevolve_2025",
@@ -5306,9 +5908,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"C₁\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -5316,7 +5918,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50529397\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 1.50529397\""
      }
     },
     {
@@ -5411,11 +6013,53 @@
      "kind": "model:minimax-m3",
      "claim": "x_minimax_m3_ea_autocorr_alphaevolve_2025",
      "statement": "firs_alphaevolve_2025 is a feasible solution of \"first-autocorrelation\" and its score is 1.50529397",
-     "refused": {
-      "rule": "decider",
-      "hole": "decider",
-      "why": "the library has no verifier of the platform's \"first-autocorrelation\", and cert-machine's decider has no record of it over these bytes"
-     }
+     "object": "x-minimax-m3-ea-autocorr-alphaevolve-2025",
+     "sha256": "3107848518ce97fe1bf0d76e0123d11969e6b35b1d40b7919e3b4e082d1fdb3f",
+     "decision": {
+      "pin": {
+       "path": "../claimbox/corpus/easota/first-autocorrelation/alphaevolve_2025.json",
+       "sha256": "7e9ded614e96b6c598bac1220b72017722e939cd396633a4635c95b8dc63f903"
+      },
+      "count": 600,
+      "elements": "doubles",
+      "reading": "universal",
+      "ineqs": [
+       [
+        "in",
+        "1.50529397",
+        [
+         "301058793/200000000",
+         "60211759/40000000"
+        ]
+       ]
+      ],
+      "named": [],
+      "record": [
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": false,
+     "paraphrase": null,
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-minimax-m3-ea-autocorr-alphaevolve-2025  []  from the object: CERTIFIED value 381983467766155763721549096532… · CERTIFIED value 0  1.418 s  note: no record attached",
+     "sensitivity": {
+      "steps": 1,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
+     "fails": [
+      "planted"
+     ]
     },
     {
      "kind": "model:mistral-large-2512",
@@ -5438,13 +6082,13 @@
      "claim": "x_qwen3_8_max_ea_autocorr_alphaevolve_2025",
      "statement": "firs_alphaevolve_2025 ≤ 1.50529397",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"firs_alphaevolve_2025\" has no primitive expression here: a decider path is needed, and none was given"
      }
     }
    ],
-   "outcome": "not stated: data, decider, definition, prose, relations, syntax"
+   "outcome": "refused: every proposal fails planted; model:claude-opus-5-5's proposal not stated: syntax; model:deepseek-v4-pro's proposal not stated: decider; model:deepseek-v4-pro.guide's proposal not stated: decider; model:gemini-4-argon's proposal not stated: prose; model:gpt-6-luna's proposal not stated: decider; model:gpt-6-luna.guide's proposal not stated: decider; model:gpt-6.1-sol's proposal not stated: decider; model:gpt-6.1-sol.guide's proposal not stated: decider; model:gpt-oss-120b's proposal not stated: decider; model:kimi-k3.1-pro's proposal not stated: definition; model:mistral-large-2512's proposal not stated: relations; model:mistral-large-2512.guide's proposal not stated: relations; model:qwen3.8-max's proposal not stated: decider"
   },
   {
    "id": "ea-autocorr-alphaevolve_v2_2025",
@@ -5668,7 +6312,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50286290\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 1.50286290\""
      }
     },
     {
@@ -5736,7 +6380,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50286290\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 1.50286290\""
      }
     },
     {
@@ -5764,7 +6408,7 @@
      "refused": {
       "rule": "decider",
       "hole": "decider",
-      "why": "the library has no verifier of the platform's \"first-autocorrelation\", and cert-machine's decider has no record of it over these bytes"
+      "why": "the library decides \"first-autocorrelation\" from the object over at most 4,000 values (the receiver's exact evaluator is quadratic in the count: 1,319 values in 7 s); the bytes hold 30,000, so the rou"
      }
     }
    ],
@@ -5819,7 +6463,7 @@
      "refused": {
       "rule": "decider",
       "hole": "decider",
-      "why": "the library has no verifier of the platform's \"first-autocorrelation\", and cert-machine's decider has no record of it over these bytes"
+      "why": "the library decides \"first-autocorrelation\" from the object over at most 4,000 values (the receiver's exact evaluator is quadratic in the count: 1,319 values in 7 s); the bytes hold 30,000, so the rou"
      }
     },
     {
@@ -5827,7 +6471,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50286286\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 1.50286286\""
      }
     },
     {
@@ -5885,7 +6529,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50286286\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 1.50286286\""
      }
     },
     {
@@ -5893,7 +6537,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≤ 1.50286286\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≤ 1.50286286\""
      }
     },
     {
@@ -5926,9 +6570,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"C⁺ = max_{|z|=1} |g(z)| / √71\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -6078,7 +6722,7 @@
      }
     }
    ],
-   "outcome": "not stated: data, decider, name, prose, syntax, unbounded"
+   "outcome": "not stated: decider, name, prose, syntax, unbounded"
   },
   {
    "id": "ea-flat-ours_2026",
@@ -6089,9 +6733,9 @@
     {
      "kind": "grammar",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"C⁺ = max_{|z|=1} |g(z)| / √71\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -6109,9 +6753,9 @@
      "claim": "x_deepseek_v4_pro_ea_flat_ours_2026",
      "statement": "flat_ours_2026 = 1.280932",
      "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the published bytes are not JSON: Extra data: line 1 column 3 (char 2)"
+      "rule": "decider",
+      "hole": "decider",
+      "why": "the quantity \"flat_ours_2026\" has no primitive expression here: a decider path is needed, and none was given"
      }
     },
     {
@@ -6241,7 +6885,7 @@
      }
     }
    ],
-   "outcome": "not stated: data, decider, prose, syntax"
+   "outcome": "not stated: decider, prose, syntax"
   },
   {
    "id": "ea-hexagons-alphaevolve_2025",
@@ -6999,7 +7643,7 @@
      "refused": {
       "rule": "syntax",
       "hole": "syntax",
-      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\" or \"within R of NUMBER\", not \"≥ 1.6747338950414058\""
+      "why": "the language cannot read the proposal: a bar is a printed number, \"NUMBER…\", \"published as NUMBER\", \"within R of NUMBER\" or, for a score, \"at most NUMBER\" / \"at least NUMBER\", not \"≥ 1.674733895041405"
      }
     },
     {
@@ -20499,14 +21143,14 @@
     {
      "kind": "grammar",
      "object": "p-mc100-ea-best-erdos-min-overlap",
-     "sha256": "9f51edbe26e08dc3357663e73972c68bb95b001c0cb8e07f7e42e07b6859dd55",
+     "sha256": "2ceb1bc88b52c13e7a01e2407174e6f64cc2cc2525406637674c1c8748e64825",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20518,24 +21162,30 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
      "anchored": true,
      "printedBack": true,
-     "planted": null,
+     "planted": true,
      "paraphrase": "unread",
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   p-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -73624039343656824",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20543,14 +21193,14 @@
      "claim": "m_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "m-mc100-ea-best-erdos-min-overlap",
-     "sha256": "c46aa8c043fa3837e2a67600643d99e8ca48d7076d94c55eb771b1b1865d347b",
+     "sha256": "749fd5597dc5d6359991bdabd30fa141927f4c9a27f3cd454c5b70230b1b8100",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20562,14 +21212,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20577,9 +21225,17 @@
      "printedBack": true,
      "planted": false,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   m-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  m-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -73624039343656824",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": [
       "planted"
      ]
@@ -20617,14 +21273,14 @@
      "claim": "x_glm_5_3_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-glm-5-3-mc100-ea-best-erdos-min-overlap",
-     "sha256": "17ab6b4239e297bcaab8ce1f8d5307e060edcf6a8e5a1ad6c0f8964466986bb6",
+     "sha256": "ce03a17b6019c208ea27a16d809665e83775e6650f6de862b7166a234802a104",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20636,14 +21292,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20651,9 +21305,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-glm-5-3-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-glm-5-3-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -736240393",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20661,14 +21323,14 @@
      "claim": "x_gpt_6_luna_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-gpt-6-luna-mc100-ea-best-erdos-min-overlap",
-     "sha256": "dd4555cd70bec8a3ac8d46b178003844c392454f05588205ee1e6f7b55d13c69",
+     "sha256": "77a47ab5cdea036a4de10802372820b651f069126a025582a93321b5629f1e13",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20680,14 +21342,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20695,9 +21355,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-gpt-6-luna-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-luna-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -736240",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20705,14 +21373,14 @@
      "claim": "x_gpt_6_luna_guide_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-gpt-6-luna-guide-mc100-ea-best-erdos-min-overlap",
-     "sha256": "c86eed99e3d5f1a82d2f090428e2a12a93bb1b41c4f90fa2f022a6a383cf5705",
+     "sha256": "ce3cb3293080dc4417018eb8eb846c4189dbe5820e82ffc0c12b8d7a514103b7",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20724,14 +21392,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20739,9 +21405,17 @@
      "printedBack": true,
      "planted": null,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-gpt-6-luna-guide-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-luna-guide-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20759,14 +21433,14 @@
      "claim": "x_gpt_6_1_sol_guide_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-gpt-6-1-sol-guide-mc100-ea-best-erdos-min-overlap",
-     "sha256": "a54b8de06ebf1a3dd7e6e18055dad739a3f8d247ffe46549f0df98396848852d",
+     "sha256": "e9d84cf80f78991b32a575b054806d0152fb8c055e8557b7e686297ceae06829",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20778,14 +21452,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20793,9 +21465,17 @@
      "printedBack": true,
      "planted": null,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-gpt-6-1-sol-guide-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-6-1-sol-guide-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value ",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20803,14 +21483,14 @@
      "claim": "x_gpt_oss_120b_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-gpt-oss-120b-mc100-ea-best-erdos-min-overlap",
-     "sha256": "e12865a77fe227272a25ff2ef823aee3f56b2f269b657234f59c6be824012e92",
+     "sha256": "747f4ddc4d852e9df0c59f1840c3324e2734d50038b1ad02a4a4140919a67ac4",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20822,14 +21502,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20837,9 +21515,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-gpt-oss-120b-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-gpt-oss-120b-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -7362",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20847,14 +21533,14 @@
      "claim": "x_kimi_k3_1_pro_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-kimi-k3-1-pro-mc100-ea-best-erdos-min-overlap",
-     "sha256": "efdbd11809c32c5a9e82f6a99ff6ec7b98519b60d49317f6befa3c41c99c5476",
+     "sha256": "666ec75a051af07c44733e006a616bbde78248e494b44467c8d3f06fa34df8a7",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20866,14 +21552,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20881,9 +21565,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-kimi-k3-1-pro-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-kimi-k3-1-pro-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -736",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20891,14 +21583,14 @@
      "claim": "x_minimax_m3_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-minimax-m3-mc100-ea-best-erdos-min-overlap",
-     "sha256": "1ed408a271347155f7645b96a0b29fbf828aa87ef1b8c246ee2163ab5ea3b327",
+     "sha256": "9e399ad4a0380bc1f37023eca50a27302e945c8bd0928121fb7712940e9930c3",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20910,14 +21602,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20925,9 +21615,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-minimax-m3-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-minimax-m3-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -736240",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20935,14 +21633,14 @@
      "claim": "x_mistral_large_2512_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-mistral-large-2512-mc100-ea-best-erdos-min-overlap",
-     "sha256": "3ea1c302eb3c56df869ee90fc077e0133e025f1cbad26dd4262a1573fbfa995b",
+     "sha256": "11d5c18e30391dc5cb352f2b6c236eb47a2753028891215308e17cde61abde4f",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20954,14 +21652,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -20969,9 +21665,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-mistral-large-2512-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-mistral-large-2512-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -20979,14 +21683,14 @@
      "claim": "x_mistral_large_2512_guide_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-mistral-large-2512-guide-mc100-ea-best-erdos-min-overlap",
-     "sha256": "b9441d46ac1c9791eb04cf330577ab9a5cdea5726fddc2beeda18ca53a1c8fa9",
+     "sha256": "93b894a73e3e19af591ba2dbbbc7d0e2db5949cf24f20dc50334b2d0c504663f",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -20998,14 +21702,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -21013,9 +21715,17 @@
      "printedBack": true,
      "planted": null,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-mistral-large-2512-guide-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-mistral-large-2512-guide-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     },
     {
@@ -21023,14 +21733,14 @@
      "claim": "x_qwen3_8_max_mc100_ea_best_erdos_min_overlap",
      "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
      "object": "x-qwen3-8-max-mc100-ea-best-erdos-min-overlap",
-     "sha256": "14e6e247b4ff1406089d152844afb914c2c6177c2c594e983e8cacbf47d4bf05",
+     "sha256": "89b72d857911c64d9e9fb68f37a0313765cbba5d34ed6059a46c804f5f325148",
      "decision": {
       "pin": {
        "path": "corpus/einstein-arena/best-1.json",
        "sha256": "0c4c744e6ae714b488e931cb647dd6d47552c5dc7a131b2d5286742e7e8df2e6"
       },
       "count": 3584,
-      "elements": null,
+      "elements": "doubles",
       "reading": "universal",
       "ineqs": [
        [
@@ -21042,14 +21752,12 @@
         ]
        ]
       ],
-      "named": [
-       "the platform's score of the published object, as the claimant defines it"
-      ],
+      "named": [],
       "record": [
-       "certs/mc100-einstein-arena.json",
-       "ea-best-erdos-min-overlap",
        null,
-       "REPAIRED",
+       null,
+       null,
+       null,
        null
       ]
      },
@@ -21057,9 +21765,17 @@
      "printedBack": true,
      "planted": true,
      "paraphrase": null,
-     "faithful": null,
-     "word": "REFUSED",
-     "certMachine": "REFUSED   x-qwen3-8-max-mc100-ea-best-erdos-min-overlap  record-verdict-word: the record says 'REPAIRED'",
+     "faithful": true,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  x-qwen3-8-max-mc100-ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -73624",
+     "sensitivity": {
+      "steps": 2000000001,
+      "up": "REFUTED",
+      "down": "REFUTED",
+      "held": true,
+      "tight": null
+     },
+     "vacuity": null,
      "fails": []
     }
    ],

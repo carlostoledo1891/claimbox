@@ -8,6 +8,7 @@ conventions and the route that decides it.
 MIT"""
 from .. import grammar
 from .common import *  # noqa: F401,F403
+from .step_functions import PRIMITIVE
 
 # ---- the platform scores whose verifier is finite arithmetic over the bytes, written once from the platform's own pinned
 # verifier (corpus/platform/einstein-arena, tools/platform.py); keyed by the problem title as the claim prints it. `g` is the
@@ -103,6 +104,35 @@ PLATFORM.update({
         'reduction': 'the verifier takes min over every triple of |det|/2 and divides by the area of the convex hull (a monotone chain, then the shoelace sum); here the hull is a certificate: claimbox lists its vertices in counter-clockwise order, the receiver decides that every point lies on the closed left side of every edge — so the polygon is convex, holds every point, and has points for vertices: it is the hull — and the expression takes its area by the shoelace sum over those vertices; the score is a float64 evaluation of the same arithmetic'},
 })
 
+# 2026-11-03, for the SOTA table's Python-published rows (TODO.md item 6; claimbox.readers.easota_py decodes their literal arrays): the
+# first autocorrelation inequality and Erdős' minimum overlap, whose verifiers the library already writes as the registry's
+# functionals C_1a and C_1b (step_functions.py; the platform's verifier is the same arithmetic: max(convolve(f, f))·dx / (Σf·dx)²,
+# and max(correlate(h, 1 − h)) · 2/n after h is rescaled to Σh = n/2 — written once there, named here by the platform's title).
+# `aliases`: the SOTA table's folder names, which a claim over its bytes may name the problem by; `also`: the table's files print
+# decimals, which the easota ledger reads as the digits exactly, so `decimals` is a reading too (the two are a fork: Haugland's
+# 51 steps sum to n/2 exactly as decimals and fall short of it by ~10⁻¹⁷ as doubles, where the rescaled h exceeds 1). NOT here, and why: flat
+# polynomials (the score is a supremum over the unit circle; the receiver decides finite arithmetic — its lower edge would be
+# decidable from a rational point of the circle, PLAN.md §5.1) and edges vs triangles (the platform's envelope score is a procedure:
+# a sort, three cases and 1e-9 tolerances — a decider, not an expression); both decoded, both holes `decider`.
+# `cap`: the functional is decided from the object over arrays of at most this many values. The receiver's exact evaluator of the
+# expression is quadratic in the count (measured 2026-11-03: 600 values in 1.4 s, 1,319 in 7 s; 30,000 would be about an hour,
+# and the platform's 65,536-value best was not finished after 3¾ hours); above the cap the route is the one these titles had before:
+# cert-machine's own decider and its record row (RECORDED), or a hole `decider` where it has none — the four 30,000-value rows
+PLATFORM.update({
+    'First Autocorrelation Inequality (Upper Bound)': {
+        'slug': 'first-autocorrelation-inequality', 'aliases': ('first-autocorrelation',), 'elements': 'doubles', 'also': ('decimals',), 'd': None, 'n': None, 'rows': 'values', 'resolution': True, 'cap': 4000,
+        'g': PRIMITIVE['C_1a']['g'],
+        'score': 'the ratio max(convolve(f, f) · dx) / (Σ f · dx)^2 of the non-negative step function, dx = 1/(2n)',
+        'structural': PRIMITIVE['C_1a']['structural'],
+        'reduction': 'the platform computes C = max(convolve(f, f)) · dx / (Σ f · dx)^2 with dx = 0.5/n in float64, and convolve(f, f)[k] = Σ_{i+j=k} f_i f_j, so exactly C = 2n · max_k Σ_{i+j=k} f_i f_j / (Σ f_i)^2 — the registry\'s functional C_1a, written once in the library; it rejects a negative value and a zero sum'},
+    'Erdős Minimum Overlap (Upper Bound)': {
+        'slug': 'erdos-min-overlap', 'aliases': ('erdos-minimum-overlap',), 'elements': 'doubles', 'also': ('decimals',), 'd': None, 'n': None, 'rows': 'values', 'resolution': True, 'cap': 4000,
+        'g': PRIMITIVE['C_1b']['g'],
+        'score': 'the minimum-overlap value max_k Σ_i h\'_i (1 − h\'_{i+k}) · 2/n of the step function h rescaled to Σ h\' = n/2',
+        'structural': PRIMITIVE['C_1b']['structural'],
+        'reduction': 'the platform requires 0 <= h <= 1, rescales h by (n/2)/Σh (the identity when Σh is n/2 already), requires 0 <= h\' <= 1 again, and computes max(correlate(h\', 1 − h\', full)) · 2/n in float64; with s = (n/2)/Σh every lag\'s sum is s·Σh_i − s²·Σh_i h_{i+m}, so exactly C = max_m (Σh · Σ_i h_i − (n/2) · Σ_i h_i h_{i+m}) / (Σh)^2 over the i with i and i+m in range — the registry\'s functional C_1b, written once in the library'},
+})
+
 
 def hull_of(points):
     """the convex hull's vertices, counter-clockwise, as indices into the points (exact rationals): Andrew's monotone chain"""
@@ -139,6 +169,7 @@ def hull_parts(points):
 
 
 PLATFORM_BY_TITLE = {grammar.normalise(k): v for k, v in PLATFORM.items()}
+PLATFORM_BY_TITLE.update({grammar.normalise(a): v for v in PLATFORM.values() for a in v.get('aliases', ())})
 
 
 # THE PLATFORM'S OTHER PROBLEMS (2026-10-30, for the register): no verifier is written here for them; cert-machine's EinsteinArena

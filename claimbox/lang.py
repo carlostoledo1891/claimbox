@@ -213,12 +213,15 @@ def bar(text, line):
     m = re.fullmatch(BAR_NUMBER, text)
     if m:
         return ('exact', text)
-    raise LangError('syntax', line, f'a bar is a printed number, "NUMBER…", "published as NUMBER" or "within R of NUMBER", not "{text}"')
+    m = re.fullmatch(r'at (most|least) (' + BAR_NUMBER + ')', text)      # a score claimed as a bound (2026-11-03): the number taken exactly
+    if m:
+        return ('atmost' if m.group(1) == 'most' else 'atleast', m.group(2))
+    raise LangError('syntax', line, f'a bar is a printed number, "NUMBER…", "published as NUMBER", "within R of NUMBER" or, for a score, "at most NUMBER" / "at least NUMBER", not "{text}"')
 
 
 def fmt_bar(b):
     return {'exact': lambda: b[1], 'trunc': lambda: b[1] + '…', 'rounded': lambda: 'published as ' + b[1],
-            'within': lambda: f'within {b[1]} of {b[2]}'}[b[0]]()
+            'within': lambda: f'within {b[1]} of {b[2]}', 'atmost': lambda: 'at most ' + b[1], 'atleast': lambda: 'at least ' + b[1]}[b[0]]()
 
 
 def bar_value(printed):
@@ -239,6 +242,10 @@ def rational(v):
 
 
 def bar_words(b, rel):
+    if b[0] in ('atmost', 'atleast'):
+        v = bar_value(b[1])
+        exact = '' if v.denominator == 1 or str(v) == b[1].replace(',', '') else f' (exactly {rational(v)})'
+        return f'{"at most" if b[0] == "atmost" else "at least"} {b[1]}{exact}, the bound as printed'
     if b[0] == 'exact':
         v = bar_value(b[1])
         exact = '' if v.denominator == 1 or str(v) == b[1].replace(',', '') else f' (exactly {rational(v)})'
@@ -430,7 +437,8 @@ def statement_means(s):
     if k == 'decomp':
         return f'the factors in {s[1]}' + (f' under "{s[5]}"' if len(s) > 5 and s[5] else '') + f' sum to the tensor <{s[3][0]},{s[3][1]},{s[3][2]}> with {s[2]} rank-one terms over {s[4]}'
     if k == 'score':
-        return f'{s[1]} meets every condition of "{s[2]}", and the score the platform defines is {bar_words(s[3], "=")}'
+        # a score's plain number is the box its digits allow (the object's `in` predicate), never "exactly" (2026-11-03)
+        return f'{s[1]} meets every condition of "{s[2]}", and the score the platform defines is {bar_words(("rounded", s[3][1]) if s[3][0] == "exact" else s[3], "=")}'
     if k == 'machine':
         return MACHINE_MEANS[s[1]['kind']](s[1])
     if k == 'template':

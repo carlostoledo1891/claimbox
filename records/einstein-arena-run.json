@@ -16,13 +16,23 @@
      "rel": "in",
      "printed": "0.3808585748578584",
      "c": [
-      "7617171497157167/20000000000000000",
-      "7617171497157169/20000000000000000"
+      "476073093572323/1250000000000000",
+      "476073343572323/1250000000000000"
      ]
+    },
+    {
+     "rel": "ge",
+     "printed": null,
+     "c": "0"
+    },
+    {
+     "rel": "le",
+     "printed": null,
+     "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-erdos-min-overlap  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachine": "ADMITTED  ea-best-erdos-min-overlap  []  from the object: CERTIFIED value 786138150670075354476385813552… · CERTIFIED value 570511527016931/31691265005705… · CERTIFIED value -73624039343656824511/45432597…  124.471 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-7  note: no record attached",
+   "certMachineSeconds": 124.5
   },
   {
    "id": "ea-best-thomson-problem",
@@ -72,7 +82,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-edges-vs-triangles  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-circle-packing",
@@ -120,8 +130,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-circle-packing  []  from the object: CERTIFIED value 189942599023837833/72057594037… · CERTIFIED value 2492496546109449/3602879701896… · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · REFUTED (witness {\"i\": 1, \"j\": 13}, 3 violating)  0.012 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-10  note: no record at",
-   "certMachineSeconds": 0.1
+   "certMachine": "ADMITTED  ea-best-circle-packing  []  from the object: CERTIFIED value 189942599023837833/72057594037… · CERTIFIED value 2492496546109449/3602879701896… · CERTIFIED · CERTIFIED · CERTIFIED · CERTIFIED · REFUTED (witness {\"i\": 1, \"j\": 13}, 3 violating)  0.007 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-10  note: no record at",
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-heilbronn-triangles",
@@ -160,8 +170,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-circles-rectangle  []  from the object: CERTIFIED value 85238094452549551/360287970189… · CERTIFIED value 2692846334979835/3602879701896… · CERTIFIED value -24871/36028797018963968 · CERTIFIED  0.011 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-10  note: no record attached",
-   "certMachineSeconds": 0.1
+   "certMachine": "ADMITTED  ea-best-circles-rectangle  []  from the object: CERTIFIED value 85238094452549551/360287970189… · CERTIFIED value 2692846334979835/3602879701896… · CERTIFIED value -24871/36028797018963968 · CERTIFIED  0.005 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-10  note: no record attached",
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-difference-bases",
@@ -185,8 +195,8 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-first-autocorrelation-inequality  []  0.003 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachine": "ADMITTED  ea-best-first-autocorrelation-inequality  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-kissing-number-d12",
@@ -205,7 +215,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-kissing-number-d12  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-kissing-number-d11-605",
@@ -224,7 +234,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-kissing-number-d11-605  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-kissing-number-d12-842",
@@ -242,8 +252,8 @@
      ]
     }
    ],
-   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.001 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.1
+   "certMachine": "ADMITTED  ea-best-kissing-number-d12-842  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
+   "certMachineSeconds": 0.0
   },
   {
    "id": "ea-best-kakeya-needle-128",
@@ -294,8 +304,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-shannon-capacity-c7-5  []  from the object: CERTIFIED value 367 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 0  4.749 s  note: no record attached",
-   "certMachineSeconds": 4.8
+   "certMachine": "ADMITTED  ea-best-shannon-capacity-c7-5  []  from the object: CERTIFIED value 367 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 0  2.631 s  note: no record attached",
+   "certMachineSeconds": 2.7
   },
   {
    "id": "ea-best-second-autocorrelation-inequality",
@@ -352,8 +362,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-no-three-in-line-75  []  from the object: CERTIFIED value 148 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 1  13.653 s  note: no record attached",
-   "certMachineSeconds": 13.7
+   "certMachine": "ADMITTED  ea-best-no-three-in-line-75  []  from the object: CERTIFIED value 148 · CERTIFIED · CERTIFIED value 0 · CERTIFIED value 1  7.547 s  note: no record attached",
+   "certMachineSeconds": 7.6
   },
   {
    "id": "ea-best-two-deletion-code-16",
@@ -388,8 +398,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-third-autocorrelation-inequality  []  from the object: CERTIFIED value 315957707030701161231684717233… · CERTIFIED value 425352956949761163472382904805…  1863.585 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.00001  note: no record attached",
-   "certMachineSeconds": 1863.6
+   "certMachine": "ADMITTED  ea-best-third-autocorrelation-inequality  []  from the object: CERTIFIED value 315957707030701161231684717233… · CERTIFIED value 425352956949761163472382904805…  1028.382 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 0.00001  note: no record attached",
+   "certMachineSeconds": 1028.4
   },
   {
    "id": "ea-best-min-distance-ratio-2d",
@@ -412,8 +422,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  from the object: CERTIFIED value 669247079851380422803644281805… · CERTIFIED value 309485009943258583479101687597…  0.004 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-7  note: no record attached",
-   "certMachineSeconds": 0.0
+   "certMachine": "ADMITTED  ea-best-min-distance-ratio-2d  []  from the object: CERTIFIED value 669247079851380422803644281805… · CERTIFIED value 309485009943258583479101687597…  0.005 s  note: predicate[0]: the box is the printed value ± the platform's declared resolution, the quoted minImprovement 1e-7  note: no record attached",
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-best-kissing-number-d11",
@@ -432,7 +442,7 @@
     }
    ],
    "certMachine": "ADMITTED  ea-best-kissing-number-d11  []  0.0 s  note: predicate[0] not decided from the object: a transcendental or named head  note: no record attached: a proposal, undecided",
-   "certMachineSeconds": 0.0
+   "certMachineSeconds": 0.1
   },
   {
    "id": "ea-kissing-kissing-number-d11",
@@ -447,8 +457,8 @@
      "c": "0"
     }
    ],
-   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  26.052 s  note: no record attached",
-   "certMachineSeconds": 26.2
+   "certMachine": "ADMITTED  ea-kissing-kissing-number-d11  []  from the object: CERTIFIED  18.728 s  note: no record attached",
+   "certMachineSeconds": 18.8
   },
   {
    "id": "ea-best-prime-number-theorem",

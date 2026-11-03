@@ -209,6 +209,13 @@ passes. Parked behind a spend decision.
   or a prime-product decider: the Erdős #852 constant C* = ½(∏_{p≥3}(1 + 1/(p−1)³) − 1) needs 33,859 factors to refute its
   published 0.0752403861777 from the bytes (cert-machine's own certificate does it with one integer inequality); the checker's
   Fraction-normalised product makes that hours (2026-11-02, found by TODO.md item 7).
+- The SOTA table's ledger as a record (2026-11-03, the operator's choice for the rows over the functional's cap): the claimbox
+  checker refuses a record whose row's verdict is not CERTIFIED, REFUTED or REFUSED (`record-verdict-word`), and
+  certs/easota-ledger.json's rows say WITNESSED, MISPRINTED, REPAIRED. The register already reads them through
+  instruments/easota/word.js (WITNESSED → CERTIFIED, MISPRINTED → REFUTED); the ask is that the checker read a ledger row's word
+  the same way, so a claim over the two 30,000-value autocorrelation rows — holes here, the receiver's object evaluator being
+  quadratic in the count (1,319 values in 7 s) — is decided by the row's exact rational, re-decided against the claim's bar, as the
+  platform's rows are through certs/mc100-einstein-arena.json. Until then they are holes `decider` and say so.
 - The folder carlostoledo.co/claimbox/ as a foreign zone (design/zones.js), published by tools/publish-zone.js.
 - Still open from earlier sessions: (c1) the kissing route through the wave file, (g) the two checkers' paths, (h) a
   decider over transcendental heads, (p) printed bars as a·10^k, (c′) Lean and text integer lists, and digit groups in a

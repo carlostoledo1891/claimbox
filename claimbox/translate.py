@@ -346,6 +346,33 @@ def translate_machine(shape, root, source, sp, data, dp, quote, other, record, r
 MIRROR_REL = {'le': 'ge', 'lt': 'gt', 'ge': 'le', 'gt': 'lt'}
 
 
+def over_cap(root, data, title):
+    """(cap, count) when the platform problem's functional is written here with a cap on the count (library einstein_arena.py) and the
+    bytes hold more values than it; else None. The table's Python files are decoded first, as translate decodes them"""
+    t = PLATFORM_BY_TITLE.get(grammar.normalise(title or ''))
+    if not t or not t.get('cap'):
+        return None
+    dp = os.path.join(root, data)
+    if data.startswith(SOTA_TABLE) and data.endswith('.py'):
+        from .readers import easota_py
+        try:
+            data, dp, _ = easota_py.decoded(root, data)
+        except easota_py.ReadError:
+            return None
+    try:
+        with open(dp, 'rb') as f:
+            _, arr = select_array(json.loads(f.read().decode('utf-8')))
+        count = inspect_array(arr)[2]['n']
+    except (OSError, ValueError, UnicodeDecodeError, Refusal):
+        return None
+    return (t['cap'], count) if count > t['cap'] else None
+
+
+def cap_refusal(title, cap, count):
+    return Refusal('decider', 'the library decides "' + title + '" from the object over at most ' + format(cap, ',') + ' values (the receiver\'s exact evaluator is quadratic in the count: 1,319 values in 7 s); '
+                   'the bytes hold ' + format(count, ',') + ', so the route is cert-machine\'s own decider, and it has no record of these bytes')
+
+
 def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None, quote=None, other=None):
     """the claimbox object for a claim, or Refusal. Paths are relative to root (cert-machine's root, so that its checker resolves them)."""
     shape = grammar.parse(sentence)
@@ -362,6 +389,15 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         raise Refusal('source', 'the source is not on disk: ' + source)
     if not os.path.isfile(dp):
         raise Refusal('data', 'the published bytes are not on disk: ' + data)
+    derived = None
+    if data.startswith(SOTA_TABLE) and data.endswith('.py'):
+        # the SOTA table's Python-published constructions (2026-11-03): the literal array decoded into JSON beside it in claimbox's
+        # corpus by claimbox.readers.easota_py, nothing evaluated; the object pins the decoded copy and its decoder says so
+        from .readers import easota_py
+        try:
+            data, dp, derived = easota_py.decoded(root, data)
+        except easota_py.ReadError as e:
+            raise Refusal('data', 'the published bytes are a Python file the reader does not decode: ' + str(e))
     if shape['family'] == 'machine':
         return translate_machine(shape, root, source, sp, data, dp, quote, other, record, reading, obj_id, what, sentence)
     printed = shape.get('printed')
@@ -521,11 +557,16 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             raise Refusal('data', 'decimals is a reading of JSON numbers; these are ' + kind)
         kind = elements
     count = sizes['n']
+    capped = platform if platform is not None and platform.get('cap') and count > platform['cap'] else None
+    if capped is not None:
+        platform = None            # the functional is not written over this many values (library einstein_arena.py, `cap`): the route it had before
     how_read = {'doubles': 'each JSON number as the double it denotes, exactly', 'decimals': 'each JSON number as the decimal digits printed, exactly',
                 'integers': 'each JSON integer exactly', 'rationals': 'each p/q string as the rational it names', 'records': 'structured entries, read by the named decider'}[kind]
     if sqrt2:
         how_read += '; each row the integer pairs (p, q) of ' + str(sizes['d'] // 2) + ' coordinates p + q√2'
     decoder = 'the array at ' + (select or 'the top level') + ': ' + str(count) + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values') + ', ' + how_read
+    if derived:
+        decoder += '; ' + derived
     if doc is None:
         decoder = 'a binary archive, read by the named decider; nothing is decoded here'
     elif doc is False:
@@ -623,7 +664,7 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         t = platform
         title = shape['problem']
         held = (str(count) + ' rows of ' + str(sizes['d']) if 'd' in sizes else str(count) + ' values') + ' read as ' + kind
-        if kind != t['elements'] or sizes.get('d') != t['d']:
+        if (kind != t['elements'] and not (derived is not None and kind in t.get('also', ()))) or sizes.get('d') != t['d']:
             raise Refusal('count', 'the platform\'s "' + title + '" takes ' + t['rows'] + (' of ' + str(t['d']) + ' ' + t['elements'] if t['d'] else ' as ' + t['elements']) + '; the bytes hold ' + held)
         if t['n'] and count != t['n']:
             raise Refusal('count', 'the platform\'s "' + title + '" takes exactly ' + str(t['n']) + ' ' + t['rows'] + '; the bytes hold ' + str(count))
@@ -640,8 +681,13 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             # here over the exact doubles, every edge's condition is a predicate below
             g, extra, hull = hull_parts([[Fraction(v) for v in row] for row in arr])
             hyps.append('the convex hull\'s vertices, counter-clockwise, are points ' + ', '.join(map(str, hull)) + ' (computed by claimbox over the exact doubles; a certificate, decided by the edge predicates below)')
-        sota = data.startswith(SOTA_TABLE)
-        if t['resolution'] and not sota:
+        sota = data.startswith(SOTA_TABLE) or derived is not None
+        if shape['rel'] in ('le', 'ge'):
+            # the score as a bound, "its score is at most BAR" (2026-11-03): the one-sided predicate, the bar taken exactly — the
+            # SOTA table prints some scores as ceilings (certs/easota-ledger.json, printedConvention), which no rounding box holds
+            lo = hi = shape['c']
+            preds.append({'g': g, 'rel': shape['rel'], 'printed': printed, 'c': str(shape['c'])})
+        elif t['resolution'] and not sota:
             box, lo, hi, res = resolution_box(root, data, t['slug'], title, grammar.exact(printed))
             preds.append({'g': g, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)], 'box': box,
                           'note': 'the box is the printed score ± the platform\'s declared resolution for the problem (its minImprovement ' + res + ', quoted from problems.json), not the half-unit box of the printed digits: the print is a float64 evaluation, and the exact value of the same arithmetic over the same doubles need not lie within half a unit of its last digit'})
@@ -652,7 +698,10 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         hyps.append('the platform\'s own verifier for "' + title + '" (' + pin['repo'] + ', ' + pin['path'] + ' at ' + pin['commit'][:8] + ', sha256 ' + pin['sha256'][:12] +
                     '…, pinned here at ' + pin['file'] + ') scores a submission as ' + t['score'] + ' once every constraint holds; its constraints are written here as the exact inequalities below')
         hyps.append(t['reduction'])
-        if sota and t['resolution']:
+        if shape['rel'] in ('le', 'ge'):
+            hyps.append('the score is claimed as a bound, ' + rel_text(shape['rel']) + ' ' + printed + ', the printed number taken exactly: no box, no convention of the print')
+            fals = ['the exact ' + t['score'] + ' of the pinned ' + t['rows'] + ' is not ' + rel_text(shape['rel']) + ' ' + printed]
+        elif sota and t['resolution']:
             hyps.append('the SOTA table prints the score rounded to its digits (certs/easota-ledger.json, its printedConvention): the box is half a unit of the last digit either side, not the platform\'s resolution')
             fals = ['the exact ' + t['score'] + ' of the pinned ' + t['rows'] + ' lies outside [' + str(lo) + ', ' + str(hi) + ']']
         elif t['resolution']:
@@ -661,7 +710,9 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         else:
             fals = ['the count of ' + t['rows'] + ' is not ' + printed]
         fals += ['the pinned ' + t['rows'] + ' violate: ' + s['what'] for s in t['structural'] + extra] + [hashed]
-        if sota and t['resolution']:
+        if shape['rel'] in ('le', 'ge'):
+            ref = 'the bar is the printed ' + printed + ' taken exactly, the score claimed ' + rel_text(shape['rel']) + ' it; the quantity is ' + t['score'] + ', computed exactly from the pinned bytes by the expression itself; feasibility is decided from the bytes by the platform\'s own conditions, written as the structural predicates'
+        elif sota and t['resolution']:
             ref = 'the printed ' + printed + ' is the SOTA table\'s rounding of the score, read as the box its digits allow; the quantity is ' + t['score'] + ', computed exactly from the pinned bytes by the expression itself; feasibility is decided from the bytes by the conditions of the problem\'s verifier, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
         elif t['resolution']:
             fals.append('problems.json does not hash to ' + box['source']['sha256'][:8] + '…, or no longer prints minImprovement ' + res + ' for ' + t['slug'])
@@ -669,6 +720,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         else:
             ref = 'the printed ' + printed + ' is the box its digits allow, and the quantity is the integer count n, so the box holds it exactly or not at all; feasibility is decided from the bytes by the platform\'s own conditions, written as exact inequalities; the ' + t['rows'] + ' are read as ' + how_read
     else:
+        if not decider and capped is not None:
+            raise cap_refusal(shape['problem'], capped['cap'], count)
         if not decider:
             raise Refusal('decider', 'the quantity "' + str(shape.get('name') or fam) + '" has no primitive expression here: a decider path is needed, and none was given')
         if not os.path.isfile(os.path.join(root, decider)):

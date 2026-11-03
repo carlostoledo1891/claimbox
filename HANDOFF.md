@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 567 pass, 0 fail, 147/147 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
+begun); 8 begun (doc, with number slots); 9–10 not started. Tests: `make test` → 579 pass, 0 fail, 152/152 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -219,13 +219,44 @@ re-pinned: cert-machine 38c5dee2 changed playground/warrant.js (value() takes se
 moved). make test 567 pass, 0 fail, 147/147. The page: unchanged (the republish of 17a159b's bytes still waits on the operator's word
 in cert-machine-5b's chat; live is 746d1cb's build, sha256 03b9f0de…).
 
+THE SOTA TABLE'S PYTHON ROWS (2026-11-03, TODO item 6): claimbox/readers/easota_py.py decodes the nine .py-published constructions
+(a docstring, one literal array, for the two symmetric step functions one mirror line read as the expression it prints and no
+other) into corpus/easota/<problem>/<who>.json, every number token verbatim, nothing evaluated, the Python file's sha256 inside;
+translate decodes a .py under corpus/easota/ at translate time and the object pins the decoded copy (the battery re-decodes and
+compares with the ledger's hashes and step counts). The library: 'First Autocorrelation Inequality (Upper Bound)' and 'Erdős
+Minimum Overlap (Upper Bound)' reuse the registry's C_1a and C_1b (einstein_arena.py; `aliases` the table's folder names, `also`
+the reading `decimals`, a fork with `doubles`); flat polynomials (a supremum over the circle) and edges vs triangles (a procedure
+with cases and 1e-9 tolerances) stay holes `decider` with the reason. The language: `its score is at most BAR | at least BAR` — a
+score claimed as a bound, the bar exact (the table prints ceilings, which no rounding box holds; LANGUAGE.md, GUIDE.md). Decided:
+the four overlap rows (Haugland's 51 steps a fork — as decimals CERTIFIED, as doubles REFUTED, the rescaled h over 1 by
+761/5.9·10¹⁹; AlphaEvolve, TTT-Discover, Together AI CERTIFIED as bounds; AlphaEvolve's 0.380924 read as a rounding REFUTED, the
+value is 0.3809230…) and the 600-value autocorrelation under both readings. THE CAP, found the hard way: the receiver's exact
+evaluator is quadratic in the count (600 values 1.4 s, 1,319 in 7 s, 30,000 about an hour; the platform's 65,536-value best
+unfinished after 3¾ h) — the first battery and register runs hung on it. `cap: 4000` on both entries: above it the title keeps
+the route it had (cert-machine's record row via RECORDED, else a hole `decider` naming the cap and the count; translate.over_cap,
+compile's recorded route, the EinsteinArena reader and prose.register_context all read it — the reader named a decider for the
+overlap best when the library had none, which split the grammar's route from the models' until the jobs were regenerated: that
+best, 3,584 values, is now decided from its bytes by C_1b, CERTIFIED in 125 s, its library-identity sha refreshed with --write).
+The two 30,000-value autocorrelation rows are holes until the receiver reads the SOTA ledger's words as record words (the
+operator's choice; the ask in PLAN.md §9: `record-verdict-word` refuses WITNESSED). THE REGISTER NOW (records/prose-register.json,
+re-run 7 min with the cache; the first run 82 min, the sensitivity twins of the new objects): 419 proposals, validated 27, not
+stated 68 (was 73); the five decoded rows with model proposals read "refused: every proposal fails planted, printedBack" — all
+thirteen families wrote the table's ceiling prints as a plain score, a rounding box, which cert-machine refutes and the read-back
+flags ("upper bound" in the sentence, a box in the object): a finding, not a gain; the register validates there only when a
+proposer writes "at most". records/einstein-arena-run.json re-run (15 written, 14 refused, 1 skipped, as before; thirteen object
+files caught up with the 400-character quote window). Battery: the .py rows section (4 greens, 5 reds, the capped row a green).
+make test 579 pass, 0 fail, 152/152. The page moved (decided 59 → 64, needs its bytes 31 → 25, read two ways 17 → 14, nothing
+decides 10 → 14): web/dist/index.html 89,587 bytes, the republish to ask of cert-machine-5b with this build's sha256.
+
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
-1. The SOTA table's .py-published problems (Erdős overlap, edges vs triangles, flat polynomials: a reader for their literal arrays,
-   8 register rows; TODO item 6), then fill as the generic provenance-chain finder (item 4). The first autocorrelation (30,000
-   values) and the hexagon stay with the receiver.
+1. Fill as the generic provenance-chain finder (TODO item 4): cert-machine's certs/claims-ledger.json uses the register's own ids,
+   its `decidedFrom` names the record file, whose row ids are the register's with the prefix dropped; the bytes sit under `file`
+   (easota), `source` (mc100, station), `certificate.file` (sumdiff), none (kissing, polymaps, fei) — one walker replaces
+   prose.LEDGER_ROWS / EASOTA / KISSING_JOBS, with planted twins. The 30,000-value autocorrelation rows and the hexagon stay with
+   the receiver (PLAN.md §9).
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
    written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is

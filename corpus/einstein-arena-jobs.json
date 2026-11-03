@@ -6,7 +6,7 @@
    "claim": "the object is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and the platform's score of it is 0.3808585748578584 (minimize)",
    "source": "corpus/einstein-arena/best-1.json",
    "data": "corpus/einstein-arena/best-1.json",
-   "decider": "tools/run-mc100-einstein.js",
+   "decider": null,
    "what": "EinsteinArena's API record of the best solution of \"Erdős Minimum Overlap (Upper Bound)\", pinned by cert-machine (corpus/einstein-arena/best-1.json); the platform reads each entry as an IEEE-754 double (its verifier, pinned here: `sequence_array = np.array(sequence, dtype=np.float64)`)",
    "problem": "erdos-min-overlap",
    "score": "0.3808585748578584",

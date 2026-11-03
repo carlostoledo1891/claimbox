@@ -334,9 +334,10 @@ def parse(text):
     m = re.search(r'^(\d+) unit ([a-z]+) inside an? [a-z]+ of side (' + NUMBER + r')(?![\d.]).*:\s*score = the outer side$', t)
     if m:
         return out({'family': 'score', 'n': int(m.group(1)), 'kind': m.group(2), 'name': 'the outer side', 'rel': 'in', 'printed': m.group(3), 'c': box(m.group(3))})
-    m = re.search(r"score of it is (" + NUMBER + r")", t)
+    m = re.search(r"score of it is (?:(at most|at least) )?(" + NUMBER + r")", t)
     if m:
-        o = {'family': 'score', 'name': 'the platform\'s score', 'rel': 'in', 'printed': m.group(1), 'c': box(m.group(1))}
+        rel = {'at most': 'le', 'at least': 'ge', None: 'in'}[m.group(1)]       # a bound is taken exactly; a value is the box its digits allow
+        o = {'family': 'score', 'name': 'the platform\'s score', 'rel': rel, 'printed': m.group(2), 'c': exact(m.group(2)) if rel != 'in' else box(m.group(2))}
         title = re.search(r'solution of "([^"]+)"', t)
         if title:
             o['problem'] = title.group(1)

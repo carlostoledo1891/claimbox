@@ -1,0 +1,10 @@
+{
+ "what": "corpus/easota/flat-polynomials/alphaevolve_2025.py decoded by claimbox.readers.easota_py: the literal array `coefficients` as the file prints it, every number token verbatim, nothing evaluated",
+ "derivedFrom": {
+  "path": "corpus/easota/flat-polynomials/alphaevolve_2025.py",
+  "sha256": "c403c792b1793cf618990e6b8e82fc174b1a001b8daa57f854a572f4ab26c07a"
+ },
+ "literal": "coefficients",
+ "mirror": null,
+ "coefficients": [1, 1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, -1]
+}

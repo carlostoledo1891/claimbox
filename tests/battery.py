@@ -1278,21 +1278,33 @@ ok(again == {cid: yw[cid] for cid in again}, 'x^x = y: four claims re-decided he
 # from their bytes by the library's platform conditions — the AlphaEvolve packing CERTIFIED, the 2026 one REFUTED on 44
 # overlapping pairs (certs/easota-ledger.json counts 44 as published: its REPAIRED); a score moved past the platform's resolution
 # is refuted; a bar printed as a fraction (polymaps F4's det J = -44/9) is a hole, never an object the format refuses
-SOTA = ('source P = ../claimbox/corpus/register/sentences.md\ndata   c = corpus/easota/{folder}/{who}.json\nread   c as doubles\n'
+SOTA = ('source P = ../claimbox/corpus/register/sentences.md\ndata   c = corpus/easota/{folder}/{who}.{ext}\nread   c as {reading}\n'
         'claim  sota over c\n  quote "{quote}" from P\n  : c is a feasible solution of "{title}" and its score is {bar}\n')
 SQ = {r['id']: r['text'] for r in PR.rows_of('register')}
 SOTA_P = {'circles': ('circles-rectangle', 'Circles in a Rectangle (n = 21)'), 'mindist': ('min-distance-ratio-2d', 'Minimizing Max/Min Distance Ratio (2D, n=16)'),
-          'heilbronn': ('heilbronn-convex', 'Heilbronn Problem for Convex Regions (n = 14)')}
-def sota(prob, who, bar, quote_bar=None):
+          'heilbronn': ('heilbronn-convex', 'Heilbronn Problem for Convex Regions (n = 14)'),
+          'overlap': ('erdos-minimum-overlap', 'erdos-minimum-overlap'), 'autocorr': ('first-autocorrelation', 'first-autocorrelation'),
+          'flat': ('flat-polynomials', 'flat-polynomials'), 'edges': ('edges-vs-triangles', 'edges-vs-triangles')}
+def sota(prob, who, bar, quote_bar=None, ext='json', reading='doubles'):
+    """cert-machine's word on one SOTA-table row claimed with that bar ("at most BAR" claims a bound); with a fork of readings, the
+    words by reading; a hole, its rule"""
     folder, title = SOTA_P[prob]
     sent = SQ['ea-' + prob + '-' + who]
-    t_ = lang.parse(SOTA.format(folder=folder, who=who, title=title, bar=bar, quote=sent.replace(quote_bar or bar, bar)))
+    num = bar.split()[-1]
+    t_ = lang.parse(SOTA.format(folder=folder, who=who, title=title, bar=bar, ext=ext, reading=reading, quote=sent.replace(quote_bar or num, num)))
     if quote_bar:   # a planted bar: the source the claim quotes is the register's sentence with its bar moved
         with open(os.path.join(PR.PLANTS, 'sota-planted.md'), 'w', encoding='utf-8') as f:
-            f.write(sent.replace(quote_bar, bar) + '\n')
+            f.write(sent.replace(quote_bar, num) + '\n')
         t_['items'] = [dict(i, path=PR.rel_of(os.path.join(PR.PLANTS, 'sota-planted.md'))) if i['kw'] == 'source' else i for i in t_['items']]
-    line = T.check_with_cert_machine(CP.compile_claim(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)[0]['object'], ROOT)
-    return CP.word(line) + (' (44 violating)' if '44 violating' in line else '')
+    try:
+        outs = CP.compile_claim(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)
+    except Refusal as e:
+        return 'hole ' + e.rule
+    words = {}
+    for o in outs:
+        line = T.check_with_cert_machine(o['object'], ROOT)
+        words[o['reading']] = CP.word(line) + (' (44 violating)' if '44 violating' in line else '')
+    return words if len(outs) > 1 else next(iter(words.values()))
 os.makedirs(PR.PLANTS, exist_ok=True)
 import claimbox.library.einstein_arena as EAL  # noqa: E402
 real_hull = EAL.hull_of
@@ -1316,6 +1328,56 @@ ok(sw['m1'] == sw['m2'] == sw['h1'] == sw['h2'] == 'CERTIFIED',
 red(sw['mmoved'].startswith('REFUTED') and sw['hmoved'].startswith('REFUTED'),
     'SOTA definitions: refuted — each score moved one unit of the table\'s last digit', sw['mmoved'] + ' · ' + sw['hmoved'])
 red(sw['hforged'].startswith('REFUTED'), 'SOTA definitions: refuted — a forged hull certificate (one vertex dropped): an edge predicate fails', sw['hforged'])
+
+# the SOTA table's Python-published rows (2026-11-03, TODO item 6): claimbox.readers.easota_py decodes each file's literal array into a
+# JSON beside it (corpus/easota/<problem>/<who>.json, the Python file's sha256 inside), nothing evaluated; the first autocorrelation
+# and the minimum overlap are decided by the library's C_1a and C_1b under the platform's titles (and the table's folder names);
+# a score may be claimed as a bound, "at most BAR", the table's ceiling prints held exactly. Reds: a ceiling print read as a
+# rounding (AlphaEvolve's 0.380924 is above the value, not around it); the bound moved one unit down; the two readings of Haugland's
+# 51 steps split (as decimals Σh = n/2 exactly; as doubles the rescaled h exceeds 1 by 761/5.9·10¹⁹); a file the reader does not
+# decode (a computation), a planted moved digit (the decoded copy and the score move); flat polynomials and edges vs triangles holes
+import claimbox.readers.easota_py as EPY  # noqa: E402
+os.makedirs(PR.PLANTS, exist_ok=True)
+py = {'haug': sota('overlap', 'haugland_2016', 'at most 0.380927', ext='py', reading='decimals | doubles'),
+      'ae': sota('overlap', 'alphaevolve_2025', 'at most 0.380924', ext='py', reading='decimals'),
+      'ae_in': sota('overlap', 'alphaevolve_2025', '0.380924', ext='py', reading='decimals'),
+      'tog': sota('overlap', 'together_ai_2026', 'at most 0.380871', ext='py', reading='doubles'),
+      'ac': sota('autocorr', 'alphaevolve_2025', 'at most 1.50529397', ext='py', reading='decimals | doubles'),
+      'moved': sota('overlap', 'haugland_2016', 'at most 0.380926', quote_bar='0.380927', ext='py', reading='decimals'),
+      'ttt': sota('autocorr', 'ttt_discover_2026', 'at most 1.50286290'),
+      'flat': sota('flat', 'alphaevolve_2025', '1.340925', ext='py', reading='integers'),
+      'edges': sota('edges', 'alphaevolve_2025', '-0.712494', ext='py', reading='doubles')}
+shutil.rmtree(PR.PLANTS, ignore_errors=True)
+ok(py['haug'].get('decimals') == 'CERTIFIED' and py['ae'] == py['tog'] == 'CERTIFIED' and py['ac'] == {'decimals': 'CERTIFIED', 'doubles': 'CERTIFIED'},
+   'SOTA .py rows: Haugland, AlphaEvolve and Together AI\'s step functions and AlphaEvolve\'s autocorrelation, decoded from their Python files, certify the table\'s bounds', json.dumps(py))
+red(py['ae_in'] == 'REFUTED', 'SOTA .py rows: refuted — AlphaEvolve\'s 0.380924 read as a rounding: the table prints a ceiling, the value is 0.3809230…', py['ae_in'])
+red(py['moved'] == 'REFUTED', 'SOTA .py rows: refuted — Haugland\'s bound moved one unit down (0.380926)', py['moved'])
+red(py['haug'] == {'decimals': 'CERTIFIED', 'doubles': 'REFUTED'}, 'SOTA .py rows: the fork splits — Haugland\'s 51 steps as decimals CERTIFIED, as doubles REFUTED (the rescaled h exceeds 1)', json.dumps(py['haug']))
+ok(py['flat'] == 'hole decider' and py['edges'] == 'hole decider', 'SOTA .py rows: flat polynomials (a supremum over the circle) and edges vs triangles (a procedure) stay holes, decoded', py['flat'] + ' · ' + py['edges'])
+ok(py['ttt'] == 'hole decider' and T.over_cap(ROOT, 'corpus/easota/first-autocorrelation/ttt_discover_2026.json', 'first-autocorrelation') == (4000, 30000),
+   'SOTA .py rows: a 30,000-value autocorrelation is over the functional\'s cap (4,000 values: the receiver\'s evaluator is quadratic) and a hole, not an hour of the receiver', py['ttt'])
+for who in ('haugland_2016', 'alphaevolve_2025', 'ttt_discover_2026', 'together_ai_2026'):
+    dec = json.load(open(os.path.join(REPO, 'corpus', 'easota', 'erdos-minimum-overlap', who + '.json'), encoding='utf-8'))
+    src = os.path.join(ROOT, dec['derivedFrom']['path'])
+    led = next(r for r in json.load(open(os.path.join(ROOT, 'certs', 'easota-ledger.json'), encoding='utf-8'))['rows'] if r['id'] == 'overlap/' + who)
+    ok(EPY.sha256(src) == dec['derivedFrom']['sha256'] == led['sha256'] and len(dec['values']) == led['asPublished']['steps'],
+       f'SOTA .py rows: {who} decoded from the file the ledger hashes, {len(dec["values"])} steps as the ledger counts', dec['derivedFrom']['sha256'][:12])
+_pyd = os.path.join(tmp, 'easota', 'erdos-minimum-overlap')
+os.makedirs(_pyd, exist_ok=True)
+_src = open(os.path.join(ROOT, 'corpus', 'easota', 'erdos-minimum-overlap', 'haugland_2016.py'), encoding='utf-8').read()
+with open(os.path.join(_pyd, 'computed.py'), 'w', encoding='utf-8') as f:
+    f.write(_src.replace('h_values = np.array(haugland_half + haugland_half[-2::-1])', 'h_values = np.array(haugland_half) * 0.5'))
+try:
+    EPY.decode(os.path.join(_pyd, 'computed.py'))
+    got = None
+except EPY.ReadError as e:
+    got = str(e)
+red(got is not None, 'SOTA .py rows: refused — a Python file that computes its array (h · 0.5) is not decoded', str(got)[:60])
+_f, _arr, _, _ = EPY.decode(os.path.join(ROOT, 'corpus', 'easota', 'erdos-minimum-overlap', 'haugland_2016.py'))
+with open(os.path.join(_pyd, 'moved.py'), 'w', encoding='utf-8') as f:
+    f.write(_src.replace('0.5952882223921177,', '0.5952882223921178,'))
+_f2, _arr2, _, _ = EPY.decode(os.path.join(_pyd, 'moved.py'))
+red(_arr2 != _arr and sum(1 for a, b in zip(_arr, _arr2) if a != b) == 2 and _f == _f2 == 'values', 'SOTA .py rows: a planted moved digit in the half moves two values of the decoded step function', '2 of 51')
 RB2 = {e['id']: e for e in RREC['sentences']}
 ok(all(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in RB2[i]['proposals']) for i in ('optconst-71', 'polymaps-gao-g', 'polymaps-chv-phi')),
    'register batch 2: C71, Gao\'s G and the Phi map, each over the file its ledger row\'s decider read, take the row\'s word (the record)', 'three')

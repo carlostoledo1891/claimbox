@@ -106,7 +106,9 @@ def jobs(root, corpus='corpus/einstein-arena'):
         scoring = p.get('scoring') or p.get('direction') or 'score'
         elements = (READING.get(p['slug']) or (None, None))[0]
         what = 'EinsteinArena\'s API record of the best solution of "' + p['title'] + '", pinned by cert-machine (' + rel + ')' + reading_note(p['slug'])
-        written_here = grammar.normalise(p['title']) in translate.PLATFORM_BY_TITLE   # the translator writes the platform's verifier: no decider named
+        # the translator writes the platform's verifier: no decider named — unless the bytes hold more values than the library's
+        # functional is written for (its cap, 2026-11-03): then cert-machine's decider and its record row, as before
+        written_here = grammar.normalise(p['title']) in translate.PLATFORM_BY_TITLE and not translate.over_cap(root, rel, p['title'])
         job = {'id': 'ea-best-' + p['slug'], 'claim': 'the object is a feasible solution of "' + p['title'] + '" and the platform\'s score of it is ' + score + ' (' + scoring + ')',
                'source': rel, 'data': rel, 'decider': DECIDER if p['slug'] in DECIDED_SLUGS and not written_here else None, 'what': what, 'problem': p['slug'], 'score': score}
         if elements:

@@ -89,7 +89,7 @@ def register_context():
             if record is None and j.get('problem') and j.get('decider') == EA.RECORDED_DECIDER:
                 title = (re.search(r'feasible solution of "([^"]+)"', j['claim']) or [None, None])[1]
                 hit = [(p_, r) for p_, r in D.rows_for(root, j['data'], EA.RECORDED) if title and f'"{title}"' in r.get('claim', '')]
-                if hit and title not in EA.PLATFORM:
+                if hit and (title not in EA.PLATFORM or T.over_cap(root, j['data'], title)):   # the library decides it from the bytes, or not (its cap)
                     record = {'path': hit[0][0], 'row': hit[0][1]['id'], 'value': None, 'verdict': hit[0][1]['verdict']}
             out[rid] = (j['data'], j.get('elements'), ref, j.get('decider'), record)
     return out

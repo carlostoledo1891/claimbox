@@ -144,7 +144,8 @@ def lower(tree, c):
         job['heading'] = body[5] if len(body) > 5 else None     # DATA["heading"]: the record row is found at compile time (root)
     elif body[0] == 'score':
         printed = body[3][2] if body[3][0] == 'within' else body[3][1]
-        job['claim'] = f'the object is a feasible solution of "{body[2]}" and the platform\'s score of it is {printed}'
+        bound = {'atmost': 'at most ', 'atleast': 'at least '}.get(body[3][0], '')     # a score claimed as a bound (2026-11-03)
+        job['claim'] = f'the object is a feasible solution of "{body[2]}" and the platform\'s score of it is {bound}{printed}'
     else:
         raise Refusal('decider', 'no compiler for this statement yet')
     out = []
@@ -204,12 +205,15 @@ def _library():
     return library
 
 
-def recorded_score_job(job, stmt, root):
-    """a platform problem with no verifier written here (library einstein_arena.py, RECORDED): the row cert-machine's decider wrote
-    for its title and these bytes becomes the job's record and its sentence; the claim's score must be the row's"""
+def recorded_score_job(job, stmt, root, over=None):
+    """a platform problem with no verifier written here (library einstein_arena.py, RECORDED), or one whose functional is capped below
+    the count the bytes hold (`over`: the cap and the count): the row cert-machine's decider wrote for its title and these bytes
+    becomes the job's record and its sentence; the claim's score must be the row's"""
     from .library import decompositions as D, einstein_arena as EA
     title, b = stmt[2], stmt[3]
     rows = [(p, r) for p, r in D.rows_for(root, job['data'], EA.RECORDED) if f'"{title}"' in r.get('claim', '')]
+    if not rows and over:
+        raise T.cap_refusal(title, *over)
     if not rows:
         raise Refusal('decider', f'the library has no verifier of the platform\'s "{title}", and cert-machine\'s decider has no record of it over these bytes')
     path, row = rows[0]
@@ -255,8 +259,8 @@ def compile_claim(tree, c, root):
     for reading, job in jobs:
         if c['stmt'][0] == 'decomp' or (c['stmt'][0] == 'forall' and c['stmt'][3][0] == 'decomp'):
             job = decomposition_job(job, c['stmt'], root)
-        elif c['stmt'][0] == 'score' and _library().platform(c['stmt'][2]) is None:
-            job = recorded_score_job(job, c['stmt'], root)
+        elif c['stmt'][0] == 'score' and (_library().platform(c['stmt'][2]) is None or T.over_cap(root, job['data'], c['stmt'][2])):
+            job = recorded_score_job(job, c['stmt'], root, over=T.over_cap(root, job['data'], c['stmt'][2]))
         obj_id = job['id'] + ('-' + reading if len(jobs) > 1 else '')
         obj = T.translate(job['claim'], root, job['source'], job['data'], decider=job.get('decider'), record=job.get('record'),
                           name=job.get('name'), elements=job.get('elements'), obj_id=obj_id, quote=job.get('quote'), other=job.get('other'))
