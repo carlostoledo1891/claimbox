@@ -107,6 +107,7 @@ records/                   calibration.json, coverage.json, recall.json, riemann
 tests/battery.py           the gate; tests/recall.py the planted defects (records/recall.json); tests/riemann_recall.py the plants at scale on
                            the certificate, each expectation computed from the integers (records/riemann-recall.json; CLAIMBOX_FULL=1 all)
 PLAN.md                    the plan: what claimbox is, how it works at the end, the commitments, the roadmap (§7, rendered by the page)
+TODO.md                    the next steps, ordered, each with why and how it is checked
 LANGUAGE.md                the language, written down (roadmap step 1)
 GUIDE.md                   how to write for claimbox, for people and models (its part for a model is the prompt variant, --guide)
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md

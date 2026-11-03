@@ -163,7 +163,7 @@ caught), "Write a claim" (a .claim file, GUIDE.md); the lede, a third use, a new
 means, families, modelClaims, wroteSame. Built at claimbox f600cf7 (87,170 bytes, sha256 c31ad62e…7fadd). LIVE on the operator's word:
 cert-machine 4b9a6e51, pinned from claimbox d862998 (the HANDOFF commit after it; web/dist the same bytes), checked here with curl.
 
-**NEXT, in order.**
+**NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
