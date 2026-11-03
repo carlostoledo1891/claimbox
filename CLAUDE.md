@@ -13,7 +13,7 @@ python3 -m claimbox lang FILE.claim [--canonical]                 the language: 
 python3 -m claimbox check FILE.claim [--run]                      each claim compiled to the object, printed back from it; --run: cert-machine's word
 python3 -m claimbox library                                       every definition a claim may use: names, version, readings, conventions, route
 python3 -m claimbox prose CORPUS [--run] [--record OUT]          from prose to claims: proposals, their levels, concord, the outcome
-python3 -m claimbox doc FILE.md [--build OUT]                     a document whose words are claims: every address re-read, refused when one moved
+python3 -m claimbox doc FILE.md [--build OUT]                     a document whose words and numbers are claims: every address and slot re-read, refused when one moved
 make test        the battery: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its
                  register, the planted defects, the landing page's checks
 make web         the landing page from the records: web/dist/index.html (python3 -m web.build --check re-reads every value)
@@ -89,7 +89,8 @@ claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and
                            reference, the pairs' same-error rate; `--worksheet` writes a person's blank claims once
 claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"), hunt (a witness), attack (a scheduled counterexample search),
                            watch (a claim about every case, instance by instance; planted twins); proposals `proposed by search:<helper>`
-claimbox/doc.py            step 8: a Markdown document naming decided claims by record address, each word re-read; refused when one moved
+claimbox/doc.py            step 8: a Markdown document naming decided claims by record address, each word re-read, each number a slot
+                           `{{records/F.json#id/path}}` printed from its record cell (`= VALUE` states it); refused when a word, a value or a pin moved
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object
 claimbox/__main__.py       the command line
 corpus/                    register-sentences.json (lifted), calibration.json (the ten jobs), primitive-jobs.json, <source>-jobs.json (read),
@@ -113,6 +114,7 @@ TODO.md                    the next steps, ordered, each with why and how it is 
 LANGUAGE.md                the language, written down (roadmap step 1)
 GUIDE.md                   how to write for claimbox, for people and models (its part for a model is the prompt variant, --guide)
 USE-CASES.md               six uses, each a decided claim with its record (the battery resolves every address it names)
+reports/                   xx.md: the x^x = y report as a document whose numbers are claims (87 slots, 10 addresses); xx.built.md its build
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),
                            record.py (every value from a record address, re-read from the built page), engine.py (the page's checks),

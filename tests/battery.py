@@ -1168,6 +1168,34 @@ except DOC.DocError as e:
 red(got is not None, 'doc: refused — a document naming a claim its record does not hold', str(got)[:60])
 ok(DOC.build(UC) == UC, 'doc: USE-CASES.md built is USE-CASES.md — every word already its record\'s', 'byte for byte')
 
+# reports/xx.md (2026-11-03) is the x^x report as a document whose numbers are claims: every number a slot naming a record cell, every
+# word an address's; its build is reports/xx.built.md byte for byte. Reds: a stated number the record does not hold, a slot naming
+# no cell or a cell that is not a scalar, and a claim whose pinned bytes moved (a planted copy of corpus/xx64/problem.json, N = 65)
+XX = open(os.path.join(REPO, 'reports', 'xx.md'), encoding='utf-8').read()
+xx_cells = DOC.values(XX)
+ok(len(xx_cells) >= 70 and not DOC.check(XX) and sum(1 for c in xx_cells if c[2] is not None) >= 7, 'reports/xx.md: every slot resolves, every stated value and word its record\'s',
+   f'{len(xx_cells)} slots, {sum(1 for c in xx_cells if c[2] is not None)} stated; {len(DOC.read(XX))} addresses')
+xx_built = DOC.build(XX)
+ok(xx_built == open(os.path.join(REPO, 'reports', 'xx.built.md'), encoding='utf-8').read() and not DOC.SLOT.search(xx_built),
+   'reports/xx.built.md is the build of reports/xx.md, no slot left in it', 'byte for byte')
+red(DOC.check(XX.replace('/count = 1002}}', '/count = 1003}}')), 'doc: refused — a report stating 1003 roots when the record holds 1002', 'slot value')
+for planted, why in (('{{records/xxy-study.json/nope}}', 'a slot naming no cell'), ('{{records/xxy-study.json/rows}}', 'a slot naming a list, not a scalar'),
+                     ('{{records/xx64-check.json#cf_above_11/statement}}', 'a slot naming a claim the record does not hold')):
+    try:
+        DOC.values(XX + '\n\n' + planted + '\n')
+        got = None
+    except DOC.DocError as e:
+        got = str(e)
+    red(got is not None, 'doc: refused — ' + why, str(got)[:70])
+_xxroot = os.path.join(tmp, 'moved-root')
+os.makedirs(os.path.join(_xxroot, 'claimbox', 'corpus', 'xx64'), exist_ok=True)
+with open(os.path.join(_xxroot, 'claimbox', 'corpus', 'xx64', 'problem.json'), 'w', encoding='utf-8') as f:
+    f.write(open(os.path.join(REPO, 'corpus', 'xx64', 'problem.json'), encoding='utf-8').read().replace('"N": 64', '"N": 65'))
+_xxc = json.load(open(os.path.join(REPO, 'records', 'xx64-check.json'), encoding='utf-8'))['claims']
+ok(all(DOC.pins_hold(c) for c in _xxc) and all(DOC.pins_hold(c) for c in json.load(open(os.path.join(REPO, 'records', 'xxy-check.json'), encoding='utf-8'))['claims']),
+   'doc: every x^x claim\'s pinned file still hashes to its record\'s sha256', f'{len(_xxc)} + 218 claims')
+red(not DOC.pins_hold(_xxc[0], root=os.path.join(_xxroot, 'cert-machine')), 'doc: refused — a claim whose pinned bytes moved (N = 64 planted as 65)', 'pins_hold')
+
 # the template pilot (tools/templates.py, TODO.md item 9): the record's counts hold, and a REFUTED object with one failing
 # predicate rests on that predicate alone — dropped, the word flips; dropping any other keeps it
 TPL = json.load(open(os.path.join(REPO, 'records', 'templates.json'), encoding='utf-8'))

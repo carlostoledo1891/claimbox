@@ -220,16 +220,19 @@ def main(argv=None):
         text = open(a.file, encoding='utf-8').read()
         try:
             rows = doc.read(text)
+            cells = doc.values(text)
             bad = doc.check(text)
         except doc.DocError as e:
             print('REFUSED  ' + str(e))
             return 1
         for n, addr, stated, held in rows:
             print(f'  line {n:<4} {addr:<64} {held or "no word"}' + ('' if not stated else '   stated ' + ', '.join(stated)))
+        for n, addr, stated, held in cells:
+            print(f'  line {n:<4} {addr:<64} = {held}' + ('' if stated is None else f'   stated {stated}'))
         if bad:
             print('REFUSED  the document does not build:\n  ' + '\n  '.join(bad))
             return 1
-        print(f'{len(rows)} addresses, every word the record\'s')
+        print(f'{len(rows)} addresses and {len(cells)} slots, every word and value the record\'s')
         if a.build:
             with open(a.build, 'w', encoding='utf-8') as f:
                 f.write(doc.build(text))

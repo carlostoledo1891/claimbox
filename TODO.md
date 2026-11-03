@@ -36,7 +36,7 @@ it can (more digits of a print from the certificate; the bytes a sentence names,
 first (what fill may fetch — only pinned, never the web), then build with planted twins (a fill that fetches the wrong file must be
 refused by the pin). Checked by: every filled claim decided by cert-machine; a planted wrong fill caught.
 
-**5. BEGUN 2026-11-02 — Step 8, documents that build.** `python3 -m claimbox doc FILE.md [--build OUT]` (claimbox/doc.py): a
+**5. NUMBERS DONE 2026-11-03 (doc.py slots `{{record#id/path}}`, `= VALUE` stated, pins re-hashed; reports/xx.md → xx.built.md, 87 slots, five reds) — Step 8, documents that build.** `python3 -m claimbox doc FILE.md [--build OUT]` (claimbox/doc.py): a
 Markdown document names decided claims by record address and states cert-machine's word beside each; the build refuses when a
 word is not the record's or a claim moved. USE-CASES.md is the first instance (the battery builds it, with two reds). Next: the
 x^x report as a claimbox draft whose every number is an address, and a number slot (`{{records/…#id/field}}`) beside the word. A report whose numbers are claims; the build refuses when one is refuted or its record

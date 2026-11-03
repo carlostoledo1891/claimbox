@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 560 pass, 0 fail, 142/142 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 567 pass, 0 fail, 147/147 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -208,13 +208,24 @@ object's three predicates over 182,106 pairs CERTIFIED by cert-machine in 94 s. 
 certified, one q moved and one vector off the shell refuted, the record's word. The register: 404 proposals, validated 27, not
 stated 73. make test 560 pass, 0 fail, 142/142. The page moved (one more decided): republish asked of cert-machine-5b.
 
+STEP 8, THE NUMBERS (2026-11-03, item 5's next instance): doc.py's slots — `{{records/F.json#id/path}}` names one cell of a record
+(the element of that id, then keys and indexes; `/rows/[y=64]/x` picks by a key's value; `|length`, `|words:WORD` the only
+arithmetic), the build prints it there; `{{… = VALUE}}` states it too and the check refuses another; a claim's pin (the file its
+object was decided on, with its sha256) is re-hashed, so a claim whose bytes moved refuses the build. reports/xx.md is the x^x = y
+report as that document: 87 slots (every number), 10 addresses, every word cert-machine's; `python3 -m claimbox doc reports/xx.md
+--build reports/xx.built.md` is the readable copy, byte for byte in the battery. Reds: 1003 roots stated against 1002, a slot
+naming no cell, a list, a claim not there, and problem.json's N planted as 65 under a scratch root (pins_hold false). web/PINS.json
+re-pinned: cert-machine 38c5dee2 changed playground/warrant.js (value() takes several claim addresses; nothing of grammar.css
+moved). make test 567 pass, 0 fail, 147/147. The page: unchanged (the republish of 17a159b's bytes still waits on the operator's word
+in cert-machine-5b's chat; live is 746d1cb's build, sha256 03b9f0de…).
+
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
-1. The operator's choice: step 7's fill (not designed), step 8 (documents that build), or the SOTA table's .py-published problems
-   (Erdős overlap, edges vs triangles, flat polynomials: a reader for their literal arrays first) and the first autocorrelation
-   (30,000 values: past the receiver's quadratic evaluator).
+1. The SOTA table's .py-published problems (Erdős overlap, edges vs triangles, flat polynomials: a reader for their literal arrays,
+   8 register rows; TODO item 6), then fill as the generic provenance-chain finder (item 4). The first autocorrelation (30,000
+   values) and the hexagon stay with the receiver.
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
    written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is
