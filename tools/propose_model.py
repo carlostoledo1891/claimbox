@@ -52,7 +52,7 @@ try:
 except ImportError:      # the texts below are read by tools/worksheet_prompt.py, which calls no model
     anthropic = None
 
-from claimbox import lang, prose  # noqa: E402
+from claimbox import fill, lang, prose  # noqa: E402
 from claimbox.library import einstein_arena as EA  # noqa: E402
 
 MODEL = 'claude-opus-5-5'
@@ -150,7 +150,7 @@ def library_for(cfg, row):
         names = [(var, f'a construction published for EinsteinArena\'s problem {prob}, as the SOTA table pins it')]
         names += [(f'"{title}"', 'the platform\'s problem of this title, its verifier written in the library: ' + EA.PLATFORM[title]['score'])] if title else []
         return (var, elements or 'doubles', names, data)
-    chain = fill.chain(ROOT, row['id'])      # a file a cert-machine decider (a ledger's own code) read whole; the library defines nothing over it
+    chain = fill.chain(os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine')), row['id'])      # a file a cert-machine decider (a ledger's own code) read whole; the library defines nothing over it
     if chain.get('data') == data and str(chain.get('decider') or '').startswith('instruments/'):
         var = 'r' + re.sub(r'\W', '', os.path.splitext(os.path.basename(data))[0])[:12]
         return (var, 'decimals', [(var, 'the file cert-machine\'s ' + os.path.basename(chain['decider']) + ' read; the library defines no name over it')], data)

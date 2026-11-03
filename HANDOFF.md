@@ -21,22 +21,22 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
   work runs on cert-machine's hosted-runner workflows.
 - Memory of the origin chat lives under cert-machine's project in ~/.claude; a copy was seeded for this folder.
 
-## ★ START HERE (2026-10-31, end of the eleventh session) — the state in one screen; the dated entries below are the history
+## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–8 built — step 7's helpers (tighten, extend, watch, hunt, attack, and fill as the
 provenance walker, scoped down), step 8 (doc with number slots; the x^x report builds from its records); 9–10 not started. Tests: `make test` → 590 pass, 0 fail, 156/156 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
-**Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
-b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
-cert-machine at /reports/xx.html. web/dist holds index.html only. Publishing is always a cert-machine session's run, on the
-operator's word in that chat. REPUBLISHED 2026-10-31 on the operator's word: cert-machine f324493d from claimbox 9254a74 (61,322
-bytes); the live sha256 14830928…2a341e equals web/dist's, checked here with curl. The page is current.
+**Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31). /verify/ stays UNLINKED
+from claimbox (the operator's ruling). The x^x = y report is served by cert-machine at /reports/xx.html. web/dist holds index.html
+only. Publishing is always a cert-machine session's run, on the operator's word in that chat. LIVE NOW (curl, 2026-11-03): 746d1cb's
+build, sha256 03b9f0de…b637d (cert-machine 17b9d5d8). THE PAGE IS BEHIND: web/dist/index.html from claimbox 733fd24 is 89,585 bytes,
+sha256 47b87b510284796352282eec962efa5adbadf2999b47681f13e91627c380cb79 — the republish to ask of cert-machine-5b (NEXT 1).
 
-**The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-cb` (SendMessage). After any
-change there: `make lift`, `make drift`, `make test`.
+**The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-5b` (SendMessage; cert-machine-cb
+is gone). After any change there: `make lift`, `make drift`, `make test`. `make drift` today: 15/15, platform 29/29, riemann 31/31.
 
-**Done this session (the eleventh, 2026-10-31).** REGISTER READERS, BATCH 2 (prose.LEDGER_ROWS, prose.EASOTA): six more register
+**Done in the eleventh session (2026-10-31).** REGISTER READERS, BATCH 2 (prose.LEDGER_ROWS, prose.EASOTA): six more register
 sentences stated over pinned bytes — optconst-71 (fei ledger row, CERTIFIED), polymaps-gao-g and -chv-phi (polymaps ledger rows,
 CERTIFIED), horizonmath-keich-thin-triangles-128 (REFUSED by the receiver: record-bar-mismatch, the row prints two bars and
 check.py's BAR_IN_CLAIM reads the first, 0.1091479892, where STATED_BAR reads the last), and the SOTA table's two circles in a
@@ -246,7 +246,8 @@ flags ("upper bound" in the sentence, a box in the object): a finding, not a gai
 proposer writes "at most". records/einstein-arena-run.json re-run (15 written, 14 refused, 1 skipped, as before; thirteen object
 files caught up with the 400-character quote window). Battery: the .py rows section (4 greens, 5 reds, the capped row a green).
 make test 579 pass, 0 fail, 152/152. The page moved (decided 59 → 64, needs its bytes 31 → 25, read two ways 17 → 14, nothing
-decides 10 → 14): web/dist/index.html 89,587 bytes, the republish to ask of cert-machine-5b with this build's sha256.
+decides 10 → 14): web/dist/index.html rebuilt (89,585 bytes after the fill commit moved the roadmap rows; the sha256 in the
+START HERE line), the republish to ask of cert-machine-5b.
 
 FILL, THE PROVENANCE WALKER (2026-11-03, TODO item 4 scoped down, the third item of the operator's "go"): claimbox/fill.py finds a
 register sentence's bytes, decider and record by walking cert-machine's records — certs/claims-ledger.json (its ids are the
@@ -266,7 +267,9 @@ polymaps maps (X14, X̂18), HorizonMath's Ramsey certificate (its row REFUTED): 
 quantity, asymptotic), so the register's counts did not move (419 proposals, validated 27, not stated 68). tools/propose_model.py
 reads the chain for its data names. Battery §14: seven greens, four reds under a scratch root (a row's sha256 moved, the decider's
 hash moved, a file and a record off disk, a sentence the ledger has no row for). PLAN.md r17; steps 7 and 8 marked built in §7
-(the page's roadmap moved). make test 590 pass, 0 fail, 156/156.
+(the page's roadmap moved). make test 590 pass, 0 fail, 156/156. At the handoff, a defect in tools/propose_model.py's chain
+branch fixed before any model run (`fill` was not imported and the root was claimbox's, not cert-machine's): library_for
+exercised over all 88 register sentences with context, 22 of them named through the chain, no error.
 
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
