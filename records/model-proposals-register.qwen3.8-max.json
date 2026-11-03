@@ -4,9 +4,10 @@
  "provider": "prime",
  "family": "qwen3.8-max",
  "effort": "high",
- "cap": 3.0,
- "spent": 1.6986,
- "calls": 78,
+ "cap": 2.5,
+ "guide": null,
+ "spent": 1.9942,
+ "calls": 90,
  "stoppedAtCap": false,
  "prices": {
   "input": 2.0,
@@ -112,6 +113,26 @@
    }
   },
   {
+   "tag": "ea-autocorr-ttt_discover_2026 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a547336cfbf37ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 200.0,
+   "usage": {
+    "input": 1001,
+    "output": 8031,
+    "reasoning": 7960
+   },
+   "cost": 0.050188,
+   "raw": "{\"statement\": \"ttt_discover_2026.json is a feasible solution of \\\"first-autocorrelation\\\" and its score is ≤ 1.50286291\", \"hole\": \"\", \"why\": \"The sentence gives the feasibility condition and the leading score bound for the named problem.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026.json is a feasible solution of \"first-autocorrelation\" and its score is ≤ 1.50286291",
+    "hole": "",
+    "why": "The sentence gives the feasibility condition and the leading score bound for the named problem."
+   }
+  },
+  {
    "tag": "ea-circles-alphaevolve_2025",
    "model": "qwen/qwen3.8-max",
    "requestId": "a537d44bbce04051-GRU",
@@ -212,6 +233,26 @@
    }
   },
   {
+   "tag": "ea-flat-alphaevolve_2025 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a547347ecee1622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 42.6,
+   "usage": {
+    "input": 994,
+    "output": 1595,
+    "reasoning": 1532
+   },
+   "cost": 0.011558,
+   "raw": "{\"statement\": \"flat_alphaevolve_2025 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340926\", \"hole\": \"\", \"why\": \"The sentence reports the flat-polynomials objective value for the pinned construction.\"}",
+   "answer": {
+    "statement": "flat_alphaevolve_2025 is a feasible solution of \"flat-polynomials\" and its score is 1.340926",
+    "hole": "",
+    "why": "The sentence reports the flat-polynomials objective value for the pinned construction."
+   }
+  },
+  {
    "tag": "ea-flat-ours_2026",
    "model": "qwen/qwen3.8-max",
    "requestId": "a537e64c4c7e1b27-GRU",
@@ -252,6 +293,26 @@
    }
   },
   {
+   "tag": "ea-heilbronn-alphaevolve_2025 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a547300ccfbf6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 138.2,
+   "usage": {
+    "input": 1046,
+    "output": 5404,
+    "reasoning": 5320
+   },
+   "cost": 0.034516,
+   "raw": "{\"statement\": \"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355716\", \"hole\": \"\", \"why\": \"The sentence gives the n=14 Heilbronn score for the pinned construction.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355716",
+    "hole": "",
+    "why": "The sentence gives the n=14 Heilbronn score for the pinned construction."
+   }
+  },
+  {
    "tag": "ea-heilbronn-ours_2026",
    "model": "qwen/qwen3.8-max",
    "requestId": "a537d6824bf74051-GRU",
@@ -289,6 +350,26 @@
     "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419123",
     "hole": "",
     "why": "The sentence claims a feasible packing with score equal to the printed outer side."
+   }
+  },
+  {
+   "tag": "ea-hexagons-alphaevolve_2025 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a5473485d90a622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 93.5,
+   "usage": {
+    "input": 994,
+    "output": 3811,
+    "reasoning": 3737
+   },
+   "cost": 0.024854,
+   "raw": "{\"statement\": \"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419124\", \"hole\": \"\", \"why\": \"The sentence claims the construction is a valid hexagon-packing solution with score equal to the printed outer side.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419124",
+    "hole": "",
+    "why": "The sentence claims the construction is a valid hexagon-packing solution with score equal to the printed outer side."
    }
   },
   {
@@ -352,6 +433,26 @@
    }
   },
   {
+   "tag": "ea-mindist-ours_2026 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a547300ced038779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 182.1,
+   "usage": {
+    "input": 1052,
+    "output": 7285,
+    "reasoning": 7205
+   },
+   "cost": 0.045814,
+   "raw": "{\"statement\": \"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889231\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance score for the 16-point construction.\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889231",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance score for the 16-point construction."
+   }
+  },
+  {
    "tag": "ea-overlap-alphaevolve_2025",
    "model": "qwen/qwen3.8-max",
    "requestId": "a537d7a579e80bc1-GRU",
@@ -409,6 +510,26 @@
     "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380927",
     "hole": "",
     "why": "The sentence reports the pinned construction's upper-bound score for the named problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-haugland_2016 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a547303359e1622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 183.2,
+   "usage": {
+    "input": 998,
+    "output": 6902,
+    "reasoning": 6837
+   },
+   "cost": 0.043408,
+   "raw": "{\"statement\": \"haugland_2016.py is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380928\", \"hole\": \"\", \"why\": \"The sentence reports the construction's upper-bound score for the problem.\"}",
+   "answer": {
+    "statement": "haugland_2016.py is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380928",
+    "hole": "",
+    "why": "The sentence reports the construction's upper-bound score for the problem."
    }
   },
   {
@@ -1252,6 +1373,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-circles-rectangle planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a547384f5dab028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 40.0,
+   "usage": {
+    "input": 1002,
+    "output": 1620,
+    "reasoning": 1558
+   },
+   "cost": 0.011724,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098577\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098577",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "mc100-ea-best-edges-vs-triangles",
    "model": "qwen/qwen3.8-max",
    "requestId": "a538026f7ae6f23f-GRU",
@@ -1292,6 +1433,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-erdos-min-overlap planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a5473588baaed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 46.7,
+   "usage": {
+    "input": 998,
+    "output": 1835,
+    "reasoning": 1776
+   },
+   "cost": 0.013006,
+   "raw": "{\"statement\": \"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578585\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578585",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "mc100-ea-best-first-autocorrelation-inequality",
    "model": "qwen/qwen3.8-max",
    "requestId": "a53800dc1f5ed94e-GRU",
@@ -1309,6 +1470,26 @@
     "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
     "hole": "",
     "why": "The sentence asserts feasibility and the exact platform score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a54736acd9547ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 115.1,
+   "usage": {
+    "input": 999,
+    "output": 4361,
+    "reasoning": 4284
+   },
+   "cost": 0.028164,
+   "raw": "{\"statement\": \"best-2.json is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326166\", \"hole\": \"\", \"why\": \"The sentence asserts feasibility for the data object and gives its exact platform score.\"}",
+   "answer": {
+    "statement": "best-2.json is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326166",
+    "hole": "",
+    "why": "The sentence asserts feasibility for the data object and gives its exact platform score."
    }
   },
   {
@@ -1332,6 +1513,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-flat-polynomials planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a54736ce0ecf7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 64.9,
+   "usage": {
+    "input": 999,
+    "output": 2536,
+    "reasoning": 2460
+   },
+   "cost": 0.017214,
+   "raw": "{\"statement\": \"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642548\", \"hole\": \"\", \"why\": \"The sentence claims the object is feasible for the named problem with the exact printed score.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642548",
+    "hole": "",
+    "why": "The sentence claims the object is feasible for the named problem with the exact printed score."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d11-605",
    "model": "qwen/qwen3.8-max",
    "requestId": "a5380393ad7d02fd-GRU",
@@ -1349,6 +1550,26 @@
     "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
     "hole": "",
     "why": "The sentence claims feasibility and the exact platform score for the given object."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a54738637ce66b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 1005,
+    "output": 622,
+    "reasoning": 542
+   },
+   "cost": 0.005742,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301677\", \"hole\": \"\", \"why\": \"The sentence claims feasibility and the exact platform score for the given data object.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301677",
+    "hole": "",
+    "why": "The sentence claims feasibility and the exact platform score for the given data object."
    }
   },
   {
@@ -1389,6 +1610,26 @@
     "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
     "hole": "",
     "why": "The sentence asserts feasibility and the exact platform score for the object."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842 planted",
+   "model": "qwen/qwen3.8-max",
+   "requestId": "a54738c3f8768779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.2,
+   "usage": {
+    "input": 1005,
+    "output": 1230,
+    "reasoning": 1151
+   },
+   "cost": 0.00939,
+   "raw": "{\"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557646\", \"hole\": \"\", \"why\": \"The sentence asserts feasibility and the exact platform score for the given object.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557646",
+    "hole": "",
+    "why": "The sentence asserts feasibility and the exact platform score for the given object."
    }
   },
   {

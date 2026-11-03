@@ -81,4 +81,35 @@ data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
 read   x3147 as doubles
 data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
 read   x3395 as doubles
-
+claim  x_gpt_6_luna_ea_heilbronn_alphaevolve_2025 over heil_alphaevolve_2025
+  quote "n = 14 points, min triangle area / convex-hull area = 0.0278355716" from P
+  : alphaevolve_2025.json is a feasible solution of "Heilbronn Problem for Convex Regions (n = 14)" and its score is 0.0278355716
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_erdos_min_overlap over x1
+  quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578585 (minimize)" from P
+  : x1 is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and its score is 0.3808585748578585
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_first_autocorrelation_inequality over x2
+  quote "the object is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and the platform's score of it is 1.5027436492326166 (minimize)" from P
+  : x2 is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and its score is 1.5027436492326166
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_flat_polynomials over x12
+  quote "the object is a feasible solution of "Flat Polynomials (degree 69)" and the platform's score of it is 1.2807274949642548 (minimize)" from P
+  : x12 is a feasible solution of "Flat Polynomials (degree 69)" and its score is 1.2807274949642548
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_edges_vs_triangles over x13
+  quote "the object is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and the platform's score of it is -0.7117091757692578 (maximize)" from P
+  : x13 is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and its score is -0.7117091757692578
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_circles_rectangle over x18
+  quote "the object is a feasible solution of "Circles in a Rectangle (n = 21)" and the platform's score of it is 2.3658323759098577 (maximize)" from P
+  : x18 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323759098577
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_kissing_number_d11_605 over x24
+  quote "the object is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and the platform's score of it is 1.7102381876301677 (minimize)" from P
+  : x24 is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and its score is 1.7102381876301677
+  proposed by model:gpt-6-luna
+claim  x_gpt_6_luna_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557646 (minimize)" from P
+  : x25 is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557646
+  proposed by model:gpt-6-luna

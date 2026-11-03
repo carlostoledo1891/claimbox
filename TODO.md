@@ -12,13 +12,13 @@ one kind of proposer, and the second kind is a person. Nothing else moves that n
 --disputed` lists the sentences the models read differently, the `*` ones first. Then `prose riemann-ai --run --record`, `make
 web`, republish. Checked by: the validated count, and the pair's same-error rate (models vs a person), published on the page.
 
-**2. The planted run for platform scores.** tools/propose_model.py's `bar_of` reads no `… its score is BAR`, so a score proposal
+**2. DONE 2026-11-02 — The planted run for platform scores.** tools/propose_model.py's `bar_of` reads no `… its score is BAR`, so a score proposal
 is never asked with its bar moved: the register's 20 SOTA-table claims and the platform rows have no planted check for any
 model. Why: commitment 7 — every feature ships with planted wrong claims. Small: read the score statement's bar in `bar_of`,
 re-ask the planted runs (`--planted-only`, ~$0.50 across families, the operator's word). Checked by: `plantedHeld` > 0 for
 register score claims; a red control that a score proposal which does not move is refused.
 
-**3. The guide variant, measured clean.** GUIDE.md changed one example after the runs (it printed a number of the AI phrasings);
+**3. DONE 2026-11-02 (`.guide2` runs; the register result stands) — The guide variant, measured clean.** GUIDE.md changed one example after the runs (it printed a number of the AI phrasings);
 the riemann-ai `.guide` results are in-sample, the register ones held out. Why: the guide is the claim that documentation makes AI
 write better claims — the page will say so only from a clean measurement. Re-run the four `.guide` families on riemann-ai with the
 current guide (~$2.50; the operator's word), compare `passed` with and without. Checked by: the battery's "no number shared"
@@ -66,15 +66,15 @@ decided objects), and the step-9 baseline — the share of validated claims with
 
 ## D. Maintenance
 
-**11. Documentation for outside readers.** README.md is stale (step-0 translator, "to be served"); USE-CASES.md does not exist;
+**11. DONE 2026-11-02 (README rewritten, USE-CASES.md, language v1) — Documentation for outside readers.** README.md is stale (step-0 translator, "to be served"); USE-CASES.md does not exist;
 LANGUAGE.md has no version. Why: the page now sells a language and a translator; a visitor who clicks through should find how to
 use it. Rewrite README (quickstart, links to GUIDE, LANGUAGE, the page); USE-CASES from six decided records; name the language v1.
 
-**12. The battery's time.** `make test` takes ~12 minutes: the register re-run asks cert-machine's word on ~400 proposals. Cache
+**12. DONE 2026-11-02 (prior-record cache by object sha256: 85 s) — The battery's time.** `make test` takes ~12 minutes: the register re-run asks cert-machine's word on ~400 proposals. Cache
 the words by object sha256 (records/prose-*.json already hold them) and re-decide only objects whose sha moved; keep
 `CLAIMBOX_FULL=1` for everything. Checked by: the same 546 passes in under three minutes.
 
-**13. Loose ends, each small.** register.gemini-4-argon stopped at its cap with 5 sentences unasked (`--resume`, ~$0.25);
+**13. Loose ends, each small.** ~~register.gemini-4-argon 5 sentences short~~ (resumed 2026-11-02);
 Erdős min overlap is REFUSED by the receiver because cert-machine's record word is REPAIRED — a cert-machine question whether a
 repaired row should expose the repaired claim's word (ask, do not change); the kissing sentences without JSON bytes (Z[√2] reading)
 stay holes until the library reads that ring.

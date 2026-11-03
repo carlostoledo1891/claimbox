@@ -179,7 +179,7 @@ class Ledger:
 
     def allow(self):
         with self.lock:
-            worst = max([c['cost'] for c in self.calls] + [0.25])
+            worst = max([c.get('cost', 0.0) for c in self.calls] + [0.25 if PROVIDER == 'anthropic' else 0.02])   # the worst call seen, or a floor
             if self.spent + 2 * worst > self.cap:
                 self.stopped = True
             return not self.stopped
@@ -302,17 +302,12 @@ def ask_prime(client, ledger, sentence, lib, tag):
 
 
 def bar_of(statement):
-    """the printed digits of a statement's bar, read by the language's own parser (None when it reads no bar)"""
+    """the printed digits of a statement's bar, read by the language's own parser (None when it reads no bar): a comparison's,
+    or a platform score's (2026-11-02: until then a score proposal was never asked with its bar moved — TODO.md item 2)"""
     try:
-        s = lang.statement(statement, 1)
+        return prose.bar_printed(lang.statement(statement, 1))
     except lang.LangError:
         return None
-    while s[0] == 'forall':
-        s = s[3]
-    if s[0] != 'cmp':
-        return None
-    b = s[3]
-    return b[2] if b[0] == 'within' else b[1]
 
 
 def claim_block(cid, data_var, sentence, answer, served):

@@ -4,10 +4,10 @@
  "provider": "prime",
  "family": "kimi-k3.1-pro",
  "effort": "high",
- "cap": 3.0,
+ "cap": 1.4,
  "guide": null,
- "spent": 0.6461,
- "calls": 80,
+ "spent": 0.7406,
+ "calls": 100,
  "stoppedAtCap": false,
  "prices": {
   "input": 2.0,
@@ -157,6 +157,26 @@
    }
   },
   {
+   "tag": "ea-circles-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730104da58779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.9,
+   "usage": {
+    "input": 1001,
+    "output": 245,
+    "reasoning": 164
+   },
+   "cost": 0.004452,
+   "raw": "{\"statement\":\"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321335\",\"hole\":\"\",\"why\":\"The sentence claims feasibility for the 21-circle problem and gives the sum of radii as its score.\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321335",
+    "hole": "",
+    "why": "The sentence claims feasibility for the 21-circle problem and gives the sum of radii as its score."
+   }
+  },
+  {
    "tag": "ea-circles-ours_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d4824ff40bc1-GRU",
@@ -174,6 +194,26 @@
     "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
     "hole": "",
     "why": ""
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730102aff7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.7,
+   "usage": {
+    "input": 998,
+    "output": 306,
+    "reasoning": 228
+   },
+   "cost": 0.005056,
+   "raw": "{\"statement\":\"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323758\",\"hole\":\"\",\"why\":\"The sentence claims feasibility for the 21-circle problem and gives the exact sum of radii.\"}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323758",
+    "hole": "",
+    "why": "The sentence claims feasibility for the 21-circle problem and gives the exact sum of radii."
    }
   },
   {
@@ -197,6 +237,26 @@
    }
   },
   {
+   "tag": "ea-edges-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730c089ebd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 941,
+    "output": 247,
+    "reasoning": 194
+   },
+   "cost": 0.004352,
+   "raw": "{\"statement\":\"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712495\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712495",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "ea-edges-ours_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d54e5cc11b27-GRU",
@@ -214,6 +274,26 @@
     "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
     "hole": "",
     "why": "The sentence states the platform's envelope score for the construction."
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730c53b55e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.2,
+   "usage": {
+    "input": 938,
+    "output": 356,
+    "reasoning": 292
+   },
+   "cost": 0.005436,
+   "raw": "{\"statement\":\"ours_2026.py is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712257\",\"hole\":\"\",\"why\":\"The sentence gives the construction's envelope score for the named platform problem.\"}",
+   "answer": {
+    "statement": "ours_2026.py is a feasible solution of \"edges-vs-triangles\" and its score is -0.712257",
+    "hole": "",
+    "why": "The sentence gives the construction's envelope score for the named platform problem."
    }
   },
   {
@@ -237,6 +317,26 @@
    }
   },
   {
+   "tag": "ea-flat-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730e34d64e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.7,
+   "usage": {
+    "input": 942,
+    "output": 591,
+    "reasoning": 549
+   },
+   "cost": 0.007794,
+   "raw": "{\"statement\": \"flat_alphaevolve_2025 = 1.340926\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "flat_alphaevolve_2025 = 1.340926",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "ea-flat-ours_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d5e28f670bc1-GRU",
@@ -254,6 +354,26 @@
     "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
     "hole": "",
     "why": "The sentence certifies a 70-coefficient ±1 polynomial and states its C⁺ score."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730fb5d408779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 939,
+    "output": 258,
+    "reasoning": 200
+   },
+   "cost": 0.004458,
+   "raw": "{\"statement\": \"flat_ours_2026 = 1.280933\", \"hole\": \"\", \"why\": \"The sentence gives the construction's C⁺ value as 1.280933.\"}",
+   "answer": {
+    "statement": "flat_ours_2026 = 1.280933",
+    "hole": "",
+    "why": "The sentence gives the construction's C⁺ value as 1.280933."
    }
   },
   {
@@ -277,6 +397,26 @@
    }
   },
   {
+   "tag": "ea-heilbronn-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730104da48779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.8,
+   "usage": {
+    "input": 989,
+    "output": 230,
+    "reasoning": 165
+   },
+   "cost": 0.004278,
+   "raw": "{\"statement\":\"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355716\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355716",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "ea-heilbronn-ours_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d4a939344051-GRU",
@@ -294,6 +434,26 @@
     "statement": "heil_ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
     "hole": "",
     "why": "The sentence claims the construction is feasible for n = 14 and gives its exact area-ratio score."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730412c5535d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.2,
+   "usage": {
+    "input": 986,
+    "output": 246,
+    "reasoning": 168
+   },
+   "cost": 0.004432,
+   "raw": "{\"statement\":\"ours_2026.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355806\",\"hole\":\"\",\"why\":\"The sentence claims the data achieves the printed score for the n = 14 problem.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355806",
+    "hole": "",
+    "why": "The sentence claims the data achieves the printed score for the n = 14 problem."
    }
   },
   {
@@ -317,6 +477,26 @@
    }
   },
   {
+   "tag": "ea-hexagons-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a5473111bd8b35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.7,
+   "usage": {
+    "input": 943,
+    "output": 244,
+    "reasoning": 173
+   },
+   "cost": 0.004326,
+   "raw": "{\"statement\":\"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419124\",\"hole\":\"\",\"why\":\"The sentence claims feasibility and an exact score equal to the outer hexagon's side length.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419124",
+    "hole": "",
+    "why": "The sentence claims feasibility and an exact score equal to the outer hexagon's side length."
+   }
+  },
+  {
    "tag": "ea-hexagons-ours_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d6388c53f1d6-GRU",
@@ -334,6 +514,26 @@
     "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
     "hole": "",
     "why": "The sentence claims a feasible packing whose score is the stated outer side."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54731424e7d7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.7,
+   "usage": {
+    "input": 940,
+    "output": 250,
+    "reasoning": 180
+   },
+   "cost": 0.00438,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416524\", \"hole\": \"\", \"why\": \"The sentence claims feasibility and identifies the score as the printed outer side length.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"hexagon-packing\" and its score is 3.9416524",
+    "hole": "",
+    "why": "The sentence claims feasibility and identifies the score as the printed outer side length."
    }
   },
   {
@@ -357,6 +557,26 @@
    }
   },
   {
+   "tag": "ea-mindist-alphaevolve_2025 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730484ed735d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.2,
+   "usage": {
+    "input": 1000,
+    "output": 190,
+    "reasoning": 126
+   },
+   "cost": 0.0039,
+   "raw": "{\"statement\":\"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889267\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889267",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "ea-mindist-ours_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d4d2db536240-GRU",
@@ -374,6 +594,26 @@
     "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
     "hole": "",
     "why": "The sentence gives the squared max/min distance ratio for 16 points."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a547305329128779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.2,
+   "usage": {
+    "input": 997,
+    "output": 436,
+    "reasoning": 353
+   },
+   "cost": 0.006354,
+   "raw": "{\"statement\":\"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889231\",\"hole\":\"\",\"why\":\"The sentence claims that the 16-point construction has squared max/min distance ratio 12.889231.\"}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889231",
+    "hole": "",
+    "why": "The sentence claims that the 16-point construction has squared max/min distance ratio 12.889231."
    }
   },
   {
@@ -437,6 +677,26 @@
    }
   },
   {
+   "tag": "ea-overlap-haugland_2016 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54730877bafb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.7,
+   "usage": {
+    "input": 947,
+    "output": 417,
+    "reasoning": 345
+   },
+   "cost": 0.006064,
+   "raw": "{\"statement\":\"erdo_haugland_2016 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380928\",\"hole\":\"\",\"why\":\"The sentence gives a construction for the named problem with upper bound 0.380928.\"}",
+   "answer": {
+    "statement": "erdo_haugland_2016 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380928",
+    "hole": "",
+    "why": "The sentence gives a construction for the named problem with upper bound 0.380928."
+   }
+  },
+  {
    "tag": "ea-overlap-together_ai_2026",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537d5392a6c4051-GRU",
@@ -474,6 +734,26 @@
     "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380876",
     "hole": "",
     "why": "The sentence gives an upper bound of 0.380876 for the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-overlap-ttt_discover_2026 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a5473087e9c28779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 949,
+    "output": 278,
+    "reasoning": 210
+   },
+   "cost": 0.004678,
+   "raw": "{\"statement\":\"erdo_ttt_discover_2026 is a feasible solution of \\\"erdos-minimum-overlap\\\" and its score is 0.380877\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound for the pinned step-function construction.\"}",
+   "answer": {
+    "statement": "erdo_ttt_discover_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380877",
+    "hole": "",
+    "why": "The sentence gives an upper bound for the pinned step-function construction."
    }
   },
   {
@@ -1277,6 +1557,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-edges-vs-triangles planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54734159e06622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 945,
+    "output": 287,
+    "reasoning": 220
+   },
+   "cost": 0.00476,
+   "raw": "{\"statement\":\"best-13.json is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692578\",\"hole\":\"\",\"why\":\"The sentence states feasibility and an exact platform score.\"}",
+   "answer": {
+    "statement": "best-13.json is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692578",
+    "hole": "",
+    "why": "The sentence states feasibility and an exact platform score."
+   }
+  },
+  {
    "tag": "mc100-ea-best-erdos-min-overlap",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537e0087f33ae01-GRU",
@@ -1297,6 +1597,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-erdos-min-overlap planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54734159a55d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.7,
+   "usage": {
+    "input": 946,
+    "output": 196,
+    "reasoning": 126
+   },
+   "cost": 0.003852,
+   "raw": "{\"statement\":\"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578585\",\"hole\":\"\",\"why\":\"The sentence states feasibility and the platform's exact score for x1.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578585",
+    "hole": "",
+    "why": "The sentence states feasibility and the platform's exact score for x1."
+   }
+  },
+  {
    "tag": "mc100-ea-best-first-autocorrelation-inequality",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537e02c0864f1d6-GRU",
@@ -1314,6 +1634,26 @@
     "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
     "hole": "",
     "why": "The sentence claims feasibility and gives the platform's exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a54734159a2ab6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.5,
+   "usage": {
+    "input": 947,
+    "output": 208,
+    "reasoning": 150
+   },
+   "cost": 0.003974,
+   "raw": "{\"statement\":\"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326166\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326166",
+    "hole": "",
+    "why": ""
    }
   },
   {
@@ -1357,6 +1697,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-kissing-number-d11-605 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a547344bef8935d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 948,
+    "output": 158,
+    "reasoning": 99
+   },
+   "cost": 0.003476,
+   "raw": "{\"statement\":\"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301677\",\"hole\":\"\",\"why\":\"\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301677",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d12",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537e0a2a80fae01-GRU",
@@ -1377,6 +1737,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-kissing-number-d12 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a547344afb9eb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.8,
+   "usage": {
+    "input": 941,
+    "output": 230,
+    "reasoning": 166
+   },
+   "cost": 0.004182,
+   "raw": "{\"statement\":\"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 3\",\"hole\":\"\",\"why\":\"The sentence asserts feasibility and an exact platform score of 3.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 3",
+    "hole": "",
+    "why": "The sentence asserts feasibility and an exact platform score of 3."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d12-842",
    "model": "moonshotai/kimi-k3.1-pro",
    "requestId": "a537e0b8bf286240-GRU",
@@ -1394,6 +1774,26 @@
     "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
     "hole": "",
     "why": "The sentence states feasibility and the platform's exact printed score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842 planted",
+   "model": "moonshotai/kimi-k3.1-pro",
+   "requestId": "a5473450eaf6b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 948,
+    "output": 239,
+    "reasoning": 165
+   },
+   "cost": 0.004286,
+   "raw": "{\"statement\":\"best-25.json is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557646\",\"hole\":\"\",\"why\":\"The sentence states feasibility and an exact platform score for the pinned data.\"}",
+   "answer": {
+    "statement": "best-25.json is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557646",
+    "hole": "",
+    "why": "The sentence states feasibility and an exact platform score for the pinned data."
    }
   },
   {

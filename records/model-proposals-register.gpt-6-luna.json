@@ -4,9 +4,10 @@
  "provider": "prime",
  "family": "gpt-6-luna",
  "effort": "high",
- "cap": 3.0,
- "spent": 0.0248,
- "calls": 75,
+ "cap": 0.3,
+ "guide": null,
+ "spent": 0.0263,
+ "calls": 83,
  "stoppedAtCap": false,
  "prices": {
   "input": 0.1,
@@ -233,6 +234,26 @@
     "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355715",
     "hole": "",
     "why": "The sentence gives the 14-point data's score for the named problem."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734156a11d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 899,
+    "output": 262,
+    "reasoning": 191
+   },
+   "cost": 0.000221,
+   "raw": "{\"statement\":\"alphaevolve_2025.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355716\",\"hole\":\"\",\"why\":\"The sentence gives the 14-point construction’s score for the named platform problem.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355716",
+    "hole": "",
+    "why": "The sentence gives the 14-point construction’s score for the named platform problem."
    }
   },
   {
@@ -1196,6 +1217,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-circles-rectangle planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547342c283ef187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 856,
+    "output": 173,
+    "reasoning": 113
+   },
+   "cost": 0.000172,
+   "raw": "{\"statement\":\"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098577\",\"hole\":\"\",\"why\":\"The sentence states a platform feasibility claim with a numerical score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098577",
+    "hole": "",
+    "why": "The sentence states a platform feasibility claim with a numerical score."
+   }
+  },
+  {
    "tag": "mc100-ea-best-edges-vs-triangles",
    "model": "openai/gpt-6-luna",
    "requestId": "a537d752dc646240-GRU",
@@ -1213,6 +1254,26 @@
     "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692579",
     "hole": "",
     "why": "The sentence states the platform problem and the object's score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-edges-vs-triangles planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473427988335d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 854,
+    "output": 130,
+    "reasoning": 74
+   },
+   "cost": 0.00015,
+   "raw": "{\"statement\":\"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692578\",\"hole\":\"\",\"why\":\"The sentence states the platform solution’s exact score.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692578",
+    "hole": "",
+    "why": "The sentence states the platform solution’s exact score."
    }
   },
   {
@@ -1236,6 +1297,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-erdos-min-overlap planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734156a90028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 856,
+    "output": 155,
+    "reasoning": 95
+   },
+   "cost": 0.000163,
+   "raw": "{\"statement\":\"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578585\",\"hole\":\"\",\"why\":\"The sentence states the platform’s feasibility and score for x1.\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578585",
+    "hole": "",
+    "why": "The sentence states the platform’s feasibility and score for x1."
+   }
+  },
+  {
    "tag": "mc100-ea-best-first-autocorrelation-inequality",
    "model": "openai/gpt-6-luna",
    "requestId": "a537d7484857d884-GRU",
@@ -1253,6 +1334,26 @@
     "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
     "hole": "",
     "why": "The sentence states the platform problem and its score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734155cc98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 856,
+    "output": 205,
+    "reasoning": 146
+   },
+   "cost": 0.000188,
+   "raw": "{\"statement\":\"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326166\",\"hole\":\"\",\"why\":\"The sentence gives the platform solution's title and exact score.\"}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326166",
+    "hole": "",
+    "why": "The sentence gives the platform solution's title and exact score."
    }
   },
   {
@@ -1276,6 +1377,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-flat-polynomials planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473427582c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 854,
+    "output": 182,
+    "reasoning": 126
+   },
+   "cost": 0.000176,
+   "raw": "{\"statement\":\"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642548\",\"hole\":\"\",\"why\":\"The sentence states the platform solution and its exact score.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642548",
+    "hole": "",
+    "why": "The sentence states the platform solution and its exact score."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d11-605",
    "model": "openai/gpt-6-luna",
    "requestId": "a537d762ec7b1b27-GRU",
@@ -1293,6 +1414,26 @@
     "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
     "hole": "",
     "why": "The sentence states the platform problem and its exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734367d97028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 858,
+    "output": 214,
+    "reasoning": 152
+   },
+   "cost": 0.000193,
+   "raw": "{\"statement\":\"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301677\",\"hole\":\"\",\"why\":\"The sentence gives a feasible-solution claim and an exact score.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301677",
+    "hole": "",
+    "why": "The sentence gives a feasible-solution claim and an exact score."
    }
   },
   {
@@ -1333,6 +1474,26 @@
     "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
     "hole": "",
     "why": "The sentence gives the platform’s score for its recorded solution."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473437fbd08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 858,
+    "output": 257,
+    "reasoning": 196
+   },
+   "cost": 0.000214,
+   "raw": "{\"statement\":\"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557646\",\"hole\":\"\",\"why\":\"The sentence states a platform feasibility claim and gives its score.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557646",
+    "hole": "",
+    "why": "The sentence states a platform feasibility claim and gives its score."
    }
   },
   {

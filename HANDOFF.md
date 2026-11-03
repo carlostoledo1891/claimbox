@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 546 pass, 0 fail, 136/136 red controls (about 12 minutes); `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 550 pass, 0 fail, 137/137 red controls (85 s; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -162,6 +162,19 @@ same passing claim), "AI models write it" (the thirteen-model panel; 560 of 560 
 caught), "Write a claim" (a .claim file, GUIDE.md); the lede, a third use, a new stat. record.py gains the derived proposal fields,
 means, families, modelClaims, wroteSame. Built at claimbox f600cf7 (87,170 bytes, sha256 c31ad62e…7fadd). LIVE on the operator's word:
 cert-machine 4b9a6e51, pinned from claimbox d862998 (the HANDOFF commit after it; web/dist the same bytes), checked here with curl.
+
+**TODO.md APPROVED (2026-11-02, the operator: "approved"; "caffeinate until 8am").** Done that night: item 2 — tools/propose_model.py's
+bar_of reads a score's bar (prose.bar_printed), the planted runs asked of every first-run family on the register (~$3.1 on Prime,
+$0.11 Claude); FOUND and fixed: planted_statement replaced the FIRST print of a one-digit bar, so "x22 … its score is 2" moved the
+data name — every family's plant on kissing-d12 read as broken; now the last print (rreplace), a red control. Item 3 — the
+current guide asked again as `.guide2` on riemann-ai (4 families, $1.84): DeepSeek 42 → 44 passed, GPT-6.1 Sol 41 → 38, GPT-6 Luna
+40 → 37, Mistral 36 → 36: the guide helps some families and not others; the register (held out) stands as the clean result.
+Item 12 — prose.run(prior=): a proposal whose object sha256 is the record's takes cert-machine's word, sensitivity and vacuity from
+it; `prose --run --record` reuses its own record (CLAIMBOX_FULL=1 asks everything); make test 85 s. Item 11 — README rewritten
+(the translator's history moved to notes/translator-2026-10.md), USE-CASES.md (six decided claims, every address resolved by the
+battery), LANGUAGE.md named v1. Item 13 — gemini-4-argon's register run resumed ($1.07 more; one concurrent planted-only run on
+the same ledger was killed, its few calls unlogged). The Ledger's cap floor is 0.02 for Prime (0.25 stopped cheap families at
+once). Prime spend since the approval: $4.63. make test 550 pass, 0 fail, 137/137.
 
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.

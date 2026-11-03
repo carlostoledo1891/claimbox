@@ -1,6 +1,6 @@
 # LANGUAGE — claimbox, written down
 
-*Roadmap steps 1 to 6 (PLAN.md §7), revision 6, 2026-10-30. The language in which a person or an AI states a claim so
+*Language v1 (2026-11-02: the constructs here are stable; a change to one gets v2 and a note). Roadmap steps 1 to 7 (PLAN.md §7), revision 7. The language in which a person or an AI states a claim so
 that cert-machine can decide it. This file is the specification; claimbox/lang.py reads and prints it (`python3 -m
 claimbox lang FILE.claim`, step 2); claimbox/compile.py compiles it to the object cert-machine reads (`python3 -m
 claimbox check`, step 3).

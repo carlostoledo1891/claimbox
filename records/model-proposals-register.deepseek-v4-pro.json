@@ -4,10 +4,10 @@
  "provider": "prime",
  "family": "deepseek-v4-pro",
  "effort": "high",
- "cap": 3.0,
+ "cap": 1.5,
  "guide": null,
- "spent": 0.894,
- "calls": 83,
+ "spent": 1.0159,
+ "calls": 102,
  "stoppedAtCap": false,
  "prices": {
   "input": 1.91,
@@ -173,6 +173,26 @@
    }
   },
   {
+   "tag": "ea-circles-alphaevolve_2025 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473010699ed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 997,
+    "output": 1081,
+    "reasoning": 1028
+   },
+   "cost": 0.006045,
+   "raw": "{\"statement\": \"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321335\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321335",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "ea-circles-ours_2026",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537d478ee97ae01-GRU",
@@ -190,6 +210,26 @@
     "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759",
     "hole": "",
     "why": "The sentence gives the sum of radii of the circles in the construction."
+   }
+  },
+  {
+   "tag": "ea-circles-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730108efb622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.3,
+   "usage": {
+    "input": 912,
+    "output": 1100,
+    "reasoning": 1034
+   },
+   "cost": 0.005955,
+   "raw": "{\n  \"statement\": \"circ_ours_2026 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323758\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the exact numerical score of a specific construction.\"\n}",
+   "answer": {
+    "statement": "circ_ours_2026 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323758",
+    "hole": "",
+    "why": "The sentence states the exact numerical score of a specific construction."
    }
   },
   {
@@ -213,6 +253,26 @@
    }
   },
   {
+   "tag": "ea-edges-alphaevolve_2025 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730d70bc2b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.8,
+   "usage": {
+    "input": 856,
+    "output": 1060,
+    "reasoning": 973
+   },
+   "cost": 0.005695,
+   "raw": "{\"statement\": \"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712495\", \"hole\": \"\", \"why\": \"The sentence states a platform's envelope score for the construction.\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712495",
+    "hole": "",
+    "why": "The sentence states a platform's envelope score for the construction."
+   }
+  },
+  {
    "tag": "ea-edges-ours_2026",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537d83ebcb2f1d6-GRU",
@@ -230,6 +290,26 @@
     "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712256",
     "hole": "",
     "why": ""
+   }
+  },
+  {
+   "tag": "ea-edges-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547311d8ad68779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.0,
+   "usage": {
+    "input": 850,
+    "output": 1496,
+    "reasoning": 1418
+   },
+   "cost": 0.007353,
+   "raw": "{\n  \"statement\": \"edge_ours_2026 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712257\",\n  \"hole\": \"\",\n  \"why\": \"The sentence directly reports the platform's envelope score for that construction as -0.712257.\"\n}",
+   "answer": {
+    "statement": "edge_ours_2026 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712257",
+    "hole": "",
+    "why": "The sentence directly reports the platform's envelope score for that construction as -0.712257."
    }
   },
   {
@@ -313,6 +393,26 @@
    }
   },
   {
+   "tag": "ea-heilbronn-alphaevolve_2025 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730108ba87ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.4,
+   "usage": {
+    "input": 985,
+    "output": 1372,
+    "reasoning": 1303
+   },
+   "cost": 0.007136,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355716\", \"hole\": \"\", \"why\": \"The sentence states the data's score on the named platform problem.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355716",
+    "hole": "",
+    "why": "The sentence states the data's score on the named platform problem."
+   }
+  },
+  {
    "tag": "ea-heilbronn-ours_2026",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537d4bd3cb21b27-GRU",
@@ -330,6 +430,26 @@
     "statement": "heil_ours_2026 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355805",
     "hole": "",
     "why": ""
+   }
+  },
+  {
+   "tag": "ea-heilbronn-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473049de35d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 33.9,
+   "usage": {
+    "input": 900,
+    "output": 2014,
+    "reasoning": 1945
+   },
+   "cost": 0.009433,
+   "raw": "{\n  \"statement\": \"ours_2026.json is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355806\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the score of the data for the named problem.\"\n}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355806",
+    "hole": "",
+    "why": "The sentence states the score of the data for the named problem."
    }
   },
   {
@@ -353,6 +473,26 @@
    }
   },
   {
+   "tag": "ea-hexagons-alphaevolve_2025 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547312d2fbfe1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 858,
+    "output": 1477,
+    "reasoning": 1390
+   },
+   "cost": 0.007296,
+   "raw": "{\"statement\": \"alphaevolve_2025.json is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419124\", \"hole\": \"\", \"why\": \"The sentence states the solution's score and feasibility.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.json is a feasible solution of \"hexagon-packing\" and its score is 3.9419124",
+    "hole": "",
+    "why": "The sentence states the solution's score and feasibility."
+   }
+  },
+  {
    "tag": "ea-hexagons-ours_2026",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537db8c388d1b27-GRU",
@@ -370,6 +510,26 @@
     "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
     "hole": "",
     "why": "The sentence presents a packing of 12 unit hexagons inside a hexagon of side 3.9416523, confirming feasibility with that score."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473173f8b7b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.0,
+   "usage": {
+    "input": 852,
+    "output": 1538,
+    "reasoning": 1484
+   },
+   "cost": 0.007518,
+   "raw": "{\"statement\": \"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416524\", \"hole\": \"\", \"why\": \"The sentence states the outer side achieved by the construction.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416524",
+    "hole": "",
+    "why": "The sentence states the outer side achieved by the construction."
    }
   },
   {
@@ -393,6 +553,26 @@
    }
   },
   {
+   "tag": "ea-mindist-alphaevolve_2025 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730583b74d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.5,
+   "usage": {
+    "input": 916,
+    "output": 1037,
+    "reasoning": 966
+   },
+   "cost": 0.005721,
+   "raw": "{\n  \"statement\": \"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889267\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a specific squared distance ratio for a construction.\"\n}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889267",
+    "hole": "",
+    "why": "The sentence claims a specific squared distance ratio for a construction."
+   }
+  },
+  {
    "tag": "ea-mindist-ours_2026",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537d54e3d430bc1-GRU",
@@ -410,6 +590,26 @@
     "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889230",
     "hole": "",
     "why": ""
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473063ade9e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.4,
+   "usage": {
+    "input": 910,
+    "output": 772,
+    "reasoning": 704
+   },
+   "cost": 0.004695,
+   "raw": "{\n  \"statement\": \"min_ours_2026 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889231\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the squared ratio for the construction.\"\n}",
+   "answer": {
+    "statement": "min_ours_2026 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889231",
+    "hole": "",
+    "why": "The sentence states the squared ratio for the construction."
    }
   },
   {
@@ -490,6 +690,26 @@
     "statement": "erdo_together_ai_2026 is a feasible solution of \"erdos-minimum-overlap\" and its score is 0.380871",
     "hole": "",
     "why": "The sentence gives the construction's upper bound as its score for the problem."
+   }
+  },
+  {
+   "tag": "ea-overlap-together_ai_2026 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730d38d54d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 50.0,
+   "usage": {
+    "input": 860,
+    "output": 2720,
+    "reasoning": 2688
+   },
+   "cost": 0.01206,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the sentence does not state which quantity has upper bound 0.380872\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the sentence does not state which quantity has upper bound 0.380872"
    }
   },
   {
@@ -1313,6 +1533,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-circles-rectangle planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547321348dbe1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.0,
+   "usage": {
+    "input": 859,
+    "output": 461,
+    "reasoning": 396
+   },
+   "cost": 0.003406,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098577\", \"hole\": \"\", \"why\": \"The sentence states the object is a feasible solution with a specific score.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098577",
+    "hole": "",
+    "why": "The sentence states the object is a feasible solution with a specific score."
+   }
+  },
+  {
    "tag": "mc100-ea-best-edges-vs-triangles",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537e915d82cae01-GRU",
@@ -1353,6 +1593,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-erdos-min-overlap planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54731e4786f35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 937,
+    "output": 637,
+    "reasoning": 590
+   },
+   "cost": 0.004229,
+   "raw": "{\"statement\": \"x1 is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578585\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578585",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
    "tag": "mc100-ea-best-first-autocorrelation-inequality",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537e8b02e8cae01-GRU",
@@ -1370,6 +1630,26 @@
     "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326165",
     "hole": "",
     "why": "The sentence claims feasibility and states the numerical score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-first-autocorrelation-inequality planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54731e49fb47ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 857,
+    "output": 525,
+    "reasoning": 461
+   },
+   "cost": 0.003648,
+   "raw": "{\n  \"statement\": \"x2 is a feasible solution of \\\"First Autocorrelation Inequality (Upper Bound)\\\" and its score is 1.5027436492326166\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts the object is a feasible solution with a given score.\"\n}",
+   "answer": {
+    "statement": "x2 is a feasible solution of \"First Autocorrelation Inequality (Upper Bound)\" and its score is 1.5027436492326166",
+    "hole": "",
+    "why": "The sentence asserts the object is a feasible solution with a given score."
    }
   },
   {
@@ -1393,6 +1673,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-flat-polynomials planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547320cfce0f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.2,
+   "usage": {
+    "input": 856,
+    "output": 665,
+    "reasoning": 599
+   },
+   "cost": 0.004182,
+   "raw": "{\n  \"statement\": \"best-12.json is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642548\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the data is a feasible solution and gives its platform score.\"\n}",
+   "answer": {
+    "statement": "best-12.json is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642548",
+    "hole": "",
+    "why": "The sentence states the data is a feasible solution and gives its platform score."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d11-605",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537e999b8306240-GRU",
@@ -1410,6 +1710,26 @@
     "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
     "hole": "",
     "why": "The sentence explicitly claims the object is a feasible solution with that score for the named problem."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54732468eee8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 939,
+    "output": 754,
+    "reasoning": 705
+   },
+   "cost": 0.004681,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301677\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301677",
+    "hole": "",
+    "why": ""
    }
   },
   {
@@ -1433,6 +1753,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-kissing-number-d12 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54732457ca6d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 853,
+    "output": 624,
+    "reasoning": 576
+   },
+   "cost": 0.004019,
+   "raw": "{\"statement\": \"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 3\", \"hole\": \"\", \"why\": \"The sentence directly claims this.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 3",
+    "hole": "",
+    "why": "The sentence directly claims this."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d12-842",
    "model": "deepseek/deepseek-v4-pro",
    "requestId": "a537e9c708526240-GRU",
@@ -1448,6 +1788,26 @@
    "raw": "{\"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557645\", \"hole\": \"\", \"why\": \"\"}",
    "answer": {
     "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547326f6e9a35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.1,
+   "usage": {
+    "input": 860,
+    "output": 352,
+    "reasoning": 298
+   },
+   "cost": 0.002991,
+   "raw": "{\n  \"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557646\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557646",
     "hole": "",
     "why": ""
    }
@@ -1530,6 +1890,26 @@
     "statement": "x3147 is a feasible solution of \"C3c\" and its score is 1.6747338950414058",
     "hole": "",
     "why": ""
+   }
+  },
+  {
+   "tag": "optconst-3c planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473187fd4035d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 47.3,
+   "usage": {
+    "input": 847,
+    "output": 3725,
+    "reasoning": 3674
+   },
+   "cost": 0.015885,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"The term C3c is not among the library names provided; only x3147 is available, and the inequality cannot be expressed without a term for C3c.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The term C3c is not among the library names provided; only x3147 is available, and the inequality cannot be expressed without a term for C3c."
    }
   },
   {

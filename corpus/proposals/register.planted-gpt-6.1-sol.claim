@@ -81,4 +81,15 @@ data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
 read   x3147 as doubles
 data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
 read   x3395 as doubles
-
+claim  x_gpt_6_1_sol_mc100_ea_best_circles_rectangle over x18
+  quote "the object is a feasible solution of "Circles in a Rectangle (n = 21)" and the platform's score of it is 2.3658323759098577 (maximize)" from P
+  : x18 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323759098577
+  proposed by model:gpt-6.1-sol
+claim  x_gpt_6_1_sol_mc100_ea_best_kissing_number_d12 over x22
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and the platform's score of it is 3 (minimize)" from P
+  : best-22.json is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and its score is 3
+  proposed by model:gpt-6.1-sol
+claim  x_gpt_6_1_sol_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557646 (minimize)" from P
+  : best-25.json is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557646
+  proposed by model:gpt-6.1-sol

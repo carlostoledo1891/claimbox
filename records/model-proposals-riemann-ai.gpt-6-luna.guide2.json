@@ -1,0 +1,2560 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "openai/gpt-6-luna",
+ "provider": "prime",
+ "family": "gpt-6-luna.guide2",
+ "effort": "high",
+ "cap": 1.5,
+ "guide": "5f81135d714bd2b5ea1c3474a5f49624069ef54a1014df6e601044e5dbf2087f",
+ "spent": 0.0423,
+ "calls": 127,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.1,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 0.5
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547306d4b19d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.1,
+   "usage": {
+    "input": 1694,
+    "output": 81,
+    "reasoning": 43
+   },
+   "cost": 0.00021,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence states this upper bound for the edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states this upper bound for the edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473787c9818779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1694,
+    "output": 73,
+    "reasoning": 34
+   },
+   "cost": 0.000206,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence claims an upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547307d5fd6028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1709,
+    "output": 140,
+    "reasoning": 113
+   },
+   "cost": 0.000241,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"The sentence says only that the bound was checked.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence says only that the bound was checked."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730b47a1135d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.3,
+   "usage": {
+    "input": 1695,
+    "output": 82,
+    "reasoning": 44
+   },
+   "cost": 0.00021,
+   "raw": "{\"statement\":\"D(1) < 0.82395317\",\"hole\":\"\",\"why\":\"The sentence states this strict upper bound for D(1).\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence states this strict upper bound for D(1)."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737a0dd4eb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1695,
+    "output": 84,
+    "reasoning": 40
+   },
+   "cost": 0.000211,
+   "raw": "{\"statement\":\"D(1) < 0.82395318\",\"hole\":\"\",\"why\":\"The sentence claims that D(1) is less than 0.82395318.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence claims that D(1) is less than 0.82395318."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473055994af187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1699,
+    "output": 96,
+    "reasoning": 54
+   },
+   "cost": 0.000218,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"“Never exceeds … in absolute value” states an absolute-value upper bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "“Never exceeds … in absolute value” states an absolute-value upper bound."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473796ad4235d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.6,
+   "usage": {
+    "input": 1699,
+    "output": 155,
+    "reasoning": 116
+   },
+   "cost": 0.000247,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence says the absolute discrepancy never exceeds the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence says the absolute discrepancy never exceeds the printed bound."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547307c3861622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.3,
+   "usage": {
+    "input": 1704,
+    "output": 168,
+    "reasoning": 129
+   },
+   "cost": 0.000254,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence states an upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473793ac9df187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1704,
+    "output": 86,
+    "reasoning": 47
+   },
+   "cost": 0.000213,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence states an upper bound on the absolute edge discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473037ab5d622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1711,
+    "output": 98,
+    "reasoning": 60
+   },
+   "cost": 0.00022,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence states an upper bound on the absolute discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute discrepancy."
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473787d9838779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1711,
+    "output": 107,
+    "reasoning": 69
+   },
+   "cost": 0.000225,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence claims an upper bound on the absolute discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute discrepancy."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547307f5974622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1710,
+    "output": 110,
+    "reasoning": 64
+   },
+   "cost": 0.000226,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence claims that the absolute value of D(1) does not exceed the printed bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims that the absolute value of D(1) does not exceed the printed bound."
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737976c218779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1710,
+    "output": 143,
+    "reasoning": 101
+   },
+   "cost": 0.000243,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence states an upper bound on the absolute value of D(1).\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473037bb65622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 1701,
+    "output": 237,
+    "reasoning": 199
+   },
+   "cost": 0.000289,
+   "raw": "{\"statement\":\"|D(1)| ≤ 0.82395317\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound on the absolute discrepancy.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence gives an upper bound on the absolute discrepancy."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473787cb21f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1701,
+    "output": 118,
+    "reasoning": 79
+   },
+   "cost": 0.000229,
+   "raw": "{\"statement\":\": |D(1)| ≤ 0.82395318\",\"hole\":\"\",\"why\":\"The sentence gives an upper bound on the absolute discrepancy.\"}",
+   "answer": {
+    "statement": ": |D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence gives an upper bound on the absolute discrepancy."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473070edd2e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1715,
+    "output": 131,
+    "reasoning": 82
+   },
+   "cost": 0.000237,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"“Bounded by” could mean D(1) ≤ 0.82395317 or |D(1)| ≤ 0.82395317.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "“Bounded by” could mean D(1) ≤ 0.82395317 or |D(1)| ≤ 0.82395317."
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730625f8f028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1692,
+    "output": 101,
+    "reasoning": 69
+   },
+   "cost": 0.00022,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"“About 0.824” is approximate, not an exact bar.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "“About 0.824” is approximate, not an exact bar."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730900f8f7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1700,
+    "output": 338,
+    "reasoning": 278
+   },
+   "cost": 0.000339,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The claim covers the finite integer rows 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The claim covers the finite integer rows 1 through 255."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737a89fb1622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.8,
+   "usage": {
+    "input": 1700,
+    "output": 252,
+    "reasoning": 190
+   },
+   "cost": 0.000296,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The claim applies to the finite integer rows from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The claim applies to the finite integer rows from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730e4994235d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.6,
+   "usage": {
+    "input": 1701,
+    "output": 897,
+    "reasoning": 835
+   },
+   "cost": 0.000619,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"It states a finite-row bound for every integer j in the given range.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "It states a finite-row bound for every integer j in the given range."
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473814f8f6d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1701,
+    "output": 192,
+    "reasoning": 129
+   },
+   "cost": 0.000266,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this finite-range bound for every integer j in the stated range.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this finite-range bound for every integer j in the stated range."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730c1de8ff187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 1705,
+    "output": 850,
+    "reasoning": 782
+   },
+   "cost": 0.000596,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"It claims the absolute difference is at most 3 × 10^{-40} for every listed row.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "It claims the absolute difference is at most 3 × 10^{-40} for every listed row."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737c018dab6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.7,
+   "usage": {
+    "input": 1705,
+    "output": 2390,
+    "reasoning": 2317
+   },
+   "cost": 0.001365,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |S(j) - j/256| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence first claims that each S(j) is within three times ten to the minus forty of its ideal value j/256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |S(j) - j/256| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence first claims that each S(j) is within three times ten to the minus forty of its ideal value j/256."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547314b298ed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.0,
+   "usage": {
+    "input": 1701,
+    "output": 277,
+    "reasoning": 209
+   },
+   "cost": 0.000309,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003\",\"hole\":\"\",\"why\":\"The sentence states this bound for every integer row in the given range.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003",
+    "hole": "",
+    "why": "The sentence states this bound for every integer row in the given range."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473833dd8fe1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 1701,
+    "output": 346,
+    "reasoning": 276
+   },
+   "cost": 0.000343,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004\",\"hole\":\"\",\"why\":\"The sentence states this bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 0.0000000000000000000000000000000000000004",
+    "hole": "",
+    "why": "The sentence states this bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730aa59e5b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 1717,
+    "output": 843,
+    "reasoning": 778
+   },
+   "cost": 0.000593,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for each integer row j strictly between 0 and 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for each integer row j strictly between 0 and 256."
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737bc4ed27ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.3,
+   "usage": {
+    "input": 1717,
+    "output": 731,
+    "reasoning": 670
+   },
+   "cost": 0.000537,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"It bounds the stated deviation on every integer row in the finite range.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "It bounds the stated deviation on every integer row in the finite range."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547308f7f30622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1715,
+    "output": 235,
+    "reasoning": 170
+   },
+   "cost": 0.000289,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The claim is a bound over the finite integer rows 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The claim is a bound over the finite integer rows 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737a73d76af29-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1715,
+    "output": 266,
+    "reasoning": 204
+   },
+   "cost": 0.000304,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer j in the stated finite range.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer j in the stated finite range."
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730f1cbb7f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.7,
+   "usage": {
+    "input": 1712,
+    "output": 330,
+    "reasoning": 267
+   },
+   "cost": 0.000336,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547382ec99cb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1712,
+    "output": 251,
+    "reasoning": 188
+   },
+   "cost": 0.000297,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730a5dd68d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1700,
+    "output": 469,
+    "reasoning": 411
+   },
+   "cost": 0.000405,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\",\"hole\":\"\",\"why\":\"The sentence claims this bound for each integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence claims this bound for each integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737af8debf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1700,
+    "output": 538,
+    "reasoning": 480
+   },
+   "cost": 0.000439,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer row from 1 through 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer row from 1 through 255."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730d6ccfa622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.4,
+   "usage": {
+    "input": 1707,
+    "output": 1204,
+    "reasoning": 1149
+   },
+   "cost": 0.000773,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : |256·S(j) - j| < 3·10^-40\",\"hole\":\"\",\"why\":\"The sentence leads with the strict bound stated in the abstract.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| < 3·10^-40",
+    "hole": "",
+    "why": "The sentence leads with the strict bound stated in the abstract."
+   }
+  },
+  {
+   "tag": "2/referee/16 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737ea9ba0622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.8,
+   "usage": {
+    "input": 1707,
+    "output": 737,
+    "reasoning": 703
+   },
+   "cost": 0.000539,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The sentence gives both a strict inequality and a non-strict inequality for the claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The sentence gives both a strict inequality and a non-strict inequality for the claim."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54730c4ff8b028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.1,
+   "usage": {
+    "input": 1689,
+    "output": 512,
+    "reasoning": 447
+   },
+   "cost": 0.000425,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3×10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence states this bound for each integer row j with 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3×10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states this bound for each integer row j with 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54737ceca577ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 1689,
+    "output": 488,
+    "reasoning": 428
+   },
+   "cost": 0.000413,
+   "raw": "{\"statement\":\"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰\",\"hole\":\"\",\"why\":\"The sentence claims this bound for every integer row in the stated range.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims this bound for every integer row in the stated range."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473127fb56b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1687,
+    "output": 102,
+    "reasoning": 61
+   },
+   "cost": 0.00022,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence states this strict upper bound for c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states this strict upper bound for c256."
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547384169b7f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1687,
+    "output": 136,
+    "reasoning": 93
+   },
+   "cost": 0.000237,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence claims the resulting constant is less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the resulting constant is less than the printed bound."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473170de6735d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1687,
+    "output": 100,
+    "reasoning": 63
+   },
+   "cost": 0.000219,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The sentence says the value is about 2.5431316·10⁻⁶.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says the value is about 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547316c5e797ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1717,
+    "output": 188,
+    "reasoning": 145
+   },
+   "cost": 0.000266,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence says the decimal constant is strictly below the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence says the decimal constant is strictly below the printed number."
+   }
+  },
+  {
+   "tag": "3/assistant/27 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738749ee3d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1717,
+    "output": 207,
+    "reasoning": 164
+   },
+   "cost": 0.000275,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence first claims that the printed number exceeds the decimal constant.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence first claims that the printed number exceeds the decimal constant."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547317b6e61028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1681,
+    "output": 126,
+    "reasoning": 92
+   },
+   "cost": 0.000231,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"“We checked that” presents a hedge rather than a claim of the required form.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "“We checked that” presents a hedge rather than a claim of the required form."
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547313d5b0fb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.4,
+   "usage": {
+    "input": 1685,
+    "output": 633,
+    "reasoning": 590
+   },
+   "cost": 0.000485,
+   "raw": "{\"statement\":\"c256 < 2.5431316 × 10^{-6}\",\"hole\":\"\",\"why\":\"The expression is c256, and “below” means <.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316 × 10^{-6}",
+    "hole": "",
+    "why": "The expression is c256, and “below” means <."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473136cbb3b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.2,
+   "usage": {
+    "input": 1700,
+    "output": 341,
+    "reasoning": 300
+   },
+   "cost": 0.00034,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence states a strict upper bound on c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states a strict upper bound on c256."
+   }
+  },
+  {
+   "tag": "3/docstring/23 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738508d94b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 1700,
+    "output": 1035,
+    "reasoning": 991
+   },
+   "cost": 0.000687,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence states that the decimal constant is less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence states that the decimal constant is less than the printed bound."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547311a0a528779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1697,
+    "output": 144,
+    "reasoning": 97
+   },
+   "cost": 0.000242,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The printed expression is c256 and is claimed to be less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The printed expression is c256 and is claimed to be less than the printed bound."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547386678867ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.5,
+   "usage": {
+    "input": 1697,
+    "output": 144,
+    "reasoning": 100
+   },
+   "cost": 0.000242,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The printed expression is c256 and is less than the stated bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The printed expression is c256 and is less than the stated bound."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473127ffa2f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1680,
+    "output": 255,
+    "reasoning": 218
+   },
+   "cost": 0.000296,
+   "raw": "{\"statement\":\"c256 < 2.5431316e-6\",\"hole\":\"\",\"why\":\"The printed expression is the library constant c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": "The printed expression is the library constant c256."
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547384848fed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1680,
+    "output": 233,
+    "reasoning": 185
+   },
+   "cost": 0.000284,
+   "raw": "{\"statement\":\"c256 < 2.5431316e-7\",\"hole\":\"\",\"why\":\"The expression is the defined constant c256, and the sentence states it is less than the printed number.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-7",
+    "hole": "",
+    "why": "The expression is the defined constant c256, and the sentence states it is less than the printed number."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547315c2973e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 1701,
+    "output": 234,
+    "reasoning": 194
+   },
+   "cost": 0.000287,
+   "raw": "{\"statement\":\"c256 < 2.5431316·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence claims the printed number exceeds c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the printed number exceeds c256."
+   }
+  },
+  {
+   "tag": "3/referee/26 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473872895d8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1701,
+    "output": 221,
+    "reasoning": 180
+   },
+   "cost": 0.000281,
+   "raw": "{\"statement\":\"c256 < 2.5431317·10⁻⁶\",\"hole\":\"\",\"why\":\"The sentence claims the printed number strictly exceeds c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the printed number strictly exceeds c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731513b40622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 1695,
+    "output": 323,
+    "reasoning": 283
+   },
+   "cost": 0.000331,
+   "raw": "{\"statement\":\"c256 < 2.5431316×10⁻⁶\",\"hole\":\"\",\"why\":\"The inequality states an upper bound for c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316×10⁻⁶",
+    "hole": "",
+    "why": "The inequality states an upper bound for c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547385e5b4fb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1695,
+    "output": 261,
+    "reasoning": 212
+   },
+   "cost": 0.0003,
+   "raw": "{\"statement\":\"c256 < 2.5431317×10⁻⁶\",\"hole\":\"\",\"why\":\"The displayed expression is c256, and the sentence claims it is less than the printed bound.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317×10⁻⁶",
+    "hole": "",
+    "why": "The displayed expression is c256, and the sentence claims it is less than the printed bound."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473184d95a028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1706,
+    "output": 130,
+    "reasoning": 69
+   },
+   "cost": 0.000236,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence first claims an exact value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence first claims an exact value for p₀."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738821e9ff187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1706,
+    "output": 111,
+    "reasoning": 50
+   },
+   "cost": 0.000226,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence first claims an exact value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence first claims an exact value for p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731a63d6435d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1706,
+    "output": 459,
+    "reasoning": 398
+   },
+   "cost": 0.0004,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence first states this exact value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence first states this exact value for p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738951cdcd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1706,
+    "output": 226,
+    "reasoning": 165
+   },
+   "cost": 0.000284,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence first claims an exact value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence first claims an exact value for p₀."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731997fdc7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1713,
+    "output": 150,
+    "reasoning": 87
+   },
+   "cost": 0.000246,
+   "raw": "{\"statement\":\": p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence first states the exact rational value of p₀.\"}",
+   "answer": {
+    "statement": ": p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence first states the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731c31903f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 1698,
+    "output": 299,
+    "reasoning": 268
+   },
+   "cost": 0.000319,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The leading numerical claim uses “≈ 0.68183”.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The leading numerical claim uses “≈ 0.68183”."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731972938622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1708,
+    "output": 184,
+    "reasoning": 121
+   },
+   "cost": 0.000263,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence first claims that p₀ equals the printed exact fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence first claims that p₀ equals the printed exact fraction."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547317eac1a8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1713,
+    "output": 195,
+    "reasoning": 133
+   },
+   "cost": 0.000269,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence first claims that p₀ equals the printed fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence first claims that p₀ equals the printed fraction."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731d9cf437ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 1704,
+    "output": 92,
+    "reasoning": 49
+   },
+   "cost": 0.000216,
+   "raw": "{\"statement\":\"p₀ ≤ 0.6818287\",\"hole\":\"\",\"why\":\"The sentence first claims that 0.6818287 is at least p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence first claims that 0.6818287 is at least p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738a00dcf35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1704,
+    "output": 84,
+    "reasoning": 41
+   },
+   "cost": 0.000212,
+   "raw": "{\"statement\":\"p₀ ≤ 0.6818288\",\"hole\":\"\",\"why\":\"The sentence first claims that 0.6818288 is at least p₀.\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818288",
+    "hole": "",
+    "why": "The sentence first claims that 0.6818288 is at least p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547318bfe6df187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1700,
+    "output": 194,
+    "reasoning": 132
+   },
+   "cost": 0.000267,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The sentence leads with an exact rational value for p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact rational value for p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473885af9e028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1700,
+    "output": 351,
+    "reasoning": 288
+   },
+   "cost": 0.000345,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence first claims that p₀ equals the printed exact rational.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence first claims that p₀ equals the printed exact rational."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731a5dc0d7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 1714,
+    "output": 1074,
+    "reasoning": 1010
+   },
+   "cost": 0.000708,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\"hole\":\"\",\"why\":\"The first numerical claim asks whether p₀ equals the printed fraction exactly.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The first numerical claim asks whether p₀ equals the printed fraction exactly."
+   }
+  },
+  {
+   "tag": "4/referee/36 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547388b4a7635d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 1714,
+    "output": 238,
+    "reasoning": 177
+   },
+   "cost": 0.00029,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\"hole\":\"\",\"why\":\"The sentence leads with an equality claim about p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an equality claim about p₀."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547376fc90ef187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 242.6,
+   "usage": {
+    "input": 1693,
+    "output": 370,
+    "reasoning": 316
+   },
+   "cost": 0.000354,
+   "raw": "{\"statement\":\"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\",\"hole\":\"\",\"why\":\"The sentence leads with the exact value of p₀.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": "The sentence leads with the exact value of p₀."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731fafb8ff187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1639,
+    "output": 163,
+    "reasoning": 123
+   },
+   "cost": 0.000245,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives the constant’s value with a printed ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the constant’s value with a printed ellipsis."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738a7e81e35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.9,
+   "usage": {
+    "input": 1639,
+    "output": 304,
+    "reasoning": 264
+   },
+   "cost": 0.000316,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence gives the constant’s value with a printed ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the constant’s value with a printed ellipsis."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547322f2dcdd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.6,
+   "usage": {
+    "input": 1673,
+    "output": 153,
+    "reasoning": 111
+   },
+   "cost": 0.000244,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence prints an ellipsis-truncated value for c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence prints an ellipsis-truncated value for c₁*."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738be2e77622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1673,
+    "output": 133,
+    "reasoning": 91
+   },
+   "cost": 0.000234,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence prints a value for c₁* with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence prints a value for c₁* with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732175c26d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1637,
+    "output": 54,
+    "reasoning": 26
+   },
+   "cost": 0.000191,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"“About” makes 0.7533 approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "“About” makes 0.7533 approximate."
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547320dbc9f8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1644,
+    "output": 164,
+    "reasoning": 124
+   },
+   "cost": 0.000246,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives a truncated numerical value for c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives a truncated numerical value for c₁*."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738accbf68779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 1644,
+    "output": 172,
+    "reasoning": 131
+   },
+   "cost": 0.00025,
+   "raw": "{\"statement\":\": c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence gives a truncated numerical value for c₁*.\"}",
+   "answer": {
+    "statement": ": c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives a truncated numerical value for c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54731eb8ac735d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1696,
+    "output": 148,
+    "reasoning": 109
+   },
+   "cost": 0.000244,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives the constant’s value with a print cutoff.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the constant’s value with a print cutoff."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738a0ac84622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1696,
+    "output": 134,
+    "reasoning": 94
+   },
+   "cost": 0.000237,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence gives the constant’s value with a printed ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the constant’s value with a printed ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547323fbf15622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 1648,
+    "output": 652,
+    "reasoning": 620
+   },
+   "cost": 0.000491,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The leading equality uses cot and square roots, which no library name expresses.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The leading equality uses cot and square roots, which no library name expresses."
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732063f4a35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1663,
+    "output": 214,
+    "reasoning": 171
+   },
+   "cost": 0.000273,
+   "raw": "{\"statement\":\": c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence gives the value of c₁* with a truncated decimal.\"}",
+   "answer": {
+    "statement": ": c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence gives the value of c₁* with a truncated decimal."
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732234e4135d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.8,
+   "usage": {
+    "input": 1670,
+    "output": 1526,
+    "reasoning": 1499
+   },
+   "cost": 0.00093,
+   "raw": "{\"statement\":\"\",\"hole\":\"prose\",\"why\":\"It asks for verification rather than asserting a claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "It asks for verification rather than asserting a claim."
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732225ce635d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1640,
+    "output": 71,
+    "reasoning": 31
+   },
+   "cost": 0.000199,
+   "raw": "{\"statement\":\"c₁* = 0.7532960…\",\"hole\":\"\",\"why\":\"The sentence leads with the printed value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the printed value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738ae8eadd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1640,
+    "output": 105,
+    "reasoning": 65
+   },
+   "cost": 0.000217,
+   "raw": "{\"statement\":\"c₁* = 0.7532961…\",\"hole\":\"\",\"why\":\"The sentence first states the printed value of c₁*.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence first states the printed value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473267fe2ad457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.0,
+   "usage": {
+    "input": 1627,
+    "output": 279,
+    "reasoning": 248
+   },
+   "cost": 0.000302,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The printed value is marked with ≈, so it is approximate.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The printed value is marked with ≈, so it is approximate."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547328c2d31b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 1639,
+    "output": 1594,
+    "reasoning": 1552
+   },
+   "cost": 0.000961,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence states the proportion as this expression and printed value.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence states the proportion as this expression and printed value."
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738e55b4b35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.9,
+   "usage": {
+    "input": 1639,
+    "output": 1067,
+    "reasoning": 1028
+   },
+   "cost": 0.000697,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a proportion of the infinitely many zeta zeros, not a claim over a finite set of rows.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a proportion of the infinitely many zeta zeros, not a claim over a finite set of rows."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732fc4a3f35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1636,
+    "output": 428,
+    "reasoning": 386
+   },
+   "cost": 0.000378,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence first states this value before giving the percentage implication.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence first states this value before giving the percentage implication."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738f6cfbe622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.1,
+   "usage": {
+    "input": 1636,
+    "output": 168,
+    "reasoning": 126
+   },
+   "cost": 0.000248,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence first claims the proportion equals the printed truncated value.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence first claims the proportion equals the printed truncated value."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732e73bf5028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1627,
+    "output": 95,
+    "reasoning": 52
+   },
+   "cost": 0.00021,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence first states this value; the following percentage is prose.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence first states this value; the following percentage is prose."
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738da2b5bd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1627,
+    "output": 107,
+    "reasoning": 70
+   },
+   "cost": 0.000216,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with this equality.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with this equality."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732d60d44028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1638,
+    "output": 158,
+    "reasoning": 118
+   },
+   "cost": 0.000243,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence first states this proportion as an equality.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence first states this proportion as an equality."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738ca6e4135d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1638,
+    "output": 156,
+    "reasoning": 115
+   },
+   "cost": 0.000242,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with this printed value for the proportion.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with this printed value for the proportion."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473280dc236b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.9,
+   "usage": {
+    "input": 1643,
+    "output": 470,
+    "reasoning": 434
+   },
+   "cost": 0.000399,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It asserts a proportion among all nontrivial zeros, not a claim over finite integer rows.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It asserts a proportion among all nontrivial zeros, not a claim over finite integer rows."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473398ee36028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.6,
+   "usage": {
+    "input": 1631,
+    "output": 384,
+    "reasoning": 357
+   },
+   "cost": 0.000355,
+   "raw": "{\"statement\":\"\",\"hole\":\"decider\",\"why\":\"The proportion is not expressed by any library name.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "The proportion is not expressed by any library name."
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732a5becc8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1628,
+    "output": 872,
+    "reasoning": 832
+   },
+   "cost": 0.000599,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence gives this printed value for the expression.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence gives this printed value for the expression."
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738c0182d35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 1628,
+    "output": 697,
+    "reasoning": 653
+   },
+   "cost": 0.000511,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence prints this value for the expression before giving a separate bound.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence prints this value for the expression before giving a separate bound."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733194c82d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1606,
+    "output": 54,
+    "reasoning": 28
+   },
+   "cost": 0.000188,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The number is marked approximate by ≈.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The number is marked approximate by ≈."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732f50bbef187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1638,
+    "output": 386,
+    "reasoning": 345
+   },
+   "cost": 0.000357,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67250…\",\"hole\":\"\",\"why\":\"The first numerical claim gives this expression and printed value.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The first numerical claim gives this expression and printed value."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738ea0eda6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 1638,
+    "output": 490,
+    "reasoning": 443
+   },
+   "cost": 0.000409,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence first states the proportion as this value; the suggested lower bound comes later.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence first states the proportion as this value; the suggested lower bound comes later."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54732ec4c96e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1625,
+    "output": 119,
+    "reasoning": 77
+   },
+   "cost": 0.000222,
+   "raw": "{\"statement\":\"(2 - 1/c₁*) = 0.67250…\",\"hole\":\"\",\"why\":\"The sentence first states this value with an ellipsis.\"}",
+   "answer": {
+    "statement": "(2 - 1/c₁*) = 0.67250…",
+    "hole": "",
+    "why": "The sentence first states this value with an ellipsis."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54738e8787ff187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1625,
+    "output": 139,
+    "reasoning": 100
+   },
+   "cost": 0.000232,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence first states this truncated numerical equality.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence first states this truncated numerical equality."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547333a794d7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.8,
+   "usage": {
+    "input": 1617,
+    "output": 398,
+    "reasoning": 352
+   },
+   "cost": 0.000361,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence equates the given expression with the printed truncated decimal.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence equates the given expression with the printed truncated decimal."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473909fe6e35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 1617,
+    "output": 613,
+    "reasoning": 568
+   },
+   "cost": 0.000468,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the printed expression to the truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the printed expression to the truncated value."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733f0bd0b35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.7,
+   "usage": {
+    "input": 1621,
+    "output": 206,
+    "reasoning": 157
+   },
+   "cost": 0.000265,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence states this equality with a printed value cut off by an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states this equality with a printed value cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547392e4c3fd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1621,
+    "output": 140,
+    "reasoning": 95
+   },
+   "cost": 0.000232,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence equates the library expression to the printed value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence equates the library expression to the printed value."
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733b84b236b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1619,
+    "output": 255,
+    "reasoning": 207
+   },
+   "cost": 0.000289,
+   "raw": "{\"statement\": \": (3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states this expression equals the printed value.\"}",
+   "answer": {
+    "statement": ": (3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states this expression equals the printed value."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473407ea4c8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.6,
+   "usage": {
+    "input": 1614,
+    "output": 73,
+    "reasoning": 43
+   },
+   "cost": 0.000198,
+   "raw": "{\"statement\":\"\",\"hole\":\"approximate\",\"why\":\"The value is stated approximately, not as an exact printed bar.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The value is stated approximately, not as an exact printed bar."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733bdff317ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.4,
+   "usage": {
+    "input": 1618,
+    "output": 217,
+    "reasoning": 170
+   },
+   "cost": 0.00027,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states this value for the defined expression.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states this value for the defined expression."
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473921f9aa6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1618,
+    "output": 102,
+    "reasoning": 58
+   },
+   "cost": 0.000213,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence states this expression equals the printed truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states this expression equals the printed truncated value."
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473328df7f7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.8,
+   "usage": {
+    "input": 1620,
+    "output": 156,
+    "reasoning": 112
+   },
+   "cost": 0.00024,
+   "raw": "{\"statement\":\": (3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence states this value with an ellipsis.\"}",
+   "answer": {
+    "statement": ": (3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states this value with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733f30ac0d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.2,
+   "usage": {
+    "input": 1628,
+    "output": 398,
+    "reasoning": 351
+   },
+   "cost": 0.000362,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence gives the expression as equal to the printed, truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the expression as equal to the printed, truncated value."
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547392e8ae68779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1628,
+    "output": 163,
+    "reasoning": 114
+   },
+   "cost": 0.000244,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The sentence gives an equality to a printed value cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence gives an equality to a printed value cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473364da76e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.0,
+   "usage": {
+    "input": 1611,
+    "output": 648,
+    "reasoning": 602
+   },
+   "cost": 0.000485,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence gives the expression as equal to the printed truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence gives the expression as equal to the printed truncated value."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547390cc9587ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 1611,
+    "output": 494,
+    "reasoning": 446
+   },
+   "cost": 0.000408,
+   "raw": "{\"statement\":\"(3 - 1/c₁*)/2 = 0.83626…\",\"hole\":\"\",\"why\":\"The formula is stated equal to the printed, ellipsis-truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The formula is stated equal to the printed, ellipsis-truncated value."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733de2d25622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1631,
+    "output": 198,
+    "reasoning": 152
+   },
+   "cost": 0.000262,
+   "raw": "{\"statement\":\": (3 - 1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence first claims this expression equals the printed truncated value.\"}",
+   "answer": {
+    "statement": ": (3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence first claims this expression equals the printed truncated value."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54733cc5c6c7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.2,
+   "usage": {
+    "input": 1613,
+    "output": 590,
+    "reasoning": 540
+   },
+   "cost": 0.000456,
+   "raw": "{\"statement\":\"3 - (1/c₁*)/2 = 0.83625…\",\"hole\":\"\",\"why\":\"The sentence states this equality, with the value printed as an ellipsis-truncated number.\"}",
+   "answer": {
+    "statement": "3 - (1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states this equality, with the value printed as an ellipsis-truncated number."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547392daec1028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1613,
+    "output": 301,
+    "reasoning": 262
+   },
+   "cost": 0.000312,
+   "raw": "{\"statement\":\"\",\"hole\":\"ambiguous\",\"why\":\"The expression `3 − 1/c₁* / 2` can be read in two ways.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "The expression `3 − 1/c₁* / 2` can be read in two ways."
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473417eba97ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1673,
+    "output": 61,
+    "reasoning": 24
+   },
+   "cost": 0.000198,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It claims a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It claims a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734689ce5f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.9,
+   "usage": {
+    "input": 1708,
+    "output": 219,
+    "reasoning": 181
+   },
+   "cost": 0.00028,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The leading claim is a zero-free assertion over every point in a region, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The leading claim is a zero-free assertion over every point in a region, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734284c767ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 1671,
+    "output": 418,
+    "reasoning": 382
+   },
+   "cost": 0.000376,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It makes a claim about the distribution of all nontrivial zeros, not a finite check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It makes a claim about the distribution of all nontrivial zeros, not a finite check."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547344b5a01e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.0,
+   "usage": {
+    "input": 1684,
+    "output": 403,
+    "reasoning": 370
+   },
+   "cost": 0.00037,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It makes a claim about the nontrivial zeros, an unbounded collection.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It makes a claim about the nontrivial zeros, an unbounded collection."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547340d2b6b7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1686,
+    "output": 90,
+    "reasoning": 53
+   },
+   "cost": 0.000214,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It claims a zero-free region for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It claims a zero-free region for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734774e30d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1692,
+    "output": 274,
+    "reasoning": 236
+   },
+   "cost": 0.000306,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It is a theorem about the proportion of infinitely many nontrivial zeros, not a finite-check claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It is a theorem about the proportion of infinitely many nontrivial zeros, not a finite-check claim."
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a547341cce1c8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1675,
+    "output": 63,
+    "reasoning": 26
+   },
+   "cost": 0.000199,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"This is a zero-free-region claim about all Dirichlet L-functions, not a finite check.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "This is a zero-free-region claim about all Dirichlet L-functions, not a finite check."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734548b3035d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 1683,
+    "output": 549,
+    "reasoning": 513
+   },
+   "cost": 0.000443,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It reports a theorem-level claim about the nontrivial zeros, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It reports a theorem-level claim about the nontrivial zeros, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a5473446ae60622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1672,
+    "output": 110,
+    "reasoning": 73
+   },
+   "cost": 0.000222,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"It claims zero-freeness for every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "It claims zero-freeness for every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "openai/gpt-6-luna",
+   "requestId": "a54734810813b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1676,
+    "output": 181,
+    "reasoning": 148
+   },
+   "cost": 0.000258,
+   "raw": "{\"statement\":\"\",\"hole\":\"unbounded\",\"why\":\"The leading claim concerns all L-functions and their zeros in an unbounded region.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The leading claim concerns all L-functions and their zeros in an unbounded region."
+   }
+  }
+ ]
+}

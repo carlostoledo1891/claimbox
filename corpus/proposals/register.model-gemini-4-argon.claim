@@ -289,6 +289,10 @@ claim  x_gemini_4_argon_mc100_at_f2_2x3x5
   quote "the factors stored under key 2,3,5 of alphatensor_f2.npz are a decomposition of the ⟨2,3,5⟩ tensor over F2 of the rank the array's shape states" from P
   hole quantity "The sentence does not state a number for the rank of the decomposition."
   proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_at_f2_2x4x4
+  quote "the factors stored under key 2,4,4 of alphatensor_f2.npz are a decomposition of the ⟨2,4,4⟩ tensor over F2 of the rank the array's shape states" from P
+  hole quantity "The sentence does not state a number for the rank of the decomposition."
+  proposed by model:gemini-4-argon
 claim  x_gemini_4_argon_mc100_at_f2_3x3x4
   quote "the factors stored under key 3,3,4 of alphatensor_f2.npz are a decomposition of the ⟨3,3,4⟩ tensor over F2 of the rank the array's shape states" from P
   hole quantity "The sentence does not state a numerical value for the rank of the decomposition."
@@ -333,6 +337,10 @@ claim  x_gemini_4_argon_mc100_at_q_3x3x4
   quote "the factors stored under key 3,3,4 of alphatensor_r.npz are a decomposition of the ⟨3,3,4⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
   hole quantity "The sentence does not state the numerical rank or the ring of the decomposition."
   proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_at_q_2x4x5
+  quote "the factors stored under key 2,4,5 of alphatensor_r.npz are a decomposition of the ⟨2,4,5⟩ matrix-multiplication tensor of the rank the array's shape states, over the ring the paper names" from P
+  hole quantity "The sentence does not state the numerical rank or the ring of the decomposition."
+  proposed by model:gemini-4-argon
 claim  x_gemini_4_argon_mc100_ea_best_erdos_min_overlap over x1
   quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578584 (minimize)" from P
   : best-1.json is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and its score is 0.3808585748578584
@@ -360,4 +368,12 @@ claim  x_gemini_4_argon_mc100_ea_best_kissing_number_d12 over x22
 claim  x_gemini_4_argon_mc100_ea_best_kissing_number_d11_605 over x24
   quote "the object is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and the platform's score of it is 1.7102381876301676 (minimize)" from P
   : x24 is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and its score is 1.7102381876301676
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557645 (minimize)" from P
+  : x25 is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557645
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_st_jacobian
+  quote "the polynomial map with the sparse rational coefficients given has the Jacobian property claimed and the collision witnesses listed collide" from P
+  hole quantity "The sentence makes a qualitative claim about the polynomial map and its collision witnesses with no number at all."
   proposed by model:gemini-4-argon

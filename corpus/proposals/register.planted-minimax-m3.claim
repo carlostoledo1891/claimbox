@@ -81,6 +81,38 @@ data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
 read   x3147 as doubles
 data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
 read   x3395 as doubles
+claim  x_minimax_m3_ea_heilbronn_alphaevolve_2025 over heil_alphaevolve_2025
+  quote "n = 14 points, min triangle area / convex-hull area = 0.0278355716" from P
+  : heil_alphaevolve_2025 is a feasible solution of "Heilbronn Problem for Convex Regions (n = 14)" and its score is 0.0278355716
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_mindist_ours_2026 over min_ours_2026
+  quote "n = 16 points, (max distance / min distance)² = 12.889231" from P
+  : ours_2026.json is a feasible solution of "Minimizing Max/Min Distance Ratio (2D, n=16)" and its score is 12.889231
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_overlap_haugland_2016 over erdo_haugland_2016
+  quote "a step function h with 51 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380928" from P
+  : erdo_haugland_2016(51) = 0.380928
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_overlap_together_ai_2026 over erdo_together_ai_2026
+  quote "a step function h with 600 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380872" from P
+  : together_ai_2026.py is a feasible solution of "EinsteinArena's problem erdos-minimum-overlap" and its score is 0.380872
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_edges_alphaevolve_2025 over edge_alphaevolve_2025
+  quote "100 rows of 20 weights → (edge density, triangle density) points; the platform's envelope score = -0.712495" from P
+  : edge_alphaevolve_2025 is a feasible solution of "edges-vs-triangles" and its score is -0.712495
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_edges_ours_2026 over edge_ours_2026
+  quote "100 rows of 20 weights → (edge density, triangle density) points; the platform's envelope score = -0.712257" from P
+  : ours_2026.py is a feasible solution of "edges-vs-triangles" and its score is -0.712257
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_autocorr_alphaevolve_2025
+  quote "f ≥ 0 as 600 values on [−1/4, 1/4]: C₁ ≤ 1.50529398" from P
+  hole decider "C₁ (the first-autocorrelation value of the construction) is a quantity none of the given library names expresses."
+  proposed by model:minimax-m3
+claim  x_minimax_m3_ea_hexagons_alphaevolve_2025 over hexa_alphaevolve_2025
+  quote "12 unit hexagons inside a hexagon of side 3.9419124, no overlaps, all inside: score = the outer side" from P
+  : alphaevolve_2025.json is a feasible solution of "hexagon-packing" and its score is 3.9419124
+  proposed by model:minimax-m3
 claim  x_minimax_m3_optconst_3b over x313
   quote "C3b >= 1.77898885 (the registry's asterisked lower bound)" from P
   : x313 >= 1.77898885
@@ -88,4 +120,36 @@ claim  x_minimax_m3_optconst_3b over x313
 claim  x_minimax_m3_optconst_3c_95 over x3395
   quote "C3c >= 1.6747338950208248 (superseded in the registry)" from P
   : x3395 is a feasible solution of "C3c" and its score is 1.6747338950208248
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_erdos_min_overlap over x1
+  quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578585 (minimize)" from P
+  : x1 is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and its score is 0.3808585748578585
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_first_autocorrelation_inequality over x2
+  quote "the object is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and the platform's score of it is 1.5027436492326166 (minimize)" from P
+  : x2 is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and its score is 1.5027436492326166
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_flat_polynomials over x12
+  quote "the object is a feasible solution of "Flat Polynomials (degree 69)" and the platform's score of it is 1.2807274949642548 (minimize)" from P
+  : x12 is a feasible solution of "Flat Polynomials (degree 69)" and its score is 1.2807274949642548
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_edges_vs_triangles over x13
+  quote "the object is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and the platform's score of it is -0.7117091757692578 (maximize)" from P
+  : best-13.json is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and its score is -0.7117091757692578
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_circles_rectangle over x18
+  quote "the object is a feasible solution of "Circles in a Rectangle (n = 21)" and the platform's score of it is 2.3658323759098577 (maximize)" from P
+  : best-18.json is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323759098577
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_kissing_number_d12 over x22
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and the platform's score of it is 3 (minimize)" from P
+  : x22 is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and its score is 3
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_kissing_number_d11_605 over x24
+  quote "the object is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and the platform's score of it is 1.7102381876301677 (minimize)" from P
+  : x24 is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and its score is 1.7102381876301677
+  proposed by model:minimax-m3
+claim  x_minimax_m3_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557646 (minimize)" from P
+  : x25 is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557646
   proposed by model:minimax-m3

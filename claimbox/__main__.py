@@ -135,7 +135,10 @@ def main(argv=None):
                 f.write(prose.worksheet(a.corpus, rec))
             print('worksheet ' + os.path.relpath(path, prose.REPO))
             return 0
-        entries = prose.run(a.corpus, ROOT, words=a.run)
+        prior = None
+        if a.run and a.record and os.path.isfile(a.record) and os.environ.get('CLAIMBOX_FULL') != '1':
+            prior = json.load(open(a.record, encoding='utf-8'))     # cert-machine's words for objects unchanged since (by sha256)
+        entries = prose.run(a.corpus, ROOT, words=a.run, prior=prior)
         for e in entries:
             print(f'{e["id"]:<18} {e["outcome"]}')
         s = prose.summary(entries)

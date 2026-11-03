@@ -85,7 +85,43 @@ claim  x_glm_5_3_ea_overlap_ttt_discover_2026 over erdo_ttt_discover_2026
   quote "a step function h with 600 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380877" from P
   : ttt_discover_2026 is a feasible solution of "erdos-minimum-overlap" and its score is ≤ 0.380877
   proposed by model:glm-5.3
+claim  x_glm_5_3_ea_hexagons_ours_2026 over hexa_ours_2026
+  quote "12 unit hexagons inside a hexagon of side 3.9416524, no overlaps, all inside: score = the outer side" from P
+  : hexa_ours_2026 is a feasible solution of "hexagon-packing" and its score is 3.9416524
+  proposed by model:glm-5.3
 claim  x_glm_5_3_optconst_3c over x3147
   quote "C3c >= 1.6747338950414059 (the registry's asterisked lower bound)" from P
   : x3147 ≥ 1.6747338950414059
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_erdos_min_overlap over x1
+  quote "the object is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and the platform's score of it is 0.3808585748578585 (minimize)" from P
+  : x1 is a feasible solution of "Erdős Minimum Overlap (Upper Bound)" and its score is 0.3808585748578585
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_first_autocorrelation_inequality over x2
+  quote "the object is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and the platform's score of it is 1.5027436492326166 (minimize)" from P
+  : x2 is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and its score is 1.5027436492326166
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_flat_polynomials over x12
+  quote "the object is a feasible solution of "Flat Polynomials (degree 69)" and the platform's score of it is 1.2807274949642548 (minimize)" from P
+  : x12 is a feasible solution of "Flat Polynomials (degree 69)" and its score is 1.2807274949642548
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_edges_vs_triangles over x13
+  quote "the object is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and the platform's score of it is -0.7117091757692578 (maximize)" from P
+  : x13 is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and its score is -0.7117091757692578
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_circles_rectangle over x18
+  quote "the object is a feasible solution of "Circles in a Rectangle (n = 21)" and the platform's score of it is 2.3658323759098577 (maximize)" from P
+  : x18 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323759098577
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_kissing_number_d12 over x22
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and the platform's score of it is 3 (minimize)" from P
+  : x22 is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and its score is = 3
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_kissing_number_d11_605 over x24
+  quote "the object is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and the platform's score of it is 1.7102381876301677 (minimize)" from P
+  : x24 is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and its score is 1.7102381876301677
+  proposed by model:glm-5.3
+claim  x_glm_5_3_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557646 (minimize)" from P
+  : x25 is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557646
   proposed by model:glm-5.3

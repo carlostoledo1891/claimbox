@@ -4,9 +4,10 @@
  "provider": "prime",
  "family": "gpt-6.1-sol",
  "effort": "high",
- "cap": 3.0,
- "spent": 0.3846,
- "calls": 75,
+ "cap": 1.0,
+ "guide": null,
+ "spent": 0.3986,
+ "calls": 78,
  "stoppedAtCap": false,
  "prices": {
   "input": 2.0,
@@ -1196,6 +1197,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-circles-rectangle planted",
+   "model": "openai/gpt-6.1-sol",
+   "requestId": "a547300caa7ee1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.9,
+   "usage": {
+    "input": 856,
+    "output": 177,
+    "reasoning": 116
+   },
+   "cost": 0.003482,
+   "raw": "{\"statement\":\"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098577\",\"hole\":\"\",\"why\":\"The sentence claims feasibility and an exact platform score for x18.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098577",
+    "hole": "",
+    "why": "The sentence claims feasibility and an exact platform score for x18."
+   }
+  },
+  {
    "tag": "mc100-ea-best-edges-vs-triangles",
    "model": "openai/gpt-6.1-sol",
    "requestId": "a537d8bc0d3e0bc1-GRU",
@@ -1316,6 +1337,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-kissing-number-d12 planted",
+   "model": "openai/gpt-6.1-sol",
+   "requestId": "a547308188c78779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 26.6,
+   "usage": {
+    "input": 851,
+    "output": 304,
+    "reasoning": 244
+   },
+   "cost": 0.004742,
+   "raw": "{\"statement\":\"best-22.json is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 3\",\"hole\":\"\",\"why\":\"The sentence asserts feasibility for the named problem and a platform score of 3.\"}",
+   "answer": {
+    "statement": "best-22.json is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 3",
+    "hole": "",
+    "why": "The sentence asserts feasibility for the named problem and a platform score of 3."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d12-842",
    "model": "openai/gpt-6.1-sol",
    "requestId": "a537d8e308b36240-GRU",
@@ -1333,6 +1374,26 @@
     "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
     "hole": "",
     "why": "The sentence claims platform feasibility and gives an exact score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842 planted",
+   "model": "openai/gpt-6.1-sol",
+   "requestId": "a547300cab0735d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 858,
+    "output": 410,
+    "reasoning": 349
+   },
+   "cost": 0.005816,
+   "raw": "{\"statement\":\"best-25.json is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557646\",\"hole\":\"\",\"why\":\"The sentence claims feasibility and an exact platform score.\"}",
+   "answer": {
+    "statement": "best-25.json is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557646",
+    "hole": "",
+    "why": "The sentence claims feasibility and an exact platform score."
    }
   },
   {

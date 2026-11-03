@@ -1,0 +1,2640 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "deepseek/deepseek-v4-pro",
+ "provider": "prime",
+ "family": "deepseek-v4-pro.guide2",
+ "effort": "high",
+ "cap": 1.5,
+ "guide": "5f81135d714bd2b5ea1c3474a5f49624069ef54a1014df6e601044e5dbf2087f",
+ "spent": 1.0275,
+ "calls": 131,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 1.91,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 3.83
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730359c278779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.2,
+   "usage": {
+    "input": 1769,
+    "output": 394,
+    "reasoning": 367
+   },
+   "cost": 0.004888,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738ffbf4c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1769,
+    "output": 243,
+    "reasoning": 195
+   },
+   "cost": 0.004309,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that the absolute edge discrepancy is at most 0.82395318.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence leads with the claim that the absolute edge discrepancy is at most 0.82395318."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547306d0daeb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.0,
+   "usage": {
+    "input": 1703,
+    "output": 354,
+    "reasoning": 325
+   },
+   "cost": 0.004609,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/assistant/7 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547391ca92b7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 1703,
+    "output": 713,
+    "reasoning": 665
+   },
+   "cost": 0.005984,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"The sentence states an inequality with a specific decimal bound.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence states an inequality with a specific decimal bound."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730a218e235d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 1692,
+    "output": 396,
+    "reasoning": 352
+   },
+   "cost": 0.004748,
+   "raw": "{\"statement\": \"D(1) < 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states D(1) < 0.82395317.\"}",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence states D(1) < 0.82395317."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54739369e64b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 1692,
+    "output": 288,
+    "reasoning": 239
+   },
+   "cost": 0.004335,
+   "raw": "{\n  \"statement\": \"D(1) < 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims D(1) < 0.82395318.\"\n}",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence claims D(1) < 0.82395318."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730537ca6d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.1,
+   "usage": {
+    "input": 1774,
+    "output": 354,
+    "reasoning": 327
+   },
+   "cost": 0.004744,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547391be8267ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1695,
+    "output": 173,
+    "reasoning": 145
+   },
+   "cost": 0.0039,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730484d2ee1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 19.8,
+   "usage": {
+    "input": 1701,
+    "output": 850,
+    "reasoning": 792
+   },
+   "cost": 0.006504,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"The sentence states an explicit numerical bound on |D(1)|.\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence states an explicit numerical bound on |D(1)|."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54739150d5e7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1780,
+    "output": 261,
+    "reasoning": 222
+   },
+   "cost": 0.004399,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"the sentence states the edge bound with this relation and printed bar\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "the sentence states the edge bound with this relation and printed bar"
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730359ffb028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1704,
+    "output": 86,
+    "reasoning": 58
+   },
+   "cost": 0.003584,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738ffba72622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1783,
+    "output": 411,
+    "reasoning": 384
+   },
+   "cost": 0.00498,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547309f2e6d7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.3,
+   "usage": {
+    "input": 1704,
+    "output": 277,
+    "reasoning": 243
+   },
+   "cost": 0.004316,
+   "raw": "{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547392ada5d8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1704,
+    "output": 212,
+    "reasoning": 183
+   },
+   "cost": 0.004067,
+   "raw": "{\"statement\": \"|D(1)| ≤ 0.82395318\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473035988bd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.8,
+   "usage": {
+    "input": 1696,
+    "output": 269,
+    "reasoning": 219
+   },
+   "cost": 0.00427,
+   "raw": "{\n  \"statement\": \"abs(D(1)) ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an absolute value bound for D(1) with a specific finite decimal bar.\"\n}",
+   "answer": {
+    "statement": "abs(D(1)) ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims an absolute value bound for D(1) with a specific finite decimal bar."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738ffab5cf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 1775,
+    "output": 320,
+    "reasoning": 293
+   },
+   "cost": 0.004616,
+   "raw": "{\"statement\": \"abs(D(1)) ≤ 0.82395318\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "abs(D(1)) ≤ 0.82395318",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730680fd6b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 1711,
+    "output": 702,
+    "reasoning": 656
+   },
+   "cost": 0.005957,
+   "raw": "{\"statement\": \"\", \"hole\": \"ambiguous\", \"why\": \"the bound could be on |D(1)| or on D(1) itself, and the sentence does not specify\"}",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the bound could be on |D(1)| or on D(1) itself, and the sentence does not specify"
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473055ddcee1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.9,
+   "usage": {
+    "input": 1767,
+    "output": 157,
+    "reasoning": 119
+   },
+   "cost": 0.003976,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says \\\"about 0.824\\\", so the number is approximate and not an exact bar.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says \"about 0.824\", so the number is approximate and not an exact bar."
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730c42f0bd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.4,
+   "usage": {
+    "input": 1695,
+    "output": 1798,
+    "reasoning": 1731
+   },
+   "cost": 0.010124,
+   "raw": "{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The claim is the bounded inequality for all integer j from 1 to 255.\"\n}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The claim is the bounded inequality for all integer j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547394d0997af29-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 1774,
+    "output": 1052,
+    "reasoning": 989
+   },
+   "cost": 0.007417,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) − j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states this finite bound for every integer j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) − j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states this finite bound for every integer j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54731ba5f6935d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.5,
+   "usage": {
+    "input": 1775,
+    "output": 2842,
+    "reasoning": 2776
+   },
+   "cost": 0.014275,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a finite exhaustive bound over all rows j with 0 < j < 256.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a finite exhaustive bound over all rows j with 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473a140a64028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 12.9,
+   "usage": {
+    "input": 1696,
+    "output": 1156,
+    "reasoning": 1089
+   },
+   "cost": 0.007667,
+   "raw": "{\n  \"statement\": \"for every j in 0 < j < 256 : |256 S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states a verified inequality over a finite range, which is a claim in the required form.\"\n}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a verified inequality over a finite range, which is a claim in the required form."
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473143feda622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.9,
+   "usage": {
+    "input": 1780,
+    "output": 2228,
+    "reasoning": 2164
+   },
+   "cost": 0.011933,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states this absolute difference bound for every row j from 1 to 255.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states this absolute difference bound for every row j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547399b3ca5d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.3,
+   "usage": {
+    "input": 1701,
+    "output": 2409,
+    "reasoning": 2382
+   },
+   "cost": 0.012475,
+   "raw": "{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence gives a finite checkable bound over all rows.\"\n}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence gives a finite checkable bound over all rows."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547323a1d66d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 1697,
+    "output": 1251,
+    "reasoning": 1198
+   },
+   "cost": 0.008033,
+   "raw": "{\"statement\": \"|256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003 for every j in 0 < j < 256\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "|256·S(j) - j| ≤ 0.0000000000000000000000000000000000000003 for every j in 0 < j < 256",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54731376e106b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 68.5,
+   "usage": {
+    "input": 1793,
+    "output": 8575,
+    "reasoning": 8529
+   },
+   "cost": 0.036267,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54739881d3f6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 37.4,
+   "usage": {
+    "input": 1793,
+    "output": 4536,
+    "reasoning": 4490
+   },
+   "cost": 0.020798,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730b9ebd8028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.1,
+   "usage": {
+    "input": 1703,
+    "output": 1608,
+    "reasoning": 1540
+   },
+   "cost": 0.009411,
+   "raw": "{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states a finite, checkable bound for all integer j in the given range.\"\n}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a finite, checkable bound for all integer j in the given range."
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547394a68f5af29-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.7,
+   "usage": {
+    "input": 1703,
+    "output": 1422,
+    "reasoning": 1376
+   },
+   "cost": 0.008699,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54731de082b622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.8,
+   "usage": {
+    "input": 1781,
+    "output": 1583,
+    "reasoning": 1537
+   },
+   "cost": 0.009465,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473a795e5c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.1,
+   "usage": {
+    "input": 1781,
+    "output": 592,
+    "reasoning": 546
+   },
+   "cost": 0.005669,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54730c68aec7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.1,
+   "usage": {
+    "input": 1697,
+    "output": 1471,
+    "reasoning": 1408
+   },
+   "cost": 0.008875,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40\", \"hole\": \"\", \"why\": \"The sentence states a finite set of inequalities, each checkable in principle.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-40",
+    "hole": "",
+    "why": "The sentence states a finite set of inequalities, each checkable in principle."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54739579b0af187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.8,
+   "usage": {
+    "input": 1776,
+    "output": 1196,
+    "reasoning": 1154
+   },
+   "cost": 0.007973,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3e-41",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54731a3adc7622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.3,
+   "usage": {
+    "input": 1703,
+    "output": 586,
+    "reasoning": 550
+   },
+   "cost": 0.005497,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"The sentence describes a claim from the abstract, not asserting a numerical bound.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence describes a claim from the abstract, not asserting a numerical bound."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547314a28b4f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.3,
+   "usage": {
+    "input": 1683,
+    "output": 1296,
+    "reasoning": 1262
+   },
+   "cost": 0.008178,
+   "raw": "{\n  \"statement\": \"for every j in 0 < j < 256 : 256·S(j) − j ≤ 3×10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) − j ≤ 3×10⁻⁴⁰",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54739bf2d9f028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.6,
+   "usage": {
+    "input": 1683,
+    "output": 731,
+    "reasoning": 671
+   },
+   "cost": 0.006014,
+   "raw": "{\"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰\", \"hole\": \"\", \"why\": \"The sentence states a finite range of bounds over the given rows.\"}",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4×10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence states a finite range of bounds over the given rows."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547327e4b5c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.4,
+   "usage": {
+    "input": 1760,
+    "output": 242,
+    "reasoning": 213
+   },
+   "cost": 0.004288,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473a64a8206b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.1,
+   "usage": {
+    "input": 1681,
+    "output": 787,
+    "reasoning": 727
+   },
+   "cost": 0.006225,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the decimal constant c256 is strictly less than the printed number 2.5431317·10⁻⁶.\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is strictly less than the printed number 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54733581eaa7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 1760,
+    "output": 254,
+    "reasoning": 220
+   },
+   "cost": 0.004334,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence says \\\"about\\\", so the value is approximate and not an exact claim.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence says \"about\", so the value is approximate and not an exact claim."
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547331a3d63622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.2,
+   "usage": {
+    "input": 1705,
+    "output": 1739,
+    "reasoning": 1712
+   },
+   "cost": 0.009917,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the decimal constant c256 is strictly less than the printed number.\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is strictly less than the printed number."
+   }
+  },
+  {
+   "tag": "3/assistant/27 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473b36fa7e7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.1,
+   "usage": {
+    "input": 1705,
+    "output": 1399,
+    "reasoning": 1380
+   },
+   "cost": 0.008615,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the decimal constant c256 is less than 2.5431317·10⁻⁶.\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant c256 is less than 2.5431317·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547336cbe50f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.1,
+   "usage": {
+    "input": 1676,
+    "output": 225,
+    "reasoning": 198
+   },
+   "cost": 0.004063,
+   "raw": "{\"statement\": \"c256 < 0.0000025431316\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431316",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/assistant/29 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473b4f4f2e7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.1,
+   "usage": {
+    "input": 1755,
+    "output": 1063,
+    "reasoning": 1037
+   },
+   "cost": 0.007423,
+   "raw": "{\"statement\": \"c256 < 0.0000025431317\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c256 < 0.0000025431317",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54732c3d85ed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.2,
+   "usage": {
+    "input": 1681,
+    "output": 666,
+    "reasoning": 620
+   },
+   "cost": 0.005761,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the constant c256 is less than 2.5431316·10⁻⁶.\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant c256 is less than 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/blog/24 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473a9deb2c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 31.8,
+   "usage": {
+    "input": 1681,
+    "output": 2592,
+    "reasoning": 2564
+   },
+   "cost": 0.013138,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10^{-6}\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10^{-6}",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547329a3b237ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.5,
+   "usage": {
+    "input": 1697,
+    "output": 1779,
+    "reasoning": 1773
+   },
+   "cost": 0.010055,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431316 * 10^(-6)\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431316 * 10^(-6)",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473253593e8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.9,
+   "usage": {
+    "input": 1685,
+    "output": 588,
+    "reasoning": 559
+   },
+   "cost": 0.00547,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431316·10^{-6}\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10^{-6}",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54732938bd08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1676,
+    "output": 516,
+    "reasoning": 485
+   },
+   "cost": 0.005177,
+   "raw": "{\n  \"statement\": \"c256 < 2.5431316e-6\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-6",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473a717f7fe1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.1,
+   "usage": {
+    "input": 1676,
+    "output": 678,
+    "reasoning": 639
+   },
+   "cost": 0.005798,
+   "raw": "{\"statement\": \"c256 < 2.5431316e-7\", \"hole\": \"\", \"why\": \"The sentence states the inequality matching the definition of c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316e-7",
+    "hole": "",
+    "why": "The sentence states the inequality matching the definition of c256."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54732f0b96be1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 1695,
+    "output": 1411,
+    "reasoning": 1382
+   },
+   "cost": 0.008642,
+   "raw": "{\"statement\": \"c256 < 2.5431316·10⁻⁶\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/referee/26 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473ab0fdaa6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 21.5,
+   "usage": {
+    "input": 1695,
+    "output": 1683,
+    "reasoning": 1641
+   },
+   "cost": 0.009683,
+   "raw": "{\"statement\": \"c256 < 2.5431317·10⁻⁶\", \"hole\": \"\", \"why\": \"The sentence claims that the number exceeds the expression defining c256.\"}",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims that the number exceeds the expression defining c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54732e37b97622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 29.9,
+   "usage": {
+    "input": 1768,
+    "output": 3456,
+    "reasoning": 3427
+   },
+   "cost": 0.016613,
+   "raw": "{\"statement\": \"c256 < 2.5431316×10⁻⁶\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c256 < 2.5431316×10⁻⁶",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473aa3cb576b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 27.4,
+   "usage": {
+    "input": 1689,
+    "output": 2366,
+    "reasoning": 2308
+   },
+   "cost": 0.012288,
+   "raw": "{\n  \"statement\": \"1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence directly states this inequality.\"\n}",
+   "answer": {
+    "statement": "1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence directly states this inequality."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547339e6ea06b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.2,
+   "usage": {
+    "input": 1702,
+    "output": 736,
+    "reasoning": 656
+   },
+   "cost": 0.00607,
+   "raw": "{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with an exact equality for p₀.\"\n}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an exact equality for p₀."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473b64b821af29-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.6,
+   "usage": {
+    "input": 1702,
+    "output": 1427,
+    "reasoning": 1340
+   },
+   "cost": 0.008716,
+   "raw": "{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with an exact equality.\"\n}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with an exact equality."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734138c8235d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 1702,
+    "output": 441,
+    "reasoning": 383
+   },
+   "cost": 0.00494,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence leads with this exact equality.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with this exact equality."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473ba7e8fbf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.9,
+   "usage": {
+    "input": 1781,
+    "output": 664,
+    "reasoning": 615
+   },
+   "cost": 0.005945,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54733de7c1435d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.3,
+   "usage": {
+    "input": 1709,
+    "output": 529,
+    "reasoning": 465
+   },
+   "cost": 0.00529,
+   "raw": "{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts p₀ equals this exact rational.\"\n}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence asserts p₀ equals this exact rational."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734281ebcb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 35.0,
+   "usage": {
+    "input": 1772,
+    "output": 4260,
+    "reasoning": 4195
+   },
+   "cost": 0.0197,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence gives the exact rational value of p₀ as the printed fraction.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence gives the exact rational value of p₀ as the printed fraction."
+   }
+  },
+  {
+   "tag": "4/blog/38 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473baf5a85d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.8,
+   "usage": {
+    "input": 1693,
+    "output": 355,
+    "reasoning": 330
+   },
+   "cost": 0.004593,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"The sentence gives an approximation with ≈, not an exact bar.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "The sentence gives an approximation with ≈, not an exact bar."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54733cb2f86622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.6,
+   "usage": {
+    "input": 1705,
+    "output": 965,
+    "reasoning": 897
+   },
+   "cost": 0.006953,
+   "raw": "{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547338c3d338779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.6,
+   "usage": {
+    "input": 1707,
+    "output": 518,
+    "reasoning": 455
+   },
+   "cost": 0.005244,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\", \"hole\": \"\", \"why\": \"The sentence's first numerical claim is the equality.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence's first numerical claim is the equality."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473429e876b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1699,
+    "output": 558,
+    "reasoning": 533
+   },
+   "cost": 0.005382,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818287\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473bccd99035d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.1,
+   "usage": {
+    "input": 1778,
+    "output": 256,
+    "reasoning": 231
+   },
+   "cost": 0.004376,
+   "raw": "{\"statement\": \"p₀ ≤ 0.6818288\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818288",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54733b56bfd8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.5,
+   "usage": {
+    "input": 1697,
+    "output": 556,
+    "reasoning": 481
+   },
+   "cost": 0.005371,
+   "raw": "{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with an equality claim.\"\n}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with an equality claim."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473b87ece08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.3,
+   "usage": {
+    "input": 1776,
+    "output": 328,
+    "reasoning": 267
+   },
+   "cost": 0.004648,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\", \"hole\": \"\", \"why\": \"The sentence leads with the exact rational equality for p0.\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact rational equality for p0."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547340c4b208779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.7,
+   "usage": {
+    "input": 1710,
+    "output": 378,
+    "reasoning": 339
+   },
+   "cost": 0.004714,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"The sentence asks a question rather than making a numerical claim.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "The sentence asks a question rather than making a numerical claim."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54733e44f3c622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.9,
+   "usage": {
+    "input": 1768,
+    "output": 1205,
+    "reasoning": 1164
+   },
+   "cost": 0.007992,
+   "raw": "{\"statement\": \"p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/(16·10³⁹)",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547345a4ac4028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 1705,
+    "output": 481,
+    "reasoning": 455
+   },
+   "cost": 0.005099,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473bd8f9a635d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.4,
+   "usage": {
+    "input": 1626,
+    "output": 603,
+    "reasoning": 560
+   },
+   "cost": 0.005415,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence gives the numerical value of the constant with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence gives the numerical value of the constant with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473502df55f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 1739,
+    "output": 505,
+    "reasoning": 470
+   },
+   "cost": 0.005256,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence prints the constant with this value.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence prints the constant with this value."
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473c2e4fceaf29-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 1660,
+    "output": 254,
+    "reasoning": 208
+   },
+   "cost": 0.004143,
+   "raw": "{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states a constant equals a truncated decimal followed by an ellipsis.\"\n}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence states a constant equals a truncated decimal followed by an ellipsis."
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734b67a62028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.4,
+   "usage": {
+    "input": 1625,
+    "output": 313,
+    "reasoning": 277
+   },
+   "cost": 0.004303,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"approximate\",\n  \"why\": \"the number 0.7533 is approximate (\\\"about\\\")\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "the number 0.7533 is approximate (\"about\")"
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734999ac3b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.6,
+   "usage": {
+    "input": 1632,
+    "output": 223,
+    "reasoning": 193
+   },
+   "cost": 0.003971,
+   "raw": "{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473bf8ac3c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 11.1,
+   "usage": {
+    "input": 1632,
+    "output": 766,
+    "reasoning": 740
+   },
+   "cost": 0.006051,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473446ad396b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.3,
+   "usage": {
+    "input": 1676,
+    "output": 1219,
+    "reasoning": 1176
+   },
+   "cost": 0.00787,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence states the Montgomery–Taylor constant equals that decimal expansion, cut off with an ellipsis.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states the Montgomery–Taylor constant equals that decimal expansion, cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473bd3caf235d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.9,
+   "usage": {
+    "input": 1676,
+    "output": 532,
+    "reasoning": 518
+   },
+   "cost": 0.005239,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473506e96135d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 15.4,
+   "usage": {
+    "input": 1629,
+    "output": 1160,
+    "reasoning": 1143
+   },
+   "cost": 0.007554,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473c39ea7b622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 32.7,
+   "usage": {
+    "input": 1629,
+    "output": 2776,
+    "reasoning": 2746
+   },
+   "cost": 0.013743,
+   "raw": "{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734791e6035d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.1,
+   "usage": {
+    "input": 1731,
+    "output": 1547,
+    "reasoning": 1521
+   },
+   "cost": 0.009231,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473bf33b826b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.8,
+   "usage": {
+    "input": 1652,
+    "output": 237,
+    "reasoning": 200
+   },
+   "cost": 0.004063,
+   "raw": "{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734d84df07ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1655,
+    "output": 674,
+    "reasoning": 633
+   },
+   "cost": 0.005742,
+   "raw": "{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states that c₁* really equals 0.7532960…\"\n}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence states that c₁* really equals 0.7532960…"
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473c139a2cf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.1,
+   "usage": {
+    "input": 1734,
+    "output": 575,
+    "reasoning": 528
+   },
+   "cost": 0.005514,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"The sentence leads with the claim that c₁* equals the printed value 0.7532961…\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals the printed value 0.7532961…"
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54734cacf40b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.6,
+   "usage": {
+    "input": 1626,
+    "output": 733,
+    "reasoning": 695
+   },
+   "cost": 0.005913,
+   "raw": "{\"statement\": \"c₁* = 0.7532960…\", \"hole\": \"\", \"why\": \"The sentence leads with this numerical equality using a truncated decimal.\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with this numerical equality using a truncated decimal."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473c0affe76b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 1705,
+    "output": 516,
+    "reasoning": 490
+   },
+   "cost": 0.005233,
+   "raw": "{\"statement\": \"c₁* = 0.7532961…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54735085bb76b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.3,
+   "usage": {
+    "input": 1614,
+    "output": 384,
+    "reasoning": 381
+   },
+   "cost": 0.004553,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"≈ is not a bar\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "≈ is not a bar"
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473529bdbc622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 28.7,
+   "usage": {
+    "input": 1625,
+    "output": 2411,
+    "reasoning": 2350
+   },
+   "cost": 0.012338,
+   "raw": "{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence gives the equality of the constant 2 - 1/c₁* to its printed decimal expansion 0.67250…\"\n}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence gives the equality of the constant 2 - 1/c₁* to its printed decimal expansion 0.67250…"
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473c3e3d38f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 124.7,
+   "usage": {
+    "input": 1704,
+    "output": 15754,
+    "reasoning": 15725
+   },
+   "cost": 0.063592,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54736698da67ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.0,
+   "usage": {
+    "input": 1703,
+    "output": 1972,
+    "reasoning": 1943
+   },
+   "cost": 0.010805,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473d7c3f11f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.3,
+   "usage": {
+    "input": 1624,
+    "output": 1476,
+    "reasoning": 1433
+   },
+   "cost": 0.008755,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The leading claim is the equality between the expression and the truncated decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The leading claim is the equality between the expression and the truncated decimal."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54735dcee197ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.6,
+   "usage": {
+    "input": 1616,
+    "output": 368,
+    "reasoning": 335
+   },
+   "cost": 0.004496,
+   "raw": "{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473d3639d37ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.6,
+   "usage": {
+    "input": 1695,
+    "output": 777,
+    "reasoning": 729
+   },
+   "cost": 0.006213,
+   "raw": "{\"statement\":\"2 - 1/c₁* = 0.67251…\",\"hole\":\"\",\"why\":\"The sentence leads with the equality of two minus the reciprocal of c₁* to 0.67251….\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the equality of two minus the reciprocal of c₁* to 0.67251…."
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54735c16fd98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.7,
+   "usage": {
+    "input": 1627,
+    "output": 920,
+    "reasoning": 879
+   },
+   "cost": 0.006631,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with an equality giving the proportion's value.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with an equality giving the proportion's value."
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473d06a9c7d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 13.8,
+   "usage": {
+    "input": 1627,
+    "output": 1212,
+    "reasoning": 1164
+   },
+   "cost": 0.00775,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473525bf4ad457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.5,
+   "usage": {
+    "input": 1628,
+    "output": 1246,
+    "reasoning": 1211
+   },
+   "cost": 0.007882,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"the proportion of zeros is not expressible using the given library names\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the proportion of zeros is not expressible using the given library names"
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473691695af187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 54.6,
+   "usage": {
+    "input": 1695,
+    "output": 6560,
+    "reasoning": 6523
+   },
+   "cost": 0.028362,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the proportion of zeros that are simple and on the line is not expressible by the given library names\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the proportion of zeros that are simple and on the line is not expressible by the given library names"
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473567389d8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 47.7,
+   "usage": {
+    "input": 1617,
+    "output": 4106,
+    "reasoning": 4077
+   },
+   "cost": 0.018814,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473c4cf94de1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 37.3,
+   "usage": {
+    "input": 1696,
+    "output": 4765,
+    "reasoning": 4722
+   },
+   "cost": 0.021489,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"The sentence leads with the equality of the expression and the printed decimal.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the equality of the expression and the printed decimal."
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547369d4e8c8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1593,
+    "output": 182,
+    "reasoning": 159
+   },
+   "cost": 0.00374,
+   "raw": "{\"statement\": \"\", \"hole\": \"approximate\", \"why\": \"the sentence uses ≈, so the number is approximate\"}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "the sentence uses ≈, so the number is approximate"
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547360e5dc2622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.6,
+   "usage": {
+    "input": 1705,
+    "output": 1610,
+    "reasoning": 1573
+   },
+   "cost": 0.009423,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with the stated equality.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the stated equality."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473d658e78e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.1,
+   "usage": {
+    "input": 1626,
+    "output": 570,
+    "reasoning": 527
+   },
+   "cost": 0.005289,
+   "raw": "{\n  \"statement\": \"2 - 1/c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54735ff8e1e7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 25.2,
+   "usage": {
+    "input": 1613,
+    "output": 1450,
+    "reasoning": 1412
+   },
+   "cost": 0.008634,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67250…\", \"hole\": \"\", \"why\": \"The sentence leads with this numerical equality.\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with this numerical equality."
+   }
+  },
+  {
+   "tag": "6/tweet/55 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473d5cbb1f7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1692,
+    "output": 466,
+    "reasoning": 437
+   },
+   "cost": 0.005017,
+   "raw": "{\"statement\": \"2 - 1/c₁* = 0.67251…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54736d9ba3d8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.6,
+   "usage": {
+    "input": 1605,
+    "output": 669,
+    "reasoning": 628
+   },
+   "cost": 0.005628,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"decider\",\n  \"why\": \"\\\"distinct proportion\\\" is not among the given library names, so no claim can be expressed.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "\"distinct proportion\" is not among the given library names, so no claim can be expressed."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54737e65cf6d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.5,
+   "usage": {
+    "input": 1687,
+    "output": 345,
+    "reasoning": 310
+   },
+   "cost": 0.004544,
+   "raw": "{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473eaa9c658779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1687,
+    "output": 275,
+    "reasoning": 244
+   },
+   "cost": 0.004275,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473781688f35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.0,
+   "usage": {
+    "input": 1686,
+    "output": 450,
+    "reasoning": 406
+   },
+   "cost": 0.004944,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states the computed value equals 0.83625…\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states the computed value equals 0.83625…"
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473e301c0e7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.7,
+   "usage": {
+    "input": 1607,
+    "output": 759,
+    "reasoning": 712
+   },
+   "cost": 0.005976,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence claims equality to a truncated value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims equality to a truncated value."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738127d5ce1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.9,
+   "usage": {
+    "input": 1602,
+    "output": 222,
+    "reasoning": 190
+   },
+   "cost": 0.00391,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"approximate\",\n  \"why\": \"the number is approximate, indicated by \\\"approximately\\\"\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "the number is approximate, indicated by \"approximately\""
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547377138326b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.6,
+   "usage": {
+    "input": 1608,
+    "output": 178,
+    "reasoning": 137
+   },
+   "cost": 0.003753,
+   "raw": "{\n  \"statement\": \"(3 - 1 / c₁*) / 2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}",
+   "answer": {
+    "statement": "(3 - 1 / c₁*) / 2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473dee4a5ad457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 4.4,
+   "usage": {
+    "input": 1687,
+    "output": 293,
+    "reasoning": 255
+   },
+   "cost": 0.004344,
+   "raw": "{\"statement\": \"(3 - 1 / c₁*) / 2 = 0.83626…\", \"hole\": \"\", \"why\": \"the sentence states this equality\"}",
+   "answer": {
+    "statement": "(3 - 1 / c₁*) / 2 = 0.83626…",
+    "hole": "",
+    "why": "the sentence states this equality"
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54736ae2b137ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 39.9,
+   "usage": {
+    "input": 1607,
+    "output": 2387,
+    "reasoning": 2344
+   },
+   "cost": 0.012212,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states this expression equals the printed value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states this expression equals the printed value."
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473d925ed8622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1686,
+    "output": 148,
+    "reasoning": 117
+   },
+   "cost": 0.003787,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547380269a9b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.9,
+   "usage": {
+    "input": 1615,
+    "output": 545,
+    "reasoning": 517
+   },
+   "cost": 0.005172,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473eadaca0d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.0,
+   "usage": {
+    "input": 1694,
+    "output": 216,
+    "reasoning": 185
+   },
+   "cost": 0.004063,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473715faeed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.6,
+   "usage": {
+    "input": 1601,
+    "output": 1283,
+    "reasoning": 1234
+   },
+   "cost": 0.007972,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625...\", \"hole\": \"\", \"why\": \"\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625...",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473da2ce85e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 24.2,
+   "usage": {
+    "input": 1680,
+    "output": 2918,
+    "reasoning": 2876
+   },
+   "cost": 0.014385,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence evaluates this expression as the printed decimal value.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence evaluates this expression as the printed decimal value."
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54737a75f40622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 17.2,
+   "usage": {
+    "input": 1698,
+    "output": 900,
+    "reasoning": 860
+   },
+   "cost": 0.00669,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence leads with the recomputed equality.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the recomputed equality."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473e72ac9faf29-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.0,
+   "usage": {
+    "input": 1619,
+    "output": 696,
+    "reasoning": 651
+   },
+   "cost": 0.005758,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\", \"hole\": \"\", \"why\": \"The sentence states a recomputed equality with an ellipsis bar.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence states a recomputed equality with an ellipsis bar."
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54737a06de18779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 20.9,
+   "usage": {
+    "input": 1602,
+    "output": 1342,
+    "reasoning": 1277
+   },
+   "cost": 0.0082,
+   "raw": "{\"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\", \"hole\": \"\", \"why\": \"The sentence states that the quantity (3 - 1/c₁*)/2 equals the printed bar, with the ellipsis indicating the value is cut off.\"}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence states that the quantity (3 - 1/c₁*)/2 equals the printed bar, with the ellipsis indicating the value is cut off."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473e3a198335d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 18.5,
+   "usage": {
+    "input": 1602,
+    "output": 1646,
+    "reasoning": 1621
+   },
+   "cost": 0.009364,
+   "raw": "{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence asserts that the distinct proportion equals 0.83626….\"\n}",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence asserts that the distinct proportion equals 0.83626…."
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473830dc11b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1747,
+    "output": 126,
+    "reasoning": 93
+   },
+   "cost": 0.003819,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"A claim about every Dirichlet L-function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A claim about every Dirichlet L-function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738926ce5e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.4,
+   "usage": {
+    "input": 1703,
+    "output": 552,
+    "reasoning": 513
+   },
+   "cost": 0.005367,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"The sentence states unbounded claims about zero-free regions and zero statistics that no finite check decides.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence states unbounded claims about zero-free regions and zero statistics that no finite check decides."
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738561ea97ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.6,
+   "usage": {
+    "input": 1667,
+    "output": 488,
+    "reasoning": 451
+   },
+   "cost": 0.005053,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"A claim about all nontrivial zeros of ζ, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A claim about all nontrivial zeros of ζ, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547383e5d21622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 14.1,
+   "usage": {
+    "input": 1681,
+    "output": 991,
+    "reasoning": 952
+   },
+   "cost": 0.007006,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"A statement about all nontrivial zeros of the Riemann zeta function, which no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A statement about all nontrivial zeros of the Riemann zeta function, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738234d8bb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 8.2,
+   "usage": {
+    "input": 1676,
+    "output": 523,
+    "reasoning": 482
+   },
+   "cost": 0.005204,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"A zero-free region claim about every Dirichlet L-function, no finite check can decide it.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "A zero-free region claim about every Dirichlet L-function, no finite check can decide it."
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473896493335d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 16.8,
+   "usage": {
+    "input": 1685,
+    "output": 1257,
+    "reasoning": 1218
+   },
+   "cost": 0.008033,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"the claim is about all nontrivial zeros, a theorem with no finite check\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "the claim is about all nontrivial zeros, a theorem with no finite check"
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a5473833cf06b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.5,
+   "usage": {
+    "input": 1670,
+    "output": 399,
+    "reasoning": 350
+   },
+   "cost": 0.004718,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"The claim is about all Dirichlet L-functions and their zeros in a half-plane, a universal statement that no finite check decides.\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The claim is about all Dirichlet L-functions and their zeros in a half-plane, a universal statement that no finite check decides."
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547387f4bac8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 5.2,
+   "usage": {
+    "input": 1678,
+    "output": 327,
+    "reasoning": 284
+   },
+   "cost": 0.004457,
+   "raw": "{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"The sentence makes a claim about the proportion of all nontrivial zeros, which no finite check decides.\"\n}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "The sentence makes a claim about the proportion of all nontrivial zeros, which no finite check decides."
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a54738569d36622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 6.5,
+   "usage": {
+    "input": 1667,
+    "output": 523,
+    "reasoning": 481
+   },
+   "cost": 0.005187,
+   "raw": "{\"statement\": \"\", \"hole\": \"unbounded\", \"why\": \"a zero-free region claim about all Dirichlet L-functions, which is a universal statement no finite check decides\"}",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a zero-free region claim about all Dirichlet L-functions, which is a universal statement no finite check decides"
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "deepseek/deepseek-v4-pro",
+   "requestId": "a547389f99b08779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 7.7,
+   "usage": {
+    "input": 1673,
+    "output": 521,
+    "reasoning": 482
+   },
+   "cost": 0.005191,
+   "raw": "{\"statement\": \"\", \"hole\": \"decider\", \"why\": \"the claim involves L-functions and zeta zeros, which are not among the library names for the given data\"}",
+   "answer": {
+    "statement": "",
+    "hole": "decider",
+    "why": "the claim involves L-functions and zeta zeros, which are not among the library names for the given data"
+   }
+  }
+ ]
+}

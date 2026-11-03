@@ -809,7 +809,7 @@ from claimbox import prose as PR  # noqa: E402
 ok(open(os.path.join(REPO, PR.CORPORA['riemann-ai']['source']), encoding='utf-8').read() == PR.source_text('riemann-ai'),
    'prose: the phrasings\' source is written from their JSON, one per line, byte for byte')
 PREC = json.load(open(os.path.join(REPO, 'records', 'prose-riemann-ai.json'), encoding='utf-8'))
-now = PR.run('riemann-ai', ROOT, words=True)          # with cert-machine's words, sensitivity and vacuity: the whole record
+now = PR.run('riemann-ai', ROOT, words=True, prior=None if FULL else PREC)          # with cert-machine's words, sensitivity and vacuity: the whole record
 ok([(e['id'], e['outcome']) for e in now] == [(e['id'], e['outcome']) for e in PREC['sentences']] and PR.summary(now) == PREC['summary'],
    'prose: the run reproduces its record, sentence for sentence', json.dumps(PREC['summary']))
 gp = [p for e in PREC['sentences'] for p in e['proposals'] if 'object' in p and p['kind'] == 'grammar']
@@ -904,10 +904,12 @@ gpart = gtext[gtext.index(PMOD.GUIDE_MARK):]
 ai_text = open(os.path.join(REPO, PR.CORPORA['riemann-ai']['source']), encoding='utf-8').read()
 leak = [n for n in set(re.findall(r'\d+\.\d{3,}', gpart)) if n in ai_text]
 ok(not leak and '## For a model' in gpart, 'prose: the guide a model is given prints no number of the AI phrasings it is measured on', ', '.join(leak) or 'no number shared')
-asked = open(os.path.join(REPO, 'corpus', 'proposals', 'guide-asked-2026-11-01.md'), encoding='utf-8').read().strip()
-ok(all(L['guide'] == hashlib.sha256(asked.encode('utf-8')).hexdigest() for f, L in leds.items() if f.endswith('.guide.json')),
-   'prose: every prompt-variant run names the guide text it was given, kept byte for byte (corpus/proposals/guide-asked-2026-11-01.md)',
-   f'{sum(1 for f in leds if f.endswith(".guide.json"))} runs')
+asked = {hashlib.sha256(open(f, encoding='utf-8').read().strip().encode('utf-8')).hexdigest(): os.path.basename(f)
+         for f in glob.glob(os.path.join(REPO, 'corpus', 'proposals', 'guide-asked-*.md'))}
+gruns = {f: L for f, L in leds.items() if L.get('guide')}
+ok(gruns and all(L['guide'] in asked for L in gruns.values()),
+   'prose: every prompt-variant run names the guide text it was given, kept byte for byte (corpus/proposals/guide-asked-*.md)',
+   ', '.join(sorted({asked.get(L['guide'], '?') for L in gruns.values()})))
 fams = sorted(glob.glob(os.path.join(REPO, PR.CORPORA['riemann-ai']['models'])))
 ok(all(re.search(r'^-- prompt: .* sha256 [0-9a-f]{64}$', open(f, encoding='utf-8').read(), re.M) or
        open(f, encoding='utf-8').read().startswith('-- Written by tools/propose_model.py (') for f in fams),
@@ -926,7 +928,7 @@ red(stuck is False, 'prose: refused — a proposer that does not move when the s
 ok(open(os.path.join(REPO, PR.CORPORA['register']['source']), encoding='utf-8').read() == PR.source_text('register'),
    'prose: the register\'s source is written from corpus/register-sentences.json, one sentence per line, byte for byte')
 RREC = json.load(open(os.path.join(REPO, 'records', 'prose-register.json'), encoding='utf-8'))
-rnow = PR.run('register', ROOT, words=True)
+rnow = PR.run('register', ROOT, words=True, prior=None if FULL else RREC)
 ok([(e['id'], e['outcome']) for e in rnow] == [(e['id'], e['outcome']) for e in RREC['sentences']] and PR.summary(rnow) == RREC['summary'],
    'prose: the register\'s run reproduces its record, sentence for sentence', json.dumps({k: RREC['summary'][k] for k in ('sentences', 'proposals', 'validated', 'notStated')}))
 rg = [p for e in RREC['sentences'] for p in e['proposals'] if 'object' in p and p['kind'] == 'grammar']
@@ -1011,6 +1013,13 @@ red(PR.planted_statement(c12, planted12('for every j in 0 < j < 255 : |256·S(j)
     'prose: refused — a planted run that moves the bar and also the range', 'range changed')
 red(PR.planted_statement(c5, planted_of('c₁* = 0.7532960…')) is False, 'prose: refused — a model whose statement does not move when the sentence\'s bar is moved', 'stuck')
 red(PR.planted_statement(c5, planted_of('c₁* ≥ 0.7532961')) is False, 'prose: refused — a model whose planted statement moves more than the bar', 'relation changed')
+
+# a one-digit bar in a statement that prints the digit elsewhere (x22 … its score is 2): the planted run moves the bar, never the name
+SC = {'id': 'k', 'quote': 'the score of it is 2 (minimize)', 'stmt': lang.statement('x22 is a feasible solution of "T" and its score is 2', 0)}
+SCP = {'quote': 'the score of it is 3 (minimize)', 'stmt': lang.statement('x22 is a feasible solution of "T" and its score is 3', 0)}
+ok(PR.planted_statement(SC, SCP) is True, 'prose: a planted run on a one-digit score holds when the score moved and the data name did not', 'x22, score 2 → 3')
+red(PR.planted_statement(SC, {'quote': 'the score of it is 3 (minimize)', 'stmt': lang.statement('x32 is a feasible solution of "T" and its score is 2', 0)}) is False,
+    'prose: refused — a planted run that moved the data name instead of the score', 'x32')
 
 # ---- 11 · helpers (claimbox/helpers.py, roadmap step 7) -------------------------------------------------------------------
 # tighten and extend propose claims by search, every candidate decided by cert-machine; the light ones are re-run and must reproduce
@@ -1141,6 +1150,33 @@ try:
 except Refusal as e:
     got = e.rule
 red(got == 'watcher', 'helpers: refused — attack on a claim that some case holds (that is hunt\'s)', str(got))
+
+# USE-CASES.md (2026-11-02): every record address it names resolves, and every word it states beside one is the record's
+UC = open(os.path.join(REPO, 'USE-CASES.md'), encoding='utf-8').read()
+uc_bad = []
+for path, frag in re.findall(r'`(records/[\w./-]+\.json)(?:#([\w./-]+))?`', UC):
+    try:
+        d = json.load(open(os.path.join(REPO, path), encoding='utf-8'))
+        if frag:
+            rows = d.get('rows') or d.get('sentences') or d.get('claims') or []
+            if not any(r.get('id') == frag for r in rows):
+                uc_bad.append(path + '#' + frag)
+    except FileNotFoundError:
+        uc_bad.append(path)
+for frag in re.findall(r'`#([\w./-]+)`', UC):      # `#id` after a named file: of records/xx64-check.json
+    if not any(c['id'] == frag for c in json.load(open(os.path.join(REPO, 'records', 'xx64-check.json'), encoding='utf-8'))['claims']):
+        uc_bad.append('#' + frag)
+ok(not uc_bad, 'USE-CASES.md: every record address it names resolves', ', '.join(uc_bad) or f'{len(re.findall(r"`records/", UC))} addresses')
+uc_words = {'math-mt-distinct-0.8362': ('records/riemann-math-run.json', 'REFUTED'), 'ea-circles-ours_2026': ('records/prose-register.json', 'REFUTED'),
+            'mc100-ae-nb-4x4x8-r96': ('records/prose-register.json', 'CERTIFIED')}
+def uc_word(path, rid):
+    d = json.load(open(os.path.join(REPO, path), encoding='utf-8'))
+    if 'sentences' in d:
+        e = [x for x in d['sentences'] if x['id'] == rid][0]
+        return {p.get('word') for p in e['proposals'] if 'object' in p and not p.get('fails')}
+    from web.record import word
+    return {word(path, rid)}
+ok(all(uc_word(p_, rid) == {w} for rid, (p_, w) in uc_words.items()), 'USE-CASES.md: the words it states are the records\' words', ', '.join(uc_words))
 
 # ---- 12 · x^x = 64 (the operator's experiment, 2026-10-31: library selfpower.py) --------------------------------------------
 # the AI proposes, claimbox states, cert-machine decides: a bound on the root is one exact integer inequality; the planted

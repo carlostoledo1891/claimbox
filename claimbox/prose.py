@@ -330,7 +330,14 @@ def planted_statement(claim, planted):
     p2 = bar_printed(planted['stmt'])        # the moved bar may be printed another way (4e-40 for 4·10⁻⁴⁰): equal by value,
     if not p2 or value_of(p2) != value_of(moved):   # and the rest of the statement unchanged, character for character
         return False
-    return lang.fmt_statement(planted['stmt']).replace(p2, moved, 1) == lang.fmt_statement(claim['stmt']).replace(p, moved, 1)
+    # the bar is the LAST place the statement prints those digits (2026-11-02: a one-digit score, "x22 … its score is 2", once had
+    # its data name moved instead — every family's planted run on that sentence read as broken)
+    return rreplace(lang.fmt_statement(planted['stmt']), p2, moved) == rreplace(lang.fmt_statement(claim['stmt']), p, moved)
+
+
+def rreplace(text, old, new):
+    i = text.rfind(old)
+    return text if i < 0 else text[:i] + new + text[i + len(old):]
 
 
 # ------------------------------------------------------------------------------------------------- the checks
@@ -780,8 +787,16 @@ def vacuity(kind, obj, claim, row, ctx, word, root):
 
 # ------------------------------------------------------------------------------------------------- the run
 
-def run(corpus, root, words=False):
+def object_sha(o):
+    return hashlib.sha256(json.dumps(o, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest()
+
+
+def run(corpus, root, words=False, prior=None):
+    """prior: an earlier record of this corpus; a proposal whose object is byte for byte the one recorded there (its sha256)
+    takes cert-machine's word, sensitivity and vacuity from it instead of asking again (2026-11-02, TODO.md item 12: the
+    battery's reproduction in minutes, not a quarter of an hour; CLAIMBOX_FULL=1 asks everything again)"""
     cfg = CORPORA[corpus]
+    known = {(e['id'], p['kind'], p.get('claim')): p for e in (prior or {}).get('sentences', []) for p in e['proposals'] if p.get('sha256')}
     source = rel_of(os.path.join(REPO, cfg['source']))
     files = file_proposals(corpus, root)
     replanted = planted_claims(corpus)
@@ -804,6 +819,7 @@ def run(corpus, root, words=False):
                 pr['refused'] = {'rule': refusal[0], 'hole': C.HOLE_OF.get(refusal[0], refusal[0]), 'why': refusal[1][:200]}
             else:
                 pr['object'] = o['id']
+                pr['sha256'] = object_sha(o)
                 pr['decision'] = C.decision_fields(o)
                 pr['anchored'] = anchored(o, row['text'], source if kind == 'grammar' else o['source']['path'], root)
                 pr['printedBack'] = printed_back(o, row['text'])
@@ -815,7 +831,10 @@ def run(corpus, root, words=False):
                     a_, b_ = object_bar(o), object_bar(reference)
                     pr['sameValue'] = bool(a_ and b_ and a_[0] == b_[0] and a_[2] == b_[2] and value_of(a_[1]) == value_of(b_[1])
                                            and o['domain']['pin'] == reference['domain']['pin'])
-                if words:
+                was = known.get((row['id'], kind, pr.get('claim')))
+                if words and was and was['sha256'] == pr['sha256'] and 'word' in was:
+                    pr.update({k: was[k] for k in ('word', 'certMachine', 'sensitivity', 'vacuity') if k in was})
+                elif words:
                     line = T.check_with_cert_machine(o, root)
                     pr['word'], pr['certMachine'] = C.word(line), line[:200]
                     if pr['word'] in ('CERTIFIED', 'REFUTED'):

@@ -1,10 +1,13 @@
 {
  "what": "every call tools/propose_model.py made for register: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
  "model": "claude-opus-5-5",
+ "provider": "anthropic",
+ "family": null,
  "effort": "high",
  "cap": 20.0,
- "spent": 0.7226,
- "calls": 85,
+ "guide": null,
+ "spent": 0.8355,
+ "calls": 103,
  "stoppedAtCap": false,
  "prices": {
   "input": 4.0,
@@ -94,6 +97,26 @@
    }
   },
   {
+   "tag": "ea-autocorr-ttt_discover_2026 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2oeLxArgrUiAcRWLmE",
+   "stopReason": "end_turn",
+   "seconds": 7.0,
+   "usage": {
+    "input": 135,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 649
+   },
+   "cost": 0.013803,
+   "raw": "{\"statement\": \"ttt_discover_2026.json is a feasible solution of \\\"first-autocorrelation\\\" and its score is 1.50286291\", \"hole\": \"\", \"why\": \"The sentence gives the upper bound C₁ ≤ 1.50286291 achieved by the published first-autocorrelation construction pinned as this data.\"}",
+   "answer": {
+    "statement": "ttt_discover_2026.json is a feasible solution of \"first-autocorrelation\" and its score is 1.50286291",
+    "hole": "",
+    "why": "The sentence gives the upper bound C₁ ≤ 1.50286291 achieved by the published first-autocorrelation construction pinned as this data."
+   }
+  },
+  {
    "tag": "ea-circles-alphaevolve_2025",
    "model": "claude-opus-5-5",
    "requestId": "req_011Cgaej3egqzG4QFAogxDd1",
@@ -111,6 +134,26 @@
     "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321334",
     "hole": "",
     "why": "The sentence gives the score Σ r = 2.3658321334 for the 21-circle rectangle packing, which matches the platform problem and the pinned construction."
+   }
+  },
+  {
+   "tag": "ea-circles-alphaevolve_2025 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2o6ghhBrbFjAZqP1Dx",
+   "stopReason": "end_turn",
+   "seconds": 3.9,
+   "usage": {
+    "input": 224,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 110
+   },
+   "cost": 0.010181,
+   "raw": "{\"statement\": \"circ_alphaevolve_2025 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658321335\", \"hole\": \"\", \"why\": \"The sentence gives a sum of radii for the pinned 21-circle construction, and that sum is the platform problem's score.\"}",
+   "answer": {
+    "statement": "circ_alphaevolve_2025 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658321335",
+    "hole": "",
+    "why": "The sentence gives a sum of radii for the pinned 21-circle construction, and that sum is the platform problem's score."
    }
   },
   {
@@ -134,6 +177,26 @@
    }
   },
   {
+   "tag": "ea-circles-ours_2026 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2o71HpEo5hY4ut1PeC",
+   "stopReason": "end_turn",
+   "seconds": 3.9,
+   "usage": {
+    "input": 216,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 114
+   },
+   "cost": 0.010229,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323758\", \"hole\": \"\", \"why\": \"The sentence states that the pinned 21-circle construction is feasible and that its sum of radii is 2.3658323758, which the platform verifier can check.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323758",
+    "hole": "",
+    "why": "The sentence states that the pinned 21-circle construction is feasible and that its sum of radii is 2.3658323758, which the platform verifier can check."
+   }
+  },
+  {
    "tag": "ea-edges-alphaevolve_2025",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgaejQBDuYUaD3TPZ6nus",
@@ -151,6 +214,26 @@
     "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712494",
     "hole": "",
     "why": "The sentence gives the platform score of the pinned edges-vs-triangles construction as -0.712494, using the problem name the library supplies."
+   }
+  },
+  {
+   "tag": "ea-edges-alphaevolve_2025 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2oPZx2FoarCCSMAxDu",
+   "stopReason": "end_turn",
+   "seconds": 4.9,
+   "usage": {
+    "input": 132,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 314
+   },
+   "cost": 0.007091,
+   "raw": "{\"statement\":\"edge_alphaevolve_2025 is a feasible solution of \\\"edges-vs-triangles\\\" and its score is -0.712495\",\"hole\":\"\",\"why\":\"The sentence gives the platform score of the pinned edges-vs-triangles construction as -0.712495.\"}",
+   "answer": {
+    "statement": "edge_alphaevolve_2025 is a feasible solution of \"edges-vs-triangles\" and its score is -0.712495",
+    "hole": "",
+    "why": "The sentence gives the platform score of the pinned edges-vs-triangles construction as -0.712495."
    }
   },
   {
@@ -194,6 +277,26 @@
    }
   },
   {
+   "tag": "ea-flat-alphaevolve_2025 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2omfVDQ3CgtRWBzhFv",
+   "stopReason": "end_turn",
+   "seconds": 5.6,
+   "usage": {
+    "input": 134,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 372
+   },
+   "cost": 0.008259,
+   "raw": "{\"statement\": \"alphaevolve_2025.py is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.340926\", \"hole\": \"\", \"why\": \"The sentence gives the flat-polynomials score C⁺ of the pinned AlphaEvolve construction as 1.340926, so the bar is copied exactly as printed.\"}",
+   "answer": {
+    "statement": "alphaevolve_2025.py is a feasible solution of \"flat-polynomials\" and its score is 1.340926",
+    "hole": "",
+    "why": "The sentence gives the flat-polynomials score C⁺ of the pinned AlphaEvolve construction as 1.340926, so the bar is copied exactly as printed."
+   }
+  },
+  {
    "tag": "ea-flat-ours_2026",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgaejuHvr5h1UUCJ1KZHu",
@@ -211,6 +314,26 @@
     "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280932",
     "hole": "",
     "why": "The sentence gives the flat-polynomials score C⁺ of the pinned ±1 construction as 1.280932."
+   }
+  },
+  {
+   "tag": "ea-flat-ours_2026 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2ooxQKCX1T2BMdJMZX",
+   "stopReason": "end_turn",
+   "seconds": 4.7,
+   "usage": {
+    "input": 126,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 341
+   },
+   "cost": 0.007607,
+   "raw": "{\"statement\": \"flat_ours_2026 is a feasible solution of \\\"flat-polynomials\\\" and its score is 1.280933\", \"hole\": \"\", \"why\": \"The sentence gives the score of the published flat-polynomials construction as C⁺ = 1.280933.\"}",
+   "answer": {
+    "statement": "flat_ours_2026 is a feasible solution of \"flat-polynomials\" and its score is 1.280933",
+    "hole": "",
+    "why": "The sentence gives the score of the published flat-polynomials construction as C⁺ = 1.280933."
    }
   },
   {
@@ -251,6 +374,26 @@
     "statement": "heil_alphaevolve_2025 is a feasible solution of \"heilbronn-convex\" and its score is 0.0278355715",
     "hole": "",
     "why": "The sentence gives the score of the pinned 14-point heilbronn-convex construction, the minimum triangle area divided by the convex-hull area, as 0.0278355715."
+   }
+  },
+  {
+   "tag": "ea-heilbronn-alphaevolve_2025 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2o6srMFRxRgSdWiz9y",
+   "stopReason": "end_turn",
+   "seconds": 3.9,
+   "usage": {
+    "input": 193,
+    "cacheWrite": 1417,
+    "cacheRead": 0,
+    "output": 112
+   },
+   "cost": 0.010097,
+   "raw": "{\"statement\":\"heil_alphaevolve_2025 is a feasible solution of \\\"Heilbronn Problem for Convex Regions (n = 14)\\\" and its score is 0.0278355716\",\"hole\":\"\",\"why\":\"The sentence gives the score of the pinned 14-point construction, which is exactly what the platform's verifier computes.\"}",
+   "answer": {
+    "statement": "heil_alphaevolve_2025 is a feasible solution of \"Heilbronn Problem for Convex Regions (n = 14)\" and its score is 0.0278355716",
+    "hole": "",
+    "why": "The sentence gives the score of the pinned 14-point construction, which is exactly what the platform's verifier computes."
    }
   },
   {
@@ -314,6 +457,26 @@
    }
   },
   {
+   "tag": "ea-hexagons-alphaevolve_2025 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pA3dLYY97cGx5yR2U",
+   "stopReason": "end_turn",
+   "seconds": 2.8,
+   "usage": {
+    "input": 134,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 114
+   },
+   "cost": 0.003099,
+   "raw": "{\"statement\":\"hexa_alphaevolve_2025 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9419124\",\"hole\":\"\",\"why\":\"The sentence claims a feasible 12-hexagon packing for the platform's hexagon-packing problem whose score, the outer side, is the printed 3.9419124.\"}",
+   "answer": {
+    "statement": "hexa_alphaevolve_2025 is a feasible solution of \"hexagon-packing\" and its score is 3.9419124",
+    "hole": "",
+    "why": "The sentence claims a feasible 12-hexagon packing for the platform's hexagon-packing problem whose score, the outer side, is the printed 3.9419124."
+   }
+  },
+  {
    "tag": "ea-hexagons-ours_2026",
    "model": "claude-opus-5-5",
    "requestId": "req_011Cgaek1m7nJFpKcMUhbNnx",
@@ -331,6 +494,26 @@
     "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416523",
     "hole": "",
     "why": "The sentence says the published 12-hexagon packing is feasible, with score equal to the outer side 3.9416523."
+   }
+  },
+  {
+   "tag": "ea-hexagons-ours_2026 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pASgwRwXdGAde9V3i",
+   "stopReason": "end_turn",
+   "seconds": 5.4,
+   "usage": {
+    "input": 126,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 429
+   },
+   "cost": 0.009367,
+   "raw": "{\"statement\":\"hexa_ours_2026 is a feasible solution of \\\"hexagon-packing\\\" and its score is 3.9416524\",\"hole\":\"\",\"why\":\"The sentence claims a feasible packing of 12 unit hexagons for the hexagon-packing problem, with the outer side 3.9416524 as its score.\"}",
+   "answer": {
+    "statement": "hexa_ours_2026 is a feasible solution of \"hexagon-packing\" and its score is 3.9416524",
+    "hole": "",
+    "why": "The sentence claims a feasible packing of 12 unit hexagons for the hexagon-packing problem, with the outer side 3.9416524 as its score."
    }
   },
   {
@@ -374,6 +557,26 @@
    }
   },
   {
+   "tag": "ea-mindist-alphaevolve_2025 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2oPSFsvDRFAf4Z6efV",
+   "stopReason": "end_turn",
+   "seconds": 3.5,
+   "usage": {
+    "input": 209,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 264
+   },
+   "cost": 0.006399,
+   "raw": "{\"statement\": \"min_alphaevolve_2025 is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889267\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio of the 16-point construction as 12.889267, which is that platform problem's score.\"}",
+   "answer": {
+    "statement": "min_alphaevolve_2025 is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889267",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio of the 16-point construction as 12.889267, which is that platform problem's score."
+   }
+  },
+  {
    "tag": "ea-mindist-ours_2026",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgapQA9kTihNx9tR5rrJn",
@@ -411,6 +614,26 @@
     "statement": "ours_2026.json is a feasible solution of \"min-distance-ratio-2d\" and its score is 12.889230",
     "hole": "",
     "why": "The sentence gives the squared max/min distance ratio for 16 points, which is the score of the pinned construction for min-distance-ratio-2d."
+   }
+  },
+  {
+   "tag": "ea-mindist-ours_2026 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2oPTzTwMYXVNXUz1UC",
+   "stopReason": "end_turn",
+   "seconds": 5.7,
+   "usage": {
+    "input": 201,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 332
+   },
+   "cost": 0.007727,
+   "raw": "{\"statement\": \"ours_2026.json is a feasible solution of \\\"Minimizing Max/Min Distance Ratio (2D, n=16)\\\" and its score is 12.889231\", \"hole\": \"\", \"why\": \"The sentence gives the squared max/min distance ratio of the 16-point construction as 12.889231, which is this platform problem's score.\"}",
+   "answer": {
+    "statement": "ours_2026.json is a feasible solution of \"Minimizing Max/Min Distance Ratio (2D, n=16)\" and its score is 12.889231",
+    "hole": "",
+    "why": "The sentence gives the squared max/min distance ratio of the 16-point construction as 12.889231, which is this platform problem's score."
    }
   },
   {
@@ -1554,6 +1777,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-circles-rectangle planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pWC6BenVPp6GP1cZX",
+   "stopReason": "end_turn",
+   "seconds": 5.3,
+   "usage": {
+    "input": 125,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 102
+   },
+   "cost": 0.002823,
+   "raw": "{\"statement\": \"x18 is a feasible solution of \\\"Circles in a Rectangle (n = 21)\\\" and its score is 2.3658323759098577\", \"hole\": \"\", \"why\": \"The sentence claims that the pinned best solution is feasible for the named platform problem and that its score is exactly the printed number.\"}",
+   "answer": {
+    "statement": "x18 is a feasible solution of \"Circles in a Rectangle (n = 21)\" and its score is 2.3658323759098577",
+    "hole": "",
+    "why": "The sentence claims that the pinned best solution is feasible for the named platform problem and that its score is exactly the printed number."
+   }
+  },
+  {
    "tag": "mc100-ea-best-edges-vs-triangles",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzThwghkHzPwvutK5t",
@@ -1574,6 +1817,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-edges-vs-triangles planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pN7Qdv75ZpTsAVCP5",
+   "stopReason": "end_turn",
+   "seconds": 1.9,
+   "usage": {
+    "input": 130,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 96
+   },
+   "cost": 0.002723,
+   "raw": "{\"statement\":\"x13 is a feasible solution of \\\"Edges vs Triangles (Minimal Triangle Density)\\\" and its score is -0.7117091757692578\",\"hole\":\"\",\"why\":\"The sentence claims feasibility and a printed score for the pinned data on the named platform problem.\"}",
+   "answer": {
+    "statement": "x13 is a feasible solution of \"Edges vs Triangles (Minimal Triangle Density)\" and its score is -0.7117091757692578",
+    "hole": "",
+    "why": "The sentence claims feasibility and a printed score for the pinned data on the named platform problem."
+   }
+  },
+  {
    "tag": "mc100-ea-best-erdos-min-overlap",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzLjEk5kK1quBRLX91",
@@ -1591,6 +1854,26 @@
     "statement": "x1 is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578584",
     "hole": "",
     "why": "The sentence claims the pinned solution is feasible for the named platform problem and gives its exact printed score."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-erdos-min-overlap planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pAUvQinHn5H8LTq7q",
+   "stopReason": "end_turn",
+   "seconds": 2.7,
+   "usage": {
+    "input": 129,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 98
+   },
+   "cost": 0.002759,
+   "raw": "{\"statement\":\"best-1.json is a feasible solution of \\\"Erdős Minimum Overlap (Upper Bound)\\\" and its score is 0.3808585748578585\",\"hole\":\"\",\"why\":\"The sentence claims the pinned data is feasible for the named problem and gives an exact printed score.\"}",
+   "answer": {
+    "statement": "best-1.json is a feasible solution of \"Erdős Minimum Overlap (Upper Bound)\" and its score is 0.3808585748578585",
+    "hole": "",
+    "why": "The sentence claims the pinned data is feasible for the named problem and gives an exact printed score."
    }
   },
   {
@@ -1634,6 +1917,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-flat-polynomials planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pN8uEjRQUATvtgTWL",
+   "stopReason": "end_turn",
+   "seconds": 1.9,
+   "usage": {
+    "input": 123,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 96
+   },
+   "cost": 0.002695,
+   "raw": "{\"statement\":\"x12 is a feasible solution of \\\"Flat Polynomials (degree 69)\\\" and its score is 1.2807274949642548\",\"hole\":\"\",\"why\":\"The sentence asserts that the pinned data is feasible for the named platform problem and gives its score exactly as printed.\"}",
+   "answer": {
+    "statement": "x12 is a feasible solution of \"Flat Polynomials (degree 69)\" and its score is 1.2807274949642548",
+    "hole": "",
+    "why": "The sentence asserts that the pinned data is feasible for the named platform problem and gives its score exactly as printed."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d11-605",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzWxek2otq9qNeCTkR",
@@ -1651,6 +1954,26 @@
     "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301676",
     "hole": "",
     "why": "The sentence claims feasibility for the named platform problem and gives the score exactly as printed."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d11-605 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pZhvQBK8kVD1j3mnE",
+   "stopReason": "end_turn",
+   "seconds": 2.8,
+   "usage": {
+    "input": 128,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 100
+   },
+   "cost": 0.002795,
+   "raw": "{\"statement\": \"x24 is a feasible solution of \\\"Kissing Number in Dimension 11 (n=605)\\\" and its score is 1.7102381876301677\", \"hole\": \"\", \"why\": \"The sentence claims that the pinned best solution is feasible for the named problem and quotes its score exactly.\"}",
+   "answer": {
+    "statement": "x24 is a feasible solution of \"Kissing Number in Dimension 11 (n=605)\" and its score is 1.7102381876301677",
+    "hole": "",
+    "why": "The sentence claims that the pinned best solution is feasible for the named problem and quotes its score exactly."
    }
   },
   {
@@ -1674,6 +1997,26 @@
    }
   },
   {
+   "tag": "mc100-ea-best-kissing-number-d12 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2pWRUgcsxWPqoqQRvq",
+   "stopReason": "end_turn",
+   "seconds": 2.9,
+   "usage": {
+    "input": 121,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 87
+   },
+   "cost": 0.002507,
+   "raw": "{\"statement\": \"x22 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=841)\\\" and its score is 3\", \"hole\": \"\", \"why\": \"The sentence claims the data is feasible for the named platform problem and that its score is 3.\"}",
+   "answer": {
+    "statement": "x22 is a feasible solution of \"Kissing Number in Dimension 12 (n=841)\" and its score is 3",
+    "hole": "",
+    "why": "The sentence claims the data is feasible for the named platform problem and that its score is 3."
+   }
+  },
+  {
    "tag": "mc100-ea-best-kissing-number-d12-842",
    "model": "claude-opus-5-5",
    "requestId": "req_011CgZCzXnzhwahoyDiEBWyJ",
@@ -1691,6 +2034,26 @@
     "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557645",
     "hole": "",
     "why": "The sentence claims the pinned solution is feasible for the named platform problem and gives the score exactly as printed."
+   }
+  },
+  {
+   "tag": "mc100-ea-best-kissing-number-d12-842 planted",
+   "model": "claude-opus-5-5",
+   "requestId": "req_011Cgf2piup9EbkP5Z2KoA6G",
+   "stopReason": "end_turn",
+   "seconds": 2.3,
+   "usage": {
+    "input": 128,
+    "cacheWrite": 0,
+    "cacheRead": 1417,
+    "output": 96
+   },
+   "cost": 0.002715,
+   "raw": "{\"statement\": \"x25 is a feasible solution of \\\"Kissing Number in Dimension 12 (n=842)\\\" and its score is 0.5469062458557646\", \"hole\": \"\", \"why\": \"The sentence claims the pinned solution is feasible for the named problem and gives its exact score.\"}",
+   "answer": {
+    "statement": "x25 is a feasible solution of \"Kissing Number in Dimension 12 (n=842)\" and its score is 0.5469062458557646",
+    "hole": "",
+    "why": "The sentence claims the pinned solution is feasible for the named problem and gives its exact score."
    }
   },
   {

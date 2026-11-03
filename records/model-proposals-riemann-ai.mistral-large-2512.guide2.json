@@ -1,0 +1,2780 @@
+{
+ "what": "every call tools/propose_model.py made for riemann-ai: the sentence it was for (its id; \"planted\" for the copy with the bar moved), the model that served it, the stop reason, the tokens, the cost at the published prices and the raw answer",
+ "model": "mistralai/mistral-large-2512",
+ "provider": "prime",
+ "family": "mistral-large-2512.guide2",
+ "effort": "high",
+ "cap": 1.5,
+ "guide": "5f81135d714bd2b5ea1c3474a5f49624069ef54a1014df6e601044e5dbf2087f",
+ "spent": 0.1399,
+ "calls": 138,
+ "stoppedAtCap": false,
+ "prices": {
+  "input": 0.5,
+  "cache_write": 0.0,
+  "cache_read": 0.0,
+  "output": 1.5
+ },
+ "entries": [
+  {
+   "tag": "1/abstract/1",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547303788bce1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1852,
+    "output": 50,
+    "reasoning": 0
+   },
+   "cost": 0.001001,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim about the edge discrepancy.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence leads with the claim about the edge discrepancy."
+   }
+  },
+  {
+   "tag": "1/abstract/1 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547362a9d26b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 9.7,
+   "usage": {
+    "input": 1852,
+    "output": 53,
+    "reasoning": 0
+   },
+   "cost": 0.001006,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim about the edge discrepancy's absolute value.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence leads with the claim about the edge discrepancy's absolute value."
+   }
+  },
+  {
+   "tag": "1/assistant/7",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547307fabe335d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.3,
+   "usage": {
+    "input": 1864,
+    "output": 69,
+    "reasoning": 0
+   },
+   "cost": 0.001035,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395317.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395317."
+   }
+  },
+  {
+   "tag": "1/assistant/7 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473607edc2b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1864,
+    "output": 69,
+    "reasoning": 0
+   },
+   "cost": 0.001035,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395318.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395318."
+   }
+  },
+  {
+   "tag": "1/assistant/9",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473056defde1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1854,
+    "output": 65,
+    "reasoning": 0
+   },
+   "cost": 0.001025,
+   "raw": "```json\n{\n  \"statement\": \"D(1) < 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that D(1) is less than 0.82395317.\"\n}\n```",
+   "answer": {
+    "statement": "D(1) < 0.82395317",
+    "hole": "",
+    "why": "The sentence leads with the claim that D(1) is less than 0.82395317."
+   }
+  },
+  {
+   "tag": "1/assistant/9 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736130f37622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1854,
+    "output": 62,
+    "reasoning": 0
+   },
+   "cost": 0.00102,
+   "raw": "```json\n{\n  \"statement\": \"D(1) < 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim D(1) < 0.82395318.\"\n}\n```",
+   "answer": {
+    "statement": "D(1) < 0.82395318",
+    "hole": "",
+    "why": "The sentence leads with the claim D(1) < 0.82395318."
+   }
+  },
+  {
+   "tag": "1/blog/4",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473041bf527ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1857,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.001014,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the absolute value of D(1) does not exceed the printed number.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims the absolute value of D(1) does not exceed the printed number."
+   }
+  },
+  {
+   "tag": "1/blog/4 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736027c0e6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1857,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.001014,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the absolute value of D(1) does not exceed the printed number.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims the absolute value of D(1) does not exceed the printed number."
+   }
+  },
+  {
+   "tag": "1/docstring/3",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730418e96622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1862,
+    "output": 55,
+    "reasoning": 0
+   },
+   "cost": 0.001014,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an upper bound on the absolute value of D(1).\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/docstring/3 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54735ff59b0f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1862,
+    "output": 55,
+    "reasoning": 0
+   },
+   "cost": 0.001014,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an upper bound on the absolute value of D(1).\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/0",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730379867b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1865,
+    "output": 69,
+    "reasoning": 0
+   },
+   "cost": 0.001036,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395317.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395317."
+   }
+  },
+  {
+   "tag": "1/paper/0 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54735f70e20622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1865,
+    "output": 69,
+    "reasoning": 0
+   },
+   "cost": 0.001036,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395318.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence leads with the claim that the absolute value of D(1) does not exceed 0.82395318."
+   }
+  },
+  {
+   "tag": "1/paper/8",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730535c5dd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1867,
+    "output": 55,
+    "reasoning": 0
+   },
+   "cost": 0.001016,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an upper bound on the absolute value of D(1).\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/paper/8 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547360c3c647ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1867,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.001019,
+   "raw": "```json\n{\n  \"statement\": \"|D(1)| ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the absolute value of D(1) does not exceed the printed number.\"\n}\n```",
+   "answer": {
+    "statement": "|D(1)| ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims the absolute value of D(1) does not exceed the printed number."
+   }
+  },
+  {
+   "tag": "1/readme/2",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730379bbfd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1858,
+    "output": 56,
+    "reasoning": 0
+   },
+   "cost": 0.001013,
+   "raw": "```json\n{\n  \"statement\": \"abs(D(1)) ≤ 0.82395317\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an upper bound on the absolute value of D(1).\"\n}\n```",
+   "answer": {
+    "statement": "abs(D(1)) ≤ 0.82395317",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/readme/2 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54735f70fd97ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1858,
+    "output": 56,
+    "reasoning": 0
+   },
+   "cost": 0.001013,
+   "raw": "```json\n{\n  \"statement\": \"abs(D(1)) ≤ 0.82395318\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an upper bound on the absolute value of D(1).\"\n}\n```",
+   "answer": {
+    "statement": "abs(D(1)) ≤ 0.82395318",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the absolute value of D(1)."
+   }
+  },
+  {
+   "tag": "1/referee/6",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547304aafe2e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1873,
+    "output": 45,
+    "reasoning": 0
+   },
+   "cost": 0.001004,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"ambiguous\",\n  \"why\": \"the sentence never says whether the bound is for D(1) or |D(1)|\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "ambiguous",
+    "why": "the sentence never says whether the bound is for D(1) or |D(1)|"
+   }
+  },
+  {
+   "tag": "1/tweet/5",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473046cebe7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1847,
+    "output": 33,
+    "reasoning": 0
+   },
+   "cost": 0.000973,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"approximate\",\n  \"why\": \"\\\"about\\\" is not a bar\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "\"about\" is not a bar"
+   }
+  },
+  {
+   "tag": "2/abstract/11",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473060cf9fb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1854,
+    "output": 82,
+    "reasoning": 0
+   },
+   "cost": 0.00105,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"the sentence claims a bound for every j in the integer range 1 ≤ j ≤ 255\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "the sentence claims a bound for every j in the integer range 1 ≤ j ≤ 255"
+   }
+  },
+  {
+   "tag": "2/abstract/11 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547361dc885d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1854,
+    "output": 82,
+    "reasoning": 0
+   },
+   "cost": 0.00105,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"the sentence claims a bound for every j in the integer range 1 ≤ j ≤ 255\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "the sentence claims a bound for every j in the integer range 1 ≤ j ≤ 255"
+   }
+  },
+  {
+   "tag": "2/assistant/17",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730a3edec7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.7,
+   "usage": {
+    "input": 1854,
+    "output": 92,
+    "reasoning": 0
+   },
+   "cost": 0.001065,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"the sentence claims a bound on |256·S(j) - j| for every integer j in 0 < j < 256\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "the sentence claims a bound on |256·S(j) - j| for every integer j in 0 < j < 256"
+   }
+  },
+  {
+   "tag": "2/assistant/17 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547363bfd7e8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1854,
+    "output": 92,
+    "reasoning": 0
+   },
+   "cost": 0.001065,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"the sentence claims a bound on |256·S(j) - j| for every integer j in 0 < j < 256\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "the sentence claims a bound on |256·S(j) - j| for every integer j in 0 < j < 256"
+   }
+  },
+  {
+   "tag": "2/blog/14",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547308c48e7d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1860,
+    "output": 85,
+    "reasoning": 0
+   },
+   "cost": 0.001058,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on the absolute difference for every integer row j in the range 1 to 255.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on the absolute difference for every integer row j in the range 1 to 255."
+   }
+  },
+  {
+   "tag": "2/blog/14 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473631ecddf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1860,
+    "output": 83,
+    "reasoning": 0
+   },
+   "cost": 0.001055,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on the absolute difference for every integer row j from 1 to 255.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on the absolute difference for every integer row j from 1 to 255."
+   }
+  },
+  {
+   "tag": "2/blog/19",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730b0ec7ad457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1880,
+    "output": 85,
+    "reasoning": 0
+   },
+   "cost": 0.001068,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on |256·S(j) - j| for every j in the given range.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| for every j in the given range."
+   }
+  },
+  {
+   "tag": "2/blog/19 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736415e207ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1880,
+    "output": 85,
+    "reasoning": 0
+   },
+   "cost": 0.001068,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on |256·S(j) - j| for every j in the given range.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| for every j in the given range."
+   }
+  },
+  {
+   "tag": "2/docstring/13",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730a8e856b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.1,
+   "usage": {
+    "input": 1871,
+    "output": 92,
+    "reasoning": 0
+   },
+   "cost": 0.001074,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on |256·S(j) - j| for every integer j in 1 < j < 256.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256 · S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| for every integer j in 1 < j < 256."
+   }
+  },
+  {
+   "tag": "2/docstring/13 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736272eb0d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1871,
+    "output": 92,
+    "reasoning": 0
+   },
+   "cost": 0.001074,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on |256·S(j) - j| for every integer j in 0 < j < 256.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256 · S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| for every integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/paper/10",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547308f4f19622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 10.2,
+   "usage": {
+    "input": 1861,
+    "output": 79,
+    "reasoning": 0
+   },
+   "cost": 0.001049,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"the sentence states a claim over every integer row 0 < j < 256\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "the sentence states a claim over every integer row 0 < j < 256"
+   }
+  },
+  {
+   "tag": "2/paper/10 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473617088a622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 1861,
+    "output": 49,
+    "reasoning": 0
+   },
+   "cost": 0.001004,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every integer j with 0 < j < 256, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every integer j with 0 < j < 256, which no finite check decides"
+   }
+  },
+  {
+   "tag": "2/paper/18",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730a59cf1b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1861,
+    "output": 90,
+    "reasoning": 0
+   },
+   "cost": 0.001066,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on |256·S(j) - j| for every integer j in 1 to 255.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| for every integer j in 1 to 255."
+   }
+  },
+  {
+   "tag": "2/paper/18 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547363d6dbb8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1861,
+    "output": 89,
+    "reasoning": 0
+   },
+   "cost": 0.001064,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on |256·S(j) - j| for all j in 1 to 255.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on |256·S(j) - j| for all j in 1 to 255."
+   }
+  },
+  {
+   "tag": "2/readme/12",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547306a7b776b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1854,
+    "output": 83,
+    "reasoning": 0
+   },
+   "cost": 0.001051,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an inequality for each integer row j in the range 1 < j < 256.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims an inequality for each integer row j in the range 1 < j < 256."
+   }
+  },
+  {
+   "tag": "2/readme/12 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547361ffd73e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.3,
+   "usage": {
+    "input": 1854,
+    "output": 83,
+    "reasoning": 0
+   },
+   "cost": 0.001051,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an inequality for each integer row j in the range 1 < j < 256.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims an inequality for each integer row j in the range 1 < j < 256."
+   }
+  },
+  {
+   "tag": "2/referee/16",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547309b384635d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1862,
+    "output": 78,
+    "reasoning": 0
+   },
+   "cost": 0.001048,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim proved in Section 4, using ≤ as stated there.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence leads with the claim proved in Section 4, using ≤ as stated there."
+   }
+  },
+  {
+   "tag": "2/referee/16 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736346ac17ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1862,
+    "output": 77,
+    "reasoning": 0
+   },
+   "cost": 0.001046,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the proved claim using ≤, not the abstract's strict inequality.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : |256·S(j) - j| ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence leads with the proved claim using ≤, not the abstract's strict inequality."
+   }
+  },
+  {
+   "tag": "2/tweet/15",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730980a30f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1843,
+    "output": 90,
+    "reasoning": 0
+   },
+   "cost": 0.001056,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on 256·S(j) - j for all integer j in 0 < j < 256.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 3·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on 256·S(j) - j for all integer j in 0 < j < 256."
+   }
+  },
+  {
+   "tag": "2/tweet/15 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473633a952d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1843,
+    "output": 92,
+    "reasoning": 0
+   },
+   "cost": 0.001059,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a bound on 256·S(j) - j for all integer j in the range 0 < j < 256.\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < 256 : 256·S(j) - j ≤ 4·10⁻⁴⁰",
+    "hole": "",
+    "why": "The sentence claims a bound on 256·S(j) - j for all integer j in the range 0 < j < 256."
+   }
+  },
+  {
+   "tag": "3/abstract/21",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730b4dac7622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1844,
+    "output": 58,
+    "reasoning": 0
+   },
+   "cost": 0.001009,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the decimal constant is less than the given number.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant is less than the given number."
+   }
+  },
+  {
+   "tag": "3/abstract/21 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547364a1f9835d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1844,
+    "output": 60,
+    "reasoning": 0
+   },
+   "cost": 0.001012,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an upper bound on the decimal constant c256.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims an upper bound on the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/abstract/28",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730d639b07ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1844,
+    "output": 33,
+    "reasoning": 0
+   },
+   "cost": 0.000972,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"approximate\",\n  \"why\": \"\\\"about\\\" is not a bar\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "\"about\" is not a bar"
+   }
+  },
+  {
+   "tag": "3/assistant/27",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730d30fa4f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1872,
+    "output": 76,
+    "reasoning": 0
+   },
+   "cost": 0.00105,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the decimal constant is strictly below 2.5431316·10⁻⁶.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant is strictly below 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/27 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547365b3d6de1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1872,
+    "output": 76,
+    "reasoning": 0
+   },
+   "cost": 0.00105,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the decimal constant is strictly below 2.5431316·10⁻⁶.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant is strictly below 2.5431316·10⁻⁶."
+   }
+  },
+  {
+   "tag": "3/assistant/29",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730d6df4a8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1841,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000985,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"the sentence is a hedge (\\\"We checked that\\\") and not a direct claim\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "the sentence is a hedge (\"We checked that\") and not a direct claim"
+   }
+  },
+  {
+   "tag": "3/blog/24",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730bfe8877ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.6,
+   "usage": {
+    "input": 1841,
+    "output": 82,
+    "reasoning": 0
+   },
+   "cost": 0.001043,
+   "raw": "```json\n{\n  \"statement\": \"1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a strict inequality between the given expression and the printed number.\"\n}\n```",
+   "answer": {
+    "statement": "1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims a strict inequality between the given expression and the printed number."
+   }
+  },
+  {
+   "tag": "3/blog/24 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736583ad135d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1841,
+    "output": 82,
+    "reasoning": 0
+   },
+   "cost": 0.001043,
+   "raw": "```json\n{\n  \"statement\": \"1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an exact inequality between the given expression and the printed number.\"\n}\n```",
+   "answer": {
+    "statement": "1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims an exact inequality between the given expression and the printed number."
+   }
+  },
+  {
+   "tag": "3/docstring/23",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730bcdabc8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1858,
+    "output": 60,
+    "reasoning": 0
+   },
+   "cost": 0.001019,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim about the decimal constant c256.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim about the decimal constant c256."
+   }
+  },
+  {
+   "tag": "3/docstring/23 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473652f939b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1858,
+    "output": 61,
+    "reasoning": 0
+   },
+   "cost": 0.00102,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the constant c256 is less than the given decimal.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant c256 is less than the given decimal."
+   }
+  },
+  {
+   "tag": "3/paper/20",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730b418f78779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1847,
+    "output": 61,
+    "reasoning": 0
+   },
+   "cost": 0.001015,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the constant c256 is less than the given decimal.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant c256 is less than the given decimal."
+   }
+  },
+  {
+   "tag": "3/paper/20 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547364828b97ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1847,
+    "output": 61,
+    "reasoning": 0
+   },
+   "cost": 0.001015,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the constant c256 is less than the given decimal.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the constant c256 is less than the given decimal."
+   }
+  },
+  {
+   "tag": "3/readme/22",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730bc4af07ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1836,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.001004,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"the sentence claims the decimal constant is below the printed bound\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "the sentence claims the decimal constant is below the printed bound"
+   }
+  },
+  {
+   "tag": "3/readme/22 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547364c8b2535d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1836,
+    "output": 58,
+    "reasoning": 0
+   },
+   "cost": 0.001005,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the decimal constant is less than the printed number.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence claims the decimal constant is less than the printed number."
+   }
+  },
+  {
+   "tag": "3/referee/26",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730cb5c9cf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1858,
+    "output": 67,
+    "reasoning": 0
+   },
+   "cost": 0.00103,
+   "raw": "```json\n{\n  \"statement\": \"2.5431316·10⁻⁶ > c256\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims the left-hand expression exceeds the right-hand one, using the given library name c256.\"\n}\n```",
+   "answer": {
+    "statement": "2.5431316·10⁻⁶ > c256",
+    "hole": "",
+    "why": "The sentence claims the left-hand expression exceeds the right-hand one, using the given library name c256."
+   }
+  },
+  {
+   "tag": "3/tweet/25",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730c9bd3ab6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1853,
+    "output": 75,
+    "reasoning": 0
+   },
+   "cost": 0.001039,
+   "raw": "```json\n{\n  \"statement\": \"1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431316·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with this numerical claim.\"\n}\n```",
+   "answer": {
+    "statement": "1/(6·256^2) + 3·10⁻⁴⁰/512 < 2.5431316·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with this numerical claim."
+   }
+  },
+  {
+   "tag": "3/tweet/25 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473659c97cd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1853,
+    "output": 62,
+    "reasoning": 0
+   },
+   "cost": 0.00102,
+   "raw": "```json\n{\n  \"statement\": \"c256 < 2.5431317·10⁻⁶\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the decimal constant is less than the given number.\"\n}\n```",
+   "answer": {
+    "statement": "c256 < 2.5431317·10⁻⁶",
+    "hole": "",
+    "why": "The sentence leads with the claim that the decimal constant is less than the given number."
+   }
+  },
+  {
+   "tag": "4/abstract/31",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54735e41dc78779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 208.4,
+   "usage": {
+    "input": 1911,
+    "output": 120,
+    "reasoning": 0
+   },
+   "cost": 0.001136,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim."
+   }
+  },
+  {
+   "tag": "4/abstract/31 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473662bb79f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1911,
+    "output": 120,
+    "reasoning": 0
+   },
+   "cost": 0.001136,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim."
+   }
+  },
+  {
+   "tag": "4/assistant/37",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731050ed28779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1911,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001141,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim for p₀."
+   }
+  },
+  {
+   "tag": "4/assistant/37 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547366c8a0e7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1911,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001141,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim for p₀."
+   }
+  },
+  {
+   "tag": "4/blog/34",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730f78c908779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1918,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001145,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact rational value of p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547310dabd0d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1901,
+    "output": 123,
+    "reasoning": 0
+   },
+   "cost": 0.001135,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact value of p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact value of p₀."
+   }
+  },
+  {
+   "tag": "4/blog/38 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473670ae8c8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1901,
+    "output": 123,
+    "reasoning": 0
+   },
+   "cost": 0.001135,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact value of p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact value of p₀."
+   }
+  },
+  {
+   "tag": "4/docstring/33",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730ebab73622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1914,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001143,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim for p₀."
+   }
+  },
+  {
+   "tag": "4/paper/30",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730dd6ef6622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1917,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001144,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim for p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547310fb8748779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1908,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.001048,
+   "raw": "```json\n{\n  \"statement\": \"p₀ ≤ 0.6818287\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that 0.6818287 is an upper bound for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818287",
+    "hole": "",
+    "why": "The sentence leads with the claim that 0.6818287 is an upper bound for p₀."
+   }
+  },
+  {
+   "tag": "4/paper/39 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736720c0ed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1908,
+    "output": 61,
+    "reasoning": 0
+   },
+   "cost": 0.001045,
+   "raw": "```json\n{\n  \"statement\": \"p₀ ≤ 0.6818288\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that p₀ does not exceed 0.6818288.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ ≤ 0.6818288",
+    "hole": "",
+    "why": "The sentence leads with the claim that p₀ does not exceed 0.6818288."
+   }
+  },
+  {
+   "tag": "4/readme/32",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730e19bfb7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.5,
+   "usage": {
+    "input": 1906,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001139,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact rational equality for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact rational equality for p₀."
+   }
+  },
+  {
+   "tag": "4/readme/32 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736657c688779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1906,
+    "output": 121,
+    "reasoning": 0
+   },
+   "cost": 0.001135,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact rational equality claim.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the exact rational equality claim."
+   }
+  },
+  {
+   "tag": "4/referee/36",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731035b66622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1919,
+    "output": 127,
+    "reasoning": 0
+   },
+   "cost": 0.00115,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that p₀ equals the given fraction exactly.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the claim that p₀ equals the given fraction exactly."
+   }
+  },
+  {
+   "tag": "4/referee/36 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736658fcb7ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1919,
+    "output": 127,
+    "reasoning": 0
+   },
+   "cost": 0.00115,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that p₀ equals the given fraction exactly.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000001",
+    "hole": "",
+    "why": "The sentence leads with the claim that p₀ equals the given fraction exactly."
+   }
+  },
+  {
+   "tag": "4/tweet/35",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54730f81842b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1873,
+    "output": 124,
+    "reasoning": 0
+   },
+   "cost": 0.001123,
+   "raw": "```json\n{\n  \"statement\": \"p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the exact equality claim for p₀.\"\n}\n```",
+   "answer": {
+    "statement": "p₀ = 10909258999421303588095230195816054408197/16000000000000000000000000000000000000000",
+    "hole": "",
+    "why": "The sentence leads with the exact equality claim for p₀."
+   }
+  },
+  {
+   "tag": "5/abstract/41",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731a0bdcce1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 23.0,
+   "usage": {
+    "input": 1778,
+    "output": 61,
+    "reasoning": 0
+   },
+   "cost": 0.000981,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals the printed value cut off with an ellipsis.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals the printed value cut off with an ellipsis."
+   }
+  },
+  {
+   "tag": "5/abstract/41 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547367bad2ce1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1778,
+    "output": 60,
+    "reasoning": 0
+   },
+   "cost": 0.000979,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals the printed digits followed by an ellipsis.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals the printed digits followed by an ellipsis."
+   }
+  },
+  {
+   "tag": "5/assistant/47",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731bacd5ae1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1807,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000998,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals 0.7532960…\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532960…"
+   }
+  },
+  {
+   "tag": "5/assistant/47 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547368c9a88d457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1807,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000998,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals 0.7532961…\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532961…"
+   }
+  },
+  {
+   "tag": "5/blog/44",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731aafe37028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1775,
+    "output": 33,
+    "reasoning": 0
+   },
+   "cost": 0.000937,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"approximate\",\n  \"why\": \"\\\"about\\\" is not a bar\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "approximate",
+    "why": "\"about\" is not a bar"
+   }
+  },
+  {
+   "tag": "5/docstring/43",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731a96bf38779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1784,
+    "output": 54,
+    "reasoning": 0
+   },
+   "cost": 0.000973,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical value of c₁* as printed.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of c₁* as printed."
+   }
+  },
+  {
+   "tag": "5/docstring/43 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547368499ec028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1784,
+    "output": 54,
+    "reasoning": 0
+   },
+   "cost": 0.000973,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical value of c₁* as printed.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of c₁* as printed."
+   }
+  },
+  {
+   "tag": "5/paper/40",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731992c4835d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 22.1,
+   "usage": {
+    "input": 1823,
+    "output": 54,
+    "reasoning": 0
+   },
+   "cost": 0.000992,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical value of c₁* as printed.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of c₁* as printed."
+   }
+  },
+  {
+   "tag": "5/paper/40 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736794dc9622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1823,
+    "output": 54,
+    "reasoning": 0
+   },
+   "cost": 0.000992,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical value of c₁* as printed.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of c₁* as printed."
+   }
+  },
+  {
+   "tag": "5/paper/48",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731bd1f7e8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 1777,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000967,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical claim for c₁*.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim for c₁*."
+   }
+  },
+  {
+   "tag": "5/paper/48 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736966b2c35d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1777,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000967,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical claim for c₁*.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim for c₁*."
+   }
+  },
+  {
+   "tag": "5/readme/42",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731a22b22028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1799,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000994,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals 0.7532960…\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532960…"
+   }
+  },
+  {
+   "tag": "5/readme/42 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547367cef2235d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1799,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000994,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals 0.7532961…\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532961…"
+   }
+  },
+  {
+   "tag": "5/referee/46",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731b49bc87ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1810,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000999,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals 0.7532960…\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532960…"
+   }
+  },
+  {
+   "tag": "5/referee/46 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473688eb3f8779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.1,
+   "usage": {
+    "input": 1810,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000999,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that c₁* equals 0.7532961…\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the claim that c₁* equals 0.7532961…"
+   }
+  },
+  {
+   "tag": "5/tweet/45",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731b26e5fd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1777,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000967,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532960…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical value of c₁*.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532960…",
+    "hole": "",
+    "why": "The sentence leads with the numerical value of c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/45 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473687bac3b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1777,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000967,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = 0.7532961…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical claim for c₁*.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = 0.7532961…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim for c₁*."
+   }
+  },
+  {
+   "tag": "5/tweet/49",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731c46d307ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1766,
+    "output": 58,
+    "reasoning": 0
+   },
+   "cost": 0.00097,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = published as 0.753296\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the value is rounded (≈), so the bar is written as published.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = published as 0.753296",
+    "hole": "",
+    "why": "The sentence states the value is rounded (≈), so the bar is written as published."
+   }
+  },
+  {
+   "tag": "5/tweet/49 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54736966e62e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1766,
+    "output": 62,
+    "reasoning": 0
+   },
+   "cost": 0.000976,
+   "raw": "```json\n{\n  \"statement\": \"c₁* = published as 0.753297\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the value is rounded (≈) and prints 0.753297.\"\n}\n```",
+   "answer": {
+    "statement": "c₁* = published as 0.753297",
+    "hole": "",
+    "why": "The sentence states the value is rounded (≈) and prints 0.753297."
+   }
+  },
+  {
+   "tag": "6/abstract/51",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731cc79fae1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1773,
+    "output": 41,
+    "reasoning": 0
+   },
+   "cost": 0.000948,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/abstract/51 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737b7696df187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 46.3,
+   "usage": {
+    "input": 1773,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000964,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical claim about the proportion.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim about the proportion."
+   }
+  },
+  {
+   "tag": "6/assistant/57",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731ebdb5635d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1772,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000964,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the equality claim for the proportion.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the equality claim for the proportion."
+   }
+  },
+  {
+   "tag": "6/assistant/57 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737c21f65622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.5,
+   "usage": {
+    "input": 1772,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000964,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the equality claim for the proportion.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the equality claim for the proportion."
+   }
+  },
+  {
+   "tag": "6/blog/54",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731db39a97ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1763,
+    "output": 68,
+    "reasoning": 0
+   },
+   "cost": 0.000983,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that two minus the reciprocal of c₁* equals 0.67250…\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the claim that two minus the reciprocal of c₁* equals 0.67250…"
+   }
+  },
+  {
+   "tag": "6/blog/54 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737bd1dca622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1763,
+    "output": 68,
+    "reasoning": 0
+   },
+   "cost": 0.000983,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that two minus the reciprocal of c₁* equals 0.67251…\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the claim that two minus the reciprocal of c₁* equals 0.67251…"
+   }
+  },
+  {
+   "tag": "6/docstring/53",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731d5a8907ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1776,
+    "output": 42,
+    "reasoning": 0
+   },
+   "cost": 0.000951,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1 / c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1 / c₁* = 0.67250…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/docstring/53 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737b97e6fd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.9,
+   "usage": {
+    "input": 1776,
+    "output": 53,
+    "reasoning": 0
+   },
+   "cost": 0.000968,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1 / c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the equality claim for the proportion.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1 / c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the equality claim for the proportion."
+   }
+  },
+  {
+   "tag": "6/paper/50",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731c6e8be622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1774,
+    "output": 68,
+    "reasoning": 0
+   },
+   "cost": 0.000989,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that 2 - 1/c₁* equals 0.67250…\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the claim that 2 - 1/c₁* equals 0.67250…"
+   }
+  },
+  {
+   "tag": "6/paper/50 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473699cde78779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1774,
+    "output": 52,
+    "reasoning": 0
+   },
+   "cost": 0.000965,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the numerical claim about the proportion.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": "The sentence leads with the numerical claim about the proportion."
+   }
+  },
+  {
+   "tag": "6/paper/58",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731ee9ed77ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1762,
+    "output": 110,
+    "reasoning": 0
+   },
+   "cost": 0.001046,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 0 < j < length(mt-series) : (count of simple zeros on the line in mt-series up to j / j) ≥ 2 - 1/c₁* published as 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims a lower bound on the proportion, expressed as 2 - 1/c₁* and published as 0.67250…\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 0 < j < length(mt-series) : (count of simple zeros on the line in mt-series up to j / j) ≥ 2 - 1/c₁* published as 0.67250…",
+    "hole": "",
+    "why": "The sentence claims a lower bound on the proportion, expressed as 2 - 1/c₁* and published as 0.67250…"
+   }
+  },
+  {
+   "tag": "6/readme/52",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731cf9bfaf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.8,
+   "usage": {
+    "input": 1764,
+    "output": 41,
+    "reasoning": 0
+   },
+   "cost": 0.000944,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/readme/52 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737b5cd86b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.7,
+   "usage": {
+    "input": 1764,
+    "output": 41,
+    "reasoning": 0
+   },
+   "cost": 0.000944,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67251…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67251…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "6/readme/59",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731f529ffd457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.4,
+   "usage": {
+    "input": 1739,
+    "output": 56,
+    "reasoning": 0
+   },
+   "cost": 0.000954,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.6725…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence prints a truncated decimal with ellipsis implied by '≈'.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.6725…",
+    "hole": "",
+    "why": "The sentence prints a truncated decimal with ellipsis implied by '≈'."
+   }
+  },
+  {
+   "tag": "6/readme/59 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737c71943b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1739,
+    "output": 58,
+    "reasoning": 0
+   },
+   "cost": 0.000956,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.6726…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence prints the value as an approximation with ellipsis implied by '≈'.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.6726…",
+    "hole": "",
+    "why": "The sentence prints the value as an approximation with ellipsis implied by '≈'."
+   }
+  },
+  {
+   "tag": "6/referee/56",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731e6ca71b6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1776,
+    "output": 59,
+    "reasoning": 0
+   },
+   "cost": 0.000977,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* ≥ 0.6725\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the proportion is at least 0.6725.\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* ≥ 0.6725",
+    "hole": "",
+    "why": "The sentence leads with the claim that the proportion is at least 0.6725."
+   }
+  },
+  {
+   "tag": "6/referee/56 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737c02c70e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1776,
+    "output": 76,
+    "reasoning": 0
+   },
+   "cost": 0.001002,
+   "raw": "```json\n{\n  \"statement\": \"2 - 1/c₁* = 0.67250…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that 2 − 1/c₁* equals 0.67250… (cut off with an ellipsis).\"\n}\n```",
+   "answer": {
+    "statement": "2 - 1/c₁* = 0.67250…",
+    "hole": "",
+    "why": "The sentence leads with the claim that 2 − 1/c₁* equals 0.67250… (cut off with an ellipsis)."
+   }
+  },
+  {
+   "tag": "6/tweet/55",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731df4db56b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1762,
+    "output": 117,
+    "reasoning": 0
+   },
+   "cost": 0.001056,
+   "raw": "```json\n{\n  \"statement\": \"for every j in 1 < j < 672500000 : (2 - 1/c₁*)/2 ≤ (count of k in 1 < k < j : mt_series[k] = 1) / j\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims that for every proportion up to 67.25%, the fraction of simple zeros on the critical line is at least half of (2 - 1/c₁*).\"\n}\n```",
+   "answer": {
+    "statement": "for every j in 1 < j < 672500000 : (2 - 1/c₁*)/2 ≤ (count of k in 1 < k < j : mt_series[k] = 1) / j",
+    "hole": "",
+    "why": "The sentence claims that for every proportion up to 67.25%, the fraction of simple zeros on the critical line is at least half of (2 - 1/c₁*)."
+   }
+  },
+  {
+   "tag": "7/abstract/61",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54732032e9ed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.0,
+   "usage": {
+    "input": 1752,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.000962,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims equality with a number cut off by an ellipsis.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims equality with a number cut off by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/abstract/61 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737d1ef377ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 3.2,
+   "usage": {
+    "input": 1752,
+    "output": 58,
+    "reasoning": 0
+   },
+   "cost": 0.000963,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the equality claim for the given term and printed value.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with the equality claim for the given term and printed value."
+   }
+  },
+  {
+   "tag": "7/assistant/67",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54732215a48f187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1755,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000942,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/assistant/67 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737e71e1c6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1755,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000942,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/blog/64",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547320fbfbb028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1754,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.000963,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims equality with the printed digits followed by an ellipsis.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims equality with the printed digits followed by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/blog/64 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737dd3f4de1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1754,
+    "output": 57,
+    "reasoning": 0
+   },
+   "cost": 0.000963,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims equality with the printed digits followed by an ellipsis.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence claims equality with the printed digits followed by an ellipsis."
+   }
+  },
+  {
+   "tag": "7/blog/69",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547322d7b2cf187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1748,
+    "output": 62,
+    "reasoning": 0
+   },
+   "cost": 0.000967,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = published as 0.836\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the proportion is approximately 0.836, which is a rounded value.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = published as 0.836",
+    "hole": "",
+    "why": "The sentence states the proportion is approximately 0.836, which is a rounded value."
+   }
+  },
+  {
+   "tag": "7/blog/69 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737ee6f7b6b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1748,
+    "output": 63,
+    "reasoning": 0
+   },
+   "cost": 0.000968,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = published as 0.837\",\n  \"hole\": \"\",\n  \"why\": \"The sentence states the proportion is approximately 0.837, which is a published rounded value.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = published as 0.837",
+    "hole": "",
+    "why": "The sentence states the proportion is approximately 0.837, which is a published rounded value."
+   }
+  },
+  {
+   "tag": "7/docstring/63",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547320e5ed06b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1754,
+    "output": 45,
+    "reasoning": 0
+   },
+   "cost": 0.000945,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1 / c₁*) / 2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1 / c₁*) / 2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/docstring/63 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737d51be435d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1754,
+    "output": 45,
+    "reasoning": 0
+   },
+   "cost": 0.000945,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1 / c₁*) / 2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1 / c₁*) / 2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/paper/60",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54731f979698779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.5,
+   "usage": {
+    "input": 1753,
+    "output": 64,
+    "reasoning": 0
+   },
+   "cost": 0.000972,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that the distinct proportion equals 0.83625…\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the claim that the distinct proportion equals 0.83625…"
+   }
+  },
+  {
+   "tag": "7/paper/60 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737caad0eb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1753,
+    "output": 55,
+    "reasoning": 0
+   },
+   "cost": 0.000959,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the equality claim for the distinct proportion.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": "The sentence leads with the equality claim for the distinct proportion."
+   }
+  },
+  {
+   "tag": "7/paper/68",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547333a2f538779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.0,
+   "usage": {
+    "input": 1759,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000944,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/paper/68 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737e7b8407ec3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1759,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000944,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/readme/62",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473204384ed457-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.6,
+   "usage": {
+    "input": 1747,
+    "output": 55,
+    "reasoning": 0
+   },
+   "cost": 0.000956,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with an equality claim for the distinct proportion.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with an equality claim for the distinct proportion."
+   }
+  },
+  {
+   "tag": "7/readme/62 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737d4dcc2028b-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1747,
+    "output": 49,
+    "reasoning": 0
+   },
+   "cost": 0.000947,
+   "raw": "```json\n{\n  \"statement\": \"distinct_proportion = (3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "distinct_proportion = (3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/referee/66",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547321d4b7a622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.9,
+   "usage": {
+    "input": 1769,
+    "output": 79,
+    "reasoning": 0
+   },
+   "cost": 0.001003,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence leads with the claim that (3 − 1/c₁*)/2 equals 0.83625…, and notes the manuscript's rounding separately.\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence leads with the claim that (3 − 1/c₁*)/2 equals 0.83625…, and notes the manuscript's rounding separately."
+   }
+  },
+  {
+   "tag": "7/referee/66 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737e639d48779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1769,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000949,
+   "raw": "```json\n{\n  \"statement\": \"(3 - 1/c₁*)/2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "(3 - 1/c₁*)/2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "7/tweet/65",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473216fdf98779-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.7,
+   "usage": {
+    "input": 1749,
+    "output": 54,
+    "reasoning": 0
+   },
+   "cost": 0.000955,
+   "raw": "```json\n{\n  \"statement\": \"3 - 1/c₁* / 2 = 0.83625…\",\n  \"hole\": \"\",\n  \"why\": \"The sentence claims an equality with a truncated decimal.\"\n}\n```",
+   "answer": {
+    "statement": "3 - 1/c₁* / 2 = 0.83625…",
+    "hole": "",
+    "why": "The sentence claims an equality with a truncated decimal."
+   }
+  },
+  {
+   "tag": "7/tweet/65 planted",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54737de2c896b18-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1749,
+    "output": 44,
+    "reasoning": 0
+   },
+   "cost": 0.000941,
+   "raw": "```json\n{\n  \"statement\": \"3 - 1/c₁* / 2 = 0.83626…\",\n  \"hole\": \"\",\n  \"why\": \"\"\n}\n```",
+   "answer": {
+    "statement": "3 - 1/c₁* / 2 = 0.83626…",
+    "hole": "",
+    "why": ""
+   }
+  },
+  {
+   "tag": "8/abstract/71",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547335a4b2bb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 45.5,
+   "usage": {
+    "input": 1820,
+    "output": 42,
+    "reasoning": 0
+   },
+   "cost": 0.000973,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every Dirichlet L-function, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every Dirichlet L-function, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/assistant/77",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473361deede1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.1,
+   "usage": {
+    "input": 1856,
+    "output": 45,
+    "reasoning": 0
+   },
+   "cost": 0.000996,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every zero of every Dirichlet L-function, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every zero of every Dirichlet L-function, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/blog/74",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54733527819622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1819,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000974,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every nontrivial zero of ζ, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every nontrivial zero of ζ, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/docstring/73",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547334adff335d8-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 1833,
+    "output": 46,
+    "reasoning": 0
+   },
+   "cost": 0.000986,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every nontrivial zero of the Riemann zeta function, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every nontrivial zero of the Riemann zeta function, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/paper/70",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54732377d4fb6f3-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.2,
+   "usage": {
+    "input": 1828,
+    "output": 42,
+    "reasoning": 0
+   },
+   "cost": 0.000977,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every Dirichlet L-function, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every Dirichlet L-function, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/paper/78",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473368b89af187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 1837,
+    "output": 44,
+    "reasoning": 0
+   },
+   "cost": 0.000984,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every nontrivial zero of ζ(s), which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every nontrivial zero of ζ(s), which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/readme/72",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a5473342caef622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.3,
+   "usage": {
+    "input": 1821,
+    "output": 45,
+    "reasoning": 0
+   },
+   "cost": 0.000978,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every Dirichlet L-function and every zero, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every Dirichlet L-function and every zero, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/referee/76",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a54733618e81e1ab-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 2.3,
+   "usage": {
+    "input": 1829,
+    "output": 39,
+    "reasoning": 0
+   },
+   "cost": 0.000973,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"prose\",\n  \"why\": \"the sentence describes a theorem and its argument, not a numerical claim\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "prose",
+    "why": "the sentence describes a theorem and its argument, not a numerical claim"
+   }
+  },
+  {
+   "tag": "8/tweet/75",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547335a7b9ef187-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.2,
+   "usage": {
+    "input": 1819,
+    "output": 42,
+    "reasoning": 0
+   },
+   "cost": 0.000972,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every Dirichlet L-function, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every Dirichlet L-function, which no finite check decides"
+   }
+  },
+  {
+   "tag": "8/tweet/79",
+   "model": "mistralai/mistral-large-2512",
+   "requestId": "a547336faa69622e-GRU",
+   "stopReason": "stop",
+   "effort": "high",
+   "seconds": 1.4,
+   "usage": {
+    "input": 1823,
+    "output": 43,
+    "reasoning": 0
+   },
+   "cost": 0.000976,
+   "raw": "```json\n{\n  \"statement\": \"\",\n  \"hole\": \"unbounded\",\n  \"why\": \"a claim about every L-function and every zeta zero, which no finite check decides\"\n}\n```",
+   "answer": {
+    "statement": "",
+    "hole": "unbounded",
+    "why": "a claim about every L-function and every zeta zero, which no finite check decides"
+   }
+  }
+ ]
+}

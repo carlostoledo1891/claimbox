@@ -81,4 +81,87 @@ data   x3147 = corpus/optimization-constants/l2026/certificate_3c_147pt.json
 read   x3147 as doubles
 data   x3395 = corpus/optimization-constants/mi2026/c3c_pr93/certificate_3c_v3_95pt.json
 read   x3395 as doubles
-
+claim  x_gemini_4_argon_ea_circles_alphaevolve_2025 over circ_alphaevolve_2025
+  quote "n = 21 circles in a rectangle of perimeter 4 (bounding box w + h ≤ 2), no overlaps: Σ r = 2.3658321335" from P
+  : circ_alphaevolve_2025 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658321335
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_circles_ours_2026 over circ_ours_2026
+  quote "n = 21 circles in a rectangle of perimeter 4 (bounding box w + h ≤ 2), no overlaps: Σ r = 2.3658323758" from P
+  : circ_ours_2026 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323758
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_heilbronn_alphaevolve_2025 over heil_alphaevolve_2025
+  quote "n = 14 points, min triangle area / convex-hull area = 0.0278355716" from P
+  : heil_alphaevolve_2025 is a feasible solution of "Heilbronn Problem for Convex Regions (n = 14)" and its score is 0.0278355716
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_heilbronn_ours_2026 over heil_ours_2026
+  quote "n = 14 points, min triangle area / convex-hull area = 0.0278355806" from P
+  : heil_ours_2026 is a feasible solution of "Heilbronn Problem for Convex Regions (n = 14)" and its score is 0.0278355806
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_mindist_alphaevolve_2025 over min_alphaevolve_2025
+  quote "n = 16 points, (max distance / min distance)² = 12.889267" from P
+  : min_alphaevolve_2025 is a feasible solution of "Minimizing Max/Min Distance Ratio (2D, n=16)" and its score is 12.889267
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_mindist_ours_2026 over min_ours_2026
+  quote "n = 16 points, (max distance / min distance)² = 12.889231" from P
+  : min_ours_2026 is a feasible solution of "Minimizing Max/Min Distance Ratio (2D, n=16)" and its score is 12.889231
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_overlap_haugland_2016 over erdo_haugland_2016
+  quote "a step function h with 51 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380928" from P
+  : erdo_haugland_2016 is a feasible solution of "erdos-minimum-overlap" and its score is 0.380928
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_overlap_ttt_discover_2026 over erdo_ttt_discover_2026
+  quote "a step function h with 600 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380877" from P
+  : ttt_discover_2026.py is a feasible solution of "erdos-minimum-overlap" and its score is 0.380877
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_overlap_together_ai_2026 over erdo_together_ai_2026
+  quote "a step function h with 600 steps, 0 ≤ h ≤ 1, Σh = n/2: upper bound 0.380872" from P
+  : together_ai_2026.py is a feasible solution of "erdos-minimum-overlap" and its score is 0.380872
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_edges_ours_2026 over edge_ours_2026
+  quote "100 rows of 20 weights → (edge density, triangle density) points; the platform's envelope score = -0.712257" from P
+  : ours_2026.py is a feasible solution of "edges-vs-triangles" and its score is -0.712257
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_autocorr_ours_2026 over firs_ours_2026
+  quote "f ≥ 0 as 30000 values on [−1/4, 1/4]: C₁ ≤ 1.50286287" from P
+  : ours_2026.json is a feasible solution of "first-autocorrelation" and its score is 1.50286287
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_flat_alphaevolve_2025 over flat_alphaevolve_2025
+  quote "70 coefficients ±1: C⁺ = max_{|z|=1} |g(z)| / √71 = 1.340926" from P
+  : flat_alphaevolve_2025 is a feasible solution of "flat-polynomials" and its score is 1.340926
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_hexagons_alphaevolve_2025 over hexa_alphaevolve_2025
+  quote "12 unit hexagons inside a hexagon of side 3.9419124, no overlaps, all inside: score = the outer side" from P
+  : alphaevolve_2025.json is a feasible solution of "hexagon-packing" and its score is 3.9419124
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_ea_hexagons_ours_2026 over hexa_ours_2026
+  quote "12 unit hexagons inside a hexagon of side 3.9416524, no overlaps, all inside: score = the outer side" from P
+  : ours_2026.json is a feasible solution of "hexagon-packing" and its score is 3.9416524
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_first_autocorrelation_inequality over x2
+  quote "the object is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and the platform's score of it is 1.5027436492326166 (minimize)" from P
+  : x2 is a feasible solution of "First Autocorrelation Inequality (Upper Bound)" and its score is 1.5027436492326166
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_flat_polynomials over x12
+  quote "the object is a feasible solution of "Flat Polynomials (degree 69)" and the platform's score of it is 1.2807274949642548 (minimize)" from P
+  : x12 is a feasible solution of "Flat Polynomials (degree 69)" and its score is 1.2807274949642548
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_edges_vs_triangles over x13
+  quote "the object is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and the platform's score of it is -0.7117091757692578 (maximize)" from P
+  : x13 is a feasible solution of "Edges vs Triangles (Minimal Triangle Density)" and its score is -0.7117091757692578
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_circles_rectangle over x18
+  quote "the object is a feasible solution of "Circles in a Rectangle (n = 21)" and the platform's score of it is 2.3658323759098577 (maximize)" from P
+  : x18 is a feasible solution of "Circles in a Rectangle (n = 21)" and its score is 2.3658323759098577
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_kissing_number_d12 over x22
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and the platform's score of it is 3 (minimize)" from P
+  : best-22.json is a feasible solution of "Kissing Number in Dimension 12 (n=841)" and its score is 3
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_kissing_number_d11_605 over x24
+  quote "the object is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and the platform's score of it is 1.7102381876301677 (minimize)" from P
+  : x24 is a feasible solution of "Kissing Number in Dimension 11 (n=605)" and its score is 1.7102381876301677
+  proposed by model:gemini-4-argon
+claim  x_gemini_4_argon_mc100_ea_best_kissing_number_d12_842 over x25
+  quote "the object is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and the platform's score of it is 0.5469062458557646 (minimize)" from P
+  : best-25.json is a feasible solution of "Kissing Number in Dimension 12 (n=842)" and its score is 0.5469062458557646
+  proposed by model:gemini-4-argon
