@@ -21,7 +21,7 @@ from fractions import Fraction
 from . import grammar, lang, translate as T
 from .grammar import Refusal
 
-ELEMENTS = ('decimals', 'doubles', 'integers', 'rationals')          # the readings today's translator decodes
+ELEMENTS = ('decimals', 'doubles', 'integers', 'rationals', 'Z[√2] pairs')          # the readings today's translator decodes
 MACHINE_READINGS = ('table (Q, 2)', 'text', 'bytes')                 # the readings the machine decider decodes itself
 MACHINE_DECIDER = 'instruments/claimbox/tm.py'
 
@@ -180,7 +180,8 @@ def resolve(tree, c, readings):
             raise Refusal('definition', f'the library has {n} {e["version"]}; this file uses {n} {uses.get(n)}')
         found.append((n, e))
     if body[0] == 'config':
-        found.append(('kissing configuration', LIB.lookup('kissing configuration')))
+        kname = 'kissing configuration, Z[√2]' if 'Z[√2] pairs' in readings else 'kissing configuration'
+        found.append((kname, LIB.lookup(kname)))
     elif body[0] == 'score':
         e = LIB.platform(body[2]) or LIB.recorded_platform()     # its verifier written here, else cert-machine's record of it
         found.append((body[2], e))

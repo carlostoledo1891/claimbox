@@ -25,7 +25,7 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8–10 not started. Tests: `make test` → 555 pass, 0 fail, 140/140 red controls (85 s; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
+begun); 8–10 not started. Tests: `make test` → 560 pass, 0 fail, 142/142 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -198,6 +198,15 @@ its records hold); the build refuses a word that is not its record's or a claim 
 new on today's register (TODO.md). ITEM 8 BLOCKED: a hexagon's vertices live in Q(√3); no √3 in the receiver's language. Asked of
 cert-machine-5b for the operator: a REPAIRED row's word for the claim it decided (Erdős overlap: 14 proposals REFUSED), an
 integer Product (C*). make test 555 pass, 0 fail, 140/140. The page: unchanged since 746d1cb's republish.
+
+Z[√2] PAIRS (item 13's last loose end): the reading `Z[√2] pairs` (lang, compile ELEMENTS) and library 'kissing configuration,
+Z[√2]' v1 — rows of integer pairs (p, q) as p + q√2; every inner product A + B√2 in integers; on one rational shell (two structural
+equalities: the √2 part of every norm is 0, every norm is vector 0's) a pair is 60° apart iff (2A − C) + 2B√2 ≤ 0, the sign decided
+with √2 trapped between two consecutive convergents (r1² < 2 < r2², width 4.7·10⁻⁷⁹: E + max(F r1, F r2) ≤ 0 agrees in sign for
+|E|, |F| ≤ 10¹⁵). kiss-ea-604 (EinsteinArena's headline K(11) ≥ 604, corpus/kissing/ea-d11-604.json, the kissing ledger's row): the
+object's three predicates over 182,106 pairs CERTIFIED by cert-machine in 94 s. Battery: the trap exact, a 30-vector subset
+certified, one q moved and one vector off the shell refuted, the record's word. The register: 404 proposals, validated 27, not
+stated 73. make test 560 pass, 0 fail, 142/142. The page moved (one more decided): republish asked of cert-machine-5b.
 
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.

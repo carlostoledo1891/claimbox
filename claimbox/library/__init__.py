@@ -17,6 +17,7 @@ MIT"""
 from .decompositions import DECIDER as TENSOR_DECIDER, RECORDS as TENSOR_RECORDS
 from .einstein_arena import PLATFORM, RECORDED, RECORDED_DECIDER
 from .selfpower import SELFPOWER
+from .kissing import SQRT2_STRUCTURAL, SQRT2_REDUCTION
 from .machines import DECIDER, MACHINES
 from .step_functions import PRIMITIVE
 from .zeta23 import CERTIFICATE, ckey
@@ -52,6 +53,10 @@ def _entries():
     out.append({'names': ('kissing configuration',), 'version': 'v1', 'file': 'kissing.py', 'what': 'n vectors in dimension d, every pair at least 60° apart',
                 'readings': NUMERIC, 'route': 'an exact expression over every pair, decided by the checker from the object',
                 'conventions': ['4·(u·v)·|u·v| ≤ |u|²·|v|² for every pair, exact over the reading of the bytes (the angle is at least 60° iff u·v ≤ |u||v|/2)']})
+    out.append({'names': ('kissing configuration, Z[√2]',), 'version': 'v1', 'file': 'kissing.py',
+                'what': 'n vectors in dimension d with coordinates p + q√2 as integer pairs, on one rational shell, every pair at least 60° apart',
+                'readings': ('Z[√2] pairs',), 'route': 'exact integer expressions over every pair, √2 trapped between two convergents, decided by the checker from the object',
+                'conventions': [s['what'] for s in SQRT2_STRUCTURAL] + [SQRT2_REDUCTION.split(';')[0]]})
     for key, e in CERTIFICATE.items():
         constant = e.get('constant')
         out.append({'names': tuple(e['keys']) + ALIASES.get(key, ()), 'version': 'v1', 'file': 'zeta23.py', 'what': e.get('value', key),

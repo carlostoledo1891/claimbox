@@ -101,8 +101,7 @@ def register_context():
 TENSOR_RECORDS = {'mc100-at-q-': 'certs/mc100-alphatensor-q.json', 'mc100-at-f2-': 'certs/mc100-alphatensor-f2.json'}
 KISSING_JOBS = {'kiss-alphaevolve-593': ('corpus/alphaevolve-jobs.json', 'ae-kissing-d11-593', 'alphaevolve'),     # the reader job that
                 'kiss-ea-594-winner': ('corpus/einstein-arena-jobs.json', 'ea-kissing-kissing-number-d11', 'einstein-arena')}   # states it
-# not given bytes: kiss-ea-604 (its file prints coordinates in Z[√2], a reading the library does not have), the Station's three
-# 604s and its 582 shell (one .npz holds them; no JSON of each is pinned), D4 and E8 (generated in cert-machine, not published)
+# not given bytes: the Station's three 604s and its 582 shell (one .npz holds them; no JSON of each is pinned), D4 and E8 (generated in cert-machine, not published)
 # batch 2 (2026-10-31): the sentences whose ledger row carries one of the receiver's words, each with the file its decider read
 # and that row — {register id: (the pinned file, the ledger, its row, the decider)}
 LEDGER_ROWS = {'optconst-71': ('corpus/optimization-constants/num2026/fei_c71_n18_artifact.json', 'certs/fei-ledger.json', '71', 'instruments/fei/fei.py'),
@@ -152,6 +151,12 @@ def register_extra(root):
         for r in json.load(open(ea, encoding='utf-8'))['rows']:
             prob, who = r['id'].split('/')
             out.setdefault('ea-' + prob + '-' + who, (r['file'], 'doubles' if r['file'].endswith('.json') else None, None, None, None))
+    kl = os.path.join(root, 'certs', 'kissing-ledger.json')     # the headline 604 (2026-11-02): Z[√2] pairs, the library's reading
+    if os.path.isfile(kl) and os.path.isfile(os.path.join(root, 'corpus', 'kissing', 'ea-d11-604.json')):
+        row = next((r for r in json.load(open(kl, encoding='utf-8'))['rows'] if r['id'] == 'ea-604'), None)
+        if row:
+            out['kiss-ea-604'] = ('corpus/kissing/ea-d11-604.json', 'Z[√2] pairs', None, None,
+                                  {'path': 'certs/kissing-ledger.json', 'row': 'ea-604', 'value': None, 'verdict': row['verdict']})
     for rid, (jobs, jid, folder) in KISSING_JOBS.items():
         j = next(x for x in json.load(open(os.path.join(REPO, jobs), encoding='utf-8'))['jobs'] if x['id'] == jid)
         ref = folder + '/' + jid

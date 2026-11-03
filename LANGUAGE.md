@@ -145,7 +145,8 @@ is computed by cert-machine's tm.js (tools/attack_twins.py, corpus/attack/predic
 A definition is written once and used by name. The library is `claimbox/library/` (roadmap step 4), one file per family —
 `step_functions.py` (C_1a, C_1b, C_1c, C_1d), `einstein_arena.py` (seven platform scores, written from the platform's own
 verifiers, the convex Heilbronn problem from the SOTA table's; over the SOTA table's bytes a score's box is the half unit of
-its print), `kissing.py`, `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
+its print), `kissing.py` (the kissing condition over a numeric reading, and over `Z[√2] pairs` with √2 trapped between two
+convergents), `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
 (the machine statements), `decompositions.py` (matrix-multiplication tensor decompositions, decided by cert-machine's tensor
 decider and its record) — and its registry, `claimbox/library/__init__.py`, lists every definition with:
 
@@ -176,6 +177,7 @@ subtraction; x/0), because statements carry their defects in their conventions (
 | `integers` | exact integers | rozetyp's weights; the law's enclosures |
 | `rationals` | `p/q` strings, exactly | ring-loading records |
 | `int64` | integers that wrap at 2⁶³ | (none yet) |
+| `Z[√2] pairs` | integer pairs (p, q) read as p + q√2, each row 2d integers for d coordinates | EinsteinArena's 604-point kissing configuration |
 | `table (Q, 2)` | a Turing-machine transition table | the cryptids tables |
 | `text` | text, compiled or quoted as it is | an upstream machine source in `standard`, `tursi` or `nql` |
 | `bytes` | the bytes as they are, for a digest | a file whose sha256 is claimed |

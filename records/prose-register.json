@@ -3,9 +3,9 @@
  "corpus": "register",
  "summary": {
   "sentences": 132,
-  "proposals": 403,
+  "proposals": 404,
   "byKind": {
-   "grammar": 52,
+   "grammar": 53,
    "model:claude-opus-5-5": 24,
    "model:deepseek-v4-pro": 27,
    "model:deepseek-v4-pro.guide": 25,
@@ -25,15 +25,15 @@
   "perKind": {
    "grammar": {
     "proposed": 132,
-    "compiled": 52,
-    "holes": 80,
+    "compiled": 53,
+    "holes": 79,
     "faithful": 18,
     "unfaithful": 0,
     "sameValueOtherPrint": 0,
-    "noReference": 34,
+    "noReference": 35,
     "plantedHeld": 1,
     "plantedBroke": 0,
-    "passed": 52
+    "passed": 53
    },
    "model:claude-opus-5-5": {
     "proposed": 66,
@@ -216,25 +216,25 @@
     "passed": 20
    }
   },
-  "anchored": 403,
-  "printedBack": 403,
+  "anchored": 404,
+  "printedBack": 404,
   "planted": 87,
   "faithful": 222,
   "unfaithful": 0,
   "sameValueOtherPrint": 6,
   "validated": 27,
-  "notStated": 74,
+  "notStated": 73,
   "sensitivity": {
    "held": 67,
    "broke": 0,
    "tight": 0,
    "slack": 4,
-   "notRun": 336
+   "notRun": 337
   },
   "vacuity": {
    "depends": 0,
    "flagged": 0,
-   "notRun": 403
+   "notRun": 404
   },
   "pairs": {
    "sentences": 28,
@@ -249,7 +249,7 @@
    "grammar": {
     "same": 0,
     "moved": 0,
-    "unread": 17
+    "unread": 18
    },
    "model:claude-opus-5-5": {
     "same": 0,
@@ -1235,14 +1235,39 @@
    "proposals": [
     {
      "kind": "grammar",
-     "refused": {
-      "rule": "data",
-      "hole": "data",
-      "why": "the sentence names no pinned bytes this corpus gives it"
-     }
+     "object": "p-kiss-ea-604",
+     "sha256": "af2eaa0981a4dd1fae4161032715525ca686dc34c1c94a671395289ef75ccb76",
+     "decision": {
+      "pin": {
+       "path": "corpus/kissing/ea-d11-604.json",
+       "sha256": "0bde9ca2c434d7beb5af63a64a291498e8c264d9a5718b738e92dd70b9ba7761"
+      },
+      "count": 604,
+      "elements": "integers",
+      "reading": "universal",
+      "ineqs": [],
+      "named": [],
+      "record": [
+       "certs/kissing-ledger.json",
+       "ea-604",
+       null,
+       "CERTIFIED",
+       null
+      ]
+     },
+     "anchored": true,
+     "printedBack": true,
+     "planted": null,
+     "paraphrase": "unread",
+     "faithful": null,
+     "word": "CERTIFIED",
+     "certMachine": "ADMITTED  p-kiss-ea-604  [CERTIFIED · CERTIFIED · CERTIFIED]  from the object: CERTIFIED · CERTIFIED · CERTIFIED  97.311 s",
+     "sensitivity": null,
+     "vacuity": null,
+     "fails": []
     }
    ],
-   "outcome": "not stated: data"
+   "outcome": "proposed, not validated: one kind of proposer only"
   },
   {
    "id": "kiss-ganzhinov-592",

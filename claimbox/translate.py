@@ -512,13 +512,19 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             if primitive:
                 raise
             kind, shp, sizes = 'records', ['n'], {'n': len(arr)}   # structured entries, read by the named decider
-    if elements and kind != 'records':   # a reading of JSON numbers; structured records are the named decider's to read
+    sqrt2 = elements == 'Z[√2] pairs'    # integer pairs (p, q) read as p + q√2 (library kissing.py, 2026-11-02)
+    if sqrt2:
+        if kind != 'integers' or 'd' not in sizes or sizes['d'] % 2:
+            raise Refusal('data', 'Z[√2] pairs is a reading of rows of integer pairs; the bytes hold ' + kind + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values'))
+    elif elements and kind != 'records':   # a reading of JSON numbers; structured records are the named decider's to read
         if elements == 'decimals' and kind != 'doubles':
             raise Refusal('data', 'decimals is a reading of JSON numbers; these are ' + kind)
         kind = elements
     count = sizes['n']
     how_read = {'doubles': 'each JSON number as the double it denotes, exactly', 'decimals': 'each JSON number as the decimal digits printed, exactly',
                 'integers': 'each JSON integer exactly', 'rationals': 'each p/q string as the rational it names', 'records': 'structured entries, read by the named decider'}[kind]
+    if sqrt2:
+        how_read += '; each row the integer pairs (p, q) of ' + str(sizes['d'] // 2) + ' coordinates p + q√2'
     decoder = 'the array at ' + (select or 'the top level') + ': ' + str(count) + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values') + ', ' + how_read
     if doc is None:
         decoder = 'a binary archive, read by the named decider; nothing is decoded here'
@@ -567,6 +573,18 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         ref = ('the bar is the printed ' + printed + ' taken exactly (' + str(bar if bar is not None else shape['c']) + '); the value is ' + cert['value'] +
                ', computed from the pinned bytes by the expression itself, read as ' + how_read + '; the bytes are LawN256.lean\'s integer literals decoded into JSON by the reader (' +
                str((doc.get('derivedFrom') or {}).get('path')) + ', sha256 ' + str((doc.get('derivedFrom') or {}).get('sha256', ''))[:12] + '…), the receiver reading JSON only')
+    elif fam == 'kissing' and sqrt2:
+        if shape['n'] != count:
+            raise Refusal('count', 'the claim says ' + str(shape['n']) + ' points, the published bytes hold ' + str(count))
+        if sizes.get('d') != 2 * shape['dim']:
+            raise Refusal('count', 'the claim is in dimension ' + str(shape['dim']) + ', the published rows hold ' + str(sizes.get('d') // 2) + ' coordinates as integer pairs')
+        domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
+        preds.append({'forall': KISSING_FORALL, 'g': SQRT2_G, 'rel': 'le', 'c': '0',
+                      'note': 'every pair at least 60° apart: (2A − C) + 2B√2 ≤ 0 over Z[√2], the sign decided with √2 trapped between two convergents'})
+        preds += structural(SQRT2_STRUCTURAL)
+        hyps += [SQRT2_REDUCTION, 'n directions pairwise at least 60 degrees apart are a kissing configuration of n']
+        fals = ['some pair of the pinned vectors has (2A − C) + 2B√2 > 0'] + ['the pinned vectors violate: ' + x['what'] for x in SQRT2_STRUCTURAL] + [hashed]
+        ref = 'no bar is printed: the zero of the structural inequality; the claim is the count, ' + str(count) + ' directions pairwise at least 60 degrees apart, decided from the bytes read as ' + how_read
     elif fam == 'kissing':
         if shape['n'] != count:
             raise Refusal('count', 'the claim says ' + str(shape['n']) + ' points, the published bytes hold ' + str(count))

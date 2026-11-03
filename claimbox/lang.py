@@ -18,7 +18,7 @@ from fractions import Fraction
 from . import grammar
 from .grammar import Refusal
 
-READINGS = ('decimals', 'doubles', 'integers', 'rationals', 'int64', 'table (Q, 2)', 'text', 'bytes')
+READINGS = ('decimals', 'doubles', 'integers', 'rationals', 'int64', 'Z[√2] pairs', 'table (Q, 2)', 'text', 'bytes')
 HOLES = ('source', 'data', 'count', 'decider', 'resolution', 'reading', 'range', 'unbounded', 'asymptotic', 'approximate',
          'ambiguous', 'quantity', 'prose')
 WORDS = ('CERTIFIED', 'REFUTED', 'REFUSED')

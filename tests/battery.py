@@ -1180,6 +1180,39 @@ red(cp_row['word'] == 'REFUTED' and cp_row['restsOn'] == [6] and all(m['word'] =
 ok(all(len(r['restsOn']) == 0 for r in TPL['conditions']['rows'] if r['word'] == 'CERTIFIED'),
    'templates: a CERTIFIED object rests on every predicate at once — no single one dropped moves its word', f'{sum(1 for r in TPL["conditions"]["rows"] if r["word"] == "CERTIFIED")} objects')
 
+# Z[√2] pairs (2026-11-02, TODO.md item 13): EinsteinArena's 604-point configuration prints p + q√2 as integer pairs; the library
+# decides the kissing condition over them with √2 trapped between two convergents — the trap exact, the record's word, and
+# plants on a 30-vector subset (a subset of a kissing configuration is one): one q moved, one vector off the shell
+from fractions import Fraction as _F
+from claimbox.library import kissing as KS
+ok(_F(KS.SQRT2_R1) ** 2 < 2 < _F(KS.SQRT2_R2) ** 2 and _F(KS.SQRT2_R2) - _F(KS.SQRT2_R1) < _F(1, 10 ** 78),
+   'kissing Z[√2]: the two convergents trap √2 (r1² < 2 < r2²), width under 10⁻⁷⁸', 'exact')
+K604 = json.load(open(os.path.join(ROOT, 'corpus', 'kissing', 'ea-d11-604.json'), encoding='utf-8'))
+def k_sub(mutate=None):
+    sub = dict(K604, vectors=[list(v) for v in K604['vectors'][:30]], n='30')
+    if mutate:
+        mutate(sub['vectors'])
+    os.makedirs(PR.PLANTS, exist_ok=True)
+    dp = os.path.join(PR.PLANTS, 'k30.json')
+    json.dump(sub, open(dp, 'w'))
+    sp = os.path.join(PR.PLANTS, 'k30.md')
+    open(sp, 'w', encoding='utf-8').write('K(11) >= 30 — a subset\n')
+    t_ = lang.parse(f'source P = {PR.rel_of(sp)}\ndata   k = {PR.rel_of(dp)}\nread   k as Z[√2] pairs\nclaim  s over k\n  quote "K(11) >= 30 — a subset" from P\n'
+                    '  : the 30 vectors of k form a kissing configuration in dimension 11\n')
+    return CP.word(T.check_with_cert_machine(CP.compile_claim(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)[0]['object'], ROOT))
+def _move_q(vs):
+    vs[3][1] += 1
+def _off_shell(vs):
+    vs[5] = [2 * x for x in vs[5]]
+kw = {'sub': k_sub(), 'q': k_sub(_move_q), 'shell': k_sub(_off_shell)}
+shutil.rmtree(PR.PLANTS, ignore_errors=True)
+ok(kw['sub'] == 'CERTIFIED', 'kissing Z[√2]: thirty of the 604 vectors, decided from their integer pairs', kw['sub'])
+red(kw['q'].startswith('REFUTED'), 'kissing Z[√2]: refuted — one q moved by one (a vector off the shell and a pair too close)', kw['q'])
+red(kw['shell'].startswith('REFUTED'), 'kissing Z[√2]: refuted — one vector doubled: off the common shell', kw['shell'])
+k604_rec = [e for e in RREC['sentences'] if e['id'] == 'kiss-ea-604'][0]
+ok(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in k604_rec['proposals']),
+   'kissing Z[√2]: K(11) ≥ 604, the paper\'s headline, CERTIFIED from the bytes with the kissing ledger\'s row (the record)', k604_rec['outcome'][:60])
+
 # ---- 12 · x^x = 64 (the operator's experiment, 2026-10-31: library selfpower.py) --------------------------------------------
 # the AI proposes, claimbox states, cert-machine decides: a bound on the root is one exact integer inequality; the planted
 # claims one digit off are refuted; the continued-fraction brackets come from the record (each a ~2.6-million-digit comparison)
