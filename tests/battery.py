@@ -1178,6 +1178,18 @@ def uc_word(path, rid):
     return {word(path, rid)}
 ok(all(uc_word(p_, rid) == {w} for rid, (p_, w) in uc_words.items()), 'USE-CASES.md: the words it states are the records\' words', ', '.join(uc_words))
 
+# the template pilot (tools/templates.py, TODO.md item 9): the record's counts hold, and a REFUTED object with one failing
+# predicate rests on that predicate alone — dropped, the word flips; dropping any other keeps it
+TPL = json.load(open(os.path.join(REPO, 'records', 'templates.json'), encoding='utf-8'))
+ok(TPL['objects'] == sum(t['objects'] for t in TPL['templateList']) and TPL['templates'] == len(TPL['templateList'])
+   and TPL['coverage']['byBytesOrDefinition'] + TPL['coverage']['byNothing'] == TPL['coverage']['notStated'],
+   'templates: the pilot\'s counts add up (objects over templates, the register\'s not-stated sentences)', f'{TPL["objects"]} objects, {TPL["templates"]} templates')
+cp_row = [r for r in TPL['conditions']['rows'] if r['id'] == 'ea-best-circle-packing'][0]
+red(cp_row['word'] == 'REFUTED' and cp_row['restsOn'] == [6] and all(m['word'] == 'REFUTED' for m in cp_row['drops'] if m['dropped'] != 6),
+    'templates: refused — the 26-circle packing is refuted by its non-overlap predicate alone: dropped, CERTIFIED; any other dropped, still REFUTED', str(cp_row['restsOn']))
+ok(all(len(r['restsOn']) == 0 for r in TPL['conditions']['rows'] if r['word'] == 'CERTIFIED'),
+   'templates: a CERTIFIED object rests on every predicate at once — no single one dropped moves its word', f'{sum(1 for r in TPL["conditions"]["rows"] if r["word"] == "CERTIFIED")} objects')
+
 # ---- 12 · x^x = 64 (the operator's experiment, 2026-10-31: library selfpower.py) --------------------------------------------
 # the AI proposes, claimbox states, cert-machine decides: a bound on the root is one exact integer inequality; the planted
 # claims one digit off are refuted; the continued-fraction brackets come from the record (each a ~2.6-million-digit comparison)

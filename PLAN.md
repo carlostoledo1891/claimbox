@@ -109,6 +109,22 @@ build what is asked, never substitute a design.
 - **Today's grammar** (claimbox/grammar.py, a closed list of shapes) becomes one proposer for step 6; today's readers
   become importers that write claims in the language. Nothing is thrown away; calibration is kept.
 
+### 5.1 · The trap as the numeric core (a design note for the operator's ruling, 2026-11-02; TODO.md item 7)
+
+Every numeric statement the language has is a trap: a value held between two exact ends. A bound (`≤ b`) is a trap open on one
+side; printed digits are a rounding box (`published as`) or a truncation box (`= d…`); an exact value is a trap of width zero;
+`within R of p` is a box of declared width; a platform score's box is the platform's resolution. The proposal: `TERM in (a, b)`
+as the one core statement, the five forms kept as sugar that print back as the trap they are — "lies strictly between 58815/17303
+and 47207/13888, width 4·10⁻⁹" — so the precision is stated outright (commitments 2 and 8), the reading of the bytes matters only
+for the bytes (a fraction means the same thing in every system), and the helpers become operations on traps (tighten narrows one
+end, extend narrows a digits box, watch and hunt probe families). A trap is sound once its reduction is proved once — x^x's
+monotonicity is, in Lean, on cert-machine's side — and after that every trap in the family is arithmetic the checker already does.
+A trap also has an honest undecided case: when the box straddles an end of the trap, neither word follows; the result says so
+and names the width that would decide it (a hole's price). The ruling asked: adopt `in (a, b)` as the core (language v2), or keep
+the five forms and add traps as a library family. Found while prototyping C* (§9): a prime-product trap needs a product of
+~34,000 rationals, which the receiver's evaluator takes as a Fraction normalised at every step — hours; the receiver would need
+an integer-numerator/denominator product, or a decider.
+
 ## 6 · Decisions (the operator, 2026-10-30)
 
 1. **The commitments** (§3) replace CLAUDE.md's rules, with "build what is asked" kept beside them. Done.
@@ -186,6 +202,10 @@ passes. Parked behind a spend decision.
   Open there, for the operator: an `in` from a valueless EinsteinArena row states the half-unit box of the print, while the row
   decided agreement only within the platform's resolution.
 - Format v4: canonical form; typed readings; a hole and its price on a REFUSED; CONFLICT from concordance only.
+- A `Product` (and `Sum`) over many rationals evaluated as integers — numerator and denominator apart, one reduction at the end —
+  or a prime-product decider: the Erdős #852 constant C* = ½(∏_{p≥3}(1 + 1/(p−1)³) − 1) needs 33,859 factors to refute its
+  published 0.0752403861777 from the bytes (cert-machine's own certificate does it with one integer inequality); the checker's
+  Fraction-normalised product makes that hours (2026-11-02, found by TODO.md item 7).
 - The folder carlostoledo.co/claimbox/ as a foreign zone (design/zones.js), published by tools/publish-zone.js.
 - Still open from earlier sessions: (c1) the kissing route through the wave file, (g) the two checkers' paths, (h) a
   decider over transcendental heads, (p) printed bars as a·10^k, (c′) Lean and text integer lists, and digit groups in a

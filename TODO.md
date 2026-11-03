@@ -44,7 +44,7 @@ sentences are not stated, 33 for want of bytes. Checked by: each new row's plant
 
 ## C. The operator's ideas
 
-**7. Traps as the numeric core of the language (design note, then one prototype).** Every numeric bar is a trap — open on one
+**7. Design note written (PLAN.md §5.1, for the operator's ruling); C* BLOCKED on the receiver (PLAN.md §9: a 33,859-factor product is hours in its Fraction evaluator) — Traps as the numeric core of the language.** Every numeric bar is a trap — open on one
 side, a rounding or truncation box, or width zero — and a trap is sound once its monotone reduction is proved once (x^x's is, in
 Lean). Why: one core statement in place of five bar forms, the precision stated outright in the print-back (commitments 2 and 8),
 readings mattering less. First: a design note in PLAN.md for the operator's ruling; then C* (Erdős #852) as a prime-product trap
@@ -55,7 +55,7 @@ published 0.0752403861777 REFUTED as cert-machine's ledger says.
 Pythagorean triple traps each angle. Why: two SOTA rows, and the first instance of a trap as repair (the claim decided on a nearby
 exact object, labelled as a repair). Checked by: the repaired packing CERTIFIED or REFUTED from its bytes; a planted overlap caught.
 
-**9. The template pilot.** Mine the ~600 decided objects for the shapes they share, add the missing "drop one condition" check,
+**9. DONE 2026-11-02 (tools/templates.py → records/templates.json; the numbers in HANDOFF) — The template pilot.** Mine the ~600 decided objects for the shapes they share, add the missing "drop one condition" check,
 and compute each claim's slack (the widest trap that still decides it). Why: targets for proposers, automatic planted claims per
 template, and a measure of how fragile a published claim is. One session; report three numbers (templates, unstated sentences a
 template would cover, claims within one unit of failing). Checked by: the profiles beside the original claims, never replacing them.

@@ -119,6 +119,7 @@ web/                       the landing page, built the Machinidae way: grammar.c
 tools/propose_model.py     a model as a proposer (claude-opus-5-5, the operator's $20 cap; .venv/bin/python; ledgers records/model-proposals-*);
 tools/worksheet_prompt.py  the worksheet prompt other model families fill by hand, and `ingest FAMILY REPLY` (proposals/riemann-ai.model-*.claim);
 tools/xx_study.py          the x^x = y study (roots computed, claims written for cert-machine);
+tools/templates.py         the template pilot: the decided objects' shapes, each verdict's load-bearing predicates (records/templates.json);
 tools/attack_twins.py      the attack twins' predictions, computed by cert-machine's tm.js (corpus/attack/prediction.json);
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the
                            story's pins (fetch, --check); tools/ceiling_lp.py an exploration in floats of the paper's bandwidth-one programme

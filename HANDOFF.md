@@ -174,7 +174,21 @@ it; `prose --run --record` reuses its own record (CLAIMBOX_FULL=1 asks everythin
 (the translator's history moved to notes/translator-2026-10.md), USE-CASES.md (six decided claims, every address resolved by the
 battery), LANGUAGE.md named v1. Item 13 — gemini-4-argon's register run resumed ($1.07 more; one concurrent planted-only run on
 the same ledger was killed, its few calls unlogged). The Ledger's cap floor is 0.02 for Prime (0.25 stopped cheap families at
-once). Prime spend since the approval: $4.63. make test 550 pass, 0 fail, 137/137.
+once). Prime spend since the approval: $4.63. make test 550 pass, 0 fail, 137/137. REPUBLISHED on the operator's word (cert-machine-5b, the
+new cert-machine session; cert-machine-cb is gone): cert-machine 17b9d5d8 from claimbox 746d1cb (89,551 bytes, sha256 03b9f0de…b637d,
+checked here with curl).
+
+ITEM 9, THE TEMPLATE PILOT (tools/templates.py → records/templates.json): 247 decided objects share 112 shapes (every numeric
+literal as #): 47 shapes are singletons (the mathematician's ξ′ objects), the five largest hold 46 objects, and 112 objects are
+decider-decided named heads. Coverage: of the register's 74 not-stated sentences, 24 have a hole of only `data` or `decider` — a
+template with its bytes or a definition would state them; 50 no template reaches (prose, no quantity, unbounded). Conditions: 62
+multi-predicate objects re-decided with each predicate dropped (those under 60 s, no record): every CERTIFIED one (47) rests on
+all its predicates at once; 14 of the 15 REFUTED rest on ONE predicate (the 26-circle packing on non-overlap alone; each
+mathematician control on its planted bar), one (0.8362: the truncation) on two. Slack from the prose sensitivity runs: 381 of
+the AI-phrasing proposals are tight at their last digit, 196 slack; the register's 4 measurable all slack. The battery holds the
+counts and the packing's single load-bearing predicate (a red). ITEM 7: the design note is PLAN.md §5.1 (for the operator's
+ruling: `in (a, b)` as the core, or traps as a library family); C* as a prime-product trap is BLOCKED — the receiver's Product
+normalises a Fraction every step, 33,859 factors is hours (PLAN.md §9 asks for an integer product or a decider).
 
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
