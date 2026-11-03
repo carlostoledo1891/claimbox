@@ -150,9 +150,10 @@ def library_for(cfg, row):
         names = [(var, f'a construction published for EinsteinArena\'s problem {prob}, as the SOTA table pins it')]
         names += [(f'"{title}"', 'the platform\'s problem of this title, its verifier written in the library: ' + EA.PLATFORM[title]['score'])] if title else []
         return (var, elements or 'doubles', names, data)
-    if row['id'] in prose.LEDGER_ROWS:      # a file a cert-machine decider read whole; the library defines nothing over it
+    chain = fill.chain(ROOT, row['id'])      # a file a cert-machine decider (a ledger's own code) read whole; the library defines nothing over it
+    if chain.get('data') == data and str(chain.get('decider') or '').startswith('instruments/'):
         var = 'r' + re.sub(r'\W', '', os.path.splitext(os.path.basename(data))[0])[:12]
-        return (var, 'decimals', [(var, 'the file cert-machine\'s ' + os.path.basename(prose.LEDGER_ROWS[row['id']][3]) + ' read; the library defines no name over it')], data)
+        return (var, 'decimals', [(var, 'the file cert-machine\'s ' + os.path.basename(chain['decider']) + ' read; the library defines no name over it')], data)
     var = 'x' + re.sub(r'\D', '', os.path.basename(data))
     return (var, elements or 'doubles', [(var, 'the platform\'s API record of the best solution (its "data"), read as the platform\'s verifier reads it')], data)
 

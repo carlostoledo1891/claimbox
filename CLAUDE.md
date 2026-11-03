@@ -14,6 +14,7 @@ python3 -m claimbox check FILE.claim [--run]                      each claim com
 python3 -m claimbox library                                       every definition a claim may use: names, version, readings, conventions, route
 python3 -m claimbox prose CORPUS [--run] [--record OUT]          from prose to claims: proposals, their levels, concord, the outcome
 python3 -m claimbox doc FILE.md [--build OUT]                     a document whose words and numbers are claims: every address and slot re-read, refused when one moved
+python3 -m claimbox fill [--id ID]                                 each register sentence's chain to its bytes through cert-machine's records, or where it ends and why
 make test        the battery: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its
                  register, the planted defects, the landing page's checks
 make web         the landing page from the records: web/dist/index.html (python3 -m web.build --check re-reads every value)
@@ -91,6 +92,8 @@ claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and
                            reference, the pairs' same-error rate; `--worksheet` writes a person's blank claims once
 claimbox/helpers.py        step 7: tighten (the strongest bar cert-machine certifies), extend (more digits of a print cut off with "…"), hunt (a witness), attack (a scheduled counterexample search),
                            watch (a claim about every case, instance by instance; planted twins); proposals `proposed by search:<helper>`
+claimbox/fill.py           step 7's fill, scoped down: the provenance walker from a register sentence to its bytes, decider and record through
+                           cert-machine's claims ledger, every pin re-hashed (it replaced prose.py's hand lists); `claimbox fill` prints every chain
 claimbox/doc.py            step 8: a Markdown document naming decided claims by record address, each word re-read, each number a slot
                            `{{records/F.json#id/path}}` printed from its record cell (`= VALUE` states it); refused when a word, a value or a pin moved
 claimbox/compile.py        a claim compiled to cert-machine's object (lowered to a job for translate.py), printed back from the object

@@ -79,6 +79,8 @@ def main(argv=None):
     ck.add_argument('--run', action='store_true')
     ck.add_argument('--record')
     sub.add_parser('library')
+    fl = sub.add_parser('fill')
+    fl.add_argument('--id')
     dc = sub.add_parser('doc')
     dc.add_argument('file')
     dc.add_argument('--build')
@@ -214,6 +216,10 @@ def main(argv=None):
     if a.cmd == 'library':
         from . import library
         sys.stdout.write(library.listing())
+        return 0
+    if a.cmd == 'fill':                         # step 7, fill: the provenance chain from a register sentence to its bytes
+        from . import fill
+        sys.stdout.write(fill.report(ROOT, a.id))
         return 0
     if a.cmd == 'doc':                          # step 8: a document whose words are claims; it builds only when every word is its record's
         from . import doc

@@ -26,7 +26,10 @@ check holds for the text asked (corpus/proposals/guide-asked-*.md), and the page
 
 ## B. The roadmap
 
-**4. SCOPED DOWN 2026-11-02 — Step 7, fill.** Measured first: following cert-machine's claims-ledger (decidedFrom → the
+**4. DONE 2026-11-03 (claimbox/fill.py: the provenance walker — claims ledger → deciding record → its row → the file the row, the
+record's provenance or the pinned decider names, every pin re-hashed; `python3 -m claimbox fill` prints every chain and where it
+ends; 88 register sentences reach their bytes, the 52 the hand lists named exactly as they named them; battery §14, 7 greens, 4 reds) —
+SCOPED DOWN 2026-11-02 — Step 7, fill.** Measured first: following cert-machine's claims-ledger (decidedFrom → the
 certs file → the row) reaches a row for 23 of the 24 register sentences a template would state, but bytes for none the readers do
 not already give (kissing rows name sources, not files; Strassen rows carry no word; 84b, C42, F7 carry words the receiver does
 not take). Fill on today's register states nothing new; its honest form is the generic provenance-chain finder replacing the hand

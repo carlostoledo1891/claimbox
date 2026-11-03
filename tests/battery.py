@@ -1378,6 +1378,63 @@ with open(os.path.join(_pyd, 'moved.py'), 'w', encoding='utf-8') as f:
     f.write(_src.replace('0.5952882223921177,', '0.5952882223921178,'))
 _f2, _arr2, _, _ = EPY.decode(os.path.join(_pyd, 'moved.py'))
 red(_arr2 != _arr and sum(1 for a, b in zip(_arr, _arr2) if a != b) == 2 and _f == _f2 == 'values', 'SOTA .py rows: a planted moved digit in the half moves two values of the decoded step function', '2 of 51')
+# ---- 14 · fill, the provenance walker (2026-11-03, TODO item 4 scoped down) ------------------------------------------------------
+# claimbox/fill.py replaces the hand lists (LEDGER_ROWS, EASOTA, KISSING_JOBS, TENSOR_RECORDS): a register sentence's bytes,
+# decider and record found by walking cert-machine's claims ledger → the deciding record → its row → the file the row, the
+# record's provenance or the pinned decider names, every pin re-hashed. Greens: the chain reaches what the hand lists named, by the
+# step each needs. Reds, under a scratch root: a row's sha256 moved (the pin), the decider's hash moved (the code pin), the record
+# off disk, a row named by no file; and the Station's 604s end with their reason here.
+import claimbox.fill as FL  # noqa: E402
+FC = FL.contexts(ROOT)
+FCH = {c['id']: c for c in FL.chains(ROOT)}
+ok(FC['optconst-71'] == ('corpus/optimization-constants/num2026/fei_c71_n18_artifact.json', None, None, 'instruments/fei/fei.py',
+                         {'path': 'certs/fei-ledger.json', 'row': '71', 'value': None, 'verdict': 'CERTIFIED'}) and FCH['optconst-71']['dataBy'].startswith('the decider'),
+   'fill: C71 reaches the artifact its decider fei.py opens (the record pins the decider; the file found by its name under corpus/), the row\'s word attached', FCH['optconst-71']['dataBy'][:40])
+ok(FC['horizonmath-keich-thin-triangles-128'][0] == 'corpus/horizonmath/kakeya-a2-intercepts.json' and FC['horizonmath-keich-thin-triangles-128'][3] == 'instruments/horizonmath/kakeya_area.py'
+   and FC['horizonmath-ramsey-asymptotic'][3] == 'instruments/horizonmath/ramsey_region.py',
+   'fill: of two code files in the horizonmath record, each row takes the one named after its problem (Kakeya, Ramsey), and each names its own file', 'kakeya_area.py, ramsey_region.py')
+ok(all(FC['polymaps-' + r] == ('corpus/polymaps/maps.json', None, None, 'instruments/polymaps/decide.py', {'path': 'certs/polymaps-ledger.json', 'row': r, 'value': None, 'verdict': 'CERTIFIED'})
+       for r in ('gao-g', 'gao-f4', 'gao-f5', 'chv-phi', 'chv-x14', 'chv-xhat18')),
+   'fill: the six polymaps rows reach maps.json (the file decide.py opens that holds an entry named by the row: "G", not witnesses.json), decide.py under instruments/polymaps/', 'six')
+ok(FC['mc100-at-q-2x2x3'] == ('corpus/sources/alphatensor_r.npz', None, None, 'tools/run-mc100-tensors.js', {'path': 'certs/mc100-alphatensor-q.json', 'row': 'at-q-2x2x3', 'value': None, 'verdict': 'CERTIFIED'})
+   and FC['optconst-3b'][0] == 'corpus/optimization-constants/mi2026/c3b_pr92/certificate_3b_13pt.json' and FCH['optconst-3b']['dataBy'] == 'the row names it, hashed',
+   'fill: a row naming its file (the npz before " key", the certificate) is taken hashed; the tensor records keep the library\'s named decider', 'at-q-2x2x3, 3b')
+ok(FC['ea-overlap-haugland_2016'] == ('corpus/easota/erdos-minimum-overlap/haugland_2016.py', None, None, None, None) and FC['ea-circles-alphaevolve_2025'][1] == 'doubles'
+   and FCH['ea-overlap-haugland_2016']['note'].startswith('the row\'s word WITNESSED'),
+   'fill: the SOTA ledger\'s rows reach their files hashed with no record (WITNESSED is not a receiver word), the JSON ones read as the platform reads them', 'doubles / none')
+ok(FC['kiss-alphaevolve-593'] == ('corpus/kissing/alphaevolve-d11-593.json', 'integers', 'alphaevolve/ae-kissing-d11-593', None, {'path': 'certs/kissing-ledger.json', 'row': 'alphaevolve-593', 'value': None, 'verdict': 'CERTIFIED'})
+   and FC['kiss-ea-604'][1] == 'Z[√2] pairs' and FCH['kiss-ea-604']['dataBy'] == 'the record\'s provenance names it, hashed'
+   and FC['kiss-ea-594-winner'] == ('corpus/einstein-arena/best-6.json', 'decimals', 'einstein-arena/ea-kissing-kissing-number-d11', None, None) and FCH['kiss-ea-594-winner']['dataBy'].startswith('a claimbox reader'),
+   'fill: a reader job stating the row\'s claim takes it (593 and 594 over the bytes the readers pinned, their readings and decided objects); 604 reaches the provenance file holding its id\'s tokens, hashed, read as the row\'s `form` says (Z[√2] pairs)', '593, 594, 604')
+ok(len(FC) >= 80 and all(FCH[i].get('end', '').startswith('the row names no file') for i in ('kiss-station-604-1', 'kiss-station-604-2', 'kiss-station-604-3'))
+   and FCH['mm-strassen-1969']['end'].endswith('not a ledger of rows)') and FCH['erdos852-cstar']['end'].endswith('not a ledger of rows)'),
+   'fill: ' + str(len(FC)) + ' register sentences reach their bytes; the Station\'s 604s, the Strassen certificate and C* end with the reason printed', str(len(FC)))
+_fr = os.path.join(tmp, 'fill-root')
+for _d in ('certs', 'corpus/easota/circles-rectangle', 'corpus/optimization-constants/num2026', 'instruments/fei'):
+    os.makedirs(os.path.join(_fr, _d), exist_ok=True)
+_ea = json.load(open(os.path.join(ROOT, 'certs', 'easota-ledger.json'), encoding='utf-8'))
+_fe = json.load(open(os.path.join(ROOT, 'certs', 'fei-ledger.json'), encoding='utf-8'))
+_ea['rows'] = [dict(r, sha256='0' * 64) if r['id'] == 'circles/alphaevolve_2025' else r for r in _ea['rows'] if r['id'].startswith('circles/')]
+_fe['code'] = {'instruments/fei/fei.py': '0' * 64}
+shutil.copy(os.path.join(ROOT, 'corpus', 'easota', 'circles-rectangle', 'alphaevolve_2025.json'), os.path.join(_fr, 'corpus', 'easota', 'circles-rectangle'))
+shutil.copy(os.path.join(ROOT, 'instruments', 'fei', 'fei.py'), os.path.join(_fr, 'instruments', 'fei'))
+shutil.copy(os.path.join(ROOT, 'corpus', 'optimization-constants', 'num2026', 'fei_c71_n18_artifact.json'), os.path.join(_fr, 'corpus', 'optimization-constants', 'num2026'))
+json.dump(_ea, open(os.path.join(_fr, 'certs', 'easota-ledger.json'), 'w', encoding='utf-8'))
+json.dump(_fe, open(os.path.join(_fr, 'certs', 'fei-ledger.json'), 'w', encoding='utf-8'))
+json.dump({'rows': [{'id': 'ea-circles-alphaevolve_2025', 'decidedFrom': 'certs/easota-ledger.json', 'verdict': 'CERTIFIED'},
+                    {'id': 'ea-circles-ours_2026', 'decidedFrom': 'certs/easota-ledger.json', 'verdict': 'REPAIRED'},
+                    {'id': 'optconst-71', 'decidedFrom': 'certs/fei-ledger.json', 'verdict': 'CERTIFIED'},
+                    {'id': 'optconst-3b', 'decidedFrom': 'certs/sumdiff-ledger.json', 'verdict': 'CERTIFIED'}]},
+          open(os.path.join(_fr, 'certs', 'claims-ledger.json'), 'w', encoding='utf-8'))
+_fc = {i: FL.chain(_fr, i) for i in ('ea-circles-alphaevolve_2025', 'ea-circles-ours_2026', 'optconst-71', 'optconst-3b')}
+red('the pin moved' in _fc['ea-circles-alphaevolve_2025'].get('end', '') and 'data' not in _fc['ea-circles-alphaevolve_2025'],
+    'fill: refused — a row whose sha256 does not hash the file it names ends the chain (the pin moved), no bytes', _fc['ea-circles-alphaevolve_2025'].get('end', '')[:50])
+red('the pin moved' in _fc['optconst-71'].get('deciderNote', '') and _fc['optconst-71'].get('decider') is None and 'data' not in _fc['optconst-71'],
+    'fill: refused — a decider whose hash is not the record\'s is not taken, and a file only it names is not found', _fc['optconst-71'].get('end', '')[:60])
+red('not on disk' in _fc['ea-circles-ours_2026'].get('end', '') and _fc['optconst-3b'].get('end', '').startswith('the deciding record is not on disk'),
+    'fill: refused — a file the row names that is not on disk, and a deciding record that is not, end the chain', _fc['optconst-3b'].get('end', '')[:40])
+red(FL.chain(_fr, 'nobody').get('end') == 'no row of ' + FL.LEDGER, 'fill: refused — a sentence the claims ledger has no row for', 'nobody')
+
 RB2 = {e['id']: e for e in RREC['sentences']}
 ok(all(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in RB2[i]['proposals']) for i in ('optconst-71', 'polymaps-gao-g', 'polymaps-chv-phi')),
    'register batch 2: C71, Gao\'s G and the Phi map, each over the file its ledger row\'s decider read, take the row\'s word (the record)', 'three')

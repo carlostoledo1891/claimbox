@@ -24,8 +24,8 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 ## ★ START HERE (2026-10-31, end of the eleventh session) — the state in one screen; the dated entries below are the history
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
-LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–6 built; step 7's helpers built (tighten, extend, watch, hunt, attack; fill not
-begun); 8 begun (doc, with number slots); 9–10 not started. Tests: `make test` → 579 pass, 0 fail, 152/152 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
+LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–8 built — step 7's helpers (tighten, extend, watch, hunt, attack, and fill as the
+provenance walker, scoped down), step 8 (doc with number slots; the x^x report builds from its records); 9–10 not started. Tests: `make test` → 590 pass, 0 fail, 156/156 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31), live bytes = claimbox
 b87af65 (cert-machine 67c14f84). /verify/ stays UNLINKED from claimbox (the operator's ruling). The x^x = y report is served by
@@ -248,15 +248,35 @@ files caught up with the 400-character quote window). Battery: the .py rows sect
 make test 579 pass, 0 fail, 152/152. The page moved (decided 59 → 64, needs its bytes 31 → 25, read two ways 17 → 14, nothing
 decides 10 → 14): web/dist/index.html 89,587 bytes, the republish to ask of cert-machine-5b with this build's sha256.
 
+FILL, THE PROVENANCE WALKER (2026-11-03, TODO item 4 scoped down, the third item of the operator's "go"): claimbox/fill.py finds a
+register sentence's bytes, decider and record by walking cert-machine's records — certs/claims-ledger.json (its ids are the
+register's) → `decidedFrom`, the deciding record → its row (the id with the family prefix dropped, '/' read as '-') → the bytes:
+a claimbox reader job whose claim is the row's claim head takes it (593, 594, the mc100 rows); else a path the row names (`file`,
+`source` before " key", `certificate.file`), hashed to the row's sha256; else the record's `provenance` file holding the row's
+id tokens, hashed (or, when the sha is the row's upstream's, the transcription, said so); else the one .json the pinned decider's
+own source opens (fei.py → the C71 artifact; of several of one name the row's own folder, countex; of several names the one
+holding an entry named by the row, polymaps' maps.json) → the decider: the library's named one for the record, else the
+record's `code` (each file re-hashed; two files: the one named after the row's problem, Kakeya/Ramsey, or after the family or
+`decide`) → the record attached only for a receiver word → the reading: the reader job's, else the row's `form` (Z[√2] pairs,
+integers, decimals), else the platform's doubles for a SOTA JSON row. `python3 -m claimbox fill [--id ID]` prints every chain and
+where it ends and why (the Station's 604s: no row names their file; Strassen, C*: not a ledger of rows). It replaced prose.py's
+LEDGER_ROWS, EASOTA, KISSING_JOBS and TENSOR_RECORDS: the 52 sentences they named come out exactly as they named them (a
+snapshot diffed), and 36 more reach their bytes — 24 mc100 rows the reader jobs already gave, nine countex certificates, two
+polymaps maps (X14, X̂18), HorizonMath's Ramsey certificate (its row REFUTED): all holes of another kind than `data` (prose, no
+quantity, asymptotic), so the register's counts did not move (419 proposals, validated 27, not stated 68). tools/propose_model.py
+reads the chain for its data names. Battery §14: seven greens, four reds under a scratch root (a row's sha256 moved, the decider's
+hash moved, a file and a record off disk, a sentence the ledger has no row for). PLAN.md r17; steps 7 and 8 marked built in §7
+(the page's roadmap moved). make test 590 pass, 0 fail, 156/156.
+
 **NEXT, in order (the full list, with reasons: TODO.md).**
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
-1. Fill as the generic provenance-chain finder (TODO item 4): cert-machine's certs/claims-ledger.json uses the register's own ids,
-   its `decidedFrom` names the record file, whose row ids are the register's with the prefix dropped; the bytes sit under `file`
-   (easota), `source` (mc100, station), `certificate.file` (sumdiff), none (kissing, polymaps, fei) — one walker replaces
-   prose.LEDGER_ROWS / EASOTA / KISSING_JOBS, with planted twins. The 30,000-value autocorrelation rows and the hexagon stay with
-   the receiver (PLAN.md §9).
+1. The republish of the newest build (web/dist/index.html, its sha256 in the START HERE line) — asked of cert-machine-5b on the
+   operator's word. Then the receiver asks of PLAN.md §9 as the operator rules them: the SOTA ledger's words as record words (the
+   two 30,000-value autocorrelation rows), the three-index Index (the Station's 604s), the integer Product (C*).
+2. TODO items 7 (traps as the numeric core: the design note in PLAN.md §5.1 waits on the operator's ruling) and 10 (more writers, a
+   fresh corpus: the operator's word and budget). The hexagon packing stays with the receiver (item 8).
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
    written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is

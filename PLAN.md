@@ -147,8 +147,8 @@ The landing page renders this table. Status words: `built`, `next`, `planned`, `
 | 4 | The library | the definitions written once: kissing, the autocorrelation constants, the platform scores, the Riemann functionals, machine runs, each with its conventions | identical objects to today's | built |
 | 5 | Holes and forks | refusals become named holes; ambiguous readings become forks, every reading decided | the decimal and double readings of one file give their two exact counts; every refusal today maps to a hole | built |
 | 6 | From prose to claims | anyone proposes a translation of a sentence; claimbox validates it: numbers found in the source, the print-back, two proposals of different kinds agreeing, also on planted sources | the AI phrasings and the register, measured; every planted mistranslation caught; the refusal rate published | built |
-| 7 | Helpers and watchers | tighten, attack, fill; watchers for "for all" claims that report how far they searched | every proposal is decided by cert-machine; planted twins halt where predicted | next |
-| 8 | Documents that build | a report whose numbers are claims: it does not build when one is refuted, and each number shows what it rests on | one existing report rebuilt this way | planned |
+| 7 | Helpers and watchers | tighten, attack, fill; watchers for "for all" claims that report how far they searched | every proposal is decided by cert-machine; planted twins halt where predicted | built |
+| 8 | Documents that build | a report whose numbers are claims: it does not build when one is refuted, and each number shows what it rests on | one existing report rebuilt this way | built |
 | 9 | Teaching models to write it | the Claim Court environment on the Hub; its first task is writing claims claimbox reads | the share of validated claims before and after training | research |
 | 10 | Proposal loops at scale | many model proposals, the deterministic filter, cert-machine's word, counterexamples fed back | the target pinned first; red controls before every loop; every denominator published | research |
 
@@ -180,7 +180,10 @@ checks. Measured on the eighty AI phrasings and the register; published with the
 rate. A model is never inside the validator.
 
 **Step 7 — helpers and watchers.** Tighten (the strongest bar the bytes allow), attack (search for a counterexample), fill
-(fetch a missing quantity). Watchers for "for all" claims with planted twins that must halt at a predicted step, and an
+(scoped down 2026-11-02, built 2026-11-03: not a fetch from the web but the provenance walker, claimbox/fill.py — a register
+sentence's bytes, decider and record found through cert-machine's claims ledger, the deciding record, its row and the file the
+row, the record's provenance or the pinned decider names, every pin re-hashed; `claimbox fill` prints each chain and where it
+ends). Watchers for "for all" claims with planted twins that must halt at a predicted step, and an
 honest *not refuted up to N*; the sampled-replay ledger is cert-machine's decision (an `instruments/ledger` there).
 
 **Step 8 — documents that build.** A Markdown or HTML report whose numbers are claims; the build refuses when one is
@@ -232,6 +235,17 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r17, 2026-11-03.** Three TODO items on the operator's "go", in order. Step 8's numbers: doc.py's slots `{{records/F.json#id/path}}`
+  print one cell of a record, `= VALUE` states it, a claim's pin is re-hashed; reports/xx.md is the x^x = y report with every number
+  a slot (87) and every word cert-machine's. The SOTA table's Python-published rows: claimbox.readers.easota_py decodes the nine
+  files (nothing evaluated, the source's sha256 inside); the first autocorrelation and the minimum overlap are C_1a and C_1b under the
+  platform's titles, a score may be claimed as a bound (`at most BAR`: the table prints ceilings), and the functional route is
+  CAPPED at 4,000 values — the receiver's exact evaluator is quadratic in the count (1,319 values in 7 s; the first runs hung for
+  hours on 30,000 and 65,536) — above it the record route or a hole (the 30,000-value rows wait on the receiver reading the SOTA
+  ledger's words, §9). Fill, scoped down, built: claimbox/fill.py walks cert-machine's claims ledger to each register sentence's
+  bytes, decider and record, every pin re-hashed, replacing prose.py's hand lists; 88 sentences reach their bytes (the 52 the hand
+  lists named, exactly as named; 36 more, most of them holes of another kind). Steps 7 and 8 marked built. The register after the
+  model campaign's judgement of the new rows: every family wrote the table's ceiling prints as rounding boxes, refuted.
 - **r16, 2026-11-01.** Many model families write; each proposal is judged on its own (the operator: "per proposal"). Through
   Prime Intellect's gateway (tools/propose_model.py --provider prime; the operator's $25 campaign): twelve more families on the 80
   AI phrasings and ten on the register, three of them asked three times, four with GUIDE.md's part for a model. On the

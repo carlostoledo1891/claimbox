@@ -95,74 +95,16 @@ def register_context():
     return out
 
 
-# the register's sentences no reader job states, whose bytes cert-machine pins (2026-10-31, the operator: "register readers"):
-# AlphaTensor's decompositions, decided by cert-machine's tensor decider and the row it wrote for each npz key; kissing
-# configurations whose vectors cert-machine pins as JSON, decided from the bytes
-TENSOR_RECORDS = {'mc100-at-q-': 'certs/mc100-alphatensor-q.json', 'mc100-at-f2-': 'certs/mc100-alphatensor-f2.json'}
-KISSING_JOBS = {'kiss-alphaevolve-593': ('corpus/alphaevolve-jobs.json', 'ae-kissing-d11-593', 'alphaevolve'),     # the reader job that
-                'kiss-ea-594-winner': ('corpus/einstein-arena-jobs.json', 'ea-kissing-kissing-number-d11', 'einstein-arena')}   # states it
-# not given bytes: the Station's three 604s and its 582 shell (one .npz holds them; no JSON of each is pinned), D4 and E8 (generated in cert-machine, not published)
-# batch 2 (2026-10-31): the sentences whose ledger row carries one of the receiver's words, each with the file its decider read
-# and that row — {register id: (the pinned file, the ledger, its row, the decider)}
-LEDGER_ROWS = {'optconst-71': ('corpus/optimization-constants/num2026/fei_c71_n18_artifact.json', 'certs/fei-ledger.json', '71', 'instruments/fei/fei.py'),
-               'horizonmath-keich-thin-triangles-128': ('corpus/horizonmath/kakeya-a2-intercepts.json', 'certs/horizonmath-ledger.json',
-                                                        'keich-thin-triangles-128', 'instruments/horizonmath/kakeya_area.py'),
-               **{'polymaps-' + r: ('corpus/polymaps/maps.json', 'certs/polymaps-ledger.json', r, 'instruments/polymaps/decide.py')
-                  for r in ('gao-g', 'gao-f4', 'gao-f5', 'chv-phi')}}
-# EinsteinArena's SOTA table (certs/easota-ledger.json): the files its rows decided, given as bytes. Its words (WITNESSED,
-# REPAIRED) are not the receiver's, so no row is attached: a claim over these bytes is decided from them by a definition in the
-# library or not at all (the circles in a rectangle, the minimum distance ratio and the convex Heilbronn problem have one; hexagon
-# packing has none, its hexagons rotated by float angles in degrees; the others are published as Python files or exceed the
-# receiver's evaluator, and their hole says so)
-EASOTA = 'certs/easota-ledger.json'
-# not given bytes, and why: polymaps-gao-f6 and -f7 (the full maps are not printed; maps.json holds neither), optconst-84b
-# (REPAIRED) and C42's two (PARTIAL: no receiver word, and no file of theirs pinned), erdos852-cstar (its certificate is one
-# enclosure of an infinite product, not a row; nothing in the bytes decides C*), and the Strassen certificate's ten
-# decompositions (certs/strassen-certificate.json carries no verdict, and cert-machine's tensor records hold none of its keys)
+# the register's sentences no reader job states: their bytes, decider and record found by WALKING cert-machine's records
+# (claimbox/fill.py, 2026-11-03 — the provenance chain, every pin re-hashed; it replaced the hand lists LEDGER_ROWS, EASOTA,
+# KISSING_JOBS and TENSOR_RECORDS of 2026-10-31). `python3 -m claimbox fill` prints every chain, where it ends and why: the
+# Strassen certificate (no rows), polymaps F6/F7 (maps not printed: their rows reach maps.json and the grammar holes them), the
+# Station's three 604s (one file of 3 × 604 × 11 pairs, named by no row), C42, 84b, C* (rows naming no file)
 
 
 def register_extra(root):
-    out = {}
-    for prefix, rec in TENSOR_RECORDS.items():
-        p = os.path.join(root, rec)
-        if not os.path.isfile(p):
-            continue
-        for r in json.load(open(p, encoding='utf-8'))['rows']:
-            rid = 'mc100-' + r['id']
-            data = r['source'].split(' key ')[0]
-            out[rid] = (data, None, None, 'tools/run-mc100-tensors.js', {'path': rec, 'row': r['id'], 'value': None, 'verdict': r['verdict']})
-    # the optimization constants whose certificate file cert-machine's sum-difference decider read (certs/sumdiff-ledger.json)
-    sd = os.path.join(root, 'certs', 'sumdiff-ledger.json')
-    if os.path.isfile(sd):
-        led = json.load(open(sd, encoding='utf-8'))
-        dec = next(iter(led.get('code') or {}), None)
-        for r in led['rows']:
-            f = (r.get('certificate') or {}).get('file')
-            if f and dec:
-                out['optconst-' + r['id']] = (f, None, None, dec, {'path': 'certs/sumdiff-ledger.json', 'row': r['id'], 'value': None, 'verdict': r['verdict']})
-    for rid, (data, rec, row, dec) in LEDGER_ROWS.items():
-        p = os.path.join(root, rec)
-        if os.path.isfile(p):
-            r = next((x for x in json.load(open(p, encoding='utf-8'))['rows'] if x['id'] == row), None)
-            if r is not None:
-                out[rid] = (data, None, None, dec, {'path': rec, 'row': row, 'value': None, 'verdict': r['verdict']})
-    ea = os.path.join(root, EASOTA)
-    if os.path.isfile(ea):
-        for r in json.load(open(ea, encoding='utf-8'))['rows']:
-            prob, who = r['id'].split('/')
-            out.setdefault('ea-' + prob + '-' + who, (r['file'], 'doubles' if r['file'].endswith('.json') else None, None, None, None))
-    kl = os.path.join(root, 'certs', 'kissing-ledger.json')     # the headline 604 (2026-11-02): Z[√2] pairs, the library's reading
-    if os.path.isfile(kl) and os.path.isfile(os.path.join(root, 'corpus', 'kissing', 'ea-d11-604.json')):
-        row = next((r for r in json.load(open(kl, encoding='utf-8'))['rows'] if r['id'] == 'ea-604'), None)
-        if row:
-            out['kiss-ea-604'] = ('corpus/kissing/ea-d11-604.json', 'Z[√2] pairs', None, None,
-                                  {'path': 'certs/kissing-ledger.json', 'row': 'ea-604', 'value': None, 'verdict': row['verdict']})
-    for rid, (jobs, jid, folder) in KISSING_JOBS.items():
-        j = next(x for x in json.load(open(os.path.join(REPO, jobs), encoding='utf-8'))['jobs'] if x['id'] == jid)
-        ref = folder + '/' + jid
-        out[rid] = (j['data'], j.get('elements'), ref if os.path.isfile(os.path.join(REPO, 'records', ref + '.json')) else None,
-                    j.get('decider'), j.get('record'))
-    return out
+    from . import fill
+    return fill.contexts(root)
 
 
 def context_of(corpus, row):
