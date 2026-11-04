@@ -1,0 +1,21 @@
+# claimbox/lean/eth-bridge — Lean sources for the ETH machine-model bridges (C1, C2). Proposals until cert-machine
+# decides them (claimbox commitment 5). complexitylib is pinned to one commit; Mathlib and cslib come through its pins.
+name = "ethbridge"
+version = "0.1.0"
+defaultTargets = ["EthBridge"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "complexitylib"
+git = "https://github.com/cslib-community/complexitylib"
+rev = "7c66eb718fb2c1ea8d5037bc0bbee64912cfc030"
+
+[[lean_lib]]
+name = "EthBridge"
+
+# The planted wrong variants (claimbox commitment 7): no default target; cert-machine builds them and must refuse each.
+[[lean_lib]]
+name = "Planted"
+globs = ["Planted.+"]
