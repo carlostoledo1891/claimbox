@@ -29,12 +29,35 @@ The helpers, each a proposal too:
 - `Decider.exists_ksat3_decider` — a decider for 3-SAT on `encCNF` in time c·⌈2^(A·n(log log n)²/√log n)⌉·(L+1)^E and work
   space c·(L+1)^E, assembled from complexitylib's native counter.
 
+## C2 — `EthBridge.Anthropic.not_eth_of_ethIsFalse` (EthBridge/Anthropic.lean)
+
+**In plain words.** If Anthropic's statement holds (for every δ > 0, some deterministic Mathlib `FinTM2` machine decides
+3-SAT on duplicate-free formulas written as `encClauses 3` within ⌊c · 2^(δ·n)⌋ steps), then ETH is false in
+complexitylib's sense: a deterministic cslib multitape Turing machine decides 3-SAT on every formula, written as the
+binary `encCNF`, within c · 2^(δ·n) · (L + 1)^e + c steps. `EthBridge/Anthropic/MainResults.lean` is anthropics/formal-math
+`eth/MainResults.lean` at 16a5ce41, byte for byte (sha256 47f78a95…24944), elaborated here against complexitylib's Mathlib:
+the same text, a different library, a version seam that is read, not decided.
+
+**Why it is not a re-use of complexitylib's simulation.** complexitylib simulates a TM2 program on the multitape machine
+in polynomial time, but the degree of that polynomial depends on the program, and here the program is chosen after δ.
+So one TM2 step is given a new certificate of degree one for every program (`DegreeStep.stepTotalD`), the t-step run is
+a degree-two fold over a unary clock (`DegreeRun.runBitD`), and the reduction pads the input with n so the decider can
+write 2^(n/m + c₀) in unary and run that many steps (`Assemble.decidableInExpTime`, with m = ⌈2/δ⌉₊ + 1 and a source
+rate below 1/m). `Prep.prep` relabels the variables densely, removes duplicate clauses and writes Anthropic's
+`encClauses 3`, in polynomial time, preserving satisfiability (`Prep.prep_spec`).
+
+With Hawkley's chain (OpenAI's `exact_count_and_sat` ⇒ `MainResults.ETHIsFalse`, decided in cert-machine inside
+OpenAI's Lean), both labs' own statements then reach cslib's standard machine. complexitylib's own `not_eth` already
+proves the conclusion outright; what C2 adds is the link from the labs' statements, not a new truth.
+
 ## Planted wrong variants (claimbox commitment 7)
 
-`Planted/` holds three files cert-machine must refuse: the C1 statement closed by `sorry`, the same through a new axiom,
-and the trusted definitions quietly changed (the exponential factor dropped) with `sorry`. They are not a default target.
+`Planted/` holds six files cert-machine must refuse. For C1: the statement closed by `sorry`, the same through a new
+axiom, and the trusted definitions quietly changed (the exponential factor dropped) with `sorry`. For C2: the statement
+closed by `sorry`, the same through a new axiom, and the trusted statement quietly changed (the hypothesis replaced by
+the conclusion) with `sorry`. They are not a default target.
 
 ## What is not here
 
-C2 (Mathlib's FinTM2 on encClauses simulated by cslib's multitape TM, so the labs' own statements reach the standard
-machine) is not started. That any formal ETH is the textbook ETH is a reading of a definition and stays one.
+That any formal ETH is the textbook ETH is a reading of a definition and stays one. The version seam between
+Anthropic's Lean (v4.33.1) and complexitylib's (v4.36.0-rc2) is read, not decided.
