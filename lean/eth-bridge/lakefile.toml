@@ -19,3 +19,76 @@ name = "EthBridge"
 [[lean_lib]]
 name = "Planted"
 globs = ["Planted.+"]
+
+# AnthropicEth: anthropics/formal-math eth/ at 16a5ce41 (Apache-2.0), the import closure of its Solution.lean, ported
+# from Lean v4.33.1 / Mathlib 0df444a3 to this project's Lean and Mathlib; every change is listed in AnthropicEth/PORT.md.
+# Solution.lean proves MainResults.ethIsFalse against the vendored EthBridge/Anthropic/MainResults.lean (no second copy).
+# The folders and module names are Anthropic's; each [[lean_lib]] below is one of its libraries, with its srcDir under
+# AnthropicEth/ and its leanOptions. `lake build AnthropicEth` builds Solution and exactly what it imports.
+[[lean_lib]]
+name = "AnthropicEth"
+srcDir = "AnthropicEth"
+roots = ["Solution"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthStatements"
+srcDir = "AnthropicEth/proof/statements"
+globs = ["AppHalfPiecesStatement", "AppRunningTimeStatement", "AppVariablesStatement", "CircuitLowerBoundStatement",
+  "ClauseBoundStatement", "CliqueLevelsStatement", "CountKSatStatement", "CountedInstanceStatement",
+  "EightSquareStatement", "FixedWidthVariableBoundStatement", "KSatStatement", "LevelsStatement",
+  "MainTheoremFormsStatement", "NetworkStatements", "PaperSentencesStatement", "ParityChecksStatement",
+  "PartitionStatement", "PiecesCountedStatement", "PiecesFromEightSquaresStatement", "PiecesStatement",
+  "PrintedStatement", "StepMachineStatements", "ThmEveryDeltaStatement", "ThreeSatRateStatement",
+  "ThreeSatStatement", "UniformInKStatement"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthMachines"
+srcDir = "AnthropicEth/proof/machines"
+globs = ["QueryMachines.*", "StepMachines.*", "ToTuring.*", "Tower.*", "TwoMachines.*", "Wrap.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthNetworks"
+srcDir = "AnthropicEth/proof/networks"
+globs = ["Eight.*", "Groundwork.*", "Paper.*", "SingleBitPieces.*", "Value.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthThreesat"
+srcDir = "AnthropicEth/proof/threesat"
+globs = ["Enumerate.*", "Exits.*", "Printed.*", "Suffices.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthConsequences"
+srcDir = "AnthropicEth/proof/consequences"
+globs = ["CircuitLowerBound.*", "CountKSat.*", "CountKSatRate.*", "WidthK.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthSparsification"
+srcDir = "AnthropicEth/proof/sparsification"
+globs = ["SparsificationLemma.*", "SparsifyWidthK.*", "StepSparsify.*", "UniformInK.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthRates"
+srcDir = "AnthropicEth/proof/rates"
+globs = ["ClauseBound.*", "CountedRecursion.*", "CountedToPadded.*", "ExplicitCost.*", "GeneralPieces.*",
+  "PaddedDescent.*", "PiecesCounted.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthVariables"
+srcDir = "AnthropicEth/proof/variables"
+globs = ["CountedInstance.*", "PairsToBound.*", "RecursionToBound.*", "RecursionWithPieces.*", "SparsifyThenCount.*",
+  "ThmVariables.*", "VariableBound.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+[[lean_lib]]
+name = "AnthropicEthMainTheorem"
+srcDir = "AnthropicEth/proof/maintheorem"
+globs = ["CountedRoute.*", "MainRoute.*", "MinOfBounds.*", "NamesInOrder.*", "WidthThree.*"]
+leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }

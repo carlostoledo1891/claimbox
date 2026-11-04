@@ -1,0 +1,19 @@
+eth: a Lean 4 formalization of "A 2^o(n) Time Algorithm for 3-SAT"
+Copyright 2026 Anthropic, PBC
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The comments of the Lean files and the documents of this product quote statements and sentences of the paper named
+above, which lies in this folder as paper.pdf. The paper is included under the Apache License, Version 2.0.
+
+This product depends on, but does not include, Lean 4 (https://github.com/leanprover/lean4) and
+mathlib4 with its standard dependency set, fetched by the build tool from their public repositories at the
+revisions pinned in lake-manifest.json: batteries, aesop, Qq, ProofWidgets4, import-graph, LeanSearchClient and
+plausible are released under the Apache License, Version 2.0; Cli (leanprover/lean4-cli) is released under the
+MIT License (Copyright (c) 2021 mhuisi). None of these dependencies is included in this product.
+
+Modified copies: the Lean files in this folder (AnthropicEth/, in claimbox lean/eth-bridge) are copies of
+anthropics/formal-math eth/ at commit 16a5ce41304fcdaea4e0be7c132e1c361dc26da5 (the import closure of eth/Solution.lean,
+without eth/MainResults.lean, which is used from ../EthBridge/Anthropic/MainResults.lean byte for byte), some of them
+modified to compile on Lean v4.36.0-rc2 and the Mathlib pinned by cslib-community/complexitylib 7c66eb71. Every
+modified file and every change is listed in PORT.md.

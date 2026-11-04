@@ -50,14 +50,29 @@ With Hawkley's chain (OpenAI's `exact_count_and_sat` ⇒ `MainResults.ETHIsFalse
 OpenAI's Lean), both labs' own statements then reach cslib's standard machine. complexitylib's own `not_eth` already
 proves the conclusion outright; what C2 adds is the link from the labs' statements, not a new truth.
 
+## The Anthropic chain in one environment — `EthBridge.AnthropicChain.not_eth` (EthBridge/AnthropicChain.lean)
+
+`AnthropicEth/` is anthropics/formal-math `eth/` at 16a5ce41 (Apache-2.0), the import closure of its `Solution.lean`:
+809 files, 762 byte-identical, 47 modified to build on this project's Lean and Mathlib. Every change is listed in
+`AnthropicEth/PORT.md` with both sha256s; they are Mathlib renames, imports, and tactic repairs. Forty-five declarations
+changed text only by a forced rename. `MainResults.lean` is unchanged. It proves `MainResults.ethIsFalse` against the
+same vendored `MainResults.lean` that C2 reads, so
+
+`theorem not_eth : ¬ ETH := not_eth_of_ethIsFalse MainResults.ethIsFalse`
+
+holds with Anthropic's proof, Anthropic's statement, C2 and complexitylib's ETH all checked in one Lean (v4.36.0-rc2).
+No step from Anthropic's proof to the standard machine crosses a version seam. Build it with
+`lake build EthBridge.AnthropicChain` (about 10 minutes over Mathlib's cache).
+
 ## Planted wrong variants (claimbox commitment 7)
 
-`Planted/` holds six files cert-machine must refuse. For C1: the statement closed by `sorry`, the same through a new
+`Planted/` holds nine files cert-machine must refuse. For C1: the statement closed by `sorry`, the same through a new
 axiom, and the trusted definitions quietly changed (the exponential factor dropped) with `sorry`. For C2: the statement
 closed by `sorry`, the same through a new axiom, and the trusted statement quietly changed (the hypothesis replaced by
-the conclusion) with `sorry`. They are not a default target.
+the conclusion) with `sorry`. For the chain: the statement by `sorry`, by a new axiom, and with its negation dropped. They are not a default target.
 
 ## What is not here
 
-That any formal ETH is the textbook ETH is a reading of a definition and stays one. The version seam between
-Anthropic's Lean (v4.33.1) and complexitylib's (v4.36.0-rc2) is read, not decided.
+That any formal ETH is the textbook ETH is a reading of a definition and stays one. For Anthropic's statement the
+version seam is closed by the port above; OpenAI's reaches it through Hawkley's chain inside OpenAI's Lean (v4.34.1),
+and that seam is read, not decided.
