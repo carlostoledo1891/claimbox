@@ -58,7 +58,7 @@ Every feature ships with planted wrong claims, and every one must be caught: `ma
 ## Proofs as claims: the ETH bridge ([lean/eth-bridge](lean/eth-bridge/))
 
 claimbox also writes Lean proofs as claims. They are proposals until cert-machine decides them (commitment 5). In
-November 2026 OpenAI and Anthropic each published a Lean proof that ETH is false, each on a machine model of its own
+October 2026 OpenAI and Anthropic each published a Lean proof that ETH is false, each on a machine model of its own
 making. The open question was whether those statements are the textbook ETH. claimbox took the step on:
 
 | | the claim | written by | cert-machine's word |
