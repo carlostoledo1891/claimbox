@@ -120,6 +120,9 @@ TODO.md                    the next steps, ordered, each with why and how it is 
 LANGUAGE.md                the language, written down (roadmap step 1)
 GUIDE.md                   how to write for claimbox, for people and models (its part for a model is the prompt variant, --guide)
 USE-CASES.md               six uses, each a decided claim with its record (the battery resolves every address it names)
+lean/eth-bridge/           Lake projects for the ETH machine-model gap (cert-machine-9e's, the operator 2026-11-04): Lean sources only,
+                           built on cert-machine's runners, pinned and decided there from claimbox's commits; proposals until decided;
+                           Planted/ the wrong variants it must refuse; not a .claim kind, nothing in claimbox/ or tests/ reads it
 reports/                   xx.md: the x^x = y report as a document whose numbers are claims (87 slots, 10 addresses); xx.built.md its build
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),
