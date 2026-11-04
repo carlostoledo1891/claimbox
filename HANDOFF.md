@@ -35,8 +35,11 @@ republished on the operator's word by cert-machine-9e) — web/dist and the live
 
 **The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-9e` (SendMessage; cert-machine-5b
 and -cb are gone). On 2026-11-04 the four receiver asks of NEXT 1 — (a) the SOTA ledger's words as record words, (b) a three-index
-Index, (c) an integer Product, (d) a Sqrt head or the hexagon decider — were sent to cert-machine-9e and put to the operator; not
-ruled yet. After any change there: `make lift`, `make drift`, `make test`. `make drift` today: 15/15, platform 29/29, riemann 31/31.
+Index, (c) an integer Product, (d) a Sqrt head or the hexagon decider — were sent to cert-machine-9e; the operator APPROVED all
+four (asked in claimbox-19, relayed to cert-machine-9e). When each lands: make lift, drift, test, then use it (the 30,000-value rows,
+the Station's 604s, C*, the hexagons). LEAN BRIDGE (the operator's word to cert-machine-9e, 2026-11-04): cert-machine-9e puts Lake
+projects for the ETH machine-model gap under claimbox's lean/eth-bridge/ (sources only, built on cert-machine's runners, nothing
+here reads it); the operator ruled NO Lean-theorem claim kind for now, and YES to a line in CLAUDE.md's layout when the folder lands. After any change there: `make lift`, `make drift`, `make test`. `make drift` today: 15/15, platform 29/29, riemann 31/31.
 
 **Done in the eleventh session (2026-10-31).** REGISTER READERS, BATCH 2 (prose.LEDGER_ROWS, prose.EASOTA): six more register
 sentences stated over pinned bytes — optconst-71 (fei ledger row, CERTIFIED), polymaps-gao-g and -chv-phi (polymaps ledger rows,
