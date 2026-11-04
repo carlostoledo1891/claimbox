@@ -697,22 +697,8 @@ fixes lifted; step 7's tighten/extend/watch; the x^x = 64 and x^x = y studies; t
        Lean object kind, the standing of each input carried into the certificate); `instruments/ledger` (B6's sampled replay
        decider) is the OPERATOR'S DECISION — without it, watchers return only halting witnesses, which the receiver already decides.
      ── ORDER: A1 → B5 → A2+A3 (with format v4) → D1 → A4 + B6's go/no-go → D2 → B7 → B8 + D3 → C9; C10 when the spend is approved.
-     ── IDEAS, NOT ADOPTED (2026-10-30, the operator: "Save the ideas in the right places. I'm not sure yet."). The operator's
-       brainstorm sheet "three-verdict paradigm" (27 Oct, private), read after the plan above was written; the plan and its
-       order are unchanged. The digest and the mapping live in cert-machine's notes/three-verdict-paradigm-2026-10-30.md
-       (local, not committed). Candidates on this side, none adopted:
-       (a) the sheet's verbs as commands beside today's translator (propose): fill (supply a refusal's missing quantity; the
-           receiver decides again), attack (a challenge object against a witness or a certificate), replay (re-decide from the
-           pinned bytes with a disjoint implementation, "the only verb that raises trust");
-       (b) a lineage graph and a decay query built from cert-machine's records, read-only ("which certificates rest on this
-           constant, this decider, this pin?"); first test, the Erdős #852 correction redone by machine;
-       (c) CONFLICT as A3's failure word instead of REFUSED, once the receiver admits the word (format v4, cert-machine's side);
-       (d) the Newman experiment beside C10: arm A one checker with a scalar reward, arm B proposer + decider + disjoint
-           replayer with the three-verdict reward, same compute; false-C rate, hole accuracy, hacking rate under injected
-           break-the-grader claims. Read notes/claim-court-2026-10-23.md first (the reward is published and collapses under GRPO).
-       The rule any lineage work keeps: a refuted premise sends its dependants to REFUSED with the premise as the hole, never to
-       REFUTED (the sheet says "inherits R"); a dependant is REFUTED only by its own re-decision with a witness. The sheet's own
-       risks come first: lineage tags blow up, and no merge rule for many verifiers' verdicts exists.
+     ── IDEAS, NOT ADOPTED (2026-10-30): from a private brainstorm of the operator's; the digest is local, not committed
+       (2026-11-04: its summary removed from this public file).
 
 
   ★ THE EIGHTH SESSION (2026-10-23, from the cert-machine chat, on "Proceed. Can we benchmark the process using claimbox vs not
@@ -738,7 +724,7 @@ fixes lifted; step 7's tighten/extend/watch; the x^x = 64 and x^x = y studies; t
      (certs/cryptids-benchmark.json there: 124 of 128 paired claims agree with the hand audit), its report /reports/cryptids.html and the
      method paper's claimbox variant (§3.4 "The same audit under two protocols"). LESSONS: a reader quotes the source's text for every
      expectation (the embedding map read clause by clause caught the plant the hard-coded map missed); bytes cross between the two
-     repositories only by lift. NEXT: nothing queued here; the issue to google-deepmind/cryptids and Pedro's reading are the operator's,
+     repositories only by lift. NEXT: nothing queued here; the issue to google-deepmind/cryptids and the partner's reading are the operator's,
      in cert-machine's HANDOFF.
   ★ THE SEVENTH SESSION (2026-10-22, from the cert-machine chat, on "Proceed all your suggestions, make sure you will push even more
      to make the results better and try to find opportunities hidden"). THREE THINGS §7 LEFT OPEN, DECIDED (corpus/riemann/mathematician.md
