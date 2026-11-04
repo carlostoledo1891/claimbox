@@ -67,7 +67,7 @@ bar         := NUMBER                       the exact rational the digits mean
              | at most NUMBER | at least NUMBER   a score claimed as a bound, the number taken exactly (a table that prints ceilings)
 term        := QUANTITY | NAME(args) | NUMBER | term OP term | |term| | (term)
              | max over i in RANGE of term | min over … | sum over … | product over …
-configuration := the N vectors of DATA form a kissing configuration in dimension D
+configuration := the N vectors of DATA["PART"]? form a kissing configuration in dimension D   (PART: one configuration of several)
 decomposition := DATA["HEADING"] is a rank-R decomposition of <n,m,p> over RING   (the heading: one of many in the file)
 score       := DATA is a feasible solution of "TITLE" and its score is bar     (a platform's own definition, §4)
 machine     := the statements of §3.1
@@ -83,6 +83,12 @@ model wrote `n("Rank-32 decomposition of <2,4,5> over 0.5*Z") is …` fifteen ti
 decomposition is decided by cert-machine's tensor decider and the record row it wrote for that heading of these bytes
 (library `decomposition` v1); without the heading, a file holding many is hole `ambiguous`; a heading that names another
 decomposition than the statement is hole `source`.
+
+**One configuration of several** (2026-11-04, the receiver's three-index `Index`, cert-machine cffc900a): `DATA["configs.0"]`
+names one configuration of a JSON file holding several by its path in the file — keys and list indices, nothing searched. The
+Station's file holds three 604-point configurations of 11 coordinates, each an integer pair (a, b) of (a + b√2)/6: read as
+`Z[√2] pairs`, one configuration is rows of 11 pairs, read with three indices. A file holding several configurations named
+without a part is hole `ambiguous`; a part not in the file is hole `data`.
 
 A printed number is kept as printed and read as the exact rational its digits mean. The relation, the bar and every
 literal in the statement must occur in the quote, or the claim is not stated: hole `source` (the source does not print
@@ -148,7 +154,12 @@ A definition is written once and used by name. The library is `claimbox/library/
 verifiers, the convex Heilbronn problem from the SOTA table's; over the SOTA table's bytes a score's box is the half unit of
 its print, or the bound as printed when the claim says `at most`; the first autocorrelation and the minimum overlap are the
 registry's C_1a and C_1b under the platform's titles, and the table's Python-published files are decoded by
-claimbox.readers.easota_py into JSON beside them, so `decimals` is a reading of those bytes too), `kissing.py` (the kissing condition over a numeric reading, and over `Z[√2] pairs` with √2 trapped between two
+claimbox.readers.easota_py into JSON beside them, so `decimals` is a reading of those bytes too; a row the library does not
+decide from the object — over a functional's cap, or a problem with no verifier written, the hexagons — rests on the SOTA
+table's ledger row for those bytes, its exact rational re-decided against the claim's bar, read as the ledger read them,
+`decimals`), `traps.py` (a quantity held from one side by an exact end over pinned bytes: Erdős #852's C* from below by its
+partial product over the odd primes to 400,000 — an upper claim refuted or *not refuted at 33,859 factors*, a lower one
+certified or *not certified at 33,859 factors*, never the other word), `kissing.py` (the kissing condition over a numeric reading, and over `Z[√2] pairs` with √2 trapped between two
 convergents), `zeta23.py` (the Riemann story's certificate and the ξ′ and window certificates), `machines.py`
 (the machine statements), `decompositions.py` (matrix-multiplication tensor decompositions, decided by cert-machine's tensor
 decider and its record) — and its registry, `claimbox/library/__init__.py`, lists every definition with:

@@ -32,13 +32,16 @@ The chain, for a register id R:
                           with the row's problem or id (horizonmath: kakeya_area.py for the Kakeya row), or the one named after
                           the family or `decide`; several and none of these: no decider, said so
   5. the record attached  {path, row, value: None, verdict} when the row's verdict is a word the receiver takes (CERTIFIED,
-                          REFUTED, REFUSED); the SOTA ledger's WITNESSED / REPAIRED are not (PLAN.md §9), so those bytes come
-                          with no record and are decided from the bytes by a definition in the library, or not at all
+                          REFUTED, REFUSED); the SOTA ledger's WITNESSED / REPAIRED are not attached here: those bytes are
+                          decided from the bytes by a definition in the library, else by the ledger's row through the library's
+                          ledger route (einstein_arena.LEDGER, cert-machine cffc900a: WITNESSED read as CERTIFIED), or not at all
   6. the reading          a claimbox reader job over the same bytes (corpus/*-jobs.json, naming the same record row when it
                           names one) gives its reading and, when its object was decided, the reference object; else the row's
                           own `form` names it (FORMS: "integer pairs" with sqrt2 → Z[√2] pairs, "integer vectors" → integers,
                           "decimal literals" → decimals); the SOTA table's JSON rows are read as the platform's verifier reads
-                          them, doubles (the library's `decimals` is the fork)
+                          them, doubles (the library's `decimals` is the fork) — except where the ledger's row is the route (no
+                          verifier written for the problem, or more values than its cap: the hexagons, the 30,000-value
+                          autocorrelation rows), read as the ledger read them, decimals (the operator, 2026-11-04)
 Standard library only. MIT"""
 import ast
 import glob
@@ -47,14 +50,17 @@ import json
 import os
 import re
 
+from . import translate as T
 from .library import decompositions as D, einstein_arena as EA
+from .library.traps import TRAPS
 
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 LEDGER = 'certs/claims-ledger.json'
 WORDS = ('CERTIFIED', 'REFUTED', 'REFUSED')
 NAMED = {**{rec: D.DECIDER for rec in D.RECORDS}, **{rec: EA.RECORDED_DECIDER for rec in EA.RECORDED}}   # the library's named deciders
 SHA = re.compile(r'^[0-9a-f]{64}$')
-FORMS = (('sqrt2', 'integer pairs', 'Z[√2] pairs'), ('integer vectors', None, 'integers'), ('decimal literals', None, 'decimals'))   # a row's `form` → the reading
+FORMS = (('sqrt2', 'integer pairs', 'Z[√2] pairs'), ('integer vectors', None, 'integers'), ('decimal literals', None, 'decimals'),   # a row's `form` → the reading
+         ('b*sqrt2)/', 'entries', 'Z[√2] pairs'))   # "(a + b*sqrt2)/6 entries" (the Station's): integer pairs over one common denominator, which no angle sees
 _index = {}
 
 
@@ -196,6 +202,28 @@ def _bytes(root, rec, d, row, rid, decider):
     return None, None, 'the row names no file and the record\'s provenance none for it'
 
 
+def _part_bytes(root, d, row):
+    """(path, part, how) for a row that names one configuration of a file holding several — its id ending in the configuration's
+    number and its claim printing "configuration K of …" (the Station's 604s: station-604-1 → station-d11-604.json, configs.0) —
+    the file the record's provenance names by the id's other tokens and the upstream's sha256, holding at least K configurations;
+    else None (2026-11-04)"""
+    rid, claim = str(row.get('id', '')), str(row.get('claim', ''))
+    m, c = re.search(r'-(\d+)$', rid), re.search(r'\bconfiguration (\d+) of\b', claim)
+    if not (m and c and m.group(1) == c.group(1)):
+        return None
+    k = int(m.group(1))
+    want = _tokens(rid[:m.start()])
+    prov = d.get('provenance') if isinstance(d.get('provenance'), dict) else {}
+    hits = [path for path, sha in prov.items() if isinstance(sha, str) and sha == row.get('upstream_sha256') and want <= _tokens(os.path.basename(path).rsplit('.', 1)[0])]
+    if len(hits) != 1 or not os.path.isfile(os.path.join(root, hits[0])):
+        return None
+    doc = _load(root, hits[0])
+    if not (isinstance(doc, dict) and isinstance(doc.get('configs'), list) and len(doc['configs']) >= k >= 1):
+        return None
+    return hits[0], 'configs.' + str(k - 1), ('the record\'s provenance names it by its upstream\'s sha256 (a transcription, not hashed by the record); '
+                                             'configuration ' + str(k) + ' of the ' + str(len(doc['configs'])) + ' it holds, at configs.' + str(k - 1))
+
+
 def _holds_entry(root, path, name):
     try:
         with open(os.path.join(root, path), encoding='utf-8') as f:
@@ -233,11 +261,16 @@ def _decided(folder):
     return {r['id'] for r in (run.get('rows') or run.get('jobs') or []) if re.search(r'CERTIFIED|REFUTED', r.get('certMachine') or '')}
 
 
-def _reading(data, attached, row):
-    """(the reading, the reference) a claimbox reader job gives the same bytes; else the row's `form`; else the platform's reading
-    of a SOTA JSON row"""
-    if data.startswith('corpus/easota/') and data.endswith('.json'):
-        return 'doubles', None
+def _reading(root, data, attached, row):
+    """(the reading, the reference) a claimbox reader job gives the same bytes; else the row's `form`; else, for a SOTA JSON row, the
+    platform's reading, or the ledger's where the ledger's row is the route (no verifier written for the problem, or over its cap)"""
+    if data.startswith('corpus/easota/'):
+        title = row.get('problem') or ''
+        t = next((k for k, v in EA.PLATFORM.items() if title in (v['slug'],) + tuple(v.get('aliases', ()))), None)
+        if (t is None or T.over_cap(root, data, t)) and EA.ledger_exact(row):
+            return EA.LEDGER_READING, None   # the ledger's row is the route: its reading, the digits printed
+        if data.endswith('.json'):
+            return 'doubles', None
     for jp in sorted(glob.glob(os.path.join(REPO, 'corpus', '*-jobs.json'))):
         folder = os.path.basename(jp)[:-len('-jobs.json')]
         for j in json.load(open(jp, encoding='utf-8'))['jobs']:
@@ -263,6 +296,13 @@ def chain(root, rid, ledger=None):
         return out
     d = _load(root, rec)
     rows = d.get('rows') if isinstance(d, dict) else None
+    trap = next((t for t in TRAPS.values() if t['certificate'] == rec), None)
+    if not isinstance(rows, list) and trap is not None:
+        # a certificate of a constant the library holds by a trap (library traps.py, 2026-11-04): the trap's own pinned list is the
+        # bytes, the receiver computes the end; the certificate is named in the object, never read as a record
+        out.update(data=trap['data'], dataBy='the library\'s trap for the certificate\'s constant (traps.py) is computed over its own pinned list',
+                   elements='integers', decider=None, attached=None, reference=None)
+        return out
     if not isinstance(rows, list):
         out['end'] = rec + ' has no rows (a certificate or a summary, not a ledger of rows)'
         return out
@@ -284,6 +324,9 @@ def chain(root, rid, ledger=None):
     if note:
         out['deciderNote'] = note
     data, by, why = _bytes(root, rec, d, row, rid, decider)
+    part = _part_bytes(root, d, row) if data is None else None
+    if part:
+        data, out['part'], by = part
     if data is None:
         out['end'] = why
         return out
@@ -291,7 +334,7 @@ def chain(root, rid, ledger=None):
     out['attached'] = {'path': rec, 'row': row.get('id'), 'value': None, 'verdict': row.get('verdict')} if row.get('verdict') in WORDS else None
     if out['attached'] is None:
         out['note'] = 'the row\'s word ' + str(row.get('verdict')) + ' is not one the receiver takes: no record attached'
-    out['elements'], out['reference'] = _reading(data, out['attached'], row)
+    out['elements'], out['reference'] = _reading(root, data, out['attached'], row)
     return out
 
 
@@ -306,7 +349,8 @@ def chains(root):
 
 def contexts(root):
     """{register id: (data, elements, reference, decider, record)} for every sentence whose chain reaches bytes"""
-    return {c['id']: (c['data'], c['elements'], c['reference'], c['decider'], c['attached']) for c in chains(root) if 'data' in c}
+    return {c['id']: (c['data'], c['elements'], c['reference'], c['decider'], c['attached']) + ((c['part'],) if c.get('part') else ())
+            for c in chains(root) if 'data' in c}
 
 
 def report(root, only=None):
@@ -316,8 +360,8 @@ def report(root, only=None):
             continue
         if 'data' in c:
             found += 1
-            lines.append(f"{c['id']}\n    bytes    {c['data']}  ({c['dataBy']})" + (f"\n    reading  {c['elements']}" if c['elements'] else '')
-                         + (f"\n    decider  {c['decider']}" if c['decider'] else '') + (f"\n    record   {c['record']} row {c['row']}: {c['verdict']}" if c['attached'] else f"\n    record   {c['record']} row {c['row']}: {c['verdict']} — not attached")
+            lines.append(f"{c['id']}\n    bytes    {c['data']}" + (f'["{c["part"]}"]' if c.get('part') else '') + f"  ({c['dataBy']})" + (f"\n    reading  {c['elements']}" if c['elements'] else '')
+                         + (f"\n    decider  {c['decider']}" if c['decider'] else '') + (f"\n    record   {c['record']} row {c['row']}: {c['verdict']}" if c['attached'] else (f"\n    record   {c['record']} row {c['row']}: {c['verdict']} — not attached" if 'row' in c else f"\n    record   {c['record']}: no rows, not attached"))
                          + (f"\n    reference records/{c['reference']}.json" if c['reference'] else ''))
         else:
             lines.append(f"{c['id']}\n    ends     {c['end']}")

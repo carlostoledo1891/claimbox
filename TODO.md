@@ -59,14 +59,14 @@ sentences are not stated, 33 for want of bytes. Checked by: each new row's plant
 
 ## C. The operator's ideas
 
-**7. Design note written (PLAN.md §5.1, for the operator's ruling); C* BLOCKED on the receiver (PLAN.md §9: a 33,859-factor product is hours in its Fraction evaluator) — Traps as the numeric core of the language.** Every numeric bar is a trap — open on one
+**7. DONE 2026-11-04 as a library family (the operator: a one-sided library trap; language v1 unchanged): claimbox/library/traps.py holds C* from below over the odd primes to 400,000 (tools/primes.py, pinned), decided by the receiver's integer Product (cert-machine cffc900a) in seconds; the published 0.0752403861777 REFUTED, an upper claim never CERTIFIED ("not refuted at 33,859 factors"); `in (a, b)` as the core not adopted. Was: design note written (PLAN.md §5.1); C* BLOCKED on the receiver — Traps as the numeric core of the language.** Every numeric bar is a trap — open on one
 side, a rounding or truncation box, or width zero — and a trap is sound once its monotone reduction is proved once (x^x's is, in
 Lean). Why: one core statement in place of five bar forms, the precision stated outright in the print-back (commitments 2 and 8),
 readings mattering less. First: a design note in PLAN.md for the operator's ruling; then C* (Erdős #852) as a prime-product trap
 — a hole today, decidable from the object with cert-machine's `Product`, no receiver change. Checked by: C* decided; the
 published 0.0752403861777 REFUTED as cert-machine's ledger says.
 
-**8. BLOCKED on the receiver (2026-11-02) — Pythagorean repair of the hexagon packing.** A rational rotation makes the angle exact,
+**8. The published packings DECIDED 2026-11-04 through the SOTA ledger's rows (the receiver's ask (d), cert-machine cffc900a: the hexagon decider as the ledger's named route); the Pythagorean REPAIR still BLOCKED (`Sqrt` designed in the receiver's SCHEMA.md, not built: a repaired packing is new bytes with no ledger row) — Pythagorean repair of the hexagon packing.** A rational rotation makes the angle exact,
 but a regular hexagon's own vertices sit at 60° steps: coordinates in Q(√3), and the expression language has no √3. cert-machine's
 verifier decides it exactly; the receiver would need a Sqrt head or the hexagon decider as a named route. Angles printed in degrees have no exact sine; a rational rotation from a
 Pythagorean triple traps each angle. Why: two SOTA rows, and the first instance of a trap as repair (the claim decided on a nearby
@@ -96,5 +96,5 @@ the words by object sha256 (records/prose-*.json already hold them) and re-decid
 overlap best (3,584 values) is decided from its bytes by C_1b, CERTIFIED, no record needed; the ask that remains is the SOTA ledger's
 words as record words (PLAN.md §9); ~~the kissing sentences without JSON bytes (Z[√2] reading)~~ — DONE 2026-11-02 for the
 headline K(11) ≥ 604: the reading `Z[√2] pairs`, the condition over integer pairs with √2 trapped between two convergents, CERTIFIED
-from the bytes in 94 s; the Station's three 604s stay holes: their file is one 3-D array (3 × 604 × 11 pairs) and the receiver's `Index` takes
-two indices — a receiver ask (three indices, or a selector that decodes one configuration), not a claimbox change.
+from the bytes in 94 s; ~~the Station's three 604s stay holes~~ — DONE 2026-11-04: the receiver's three-index `Index` (cert-machine cffc900a);
+`DATA["configs.K"]` names one configuration, fill finds the file and the part, each CERTIFIED from the bytes (about a minute each).

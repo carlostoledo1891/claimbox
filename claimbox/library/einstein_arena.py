@@ -81,7 +81,7 @@ PLATFORM = {
 # first): the minimum distance ratio, from the platform's pinned verifier, and the Heilbronn problem for convex regions, from the
 # SOTA table's verifier (the platform added the problem after the commit pinned here; the table's verifier "matches
 # heilbronn-convex.ts"). Hexagon packing is not here: its hexagons are rotated by float angles in degrees, and the receiver has no
-# exact sine or cosine
+# exact sine or cosine (its rows are decided by the SOTA table's ledger, LEDGER below, since 2026-11-04)
 PX, PY, QX, QY = IDX('i', '0'), IDX('i', '1'), IDX('j', '0'), IDX('j', '1')
 SQD = ['Add', ['Square', ['Subtract', PX, QX]], ['Square', ['Subtract', PY, QY]]]                          # |p_i - p_j|^2
 MAX_SQD = ['MaxOver', 'i', '0', ['Subtract', 'n', '2'], ['MaxOver', 'j', ['Add', 'i', '1'], N1, SQD]]
@@ -177,3 +177,41 @@ PLATFORM_BY_TITLE.update({grammar.normalise(a): v for v in PLATFORM.values() for
 # place. A claim over one rests on that row: the one written for its title and these very bytes (matched by sha256)
 RECORDED_DECIDER = 'tools/run-mc100-einstein.js'
 RECORDED = ('certs/mc100-einstein-arena.json',)
+
+
+# THE SOTA TABLE'S LEDGER AS A RECORD (2026-11-04, cert-machine cffc900a, the receiver's ask (a) and (d) on the operator's word): a
+# claim over the SOTA table's bytes that the library does not decide from the object — no verifier written for the problem (hexagon
+# packing: rotations by printed degrees, no exact sine), or a functional over more values than its cap (the 30,000-value
+# autocorrelation rows) — rests on the ledger's row for these very bytes (matched by sha256): the row's exact rational is
+# re-decided by the receiver against the claim's bar. The ledger read the bytes as the decimals they print, so the route decides
+# that reading only (the operator, 2026-11-04: decimals; under doubles the claim is a hole and says why). The row's word is the
+# receiver's through instruments/easota/word.js: WITNESSED → CERTIFIED, a WITNESSED row whose print does not state its exact value
+# MISPRINTED → REFUTED; REPAIRED and UNWITNESSED are no word, and the claim is a hole
+LEDGER = 'certs/easota-ledger.json'
+LEDGER_READING = 'decimals'
+LEDGER_DECIDER = 'instruments/easota/decide.js'
+LEDGER_DECIDERS = {'hexagon-packing': 'instruments/easota/hexagons.js'}     # the problem's own decider, where decide.js hands it on
+LEDGER_WORDS = {'WITNESSED': 'CERTIFIED', 'MISPRINTED': 'REFUTED'}
+
+
+def ledger_word(row):
+    """the receiver's word for a ledger row (word.js's wordOf, then registerWord), or None"""
+    w = row.get('verdict')
+    if w == 'WITNESSED' and row.get('printed') is not None and row.get('printedAgrees') is False:
+        w = 'MISPRINTED'
+    return LEDGER_WORDS.get(w)
+
+
+def ledger_exact(row):
+    """the row prints the score's exact rational (flat polynomials print an enclosure only: a supremum over the circle)"""
+    return isinstance(row.get('exactRational'), str) and row['exactRational'] not in ('', 'None')
+
+
+def ledger_row(root, data, title):
+    """(ledger path, row) the SOTA table's ledger wrote for these bytes and this problem — the platform's title, an alias, or the
+    table's folder name — or None"""
+    from .decompositions import rows_for
+    t = PLATFORM_BY_TITLE.get(grammar.normalise(title))
+    names = {grammar.normalise(title)} | ({t['slug']} | set(t.get('aliases', ())) if t else set())
+    hit = [(p, r) for p, r in rows_for(root, data, (LEDGER,)) if r.get('problem') in names]
+    return hit[0] if hit else None

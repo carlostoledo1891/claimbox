@@ -267,7 +267,7 @@ def bar_words(b, rel):
 
 RANGE = re.compile(r'^(-?\d+|\S+)\s*(≤|<)\s*(\w+)\s*(≤|<)\s*(-?\d+|\S+)$')
 DOTS = re.compile(r'^(-?\d+|\S+)\s*\.\.\s*(-?\d+|\S+)$')
-CONFIG = re.compile(r'^the (' + GROUPED + r'|\d+) vectors of (\w+) form a kissing configuration in dimension (\d+)$')
+CONFIG = re.compile(r'^the (' + GROUPED + r'|\d+) vectors of (\w+)(?:\["([^"]+)"\])? form a kissing configuration in dimension (\d+)$')
 # DATA["KEY"]: one object of a file that holds many, named by the heading the file prints it under (2026-10-30: the model, on
 # the register, needed it fifteen times — AlphaEvolve's notebook prints every decomposition under its own heading)
 DECOMP = re.compile(r'^(\w+)(?:\["([^"]+)"\])? is a rank-(\d+) decomposition of <(\d+),(\d+),(\d+)> over (\S+)$')
@@ -306,7 +306,8 @@ def statement(text, line):
         return ('exists', var, inner)
     m = CONFIG.match(t)
     if m:
-        return ('config', m.group(1), m.group(2), int(m.group(3)))
+        # DATA["KEY"] (2026-11-04): one configuration of a file that holds several, named by its path in the JSON (configs.0)
+        return ('config', m.group(1), m.group(2), int(m.group(4))) + ((m.group(3),) if m.group(3) else ())
     m = DECOMP.match(t)
     if m:
         return ('decomp', m.group(1), int(m.group(3)), (int(m.group(4)), int(m.group(5)), int(m.group(6))), m.group(7), m.group(2))
@@ -409,7 +410,8 @@ def fmt_statement(s):
     if k == 'exists':
         return f'there is {s[1]} : ' + fmt_statement(s[2])
     if k == 'config':
-        return f'the {s[1]} vectors of {s[2]} form a kissing configuration in dimension {s[3]}'
+        sel = f'["{s[4]}"]' if len(s) > 4 else ''
+        return f'the {s[1]} vectors of {s[2]}{sel} form a kissing configuration in dimension {s[3]}'
     if k == 'decomp':
         sel = f'["{s[5]}"]' if len(s) > 5 and s[5] else ''
         return f'{s[1]}{sel} is a rank-{s[2]} decomposition of <{s[3][0]},{s[3][1]},{s[3][2]}> over {s[4]}'
@@ -433,7 +435,7 @@ def statement_means(s):
     if k == 'exists':
         return f'for some {s[1]}: {statement_means(s[2])}'
     if k == 'config':
-        return f'every pair of the {s[1]} vectors of {s[2]} is at least 60° apart: a kissing configuration in dimension {s[3]}'
+        return f'every pair of the {s[1]} vectors of {s[2]}' + (f' under "{s[4]}"' if len(s) > 4 else '') + f' is at least 60° apart: a kissing configuration in dimension {s[3]}'
     if k == 'decomp':
         return f'the factors in {s[1]}' + (f' under "{s[5]}"' if len(s) > 5 and s[5] else '') + f' sum to the tensor <{s[3][0]},{s[3][1]},{s[3][2]}> with {s[2]} rank-one terms over {s[4]}'
     if k == 'score':

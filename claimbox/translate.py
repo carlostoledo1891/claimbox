@@ -51,6 +51,7 @@ from .library.einstein_arena import *  # noqa: F401,F403
 from .library.zeta23 import *  # noqa: F401,F403
 from .library.kissing import *  # noqa: F401,F403
 from .library.selfpower import SELFPOWER  # noqa: E402
+from .library.traps import trap_of, UPPER as TRAP_UPPER  # noqa: E402
 
 PLAIN_PRINTED = re.compile(r'^-?\d+(?:\.\d+)?$')   # the forms the receiver takes a printed bar in (its DEC and INT)
 
@@ -162,8 +163,24 @@ def select_array(doc):
     raise Refusal('data', 'no array in the published bytes')
 
 
-def inspect_array(arr):
-    """(elements, shape symbols, sizes) read off the bytes; refuses a ragged or mixed array"""
+def part_array(doc, part):
+    """(select, array) at the dotted path a claim names, DATA["configs.0"]: keys and list indices, nothing searched"""
+    cur = doc
+    for k in part.split('.'):
+        if isinstance(cur, list) and k.isdigit() and int(k) < len(cur):
+            cur = cur[int(k)]
+        elif isinstance(cur, dict) and k in cur:
+            cur = cur[k]
+        else:
+            raise Refusal('data', 'the file has no part "' + part + '" (at "' + k + '")')
+    if not isinstance(cur, list) or not cur:
+        raise Refusal('data', 'the part "' + part + '" of the file is not an array')
+    return part, cur
+
+
+def inspect_array(arr, pairs=False):
+    """(elements, shape symbols, sizes) read off the bytes; refuses a ragged or mixed array. With `pairs` (the Z[√2] reading), rows
+    of d pairs [p, q] are a third dimension, `two` (2026-11-04)"""
     def leaves(x):
         if isinstance(x, list):
             for y in x:
@@ -188,6 +205,8 @@ def inspect_array(arr):
         d = len(arr[0])
         if any(len(x) != d for x in arr):
             raise Refusal('data', 'a ragged array: the rows differ in length')
+        if pairs and all(isinstance(y, list) and len(y) == 2 and not any(isinstance(z, list) for z in y) for x in arr for y in x):
+            return elements, ['n', 'd', 'two'], {'n': len(arr), 'd': d, 'two': 2}
         if any(isinstance(y, list) for x in arr for y in x):
             raise Refusal('data', 'an array deeper than two dimensions')
         sizes['d'] = d
@@ -373,7 +392,8 @@ def cap_refusal(title, cap, count):
                    'the bytes hold ' + format(count, ',') + ', so the route is cert-machine\'s own decider, and it has no record of these bytes')
 
 
-def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None, quote=None, other=None):
+def translate(sentence, root, source, data, decider=None, record=None, reading='universal', name=None, elements=None, obj_id=None, what=None, quote=None, other=None,
+              part=None):
     """the claimbox object for a claim, or Refusal. Paths are relative to root (cert-machine's root, so that its checker resolves them)."""
     shape = grammar.parse(sentence)
     if name:
@@ -390,7 +410,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     if not os.path.isfile(dp):
         raise Refusal('data', 'the published bytes are not on disk: ' + data)
     derived = None
-    if data.startswith(SOTA_TABLE) and data.endswith('.py'):
+    ledgered = (record or {}).get('path') == LEDGER     # the ledger's row decides: its bytes are the ones it hashed, the .py itself
+    if data.startswith(SOTA_TABLE) and data.endswith('.py') and not ledgered:
         # the SOTA table's Python-published constructions (2026-11-03): the literal array decoded into JSON beside it in claimbox's
         # corpus by claimbox.readers.easota_py, nothing evaluated; the object pins the decoded copy and its decoder says so
         from .readers import easota_py
@@ -468,6 +489,8 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     fam = shape['family']
     if fam == 'bound' and str(shape.get('name')) in SELFPOWER and not decider:
         return translate_selfpower(shape, root, source, sp, data, dp, quote, reading, obj_id, what, sentence, record)
+    if fam in ('bound', 'digits', 'identity') and trap_of(shape.get('name')) and not decider:
+        return translate_trap(shape, root, source, sp, data, dp, quote, reading, obj_id, what, sentence, record)
     cert = CERTIFICATE_BY_KEY.get(ckey(shape.get('name'))) if fam in ('bound', 'digits', 'identity') and not decider else None
     text = sentence.strip()
     if cert is not None and cert.get('constant'):
@@ -521,7 +544,7 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
         try:
             doc = json.loads(f.read().decode('utf-8'))
         except (ValueError, UnicodeDecodeError) as e:
-            if not (decider and fam == 'decomposition'):
+            if not (decider and (fam == 'decomposition' or ledgered)):
                 raise Refusal('data', 'the published bytes are not JSON: ' + str(e)[:60])
             doc = None             # a binary archive (AlphaTensor's .npz) the named decider reads itself: no array is decoded here
     platform = PLATFORM_BY_TITLE.get(grammar.normalise(shape['problem'])) if fam == 'score' and shape.get('problem') and not decider else None
@@ -538,18 +561,26 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             select_array(doc)
         except Refusal:
             doc = False            # a JSON document with no array (a truth table as hex, 2026-10-31): the named decider reads it whole
+    sqrt2 = elements == 'Z[√2] pairs'    # integer pairs (p, q) read as p + q√2 (library kissing.py, 2026-11-02)
+    if part is not None and not (fam == 'kissing' and isinstance(doc, dict)):
+        raise Refusal('data', 'a part of the file, DATA["' + part + '"], is named for a kissing configuration in a JSON document only')
     if not doc:
         select, arr, kind, shp, sizes = None, [None], 'records', ['n'], {'n': 1}
     else:
-        select, arr = select_array(doc)
+        select, arr = part_array(doc, part) if part is not None else select_array(doc)
+        if part is None and fam == 'kissing' and select == 'configs.0' and len(doc['configs']) > 1:
+            raise Refusal('ambiguous', 'the file holds ' + str(len(doc['configs'])) + ' configurations; name one by its path: DATA["configs.0"] … DATA["configs.' + str(len(doc['configs']) - 1) + '"]')
         try:
-            kind, shp, sizes = inspect_array(arr)
+            kind, shp, sizes = inspect_array(arr, pairs=sqrt2)
         except Refusal:
             if primitive:
                 raise
             kind, shp, sizes = 'records', ['n'], {'n': len(arr)}   # structured entries, read by the named decider
-    sqrt2 = elements == 'Z[√2] pairs'    # integer pairs (p, q) read as p + q√2 (library kissing.py, 2026-11-02)
-    if sqrt2:
+    if sqrt2 and 'two' in sizes:
+        # rows of d coordinates, each the pair [p, q] (the Station's configurations, 2026-11-04: Index takes three indices)
+        if kind != 'integers':
+            raise Refusal('data', 'Z[√2] pairs is a reading of integer pairs; the bytes hold ' + kind)
+    elif sqrt2:
         if kind != 'integers' or 'd' not in sizes or sizes['d'] % 2:
             raise Refusal('data', 'Z[√2] pairs is a reading of rows of integer pairs; the bytes hold ' + kind + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values'))
     elif elements and kind != 'records':   # a reading of JSON numbers; structured records are the named decider's to read
@@ -563,12 +594,13 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
     how_read = {'doubles': 'each JSON number as the double it denotes, exactly', 'decimals': 'each JSON number as the decimal digits printed, exactly',
                 'integers': 'each JSON integer exactly', 'rationals': 'each p/q string as the rational it names', 'records': 'structured entries, read by the named decider'}[kind]
     if sqrt2:
-        how_read += '; each row the integer pairs (p, q) of ' + str(sizes['d'] // 2) + ' coordinates p + q√2'
-    decoder = 'the array at ' + (select or 'the top level') + ': ' + str(count) + (' rows of ' + str(sizes['d']) if 'd' in sizes else ' values') + ', ' + how_read
+        how_read += '; each row the integer pairs (p, q) of ' + str(sizes['d'] if 'two' in sizes else sizes['d'] // 2) + ' coordinates p + q√2'
+    decoder = 'the array at ' + (select or 'the top level') + ': ' + str(count) + (' rows of ' + str(sizes['d']) + (' pairs' if 'two' in sizes else '') if 'd' in sizes else ' values') + ', ' + how_read
     if derived:
         decoder += '; ' + derived
     if doc is None:
-        decoder = 'a binary archive, read by the named decider; nothing is decoded here'
+        decoder = 'a binary archive, read by the named decider; nothing is decoded here' if not ledgered else \
+            'a Python file the SOTA table publishes, read by the ledger\'s decider as the digits it prints; nothing is decoded here'
     elif doc is False:
         decoder = 'a JSON document with no array, read whole by the named decider; nothing is decoded here'
 
@@ -615,16 +647,19 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
                ', computed from the pinned bytes by the expression itself, read as ' + how_read + '; the bytes are LawN256.lean\'s integer literals decoded into JSON by the reader (' +
                str((doc.get('derivedFrom') or {}).get('path')) + ', sha256 ' + str((doc.get('derivedFrom') or {}).get('sha256', ''))[:12] + '…), the receiver reading JSON only')
     elif fam == 'kissing' and sqrt2:
+        nested = 'two' in sizes
         if shape['n'] != count:
             raise Refusal('count', 'the claim says ' + str(shape['n']) + ' points, the published bytes hold ' + str(count))
-        if sizes.get('d') != 2 * shape['dim']:
-            raise Refusal('count', 'the claim is in dimension ' + str(shape['dim']) + ', the published rows hold ' + str(sizes.get('d') // 2) + ' coordinates as integer pairs')
+        coords = sizes.get('d') if nested else sizes.get('d') // 2
+        if coords != shape['dim']:
+            raise Refusal('count', 'the claim is in dimension ' + str(shape['dim']) + ', the published rows hold ' + str(coords) + ' coordinates as integer pairs')
         domain['data'] = {'select': select, 'elements': kind, 'shape': shp}
-        preds.append({'forall': KISSING_FORALL, 'g': SQRT2_G, 'rel': 'le', 'c': '0',
+        g, struct = (SQRT2_G3, SQRT2_STRUCTURAL3) if nested else (SQRT2_G, SQRT2_STRUCTURAL)
+        preds.append({'forall': KISSING_FORALL, 'g': g, 'rel': 'le', 'c': '0',
                       'note': 'every pair at least 60° apart: (2A − C) + 2B√2 ≤ 0 over Z[√2], the sign decided with √2 trapped between two convergents'})
-        preds += structural(SQRT2_STRUCTURAL)
+        preds += structural(struct)
         hyps += [SQRT2_REDUCTION, 'n directions pairwise at least 60 degrees apart are a kissing configuration of n']
-        fals = ['some pair of the pinned vectors has (2A − C) + 2B√2 > 0'] + ['the pinned vectors violate: ' + x['what'] for x in SQRT2_STRUCTURAL] + [hashed]
+        fals = ['some pair of the pinned vectors has (2A − C) + 2B√2 > 0'] + ['the pinned vectors violate: ' + x['what'] for x in struct] + [hashed]
         ref = 'no bar is printed: the zero of the structural inequality; the claim is the count, ' + str(count) + ' directions pairwise at least 60 degrees apart, decided from the bytes read as ' + how_read
     elif fam == 'kissing':
         if shape['n'] != count:
@@ -748,6 +783,23 @@ def translate(sentence, root, source, data, decider=None, record=None, reading='
             hyps.append('cert-machine\'s record row decided that the exact score of the pinned bytes agrees with the print within the platform\'s resolution; the object claims no narrower box')
             fals = ['the exact score lies outside [' + str(lo) + ', ' + str(hi) + ']', hashed]
             ref = 'the printed ' + printed + ' ± the resolution the row decided agreement within; the object is read as ' + how_read
+        elif fam == 'score' and record and record.get('path') == LEDGER:
+            # the SOTA table's ledger as a record (library einstein_arena.py, LEDGER, 2026-11-04): the row's exact rational, re-decided
+            # by the receiver against the claim's own bar — the bound as printed ("at most BAR"), else the half-unit box of the print
+            title = shape.get('problem') or ''
+            g_named = {'named': 'the score of "' + title + '" over the published object, as the SOTA table\'s ledger computes it exactly from the digits printed', 'where': decider, 'args': ['f']}
+            if shape['rel'] in ('le', 'ge'):
+                preds.append({'g': g_named, 'rel': shape['rel'], 'printed': printed, 'c': str(shape['c'])})
+                fals = ['the ledger\'s exact score of the pinned bytes is not ' + rel_text(shape['rel']) + ' ' + printed, hashed]
+                ref = 'the bar is the printed ' + printed + ' taken exactly, the score claimed ' + rel_text(shape['rel']) + ' it'
+            else:
+                lo, hi = shape['c']
+                preds.append({'g': g_named, 'rel': 'in', 'printed': printed, 'c': [str(lo), str(hi)]})
+                fals = ['the ledger\'s exact score of the pinned bytes lies outside [' + str(lo) + ', ' + str(hi) + ']', hashed]
+                ref = 'the printed ' + printed + ' is the SOTA table\'s rounding of the score, read as the box its digits allow'
+            hyps.append('the SOTA table\'s ledger (' + LEDGER + ', row ' + record['row'] + ') decided the score of these very bytes exactly, read as the decimals they print, by ' +
+                        decider + '; its row\'s word is the receiver\'s through instruments/easota/word.js, and its exact rational is re-decided against the bar here')
+            ref += '; the quantity is the score the platform defines, decided by the ledger\'s decider over the digits printed; the object is read as ' + how_read
         elif fam in ('digits', 'score'):
             named = str(shape.get('name')) + ' of the published object, as the claimant defines it'
             lo, hi = shape['c']
@@ -791,6 +843,41 @@ def translate_selfpower(shape, root, source, sp, data, dp, quote, reading, obj_i
     fals = ['p^p and N^q·q^p, computed exactly, stand the other way round', 'the pinned file does not hash to ' + domain['pin']['sha256'][:8] + '…']
     ref = 'the bar is the printed ' + shape['printed'] + ', taken exactly as ' + str(a) + '; the root is decided by an exact integer inequality, no logarithm evaluated'
     return assemble(obj_id, shape, 'bound', sentence.strip(), what, source, sp, quote, reading, domain, [pred], ref, hyps, fals, record)
+
+
+def translate_trap(shape, root, source, sp, data, dp, quote, reading, obj_id, what, sentence, record):
+    """a bound or a printed value of a quantity held from below by a trap (library traps.py, 2026-11-04): the exact end over the
+    trap's pinned list, against the claim's bar on the one side the end decides — the top of a box, the bar of an upper or a lower bound"""
+    name, t = trap_of(shape.get('name'))
+    if data != t['data']:
+        raise Refusal('data', 'the trap for ' + name + ' is computed over its own pinned list, ' + t['data'] + '; the claim names ' + str(data))
+    try:
+        doc = json.loads(open(dp, 'rb').read().decode('utf-8'))
+    except (ValueError, UnicodeDecodeError) as e:
+        raise Refusal('data', 'the pinned list is not JSON: ' + str(e)[:60])
+    arr = doc.get(t['select']) if isinstance(doc, dict) else None
+    if not isinstance(arr, list) or not arr or not all(isinstance(x, int) and not isinstance(x, bool) and x >= 3 for x in arr):
+        raise Refusal('data', 'the pinned list must hold integers of at least 3 at "' + t['select'] + '"')
+    domain = {'kind': 'finite', 'pin': {'path': data, 'sha256': sha256(dp)}, 'variable': 'f', 'count': len(arr),
+              'decoder': 'the array at ' + t['select'] + ': ' + str(len(arr)) + ' values, each JSON integer exactly (the odd primes, in order)',
+              'data': {'select': t['select'], 'elements': 'integers', 'shape': ['n']}}
+    printed, rel = shape['printed'], shape['rel']
+    if rel == 'in':
+        top = shape['c'][1]
+        pred = {'g': ['Subtract', t['g'], str(top)], 'rel': 'le', 'c': '0',
+                'note': 'the end at most the top of the box of the printed ' + printed + ', ' + str(top) + ' (the box\'s lower end is not asked: the trap holds ' + name + ' from below)'}
+        said = 'the top of the box of the printed ' + printed + ' (' + str(top) + ')'
+    else:
+        pred = {'g': t['g'], 'rel': 'le' if rel == 'eq' else rel, 'printed': printed, 'c': str(shape['c'])}
+        said = 'the printed ' + printed + ' taken exactly'
+    upper = pred['rel'] in TRAP_UPPER
+    hyps = [t['reduction'], t['list'], 'the end decides ' + ('an upper claim: if it reaches past the bar, ' + name + ' does, and the claim is refuted; if not, nothing follows '
+            '(printed "not refuted at ' + t['reach'] + '")' if upper else 'a lower claim: if it clears the bar, ' + name + ' does, and the claim holds; if not, nothing follows '
+            '(printed "not certified at ' + t['reach'] + '")')]
+    fals = ['the end over the pinned list ' + ('exceeds ' if upper else 'falls short of ') + said, 'the pinned list does not hash to ' + domain['pin']['sha256'][:8] + '…']
+    ref = ('the bar is ' + said + '; the quantity is ' + t['what'] + ', held from below by ' + t['end'] + ', ' + t['reach'] +
+           ', computed exactly by the receiver from the pinned list; cert-machine\'s own certificate of the constant is ' + t['certificate'])
+    return assemble(obj_id, shape, shape['family'], sentence.strip(), what, source, sp, quote, reading, domain, [pred], ref, hyps, fals, record)
 
 
 def assemble(obj_id, shape, fam, text, what, source, sp, quote, reading, domain, preds, ref, hyps, fals, record):

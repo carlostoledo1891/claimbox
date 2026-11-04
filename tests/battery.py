@@ -1284,7 +1284,7 @@ SQ = {r['id']: r['text'] for r in PR.rows_of('register')}
 SOTA_P = {'circles': ('circles-rectangle', 'Circles in a Rectangle (n = 21)'), 'mindist': ('min-distance-ratio-2d', 'Minimizing Max/Min Distance Ratio (2D, n=16)'),
           'heilbronn': ('heilbronn-convex', 'Heilbronn Problem for Convex Regions (n = 14)'),
           'overlap': ('erdos-minimum-overlap', 'erdos-minimum-overlap'), 'autocorr': ('first-autocorrelation', 'first-autocorrelation'),
-          'flat': ('flat-polynomials', 'flat-polynomials'), 'edges': ('edges-vs-triangles', 'edges-vs-triangles')}
+          'flat': ('flat-polynomials', 'flat-polynomials'), 'edges': ('edges-vs-triangles', 'edges-vs-triangles'), 'hexagons': ('hexagon-packing', 'hexagon-packing')}
 def sota(prob, who, bar, quote_bar=None, ext='json', reading='doubles'):
     """cert-machine's word on one SOTA-table row claimed with that bar ("at most BAR" claims a bound); with a fork of readings, the
     words by reading; a hole, its rule"""
@@ -1346,16 +1346,19 @@ py = {'haug': sota('overlap', 'haugland_2016', 'at most 0.380927', ext='py', rea
       'moved': sota('overlap', 'haugland_2016', 'at most 0.380926', quote_bar='0.380927', ext='py', reading='decimals'),
       'ttt': sota('autocorr', 'ttt_discover_2026', 'at most 1.50286290'),
       'flat': sota('flat', 'alphaevolve_2025', '1.340925', ext='py', reading='integers'),
-      'edges': sota('edges', 'alphaevolve_2025', '-0.712494', ext='py', reading='doubles')}
+      'edges': sota('edges', 'alphaevolve_2025', '-0.712494', ext='py', reading='doubles'),
+      'edges_dec': sota('edges', 'alphaevolve_2025', '-0.712494', ext='py', reading='decimals')}
 shutil.rmtree(PR.PLANTS, ignore_errors=True)
 ok(py['haug'].get('decimals') == 'CERTIFIED' and py['ae'] == py['tog'] == 'CERTIFIED' and py['ac'] == {'decimals': 'CERTIFIED', 'doubles': 'CERTIFIED'},
    'SOTA .py rows: Haugland, AlphaEvolve and Together AI\'s step functions and AlphaEvolve\'s autocorrelation, decoded from their Python files, certify the table\'s bounds', json.dumps(py))
 red(py['ae_in'] == 'REFUTED', 'SOTA .py rows: refuted — AlphaEvolve\'s 0.380924 read as a rounding: the table prints a ceiling, the value is 0.3809230…', py['ae_in'])
 red(py['moved'] == 'REFUTED', 'SOTA .py rows: refuted — Haugland\'s bound moved one unit down (0.380926)', py['moved'])
 red(py['haug'] == {'decimals': 'CERTIFIED', 'doubles': 'REFUTED'}, 'SOTA .py rows: the fork splits — Haugland\'s 51 steps as decimals CERTIFIED, as doubles REFUTED (the rescaled h exceeds 1)', json.dumps(py['haug']))
-ok(py['flat'] == 'hole decider' and py['edges'] == 'hole decider', 'SOTA .py rows: flat polynomials (a supremum over the circle) and edges vs triangles (a procedure) stay holes, decoded', py['flat'] + ' · ' + py['edges'])
-ok(py['ttt'] == 'hole decider' and T.over_cap(ROOT, 'corpus/easota/first-autocorrelation/ttt_discover_2026.json', 'first-autocorrelation') == (4000, 30000),
-   'SOTA .py rows: a 30,000-value autocorrelation is over the functional\'s cap (4,000 values: the receiver\'s evaluator is quadratic) and a hole, not an hour of the receiver', py['ttt'])
+ok(py['flat'] == 'hole decider' and py['edges_dec'] == 'CERTIFIED' and py['edges'] == 'hole reading',
+   'SOTA .py rows: edges vs triangles (a procedure, no definition here) decided by the SOTA ledger\'s row (2026-11-04), its .py pinned, read as the digits printed (as doubles, a hole); flat polynomials stay a hole — the ledger holds an enclosure of the supremum, no exact rational',
+   py['flat'] + ' · ' + py['edges_dec'] + ' · ' + py['edges'])
+ok(py['ttt'] == 'hole reading' and T.over_cap(ROOT, 'corpus/easota/first-autocorrelation/ttt_discover_2026.json', 'first-autocorrelation') == (4000, 30000),
+   'SOTA .py rows: a 30,000-value autocorrelation is over the functional\'s cap (4,000 values: the receiver\'s evaluator is quadratic), never an hour of the receiver: read as doubles, a hole (the ledger, its route since 2026-11-04, read the decimals)', py['ttt'])
 for who in ('haugland_2016', 'alphaevolve_2025', 'ttt_discover_2026', 'together_ai_2026'):
     dec = json.load(open(os.path.join(REPO, 'corpus', 'easota', 'erdos-minimum-overlap', who + '.json'), encoding='utf-8'))
     src = os.path.join(ROOT, dec['derivedFrom']['path'])
@@ -1406,9 +1409,10 @@ ok(FC['kiss-alphaevolve-593'] == ('corpus/kissing/alphaevolve-d11-593.json', 'in
    and FC['kiss-ea-604'][1] == 'Z[√2] pairs' and FCH['kiss-ea-604']['dataBy'] == 'the record\'s provenance names it, hashed'
    and FC['kiss-ea-594-winner'] == ('corpus/einstein-arena/best-6.json', 'decimals', 'einstein-arena/ea-kissing-kissing-number-d11', None, None) and FCH['kiss-ea-594-winner']['dataBy'].startswith('a claimbox reader'),
    'fill: a reader job stating the row\'s claim takes it (593 and 594 over the bytes the readers pinned, their readings and decided objects); 604 reaches the provenance file holding its id\'s tokens, hashed, read as the row\'s `form` says (Z[√2] pairs)', '593, 594, 604')
-ok(len(FC) >= 80 and all(FCH[i].get('end', '').startswith('the row names no file') for i in ('kiss-station-604-1', 'kiss-station-604-2', 'kiss-station-604-3'))
-   and FCH['mm-strassen-1969']['end'].endswith('not a ledger of rows)') and FCH['erdos852-cstar']['end'].endswith('not a ledger of rows)'),
-   'fill: ' + str(len(FC)) + ' register sentences reach their bytes; the Station\'s 604s, the Strassen certificate and C* end with the reason printed', str(len(FC)))
+ok(len(FC) >= 80 and [FC['kiss-station-604-' + k][5] for k in '123'] == ['configs.0', 'configs.1', 'configs.2']
+   and all(FC['kiss-station-604-' + k][:2] == ('corpus/kissing/station-d11-604.json', 'Z[√2] pairs') for k in '123')
+   and FCH['mm-strassen-1969']['end'].endswith('not a ledger of rows)') and FC['erdos852-cstar'][:2] == ('../claimbox/corpus/traps/odd-primes-400000.json', 'integers'),
+   'fill: ' + str(len(FC)) + ' register sentences reach their bytes; the Station\'s 604s each its configuration of the one file (configs.K, 2026-11-04), C* the trap\'s pinned list; the Strassen certificate ends with the reason printed', str(len(FC)))
 _fr = os.path.join(tmp, 'fill-root')
 for _d in ('certs', 'corpus/easota/circles-rectangle', 'corpus/optimization-constants/num2026', 'instruments/fei'):
     os.makedirs(os.path.join(_fr, _d), exist_ok=True)
@@ -1440,6 +1444,77 @@ ok(all(any(p.get('word') == 'CERTIFIED' and p['kind'] == 'grammar' for p in RB2[
    'register batch 2: C71, Gao\'s G and the Phi map, each over the file its ledger row\'s decider read, take the row\'s word (the record)', 'three')
 red(all(RB2[i]['outcome'].startswith('not stated') and RB2[i]['proposals'][0]['refused']['rule'] == 'decider' for i in ('polymaps-gao-f4', 'polymaps-gao-f5')),
     'register batch 2: refused — a bar printed as a fraction (det J = -44/9, 160/29): the receiver\'s format carries a printed bar as digits only', 'F4, F5')
+
+# ---- 15 · the receiver's four asks, used (2026-11-04, cert-machine cffc900a, the operator's approval) ------------------------------
+# (a, d) the SOTA table's ledger as a record: a row the library does not decide from the object (over the functional's cap; the
+# hexagons, no verifier written) is decided by the ledger's exact rational re-decided against the claim's bar, read as the ledger
+# read the bytes, decimals. Reds: the doubles reading (a hole, never the ledger's word for another reading); a bound moved past
+# the exact value; a REPAIRED or MISPRINTED word (word.js's composition). (b) Index with three indices: the Station's three 604s,
+# one configuration each of one file (DATA["configs.K"]); reds: a file holding three named without one (ambiguous), a part not
+# in the file, one integer moved. (c) the integer Product: C* held from below by a one-sided trap (library traps.py) — the
+# published value refuted, a lower bound certified, an upper bound never certified ("not refuted at …"), a lower bound the end
+# does not clear never refuted ("not certified at …"); a composite in the list (4 for 3) moves the end: the list is sieved again
+os.makedirs(PR.PLANTS, exist_ok=True)
+ask = {'ttt': sota('autocorr', 'ttt_discover_2026', 'at most 1.50286290', reading='decimals'),
+       'ours': sota('autocorr', 'ours_2026', '1.50286286', reading='decimals'),
+       'h1': sota('hexagons', 'alphaevolve_2025', '3.9419123', reading='decimals'),
+       'h2': sota('hexagons', 'ours_2026', '3.9416523', reading='decimals'),
+       'hdbl': sota('hexagons', 'ours_2026', '3.9416523', reading='doubles'),
+       'tmoved': sota('autocorr', 'ttt_discover_2026', 'at most 1.50286289', quote_bar='1.50286290', reading='decimals'),
+       'hmoved': sota('hexagons', 'alphaevolve_2025', '3.9419124', quote_bar='3.9419123', reading='decimals')}
+shutil.rmtree(PR.PLANTS, ignore_errors=True)
+ok(ask['ttt'] == ask['ours'] == ask['h1'] == ask['h2'] == 'CERTIFIED',
+   'asks (a, d): the 30,000-value autocorrelation rows (TTT-Discover as a bound, Together AI\'s print as its box) and both hexagon packings, decided by the SOTA ledger\'s rows', json.dumps(ask))
+red(ask['hdbl'] == 'hole reading', 'asks (a, d): refused — the ledger read the digits printed; a claim reading the bytes as doubles is a hole, not the ledger\'s word', ask['hdbl'])
+red(ask['tmoved'] == ask['hmoved'] == 'hole decider',
+    'asks (a, d): refused — a ledger row decides the score it prints, no other: the TTT bound moved one unit (below its exact 1.50286289825…), the hexagon side moved one unit, are holes (the receiver would refuse the bar, record-bar-mismatch)', ask['tmoved'] + ' · ' + ask['hmoved'])
+red(EAL.ledger_word({'verdict': 'REPAIRED'}) is None and EAL.ledger_word({'verdict': 'WITNESSED', 'printed': '1.5', 'printedAgrees': False}) == 'REFUTED'
+    and EAL.ledger_word({'verdict': 'WITNESSED', 'printed': None, 'printedAgrees': None}) == 'CERTIFIED',
+    'asks (a, d): a REPAIRED row is no word; a WITNESSED row whose print does not state its value is MISPRINTED, REFUTED (word.js\'s composition)', 'REPAIRED · MISPRINTED')
+ST = ('source P = ../claimbox/corpus/register/sentences.md\ndata   s = {data}\nread   s as Z[√2] pairs\n'
+      'claim  st over s\n  quote "K(11) >= 604 — configuration 1 of three" from P\n  : the 604 vectors of s{part} form a kissing configuration in dimension 11\n')
+def station(part, data='corpus/kissing/station-d11-604.json', run=True):
+    t_ = lang.parse(ST.format(part=part, data=data))
+    try:
+        o = CP.compile_claim(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT)[0]['object']
+    except Refusal as e:
+        return 'hole ' + e.rule
+    return CP.word(T.check_with_cert_machine(o, ROOT)) if run else o
+st = {'none': station(''), 'nine': station('["configs.9"]')}
+_sd = os.path.join(tmp, 'station')
+os.makedirs(_sd, exist_ok=True)
+_sdoc = json.load(open(os.path.join(ROOT, 'corpus', 'kissing', 'station-d11-604.json'), encoding='utf-8'))
+_sdoc['configs'][0][7][3][1] += 1
+json.dump(_sdoc, open(os.path.join(_sd, 'moved.json'), 'w', encoding='utf-8'))
+st['moved'] = station('["configs.0"]', data=os.path.relpath(os.path.join(_sd, 'moved.json'), ROOT))
+_so = station('["configs.2"]', run=False)
+red(st['none'] == 'hole ambiguous' and st['nine'] == 'hole data', 'ask (b): refused — the Station\'s file holds three configurations: named by none, ambiguous; configs.9, not in the file', st['none'] + ' · ' + st['nine'])
+red(st['moved'] == 'REFUTED', 'ask (b): refuted — one √2 part moved by one (configuration 0, vector 7, coordinate 3): off the shell', st['moved'])
+ok(_so['domain']['data'] == {'select': 'configs.2', 'elements': 'integers', 'shape': ['n', 'd', 'two']} and json.dumps(_so['predicate']).count('"Index", "f", "i", "k", "0"') > 0,
+   'ask (b): one configuration of a three-dimensional array, read with three indices (vector, coordinate, rational or √2 part)', _so['domain']['data']['select'])
+CS = ('source P = ../claimbox/corpus/register/sentences.md\nsource Q = {planted}\ndata   pr = {data}\nread   pr as integers\nuse    C* v1\n'
+      'claim  c over pr\n  quote "{quote}" from {src}\n  : {stmt}\n')
+_cq = os.path.join(tmp, 'cstar.md')
+open(_cq, 'w', encoding='utf-8').write('C* ≤ 0.08\nC* > 0.07524\nC* > 0.0753\n')
+def cstar(stmt, quote, src='Q', data='../claimbox/corpus/traps/odd-primes-400000.json'):
+    t_ = lang.parse(CS.format(planted=PR.rel_of(_cq), data=data, quote=quote, src=src, stmt=stmt))
+    r = CP.result(t_, [i for i in t_['items'] if i['kw'] == 'claim'][0], ROOT, run=True)
+    return r['readings'][0]['word'] if r.get('readings') else 'hole ' + r['hole']['rule']
+_cd = os.path.join(tmp, 'traps')
+os.makedirs(_cd, exist_ok=True)
+_cl = json.load(open(os.path.join(REPO, 'corpus', 'traps', 'odd-primes-400000.json'), encoding='utf-8'))
+cs = {'pub': cstar('C* = published as 0.0752403861777', SQ['erdos852-cstar'], src='P'),
+      'ge': cstar('C* > 0.07524', 'C* > 0.07524'), 'le08': cstar('C* ≤ 0.08', 'C* ≤ 0.08'), 'ge753': cstar('C* > 0.0753', 'C* > 0.0753')}
+_cl['primes'][0] = 4
+json.dump(_cl, open(os.path.join(_cd, 'odd-primes-400000.json'), 'w', encoding='utf-8'))
+cs['other'] = cstar('C* > 0.07524', 'C* > 0.07524', data=PR.rel_of(os.path.join(_cd, 'odd-primes-400000.json')))
+ok(cs['pub'] == 'REFUTED' and cs['ge'] == 'CERTIFIED',
+   'ask (c): C* over 33,859 factors in seconds — the published 0.0752403861777 refuted (the end passes the top of its box), C* > 0.07524 certified', cs['pub'] + ' · ' + cs['ge'])
+red(cs['le08'].startswith('not refuted at') and cs['ge753'].startswith('not certified at'),
+    'ask (c): the trap is one-sided — C* ≤ 0.08 is never CERTIFIED from a lower end ("not refuted at …"), C* > 0.0753 never REFUTED ("not certified at …")', cs['le08'] + ' · ' + cs['ge753'])
+red(cs['other'] == 'hole data', 'ask (c): refused — a list other than the trap\'s own pinned one (3 read as 4) is not the trap\'s bytes', cs['other'])
+_pp = subprocess.run([sys.executable, os.path.join(REPO, 'tools', 'primes.py'), '--check'], capture_output=True, text=True)
+ok(_pp.returncode == 0 and _cl['count'] == 33859, 'ask (c): the trap\'s list is the odd primes to 400,000, sieved again and byte for byte the pinned file (33,859)', _pp.stdout.strip()[:60])
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

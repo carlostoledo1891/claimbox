@@ -25,13 +25,15 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–8 built — step 7's helpers (tighten, extend, watch, hunt, attack, and fill as the
-provenance walker, scoped down), step 8 (doc with number slots; the x^x report builds from its records); 9–10 not started. Tests: `make test` → 590 pass, 0 fail, 156/156 red controls (about 2 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
+provenance walker, scoped down), step 8 (doc with number slots; the x^x report builds from its records); 9–10 not started. Tests: `make test` → 601 pass, 0 fail, 163/163 red controls (about 5 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31). /verify/ stays UNLINKED
 from claimbox (the operator's ruling). The x^x = y report is served by cert-machine at /reports/xx.html. web/dist holds index.html
 only. Publishing is always a cert-machine session's run, on the operator's word in that chat. LIVE NOW (curl, 2026-11-04): claimbox
 6344639's build, 89,585 bytes, sha256 47b87b510284796352282eec962efa5adbadf2999b47681f13e91627c380cb79 (cert-machine e2e64f88,
-republished on the operator's word by cert-machine-9e) — web/dist and the live page are the same bytes.
+republished on the operator's word by cert-machine-9e). THE PAGE IS BEHIND AGAIN: the receiver's four asks, used (below), moved it
+("74 decided, 58 name the reason", was 64 / 68): web/dist/index.html 89,584 bytes, sha256
+bc01cb45415de4f5fb46fdf416c6d23cfb3b7992fb9c7b0a130ba91bc9568b57 — the republish to ask of cert-machine-9e, on the operator's word.
 
 **The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-9e` (SendMessage; cert-machine-5b
 and -cb are gone). On 2026-11-04 the four receiver asks of NEXT 1 — (a) the SOTA ledger's words as record words, (b) a three-index
@@ -40,6 +42,39 @@ four (asked in claimbox-19, relayed to cert-machine-9e). When each lands: make l
 the Station's 604s, C*, the hexagons). LEAN BRIDGE (the operator's word to cert-machine-9e, 2026-11-04): cert-machine-9e puts Lake
 projects for the ETH machine-model gap under claimbox's lean/eth-bridge/ (sources only, built on cert-machine's runners, nothing
 here reads it); the operator ruled NO Lean-theorem claim kind for now, and YES to a line in CLAUDE.md's layout when the folder lands. After any change there: `make lift`, `make drift`, `make test`. `make drift` today: 15/15, platform 29/29, riemann 31/31.
+
+**THE RECEIVER'S FOUR ASKS, USED (2026-11-04, the thirteenth session; cert-machine cffc900a, approved by the operator in both
+chats; `make lift` re-pinned check.py, check.js, SCHEMA.md).** The operator's two rulings asked here: the ledger-routed rows read as
+DECIMALS with the register's `read` lines rewritten (statements untouched), and C* as a ONE-SIDED LIBRARY TRAP (PLAN.md §5.1 ruled:
+a library family, language v1 unchanged).
+(a, d) THE SOTA LEDGER AS A RECORD — library einstein_arena.LEDGER (ledger_row, ledger_word = word.js's wordOf + registerWord,
+ledger_exact), compile.recorded_score_job: a score the library does not decide from the object (no verifier written, or over a
+functional's cap) over bytes the ledger hashed takes its row: `record.value: exactRational`, re-decided by the receiver against the
+claim's bar (a box of the print, or `at most`); the decider named is instruments/easota/decide.js (hexagons.js for the hexagons);
+the reading must be the ledger's, decimals (else hole `reading`); the claim's score must be the row's print (else hole `decider`:
+the receiver refuses another bar, record-bar-mismatch); a .py row pins the .py itself (the ledger's bytes), nothing decoded;
+REPAIRED / UNWITNESSED rows and rows with an enclosure only (flat polynomials) stay holes. Decided: TTT-Discover's and Together AI's
+30,000-value autocorrelation, both hexagon packings, both edges-vs-triangles rows — all CERTIFIED. fill reads those rows as decimals;
+the read lines of the six data names were rewritten in all 30 register proposal files (programme declarations, no statement moved).
+(b) THREE INDICES — LANGUAGE.md: `the N vectors of DATA["configs.K"] form a kissing configuration in dimension D` (lang CONFIG, a
+dotted path into the JSON); translate.part_array, inspect_array(pairs=True) reads rows of d pairs as shape [n, d, two]; library
+kissing._sqrt2 builds the Z[√2] expressions for either layout (the flat one byte for byte as before); a file of several
+configurations named without a part: hole `ambiguous`. fill._part_bytes finds the Station's file by the row's id tokens and the
+upstream sha256 ("configuration K of three" → configs.K-1); FORMS reads "(a + b*sqrt2)/6 entries" as Z[√2] pairs. The three 604s:
+CERTIFIED from the bytes, about 68 s each.
+(c) C* — claimbox/library/traps.py (TRAPS, trap_of, claim_word), translate.translate_trap, tools/primes.py → corpus/traps/
+odd-primes-400000.json (33,859 primes, pinned; the battery sieves again): the partial constant over the list is a strict lower end
+of C*, the receiver's integer Product computes it in about 3 s; an upper claim (≤, <, =, a box's top) is REFUTED or printed "not
+refuted at 33,859 factors", a lower claim CERTIFIED or "not certified at …", never the other word (compile.claim_word, prose).
+The register's sentence ("published as 0.0752403861777"): REFUTED. fill reaches the trap's list from cert-machine's certificate;
+prose's REL_WORDS reads "published as" as the language's rounding.
+THE REGISTER (records/prose-register.json, the changed sentences re-decided without the cache): 459 proposals (was 419), validated
+27 (no second kind on the new rows: grammar holes them, or only the grammar states them), not stated 58 (was 68): C*, the Station's
+three 604s, the two edges rows, TTT's autocorrelation: "proposed, not validated: one kind of proposer only"; Together AI's
+autocorrelation and both hexagons: "refused" — the models' planted runs wrote another data name, and the hexagon sentence prints its
+side with no relation (printedBack). Battery §15 (4 greens, 7 reds) and the §13/§14 lines brought up to date: 601 pass, 0 fail,
+163/163. Still holes: the Station's 582 shell and d12 lift, flat polynomials (an enclosure), the Strassen ten, F4/F5, the Pythagorean
+hexagon repair (`Sqrt` designed in the receiver's SCHEMA.md, not built).
 
 **Done in the eleventh session (2026-10-31).** REGISTER READERS, BATCH 2 (prose.LEDGER_ROWS, prose.EASOTA): six more register
 sentences stated over pinned bytes — optconst-71 (fei ledger row, CERTIFIED), polymaps-gao-g and -chv-phi (polymaps ledger rows,
@@ -280,8 +315,9 @@ exercised over all 88 register sentences with context, 22 of them named through 
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
-1. ~~The republish of the newest build~~ — DONE 2026-11-04 (cert-machine e2e64f88). The receiver asks of PLAN.md §9 as the
-   operator rules them (sent to cert-machine-9e 2026-11-04, waiting on the ruling): the SOTA ledger's words as record words (the
+1. The republish of the newest build (sha256 bc01cb45…, the START HERE line), asked of cert-machine-9e on the operator's word.
+   (The 2026-11-04 republish, cert-machine e2e64f88, and the four receiver asks, cffc900a, are DONE and used.) Was: the receiver asks
+   of PLAN.md §9 as the operator rules them (sent to cert-machine-9e 2026-11-04): the SOTA ledger's words as record words (the
    two 30,000-value autocorrelation rows), the three-index Index (the Station's 604s), the integer Product (C*).
 2. TODO items 7 (traps as the numeric core: the design note in PLAN.md §5.1 waits on the operator's ruling) and 10 (more writers, a
    fresh corpus: the operator's word and budget). The hexagon packing stays with the receiver (item 8).

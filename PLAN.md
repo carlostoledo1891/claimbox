@@ -109,7 +109,7 @@ build what is asked, never substitute a design.
 - **Today's grammar** (claimbox/grammar.py, a closed list of shapes) becomes one proposer for step 6; today's readers
   become importers that write claims in the language. Nothing is thrown away; calibration is kept.
 
-### 5.1 · The trap as the numeric core (a design note for the operator's ruling, 2026-11-02; TODO.md item 7)
+### 5.1 · The trap as the numeric core (a design note for the operator's ruling, 2026-11-02; TODO.md item 7 — RULED 2026-11-04: a library family, one-sided, language v1 unchanged)
 
 Every numeric statement the language has is a trap: a value held between two exact ends. A bound (`≤ b`) is a trap open on one
 side; printed digits are a rounding box (`published as`) or a truncation box (`= d…`); an exact value is a trap of width zero;
@@ -124,6 +124,12 @@ and names the width that would decide it (a hole's price). The ruling asked: ado
 the five forms and add traps as a library family. Found while prototyping C* (§9): a prime-product trap needs a product of
 ~34,000 rationals, which the receiver's evaluator takes as a Fraction normalised at every step — hours; the receiver would need
 an integer-numerator/denominator product, or a decider.
+
+**The ruling (the operator, 2026-11-04): a one-sided library trap.** `claimbox/library/traps.py` holds C* from below by its
+partial product over the odd primes to 400,000 (a pinned list, tools/primes.py's sieve, sieved again by the battery), decided
+by the receiver's integer Product (cert-machine cffc900a) in seconds. From a lower end an upper claim (≤, <, =, a box's top) is
+refuted or printed *not refuted at 33,859 factors*, a lower claim certified or *not certified at 33,859 factors* — never the
+other word. The published 0.0752403861777: REFUTED. `in (a, b)` as the core stays unadopted.
 
 ## 6 · Decisions (the operator, 2026-10-30)
 
@@ -205,14 +211,14 @@ passes. Parked behind a spend decision.
   Open there, for the operator: an `in` from a valueless EinsteinArena row states the half-unit box of the print, while the row
   decided agreement only within the platform's resolution.
 - Format v4: canonical form; typed readings; a hole and its price on a REFUSED; CONFLICT from concordance only.
-- `Index` with three indices (or a `select` that decodes one slice of a 3-D array): the Station's three 604-point kissing
+- ~~`Index` with three indices~~ — DONE in cert-machine cffc900a (2026-11-04), used: `DATA["configs.K"]`, the three Station 604s CERTIFIED from the bytes. Was: the Station's three 604-point kissing
   configurations are one array of 3 × 604 × 11 integer pairs (corpus/kissing/station-d11-604.json); with it, the Z[√2] route
   decides them as it decides EinsteinArena's 604 (2026-11-02).
-- A `Product` (and `Sum`) over many rationals evaluated as integers — numerator and denominator apart, one reduction at the end —
+- ~~An integer `Product`~~ — DONE in cert-machine cffc900a (2026-11-04), used: C* as a one-sided trap (library traps.py), the published value REFUTED in seconds. Was: a `Product` (and `Sum`) over many rationals evaluated as integers — numerator and denominator apart, one reduction at the end —
   or a prime-product decider: the Erdős #852 constant C* = ½(∏_{p≥3}(1 + 1/(p−1)³) − 1) needs 33,859 factors to refute its
   published 0.0752403861777 from the bytes (cert-machine's own certificate does it with one integer inequality); the checker's
   Fraction-normalised product makes that hours (2026-11-02, found by TODO.md item 7).
-- The SOTA table's ledger as a record (2026-11-03, the operator's choice for the rows over the functional's cap): the claimbox
+- ~~The SOTA table's ledger as a record~~ — DONE in cert-machine cffc900a (2026-11-04), used with the hexagons (ask (d), the hexagon decider as the ledger's named route; `Sqrt` designed there, not built): library einstein_arena.LEDGER, the two 30,000-value autocorrelation rows and both hexagon packings decided from the ledger's exact rationals, read as decimals. Was (2026-11-03, the operator's choice for the rows over the functional's cap): the claimbox
   checker refuses a record whose row's verdict is not CERTIFIED, REFUTED or REFUSED (`record-verdict-word`), and
   certs/easota-ledger.json's rows say WITNESSED, MISPRINTED, REPAIRED. The register already reads them through
   instruments/easota/word.js (WITNESSED → CERTIFIED, MISPRINTED → REFUTED); the ask is that the checker read a ledger row's word
@@ -235,6 +241,11 @@ operator's word.
 
 ## 11 · Iteration log
 
+- **r18, 2026-11-04.** The receiver's four asks (cert-machine cffc900a), used. The SOTA ledger as a record: a score the library
+  does not decide from the object takes the ledger row for those bytes, its exact rational re-decided against the claim's bar, read
+  as decimals (the operator); the 30,000-value autocorrelation rows, the hexagons and edges vs triangles decided. Three indices:
+  `DATA["configs.K"]` names one configuration; the Station's three 604s certified. The integer Product: C* as a one-sided library
+  trap (the operator's ruling of §5.1), the published value refuted in seconds. The page: 74 decided, 58 name the reason.
 - **r17, 2026-11-03.** Three TODO items on the operator's "go", in order. Step 8's numbers: doc.py's slots `{{records/F.json#id/path}}`
   print one cell of a record, `= VALUE` states it, a claim's pin is re-hashed; reports/xx.md is the x^x = y report with every number
   a slot (87) and every word cert-machine's. The SOTA table's Python-published rows: claimbox.readers.easota_py decodes the nine

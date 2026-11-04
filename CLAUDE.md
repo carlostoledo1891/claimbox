@@ -84,7 +84,9 @@ claimbox/lang.py           the language of LANGUAGE.md: a .claim file read into 
                            malformed files refused with the rule, statements that are not claims made holes
 claimbox/library/          the definitions, one file per family (step_functions, einstein_arena with its RECORDED route and C_1a/C_1b under the
                            platform's titles capped at 4,000 values (the receiver's evaluator is quadratic), kissing (and Z[√2] pairs), zeta23,
-                           machines, decompositions (DATA["heading"|"key"], cert-machine's tensor records), selfpower (xroot, x^x = N); common pieces);
+                           machines, decompositions (DATA["heading"|"key"], cert-machine's tensor records), selfpower (xroot, x^x = N), traps (C* held
+                           from below over corpus/traps/'s pinned primes: one-sided, "not refuted at …"); common pieces; einstein_arena's LEDGER: the SOTA
+                           table's ledger rows as records, read as decimals);
                            __init__.py the registry `use NAME vN` resolves against; the objects held byte for byte (records/library-identity.json)
 claimbox/prose.py          from prose to claims (step 6): corpora riemann-ai and register (register_context/register_extra: the bytes per
                            sentence); proposers (the grammar; corpus/proposals/<corpus>{,.person,.planted,.paraphrase}.claim); the levels
@@ -132,6 +134,7 @@ web/                       the landing page, built the Machinidae way: grammar.c
 tools/propose_model.py     a model as a proposer (claude-opus-5-5, the operator's $20 cap; .venv/bin/python; ledgers records/model-proposals-*);
 tools/worksheet_prompt.py  the worksheet prompt other model families fill by hand, and `ingest FAMILY REPLY` (proposals/riemann-ai.model-*.claim);
 tools/xx_study.py          the x^x = y study (roots computed, claims written for cert-machine);
+tools/primes.py            the odd primes to 400,000 for the C* trap (corpus/traps/odd-primes-400000.json; --check sieves again);
 tools/templates.py         the template pilot: the decided objects' shapes, each verdict's load-bearing predicates (records/templates.json);
 tools/attack_twins.py      the attack twins' predictions, computed by cert-machine's tm.js (corpus/attack/prediction.json);
 tools/lift.py              the lift from cert-machine and the drift check; tools/platform.py the platform's pins; tools/riemann.py the

@@ -8,6 +8,7 @@ Every definition the translator knows lives in a file of its family:
     machines.py         the machine statements, decided by cert-machine's machine decider
     decompositions.py   matrix-multiplication tensor decompositions, decided by cert-machine's tensor decider and its record
     selfpower.py        the real root of x^x = N, its bounds decided as exact integer inequalities
+    traps.py            a quantity held from one side by an exact end over pinned bytes (Erdős #852's C*)
     common.py           the expression pieces they share
 
 This file is the registry a `.claim` file's `use NAME vN` resolves against: per definition, the names a claim may use, its
@@ -15,12 +16,13 @@ version, the readings of the bytes it takes, its conventions, and the route that
 with a new version; the objects the translator writes from it are held byte for byte by the battery.
 MIT"""
 from .decompositions import DECIDER as TENSOR_DECIDER, RECORDS as TENSOR_RECORDS
-from .einstein_arena import PLATFORM, RECORDED, RECORDED_DECIDER
+from .einstein_arena import PLATFORM, RECORDED, RECORDED_DECIDER, LEDGER, LEDGER_READING
 from .selfpower import SELFPOWER
 from .kissing import SQRT2_STRUCTURAL, SQRT2_REDUCTION
 from .machines import DECIDER, MACHINES
 from .step_functions import PRIMITIVE
 from .zeta23 import CERTIFICATE, ckey
+from .traps import TRAPS
 
 NUMERIC = ('decimals', 'doubles', 'integers', 'rationals')
 EXACT_DATA = ('integers', 'rationals')
@@ -45,13 +47,15 @@ def _entries():
                                     'the score\'s box is the platform\'s declared resolution; over the SOTA table\'s bytes, the half-unit box of its print, or the bound as printed ("at most BAR")'
                                     if e['resolution'] else 'an integer score is held exactly']
                     + (['the SOTA table\'s bytes are printed decimals: they may also be read as decimals, the digits exactly (the easota ledger\'s reading); the two readings are a fork'] if e.get('also') else [])
-                    + ([f'decided from the object over at most {e["cap"]:,} values (the receiver\'s exact evaluator is quadratic in the count); a larger array goes by cert-machine\'s own decider and its record, or is a hole'] if e.get('cap') else [])
+                    + ([f'decided from the object over at most {e["cap"]:,} values (the receiver\'s exact evaluator is quadratic in the count); a larger array goes by cert-machine\'s own decider and its record, or over the SOTA table\'s bytes by its ledger\'s row (read as ' + LEDGER_READING + '), or is a hole'] if e.get('cap') else [])
                     + [s['what'] for s in e['structural']]})
     out.append({'names': ('platform score, recorded',), 'version': 'v1', 'file': 'einstein_arena.py',
                 'what': 'the score of a platform problem with no verifier written here, as cert-machine\'s decider recorded it', 'readings': NUMERIC,
-                'route': 'cert-machine\'s EinsteinArena decider, ' + RECORDED_DECIDER + ', its record read in place (' + ', '.join(RECORDED) + ')',
+                'route': 'cert-machine\'s EinsteinArena decider, ' + RECORDED_DECIDER + ', its record read in place (' + ', '.join(RECORDED) + '), or the SOTA table\'s ledger (' + LEDGER + ')',
                 'conventions': ['the record row is the one cert-machine wrote for the problem\'s title and these very bytes (matched by sha256)',
-                                'the claim\'s score must be the score that row states']})
+                                'the claim\'s score must be the score that row states',
+                                'over the SOTA table\'s bytes: the row its ledger (' + LEDGER + ') wrote for them, its exact rational re-decided against the claim\'s bar; '
+                                'the ledger read the digits printed, so only the reading ' + LEDGER_READING + ' is decided (2026-11-04)']})
     out.append({'names': ('kissing configuration',), 'version': 'v1', 'file': 'kissing.py', 'what': 'n vectors in dimension d, every pair at least 60° apart',
                 'readings': NUMERIC, 'route': 'an exact expression over every pair, decided by the checker from the object',
                 'conventions': ['4·(u·v)·|u·v| ≤ |u|²·|v|² for every pair, exact over the reading of the bytes (the angle is at least 60° iff u·v ≤ |u||v|/2)']})
@@ -79,6 +83,11 @@ def _entries():
         out.append({'names': (name,), 'version': 'v1', 'file': 'selfpower.py', 'what': e['what'], 'readings': EXACT_DATA,
                     'route': 'exact integer arithmetic, decided by the checker from the object: a bound p/q on xroot is p^p against N^q·q^p',
                     'conventions': [e['reduction'], 'reads N from the file and writes it into the expression as a literal']})
+    for name, e in TRAPS.items():
+        out.append({'names': (name,) + tuple(name + ' for ' + of for of in e['of']), 'version': 'v1', 'file': 'traps.py', 'what': e['what'], 'readings': ('integers',),
+                    'route': 'a one-sided trap: ' + e['end'] + ', ' + e['reach'] + ', a strict lower end, computed exactly by the checker from the object',
+                    'conventions': [e['reduction'], e['list'], 'an upper claim (≤, <, =, a box\'s top) is refuted or "not refuted at ' + e['reach'] + '"; '
+                                    'a lower claim (≥, >) is certified or "not certified at ' + e['reach'] + '"; a box\'s lower end is not asked']})
     for kind, what in MACHINES.items():
         out.append({'names': (kind,), 'version': 'v1', 'file': 'machines.py', 'what': what, 'readings': ('table (Q, 2)', 'text', 'bytes'),
                     'route': 'a named function of cert-machine\'s machine decider, ' + DECIDER, 'conventions': [], 'statement': True})

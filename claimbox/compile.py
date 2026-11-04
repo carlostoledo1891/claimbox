@@ -139,6 +139,8 @@ def lower(tree, c):
             job['name'] = name
     elif body[0] == 'config':
         job['claim'] = f'K({body[3]}) >= {body[1]}'
+        if len(body) > 4:
+            job['part'] = body[4]                # DATA["configs.0"]: the configuration's path in the JSON (2026-11-04)
     elif body[0] == 'decomp':
         job['claim'] = f'Rank-{body[2]} decomposition of <{body[3][0]},{body[3][1]},{body[3][2]}> over {body[4]}'
         job['heading'] = body[5] if len(body) > 5 else None     # DATA["heading"]: the record row is found at compile time (root)
@@ -212,6 +214,25 @@ def recorded_score_job(job, stmt, root, over=None):
     from .library import decompositions as D, einstein_arena as EA
     title, b = stmt[2], stmt[3]
     rows = [(p, r) for p, r in D.rows_for(root, job['data'], EA.RECORDED) if f'"{title}"' in r.get('claim', '')]
+    led = None if rows else EA.ledger_row(root, job['data'], title)
+    if led:
+        # the SOTA table's ledger (library einstein_arena.py, LEDGER, 2026-11-04): its row's exact rational, re-decided against the
+        # claim's own bar by the receiver; the row read the decimals printed, so only that reading is decided
+        path, row = led
+        if not EA.ledger_exact(row):
+            raise Refusal('decider', f'the SOTA table\'s ledger row {row["id"]} holds an enclosure of the score, not its exact rational: the receiver re-decides a record\'s exact value only' + (f' (and the library\'s cap is {over[0]:,} values)' if over else ''))
+        if job.get('elements') != EA.LEDGER_READING:
+            raise Refusal('reading', f'the SOTA table\'s ledger decided "{title}" over these bytes read as {EA.LEDGER_READING}, the digits printed; '
+                                     f'read as {job.get("elements") or "nothing declared"}, nothing here decides it' + (f' (over {over[1]:,} values; the library\'s cap is {over[0]:,})' if over else ''))
+        printed = b[2] if b[0] == 'within' else b[1]
+        if row.get('printed') is None or grammar.value_of(str(row['printed'])) != grammar.value_of(printed):
+            # the receiver holds the record's bar to the row's (record-bar-mismatch): the row decides the score it prints, no other
+            raise Refusal('decider', f'the SOTA table\'s ledger row {row["id"]} decides "{title}" at the score {row.get("printed")} over these bytes; nothing here decides the claim\'s {printed}')
+        word = EA.ledger_word(row)
+        if word is None:
+            raise Refusal('decider', f'the SOTA table\'s ledger row {row["id"]} says {row.get("verdict")}, which is no word the receiver takes')
+        return dict(job, decider=EA.LEDGER_DECIDERS.get(row['problem'], EA.LEDGER_DECIDER),
+                    record={'path': path, 'row': row['id'], 'value': 'exactRational', 'verdict': word})
     if not rows and over:
         raise T.cap_refusal(title, *over)
     if not rows:
@@ -263,7 +284,8 @@ def compile_claim(tree, c, root):
             job = recorded_score_job(job, c['stmt'], root, over=T.over_cap(root, job['data'], c['stmt'][2]))
         obj_id = job['id'] + ('-' + reading if len(jobs) > 1 else '')
         obj = T.translate(job['claim'], root, job['source'], job['data'], decider=job.get('decider'), record=job.get('record'),
-                          name=job.get('name'), elements=job.get('elements'), obj_id=obj_id, quote=job.get('quote'), other=job.get('other'))
+                          name=job.get('name'), elements=job.get('elements'), obj_id=obj_id, quote=job.get('quote'), other=job.get('other'),
+                          part=job.get('part'))
         body = c['stmt'][3] if c['stmt'][0] == 'forall' else c['stmt']
         if body[0] == 'score' and body[3][0] == 'within':
             box = (obj['predicate'][0].get('box') or {})
@@ -405,6 +427,12 @@ def word(line):
     return 'REFUTED' if 'REFUTED' in ws else ('CERTIFIED' if all(w == 'CERTIFIED' for w in ws) else ' · '.join(ws))
 
 
+def claim_word(line, obj):
+    """claimbox's word for the claim an object states: cert-machine's word, read on the one side a trap decides (library traps.py)"""
+    from .library.traps import claim_word as trapped
+    return trapped(word(line), obj)
+
+
 def fork_summary(pairs):
     """the readings' words, described: the same under every reading, or split — a description, never a verdict of its own"""
     ws = [w for _, w in pairs]
@@ -437,7 +465,7 @@ def result(tree, c, root, run=False):
             import time
             t0 = time.time()
             line = T.check_with_cert_machine(obj, root)
-            row.update({'certMachine': line[:400], 'word': word(line), 'seconds': round(time.time() - t0, 1)})
+            row.update({'certMachine': line[:400], 'word': claim_word(line, obj), 'seconds': round(time.time() - t0, 1)})
             m = re.search(r'witness (\{[^}]*\}), (\d+) violating', line)
             if m:
                 row['witness'], row['violating'] = json.loads(m.group(1)), int(m.group(2))

@@ -142,7 +142,12 @@ def rel_of(root_path):
 
 # ------------------------------------------------------------------------------------------------- proposers
 
-def grammar_proposal(sentence, source, data, elements, obj_id, root, decider=None, record=None):
+def part_of(ctx):
+    """the part of the file a sentence's context names (one configuration of several: fill.py, 2026-11-04), or None"""
+    return ctx[5] if len(ctx) > 5 else None
+
+
+def grammar_proposal(sentence, source, data, elements, obj_id, root, decider=None, record=None, part=None):
     """today's grammar as a proposer: the object translate writes from the sentence as printed, or the rule that refused it"""
     if data is None:
         try:
@@ -163,7 +168,7 @@ def grammar_proposal(sentence, source, data, elements, obj_id, root, decider=Non
                 mine = theirs = None
             if mine is not None and theirs is not None and grammar.value_of(mine) != grammar.value_of(theirs):
                 return None, ('recorded-bar', f'the record {record["path"]} row {record["row"]} decides the bar {theirs}; the sentence prints {mine}')
-        return T.translate(sentence, root, source, data, elements=elements, obj_id=obj_id, decider=decider, record=record), None
+        return T.translate(sentence, root, source, data, elements=elements, obj_id=obj_id, decider=decider, record=record, part=part), None
     except Refusal as e:
         return None, (e.rule, e.msg)
 
@@ -358,7 +363,8 @@ REL_WORDS = {'le': ('at most', 'does not exceed', 'do not exceed', 'never exceed
              'lt': ('less than', 'below', 'smaller than', 'strictly less than', 'strictly below'),
              'ge': ('at least', 'no less than', 'not less than', 'no smaller than', 'not smaller than', 'not below'),
              'gt': ('exceeds', 'exceed', 'greater than', 'more than', 'larger than', 'above', 'strictly greater than', 'strictly above'),
-             'eq': ('equals', 'is equal to', 'is exactly', 'is precisely', 'its score is', 'score of it is')}  # also a box's = (rel in)
+             'eq': ('equals', 'is equal to', 'is exactly', 'is precisely', 'its score is', 'score of it is',
+                    'published as')}  # also a box's = (rel in); "published as" is the language's rounding (2026-11-04, C*)
 PHRASES = sorted(((w, r) for r, ws in REL_WORDS.items() for w in ws), key=lambda x: -len(x[0]))
 
 
@@ -468,7 +474,7 @@ def planted(obj, row, ctx, corpus, root):
     with open(path, 'w', encoding='utf-8') as f:
         f.write(text.replace(row['text'].replace('\n', ' '), mutated.replace('\n', ' '), 1))
     try:
-        obj2, why = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
+        obj2, why = grammar_proposal(mutated, rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5], part=part_of(ctx))
     finally:
         os.remove(path)
     if obj2 is None:                         # a recorded route decides one bar only: a moved one is not measurable, not a failure;
@@ -619,7 +625,7 @@ def paraphrased_grammar(obj, row, ctx, corpus, root):
         return None
     path = _planted_source(corpus, row, want[0], 'para')
     try:
-        obj2, _ = grammar_proposal(want[0], rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5])
+        obj2, _ = grammar_proposal(want[0], rel_of(path), ctx[0], ctx[1], obj['id'], root, *ctx[3:5], part=part_of(ctx))
     finally:
         os.remove(path)
     if obj2 is None:
@@ -628,7 +634,7 @@ def paraphrased_grammar(obj, row, ctx, corpus, root):
 
 
 def _word(obj, root):
-    return C.word(T.check_with_cert_machine(obj, root)) if obj is not None else None
+    return C.claim_word(T.check_with_cert_machine(obj, root), obj) if obj is not None else None
 
 
 def _recompile(kind, claim, row, ctx, root, source=None, quote=None, stmt=None, data=None, obj_id=None):
@@ -636,7 +642,7 @@ def _recompile(kind, claim, row, ctx, root, source=None, quote=None, stmt=None, 
     file proposer's claim is recompiled from its own tree"""
     try:
         if kind == 'grammar':
-            return grammar_proposal(quote or row['text'], source, data or ctx[0], ctx[1], obj_id, root, *ctx[3:5])[0]
+            return grammar_proposal(quote or row['text'], source, data or ctx[0], ctx[1], obj_id, root, *ctx[3:5], part=part_of(ctx))[0]
         tree = copy.deepcopy(claim['_tree'])
         c = copy.deepcopy({k: v for k, v in claim.items() if k != '_tree'})
         for i in tree['items']:
@@ -752,7 +758,7 @@ def run(corpus, root, words=False, prior=None):
     for row in rows_of(corpus):
         ctx = context_of(corpus, row)
         props = []
-        obj, ref = grammar_proposal(row['text'], source, ctx[0], ctx[1], 'p-' + re.sub(r'\W', '-', row['id']), root, ctx[3], ctx[4])
+        obj, ref = grammar_proposal(row['text'], source, ctx[0], ctx[1], 'p-' + re.sub(r'\W', '-', row['id']), root, ctx[3], ctx[4], part=part_of(ctx))
         props.append(('grammar', obj, ref, None))
         props += files.get(row['text'], [])
         entry = {'id': row['id'], 'group': row['claim'], 'style': row['style'], 'sentence': row['text'], 'proposals': []}
@@ -783,7 +789,7 @@ def run(corpus, root, words=False, prior=None):
                     pr.update({k: was[k] for k in ('word', 'certMachine', 'sensitivity', 'vacuity') if k in was})
                 elif words:
                     line = T.check_with_cert_machine(o, root)
-                    pr['word'], pr['certMachine'] = C.word(line), line[:200]
+                    pr['word'], pr['certMachine'] = C.claim_word(line, o), line[:200]
                     if pr['word'] in ('CERTIFIED', 'REFUTED'):
                         pr['sensitivity'] = sensitivity(kind, o, claim, row, ctx, corpus, root)
                         pr['vacuity'] = vacuity(kind, o, claim, row, ctx, pr['word'], root)
