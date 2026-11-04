@@ -55,6 +55,26 @@ predicted. Thirteen AI models have written claims through it; every claim that p
 
 Every feature ships with planted wrong claims, and every one must be caught: `make test`.
 
+## Proofs as claims: the ETH bridge ([lean/eth-bridge](lean/eth-bridge/))
+
+claimbox also writes Lean proofs as claims. They are proposals until cert-machine decides them (commitment 5). In
+November 2026 OpenAI and Anthropic each published a Lean proof that ETH is false, each on a machine model of its own
+making. The open question was whether those statements are the textbook ETH. claimbox took the step on:
+
+| | the claim | written by | cert-machine's word |
+|---|---|---|---|
+| C1 | ETH is false on the word RAM at logarithmic word size (`EthBridge.WordRAM.not_eth_ram`) | the statement by hand; the proof by Claude agents | [CERTIFIED](https://github.com/carlostoledo1891/cert-machine/blob/main/certs/eth-c1.json) |
+| C2 | Anthropic's `ETHIsFalse` implies ETH is false on cslib's multitape Turing machine with the binary `encCNF` (`EthBridge.Anthropic.not_eth_of_ethIsFalse`) | the statement by hand; the proof by Claude agents | [CERTIFIED](https://github.com/carlostoledo1891/cert-machine/blob/main/certs/eth-c2.json) |
+
+Each statement was pinned in cert-machine before the proof was decided. Each was decided by two kernels (Lean's, and nanoda
+through lean4export), `leanchecker --fresh`, and cert-machine's own axioms file. Each shipped with three planted wrong
+variants, a `sorry`, a new axiom and a changed statement, and every one was refused (commitment 7). With Hawkley's
+chain (OpenAI's statement implies Anthropic's), both labs' statements reach a standard machine.
+
+What stays: the Lean version seams between the steps are read, not decided. That a formal ETH is the textbook ETH is a
+reading of a definition. claimbox and cert-machine have the same operator, so this separates the author from the
+checker; it is not a second party. The story, with its figure: [carlostoledo.co/eth/#standard](https://carlostoledo.co/eth/#standard).
+
 ## Readers, corpora, records
 
 `claimbox/readers/` read real sources (EinsteinArena, AlphaEvolve, the Station, FunSearch, zeta23, the cryptids release) into
