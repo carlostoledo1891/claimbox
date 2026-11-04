@@ -29,12 +29,14 @@ provenance walker, scoped down), step 8 (doc with number slots; the x^x report b
 
 **Live.** carlostoledo.co/claimbox/ — the landing page (marketing touchpoint, redesigned 2026-10-31). /verify/ stays UNLINKED
 from claimbox (the operator's ruling). The x^x = y report is served by cert-machine at /reports/xx.html. web/dist holds index.html
-only. Publishing is always a cert-machine session's run, on the operator's word in that chat. LIVE NOW (curl, 2026-11-03): 746d1cb's
-build, sha256 03b9f0de…b637d (cert-machine 17b9d5d8). THE PAGE IS BEHIND: web/dist/index.html from claimbox 733fd24 is 89,585 bytes,
-sha256 47b87b510284796352282eec962efa5adbadf2999b47681f13e91627c380cb79 — the republish to ask of cert-machine-5b (NEXT 1).
+only. Publishing is always a cert-machine session's run, on the operator's word in that chat. LIVE NOW (curl, 2026-11-04): claimbox
+6344639's build, 89,585 bytes, sha256 47b87b510284796352282eec962efa5adbadf2999b47681f13e91627c380cb79 (cert-machine e2e64f88,
+republished on the operator's word by cert-machine-9e) — web/dist and the live page are the same bytes.
 
-**The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-5b` (SendMessage; cert-machine-cb
-is gone). After any change there: `make lift`, `make drift`, `make test`. `make drift` today: 15/15, platform 29/29, riemann 31/31.
+**The working pair.** cert-machine is read-only from here; the live session there is `cert-machine-9e` (SendMessage; cert-machine-5b
+and -cb are gone). On 2026-11-04 the four receiver asks of NEXT 1 — (a) the SOTA ledger's words as record words, (b) a three-index
+Index, (c) an integer Product, (d) a Sqrt head or the hexagon decider — were sent to cert-machine-9e and put to the operator; not
+ruled yet. After any change there: `make lift`, `make drift`, `make test`. `make drift` today: 15/15, platform 29/29, riemann 31/31.
 
 **Done in the eleventh session (2026-10-31).** REGISTER READERS, BATCH 2 (prose.LEDGER_ROWS, prose.EASOTA): six more register
 sentences stated over pinned bytes — optconst-71 (fei ledger row, CERTIFIED), polymaps-gao-g and -chv-phi (polymaps ledger rows,
@@ -275,15 +277,15 @@ exercised over all 88 register sentences with context, 22 of them named through 
 0. The worksheet: `python3 -m claimbox prose riemann-ai --disputed` (the `*` blanks first); a person is the only second kind.
    When replies come by hand instead: ingest each, `python3 -m claimbox prose riemann-ai --run --record
    records/prose-riemann-ai.json`, `--disputed`, report per family (compiled, holes, equal to the reference, disagreements).
-1. The republish of the newest build (web/dist/index.html, its sha256 in the START HERE line) — asked of cert-machine-5b on the
-   operator's word. Then the receiver asks of PLAN.md §9 as the operator rules them: the SOTA ledger's words as record words (the
+1. ~~The republish of the newest build~~ — DONE 2026-11-04 (cert-machine e2e64f88). The receiver asks of PLAN.md §9 as the
+   operator rules them (sent to cert-machine-9e 2026-11-04, waiting on the ruling): the SOTA ledger's words as record words (the
    two 30,000-value autocorrelation rows), the three-index Index (the Station's 604s), the integer Product (C*).
 2. TODO items 7 (traps as the numeric core: the design note in PLAN.md §5.1 waits on the operator's ruling) and 10 (more writers, a
    fresh corpus: the operator's word and budget). The hexagon packing stays with the receiver (item 8).
 3. The operator's worksheet when they fill it: `python3 -m claimbox prose riemann-ai --run --record records/prose-riemann-ai.json`.
 4. Open receiver notes, NOT adopted (keep as notes): tie a literal N to the pinned file's value; carry `printed` beside a bar
-   written into the expression. A gap of the model's planted run: bar_of reads no "its score is BAR", so a score proposal is
-   never planted.
+   written into the expression. (The planted-run gap once listed here, bar_of and "its score is BAR", was closed 2026-11-02,
+   TODO item 2.)
 
 **How to run (beyond CLAUDE.md's list):** `claimbox tighten|extend FILE[#E] CLAIM`, `claimbox watch|hunt|attack FILE CLAIM --reach N`,
 `claimbox prose CORPUS [--run] [--record] [--worksheet]`, `.venv/bin/python tools/propose_model.py CORPUS [--again P1,P2 |
