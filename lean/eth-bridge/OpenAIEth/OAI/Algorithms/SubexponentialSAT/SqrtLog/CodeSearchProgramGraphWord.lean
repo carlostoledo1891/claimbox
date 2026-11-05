@@ -143,12 +143,6 @@ theorem graphWord_eval {r D : ℕ} (s : Fin D → Cayley.Cube r)
     omega
   · simp [out,negated,Atom.eval,Atom.instr,execInstr,
       StructuredProgram.State.ofCfg,hpass,her15,graphWordRejects]
-    apply Bool.eq_iff_iff.mpr
-    simp
-    by_cases h : x ≠ 0 ∧ ¬ CodeSearchWalshProgram.good q D
-        (WalshExistence.parityWeight s x)
-    · simp [h]
-    · simp [h]
   · rw [congrFun houtst 16]; exact hbq
   · rw [congrFun houtst 17]; exact hbD
   · intro i hi

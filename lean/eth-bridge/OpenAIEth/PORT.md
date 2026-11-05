@@ -2,7 +2,7 @@
 
 Copies of [thinkthoughts/math](https://github.com/thinkthoughts/math) (Daniel Hawkley's fork of [openai/math](https://github.com/openai/math)) at commit `d6b79b7d165f9e6bef6e033949e3f14e913efdaa` (Lean v4.34.1, Mathlib `d13f23b7`), Apache-2.0 (see `LICENSE` and `NOTICE` here; the upstream files carry no per-file copyright header, and none was added), ported to this project's toolchain: Lean `v4.36.0-rc2` and the Mathlib pinned by cslib-community/complexitylib `7c66eb71` (Mathlib `69552756`). The OpenAI files (`OAI.Algorithms.SubexponentialSAT.*`, `OAI.Combinatorics.ParityLifts.*`) are byte-equal to openai/math at `7ef5c0cc` (checked by git blob id in cert-machine's scout, `corpus/eth-refutation/openai-chain/scout-blobcheck.json`); the `OAI.Bridges.*` files are Hawkley's. Proof-only port: no statement of OpenAI's or Hawkley's changes except where a Mathlib change forces it (all listed in §3, each one the same mathematical statement written with the changed API).
 
-**STATE (2026-11-05): PARTIAL — the port is not finished.** On the operator's Mac the build ran at about one module a minute (every `lean` process maps ~5 GB of Mathlib `.olean`s and the 16 GB machine had no free memory for that working set: 4.5 s of CPU took 40–160 s of wall per module at every job count; a rented 16-vCPU pod was refused by the session's permission layer), so in 2.5 hours 183 of the 3,210 modules were built (`lake`, this project's Lean), two of them after a repair, and the repairs below are the ones those builds forced plus the same repair applied to every other site of the same pattern. The remaining 3,027 modules are copied byte for byte and unbuilt; the chain file does not yet build; the `#print axioms` check of the five theorems has not been run. A partial port is reported as such (the pre-registration's stop rule); nothing was closed by `sorry`, an axiom or a weakened statement, and no declaration was left broken: every module that failed was repaired and re-checked (`SubexpChunkDescriptorEncoding` with `lake env lean`, the others with `lake build`).
+**STATE (2026-11-05): COMPLETE.** The four libraries, `EthBridge.OpenAIChain` and `Planted` build on this project's toolchain (Lean v4.36.0-rc2; a RunPod cpu3m pod, 16 vCPU / 128 GB, EU-NL-1): `lake build OpenAIEthSubexponentialSAT OpenAIEthParityLifts OpenAIEthBridgesETH OpenAIEthBridgesAnthropicETH` 40 min 30 s for 2,907 modules (one failure, R3) + 5 min 03 s for the 303 that depended on it after the repair; `lake build EthBridge.OpenAIChain Planted` 4 min 04 s more (complexitylib, cslib, C1, C2, the chain, the twelve planted files) — 49 min 37 s of wall in all over Mathlib's cache. The first 183 modules had been built on the operator's Mac before the pod (one module a minute there: every `lean` maps ~5 GB of Mathlib `.olean`s and the 16 GB machine had no free memory for them); the pod built every module again from the same sources (the local tree and the pod tree were checksum-identical, `rsync --checksum --dry-run` empty, before the commit). No module was left broken.
 
 ## 1. What is here
 
@@ -14,18 +14,19 @@ Copies of [thinkthoughts/math](https://github.com/thinkthoughts/math) (Daniel Ha
 
 ## 2. Summary
 
-- **3,191 files unchanged** (bytes identical to upstream; listed with sha256 in §5).
-- **19 files modified** (§4, every changed line, old and new).
+- **3,190 files unchanged** (bytes identical to upstream; listed with sha256 in §5).
+- **20 files modified** (§4, every changed line, old and new).
 - **4 declarations whose statement or definition text changed** (§3), all by one forced Mathlib change (R1); everything else is inside proofs or imports.
 - Byte-identical and untouched: `OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean` (`exact_count_and_sat`, `original_sat_main`), `OAI/Bridges/ETH/FinalImplication.lean` (`not_positiveRateETH`), `OAI/Bridges/AnthropicETH/Main.lean` (`not_positiveRateETH_implies_ethIsFalse`).
 - No `sorry`, no new `axiom`, no `native_decide`, `implemented_by`, `extern`, `unsafe` or `debug.skipKernelTC` (none upstream either: the census in the pre-registration).
-- Built on this project's toolchain so far: **183 of 3,210 modules** (180 `OAI.Algorithms.SubexponentialSAT.*`, 2 `OAI.Combinatorics.ParityLifts.*`, `OAI.Bridges.AnthropicETH.Asymptotics`), the bottom of the import graph, by `lake build OpenAIEthSubexponentialSAT OpenAIEthParityLifts OpenAIEthBridgesETH OpenAIEthBridgesAnthropicETH` (Lean v4.36.0-rc2; the list is the `.olean`s under `.lake/build/lib/lean/OAI`). Two modules failed and were repaired (`Types`, R1; `SubexpChunkDescriptorEncoding`, R2); `MulticolorTypes` (R1, the same two lines) built after the same repair. Of the 19 modified files, 3 are built (`Types`, `MulticolorTypes`, `Asymptotics`), 1 is type-checked with `lake env lean` (`SubexpChunkDescriptorEncoding`), 15 are unbuilt (14 R2 sites applied by the script, and `Lengths.lean`, R0). `#print axioms` of the five theorems: not run (the chain does not build yet); expected `[propext, Classical.choice, Quot.sound]`. `lake build Planted` builds (the three OpenAI-chain planted files among the twelve: the two `sorry` ones with the warning, the axiom one clean).
+- `#print axioms` (a scratch file, not committed, `lake env lean` on the pod after the build) of `EthBridge.OpenAIChain.not_eth`, `OAI.Bridges.ETH.not_positiveRateETH`, `OAI.Bridges.AnthropicETH.not_positiveRateETH_implies_ethIsFalse`, `OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_and_sat`, `OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.original_sat_main` and `EthBridge.Anthropic.not_eth_of_ethIsFalse`: each `[propext, Classical.choice, Quot.sound]`. `lake build Planted` builds the twelve planted files (the eight `sorry` ones with the warning, the four axiom ones clean).
 
 ### The kinds of change
 
 - **R0.** `import MainResults` → `import EthBridge.Anthropic.MainResults` (two of Hawkley's files): the statement file is not copied a second time; the bridge proves `MainResults.ETHIsFalse` against the vendored, byte-identical `EthBridge/Anthropic/MainResults.lean` (module name differs, declarations identical).
 - **R1.** Mathlib made `Set α` a structure (`structure Set (α) where ofPred :: Mem : α → Prop`, Mathlib.Data.Set.Defs; before, `Set α := α → Prop` by `def`), so a set can no longer be applied as a predicate: `DecidablePred s` for `s : Set α` is written `DecidablePred (· ∈ s)`. The instance is the same decision procedure for the same set (`u ∈ side t g` unfolds to the same `u.head t = g` the old `side t g u` did); where this occurs in a statement or definition it is listed in §3.
-- **R2.** Mathlib renamed the step hypothesis of `Nat.strong_induction_on` from `h` to `ind` (`protected theorem strong_induction_on {motive} (n) (ind : ∀ n, (∀ m < n, motive m) → motive n)`, Mathlib.Data.Nat.Init), so `induction n using Nat.strong_induction_on with | h n ih => …` is written `| ind n ih => …`. A case name in a proof; 16 sites in 15 files, all applied by one script.
+- **R2.** Mathlib renamed the step hypothesis of `Nat.strong_induction_on` from `h` to `ind` (`protected theorem strong_induction_on {motive} (n) (ind : ∀ n, (∀ m < n, motive m) → motive n)`, Mathlib.Data.Nat.Init), so `induction n using Nat.strong_induction_on with | h n ih => …` is written `| ind n ih => …`. A case name in a proof; 16 sites in 15 files, all applied by one script after the first failure, all built.
+- **R3.** `simp` now closes a goal it used to leave open (`simp [out, negated, Atom.eval, …, graphWordRejects]` in `CodeSearchProgram.graphWord_spec`'s second bullet), so the tactics after it fail with "No goals to be solved"; the six dead lines (`apply Bool.eq_iff_iff.mpr`, `simp`, a `by_cases` with its two `simp [h]` arms) are removed. The same kind as the Anthropic port's R7.
 
 ## 3. Statement and definition changes (all forced by a Mathlib change)
 
@@ -66,6 +67,21 @@ upstream sha256 `191f9698132c7dda340a7ba97b0b27c6d6b92b79ac1808f6c4a572260d55580
 ```diff
 - instance (t : Fin Q) (g : Fin r) (i : Fin Δ) : DecidablePred (joint t g i) :=
 + instance (t : Fin Q) (g : Fin r) (i : Fin Δ) : DecidablePred (· ∈ joint t g i) :=
+```
+
+### `OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramGraphWord.lean`
+
+upstream sha256 `e265723f6b160d5f05ec1e17fd22e11e9b43984db2ab3eac6f0c474b2b29c670` → here `814f340d87e7acf715bc35591121daa59a6fd6627bf4d029491137cfec4c5169`; 1 change(s); kinds: R3
+
+- upstream lines 146–151 (proof; R3):
+
+```diff
+-     apply Bool.eq_iff_iff.mpr
+-     simp
+-     by_cases h : x ≠ 0 ∧ ¬ CodeSearchWalshProgram.good q D
+-         (WalshExistence.parityWeight s x)
+-     · simp [h]
+-     · simp [h]
 ```
 
 ### `OAI/Algorithms/SubexponentialSAT/SqrtLog/MomentsAssemblyProgramRegisterBase.lean`
@@ -657,7 +673,6 @@ a91de85b2b9c177cac81c2566de6207c3fd4ca508ed9af35a218c87e332e26f2  OAI/Algorithms
 c091c06e0e1db113857c10e3098b13656231d56faf5ba30da1de596daee6cec7  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramGraphRecordBounds.lean
 3b776c5324c298eee9bb2273eec1ee61fb06e06759eba3f6a0f09c1e90771fc8  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramGraphScan.lean
 45fd42b5b698444305d80f1e4a5b02792bcf3b8c0ce44cd6c7e948788086e787  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramGraphSearch.lean
-e265723f6b160d5f05ec1e17fd22e11e9b43984db2ab3eac6f0c474b2b29c670  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramGraphWord.lean
 cd697ddb2c9f45527f443bc38a64a7eba9ddef7b0105ed734872dca31897ff55  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramKernel.lean
 1b4b3ab1018996beb895591c752ef4f80a2b7604766ecf0aa6e09fbbbbab76d5  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramLocalExistence.lean
 801a19617d5bfbb261b36574523eca9a2cecfb4f9166bf610f42938957d0a92d  OAI/Algorithms/SubexponentialSAT/SqrtLog/CodeSearchProgramLocalProgram.lean
