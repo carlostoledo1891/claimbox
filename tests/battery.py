@@ -25,6 +25,7 @@ import importlib.util
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -1515,6 +1516,112 @@ red(cs['le08'].startswith('not refuted at') and cs['ge753'].startswith('not cert
 red(cs['other'] == 'hole data', 'ask (c): refused — a list other than the trap\'s own pinned one (3 read as 4) is not the trap\'s bytes', cs['other'])
 _pp = subprocess.run([sys.executable, os.path.join(REPO, 'tools', 'primes.py'), '--check'], capture_output=True, text=True)
 ok(_pp.returncode == 0 and _cl['count'] == 33859, 'ask (c): the trap\'s list is the odd primes to 400,000, sieved again and byte for byte the pinned file (33,859)', _pp.stdout.strip()[:60])
+
+# ---- 16 · the lab-claim intake (2026-11-05, lean/INTAKE.md: tools/intake_scout.py, tools/intake_port.py) ---------------------------------
+# the scout on a fixture: the closure of the roots, an import in a comment not an import, a module nobody imports left out,
+# the blob id git's, the pins in cert-machine's shape; the drift check; the port tools calibrated on OpenAIEth as decided
+_ix = os.path.join(tmp, 'intake')
+_fx = os.path.join(_ix, 'tree', 'src', 'A')
+os.makedirs(_fx)
+_fxf = {'Root.lean': '/-! the root.\n  import A.D -- a line in a comment is not an import -/\nmodule\n\npublic import A.B\nimport all A.C Mathlib.Tactic\ntheorem root : True := trivial\n',
+        'B.lean': 'import A.C\n-- import A.D\ntheorem b : True := trivial\n', 'C.lean': '/-- not an axiom: the word in a docstring -/\ntheorem c : True := trivial\n',
+        'D.lean': 'theorem d : True := trivial\n'}
+for _n, _t in _fxf.items():
+    open(os.path.join(_fx, _n), 'w', encoding='utf-8').write(_t)
+def _tool(name, *args):
+    return subprocess.run([sys.executable, '-I', os.path.join(REPO, 'tools', name)] + list(args), capture_output=True, text=True)
+_sc = _tool('intake_scout.py', '--tree', os.path.join(_ix, 'tree'), '--commit', 'f' * 40, '--src', 'src', '--root', 'src/A/Root.lean', '--out', os.path.join(_ix, 'scout'))
+_pins = json.load(open(os.path.join(_ix, 'scout', 'scout-pins.json'), encoding='utf-8'))
+_rep = json.load(open(os.path.join(_ix, 'scout', 'scout-report.json'), encoding='utf-8'))
+_blobs = json.load(open(os.path.join(_ix, 'scout', 'scout-blobs.json'), encoding='utf-8'))
+_git_blob = subprocess.run(['git', 'hash-object', os.path.join(_fx, 'B.lean')], capture_output=True, text=True).stdout.strip()
+ok(_sc.returncode == 0 and sorted(_pins['files']) == ['src/A/B.lean', 'src/A/C.lean', 'src/A/Root.lean']
+   and open(os.path.join(_ix, 'scout', 'scout-closure.txt')).read() == 'A.B\nA.C\nA.Root\n'
+   and all(_pins['files'][p] == hashlib.sha256(open(os.path.join(_ix, 'tree', p), 'rb').read()).hexdigest() for p in _pins['files'])
+   and _rep['externalByPrefix'] == {'Mathlib': 1} and _rep['census']['hits'] == {'src/A/C.lean': {'axiom': 1}}
+   and _blobs['files']['src/A/B.lean'] == _git_blob and _pins['commit'] == 'f' * 40,
+   'intake scout: the closure of the root (B by `public import`, C by `import all`; D unimported and the import in a comment left out), every sha256 the bytes\', the blob id git\'s, the external import by prefix, the census word in the docstring counted as a word', _sc.stdout.strip()[:90])
+red(_tool('intake_scout.py', '--tree', os.path.join(_ix, 'tree'), '--commit', 'f' * 40, '--src', 'src', '--root', 'src/A/Missing.lean', '--out', os.path.join(_ix, 'x')).returncode != 0,
+    'intake scout: refused — a root that is not in the tree')
+_dr = os.path.join(_ix, 'drift')
+shutil.copytree(os.path.join(_ix, 'tree'), _dr)
+open(os.path.join(_dr, 'src', 'A', 'B.lean'), 'a').write(' ')
+os.remove(os.path.join(_dr, 'src', 'A', 'C.lean'))
+_ck = _tool('intake_scout.py', '--check', os.path.join(_ix, 'scout', 'scout-pins.json'), '--tree', _dr)
+red(_ck.returncode == 1 and 'DRIFT   src/A/B.lean' in _ck.stdout and 'GONE    src/A/C.lean' in _ck.stdout and '1/3 pinned files unchanged' in _ck.stdout,
+    'intake scout --check: refused — one byte appended is DRIFT, a deleted file GONE, exit 1', _ck.stdout.strip().split('\n')[-1])
+ok(_tool('intake_scout.py', '--check', os.path.join(_ix, 'scout', 'scout-pins.json'), '--tree', os.path.join(_ix, 'tree')).returncode == 0, 'intake scout --check: the unchanged tree passes')
+# the port tools on the fixture: scaffold, ledger, check and its refusals
+_st = os.path.join(_ix, 'statement.lean')
+open(_st, 'w', encoding='utf-8').write('namespace Fx.Chain\n\n/-- the claim. -/\ntheorem not_p : ¬ Fx.P :=\n')
+_sf = _tool('intake_port.py', 'scaffold', '--name', 'FxEth', '--chain', 'Chain', '--pins', os.path.join(_ix, 'scout', 'scout-pins.json'), '--src', 'src', '--statement', _st,
+            '--lib', 'A=A', '--planted-import', 'Fx.Defs', '--claim-import', 'A.Root', '--label', 'the fixture chain', '--planted-prefix', 'planted_fx',
+            '--tree', os.path.join(_ix, 'tree'), '--out', os.path.join(_ix, 'port'))
+_pt = os.path.join(_ix, 'port')
+ok(_sf.returncode == 0 and open(os.path.join(_pt, 'lakefile-libs.toml')).read().endswith('[[lean_lib]]\nname = "FxEthA"\nsrcDir = "FxEth"\nglobs = ["A.+"]\nleanOptions = { autoImplicit = false }\n')
+   and sorted(os.listdir(os.path.join(_pt, 'Planted'))) == ['ChainAxiom.lean', 'ChainSorry.lean', 'ChainStatement.lean']
+   and 'theorem not_p : Fx.P := by sorry' in open(os.path.join(_pt, 'Planted', 'ChainStatement.lean')).read()
+   and open(os.path.join(_pt, 'Planted', 'ChainSorry.lean')).read() == 'import Fx.Defs\n/-! PLANTED (claimbox commitment 7): the fixture chain\'s statement closed by `sorry`. cert-machine must refuse it. -/\ntheorem planted_fx_sorry : ¬ Fx.P := by sorry\n'
+   and sorted(os.listdir(os.path.join(_pt, 'FxEth', 'A'))) == ['B.lean', 'C.lean', 'Root.lean'] and os.path.exists(os.path.join(_pt, 'CHECKLIST.md'))
+   and 'theorem not_p : ¬ Fx.P :=\n' in open(os.path.join(_pt, 'EthBridge', 'Chain.lean')).read(),
+   'intake scaffold: one lean_lib block, the three planted variants (the statement\'s negation dropped), the closure copied at its paths, the claim skeleton with the trusted block, CHECKLIST.md', _sf.stdout.strip()[:80])
+red(_tool('intake_port.py', 'scaffold', '--name', 'FxEth', '--chain', 'Chain', '--pins', os.path.join(_ix, 'scout', 'scout-pins.json'), '--src', 'src', '--statement', _st,
+          '--lib', 'B=A.B', '--planted-import', 'Fx.Defs', '--label', 'x', '--planted-prefix', 'p', '--out', os.path.join(_ix, 'port2')).returncode != 0,
+    'intake scaffold: refused — a pinned module under no --lib prefix')
+def _check(**kw):
+    args = ['check', '--port', os.path.join(_pt, 'FxEth'), '--pins', os.path.join(_ix, 'scout', 'scout-pins.json'), '--src', 'src', '--statement', _st,
+            '--claim', kw.get('claim', os.path.join(_pt, 'EthBridge', 'Chain.lean')), '--planted-statement', os.path.join(_pt, 'Planted', 'ChainStatement.lean')]
+    r = _tool('intake_port.py', *args)
+    return r.returncode, json.loads(r.stdout)
+_rc, _o = _check()
+ok(_rc == 0 and _o['verdict'] == 'READY' and _o['claim']['equalsPin'] and not _o['plantedStatement']['equalsPin'] and _o['port']['counts'] == {'pinned': 3, 'present': 3, 'unchanged': 3, 'modifiedDeclared': 0, 'ledgerRows': 0, 'refusals': 0},
+   'intake check: the fresh port — the claim\'s block the pin, the planted statement\'s not, 3 unchanged, no PORT.md row, READY')
+open(os.path.join(_pt, 'FxEth', 'A', 'B.lean'), 'w', encoding='utf-8').write('import A.C\ntheorem b : True := by trivial\n')
+_rc, _o = _check()
+red(_rc == 1 and _o['port']['refusals'] == [{'file': 'A/B.lean', 'why': 'differs from its pin and is not in PORT.md'}], 'intake check: refused — a file changed and not in PORT.md', _o['port']['refusals'][0]['why'] if _o['port']['refusals'] else 'none')
+_lg = _tool('intake_port.py', 'ledger', '--upstream', os.path.join(_ix, 'tree'), '--src', 'src', '--port', os.path.join(_pt, 'FxEth'), '--pins', os.path.join(_ix, 'scout', 'scout-pins.json'))
+_hb = hashlib.sha256(open(os.path.join(_pt, 'FxEth', 'A', 'B.lean'), 'rb').read()).hexdigest()
+ok(_lg.returncode == 0 and ('### `A/B.lean`\n\nupstream sha256 `' + _pins['files']['src/A/B.lean'] + '` → here `' + _hb + '`; 1 change(s); kinds: R?') in _lg.stdout
+   and '- upstream lines 2–3 (signature line; R?):' in _lg.stdout and '- -- import A.D\n- theorem b : True := trivial\n+ theorem b : True := by trivial' in _lg.stdout
+   and _pins['files']['src/A/C.lean'] + '  A/C.lean' in _lg.stdout and 'A/B.lean' not in _lg.stdout.split('## 5.')[1],
+   'intake ledger: the modified file with both sha256s and its changed lines at their upstream numbers (a change on a declaration\'s head line marked "signature line"), the unchanged ones in §5', _lg.stderr.strip())
+open(os.path.join(_pt, 'FxEth', 'PORT.md'), 'a', encoding='utf-8').write('\n' + _lg.stdout)
+_rc, _o = _check()
+ok(_rc == 0 and _o['port']['counts']['modifiedDeclared'] == 1 and _o['port']['modified'] == ['A/B.lean'] and _o['port']['counts']['ledgerRows'] == 1, 'intake check: the ledger\'s entry pasted into PORT.md, the change is "modified as declared"')
+_pm = open(os.path.join(_pt, 'FxEth', 'PORT.md'), encoding='utf-8').read()
+open(os.path.join(_pt, 'FxEth', 'PORT.md'), 'w', encoding='utf-8').write(_pm.replace(_pins['files']['src/A/B.lean'], 'a' * 64))
+_rc, _o = _check()
+red(_rc == 1 and _o['port']['refusals'][0]['why'].startswith('PORT.md names an upstream sha256 that is not the pin'), 'intake check: refused — PORT.md names an upstream sha256 that is not the pin')
+open(os.path.join(_pt, 'FxEth', 'PORT.md'), 'w', encoding='utf-8').write(_pm)
+open(os.path.join(_pt, 'FxEth', 'A', 'B.lean'), 'a').write('-- later\n')
+_rc, _o = _check()
+red(_rc == 1 and _o['port']['refusals'][0]['why'].startswith('differs from its pin and from the sha256 PORT.md declares'), 'intake check: refused — the file moved after PORT.md declared it')
+open(os.path.join(_pt, 'FxEth', 'A', 'B.lean'), 'w', encoding='utf-8').write('import A.C\ntheorem b : True := by trivial\n')
+open(os.path.join(_pt, 'FxEth', 'A', 'C.lean'), 'a').write('theorem c2 : False := by sorry\n')
+_rc, _o = _check()
+red(_rc == 1 and _o['census']['toRead'] == ['A/C.lean'] and _o['port']['refusals'][0]['file'] == 'A/C.lean', 'intake check: refused — a `sorry` planted in a ported file (the census names it; the file is off its pin too)')
+open(os.path.join(_pt, 'FxEth', 'A', 'C.lean'), 'w', encoding='utf-8').write(_fxf['C.lean'])
+_rc, _o = _check(claim=os.path.join(_pt, 'Planted', 'ChainStatement.lean'))
+red(_rc == 1 and _o['claim']['equalsPin'] is False, 'intake check: refused — the claim file with the negation dropped is not the pin')
+# calibration on the OpenAI chain as decided: cert-machine's pins and statement, this project's OpenAIEth, lakefile and Planted
+_oc = os.path.join(ROOT, 'corpus', 'eth-refutation', 'openai-chain')
+_eb = os.path.join(REPO, 'lean', 'eth-bridge')
+_r = _tool('intake_port.py', 'check', '--port', os.path.join(_eb, 'OpenAIEth'), '--pins', os.path.join(_oc, 'scout-pins.json'), '--src', 'lean', '--statement', os.path.join(_oc, 'statement.lean'),
+           '--claim', os.path.join(_eb, 'EthBridge', 'OpenAIChain.lean'), '--planted-statement', os.path.join(_eb, 'Planted', 'OpenAIChainStatement.lean'))
+_o = json.loads(_r.stdout)
+ok(_r.returncode == 0 and _o['claim']['equalsPin'] and not _o['plantedStatement']['equalsPin'] and _o['port']['counts'] == {'pinned': 3210, 'present': 3210, 'unchanged': 3190, 'modifiedDeclared': 20, 'ledgerRows': 20, 'refusals': 0}
+   and _o['census']['toRead'] == [] and all(h['axiomDeclarations'] == 0 for h in _o['census']['hits'].values()),
+   'intake check on OpenAIEth against cert-machine\'s pins: the block the pin, 3,190 unchanged, 20 modified as PORT.md declares, 0 refusals, no axiom declaration — cert-machine\'s L3s counts', json.dumps(_o['port']['counts']))
+_sf = _tool('intake_port.py', 'scaffold', '--name', 'OpenAIEth', '--chain', 'OpenAIChain', '--pins', os.path.join(_oc, 'scout-pins.json'), '--src', 'lean', '--statement', os.path.join(_oc, 'statement.lean'),
+            '--lib', 'SubexponentialSAT=OAI.Algorithms.SubexponentialSAT', '--lib', 'ParityLifts=OAI.Combinatorics.ParityLifts', '--lib', 'BridgesETH=OAI.Bridges.ETH', '--lib', 'BridgesAnthropicETH=OAI.Bridges.AnthropicETH',
+            '--planted-import', 'ComplexityAbstracts.SubexponentialSATAbstract', '--label', 'the OpenAI chain', '--planted-prefix', 'planted_openai_chain', '--out', os.path.join(_ix, 'openai'))
+def _libs(text):
+    text = re.sub(r'^#.*\n', '', text, flags=re.M)
+    return {re.search(r'name = "([^"]+)"', b).group(1): '[[lean_lib]]' + b.strip() + '\n' for b in text.split('[[lean_lib]]')[1:]}
+_want, _got = _libs(open(os.path.join(_eb, 'lakefile.toml'), encoding='utf-8').read()), _libs(open(os.path.join(_ix, 'openai', 'lakefile-libs.toml'), encoding='utf-8').read())
+ok(_sf.returncode == 0 and len(_got) == 4 and all(_want.get(n) == b for n, b in _got.items())
+   and all(open(os.path.join(_ix, 'openai', 'Planted', f), 'rb').read() == open(os.path.join(_eb, 'Planted', f), 'rb').read() for f in ('OpenAIChainSorry.lean', 'OpenAIChainAxiom.lean')),
+   'intake scaffold on the OpenAI chain: the four lean_lib blocks byte-equal to lakefile.toml\'s, the sorry and axiom planted files byte-equal to the ones decided', ', '.join(sorted(_got)))
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

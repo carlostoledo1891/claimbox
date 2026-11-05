@@ -23,6 +23,43 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**THE LAB-CLAIM INTAKE AS THE STANDARD ROUTE (2026-11-05, the fourteenth session, branch `intake-2026-11-05`, a background agent of
+cert-machine's on the operator's word; not pushed).** THE LIFT FIRST: cert-machine's register moved (certs/claims-ledger.json, sha256
+3558fcf5…; the ETH records of both labs, TSavo, Hawkley ×2, cslib D1, both chains, and wsp-math500 as rows): `make lift` re-pinned
+the ledger only (check.py, check.js, SCHEMA.md and the ten objects unchanged, 14 pins), the corpus 132 → 141 sentences (nine new ids:
+eth-openai-378, eth-anthropic-formal-math, eth-tsavo-bridge, eth-hawkley-bridge, eth-hawkley-heavy, eth-cslib-d1, eth-anthropic-chain,
+eth-openai-chain, wsp-math500); corpus/register/sentences.md rewritten from the JSON (prose.write_source), `prose register --run
+--record records/prose-register.json` STARTED and STOPPED on the coordinator's word after 27 min (the source file moved, so every
+object's pin moved and the checker re-decides all 459 proposals from scratch; the record was not re-written — TO RUN, then
+`python3 tests/battery.py --write` for records/coverage.json, then `make web`; the republish is cert-machine's, on the operator's word).
+`make drift` 15/15, platform 29/29, riemann 31/31; `make test` after the lift 598 pass, 3 fail, 163/163 reds — the three are the lift's
+record reproductions (coverage.json at 132, the register's source line, the register's run), green once the two records are re-written;
+battery §16 (below) 16 greens, 8/8 reds standalone. NOTE `make test` pipes through tail and hides the exit code: read the pass/fail line.
+THE ROUTE, WRITTEN DOWN: lean/INTAKE.md — six steps as the two chains were taken (the statement pinned by hand in cert-machine; the
+scout; the scaffold; the port with the kinds R0–R3 and the admissibility rule; the three planted variants; the pre-flight and what
+cert-machine then needs — the decision script, the axioms files, the challenge module, the pod and the record stay cert-machine's,
+never written here). THE TOOLS (standard library, deterministic): tools/intake_scout.py (a sparse clone or a checkout; the import
+closure of the roots with comments stripped; sha256 + git blob id per file; scout-pins.json in cert-machine's shape — paths from the
+repository root, no trailing newline — scout-closure.txt, scout-blobs.json with the blob comparison against a base commit,
+scout-report.json with the external imports and the census words; `--check PINS --tree` the drift check) and tools/intake_port.py
+(`scaffold`: lean_lib blocks per upstream library, the PORT.md template in the line form cert-machine's L3s parses, Planted/ ×3 from
+the statement, the claim skeleton with the trusted block, CHECKLIST.md with the paths filled; `ledger`: §4 and §5 of PORT.md
+mechanically — both sha256s, every changed line at its upstream number, "signature line" by a heuristic; `check`: the L3s facts
+measured here first, the census, exit 1 on a refusal). CALIBRATED on the OpenAI chain as decided: the scout on thinkthoughts/math
+d6b79b7d with roots SubexponentialSAT/Main.lean + Hawkley's two bridge files reproduces cert-machine's scout-pins.json and
+scout-closure.txt BYTE FOR BYTE (3,210/3,210 digests; 569,603 lines; 3,183 same blob as openai/math 7ef5c0cc, 27 Hawkley-only) — the
+bridge roots alone give 2,688 files, a lesson written in INTAKE.md §2; the scaffold's four lean_lib blocks byte-equal to
+lakefile.toml's, Planted Sorry and Axiom byte-equal to the files decided (the Statement variant's comment is the tool's wording);
+the ledger on OpenAIEth against the clone: 3,190 unchanged, 20 modified, the twenty sha256 pairs, change counts and four
+signature-line hunks of PORT.md §4, §5 byte-equal; the check: the block the pin, 3,190 / 20 / 0 refusals, cert-machine's L3s counts.
+Battery §16: 16 greens, 8 reds (a flipped byte DRIFT, a deleted file GONE, a missing root, a module under no --lib, a file changed
+without a PORT.md row, a row naming the wrong upstream sha256, a file moved after its row, a planted sorry, the negation dropped).
+NOT DONE, by the limits: no Lean built (the Mac cannot), no pod, nothing pushed, nothing in cert-machine written; the
+Anthropic chain's scout re-run too (anthropics/formal-math 16a5ce41, root eth/Solution.lean, ten --src folders: 810 files, the 809 of
+AnthropicEth/PORT.md with every upstream sha256 equal plus the vendored MainResults.lean; `public import` and `import all` read).
+NEXT: the operator's word on merging the branch; cert-machine's `make lift` in claimbox after its next receiver change; the first new
+lab claim through INTAKE.md end to end.
+
 **What claimbox is.** The language humans and AIs state checkable claims in; cert-machine decides them (CLAUDE.md, PLAN.md r16,
 LANGUAGE.md). Roadmap (PLAN.md §7): steps 0–8 built — step 7's helpers (tighten, extend, watch, hunt, attack, and fill as the
 provenance walker, scoped down), step 8 (doc with number slots; the x^x report builds from its records); 9–10 not started. Tests: `make test` → 601 pass, 0 fail, 163/163 red controls (about 5 min; CLAIMBOX_FULL=1 re-asks cert-machine everything); `make drift` 15/15; recall 56/56.

@@ -124,7 +124,13 @@ GUIDE.md                   how to write for claimbox, for people and models (its
 USE-CASES.md               six uses, each a decided claim with its record (the battery resolves every address it names)
 lean/eth-bridge/           Lake projects for the ETH machine-model gap (cert-machine-9e's, the operator 2026-11-04): Lean sources only,
                            built on cert-machine's runners, pinned and decided there from claimbox's commits; proposals until decided;
-                           Planted/ the wrong variants it must refuse; not a .claim kind, nothing in claimbox/ or tests/ reads it
+                           Planted/ the wrong variants it must refuse; not a .claim kind, nothing in claimbox/ reads it (the battery's §16
+                           reads OpenAIEth, the lakefile and Planted/ as the intake tools' calibration, nothing more)
+lean/INTAKE.md             the intake of a lab's Lean claim, the route as it was done twice (2026-11-05): the statement pinned by hand in
+                           cert-machine, the scout (tools/intake_scout.py: the import closure, sha256 + blob pins in cert-machine's shape, --check),
+                           the port scaffold, ledger and pre-flight (tools/intake_port.py: lean_lib blocks, PORT.md with the kinds R0–R3 and the
+                           admissibility rule, the three Planted/ variants, the L3s facts measured here first), the checklist of what
+                           cert-machine then needs; calibrated on OpenAIEth (battery §16); the decision script and the pod stay cert-machine's
 reports/                   xx.md: the x^x = y report as a document whose numbers are claims (87 slots, 10 addresses); xx.built.md its build
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),

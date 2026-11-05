@@ -75,6 +75,11 @@ What stays: the Lean version seams between the steps are read, not decided. That
 reading of a definition. claimbox and cert-machine have the same operator, so this separates the author from the
 checker; it is not a second party. The story, with its figure: [carlostoledo.co/eth/#standard](https://carlostoledo.co/eth/#standard).
 
+The route those two chains were taken by — the statement pinned by hand, the claimant's tree scouted and pinned file by file, the
+proof ported into a neutral library's Lean with every change in a ledger, three planted wrong variants, then cert-machine's decision
+on a pod — is written down in [lean/INTAKE.md](lean/INTAKE.md), with the two tools (`tools/intake_scout.py`, `tools/intake_port.py`)
+that start the next lab claim in minutes, calibrated on the OpenAI chain as decided.
+
 ## Readers, corpora, records
 
 `claimbox/readers/` read real sources (EinsteinArena, AlphaEvolve, the Station, FunSearch, zeta23, the cryptids release) into
