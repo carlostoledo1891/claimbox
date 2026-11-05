@@ -1,0 +1,21 @@
+OAI: the Lean 4 proofs of openai/math (OpenAI's family-378 solution, "SubexponentialSAT", and its ParityLifts)
+Copyright 2026 OpenAI
+
+OAI.Bridges: the ETH bridge theorems of thinkthoughts/math (Daniel Hawkley's fork of openai/math)
+Copyright 2026 Daniel Hawkley
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE, the LICENSE file of thinkthoughts/math at
+d6b79b7d165f9e6bef6e033949e3f14e913efdaa, sha256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4).
+The upstream Lean files carry no per-file copyright header; none was added.
+
+This product depends on, but does not include, Lean 4 (https://github.com/leanprover/lean4) and mathlib4 with its
+standard dependency set, fetched by the build tool from their public repositories at the revisions pinned in
+lake-manifest.json (one level up). None of these dependencies is included in this product.
+
+Modified copies: the Lean files in this folder (OpenAIEth/, in claimbox lean/eth-bridge) are copies of thinkthoughts/math
+at commit d6b79b7d165f9e6bef6e033949e3f14e913efdaa, lean/OAI/: the import closure of lean/OAI/Bridges/ETH/FinalImplication.lean
+and lean/OAI/Bridges/AnthropicETH/Main.lean (3,210 modules: 3,091 under OAI.Algorithms.SubexponentialSAT and 92 under
+OAI.Combinatorics.ParityLifts, OpenAI's, byte-equal to openai/math at 7ef5c0cc; 27 under OAI.Bridges, Hawkley's), without
+lean/Vendor/Anthropic/MainResults.lean, which is used from ../EthBridge/Anthropic/MainResults.lean byte for byte, some
+of them modified to compile on Lean v4.36.0-rc2 and the Mathlib pinned by cslib-community/complexitylib 7c66eb71. Every
+modified file and every change is listed in PORT.md.

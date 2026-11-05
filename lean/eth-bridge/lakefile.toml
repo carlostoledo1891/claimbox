@@ -92,3 +92,35 @@ name = "AnthropicEthMainTheorem"
 srcDir = "AnthropicEth/proof/maintheorem"
 globs = ["CountedRoute.*", "MainRoute.*", "MinOfBounds.*", "NamesInOrder.*", "WidthThree.*"]
 leanOptions = { autoImplicit = false, relaxedAutoImplicit = false, pp.unicode.fun = true, exponentiation.threshold = 2048 }
+
+# OpenAIEth: the OpenAI chain — openai/math at 7ef5c0cc (Apache-2.0; OpenAI's family-378 proof `exact_count_and_sat` /
+# `original_sat_main` and its ParityLifts) and Daniel Hawkley's two bridge theorems (thinkthoughts/math at d6b79b7d,
+# Apache-2.0; OAI.Bridges.ETH.not_positiveRateETH and OAI.Bridges.AnthropicETH.not_positiveRateETH_implies_ethIsFalse),
+# the import closure of the two bridge files (3,210 modules), ported from Lean v4.34.1 / Mathlib d13f23b7 to this
+# project's Lean and Mathlib; every change is listed in OpenAIEth/PORT.md. Hawkley's bridge proves MainResults.ETHIsFalse
+# against the vendored EthBridge/Anthropic/MainResults.lean (his Vendor/ copy is not copied). The folders and module
+# names are upstream's (OAI.*); each [[lean_lib]] below is one upstream library, with srcDir OpenAIEth/ and upstream's
+# package-level leanOptions (autoImplicit = false; upstream's lakefile.lean sets nothing else for them).
+[[lean_lib]]
+name = "OpenAIEthSubexponentialSAT"
+srcDir = "OpenAIEth"
+globs = ["OAI.Algorithms.SubexponentialSAT.+"]
+leanOptions = { autoImplicit = false }
+
+[[lean_lib]]
+name = "OpenAIEthParityLifts"
+srcDir = "OpenAIEth"
+globs = ["OAI.Combinatorics.ParityLifts.+"]
+leanOptions = { autoImplicit = false }
+
+[[lean_lib]]
+name = "OpenAIEthBridgesETH"
+srcDir = "OpenAIEth"
+globs = ["OAI.Bridges.ETH.+"]
+leanOptions = { autoImplicit = false }
+
+[[lean_lib]]
+name = "OpenAIEthBridgesAnthropicETH"
+srcDir = "OpenAIEth"
+globs = ["OAI.Bridges.AnthropicETH.+"]
+leanOptions = { autoImplicit = false }

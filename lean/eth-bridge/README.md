@@ -64,15 +64,35 @@ holds with Anthropic's proof, Anthropic's statement, C2 and complexitylib's ETH 
 No step from Anthropic's proof to the standard machine crosses a version seam. Build it with
 `lake build EthBridge.AnthropicChain` (about 10 minutes over Mathlib's cache).
 
+## The OpenAI chain in one environment — `EthBridge.OpenAIChain.not_eth` (EthBridge/OpenAIChain.lean)
+
+`OpenAIEth/` is the import closure of Daniel Hawkley's two bridge files in thinkthoughts/math at d6b79b7d (Apache-2.0;
+his fork of openai/math): OpenAI's family-378 proof (`OAI.Algorithms.SubexponentialSAT.*`, 3,091 files, and
+`OAI.Combinatorics.ParityLifts.*`, 92, byte-equal to openai/math at 7ef5c0cc) and Hawkley's `OAI.Bridges.*` (27 files),
+3,210 files in all, carried to this project's Lean and Mathlib. Every change is listed in `OpenAIEth/PORT.md` with both
+sha256s. Hawkley's `import MainResults` becomes `import EthBridge.Anthropic.MainResults`, so his second link proves
+`MainResults.ETHIsFalse` against the same vendored `MainResults.lean` that C2 reads, and
+
+`theorem not_eth : ¬ ETH := not_eth_of_ethIsFalse (not_positiveRateETH_implies_ethIsFalse not_positiveRateETH)`
+
+would hold with OpenAI's proof, Hawkley's two links, Anthropic's statement, C2 and complexitylib's ETH all checked in one
+Lean (v4.36.0-rc2), no step crossing a version seam. Build it with `lake build EthBridge.OpenAIChain` (which builds the
+four `OpenAIEth` libraries first; a cold build is several hours of 16 vCPU).
+
+**State (2026-11-05): a PARTIAL port**, said as such in `OpenAIEth/PORT.md`: the closure is copied byte for byte, the
+libraries are wired, the chain file and its three planted variants are written, and only the modules PORT.md names as
+built were built and repaired on the operator's Mac (the machine had no memory for 3,210 modules of Mathlib imports). Nothing
+is closed by `sorry`, an axiom or a weakened statement; `lake build EthBridge.OpenAIChain` does not yet succeed.
+
 ## Planted wrong variants (claimbox commitment 7)
 
-`Planted/` holds nine files cert-machine must refuse. For C1: the statement closed by `sorry`, the same through a new
+`Planted/` holds twelve files cert-machine must refuse. For C1: the statement closed by `sorry`, the same through a new
 axiom, and the trusted definitions quietly changed (the exponential factor dropped) with `sorry`. For C2: the statement
 closed by `sorry`, the same through a new axiom, and the trusted statement quietly changed (the hypothesis replaced by
-the conclusion) with `sorry`. For the chain: the statement by `sorry`, by a new axiom, and with its negation dropped. They are not a default target.
+the conclusion) with `sorry`. For the Anthropic chain: the statement by `sorry`, by a new axiom, and with its negation dropped; for the OpenAI chain the same three. They are not a default target.
 
 ## What is not here
 
 That any formal ETH is the textbook ETH is a reading of a definition and stays one. For Anthropic's statement the
-version seam is closed by the port above; OpenAI's reaches it through Hawkley's chain inside OpenAI's Lean (v4.34.1),
-and that seam is read, not decided.
+version seam is closed by the port above; OpenAI's still reaches it through Hawkley's chain inside OpenAI's Lean
+(v4.34.1), and that seam is read, not decided, until the OpenAI port above is finished.
