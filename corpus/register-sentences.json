@@ -1,6 +1,6 @@
 {
  "what": "The claim sentences of cert-machine's register (certs/claims-ledger.json), as the register prints them: the corpus the grammar's coverage is measured on. Lifted read-only; the ledger's sha256 is in PROVENANCE.json.",
- "count": 132,
+ "count": 141,
  "rows": [
   {
    "id": "ai-maxwell",
@@ -661,6 +661,51 @@
    "id": "mc100-st-jacobian",
    "claim": "the polynomial map with the sparse rational coefficients given has the Jacobian property claimed and the collision witnesses listed collide",
    "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-openai-378",
+   "claim": "the Exponential Time Hypothesis is false, in Lean: OpenAI, openai/math family 378 (SubexponentialSAT), the theorem OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_and_sat (leanprover/lean4:v4.34.1, Mathlib d13f23b7)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-anthropic-formal-math",
+   "claim": "the Exponential Time Hypothesis is false, in Lean: Anthropic, anthropics/formal-math eth/ (MainResults), the theorems MainResults.ethIsFalse and MainResults.mainTheorem (leanprover/lean4:v4.33.1, Mathlib 0df444a3)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-tsavo-bridge",
+   "claim": "a Lean bridge from OpenAI's claimed refutation of ETH to Anthropic's: Bridge.ethIsFalse_of_claim : OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.Claim → MainResults.ETHIsFalse (OpenAI's challenge statement, as a proposition, implies Anthropic's ETHIsFalse)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-hawkley-bridge",
+   "claim": "a Lean bridge from OpenAI's claimed refutation of ETH to Anthropic's, the light theorem: OAI.Bridges.AnthropicETH.not_positiveRateETH_implies_ethIsFalse : ¬ OAI.ParityWL.Complexity.PositiveRateETH → MainResults.ETHIsFalse (OpenAI ParityLifts' ETH predicate, negated, implies Anthropic's ETHIsFalse)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-hawkley-heavy",
+   "claim": "the heavy link of the same bridge: OAI.Bridges.ETH.not_positiveRateETH : ¬ OAI.ParityWL.Complexity.PositiveRateETH, proved from OpenAI's original_sat_main (so OpenAI's accepted theorem reaches Anthropic's ETHIsFalse inside OpenAI's Lean)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-cslib-d1",
+   "claim": "the Exponential Time Hypothesis is false, natively in Lean on cslib's multitape Turing machine: cslib-community/complexitylib's native ETH refutation (PR #1338) and its word-RAM simulation (PR #2027), the headline theorem ComplexityAbstracts.SubexponentialSATAbstract.not_eth (leanprover/lean4:v4.36.0-rc2)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-anthropic-chain",
+   "claim": "ETH (complexitylib's, on cslib's deterministic multitape Turing machine with encCNF) is false, from Anthropic's own proof through C2, every step elaborated and checked in one Lean (v4.36.0-rc2): no step from Anthropic's proof to the standard machine crosses a version seam (EthBridge.AnthropicChain.not_eth)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "eth-openai-chain",
+   "claim": "ETH (complexitylib's, on cslib's deterministic multitape Turing machine with encCNF) is false, from OpenAI's own proof through Hawkley's two links and C2, every step elaborated and checked in one Lean (v4.36.0-rc2): no step from OpenAI's proof to the standard machine crosses a version seam (EthBridge.OpenAIChain.not_eth)",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "wsp-math500",
+   "claim": "Weight-Space Programming: an edit of 131,072 weights (0.016% of the model), written with no training, lifts Qwen3.5-0.8B's MATH-500 accuracy from 7.9% to 48.1% (6×)",
+   "verdict": "MIXED"
   }
  ]
 }
