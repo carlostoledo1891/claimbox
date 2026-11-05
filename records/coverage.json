@@ -1,8 +1,8 @@
 {
- "what": "The grammar over the 132 claim sentences of cert-machine's register: the shape each takes, or the rule that refuses it. A measurement of what a standard-library grammar covers, not a target; a refusal is the grammar saying so.",
- "sentences": 132,
+ "what": "The grammar over the 141 claim sentences of cert-machine's register: the shape each takes, or the rule that refuses it. A measurement of what a standard-library grammar covers, not a target; a refusal is the grammar saying so.",
+ "sentences": 141,
  "shaped": 97,
- "refused": 35,
+ "refused": 44,
  "byFamily": {
   "digits": 1,
   "kissing": 10,
@@ -12,8 +12,8 @@
   "score": 14
  },
  "byRefusal": {
-  "no-quantity": 22,
-  "prose": 11,
+  "no-quantity": 25,
+  "prose": 17,
   "asymptotic": 2
  },
  "rows": [
@@ -835,6 +835,42 @@
   {
    "id": "mc100-st-jacobian",
    "refused": "no-quantity"
+  },
+  {
+   "id": "eth-openai-378",
+   "refused": "prose"
+  },
+  {
+   "id": "eth-anthropic-formal-math",
+   "refused": "prose"
+  },
+  {
+   "id": "eth-tsavo-bridge",
+   "refused": "no-quantity"
+  },
+  {
+   "id": "eth-hawkley-bridge",
+   "refused": "no-quantity"
+  },
+  {
+   "id": "eth-hawkley-heavy",
+   "refused": "no-quantity"
+  },
+  {
+   "id": "eth-cslib-d1",
+   "refused": "prose"
+  },
+  {
+   "id": "eth-anthropic-chain",
+   "refused": "prose"
+  },
+  {
+   "id": "eth-openai-chain",
+   "refused": "prose"
+  },
+  {
+   "id": "wsp-math500",
+   "refused": "prose"
   }
  ]
 }
