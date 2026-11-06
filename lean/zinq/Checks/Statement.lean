@@ -1,4 +1,4 @@
-import CondZQ.Main
+import CondZQ.Discharged
 import Frozen.BoundedIntegerPolynomial
 
 /-!
@@ -18,3 +18,11 @@ theorem CondZQ.statement_is_the_frozen_target
     type_of% @ZInQ.exists_bounded_integer_polynomial_defining_integers :=
   CondZQ.exists_bounded_integer_polynomial_defining_integers_of_hypotheses
     hG hM hH hPC hC hLT hCC hH1 hH2
+
+/-- The same check for the eight-hypothesis theorem (G discharged). -/
+theorem CondZQ.statement_is_the_frozen_target_of_eight
+    (hM : CondZQ.HypM) (hH : CondZQ.HypH) (hPC : CondZQ.HypPC) (hC : CondZQ.HypC)
+    (hLT : CondZQ.HypLT) (hCC : CondZQ.HypCC) (hH1 : CondZQ.HypH1) (hH2 : CondZQ.HypH2) :
+    type_of% @ZInQ.exists_bounded_integer_polynomial_defining_integers :=
+  CondZQ.exists_bounded_integer_polynomial_defining_integers_of_eight_hypotheses
+    hM hH hPC hC hLT hCC hH1 hH2

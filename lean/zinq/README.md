@@ -1,4 +1,4 @@
-# lean/zinq — the frozen target of "ℤ is Diophantine in ℚ", proved from nine named hypotheses
+# lean/zinq — the frozen target of "ℤ is Diophantine in ℚ", proved from named hypotheses (nine stated, G discharged, eight remain)
 
 Everything here is a **PROPOSAL until cert-machine decides it** (claimbox commitment 5). **The theorem stays
 conditional: nothing here decides whether ℤ is Diophantine in ℚ.** claimbox and cert-machine have the same operator,
@@ -26,7 +26,7 @@ his manifest's revisions (`lake-manifest.json`). His frozen file is compiled fro
   `:= by`, sha256 `5406ba3e…5367935b`, once in `Main.lean`), and `CondZQ.statement_is_the_frozen_target` has as its type
   `type_of% @ZInQ.exists_bounded_integer_polynomial_defining_integers` and is proved by the theorem: the two statements
   agree to Lean, not only to the eye. The frozen theorem's value (its `sorry`) is never used.
-- **Zero `sorry`; axioms `propext`, `Classical.choice`, `Quot.sound`** for all 121 theorems under `CondZQ`
+- **Zero `sorry`; axioms `propext`, `Classical.choice`, `Quot.sound`** for all 141 theorems under `CondZQ`
   (`BUILD-LOG.txt`, `#print_axioms_all`). No `native_decide`, no `implemented_by`, no new `axiom` outside `Planted/`.
 - **What lies between the hypotheses and the conclusion is proved here:** the literal cutoff `T < 2^(2^(2^9013))` from H1 and
   H2 (`Cutoff.lean`: `R = D`, the maximum in `A_ht` is `Q_D^17`, so `T` *is* the closed expression Glazer's
@@ -56,7 +56,13 @@ its group law, `P0` checked on the curve and nonsingular, `ι(n)` the code of `n
 predicate of the precision machine, `𝒞`, `F`, `M_S`, `S_ht`, `S_0`, `PCInput`, `Φ`, the prime catalogue, `H_cat`, `H_max`,
 `N_s`, `M_0`, `c_*`, `A_ht`, `T`.
 
-**Discharged so far: none of the nine.** What was proved instead is everything between them and the conclusion (above).
+**Discharged so far: G.** `CondZQ.hypG_holds : HypG` (`CondZQ/GeneratorOrder.lean`) proves that `P0` has infinite order,
+2-adically and elementarily, the argument the manuscript itself uses at the dyadic place (TeX 6330–6336) instead of its
+reduction-and-torsion proof: `μ(z) = |N(z)|₂` is multiplicative and ultrametric on `ℚ(√2)`, `μ(x(P0)) = 64`, and Mathlib's
+duplication formula multiplies `μ(x)` by 16, so the points `2^k P0` are pairwise distinct. With it,
+`CondZQ.exists_bounded_integer_polynomial_defining_integers_of_eight_hypotheses` (`CondZQ/Discharged.lean`) proves the frozen
+statement from the eight that remain (M, H, PC, C, LT, CC, H1, H2), conclusion byte-identical, checked against the frozen
+theorem's type like the nine-hypothesis one.
 
 ## What is not claimed
 
@@ -90,7 +96,9 @@ CondZQ/Hypotheses.lean   the nine hypotheses
 CondZQ/Bridge.lean       ι injective under G; eq:close-sound; the exact ordinary value under H
 CondZQ/Assembly.lean     the polynomial over `Option Wit`; its zero projection = ℤ; its size; Q_pole's size
 CondZQ/Main.lean         the conditional theorem, conclusion byte-identical
-Checks/Statement.lean    the statement check against the frozen theorem's type
+CondZQ/GeneratorOrder.lean  G discharged: P0 has infinite order (μ = |N|₂, doubling multiplies μ(x) by 16)
+CondZQ/Discharged.lean   the theorem from the eight hypotheses that remain
+Checks/Statement.lean    the statement checks (nine and eight hypotheses) against the frozen theorem's type
 Checks/Axioms.lean       #print axioms for every theorem under CondZQ
 Planted/Conclusion.lean  conclusion changed (degree bound 2↑↑7 → 2↑↑8), PROVED, standard axioms: only the statement check refuses it
 Planted/Sorry.lean       the frozen statement closed by `sorry` (sorryAx)
@@ -106,7 +114,7 @@ BUILD-LOG.txt            the pod build, times, the byte-identity digests, every 
 lake update && lake exe cache get && lake build CondZQ Checks Planted
 ```
 
-On the shared 16 vCPU / 128 GB pod: a clean build of this project and of the nine Glazer modules it imports takes 35 s
+On the shared 16 vCPU / 128 GB pod: a clean build of this project and of the nine Glazer modules it imports takes 37 s
 wall clock, 7.0 GB peak (Mathlib from its cache). The Mac has no Lean.
 
 **A trap for whoever continues.** The constants are towers (`D = 324!·3^(256·324!^4)`, `T`, `2^(2^8008)`). The kernel

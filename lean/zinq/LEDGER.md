@@ -8,7 +8,7 @@ axioms), **partial** (some of it proved, the rest assumed). TeX line numbers are
 
 | name | statement (summary) | source | status | his modules |
 |---|---|---|---|---|
-| `HypG` | `addOrderOf P0 = 0`: `P0 = ((1641−1160s)/8, (−123720+87483s)/32)` has infinite order on `E: y² = x³ − d²x`, `d = 75 − 53s`, over `ℚ(s)`, `s² = 2` | `prop:generator` (TeX 268–270), first clause; proved there by reductions at `(17,s−6)`, `(23,s−5)` and torsion injection (Silverman AEC VII.3.1) | assumed | — |
+| `HypG` | `addOrderOf P0 = 0`: `P0 = ((1641−1160s)/8, (−123720+87483s)/32)` has infinite order on `E: y² = x³ − d²x`, `d = 75 − 53s`, over `ℚ(s)`, `s² = 2` | `prop:generator` (TeX 268–270), first clause; proved there by reductions at `(17,s−6)`, `(23,s−5)` and torsion injection (Silverman AEC VII.3.1) | **proved** — `CondZQ.hypG_holds` (`GeneratorOrder.lean`), 2-adically: `μ = |N|₂`, `μ(x(2Q)) = 16μ(x)`, `μ(x(P0)) = 64` (the dyadic argument of TeX 6330–6336) | — |
 | `HypM` | ∃ `P` over `Fin (15 + 35134)`, `SizeOK P 214`, with `Sol P (A,B,C) ↔ ∃ a b, A = ι a ∧ B = ι b ∧ C = ι(ab)` for all rational 5-codes | premise M (TeX 100–101), `sec:mult` (TeX 1123–1758), `prop:box` (1225), `prop:fixed-prime-pattern` (1267); Green–Tao 2010, Green–Tao–Ziegler, Green–Tao (Möbius–nilsequences); template `multiply` (35,134 witnesses, height 214) | assumed | — |
 | `HypH` | `∀ u ∉ 𝒞, h(u) ≤ H_6(S_ht)·M_{S_ht}(u)^24`, `S_ht = {p ≤ 324}`, `R = max(D, 317, 10^12)` | `thm:height` (TeX 404–408), `sec:height` (377–972); Faltings 1983/1988, Scholze 2013, Pan 2022, Lin–Yang, Baba–Granath | assumed | `HeightConstantComparison.h6` (`H_6`), `RationalSeparation.rationalLogHeight` (`h`) |
 | `HypPC` | `∀ B, IsSquare B.den ∧ 0 < B < 1/2 ∧ (∀ p ∈ {2,3,5,7,13}, v_p(B) ≥ 4) → Φ(B)` | `hyp:PC` (TeX 1001–1004); from `hyp:RC` by `sec:pole` (Kato 2004, Gross–Zagier, Kolyvagin, Poonen–Stoll, BCDT) | assumed | `PolePolynomial.polePolynomial` (`Q_pole`, defining `Φ`) |
@@ -36,7 +36,10 @@ axioms), **partial** (some of it proved, the rest assumed). TeX line numbers are
 
 ## Discharges
 
-None yet. The next one asked for, C, is not reachable in one session: it needs the precision machine written as a Lean
+1. **G** — `CondZQ.hypG_holds : HypG`, standard axioms; `exists_bounded_integer_polynomial_defining_integers_of_eight_hypotheses`
+   (`Discharged.lean`) is the theorem from the eight that remain.
+
+The next one asked for, C, is not reachable in one session: it needs the precision machine written as a Lean
 program over exact `ℚ(√2)` arithmetic, its correctness against `accept`, a Diophantine compilation over ℕ with an explicit
 variable count (the manuscript's register-machine compiler of `sec:compiler`; Mathlib's `Dioph` has no size bounds), and
 the translation of naturals into point codes through the multiplication relation (so C would be discharged modulo M).

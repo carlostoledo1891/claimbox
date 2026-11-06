@@ -1,35 +1,29 @@
 claimbox lean/zinq — build log (pod, 2026-11-06)
 
 Pod: RunPod CPU, 16 vCPU, 128 GB (the shared pod; work under /root/zinq only).
-Toolchain: leanprover/lean4:v4.35.0 (elan). Dependencies resolved by `lake update` from lakefile.toml:
+Toolchain: leanprover/lean4:v4.35.0 (elan). Dependencies resolved by `lake update` from lakefile.toml (lake-manifest.json):
   z_in_q    97cec7fdd757d9a8e4f468151a47a6d3610fb2f2  (github.com/elliotglazer/diophantine-z-q, subDir lean)
   mathlib   56a005855ea17e0b0958f73ec801ae140b0a1679  (tag v4.35.0, the rev in Glazer's lake-manifest.json)
   plausible dfa4f381  LeanSearchClient d6b4c7be  importGraph a41f0e9a  proofwidgets df72b022
   aesop 4a174c49  Qq dce0ad79  batteries 66e46918  Cli c24fe607   (all as in Glazer's manifest)
 Mathlib oleans from `lake exe cache get` (9,031 files); Glazer's modules compiled here.
 
-Clean build (rm -rf .lake/build .lake/packages/z_in_q/lean/.lake/build; lake build CondZQ Checks Planted):
-  wall clock 0:35.20, peak RSS 7.0 GB, exit 0, "Build completed successfully (9074 jobs)".
-  Glazer's modules compiled (the import closure used): ZInQ.PrecisionArithmetic 0.6s, NumericalTowerBounds 0.7s,
-  PrecisionAlgorithms 0.5s, PoleValuation 1.1s, RationalSeparation 1.2s, ExplicitCutoffBounds 1.2s,
-  HeightConstantAlgorithm 1.0s, PolePolynomial 1.6s, HeightConstantComparison 1.0s.
-  Frozen.BoundedIntegerPolynomial 0.9s (his frozen file, compiled from the checkout for the statement check;
-    warning: declaration uses `sorry` — his, at 12:8, expected).
-  CondZQ.Basic 3.4s, Model 3.5s, Cutoff 3.0s, Hypotheses 3.1s, Bridge 3.5s, Assembly 3.9s, Main 3.2s, CondZQ 3.1s,
-  Checks.Statement 3.1s, Checks.Axioms 4.2s, Planted.Conclusion 3.2s, Planted.Sorry 3.4s (warning: declaration
-  uses `sorry`, planted), Planted.Axiom 3.3s, Planted.Axioms 3.1s.
-  No other `sorry` warning; no error.
+Clean build: rm -rf .lake/build .lake/packages/z_in_q/lean/.lake/build; lake build CondZQ Checks Planted
+  wall clock 0:37.35, peak RSS 7.0 GB, "Build completed successfully", 0 errors.
+  Modules compiled (26): ZInQ.PrecisionArithmetic 561ms, ZInQ.NumericalTowerBounds 617ms, Frozen.BoundedIntegerPolynomial 820ms, ZInQ.PrecisionAlgorithms 478ms, ZInQ.PoleValuation 1.1s, ZInQ.RationalSeparation 1.1s, ZInQ.ExplicitCutoffBounds 1.1s, ZInQ.HeightConstantAlgorithm 988ms, ZInQ.PolePolynomial 1.5s, ZInQ.HeightConstantComparison 920ms, CondZQ.Basic 3.3s, CondZQ.Model 3.3s, CondZQ.Cutoff 3.8s, CondZQ.Hypotheses 2.0s, Planted.Sorry 3.3s, Planted.Axiom 3.3s, CondZQ.Bridge 3.6s, CondZQ.GeneratorOrder 3.7s, CondZQ.Assembly 3.8s, CondZQ.Main 2.0s, CondZQ.Discharged 2.9s, Planted.Conclusion 2.0s, Planted.Axioms 2.0s, CondZQ 3.1s, Checks.Statement 3.2s, Checks.Axioms 3.8s.
+  `declaration uses sorry` warnings: .lake/packages/z_in_q/lean/Frozen/BoundedIntegerPolynomial.lean:12:8, Planted/Sorry.lean:14:8 (his frozen file, compiled for the statement check; the planted
+  variant) and no other.
 
 Frozen file: lean/Frozen/BoundedIntegerPolynomial.lean sha256 0889579ae56e75eca811af520eb4e18c9f697e163db408771b93fdbc651a95b9 (= the pin).
-Conclusion text, from "  ∃ P : MvPolynomial" to the byte before ":= by": 355 bytes,
-  sha256 5406ba3e3d53ea3557819524f6150de802d9b8c8cf7c63c8cd38db805367935b, found once in CondZQ/Main.lean (byte 3804) as the conclusion of
-  CondZQ.exists_bounded_integer_polynomial_defining_integers_of_hypotheses.
-Statement check: CondZQ.statement_is_the_frozen_target (Checks/Statement.lean) has the type
-  `type_of% @ZInQ.exists_bounded_integer_polynomial_defining_integers` (the frozen theorem's type) and is proved by the
-  conditional theorem: it elaborates and its axioms are the standard three (no sorryAx: the frozen value is unused).
+Conclusion text, from "  ∃ P : MvPolynomial" to the byte before ":= by": 355 bytes, sha256 5406ba3e3d53ea3557819524f6150de802d9b8c8cf7c63c8cd38db805367935b;
+  occurrences: CondZQ/Main.lean 1, CondZQ/Discharged.lean 1,
+  Planted/Sorry.lean 1, Planted/Axiom.lean 1 (the theorem; the axiom's copy ends without the trailing space), Planted/Conclusion.lean 0 (changed).
+Statement checks (Checks/Statement.lean): CondZQ.statement_is_the_frozen_target and ..._of_eight have the type
+  `type_of% @ZInQ.exists_bounded_integer_polynomial_defining_integers` and are proved by the nine- and eight-hypothesis
+  theorems; both elaborate, with the standard three axioms (the frozen theorem's value is unused).
 
 #print axioms — every theorem under CondZQ (Checks/Axioms.lean, #print_axioms_all) and the three planted variants:
-AXIOMS-SUMMARY theorems=121 outside-standard=0
+AXIOMS-SUMMARY theorems=141 outside-standard=0
 AXIOMS CondZQ.Aht.eq_1 : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.Aht_eq : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.Aht_pos : [propext, Classical.choice, Quot.sound]
@@ -55,6 +49,7 @@ AXIOMS CondZQ.Hmax.eq_1 : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.M0.eq_1 : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.Ns.eq_1 : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.Ns_eq : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.P0.eq_1 : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.P0_equation : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.P0_nonsingular : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.P0x.eq_1 : [propext, Classical.choice, Quot.sound]
@@ -95,10 +90,12 @@ AXIOMS CondZQ.d_eq_cutoff_d : [propext]
 AXIOMS CondZQ.d_gt : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.dco.eq_1 : [propext, Quot.sound]
 AXIOMS CondZQ.degreeFromBase_gt : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.double_mu : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.eps_nonneg : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.eq_of_close_of_dvd : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.eval_mainPoly : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.eval_rename_kV : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.exists_bounded_integer_polynomial_defining_integers_of_eight_hypotheses : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.exists_bounded_integer_polynomial_defining_integers_of_hypotheses : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.exp_aux : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.exp_bound : [propext, Classical.choice, Quot.sound]
@@ -106,6 +103,7 @@ AXIOMS CondZQ.fact_not_isSquare_two : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.four_sq_eq_zero : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.g0_eq_cutoff_g0 : []
 AXIOMS CondZQ.g0_val : []
+AXIOMS CondZQ.hypG_holds : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.iota_injective : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.jW_injective : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.l1.eq_1 : [propext, Classical.choice, Quot.sound]
@@ -132,18 +130,34 @@ AXIOMS CondZQ.mapC.eq_1 : [propext, Quot.sound]
 AXIOMS CondZQ.mapM.eq_1 : [propext, Quot.sound]
 AXIOMS CondZQ.mapP.eq_1 : [propext]
 AXIOMS CondZQ.mapT.eq_1 : [propext, Quot.sound]
+AXIOMS CondZQ.mu_A : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_P0x : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_add_eq_of_lt : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_add_le : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_div : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_formula : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_four : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_mul : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_neg : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.mu_zero : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.natAbs_coeff_le_l1 : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.norm_K0 : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.norm_inv_K0 : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.not_isSquare_two_rat : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.nsOf.eq_1 : []
 AXIOMS CondZQ.one_le_T : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.orbit : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.p2_le : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.p2_lt : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.padicNorm_two_two : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.pole_bound : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.pole_eq : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.pow_eq_of_exp : [propext]
 AXIOMS CondZQ.shift_not_mem : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.sq_add_sq_eq_zero_iff : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.sq_le_max_sq : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.statement_is_the_frozen_target : [propext, Classical.choice, Quot.sound]
+AXIOMS CondZQ.statement_is_the_frozen_target_of_eight : [propext, Classical.choice, Quot.sound]
 AXIOMS CondZQ.t_body : [propext]
 AXIOMS CondZQ.t_eq : [propext]
 AXIOMS CondZQ.ten_pow_12_le_d : [propext, Classical.choice, Quot.sound]
