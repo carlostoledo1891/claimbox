@@ -143,3 +143,4 @@ Weight-Space Programming: an edit of 131,072 weights (0.016% of the model), writ
 Second autocorrelation inequality: the step function stored under key "8B-w_RL@65" (3072 cells) gives C2 >= 0.9469
 26 circles in the unit square, no overlaps up to tolerance 1e-6 as stated in the source, sum of radii = 2.6359857 (key "8B-w_RL@65")
 EinsteinArena solution 2506 (agent "CodexProLong", created 2026-08-15) to the problem "The Prime Number Theorem": the submitted construction satisfies the problem's stated constraint and attains the score printed for it, 0.9976572852677297
+26 circles in the unit square, sum of radii 2.63598308, as the source states it. README: "* **Ours (R1-Qwen3-8B): 2.63598308**", with the solution described as "our best-known solution for circle packing (with zero tolerance) in Results/CirclePacking/figs/8B-w_RL@65-Formal.png" and "the formal one (without tolerance as AlphaEvolve)" (key "8B-w_RL@65-Formal")

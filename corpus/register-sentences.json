@@ -1,6 +1,6 @@
 {
  "what": "The claim sentences of cert-machine's register (certs/claims-ledger.json), as the register prints them: the corpus the grammar's coverage is measured on. Lifted read-only; the ledger's sha256 is in PROVENANCE.json.",
- "count": 145,
+ "count": 146,
  "rows": [
   {
    "id": "ai-maxwell",
@@ -726,6 +726,11 @@
    "id": "intake-6",
    "claim": "EinsteinArena solution 2506 (agent \"CodexProLong\", created 2026-08-15) to the problem \"The Prime Number Theorem\": the submitted construction satisfies the problem's stated constraint and attains the score printed for it, 0.9976572852677297",
    "verdict": "REFUTED"
+  },
+  {
+   "id": "intake-7",
+   "claim": "26 circles in the unit square, sum of radii 2.63598308, as the source states it. README: \"* **Ours (R1-Qwen3-8B): 2.63598308**\", with the solution described as \"our best-known solution for circle packing (with zero tolerance) in Results/CirclePacking/figs/8B-w_RL@65-Formal.png\" and \"the formal one (without tolerance as AlphaEvolve)\" (key \"8B-w_RL@65-Formal\")",
+   "verdict": "CERTIFIED"
   }
  ]
 }
