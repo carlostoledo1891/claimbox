@@ -1,8 +1,8 @@
 {
- "what": "The grammar over the 145 claim sentences of cert-machine's register: the shape each takes, or the rule that refuses it. A measurement of what a standard-library grammar covers, not a target; a refusal is the grammar saying so.",
- "sentences": 145,
+ "what": "The grammar over the 146 claim sentences of cert-machine's register: the shape each takes, or the rule that refuses it. A measurement of what a standard-library grammar covers, not a target; a refusal is the grammar saying so.",
+ "sentences": 146,
  "shaped": 97,
- "refused": 48,
+ "refused": 49,
  "byFamily": {
   "digits": 1,
   "kissing": 10,
@@ -13,7 +13,7 @@
  },
  "byRefusal": {
   "no-quantity": 25,
-  "prose": 21,
+  "prose": 22,
   "asymptotic": 2
  },
  "rows": [
@@ -886,6 +886,10 @@
   },
   {
    "id": "intake-6",
+   "refused": "prose"
+  },
+  {
+   "id": "intake-7",
    "refused": "prose"
   }
  ]

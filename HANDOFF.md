@@ -33,6 +33,9 @@ count as before except notStated 67 → 71 — the four new sentences are holes,
 171/171 reds; `make drift` 15/15, platform 29/29, riemann 31/31. NEXT, the operator's word: push the branch and merge it into
 main (main is still bdf357e; this branch carries intake-2026-11-05 and zinq-2026-11-06 under it); the republish of
 web/dist at carlostoledo.co/claimbox/ is cert-machine's (`node tools/publish-zone.js claimbox`, on the word).
+**Later the same day (2026-11-08, same branch):** the register moved again (claim #7, intake-7, CERTIFIED): `make lift` re-pinned
+the ledger (8a78589), the corpus 145 → 146; the prose record re-decided (4,556 s; 459 proposals, 0 unfaithful, notStated
+71 → 72), coverage re-written, `make web`; `make test` 617 pass, 0 fail, 171/171 reds; drift 15/15. Still not pushed.
 
 **THE LAB-CLAIM INTAKE AS THE STANDARD ROUTE (2026-11-05, the fourteenth session, branch `intake-2026-11-05`, a background agent of
 cert-machine's on the operator's word; not pushed).** THE LIFT FIRST: cert-machine's register moved (certs/claims-ledger.json, sha256
