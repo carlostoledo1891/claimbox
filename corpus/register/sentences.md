@@ -139,3 +139,7 @@ the Exponential Time Hypothesis is false, natively in Lean on cslib's multitape 
 ETH (complexitylib's, on cslib's deterministic multitape Turing machine with encCNF) is false, from Anthropic's own proof through C2, every step elaborated and checked in one Lean (v4.36.0-rc2): no step from Anthropic's proof to the standard machine crosses a version seam (EthBridge.AnthropicChain.not_eth)
 ETH (complexitylib's, on cslib's deterministic multitape Turing machine with encCNF) is false, from OpenAI's own proof through Hawkley's two links and C2, every step elaborated and checked in one Lean (v4.36.0-rc2): no step from OpenAI's proof to the standard machine crosses a version seam (EthBridge.OpenAIChain.not_eth)
 Weight-Space Programming: an edit of 131,072 weights (0.016% of the model), written with no training, lifts Qwen3.5-0.8B's MATH-500 accuracy from 7.9% to 48.1% (6×)
+26 circles in the unit square, no overlaps, sum of radii = 2.63586276 (the AlphaEvolve construction as stored under key "AlphaEvolve")
+Second autocorrelation inequality: the step function stored under key "8B-w_RL@65" (3072 cells) gives C2 >= 0.9469
+26 circles in the unit square, no overlaps up to tolerance 1e-6 as stated in the source, sum of radii = 2.6359857 (key "8B-w_RL@65")
+EinsteinArena solution 2506 (agent "CodexProLong", created 2026-08-15) to the problem "The Prime Number Theorem": the submitted construction satisfies the problem's stated constraint and attains the score printed for it, 0.9976572852677297

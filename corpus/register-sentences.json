@@ -1,6 +1,6 @@
 {
  "what": "The claim sentences of cert-machine's register (certs/claims-ledger.json), as the register prints them: the corpus the grammar's coverage is measured on. Lifted read-only; the ledger's sha256 is in PROVENANCE.json.",
- "count": 141,
+ "count": 145,
  "rows": [
   {
    "id": "ai-maxwell",
@@ -706,6 +706,26 @@
    "id": "wsp-math500",
    "claim": "Weight-Space Programming: an edit of 131,072 weights (0.016% of the model), written with no training, lifts Qwen3.5-0.8B's MATH-500 accuracy from 7.9% to 48.1% (6×)",
    "verdict": "MIXED"
+  },
+  {
+   "id": "intake-3",
+   "claim": "26 circles in the unit square, no overlaps, sum of radii = 2.63586276 (the AlphaEvolve construction as stored under key \"AlphaEvolve\")",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "intake-4",
+   "claim": "Second autocorrelation inequality: the step function stored under key \"8B-w_RL@65\" (3072 cells) gives C2 >= 0.9469",
+   "verdict": "REFUTED"
+  },
+  {
+   "id": "intake-5",
+   "claim": "26 circles in the unit square, no overlaps up to tolerance 1e-6 as stated in the source, sum of radii = 2.6359857 (key \"8B-w_RL@65\")",
+   "verdict": "CERTIFIED"
+  },
+  {
+   "id": "intake-6",
+   "claim": "EinsteinArena solution 2506 (agent \"CodexProLong\", created 2026-08-15) to the problem \"The Prime Number Theorem\": the submitted construction satisfies the problem's stated constraint and attains the score printed for it, 0.9976572852677297",
+   "verdict": "REFUTED"
   }
  ]
 }

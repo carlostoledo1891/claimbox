@@ -5,7 +5,7 @@
   "instruments/claimbox/check.py": "81ee471445e19c05f3a8a99ac25ec09afd6dae600f631dc56cbb7ef778e4eb83",
   "instruments/claimbox/check.js": "4a577ec6511003e9c00e7914b90b1446635d7f6ad23ed96e2bddff376fc5ae1c",
   "instruments/claimbox/SCHEMA.md": "b321cff7640d6a696273e859095316fdc1b8cc387487589e6e7b2d99bf792a84",
-  "certs/claims-ledger.json": "3558fcf5a4718a8a9c9017c5329bea56db497465354c8119d73bcaa350c18db4",
+  "certs/claims-ledger.json": "03ac16fe081bd955cbcf8a6ff8887bb4f1bd22e689b526db7c2cfb31f79a4f39",
   "instruments/claimbox/claims/optq-1a-atris.json": "81aa154aa98190b5382b18576b8bc189136fd67d7803a3659bb396abdb67aed1",
   "instruments/claimbox/claims/optq-1a-agentdiscover.json": "e3716f8a0b4d40218c411daa801e867cf58308e08f284a7af9107186e4a1a316",
   "instruments/claimbox/claims/optq-1b-atris.json": "51cd0bbb7d02a9ebb779374da226906bd9ff56edb845c2310be207abf564148b",
@@ -18,6 +18,6 @@
   "instruments/claimbox/claims/optq-82-epi.json": "ead9dbcd5615c43bfd22e2fcc2d3780ad6eaa07353bf3abacf5824d20740e399"
  },
  "corpus": {
-  "register-sentences.json": "c96fe4f42e1d619766989cfc0a206ae436b06693df569cef0612c6da3f01c7de"
+  "register-sentences.json": "50d453a23e48a5872fa4d8762b1845ea30032fd52748d9332811a14b8d28af24"
  }
 }
