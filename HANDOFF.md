@@ -23,6 +23,17 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**THE LIFT OF 2026-11-08 (branch `lift-2026-11-08`, from `zinq-2026-11-06` at 125509a; done from a cert-machine session on the
+operator's "Proceed"; not pushed, not merged).** cert-machine's register moved again (certs/claims-ledger.json: the claims desk's
+first four SUBMITTED rows, intake-3 to intake-6, from its public claim form): `make lift` re-pinned the ledger only (the other 13
+pins unchanged), the corpus 141 → 145 sentences, corpus/register/sentences.md rewritten (prose.write_source); then the owed steps
+in full: `prose register --run --record records/prose-register.json` exit 0 after 4,177 s (459 proposals, 0 unfaithful; every
+count as before except notStated 67 → 71 — the four new sentences are holes, "not stated: prose"), `tests/battery.py --write`
+(records/coverage.json), `make web` (web/dist/index.html: the bars re-drawn over 145), then `make test` 617 pass, 0 fail,
+171/171 reds; `make drift` 15/15, platform 29/29, riemann 31/31. NEXT, the operator's word: push the branch and merge it into
+main (main is still bdf357e; this branch carries intake-2026-11-05 and zinq-2026-11-06 under it); the republish of
+web/dist at carlostoledo.co/claimbox/ is cert-machine's (`node tools/publish-zone.js claimbox`, on the word).
+
 **THE LAB-CLAIM INTAKE AS THE STANDARD ROUTE (2026-11-05, the fourteenth session, branch `intake-2026-11-05`, a background agent of
 cert-machine's on the operator's word; not pushed).** THE LIFT FIRST: cert-machine's register moved (certs/claims-ledger.json, sha256
 3558fcf5…; the ETH records of both labs, TSavo, Hawkley ×2, cslib D1, both chains, and wsp-math500 as rows): `make lift` re-pinned
