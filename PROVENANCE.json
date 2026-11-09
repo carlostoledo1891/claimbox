@@ -4,7 +4,7 @@
  "pins": {
   "instruments/claimbox/check.py": "81ee471445e19c05f3a8a99ac25ec09afd6dae600f631dc56cbb7ef778e4eb83",
   "instruments/claimbox/check.js": "4a577ec6511003e9c00e7914b90b1446635d7f6ad23ed96e2bddff376fc5ae1c",
-  "instruments/claimbox/SCHEMA.md": "b321cff7640d6a696273e859095316fdc1b8cc387487589e6e7b2d99bf792a84",
+  "instruments/claimbox/SCHEMA.md": "6c2e4692a26aac95043385dfc6051db77e8eee215c0d693e18ade84c5e1d8d6a",
   "certs/claims-ledger.json": "a256385796aff1601cff783aa2a44a00e092743c7bca26f23a5624efa66b1071",
   "instruments/claimbox/claims/optq-1a-atris.json": "81aa154aa98190b5382b18576b8bc189136fd67d7803a3659bb396abdb67aed1",
   "instruments/claimbox/claims/optq-1a-agentdiscover.json": "e3716f8a0b4d40218c411daa801e867cf58308e08f284a7af9107186e4a1a316",
