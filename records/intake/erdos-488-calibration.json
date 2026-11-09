@@ -1,0 +1,1742 @@
+{
+ "what": "claimbox's intake spec (records/intake/erdos-488-spec.json) and its blind reading of the sentence (corpus/intake/erdos-488/erdos-488.reading) against what cert-machine recorded for Erdős #488 on 2026-11-09 — its hand-written spec, its record, Lean's values from the run and the decider written by hand from the sentence — read in place, pinned below. A calibration of the writer and the reader, not a verdict: the verdict on #488 is cert-machine's record. Written by python3 -m claimbox intake calibrate erdos-488 --record.",
+ "certMachine": {
+  "corpus/lean-intake/erdos-488/spec.json": "257addcced503947ac7cdece4e0a6c7ac147586a8756a5ca0d514a95c83a0277",
+  "certs/lean-intake-erdos-488.json": "3d55fa1fe80a8dbf77b7379291eb9d55f1d8895ce9e1af6cf133745be2e8a34e",
+  "corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl": "f0da5cfd56aa07a0f8fdc9558857168be02084e5e5b64ff9e78b3064f93e015f",
+  "instruments/intake/erdos-488.js": "a2dc8058927b98413eb74c83f0427efb6c560a0d104ef06ad12596cd12444edb"
+ },
+ "word": {
+  "spec": "CALIBRATED",
+  "reading": "CALIBRATED"
+ },
+ "spec": {
+  "pins": {
+   "claim": true,
+   "canonical": true,
+   "S0": true,
+   "f2Lean": {
+    "instanceType": true,
+    "instances": true,
+    "apply": true,
+    "instanceJson": true,
+    "chunk": true
+   },
+   "f3Values": true
+  },
+  "written": 28,
+  "byKind": {
+   "same": 6,
+   "changed": 20,
+   "type": 2,
+   "equivalent": 0
+  },
+  "hand": [
+   {
+    "id": "S0",
+    "kind": "same",
+    "preregistered": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "writtenAgain": {
+     "exactly": "S0",
+     "upToBoundNames": [
+      "S1"
+     ]
+    },
+    "claimbox": "ACCEPTED"
+   },
+   {
+    "id": "S1",
+    "kind": "same",
+    "preregistered": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "writtenAgain": {
+     "exactly": "S2",
+     "upToBoundNames": []
+    },
+    "claimbox": "ACCEPTED"
+   },
+   {
+    "id": "S2",
+    "kind": "same",
+    "preregistered": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "writtenAgain": {
+     "exactly": null,
+     "upToBoundNames": [
+      "S0",
+      "S1"
+     ]
+    },
+    "claimbox": "ACCEPTED"
+   },
+   {
+    "id": "S3",
+    "kind": "same",
+    "preregistered": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "writtenAgain": {
+     "exactly": null,
+     "upToBoundNames": [
+      "S5"
+     ]
+    },
+    "claimbox": "ACCEPTED"
+   },
+   {
+    "id": "S4",
+    "kind": "same",
+    "preregistered": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "writtenAgain": {
+     "exactly": "S3",
+     "upToBoundNames": []
+    },
+    "claimbox": "ACCEPTED"
+   },
+   {
+    "id": "W01",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": null,
+     "upToBoundNames": []
+    },
+    "claimbox": null
+   },
+   {
+    "id": "W02",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C17",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W03",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C07",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W04",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C09",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W05",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C03",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W06",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C02",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W07",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C08",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W08",
+    "kind": "same",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "ACCEPTED",
+    "writtenAgain": {
+     "exactly": "C16",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W09",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C13",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   },
+   {
+    "id": "W10",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": null,
+     "upToBoundNames": []
+    },
+    "claimbox": null
+   },
+   {
+    "id": "W11",
+    "kind": "wrong",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": null,
+     "upToBoundNames": []
+    },
+    "claimbox": null
+   },
+   {
+    "id": "E1",
+    "kind": "equivalent",
+    "preregistered": "REFUSED by type mismatch",
+    "outcome": "REFUSED by type mismatch",
+    "writtenAgain": {
+     "exactly": "C15",
+     "upToBoundNames": []
+    },
+    "claimbox": "kernel decides"
+   }
+  ],
+  "handWrittenAgain": {
+   "exactly": 12,
+   "onlyUpToBoundNames": 2,
+   "not": [
+    "W01",
+    "W10",
+    "W11"
+   ],
+   "of": 17
+  },
+  "knownAnswers": {
+   "claimboxStatements": 14,
+   "checks": [
+    {
+     "claimbox": "S0",
+     "rule": "verbatim",
+     "expect": "ACCEPTED",
+     "hand": "S0",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "S0",
+     "rule": "verbatim",
+     "expect": "ACCEPTED",
+     "hand": "S2",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "S1",
+     "rule": "same:rename",
+     "expect": "ACCEPTED",
+     "hand": "S0",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "S1",
+     "rule": "same:rename",
+     "expect": "ACCEPTED",
+     "hand": "S2",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "S2",
+     "rule": "same:binder-pred",
+     "expect": "ACCEPTED",
+     "hand": "S1",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "S3",
+     "rule": "same:not-mem",
+     "expect": "ACCEPTED",
+     "hand": "S4",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "S5",
+     "rule": "same:zeta",
+     "expect": "ACCEPTED",
+     "hand": "S3",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": true
+    },
+    {
+     "claimbox": "C02",
+     "rule": "changed:drop-hypothesis",
+     "expect": "kernel decides",
+     "hand": "W06",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C03",
+     "rule": "changed:drop-hypothesis",
+     "expect": "kernel decides",
+     "hand": "W05",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C07",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "hand": "W03",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C08",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "hand": "W07",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C09",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "hand": "W04",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C13",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "hand": "W09",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C15",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "hand": "E1",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C16",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "hand": "W08",
+     "outcome": "ACCEPTED",
+     "met": true,
+     "predicted": false
+    },
+    {
+     "claimbox": "C17",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "hand": "W02",
+     "outcome": "REFUSED by type mismatch",
+     "met": true,
+     "predicted": false
+    }
+   ],
+   "predictedAndMet": 7,
+   "kernelDecides": 9,
+   "contradictions": []
+  },
+  "unknownUntilARun": [
+   {
+    "id": "S4",
+    "rule": "same:not-mem",
+    "expect": "ACCEPTED",
+    "why": "`1 ∉ A` written `¬ (1 ∈ A)` (the notation's own unfolding), line 2"
+   },
+   {
+    "id": "C01",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "why": "the hypothesis `A.Nonempty` dropped"
+   },
+   {
+    "id": "C04",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "why": "the binder predicate `m > n` dropped (`(m : ℕ)`)"
+   },
+   {
+    "id": "C05",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "why": "the hypothesis `A.max ≤ n` dropped"
+   },
+   {
+    "id": "C06",
+    "rule": "changed:strictness",
+    "expect": "kernel decides",
+    "why": "`≥` made `>` (`{ n ≥ 1 |` → `{ n > 1 |`, line 3)"
+   },
+   {
+    "id": "C10",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 0 made 1 (`A.Nonempty → 0 ∉ A` → `A.Nonempty → 1 ∉ A`, line 2)"
+   },
+   {
+    "id": "C11",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 1 made 2 (`A → 1 ∉ A` → `A → 2 ∉ A`, line 2)"
+   },
+   {
+    "id": "C12",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 1 made 0 (`A → 1 ∉ A` → `A → 0 ∉ A`, line 2)"
+   },
+   {
+    "id": "C14",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 1 made 0 (`n ≥ 1 | ∃` → `n ≥ 0 | ∃`, line 3)"
+   },
+   {
+    "id": "C18",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 2 made 1 (`< 2 *` → `< 1 *`, line 6)"
+   },
+   {
+    "id": "C19",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 1 made 2 (`( Finset.Icc 1 n )` → `( Finset.Icc 2 n )`, line 6)"
+   },
+   {
+    "id": "C20",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "why": "the numeral 1 made 0 (`( Finset.Icc 1 n )` → `( Finset.Icc 0 n )`, line 6)"
+   },
+   {
+    "id": "N1",
+    "rule": "type:nat-int",
+    "expect": "NOT ACCEPTED",
+    "why": "`ℕ` made `ℤ` in the type of A: another type, never definitionally equal (refused, or the statement does not elaborate)"
+   },
+   {
+    "id": "N2",
+    "rule": "type:nat-int",
+    "expect": "NOT ACCEPTED",
+    "why": "`ℕ` made `ℤ` in the type of n: another type, never definitionally equal (refused, or the statement does not elaborate)"
+   }
+  ],
+  "preregistrationErrors": {
+   "hand": [
+    {
+     "id": "W08",
+     "preregistered": "REFUSED by type mismatch",
+     "outcome": "ACCEPTED"
+    },
+    {
+     "id": "F2 canonical",
+     "preregistered": "6 components; conclusion and the informal hypotheses agree with the decider on every instance where the informal statement is defined (n ≥ 1, m ≥ 1); the implication agrees too; the kernel confirms every chunk; the three added hypotheses are listed, not compared",
+     "outcome": "agrees with the informal decider on all 2205 instances where the informal statement is defined (819 undefined there: n = 0 or m = 0); the whole implication differs on 20, 20 of them explained by the added hypothesis 0 ∉ A (A = [0]: the informal sentence is false there)"
+    },
+    {
+     "id": "F2 E1",
+     "preregistered": "conclusion disagrees on at least one instance",
+     "outcome": "conclusion agrees on every instance"
+    }
+   ],
+   "claimbox": []
+  },
+  "f2ImpliesF1": {
+   "rows": [
+    {
+     "id": "S0",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "ACCEPTED",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "S1",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "ACCEPTED",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "S2",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "ACCEPTED",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "S3",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "ACCEPTED",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "S4",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "ACCEPTED",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "W01",
+     "aligned": null,
+     "why": "no F2 rows (not decidable on instances)",
+     "outcome": "REFUSED by type mismatch",
+     "holds": true
+    },
+    {
+     "id": "W02",
+     "aligned": true,
+     "instancesWithADifferingPart": 8,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "W03",
+     "aligned": true,
+     "instancesWithADifferingPart": 378,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "W04",
+     "aligned": true,
+     "instancesWithADifferingPart": 338,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "W05",
+     "aligned": false,
+     "instancesWithADifferingPart": 3024,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "W06",
+     "aligned": false,
+     "instancesWithADifferingPart": 3024,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "W07",
+     "aligned": true,
+     "instancesWithADifferingPart": 504,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "W08",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "ACCEPTED",
+     "mustRefuse": false,
+     "holds": true
+    },
+    {
+     "id": "W09",
+     "aligned": true,
+     "instancesWithADifferingPart": 256,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "W10",
+     "aligned": true,
+     "instancesWithADifferingPart": 558,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "W11",
+     "aligned": true,
+     "instancesWithADifferingPart": 264,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": true,
+     "holds": true
+    },
+    {
+     "id": "E1",
+     "aligned": true,
+     "instancesWithADifferingPart": 0,
+     "outcome": "REFUSED by type mismatch",
+     "mustRefuse": false,
+     "holds": true
+    }
+   ],
+   "mustRefuse": 7,
+   "holds": true
+  },
+  "reds": {
+   "hand": [
+    "R1: 4096 replaced by 1000 everywhere: a false arithmetic claim",
+    "R2: a sorry in constant_ratio",
+    "R3: an added axiom",
+    "R4: native_decide in endpoint_gap"
+   ],
+   "claimbox": [
+    "R1: the proof of refutation replaced by sorry (the original kept as intake_was_refutation)",
+    "R2: refutation proved by an added axiom (the original kept as intake_was_refutation)"
+   ],
+   "note": "the hand's four are anchored inside the proof (file-specific); claimbox's two by rule at the declaration's header; no claimbox red has a recorded answer yet"
+  }
+ },
+ "reading": {
+  "path": "corpus/intake/erdos-488/erdos-488.reading",
+  "proposed": "model:claude-opus-5-5 (blind: given only the sentence and lean/READING.md)",
+  "words": "erdos-488 (proposed by model:claude-opus-5-5 (blind: given only the sentence and lean/READING.md); the sentence quoted from corpus/intake/erdos-488/sentence.json)\n  A is a finite set of positive integers — or, in the fork, a finite set of natural numbers (0 included) — or, in the fork, a finite set of integers\n  n and m are positive integers — or, in the fork, natural numbers (0 included) — or, in the fork, integers (one choice for both)\n  B is the set of the integers x with x ≥ 1 such that a divides x for some a in A\n  if m > n and n ≥ (the largest element of A),\n  then (the number of elements of B from 1 to m) / m < 2 · (the number of elements of B from 1 to n) / n\n  conventions: a division by 0 is undefined (the instance is outside the sentence); a divides x when x = a·k for an integer k, so 0 divides only 0; the largest (smallest) element of an empty set is undefined; [a, b] is the integers from a to b",
+  "anchors": {
+   "sentence": {
+    "[a, b]": 2,
+    "divides": 1,
+    "in": 1,
+    "max": 1,
+    "numeral 1": 3,
+    "numeral 2": 1,
+    "relation < or >": 2,
+    "relation =": 1,
+    "relation ≤ or ≥": 2,
+    "|·|": 2,
+    "∩": 2
+   },
+   "reading": {
+    "[a, b]": 2,
+    "divides": 1,
+    "in": 1,
+    "max": 1,
+    "numeral 1": 3,
+    "numeral 2": 1,
+    "relation < or >": 2,
+    "relation =": 1,
+    "relation ≤ or ≥": 2,
+    "|·|": 2,
+    "∩": 2
+   },
+   "unanchored": {},
+   "unread": {},
+   "word": "anchored and covered"
+  },
+  "sameEnumeration": true,
+  "readings": [
+   {
+    "reading": "A: finite set of positive integers; n, m: positive integer",
+    "rowsDifferingFromTheHandDecider": 1939,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 560,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 1085,
+      "disagreements": 0,
+      "undefinedInReading": 1939,
+      "first": []
+     },
+     "implication": {
+      "compared": 1085,
+      "disagreements": 0,
+      "explained": 0,
+      "explainedBy": [],
+      "explainedInstances": []
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of positive integers; n, m: natural",
+    "rowsDifferingFromTheHandDecider": 1536,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 768,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 1085,
+      "disagreements": 0,
+      "undefinedInReading": 1939,
+      "first": []
+     },
+     "implication": {
+      "compared": 1488,
+      "disagreements": 0,
+      "explained": 0,
+      "explainedBy": [],
+      "explainedInstances": []
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of positive integers; n, m: integer",
+    "rowsDifferingFromTheHandDecider": 1536,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 768,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 1085,
+      "disagreements": 0,
+      "undefinedInReading": 1939,
+      "first": []
+     },
+     "implication": {
+      "compared": 1488,
+      "disagreements": 0,
+      "explained": 0,
+      "explainedBy": [],
+      "explainedInstances": []
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of naturals; n, m: positive integer",
+    "rowsDifferingFromTheHandDecider": 819,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 1120,
+       "note": null
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 1120,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 2205,
+      "disagreements": 0,
+      "undefinedInReading": 819,
+      "first": []
+     },
+     "implication": {
+      "compared": 2205,
+      "disagreements": 20,
+      "explained": 20,
+      "explainedBy": [
+       "0 ∉ A"
+      ],
+      "explainedInstances": [
+       "A = [0]"
+      ]
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of naturals; n, m: natural",
+    "rowsDifferingFromTheHandDecider": 0,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 2205,
+      "disagreements": 0,
+      "undefinedInReading": 819,
+      "first": []
+     },
+     "implication": {
+      "compared": 3017,
+      "disagreements": 20,
+      "explained": 20,
+      "explainedBy": [
+       "0 ∉ A"
+      ],
+      "explainedInstances": [
+       "A = [0]"
+      ]
+     }
+    },
+    "reproducesTheRecord": true,
+    "planted": {
+     "rows": [
+      {
+       "id": "S0",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "S1",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "S2",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "S3",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "S4",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W01",
+       "recorded": "REFUSED: not decidable on instances",
+       "here": "no rows",
+       "same": true
+      },
+      {
+       "id": "W02",
+       "recorded": "conclusion disagrees on 8 of 2205 instances",
+       "here": "conclusion disagrees on 8 of 2205 instances",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W03",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W04",
+       "recorded": "conclusion disagrees on 159 of 2205 instances",
+       "here": "conclusion disagrees on 159 of 2205 instances",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W05",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W06",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        0,
+        0
+       ]
+      },
+      {
+       "id": "W07",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W08",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W09",
+       "recorded": "conclusion disagrees on 224 of 2205 instances",
+       "here": "conclusion disagrees on 224 of 2205 instances",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "W10",
+       "recorded": "conclusion disagrees on 558 of 2205 instances",
+       "here": "conclusion disagrees on 558 of 2205 instances",
+       "same": true,
+       "implication": [
+        36,
+        36
+       ]
+      },
+      {
+       "id": "W11",
+       "recorded": "conclusion disagrees on 264 of 2205 instances",
+       "here": "conclusion disagrees on 264 of 2205 instances",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      },
+      {
+       "id": "E1",
+       "recorded": "conclusion agrees on every instance",
+       "here": "conclusion agrees on every instance",
+       "same": true,
+       "implication": [
+        20,
+        20
+       ]
+      }
+     ],
+     "same": 17,
+     "of": 17
+    }
+   },
+   {
+    "reading": "A: finite set of naturals; n, m: integer",
+    "rowsDifferingFromTheHandDecider": 0,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 2205,
+      "disagreements": 0,
+      "undefinedInReading": 819,
+      "first": []
+     },
+     "implication": {
+      "compared": 3017,
+      "disagreements": 20,
+      "explained": 20,
+      "explainedBy": [
+       "0 ∉ A"
+      ],
+      "explainedInstances": [
+       "A = [0]"
+      ]
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of integers; n, m: positive integer",
+    "rowsDifferingFromTheHandDecider": 819,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 1120,
+       "note": null
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 1120,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 2205,
+      "disagreements": 0,
+      "undefinedInReading": 819,
+      "first": []
+     },
+     "implication": {
+      "compared": 2205,
+      "disagreements": 20,
+      "explained": 20,
+      "explainedBy": [
+       "0 ∉ A"
+      ],
+      "explainedInstances": [
+       "A = [0]"
+      ]
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of integers; n, m: natural",
+    "rowsDifferingFromTheHandDecider": 0,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 2205,
+      "disagreements": 0,
+      "undefinedInReading": 819,
+      "first": []
+     },
+     "implication": {
+      "compared": 3017,
+      "disagreements": 20,
+      "explained": 20,
+      "explainedBy": [
+       "0 ∉ A"
+      ],
+      "explainedInstances": [
+       "A = [0]"
+      ]
+     }
+    }
+   },
+   {
+    "reading": "A: finite set of integers; n, m: integer",
+    "rowsDifferingFromTheHandDecider": 0,
+    "canonical": {
+     "map": {
+      "A.Nonempty": "added",
+      "0 ∉ A": "added",
+      "1 ∉ A": "added",
+      "m > n": [
+       "m > n"
+      ],
+      "A.max ≤ ↑n": [
+       "n ≥ max(A)"
+      ]
+     },
+     "added": [
+      "A.Nonempty",
+      "0 ∉ A",
+      "1 ∉ A"
+     ],
+     "addedDetail": [
+      {
+       "part": "A.Nonempty",
+       "falseWhereTheReadingIsDefined": 0,
+       "note": "true wherever the reading is defined: the instances never test it"
+      },
+      {
+       "part": "0 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      },
+      {
+       "part": "1 ∉ A",
+       "falseWhereTheReadingIsDefined": 1536,
+       "note": null
+      }
+     ],
+     "missing": [],
+     "conclusion": {
+      "compared": 2205,
+      "disagreements": 0,
+      "undefinedInReading": 819,
+      "first": []
+     },
+     "implication": {
+      "compared": 3017,
+      "disagreements": 20,
+      "explained": 20,
+      "explainedBy": [
+       "0 ∉ A"
+      ],
+      "explainedInstances": [
+       "A = [0]"
+      ]
+     }
+    }
+   }
+  ],
+  "plants": {
+   "rows": [
+    {
+     "id": "P02",
+     "what": "the constant 2 read as 3",
+     "f2": {
+      "conclusionDisagreements": 8,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 20,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "numeral 3": 1
+      },
+      "unread": {
+       "numeral 2": 1
+      }
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W02",
+      "recorded": "conclusion disagrees on 8 of 2205 instances"
+     },
+     "expect": "the conclusion disagrees with Lean's canonical values on 8 instances (the count the record holds for W02); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "P04",
+     "what": "the strict < read as ≤",
+     "f2": {
+      "conclusionDisagreements": 159,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 0,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "relation ≤ or ≥": 1
+      },
+      "unread": {
+       "relation < or >": 1
+      }
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W04",
+      "recorded": "conclusion disagrees on 159 of 2205 instances"
+     },
+     "expect": "the conclusion disagrees with Lean's canonical values on 159 instances (the count the record holds for W04); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "P09",
+     "what": "B read from 2: x ≥ 1 as x ≥ 2",
+     "f2": {
+      "conclusionDisagreements": 224,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 32,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "numeral 2": 1
+      },
+      "unread": {
+       "numeral 1": 1
+      }
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W09",
+      "recorded": "conclusion disagrees on 224 of 2205 instances"
+     },
+     "expect": "the conclusion disagrees with Lean's canonical values on 224 instances (the count the record holds for W09); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "P10",
+     "what": "the left denominator m read as n",
+     "f2": {
+      "conclusionDisagreements": 558,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 96,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "anchored and covered",
+      "unanchored": {},
+      "unread": {}
+     },
+     "expectAnchors": "anchored and covered",
+     "caughtBy": [
+      "F2"
+     ],
+     "mirrors": {
+      "statement": "W10",
+      "recorded": "conclusion disagrees on 558 of 2205 instances"
+     },
+     "expect": "the conclusion disagrees with Lean's canonical values on 558 instances (the count the record holds for W10); anchors: anchored and covered",
+     "asExpected": true
+    },
+    {
+     "id": "P11",
+     "what": "[1, m] read as [1, m + 1]",
+     "f2": {
+      "conclusionDisagreements": 264,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 20,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "numeral 1": 1
+      },
+      "unread": {}
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W11",
+      "recorded": "conclusion disagrees on 264 of 2205 instances"
+     },
+     "expect": "the conclusion disagrees with Lean's canonical values on 264 instances (the count the record holds for W11); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "P03",
+     "what": "m > n read as m ≥ n",
+     "f2": {
+      "conclusionDisagreements": 0,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A",
+       "m > n"
+      ],
+      "missing": [
+       "m ≥ n"
+      ],
+      "implicationDisagreements": 25,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "relation ≤ or ≥": 1
+      },
+      "unread": {
+       "relation < or >": 1
+      }
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W03",
+      "recorded": "conclusion agrees on every instance"
+     },
+     "expect": "F2 moves (the part map changes); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "P07",
+     "what": "n ≥ max(A) read as n > max(A)",
+     "f2": {
+      "conclusionDisagreements": 0,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A",
+       "A.max ≤ ↑n"
+      ],
+      "missing": [
+       "n > max(A)"
+      ],
+      "implicationDisagreements": 20,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "relation < or >": 1
+      },
+      "unread": {
+       "relation ≤ or ≥": 1
+      }
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W07",
+      "recorded": "conclusion agrees on every instance"
+     },
+     "expect": "F2 moves (the part map changes); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "PD",
+     "what": "the hypothesis n ≥ max(A) not read",
+     "f2": {
+      "conclusionDisagreements": 0,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A",
+       "A.max ≤ ↑n"
+      ],
+      "missing": [],
+      "implicationDisagreements": 308,
+      "moved": true,
+      "rowsUnchanged": false
+     },
+     "anchors": {
+      "word": "anchored, NOT covered",
+      "unanchored": {},
+      "unread": {
+       "relation ≤ or ≥": 1,
+       "max": 1
+      }
+     },
+     "expectAnchors": "anchored, NOT covered",
+     "caughtBy": [
+      "F2",
+      "anchors"
+     ],
+     "expect": "F2 moves (the part map changes); anchors: anchored, NOT covered",
+     "asExpected": true
+    },
+    {
+     "id": "P08",
+     "what": "[1, m] read as [0, m] (B holds no 0: invisible to F2, as W08 was to F1)",
+     "f2": {
+      "conclusionDisagreements": 0,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 20,
+      "moved": false,
+      "rowsUnchanged": true
+     },
+     "anchors": {
+      "word": "NOT anchored",
+      "unanchored": {
+       "numeral 0": 1
+      },
+      "unread": {
+       "numeral 1": 1
+      }
+     },
+     "expectAnchors": "NOT anchored",
+     "caughtBy": [
+      "anchors"
+     ],
+     "mirrors": {
+      "statement": "W08",
+      "recorded": "conclusion agrees on every instance"
+     },
+     "expect": "F2 cannot see it (the rows unchanged, as W08's conclusion agreed everywhere); anchors: NOT anchored",
+     "asExpected": true
+    },
+    {
+     "id": "PS1",
+     "what": "B's variables renamed",
+     "f2": {
+      "conclusionDisagreements": 0,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 20,
+      "moved": false,
+      "rowsUnchanged": true
+     },
+     "anchors": {
+      "word": "anchored and covered",
+      "unanchored": {},
+      "unread": {}
+     },
+     "expectAnchors": "anchored and covered",
+     "expect": "not moved: the rows unchanged, anchored and covered",
+     "asExpected": true
+    },
+    {
+     "id": "PS2",
+     "what": "m > n written n < m",
+     "f2": {
+      "conclusionDisagreements": 0,
+      "added": [
+       "A.Nonempty",
+       "0 ∉ A",
+       "1 ∉ A"
+      ],
+      "missing": [],
+      "implicationDisagreements": 20,
+      "moved": false,
+      "rowsUnchanged": true
+     },
+     "anchors": {
+      "word": "anchored and covered",
+      "unanchored": {},
+      "unread": {}
+     },
+     "expectAnchors": "anchored and covered",
+     "expect": "not moved: the rows unchanged, anchored and covered",
+     "asExpected": true
+    }
+   ],
+   "wrongCaught": 9,
+   "wrong": 9,
+   "sameUnmoved": 2,
+   "same": 2,
+   "asExpected": 11,
+   "of": 11
+  }
+ }
+}

@@ -23,6 +23,12 @@
                                                    or no witness up to N, never REFUTED
   attack FILE CLAIM --reach N [--name N]          a claim about every case, searched on a schedule (powers of two, then bisection): a
                                                    counterexample beside a certified instance, or not refuted at the K instances asked
+  intake fetch TARGET                              the Lean intake's pins (network): the canonical file kept, the claimant's read, the sentence
+  intake spec TARGET                               the intake spec cert-machine decides from: every planted statement by a fixed rule, each with
+                                                   the class its rule guarantees or "kernel decides"; the reading's table (records/intake/)
+  intake read FILE.reading [--canonical] [--instances SPEC …]   a reading printed back in plain words, its anchors in the sentence;
+                                                   --instances: its values on those instances (lean/READING.md)
+  intake calibrate erdos-488 [--record | --check]  the spec and the reading against the answers cert-machine recorded for Erdős #488
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -104,7 +110,16 @@ def main(argv=None):
     pr.add_argument('--worksheet', action='store_true')
     pr.add_argument('--disputed', action='store_true')
     pr.add_argument('--panel', action='store_true')
+    ik = sub.add_parser('intake')
+    ik.add_argument('action', choices=['fetch', 'spec', 'read', 'calibrate'])
+    ik.add_argument('target')
+    ik.add_argument('--canonical', action='store_true')
+    ik.add_argument('--instances', nargs='+')
+    ik.add_argument('--record', action='store_true')
+    ik.add_argument('--check', action='store_true')
     a = ap.parse_args(argv)
+    if a.cmd == 'intake':
+        return intake(a)
     if a.cmd == 'prose':
         from . import prose
         if a.corpus not in prose.CORPORA:
@@ -363,6 +378,69 @@ def main(argv=None):
         return 1 if bad else 0
     ap.print_help()
     return 2
+
+
+def intake(a):
+    """the Lean intake's inputs (claimbox/intake): fetch, spec, read, calibrate"""
+    from .intake import lean as L, reading as Rd, spec as Sp, calibrate as Cb
+    try:
+        if a.action == 'fetch':
+            p = Sp.fetch(a.target)
+            print('pins: canonical ' + p['canonical']['sha256'][:12] + ' (' + p['canonical']['toolchain'] + '), claim ' + p['claim']['sha256'][:12] + ', header line '
+                  + str(p['claim']['header']['lines'][0]))
+            return 0
+        if a.action == 'spec':
+            s, out = Sp.write(a.target)
+            for m in s['mutants']:
+                print(f'  {m["id"]:<4} {m["kind"]:<10} {m["expect"]:<15} {"aligned" if m["aligned"] else "       "}  {m["why"][:96]}')
+            print(f'wrote {out}: {len(s["mutants"])} planted statements, {s["predictions"]["certain"]} with a certain prediction, '
+                  f'{s["predictions"]["kernelDecides"]} "kernel decides"; {len(s["claimReds"])} planted defects of the claimant\'s file'
+                  + (f'; F2 over {s["f2"]["table"]["path"]}' if 'f2' in s else ''))
+            return 0
+        if a.action == 'read':
+            tree = Rd.parse(open(a.target, encoding='utf-8').read())
+            if a.canonical:
+                print(Rd.canonical(tree), end='')
+                return 0
+            print(Rd.words(tree))
+            an = Rd.anchors(tree, Rd.sentence_of(tree, Sp.REPO))
+            print('anchors: ' + an['word'] + ('; not in the sentence: ' + json.dumps(an['unanchored'], ensure_ascii=False) if an['unanchored'] else '')
+                  + ('; the sentence\'s, not read: ' + json.dumps(an['unread'], ensure_ascii=False) if an['unread'] else ''))
+            print('readings: ' + ' / '.join(r['label'] for r in Rd.readings(tree)))
+            if a.instances:
+                tab = Rd.table(tree, a.instances)
+                for r in tab['readings']:
+                    print(r['reading'] + ':  parts ' + ' | '.join(r['parts']))
+                    for x, row in r['rows']:
+                        print('  ' + json.dumps(x) + '  ' + row)
+            return 0
+        if a.action == 'calibrate':
+            if a.target != 'erdos-488':
+                print('REFUSED  only erdos-488 has recorded answers to calibrate against')
+                return 1
+            rec = Cb.run()
+            path = os.path.join(Sp.REPO, 'records', 'intake', 'erdos-488-calibration.json')
+            body = json.dumps(rec, indent=1, ensure_ascii=False) + '\n'
+            if a.check:
+                if not os.path.isfile(path) or open(path, encoding='utf-8').read() != body:
+                    print('REFUSED  records/intake/erdos-488-calibration.json differs from what the inputs derive now')
+                    return 1
+            elif a.record:
+                open(path, 'w', encoding='utf-8').write(body)
+            s, r = rec['spec'], rec['reading']
+            nat = next(e for e in r['readings'] if 'planted' in e)
+            print(f'spec: {rec["word"]["spec"]} — {s["handWrittenAgain"]["exactly"]} of {s["handWrittenAgain"]["of"]} hand statements written again exactly, '
+                  f'{s["handWrittenAgain"]["onlyUpToBoundNames"]} up to bound names; {s["knownAnswers"]["claimboxStatements"]} of {s["written"]} with a recorded answer, '
+                  f'{len(s["knownAnswers"]["contradictions"])} contradicted; pre-registration errors: hand {len(s["preregistrationErrors"]["hand"])}, claimbox '
+                  f'{len(s["preregistrationErrors"]["claimbox"])}; F2 ⇒ F1 on {s["f2ImpliesF1"]["mustRefuse"]} must-refuse statements: {"holds" if s["f2ImpliesF1"]["holds"] else "FAILS"}')
+            print(f'reading: {rec["word"]["reading"]} — {r["anchors"]["word"]}; {nat["rowsDifferingFromTheHandDecider"]} rows differ from the hand decider; '
+                  f'the record\'s F2 {"reproduced" if nat["reproducesTheRecord"] else "NOT reproduced"}; planted F2 outcomes {nat["planted"]["same"]} of {nat["planted"]["of"]}; '
+                  f'misreadings caught {r["plants"]["wrongCaught"]} of {r["plants"]["wrong"]}, same unmoved {r["plants"]["sameUnmoved"]} of {r["plants"]["same"]}'
+                  + ('; recorded' if a.record else '; checked' if a.check else ''))
+            return 0 if rec['word']['spec'] == rec['word']['reading'] == 'CALIBRATED' else 1
+    except (L.Refused, Rd.Refused) as e:
+        print(f'REFUSED  {e.rule}: {e.msg}')
+        return 1
 
 
 if __name__ == '__main__':

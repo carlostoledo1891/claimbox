@@ -146,3 +146,59 @@ peak); its record. A pre-registration note there, dated, before the pod. None of
   as declared, 0 refusals, census 5 docstring `axiom` words and 0 declarations — cert-machine's L3s counts.
 - Red controls (`tests/battery.py` §16): a flipped byte → `DRIFT`, exit 1; a deleted file → `GONE`; a port file changed without a
   PORT.md row, a row naming the wrong upstream sha256, a planted `sorry`, the claim's negation dropped — each refused by name.
+
+## 7. The spec, written by claimbox (2026-11-09, `python3 -m claimbox intake spec TARGET`)
+
+cert-machine's `tools/lean-intake.js` decides a Lean claim from a spec committed before any run: the pins, the claimant's
+declaration, the canonical one, F3's witness, the planted statements with what each must do, the planted defects of the
+claimant's file, F2's instances. Written by hand for #488 and #786(i), the planted statements were the slow part and the source
+of every pre-registration error (#488's W08, the F2 expectations). claimbox now writes it (claimbox/intake/spec.py, lean.py):
+
+- **The target** (`corpus/intake/<id>/target.json`, a proposal): the two declarations and their pins, the polarity, the Lean
+  types the text leaves to inference, F3's witness values, the reading and F2's instances. `intake fetch` reads the pins once
+  (network): the canonical file kept byte for byte when its licence allows (formal-conjectures: Apache-2.0), the claimant's file
+  read and never kept (its sha256, toolchain and the declaration's header only, in `pins.json`), the sentence's page.
+- **The statement** is the canonical declaration's type, found by its full name (namespaces read, a `letI … :=` inside it
+  skipped), comments dropped: #488's S0, byte for byte the hand spec's.
+- **The planted statements, by fixed rules** (claimbox/intake/lean.py): same — every bound name renamed, a binder predicate
+  written out, `x ∉ S` as `¬ (x ∈ S)`, a `let` inlined: definitional, **ACCEPTED**; type — ℕ ↔ ℤ in a binder's type: **NOT
+  ACCEPTED** (another type; refused, or it does not elaborate); changed — a hypothesis dropped, `<` ↔ `≤` at one place, one
+  numeral ±1: **kernel decides** (W08 showed such a change can be definitionally invisible); equivalent — two adjacent
+  binders swapped: kernel decides. Nothing else is predicted.
+- **F2 ⇒ F1**: a planted statement "aligned" with the canonical one (the same binder types, the same number of hypotheses)
+  whose part differs from the canonical's on one F2 instance is not definitionally equal to it, so F1 must refuse it. The rule
+  is fixed in the spec; the record checks it on Lean's own values.
+- **The planted defects of the claimant's file**, by rule at the declaration's header (the only bytes quoted): its proof made
+  `sorry`, then an axiom, the original kept under another name. A native_decide defect needs an anchor inside the proof's
+  dependency cone, which only Lean computes: not written by rule.
+- **F2's Lean** (the instance list, its type, the projections, the JSON) from the same declaration the reading enumerates.
+
+The spec is in the receiver's v1 shape; its new words (`kernel decides`, `NOT ACCEPTED`, kinds `changed`/`type`, `aligned`,
+`f2.reading`/`f2.table`, `componentMap: truth-table`) are named in its `vocabulary` and are cert-machine's to read first
+(PLAN.md §9). Until then a claimbox spec is a proposal there, not a pre-registration.
+
+## 8. The reading, F2's independent side (2026-11-09, lean/READING.md, `python3 -m claimbox intake read`)
+
+The informal sentence stated as an exact program over finite instances, in the small language of lean/READING.md: parsed,
+printed back in plain words with the conventions it uses, anchored (every numeral, relation and operation it uses is the
+sentence's, and every one the sentence prints is used — counted, a relation and its flip as one), evaluated exactly (Kleene's
+three values, exact rationals) on the target's instances into a table (`records/intake/<id>-reading.json`). Where the sentence
+leaves a domain open, the reading forks, and every reading is compared. A reading is a proposal; it counts as independent only
+when its proposer did not see the formalization — #488's was written by a model session given only the sentence and READING.md.
+
+## Calibration (2026-11-09, on Erdős #488, its answers on record in cert-machine)
+
+`python3 -m claimbox intake calibrate erdos-488 --record` → records/intake/erdos-488-calibration.json, from cert-machine's hand
+spec, record, run facts (Lean's values on 3,024 instances) and hand decider, read in place and pinned in PROVENANCE.json:
+- **The spec**: pins, S0 and F2's Lean byte-equal to the hand spec; 28 planted statements; 14 of the hand's 17 written again by
+  a rule (12 exactly, S2 and S3 up to bound names; not W01, the pre-10-14 `answer(sorry)` form, W10, a variable swapped, W11,
+  `m + 1`); 14 of claimbox's 28 have a recorded answer, none contradicted (5 predicted ACCEPTED and accepted, 9 kernel decides);
+  the hand spec's three pre-registration errors not made; F2 ⇒ F1 holds on all 7 aligned planted statements with a differing
+  part. 14 statements have no answer until a run (cert-machine's, once its receiver reads the new words).
+- **The reading** (blind): anchored and covered; 9 readings (A of positive integers, naturals or integers; n, m one fork);
+  under "naturals" equal to the hand decider on all 3,024 instances part by part, the record's F2 reproduced (2,205 compared, 0
+  disagreements, 819 undefined; the implication differs on 20, all A = {0}, explained by `0 ∉ A`) and all 17 planted F2
+  outcomes reproduced; under "A of positive integers" no disagreement at all — DeepMind's added `0 ∉ A` is that reading. Nine
+  planted misreadings, each mirroring a planted Lean statement whose count the record holds, all caught as predicted (P08,
+  `[0, m]`, by the anchors alone — F2 cannot see it, as F1 could not see W08; P10, a denominator swapped, by F2 alone); two
+  rewordings unmoved.

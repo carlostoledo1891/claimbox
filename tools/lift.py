@@ -2,9 +2,9 @@
 """tools/lift.py — what claimbox reads from cert-machine, read-only, pinned by sha256 in PROVENANCE.json.
 
 Nothing is copied but the register's claim sentences (corpus/register-sentences.json: id, the claim as the register
-prints it, the verdict — the corpus the grammar's coverage is measured on). The checker, the format specification and
-the ten hand-written objects stay in cert-machine and are read in place; their digests are pinned here so that a change
-there is seen here (`make drift`).
+prints it, the verdict — the corpus the grammar's coverage is measured on). The checker, the format specification,
+the ten hand-written objects and the Lean intake's #488 answers (its hand spec, record, Lean's values, hand decider) stay
+in cert-machine and are read in place; their digests are pinned here so that a change there is seen here (`make drift`).
 
 usage: python3 tools/lift.py           refresh the corpus and PROVENANCE.json
        python3 tools/lift.py --check   re-hash every pinned file and compare (exit 1 on drift)
@@ -19,7 +19,9 @@ REPO = os.path.normpath(os.path.join(HERE, '..'))
 ROOT = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
 PINS = ['instruments/claimbox/check.py', 'instruments/claimbox/check.js', 'instruments/claimbox/SCHEMA.md', 'certs/claims-ledger.json'] + \
        ['instruments/claimbox/claims/' + i + '.json' for i in ['optq-1a-atris', 'optq-1a-agentdiscover', 'optq-1b-atris', 'optq-1b-codexprolong', 'optq-1c-rozetyp',
-                                                              'optq-1c-rozetyp-k3072', 'optq-1d-cert2026', 'optq-86-pinho', 'optq-82-pinho', 'optq-82-epi']]
+                                                              'optq-1c-rozetyp-k3072', 'optq-1d-cert2026', 'optq-86-pinho', 'optq-82-pinho', 'optq-82-epi']] + \
+       ['corpus/lean-intake/erdos-488/spec.json', 'certs/lean-intake-erdos-488.json', 'corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl',
+        'instruments/intake/erdos-488.js']   # the Lean intake's calibration (claimbox/intake/calibrate.py): the hand spec, the record, Lean's values, the hand decider
 
 
 def sha(p):

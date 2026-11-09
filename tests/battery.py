@@ -1623,5 +1623,85 @@ ok(_sf.returncode == 0 and len(_got) == 4 and all(_want.get(n) == b for n, b in 
    and all(open(os.path.join(_ix, 'openai', 'Planted', f), 'rb').read() == open(os.path.join(_eb, 'Planted', f), 'rb').read() for f in ('OpenAIChainSorry.lean', 'OpenAIChainAxiom.lean')),
    'intake scaffold on the OpenAI chain: the four lean_lib blocks byte-equal to lakefile.toml\'s, the sorry and axiom planted files byte-equal to the ones decided', ', '.join(sorted(_got)))
 
+# ---- 17 · the Lean intake's spec writer and reader (2026-11-09, claimbox/intake; lean/READING.md, lean/INTAKE.md §7–§8) -----------------
+from claimbox.intake import lean as IL, reading as IR, spec as IS, calibrate as IC  # noqa: E402
+_t488 = 'corpus/intake/erdos-488/target.json'
+_ix17 = tempfile.mkdtemp(prefix='claimbox-intake-')
+_specp, _tabp = os.path.join(REPO, 'records', 'intake', 'erdos-488-spec.json'), os.path.join(REPO, 'records', 'intake', 'erdos-488-reading.json')
+_before = (open(_specp, 'rb').read(), open(_tabp, 'rb').read())
+_s17, _ = IS.write(_t488, out_dir=os.path.relpath(_ix17, REPO))
+ok(open(os.path.join(_ix17, 'erdos-488-spec.json'), 'rb').read().replace(os.path.relpath(_ix17, REPO).encode(), b'records/intake') == _before[0]
+   and open(os.path.join(_ix17, 'erdos-488-reading.json'), 'rb').read() == _before[1],
+   'intake spec: written again from the target, its pins, the canonical bytes and the reading, byte for byte the recorded spec and table')
+_cb = subprocess.run([sys.executable, '-m', 'claimbox', 'intake', 'calibrate', 'erdos-488', '--check'], capture_output=True, text=True, cwd=REPO)
+ok(_cb.returncode == 0, 'intake calibrate erdos-488 --check: the record re-derived from cert-machine\'s pinned answers, both words CALIBRATED', _cb.stdout.strip().split('\n')[0][:150])
+_cal = json.load(open(os.path.join(REPO, 'records', 'intake', 'erdos-488-calibration.json'), encoding='utf-8'))
+_cs, _cr = _cal['spec'], _cal['reading']
+ok(_cs['pins']['S0'] and all(_cs['pins']['f2Lean'].values()) and _cs['handWrittenAgain']['exactly'] + _cs['handWrittenAgain']['onlyUpToBoundNames'] == 14
+   and _cs['handWrittenAgain']['not'] == ['W01', 'W10', 'W11'], 'intake spec on #488: S0 and the F2 Lean byte-equal to the hand spec; 14 of its 17 statements written again by a rule (W01, W10, W11 not)')
+ok(not _cs['knownAnswers']['contradictions'] and _cs['knownAnswers']['claimboxStatements'] == 14 and len(_cs['preregistrationErrors']['hand']) == 3 and not _cs['preregistrationErrors']['claimbox'],
+   'intake spec on #488: 14 statements with a recorded answer, none contradicted; the hand spec\'s 3 pre-registration errors (W08, F2 canonical, F2 E1) not made')
+ok(_cs['f2ImpliesF1']['holds'] and _cs['f2ImpliesF1']['mustRefuse'] == 7, 'intake: F2 ⇒ F1 holds on the 11-09 run — the 7 aligned statements with a differing part all refused by the kernel')
+_nat = next(e for e in _cr['readings'] if e['reading'] == IC.NATURALS)
+ok(_cr['anchors']['word'] == 'anchored and covered' and _nat['rowsDifferingFromTheHandDecider'] == 0 and _nat['reproducesTheRecord'] and _nat['planted']['same'] == 17,
+   'intake reading on #488 (blind): anchored and covered; equal to the hand decider on all 3,024 instances; the record\'s F2 and its 17 planted F2 outcomes reproduced')
+ok(_cr['plants']['wrongCaught'] == _cr['plants']['wrong'] == 9 and _cr['plants']['sameUnmoved'] == 2 and _cr['plants']['asExpected'] == 11,
+   'intake reading: 9 planted misreadings caught as predicted from the record\'s counts (P08 by the anchors alone, P10 by F2 alone), 2 rewordings unmoved')
+_pos = next(e for e in _cr['readings'] if e['reading'].startswith('A: finite set of positive integers; n, m: natural'))
+ok(_pos['canonical']['implication']['disagreements'] == 0 and _nat['canonical']['implication']['explainedBy'] == ['0 ∉ A'],
+   'intake reading: the fork shows the reason for an added hypothesis — under "A of positive integers" no disagreement; under "naturals" 20, all explained by 0 ∉ A')
+_rt = IR.parse(open(os.path.join(REPO, 'corpus', 'intake', 'erdos-488', 'erdos-488.reading'), encoding='utf-8').read())
+ok(IR.canonical(IR.parse(IR.canonical(_rt))) == IR.canonical(_rt) and IR.parse(IR.canonical(_rt))['claim'] == _rt['claim'], 'intake reading: printed back canonically and read again, the same tree')
+_ren = [m for m in _s17['mutants'] if m['rule'] in ('verbatim', 'same:rename')]
+ok(len(_ren) == 2 and len({IL.alpha(m['statement']) for m in _ren}) == 1 and all(m['expect'] == 'ACCEPTED' for m in _s17['mutants'] if m['kind'] == 'same')
+   and all(m['expect'] == 'kernel decides' for m in _s17['mutants'] if m['kind'] == 'changed') and all(m['expect'] == 'NOT ACCEPTED' for m in _s17['mutants'] if m['kind'] == 'type'),
+   'intake spec: the renamed statement has the canonical\'s alpha form; same → ACCEPTED, changed → kernel decides, type → NOT ACCEPTED, nothing else predicted')
+# reds: planted defects in the writer's and the reader's inputs, each refused with its rule
+_d17 = os.path.join(_ix17, 'corpus', 'intake', 'erdos-488')
+shutil.copytree(os.path.join(REPO, 'corpus', 'intake', 'erdos-488'), _d17)
+_tg = os.path.relpath(os.path.join(_d17, 'target.json'), REPO)
+def _spec_refusal(edit_file=None, edit=None):
+    shutil.rmtree(_d17)
+    shutil.copytree(os.path.join(REPO, 'corpus', 'intake', 'erdos-488'), _d17)
+    if edit_file:
+        f = os.path.join(_d17, edit_file)
+        b = open(f, 'rb').read()
+        open(f, 'wb').write(edit(b))
+    try:
+        IS.write(_tg, out_dir=os.path.relpath(_ix17, REPO))
+        return None
+    except (IL.Refused, IR.Refused) as e:
+        return e.rule
+red(_spec_refusal('canonical.lean', lambda b: b.replace(b'2 * ((Finset.Icc 1 n)', b'3 * ((Finset.Icc 1 n)')) == 'pin', 'intake spec: refused — the canonical file moved off its pin (2 made 3)')
+red(_spec_refusal('pins.json', lambda b: b.replace(b'2055e5adadae0b2e392365938faa82ef6f1464f0', b'3afb9beda5bcb9933e6e10276e87f8ccfd851222')) == 'pin', 'intake spec: refused — the pins are another commit\'s')
+red(_spec_refusal('target.json', lambda b: b.replace(b'"Erdos488.erdos_488"', b'"Erdos488.erdos_489"')) == 'declaration', 'intake spec: refused — the canonical declaration is not in the file')
+red(_spec_refusal('target.json', lambda b: b.replace(b'"reading": "A"', b'"reading": "M"')) == 'f2', 'intake spec: refused — the instances name the reading\'s givens wrongly')
+red(_spec_refusal('target.json', lambda b: b.replace(b'"values": ["{2}", "2", "3"]', b'"values": ["{2}", "2"]')) == 'f3', 'intake spec: refused — F3\'s witness lacks a value')
+_rd = open(os.path.join(REPO, 'corpus', 'intake', 'erdos-488', 'erdos-488.reading'), encoding='utf-8').read()
+def _read_refusal(text, insts=None):
+    try:
+        tr = IR.parse(text)
+        IR.table(tr, insts or ['nonempty subsets of 0..2', '0..2', '0..2'])
+        return None
+    except IR.Refused as e:
+        return e.rule
+red(_read_refusal(_rd + 'claim   m > n\n') == 'claim', 'intake reading: refused — a second claim')
+red(_read_refusal(_rd.replace('n ≥ max(A)', 'k ≥ max(A)')) == 'name', 'intake reading: refused — an undeclared name')
+red(_read_refusal(_rd.replace('n ≥ max(A)', 'n ≥ B')) == 'syntax' or _read_refusal(_rd.replace('n ≥ max(A)', 'n ≥ B')) == 'name', 'intake reading: refused — a set used as a number')
+red(_read_refusal(_rd.replace('|B ∩ [1, m]|', '|B|')) == 'infinite', 'intake reading: refused — a set given by a condition counted without a bound')
+red(_read_refusal(_rd.replace('quote   from erdosproblems', 'quote   from page')) == 'quote', 'intake reading: refused — the quote names no source')
+red(_read_refusal(_rd, ['nonempty subsets of 0..2', '0..2']) == 'instances', 'intake reading: refused — two values for three givens')
+red(IR.anchors(IR.parse(_rd.replace('2 · |B', '2 · 2 · |B')), IR.sentence_of(_rt, REPO))['word'] == 'NOT anchored', 'intake reading: not anchored — a number the sentence does not print (2 · 2)')
+_s0 = next(m['statement'] for m in _s17['mutants'] if m['id'] == 'S0')
+red(IL.alpha(_s0.replace('Finset.Icc 1 m', 'Finset.Ico 1 m')) != IL.alpha(_s0), 'intake alpha: a free name changed (Icc → Ico) is never "the same up to bound names"')
+red(len(IL.planted(_s0)) == len({IL.norm(m['statement']) for m in IL.planted(_s0)}) and IL.norm(_s0) not in {IL.norm(m['statement']) for m in IL.planted(_s0)},
+    'intake spec: no planted statement twice, none the canonical statement itself')
+try:
+    IS.reds({'text': 'theorem foo (x : ℕ) : x = x :=', 'keyword': 'theorem', 'name': 'foo'})
+    red(False, 'intake spec: refused — a planted defect by rule at a header with binders before its colon (not written yet)')
+except IL.Refused:
+    red(True, 'intake spec: refused — a planted defect by rule at a header with binders before its colon (not written yet)')
+shutil.rmtree(_ix17)
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)

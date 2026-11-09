@@ -225,6 +225,14 @@ passes. Parked behind a spend decision.
   the same way, so a claim over the two 30,000-value autocorrelation rows — holes here, the receiver's object evaluator being
   quadratic in the count (1,319 values in 7 s) — is decided by the row's exact rational, re-decided against the claim's bar, as the
   platform's rows are through certs/mc100-einstein-arena.json. Until then they are holes `decider` and say so.
+- **The Lean intake reads claimbox's spec** (2026-11-09; lean/INTAKE.md §7–§8; records/intake/erdos-488-spec.json is the first).
+  tools/lean-intake.js reads the v1 words of a hand-written spec; claimbox's adds: (a) `expect: "kernel decides"` (the outcome
+  recorded, never a miss) and `"NOT ACCEPTED"` (refused or does not elaborate), kinds `changed` and `type`, the controls word
+  counting only certain predictions; (b) F2 from `f2.table` (claimbox's reading, one row per instance and reading) in place of
+  a JS decider, `componentMap: "truth-table"`, every reading of a fork reported; (c) the F2 ⇒ F1 rule checked in the record
+  (`aligned` + a differing part ⇒ refused, else the run is refused as unsound); (d) `mutantNamespace`/`mutantOpen` applied
+  to F2Eval's planted namespaces too (today only the F1 mutant files open them). Then the first run of a claimbox spec: #488
+  again, its 14 statements with no recorded answer decided.
 - The folder carlostoledo.co/claimbox/ as a foreign zone (design/zones.js), published by tools/publish-zone.js.
 - Still open from earlier sessions: (c1) the kissing route through the wave file, (g) the two checkers' paths, (h) a
   decider over transcendental heads, (p) printed bars as a·10^k, (c′) Lean and text integer lists, and digit groups in a

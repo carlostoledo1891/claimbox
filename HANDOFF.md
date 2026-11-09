@@ -23,6 +23,30 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**THE LEAN INTAKE LANE, STEPS 1 + 2 (2026-11-09 evening, branch `lean-intake-2026-11-09` from main 4b15165; done from a
+cert-machine session on the operator's "start the claimbox + Lean lane: steps 1 + 2 in claimbox, calibrated on #488"; committed,
+not pushed, not merged).** (1) THE SPEC WRITER — claimbox/intake/lean.py + spec.py, `python3 -m claimbox intake fetch|spec TARGET`:
+from corpus/intake/erdos-488/target.json (pins, declarations, F3's witness values, the reading, F2's instances) it writes the spec
+cert-machine's tools/lean-intake.js decides from (records/intake/erdos-488-spec.json): S0 found by full name, 28 planted statements
+by fixed rules — same (rename, binder predicate written out, ∉ as ¬∈, let inlined: ACCEPTED), type (ℕ ↔ ℤ: NOT ACCEPTED), changed
+(drop a hypothesis, < ↔ ≤, a numeral ±1: "kernel decides"), equivalent (swap two binders: kernel decides; none in #488) — each
+"aligned" or not for the F2 ⇒ F1 rule; two planted defects of the claimant's file by rule at its declaration's header (sorry,
+axiom); F2's Lean from the same instance declaration the reading enumerates. (2) THE READER — claimbox/intake/reading.py, the
+language lean/READING.md, `intake read F.reading`: a sentence as an exact program (Kleene's three values, exact rationals),
+printed back, anchored and covered (numerals, relations — a flip counted as one — and operations, counted both ways), forks
+evaluated. #488's reading (corpus/intake/erdos-488/erdos-488.reading) was written BLIND by a model session given only the sentence
+and READING.md (by instruction, no tool used); its table records/intake/erdos-488-reading.json. CALIBRATION (`intake calibrate
+erdos-488 --record`, records/intake/erdos-488-calibration.json; cert-machine's hand spec, record, f2eval.jsonl and hand decider
+read in place and pinned in PROVENANCE.json, 19 pins): spec CALIBRATED — pins, S0, F2's Lean byte-equal to the hand spec; 14 of the
+hand's 17 statements written again by rule (12 exactly, 2 up to bound names; not W01, W10, W11); 14 of claimbox's 28 with a
+recorded answer, 0 contradicted; the hand's 3 pre-registration errors not made; F2 ⇒ F1 holds on all 7 must-refuse statements
+of the 11-09 run. Reading CALIBRATED — under "naturals" equal to the hand decider on 3,024 of 3,024 instances, the record's F2
+reproduced and all 17 planted F2 outcomes; under "A of positive integers" no disagreement (DeepMind's `0 ∉ A` is that reading);
+9 planted misreadings caught as the record's counts predict (P08 by the anchors alone, P10 by F2 alone), 2 rewordings unmoved.
+Battery §17: 25 checks, 15 reds; `make test` 642 pass, 0 fail, 186/186 reds (was 617, 171); `make drift` 19/19 (the four new pins), platform 29/29, riemann 31/31. canonical.lean kept with its licence beside it (LICENSE-formal-conjectures, Apache-2.0, fetched at the same commit); the claimant's file never kept. NOT DONE: no Lean run — 14 planted statements and both rule-written defects have no answer until
+cert-machine's receiver reads the new words (PLAN.md §9) and #488 runs again from claimbox's spec (TODO.md L1, L2); nothing
+pushed. NEXT: TODO.md section L.
+
 **THE LIFT OF 2026-11-08 (branch `lift-2026-11-08`, from `zinq-2026-11-06` at 125509a; done from a cert-machine session on the
 operator's "Proceed"; not pushed, not merged).** cert-machine's register moved again (certs/claims-ledger.json: the claims desk's
 first four SUBMITTED rows, intake-3 to intake-6, from its public claim form): `make lift` re-pinned the ledger only (the other 13

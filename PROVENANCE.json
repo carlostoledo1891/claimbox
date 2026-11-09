@@ -15,7 +15,11 @@
   "instruments/claimbox/claims/optq-1d-cert2026.json": "037d993408f1cc4a1e5e0400e49549b99645138d16c2d6af96dbff440a810c6d",
   "instruments/claimbox/claims/optq-86-pinho.json": "5045d2d604ffe3b1f7628f8e3493693270f828af45989d3b496638361d96e4d0",
   "instruments/claimbox/claims/optq-82-pinho.json": "12548045a503ec847dee7a7447ba6171d7c0ff3597c4f5e03d1e2f80becc83a6",
-  "instruments/claimbox/claims/optq-82-epi.json": "ead9dbcd5615c43bfd22e2fcc2d3780ad6eaa07353bf3abacf5824d20740e399"
+  "instruments/claimbox/claims/optq-82-epi.json": "ead9dbcd5615c43bfd22e2fcc2d3780ad6eaa07353bf3abacf5824d20740e399",
+  "corpus/lean-intake/erdos-488/spec.json": "257addcced503947ac7cdece4e0a6c7ac147586a8756a5ca0d514a95c83a0277",
+  "certs/lean-intake-erdos-488.json": "3d55fa1fe80a8dbf77b7379291eb9d55f1d8895ce9e1af6cf133745be2e8a34e",
+  "corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl": "f0da5cfd56aa07a0f8fdc9558857168be02084e5e5b64ff9e78b3064f93e015f",
+  "instruments/intake/erdos-488.js": "a2dc8058927b98413eb74c83f0427efb6c560a0d104ef06ad12596cd12444edb"
  },
  "corpus": {
   "register-sentences.json": "5d5c7f98e71f6489e26d1cec3d643aed090e37e33b2e70e2388ee400016a211c"

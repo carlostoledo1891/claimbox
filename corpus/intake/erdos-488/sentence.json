@@ -1,0 +1,8 @@
+{
+ "what": "the sentence https://www.erdosproblems.com/488 prints, extracted (the text of its <div id=\"content\">, HTML entities decoded, stripped); the page itself is not kept — it changes with its comments; the sentence is what is pinned",
+ "url": "https://www.erdosproblems.com/488",
+ "fetched": "2026-11-09T22:35Z",
+ "pageSha256": "a2e961c70e2f718ec9b8123796177cda10393b82326ec14e1a31dd69f6ce08e2",
+ "text": "Let $A$ be a finite set and\\[B=\\{ n \\geq 1 : a\\mid n\\textrm{ for some }a\\in A\\}.\\]Is it true that, for every $m>n\\geq \\max(A)$,\\[\\frac{\\lvert B\\cap [1,m]\\rvert }{m}< 2\\frac{\\lvert B\\cap [1,n]\\rvert}{n}?\\]",
+ "textSha256": "6fe4b5ed42ff77e0875ff1055f0ec7626aa4245d563b336146f2a84f79d69009"
+}

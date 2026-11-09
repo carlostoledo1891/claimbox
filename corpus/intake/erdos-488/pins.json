@@ -1,0 +1,28 @@
+{
+ "what": "what claimbox intake fetch read at the pins (2026-11-09): the canonical file, kept beside this file byte for byte; the claimant's file, read and not kept (its sha256, toolchain and the header of its declaration only)",
+ "canonical": {
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "2055e5adadae0b2e392365938faa82ef6f1464f0",
+  "path": "FormalConjectures/ErdosProblems/488.lean",
+  "sha256": "8eedda95f84b4a04e4615065059ac9dc584678b97e5a6b9df1a3c4812d5eecbe",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "kept": "corpus/intake/erdos-488/canonical.lean"
+ },
+ "claim": {
+  "url": "https://gist.github.com/d8e15e5ff1b6c7e99e3d86d7c66f1d08.git",
+  "commit": "034be67a5c958e55505bb357f9e4ef3015788465",
+  "file": "Erdos488.lean",
+  "sha256": "f2a7dcfde9689e00db7b697c22eb6436c1b02d834555a28a476d9e5e606e9ca0",
+  "toolchain": "leanprover/lean4:v4.33.0",
+  "header": {
+   "lines": [
+    522,
+    522
+   ],
+   "text": "theorem refutation : ¬ proposition :=",
+   "keyword": "theorem",
+   "name": "refutation",
+   "indent": ""
+  }
+ }
+}

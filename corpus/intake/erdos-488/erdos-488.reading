@@ -1,0 +1,17 @@
+-- Erdős #488, read from its sentence on erdosproblems.com for the Lean intake's F2 (lean/READING.md). Written by a model
+-- session given only the sentence and lean/READING.md, told to use no tool (blind by instruction, not by sandbox),
+-- 2026-11-10; kept as it replied, its comments included.
+reading erdos-488
+source  erdosproblems = corpus/intake/erdos-488/sentence.json
+quote   from erdosproblems
+proposed by model:claude-opus-5-5 (blind: given only the sentence and lean/READING.md)
+-- "Let A be a finite set": the sentence does not say which numbers A holds
+given   A : finite set of positive integers | finite set of naturals | finite set of integers
+-- the sentence never gives n and m a domain ([1, n] and dividing by n suggest positive integers, but it does not say so)
+given   n, m : positive integer | natural | integer
+-- B = { n >= 1 : a | n for some a in A }; the bound variable is renamed x so it does not capture the given n
+let     B = {x ≥ 1 : some a in A, a divides x}
+-- "for every m > n >= max(A)", in the sentence's order
+assume  m > n
+assume  n ≥ max(A)
+claim   |B ∩ [1, m]| / m < 2 · |B ∩ [1, n]| / n

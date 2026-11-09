@@ -1,8 +1,30 @@
-# TODO — the next steps for claimbox, and why (2026-11-02)
+# TODO — the next steps for claimbox, and why (2026-11-02; section L 2026-11-09)
 
 The state is HANDOFF.md's START HERE; the roadmap is PLAN.md §7. This is the ordered list of what to build next, each with the
 reason it matters and how it is checked. Items 1–3 close holes the last two days opened; 4–6 are the roadmap; 7–10 are the ideas
 the operator raised; 11–13 are maintenance. Nothing here spends money or touches cert-machine without the operator's word.
+
+## L. The Lean intake lane (2026-11-09; lean/INTAKE.md §7–§8; cert-machine's HANDOFF "THE CLAIMBOX + LEAN LANE")
+
+Steps 1 + 2 are built and calibrated on Erdős #488 (records/intake/erdos-488-calibration.json: both CALIBRATED). Next, in order:
+
+**L1. The receiver reads claimbox's spec (a cert-machine chat first; PLAN.md §9).** Why: until tools/lean-intake.js reads
+"kernel decides", "NOT ACCEPTED", the F2 table and the F2 ⇒ F1 rule, a claimbox spec is a proposal there. Checked by: both
+existing records (`record --check` on #488 and #786(i)) byte-identical after the change; a planted spec using each new word
+decided as written.
+
+**L2. #488 again, from claimbox's spec, on the Mac.** Why: 14 of its 28 planted statements and both rule-written planted
+defects have no recorded answer; the same-class and type-class predictions are certain by construction only if the text
+rules are right, and only Lean says so. Checked by: every certain prediction met, the F2 ⇒ F1 rule holding, the 14 known
+answers unchanged; a miss is an amendment, dated, never a silent fix.
+
+**L3. The target: AlphaProof Nexus's Erdős solutions — scout first.** Which of the 9 have a finite part (F2), their pins,
+toolchains, closure sizes; one target.json each; each reading written blind (a session given only the sentence and
+lean/READING.md), a person's second reading where possible (two kinds of proposer, commitment 5). Then a formal-conjectures
+"solved" batch; Navier–Stokes last.
+
+**L4. The reading language grows only when a sentence needs it** (sums, products, primes, real intervals), each construct
+with its planted misreadings, measured on the targets of L3, never chased.
 
 ## A. Close what the campaign opened
 

@@ -15,6 +15,9 @@ python3 -m claimbox library                                       every definiti
 python3 -m claimbox prose CORPUS [--run] [--record OUT]          from prose to claims: proposals, their levels, concord, the outcome
 python3 -m claimbox doc FILE.md [--build OUT]                     a document whose words and numbers are claims: every address and slot re-read, refused when one moved
 python3 -m claimbox fill [--id ID]                                 each register sentence's chain to its bytes through cert-machine's records, or where it ends and why
+python3 -m claimbox intake spec TARGET                             the Lean intake's spec for cert-machine: planted statements by fixed rules, each with the class its rule
+                                                                  guarantees or "kernel decides"; `intake fetch` reads the pins; `intake read F.reading` a sentence as an exact
+                                                                  program (lean/READING.md); `intake calibrate erdos-488` both against cert-machine's recorded answers
 make test        the battery: red controls, the calibration against cert-machine's ten hand-written objects, the coverage of its
                  register, the planted defects, the landing page's checks
 make web         the landing page from the records: web/dist/index.html (python3 -m web.build --check re-reads every value)
@@ -131,6 +134,14 @@ lean/INTAKE.md             the intake of a lab's Lean claim, the route as it was
                            the port scaffold, ledger and pre-flight (tools/intake_port.py: lean_lib blocks, PORT.md with the kinds R0–R3 and the
                            admissibility rule, the three Planted/ variants, the L3s facts measured here first), the checklist of what
                            cert-machine then needs; calibrated on OpenAIEth (battery §16); the decision script and the pod stay cert-machine's
+claimbox/intake/           the Lean intake's inputs (2026-11-09, lean/INTAKE.md §7–§8): lean.py (a Lean statement as text: tokens, telescope, the
+                           planted statements of the fixed rules, the form up to bound names), spec.py (target → the spec cert-machine's
+                           tools/lean-intake.js reads; fetch), reading.py (lean/READING.md: a sentence as an exact program, printed back, anchored,
+                           evaluated), calibrate.py (both against cert-machine's #488 answers, read in place and pinned)
+corpus/intake/<id>/        target.json (the proposal: pins, declarations, witness, instances), pins.json (what fetch read), canonical.lean (the
+                           canonical file, Apache-2.0, byte for byte; LICENSE-formal-conjectures beside it), sentence.json (the sentence its page prints), <id>.reading (the reading)
+records/intake/            <id>-spec.json (the spec), <id>-reading.json (the reading's table), erdos-488-calibration.json
+lean/READING.md            the reading language: a file, types, formulas, what every construct means, the anchors
 reports/                   xx.md: the x^x = y report as a document whose numbers are claims (87 slots, 10 addresses); xx.built.md its build
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),
