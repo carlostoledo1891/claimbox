@@ -24,5 +24,12 @@
   ],
   "why": "a model of the hypotheses proposed from the statement (none when it has no hypotheses)"
  },
- "f2NotApplicable": "F n (maximalLength) is a supremum over all s-increasing sequences: noncomputable, so no part is decidable on instances"
+ "f2NotApplicable": "F n (maximalLength) is a supremum over all s-increasing sequences: noncomputable, so no part is decidable on instances",
+ "amendments": [
+  {
+   "date": "2026-11-10",
+   "before": "after the first run (recorded REFUSED in cert-machine 6ed67ccb, kept)",
+   "what": "A TOOL defect: the declaration writes its quantity with `local notation \"F\" => maximalLength`, which a planted statement in another file cannot see, so none of the seven planted statements elaborated (\"Unknown identifier F\") and the controls tested nothing. Fixed in claimbox's writer: a local notation before the declaration is written out in every planted statement (F as maximalLength: notation, so definitionally the same statement). No expected outcome changed; the planted statements are re-run."
+  }
+ ]
 }

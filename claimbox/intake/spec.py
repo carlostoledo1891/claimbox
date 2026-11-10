@@ -198,12 +198,20 @@ def write(target_path, out_dir='records/intake'):
     C = T['canonical']
     decl = L.declaration(can_bytes.decode('utf-8'), C['decl'])
     stmt = L.closed_statement(decl)
+    # a `local notation "X" => Y` before the declaration is invisible outside its file, so a planted statement written in
+    # another file cannot use X: every X of the statement is written out as Y (notation, so definitionally the same)
+    # — the tool defect of s-increasing triples (2026-11-10), amended there
+    before = can_bytes.decode('utf-8').split(decl['header'])[0]
+    notations = dict(re.findall(r'^\s*local notation\s+"([^"]+)"\s*=>\s*([^\n]+?)\s*$', before, re.M))
+    if notations:
+        stmt = ''.join((notations[x.text] if (x.kind == 'ident' and x.text in notations) else x.text) for x in L.tokens(stmt))
     types = T.get('types', {})
     rules = T.get('rules', 1)
     if rules not in (1, 2):
         raise L.Refused('rules', 'no rule set ' + repr(rules) + ' (1 or 2)')
     planted = L.planted(stmt, types, rules)
-    counters, mutants = {}, [{'id': 'S0', 'kind': 'same', 'rule': 'verbatim', 'why': 'the canonical statement copied verbatim (comments dropped): the baseline',
+    counters, mutants = {}, [{'id': 'S0', 'kind': 'same', 'rule': 'verbatim', 'why': 'the canonical statement copied verbatim (comments dropped' + (
+                                  '; its local notation written out: ' + ', '.join('%s as %s' % kv for kv in notations.items()) if notations else '') + '): the baseline',
                               'statement': stmt, 'imports': [], 'expect': 'ACCEPTED', 'aligned': True, 'certain': True}]
     pre = {'same': 'S', 'changed': 'C', 'type': 'N', 'equivalent': 'Q', 'answer': 'A'}
     for m in planted:
@@ -272,7 +280,7 @@ def write(target_path, out_dir='records/intake'):
     spec['notInScope'] = ('whether the canonical statement is the informal problem (a reading, F5): F2 tests it on finitely many instances, which is '
                           'evidence, not proof; the planted statements marked "kernel decides" carry no prediction; the claimant\'s file is never copied')
     spec['success'] = 'every certain prediction met (ACCEPTED, NOT ACCEPTED, the F2 ⇒ F1 rule), every planted defect of the claimant\'s file caught, F3 and F2 as their rules say'
-    spec['amendments'] = []
+    spec['amendments'] = T.get('amendments', [])
     spec['predictions'] = {
         'certain': sum(1 for m in mutants if m['certain']), 'kernelDecides': sum(1 for m in mutants if m['expect'] == 'kernel decides'),
         'byRule': {r: sum(1 for m in mutants if m['rule'] == r) for r in sorted({m['rule'] for m in mutants})},
