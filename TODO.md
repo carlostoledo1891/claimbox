@@ -23,7 +23,7 @@ toolchains, closure sizes; one target.json each; each reading written blind (a s
 lean/READING.md), a person's second reading where possible (two kinds of proposer, commitment 5). Then a formal-conjectures
 "solved" batch; Navier–Stokes last.
 
-**L5. The type rule retypes consistently.** Why: on #488 both ℕ ↔ ℤ statements failed to elaborate (A's elements and B's
+**L5. BUILT 2026-11-10 as rule set 2 (`"rules": 2` in a target; rule set 1 kept exactly, so every recorded spec is written again byte for byte), with the answer flipped for `answer(x) ↔ P`; NOT YET RUN in Lean — the first target with rules 2 is the check. — The type rule retypes consistently.** Why: on #488 both ℕ ↔ ℤ statements failed to elaborate (A's elements and B's
 numbers, n against A.max), so they met NOT ACCEPTED without testing F1. Retype every ℕ a binder's type reaches (or the whole
 statement) so the planted statement elaborates and the refusal is the kernel's; keep the single-place form as a second,
 labelled "may not elaborate". Checked by: a run where the retyped statements reach F1 and are refused by type mismatch.

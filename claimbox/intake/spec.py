@@ -199,10 +199,13 @@ def write(target_path, out_dir='records/intake'):
     decl = L.declaration(can_bytes.decode('utf-8'), C['decl'])
     stmt = L.closed_statement(decl)
     types = T.get('types', {})
-    planted = L.planted(stmt, types)
+    rules = T.get('rules', 1)
+    if rules not in (1, 2):
+        raise L.Refused('rules', 'no rule set ' + repr(rules) + ' (1 or 2)')
+    planted = L.planted(stmt, types, rules)
     counters, mutants = {}, [{'id': 'S0', 'kind': 'same', 'rule': 'verbatim', 'why': 'the canonical statement copied verbatim (comments dropped): the baseline',
                               'statement': stmt, 'imports': [], 'expect': 'ACCEPTED', 'aligned': True, 'certain': True}]
-    pre = {'same': 'S', 'changed': 'C', 'type': 'N', 'equivalent': 'Q'}
+    pre = {'same': 'S', 'changed': 'C', 'type': 'N', 'equivalent': 'Q', 'answer': 'A'}
     for m in planted:
         p = pre[m['kind']]
         counters[p] = counters.get(p, 0) + 1
@@ -216,7 +219,8 @@ def write(target_path, out_dir='records/intake'):
             'vocabulary': VOCABULARY,
             'writer': {'by': 'python3 -m claimbox intake spec ' + target_path, 'target': {'path': target_path, 'sha256': sha(open(os.path.join(REPO, target_path), 'rb').read())},
                        'pins': {'path': os.path.join(d, 'pins.json'), 'sha256': sha(open(os.path.join(REPO, d, 'pins.json'), 'rb').read())},
-                       'canonicalBytes': {'path': os.path.join(d, 'canonical.lean'), 'sha256': sha(can_bytes), 'statementLines': decl['headerLines']}},
+                       'canonicalBytes': {'path': os.path.join(d, 'canonical.lean'), 'sha256': sha(can_bytes), 'statementLines': decl['headerLines']},
+                       **({'rules': rules} if rules > 1 else {})},
             'polarity': T['polarity'],
             'claim': {'what': T['claim']['what'], 'kind': 'git', 'url': T['claim']['url'], 'commit': T['claim']['commit'], 'file': T['claim']['file'],
                       'sha256': pins['claim']['sha256'], 'decl': T['claim']['decl'], 'license': T['claim'].get('license', 'none stated')},

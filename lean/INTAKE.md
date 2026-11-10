@@ -165,6 +165,10 @@ of every pre-registration error (#488's W08, the F2 expectations). claimbox now 
   ACCEPTED** (another type; refused, or it does not elaborate); changed — a hypothesis dropped, `<` ↔ `≤` at one place, one
   numeral ±1: **kernel decides** (W08 showed such a change can be definitionally invisible); equivalent — two adjacent
   binders swapped: kernel decides. Nothing else is predicted.
+- **Rule sets** (2026-11-10): a spec records the version it was written with (`writer.rules`, absent for 1) and is written again
+  by it. Set 1 is the list above, kept exactly; set 2 appends every ℕ of the statement made ℤ at once (L5: the single-place
+  retyping does not elaborate when a ℕ variable meets a ℕ set, so it tests nothing) and, for `answer(True|False) ↔ P`, the
+  answer flipped (kind `answer`): both NOT ACCEPTED, with certainty.
 - **F2 ⇒ F1**: a planted statement "aligned" with the canonical one (the same binder types, the same number of hypotheses)
   whose part differs from the canonical's on one F2 instance is not definitionally equal to it, so F1 must refuse it. The rule
   is fixed in the spec; the record checks it on Lean's own values.

@@ -548,9 +548,16 @@ def _operand(s, k, back):
     return j, j
 
 
-def planted(text, types=None):
+RULES = 2      # the rule set's version; a spec records the version it was written with (absent: 1), and is written again by it
+
+
+def planted(text, types=None, rules=1):
     """the planted statements of the fixed rules, deduplicated (whitespace collapsed) and never the statement itself.
-    `types`: the Lean types of binders the text leaves to inference (a binder predicate's variable), e.g. {'m': 'ℕ'}."""
+    `types`: the Lean types of binders the text leaves to inference (a binder predicate's variable), e.g. {'m': 'ℕ'}.
+    `rules`: the version. 1 is the rule set every spec before 2026-11-10 was written with, kept exactly so they are
+    written again byte for byte; 2 appends, after them, (L5) every ℕ of the statement made ℤ at once — the single-place
+    retyping does not elaborate when a ℕ variable meets a ℕ set (#488's N1, N2), the consistent one can, so its refusal is
+    the kernel's — and the answer flipped in `answer(True) ↔ P` / `answer(False) ↔ P`, never definitionally equal."""
     declared = dict(types or {})
     items = telescope(text)
     types = binder_types(items, declared)
@@ -698,6 +705,17 @@ def planted(text, types=None):
                 continue
             new = text[:x['span'][0]] + text[y['span'][0]:y['span'][1]] + text[x['span'][1]:y['span'][0]] + text[x['span'][0]:x['span'][1]] + text[y['span'][1]:]
             add('equivalent:swap-binders', 'equivalent', 'kernel decides', f'the binders {", ".join(xn)} and {", ".join(yn)} swapped: the same logically', new, False)
+    if rules >= 2:
+        nat = [x for x in s if x.text == 'ℕ']
+        in_binder = any(a0 <= x.start < b0 for it in items if it['kind'] == 'forall' for b in it['binders'] if b['type'] for (a0, b0) in [b['type'][1]] for x in nat)
+        if len(nat) >= 2 and in_binder:
+            add('type:nat-int-all', 'type', 'NOT ACCEPTED', f'every `ℕ` of the statement made `ℤ` ({len(nat)} places: binders, sets, casts), so that it can elaborate: '
+                'another type, never definitionally equal', _edit(text, [(x.start, x.end, 'ℤ') for x in nat]), True)
+        for k, x in enumerate(s):
+            if x.text == 'answer' and k + 3 < len(s) and s[k + 1].text == '(' and s[k + 2].text in ('True', 'False') and s[k + 3].text == ')':
+                w = 'False' if s[k + 2].text == 'True' else 'True'
+                add('answer:flip', 'answer', 'NOT ACCEPTED', f'the answer flipped, `answer({s[k + 2].text})` made `answer({w})`: True and False are distinct inductive '
+                    'types, so the two statements are never definitionally equal', _edit(text, [(s[k + 2].start, s[k + 2].end, w)]), True)
     seen, kept = {norm(text)}, []
     for m in out:
         key = norm(m['statement'])
@@ -705,7 +723,7 @@ def planted(text, types=None):
             continue
         seen.add(key)
         try:
-            m['aligned'] = shape(m['statement'], declared) == canon_shape and m['kind'] != 'type'
+            m['aligned'] = shape(m['statement'], declared) == canon_shape and m['kind'] not in ('type', 'answer')
         except Refused:
             m['aligned'] = False
         kept.append(m)

@@ -1712,6 +1712,17 @@ try:
     red(False, 'intake spec: refused — a planted defect by rule at a header that does not end at :=')
 except IL.Refused:
     red(True, 'intake spec: refused — a planted defect by rule at a header that does not end at :=')
+_v1, _v2 = IL.planted(_s0, {}, 1), IL.planted(_s0, {}, 2)
+_x2 = _v2[len(_v1):]
+ok(_v2[:len(_v1)] == _v1 and [m['rule'] for m in _x2] == ['type:nat-int-all'] and _x2[0]['expect'] == 'NOT ACCEPTED'
+   and '(A : Finset ℤ)' in _x2[0]['statement'] and '(n : ℤ)' in _x2[0]['statement'] and 'ℕ' not in _x2[0]['statement'],
+   'intake rules 2 on #488: rule set 1\'s 28 statements first, unchanged, then every ℕ made ℤ at once (L5), NOT ACCEPTED')
+_s75 = IL.closed_statement(IL.declaration(open(os.path.join(REPO, 'corpus', 'intake', 'mo-75792', 'canonical.lean'), encoding='utf-8').read(), 'Mathoverflow75792.complexity_three_pow'))
+_a75 = IL.planted(_s75, {}, 2)[len(IL.planted(_s75, {}, 1)):]
+ok([(m['rule'], m['kind'], m['expect']) for m in _a75] == [('answer:flip', 'answer', 'NOT ACCEPTED')] and _a75[0]['statement'].startswith('answer(False) ↔'),
+   'intake rules 2 on MathOverflow 75792: the answer flipped, answer(True) made answer(False), NOT ACCEPTED (and no retyping: its ∀ sits inside the iff)')
+red(not any(m['kind'] == 'answer' for m in _v2), 'intake rules 2: no answer flipped where the statement has no answer(…)')
+red(_spec_refusal('target.json', lambda b: b.replace(b'"types": {}', b'"types": {}, "rules": 3')) == 'rules', 'intake spec: refused — a rule set that does not exist (3)')
 _rb = IS.reds({'text': 'theorem foo (x : ℕ) (hx : 0 < x) :\n    x = x :=', 'keyword': 'theorem', 'name': 'foo'})
 ok(_rb[0]['replace'].startswith('theorem foo (x : ℕ) (hx : 0 < x) :\n    x = x := sorry') and 'theorem intake_was_foo (x : ℕ) (hx : 0 < x)' in _rb[1]['replace'],
    'intake spec: the rule-written defects at a header with binders before its colon (sorry; the axiom), the original kept as intake_was_foo')
