@@ -23,6 +23,17 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**THE 11-10 NIGHT (main, pushed through 5da6acf).** RULE SET 2 (cb7dd1b): a target may ask `"rules": 2` — every ℕ of the
+statement made ℤ at once (L5; the single-place retyping did not elaborate on #488 nor on 3 of the batch's 4) and the answer
+flipped in `answer(True|False) ↔ P`, both NOT ACCEPTED; rule set 1 kept exactly, so every recorded spec is written again byte
+for byte. THE SOLVED-PR BATCH (21094c3): eight targets in corpus/intake/ (Stokes's #123, #652, #669, #902 of formal-conjectures
+PR #7678; Puri's MathOverflow 75792, Agoh–Giuga weak and strong, s-increasing triples of #7660), their specs in records/intake/;
+the writer reads a hypothesis before the colon as one, goes through @h for implicit binders, writes the defects at headers
+with binders, and passes f2NotApplicable. cert-machine ran them (its HANDOFF): 7 CERTIFIED; s-increasing triples hit a tool
+defect — its `local notation "F"` is invisible outside DeepMind's file — fixed here (5da6acf: local notations written out in
+the planted statements; the target's dated amendment). Battery 650 → (rerun after the session's edits) green at 646+; NEXT:
+TODO.md L7 (rule set 2 on #488 as a new target, erdos-488-r2), then the AlphaProof Nexus extensions (L3).
+
 **L1 + L2 DONE THE SAME NIGHT (2026-11-09 ~23:55 UTC, branch `lean-intake-l1-l2-2026-11-09`, on the operator's answers: push both,
 L1 + L2, "you write one").** Steps 1 + 2 were merged into main and pushed first (bad0bfb). L1, in cert-machine (1497ad73): its
 tools/lean-intake.js reads claimbox's words (kernel decides, NOT ACCEPTED, kinds changed/type, F2 from the table with every

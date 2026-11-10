@@ -23,13 +23,17 @@ toolchains, closure sizes; one target.json each; each reading written blind (a s
 lean/READING.md), a person's second reading where possible (two kinds of proposer, commitment 5). Then a formal-conjectures
 "solved" batch; Navier–Stokes last.
 
-**L5. BUILT 2026-11-10 as rule set 2 (`"rules": 2` in a target; rule set 1 kept exactly, so every recorded spec is written again byte for byte), with the answer flipped for `answer(x) ↔ P`; NOT YET RUN in Lean — the first target with rules 2 is the check. — The type rule retypes consistently.** Why: on #488 both ℕ ↔ ℤ statements failed to elaborate (A's elements and B's
+**L5. BUILT 2026-11-10 as rule set 2 (first run: L7) (`"rules": 2` in a target; rule set 1 kept exactly, so every recorded spec is written again byte for byte), with the answer flipped for `answer(x) ↔ P`; NOT YET RUN in Lean — the first target with rules 2 is the check. — The type rule retypes consistently.** Why: on #488 both ℕ ↔ ℤ statements failed to elaborate (A's elements and B's
 numbers, n against A.max), so they met NOT ACCEPTED without testing F1. Retype every ℕ a binder's type reaches (or the whole
 statement) so the planted statement elaborates and the refusal is the kernel's; keep the single-place form as a second,
 labelled "may not elaborate". Checked by: a run where the retyped statements reach F1 and are refused by type mismatch.
 
 **L6. The person's reading of #488 (corpus/intake/erdos-488/erdos-488.person.reading, the operator's).** When written: `intake
 read` it, then compare its table with the blind model reading's (concord between two kinds of proposer, commitment 5).
+
+**L7. Rule set 2 on #488 (the operator's pick, 2026-11-10).** A target corpus/intake/erdos-488-r2/ (the #488 target with
+`"rules": 2`), its spec, lifted and pre-registered in cert-machine, run there (~45 min). Checked by: the consistent retyping
+elaborates and is refused by type mismatch; the answer flip is absent (#488 has no answer(…)); rule set 1's 28 outcomes the same.
 
 **L4. The reading language grows only when a sentence needs it** (sums, products, primes, real intervals), each construct
 with its planted misreadings, measured on the targets of L3, never chased.
