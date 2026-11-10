@@ -1,0 +1,28 @@
+{
+ "what": "what claimbox intake fetch read at the pins (2026-11-09): the canonical file, kept beside this file byte for byte; the claimant's file, read and not kept (its sha256, toolchain and the header of its declaration only)",
+ "canonical": {
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "df3f12d7bd06feb3f71ae37abae0ca7cb798d9b1",
+  "path": "FormalConjectures/Mathoverflow/75792.lean",
+  "sha256": "c8c0eb6b64d95628b77839bebb37deaca06da6d9cdc32f6123e65812998b119d",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "kept": "corpus/intake/mo-75792/canonical.lean"
+ },
+ "claim": {
+  "url": "https://github.com/danielpuri1901/erdos-lean-formalization.git",
+  "commit": "de04e5150a5bddb5fb73497af753ef7f81442695",
+  "file": "Solution.lean",
+  "sha256": "ff81a863f2872247053d646560350e8dc98cb3c38e0928594964ffda0ef29f65",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "header": {
+   "lines": [
+    73,
+    73
+   ],
+   "text": "theorem complexity_of_three_pow : type_of% @Mathoverflow75792.complexity_three_pow :=",
+   "keyword": "theorem",
+   "name": "complexity_of_three_pow",
+   "indent": ""
+  }
+ }
+}

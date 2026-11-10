@@ -1,0 +1,28 @@
+{
+ "what": "what claimbox intake fetch read at the pins (2026-11-09): the canonical file, kept beside this file byte for byte; the claimant's file, read and not kept (its sha256, toolchain and the header of its declaration only)",
+ "canonical": {
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "5a2fb85045c86e4a184b15ce7531ba199a3c4580",
+  "path": "FormalConjectures/ErdosProblems/669.lean",
+  "sha256": "18af5af86d1308eed70ba8ac9ad6c30685c4325fb593384c44d9525fc8614587",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "kept": "corpus/intake/erdos-669/canonical.lean"
+ },
+ "claim": {
+  "url": "https://github.com/stokes/erdos-proofs.git",
+  "commit": "2a9eb1a1bdd869f09f9fad2c654db8508c6ad7fc",
+  "file": "ErdosProofs/Erdos669.lean",
+  "sha256": "4553bc18397295107ae03d79e3c4e0dc47194ade7c17024d6c79f17fa5d4ea70",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "header": {
+   "lines": [
+    170,
+    171
+   ],
+   "text": "theorem k_two (n : ℕ) :\n    maxLinesExactly 2 n = n.choose 2 ∧ maxLinesAtLeast 2 n = n.choose 2 :=",
+   "keyword": "theorem",
+   "name": "k_two",
+   "indent": ""
+  }
+ }
+}

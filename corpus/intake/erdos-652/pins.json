@@ -1,0 +1,28 @@
+{
+ "what": "what claimbox intake fetch read at the pins (2026-11-09): the canonical file, kept beside this file byte for byte; the claimant's file, read and not kept (its sha256, toolchain and the header of its declaration only)",
+ "canonical": {
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "5a2fb85045c86e4a184b15ce7531ba199a3c4580",
+  "path": "FormalConjectures/ErdosProblems/652.lean",
+  "sha256": "b6c6a870edf38eb27918f200fd5778eb508a22cd32fe7c1dfd4baf1621bfb1f8",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "kept": "corpus/intake/erdos-652/canonical.lean"
+ },
+ "claim": {
+  "url": "https://github.com/stokes/erdos-proofs.git",
+  "commit": "2a9eb1a1bdd869f09f9fad2c654db8508c6ad7fc",
+  "file": "ErdosProofs/Erdos652.lean",
+  "sha256": "a4f7c742bfda166f0fb64cd253e0a79e6ca268394b3df63ad226bf4e2deecbcd",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "header": {
+   "lines": [
+    39,
+    41
+   ],
+   "text": "theorem first (n : ℕ) (hn : 2 ≤ n) :\n    ∃ points : Finset ℝ², points.card = n ∧\n      ∃ point ∈ points, distinctDistancesFrom points point = 1 :=",
+   "keyword": "theorem",
+   "name": "first",
+   "indent": ""
+  }
+ }
+}

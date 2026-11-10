@@ -1,0 +1,26 @@
+{
+ "id": "mo-75792",
+ "what": "Daniel Puri's proof (danielpuri1901/erdos-lean-formalization; formal-conjectures PR #7660, open since 2026-10-28, no review yet) against DeepMind's statement of MathOverflow 75792 (integer complexity of 3^n): the formal-conjectures solved-PR batch (L3(c) of the claimbox + Lean lane, 2026-11-10).",
+ "polarity": "proves",
+ "claim": {
+  "what": "Daniel Puri's proof (danielpuri1901/erdos-lean-formalization; formal-conjectures PR #7660, open since 2026-10-28, no review yet)",
+  "url": "https://github.com/danielpuri1901/erdos-lean-formalization.git",
+  "commit": "de04e5150a5bddb5fb73497af753ef7f81442695",
+  "file": "Solution.lean",
+  "decl": "complexity_of_three_pow",
+  "license": "MIT (the repository's); still no byte of the file is kept here or in the spec but its declaration's header; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "DeepMind's statement of MathOverflow 75792 (integer complexity of 3^n)",
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "df3f12d7bd06feb3f71ae37abae0ca7cb798d9b1",
+  "path": "FormalConjectures/Mathoverflow/75792.lean",
+  "decl": "Mathoverflow75792.complexity_three_pow"
+ },
+ "types": {},
+ "f3": {
+  "values": [],
+  "why": "a model of the hypotheses proposed from the statement (none when it has no hypotheses)"
+ },
+ "f2NotApplicable": "the statement is `answer(True) ↔ ∀ n, …`: no instance binder at its top level (the ∀ sits inside the iff); and the reading language cannot yet state integer complexity (a least number of ones over expressions)"
+}

@@ -1,0 +1,28 @@
+{
+ "id": "erdos-669",
+ "what": "Matt Stokes's proof (stokes/erdos-proofs; formal-conjectures PR #7678, open since 2026-10-29, metadata only, no review yet) against DeepMind's statement of Erdős #669, variant k_two: the formal-conjectures solved-PR batch (L3(c) of the claimbox + Lean lane, 2026-11-10).",
+ "polarity": "proves",
+ "claim": {
+  "what": "Matt Stokes's proof (stokes/erdos-proofs; formal-conjectures PR #7678, open since 2026-10-29, metadata only, no review yet)",
+  "url": "https://github.com/stokes/erdos-proofs.git",
+  "commit": "2a9eb1a1bdd869f09f9fad2c654db8508c6ad7fc",
+  "file": "ErdosProofs/Erdos669.lean",
+  "decl": "ErdosProofs.Problem669.k_two",
+  "license": "none stated: no byte of the file is kept here or in the spec but its declaration's header; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "DeepMind's statement of Erdős #669, variant k_two",
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "5a2fb85045c86e4a184b15ce7531ba199a3c4580",
+  "path": "FormalConjectures/ErdosProblems/669.lean",
+  "decl": "Erdos669.erdos_669.variants.k_two"
+ },
+ "types": {},
+ "f3": {
+  "values": [
+   "0"
+  ],
+  "why": "a model of the hypotheses proposed from the statement (none when it has no hypotheses)"
+ },
+ "f2NotApplicable": "configurations of points in the real plane: the parts are not decidable on instances"
+}

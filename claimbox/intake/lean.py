@@ -234,6 +234,25 @@ def _match(s, i):
     raise Refused('statement', 'unbalanced ' + s[i].text)
 
 
+DATA_TYPE = re.compile(r'^(?:ℕ|ℤ|ℚ|ℝ|ℂ|ℝ≥0|Nat|Int|Real|Rat|Prop|Type|Sort|Finset|Set|Fin|List|Multiset|Array|Matrix|Polynomial|SimpleGraph|Digraph)\b')
+
+
+def _is_prop(names, ty):
+    """a binder that is a hypothesis, not data: its type is a relation or a connective at depth 0, or (Mathlib's naming
+    convention) every name starts with h and the type is neither a function type nor one of the usual data types"""
+    if ty is None:
+        return False
+    s, depth = sig(tokens(ty)), 0
+    for x in s:
+        depth += x.text in OPEN
+        depth -= x.text in CLOSE
+        if depth == 0 and x.text in ('<', '≤', '>', '≥', '=', '≠', '∣', '∈', '∉', '↔', '∧', '∨', '¬', '⊆', '⊂'):
+            return True
+    if DATA_TYPE.match(ty.strip()) or any(x.text == '→' for x in s):
+        return False
+    return bool(names) and all(re.match(r'^h(?:[A-Za-z]{0,3}|_\w+)?[₀-₉\'′]*$', n) for n in names)
+
+
 def _binders(text, s, i):
     """the binders after ∀ / ∀ᵉ up to the depth-0 comma: groups (x y : T), {x : T}, [C], (x REL e), bare x y [: T], x REL e"""
     out = []
@@ -249,6 +268,7 @@ def _binders(text, s, i):
             b = {'bracket': t.text, 'names': [(x.text, (x.start, x.end)) for x in names], 'type': None, 'pred': None, 'span': (t.start, s[j].end)}
             if k < len(inner) and inner[k].text == ':':
                 b['type'] = (text[inner[k + 1].start:s[j].start].strip(), (inner[k + 1].start, inner[-1].end))
+                b['prop'] = t.text in '({⦃' and _is_prop([x.text for x in names], b['type'][0])
             elif k < len(inner) and inner[k].text in ('<', '≤', '>', '≥', '∈', '∉', '⊆', '≠') and len(names) == 1:
                 b['pred'] = (inner[k].text, text[inner[k + 1].start:inner[-1].end], (inner[k].start, inner[k].end), (inner[k + 1].start, inner[-1].end))
             elif t.text == '[':
@@ -352,7 +372,7 @@ def binder_types(items, types=None):
         if it['kind'] != 'forall':
             continue
         for b in it['binders']:
-            if b['type'] and b['names']:
+            if b['type'] and b['names'] and not b.get('prop'):
                 for nm, _ in b['names']:
                     out[nm] = b['type'][0]
             elif b['pred'] and b['names'][0][0] not in out and b['pred'][0] in ('<', '≤', '>', '≥', '≠') and b['pred'][1] in out:
@@ -371,6 +391,9 @@ def parts(text, types=None, items=None):
             for b in it['binders']:
                 if b['bracket'] == '[':
                     out.append(('inst', b['type'][0], None))
+                    continue
+                if b.get('prop'):
+                    out.extend(('hyp', nm + ' : ' + b['type'][0], None) for nm, _ in b['names'])
                     continue
                 for nm, _ in b['names']:
                     out.append(('data', nm, ty.get(nm)))
@@ -629,6 +652,11 @@ def planted(text, types=None):
             add('changed:drop-hypothesis', 'changed', 'kernel decides', f'the hypothesis `{h}` dropped', _drop(text, it['span'][0], it['arrow'][1]), False)
         elif it['kind'] == 'forall':
             for b in it['binders']:
+                if b.get('prop') and b['bracket'] == '(' and len(it['binders']) > 1:
+                    used = {x.text.split('.')[0] for x in s if x.start >= b['span'][1] and x.kind == 'ident'}
+                    if not used & {nm for nm, _ in b['names']}:
+                        add('changed:drop-hypothesis', 'changed', 'kernel decides', f'the hypothesis `{text[b["span"][0]:b["span"][1]]}` dropped',
+                            _drop(text, b['span'][0], b['span'][1]), False)
                 if b['pred'] and b['bracket'] == '(' and types.get(b['names'][0][0]):
                     nm = b['names'][0][0]
                     add('changed:drop-hypothesis', 'changed', 'kernel decides', f'the binder predicate `{nm} {b["pred"][0]} {b["pred"][1]}` dropped (`({nm} : {types[nm]})`)',

@@ -1,0 +1,28 @@
+{
+ "what": "what claimbox intake fetch read at the pins (2026-11-09): the canonical file, kept beside this file byte for byte; the claimant's file, read and not kept (its sha256, toolchain and the header of its declaration only)",
+ "canonical": {
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "5a2fb85045c86e4a184b15ce7531ba199a3c4580",
+  "path": "FormalConjectures/ErdosProblems/123.lean",
+  "sha256": "7f44089dc13ace9ec24f7a7efbeb64c4a75dfc3087ae5f7b29663fea05329a2b",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "kept": "corpus/intake/erdos-123/canonical.lean"
+ },
+ "claim": {
+  "url": "https://github.com/stokes/erdos-proofs.git",
+  "commit": "2a9eb1a1bdd869f09f9fad2c654db8508c6ad7fc",
+  "file": "ErdosProofs/Erdos123.lean",
+  "sha256": "82f0f8fbf379cc1079744d7df7e112f8811b7429f17598e65e9992d7b9c95dbe",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "header": {
+   "lines": [
+    110,
+    110
+   ],
+   "text": "theorem powers_2_3 : Erdos123.IsDComplete (↑(powers 2) * ↑(powers 3)) :=",
+   "keyword": "theorem",
+   "name": "powers_2_3",
+   "indent": ""
+  }
+ }
+}

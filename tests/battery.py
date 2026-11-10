@@ -1633,6 +1633,12 @@ _s17, _ = IS.write(_t488, out_dir=os.path.relpath(_ix17, REPO))
 ok(open(os.path.join(_ix17, 'erdos-488-spec.json'), 'rb').read().replace(os.path.relpath(_ix17, REPO).encode(), b'records/intake') == _before[0]
    and open(os.path.join(_ix17, 'erdos-488-reading.json'), 'rb').read() == _before[1],
    'intake spec: written again from the target, its pins, the canonical bytes and the reading, byte for byte the recorded spec and table')
+_batch = sorted(d for d in os.listdir(os.path.join(REPO, 'corpus', 'intake')) if d != 'erdos-488' and os.path.isfile(os.path.join(REPO, 'corpus', 'intake', d, 'target.json')))
+_same = []
+for _d in _batch:
+    _bs, _ = IS.write('corpus/intake/' + _d + '/target.json', out_dir=os.path.relpath(_ix17, REPO))
+    _same.append(open(os.path.join(_ix17, _d + '-spec.json'), 'rb').read() == open(os.path.join(REPO, 'records', 'intake', _d + '-spec.json'), 'rb').read())
+ok(len(_batch) == 8 and all(_same), 'intake spec: the solved-PR batch\'s eight specs written again from their targets, byte for byte the recorded ones', ', '.join(_batch))
 _cb = subprocess.run([sys.executable, '-m', 'claimbox', 'intake', 'calibrate', 'erdos-488', '--check'], capture_output=True, text=True, cwd=REPO)
 ok(_cb.returncode == 0, 'intake calibrate erdos-488 --check: the record re-derived from cert-machine\'s pinned answers, both words CALIBRATED', _cb.stdout.strip().split('\n')[0][:150])
 _cal = json.load(open(os.path.join(REPO, 'records', 'intake', 'erdos-488-calibration.json'), encoding='utf-8'))
@@ -1702,10 +1708,17 @@ red(IL.alpha(_s0.replace('Finset.Icc 1 m', 'Finset.Ico 1 m')) != IL.alpha(_s0), 
 red(len(IL.planted(_s0)) == len({IL.norm(m['statement']) for m in IL.planted(_s0)}) and IL.norm(_s0) not in {IL.norm(m['statement']) for m in IL.planted(_s0)},
     'intake spec: no planted statement twice, none the canonical statement itself')
 try:
-    IS.reds({'text': 'theorem foo (x : ℕ) : x = x :=', 'keyword': 'theorem', 'name': 'foo'})
-    red(False, 'intake spec: refused — a planted defect by rule at a header with binders before its colon (not written yet)')
+    IS.reds({'text': 'theorem foo (x : ℕ) : x = x := by', 'keyword': 'theorem', 'name': 'foo'})
+    red(False, 'intake spec: refused — a planted defect by rule at a header that does not end at :=')
 except IL.Refused:
-    red(True, 'intake spec: refused — a planted defect by rule at a header with binders before its colon (not written yet)')
+    red(True, 'intake spec: refused — a planted defect by rule at a header that does not end at :=')
+_rb = IS.reds({'text': 'theorem foo (x : ℕ) (hx : 0 < x) :\n    x = x :=', 'keyword': 'theorem', 'name': 'foo'})
+ok(_rb[0]['replace'].startswith('theorem foo (x : ℕ) (hx : 0 < x) :\n    x = x := sorry') and 'theorem intake_was_foo (x : ℕ) (hx : 0 < x)' in _rb[1]['replace'],
+   'intake spec: the rule-written defects at a header with binders before its colon (sorry; the axiom), the original kept as intake_was_foo')
+_ps = '∀ {n : ℕ} (hn : n.Composite) (h : ℕ → ℕ),\n    n ≤ h n'
+ok(IL.parts(_ps) == [('data', 'n', 'ℕ'), ('hyp', 'hn : n.Composite', None), ('data', 'h', 'ℕ → ℕ'), ('concl', 'n ≤ h n', None)]
+   and IS.f3_tactic(_ps, ['4', 'id'], {}) == 'intro h\n  exact @h 4 (by first | decide | simp | norm_num) id',
+   'intake spec: a hypothesis before the colon read as one (hn : n.Composite), a function binder named h as data; F3 through @h for an implicit binder')
 shutil.rmtree(_ix17)
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')

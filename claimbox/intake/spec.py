@@ -152,23 +152,23 @@ def f3_tactic(stmt, values, types):
             args.append(vs.pop(0))
         elif p[0] == 'hyp':
             args.append('(by first | decide | simp | norm_num)')
+        elif p[0] == 'inst':
+            args.append('inferInstance')
     if vs:
         raise L.Refused('f3', 'more witness values than data binders')
-    return 'intro h\n  exact h ' + ' '.join(args)
+    implicit = any(b['bracket'] in ('{', '⦃', '[') for it in L.telescope(stmt) if it['kind'] == 'forall' for b in it['binders'])
+    return ('intro h\n  exact ' + ('@h' if implicit else 'h') + (' ' + ' '.join(args) if args else '')).rstrip()
 
 
 def reds(header):
     """the planted defects of the claimant's file, by rule, anchored at its declaration's header (the only bytes of the
-    file the spec quotes): the declaration's proof made `sorry`, then made an axiom — the original proof kept under another
-    name, so the file still builds. Each is certain: sorryAx, or the axiom, is in the declaration's axioms."""
+    file the spec quotes): the declaration's proof made `sorry`, then made an axiom (`{p : Prop} : p`, so binders before the
+    colon need nothing) — the original proof kept under another name, so the file still builds. Each is certain: sorryAx,
+    or the axiom, is in the declaration's axioms."""
     h = header['text']
     if not h.endswith(':='):
         raise L.Refused('reds', 'the header does not end at :=')
     kw, name = header['keyword'], header['name']
-    sig_ = h[h.index(name) + len(name):-2].rstrip()
-    m = re.match(r'\s*:\s*(.*)$', sig_, re.S)
-    if not m:
-        raise L.Refused('reds', 'a header with binders before its colon (not written by rule yet)')
     renamed = h.replace(kw + ' ' + name, kw + ' intake_was_' + name, 1)
     return [
         {'id': 'R1', 'why': f'the proof of {name} replaced by sorry (the original kept as intake_was_{name})', 'find': h, 'replace': h + ' sorry\n\n' + renamed,
@@ -262,6 +262,8 @@ def write(target_path, out_dir='records/intake'):
                        'planted': 'F2 ⇒ F1: an aligned planted statement (the canonical\'s binder types and number of hypotheses) with a part whose '
                                   'value differs from the canonical\'s on an instance is not definitionally equal to it — F1 must refuse it; for '
                                   'every other planted statement F2 reports and F1 decides'}})
+    if not T.get('f2') and T.get('f2NotApplicable'):
+        spec['f2NotApplicable'] = T['f2NotApplicable']
     spec['kernels'] = KERNELS
     spec['notInScope'] = ('whether the canonical statement is the informal problem (a reading, F5): F2 tests it on finitely many instances, which is '
                           'evidence, not proof; the planted statements marked "kernel decides" carry no prediction; the claimant\'s file is never copied')

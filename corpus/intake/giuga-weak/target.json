@@ -1,0 +1,28 @@
+{
+ "id": "giuga-weak",
+ "what": "Daniel Puri's proof (danielpuri1901/erdos-lean-formalization; formal-conjectures PR #7660, open since 2026-10-28, no review yet) against DeepMind's characterization of weak Giuga numbers (Wikipedia: Agoh–Giuga): the formal-conjectures solved-PR batch (L3(c) of the claimbox + Lean lane, 2026-11-10).",
+ "polarity": "proves",
+ "claim": {
+  "what": "Daniel Puri's proof (danielpuri1901/erdos-lean-formalization; formal-conjectures PR #7660, open since 2026-10-28, no review yet)",
+  "url": "https://github.com/danielpuri1901/erdos-lean-formalization.git",
+  "commit": "d4e112619d3d00a40b39ccb50b8fdf9cf46db2ab",
+  "file": "Solution.lean",
+  "decl": "weak_giuga_iff_sum",
+  "license": "MIT (the repository's); still no byte of the file is kept here or in the spec but its declaration's header; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "DeepMind's characterization of weak Giuga numbers (Wikipedia: Agoh–Giuga)",
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "df3f12d7bd06feb3f71ae37abae0ca7cb798d9b1",
+  "path": "FormalConjectures/Wikipedia/AgohGiuga.lean",
+  "decl": "AgohGiuga.isWeakGiuga_iff_sum_primeFactors"
+ },
+ "types": {},
+ "f3": {
+  "values": [
+   "4"
+  ],
+  "why": "a model of the hypotheses proposed from the statement (none when it has no hypotheses)"
+ },
+ "f2NotApplicable": "the conclusion has an unbounded ∃ m : ℕ: not decidable on instances"
+}

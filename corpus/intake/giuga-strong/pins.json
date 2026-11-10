@@ -1,0 +1,28 @@
+{
+ "what": "what claimbox intake fetch read at the pins (2026-11-09): the canonical file, kept beside this file byte for byte; the claimant's file, read and not kept (its sha256, toolchain and the header of its declaration only)",
+ "canonical": {
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "df3f12d7bd06feb3f71ae37abae0ca7cb798d9b1",
+  "path": "FormalConjectures/Wikipedia/AgohGiuga.lean",
+  "sha256": "52e8369680d4ece29ff12cb6e55254b66db397f249f933366fd2af76cdc7d8f1",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "kept": "corpus/intake/giuga-strong/canonical.lean"
+ },
+ "claim": {
+  "url": "https://github.com/danielpuri1901/erdos-lean-formalization.git",
+  "commit": "9e79333b40ff376cb761f200d9989193113387bf",
+  "file": "Solution.lean",
+  "sha256": "b1bcef10e2ec457608938a0117e1120eb174ff2ed2bb281fd0750544bc12ffb0",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "header": {
+   "lines": [
+    179,
+    179
+   ],
+   "text": "theorem strong_giuga_iff : type_of% @AgohGiuga.isStrongGiuga_iff :=",
+   "keyword": "theorem",
+   "name": "strong_giuga_iff",
+   "indent": ""
+  }
+ }
+}

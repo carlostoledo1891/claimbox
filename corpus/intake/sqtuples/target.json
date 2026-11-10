@@ -1,0 +1,28 @@
+{
+ "id": "sqtuples",
+ "what": "Daniel Puri's proof (danielpuri1901/erdos-lean-formalization; formal-conjectures PR #7660, open since 2026-10-28, no review yet) against DeepMind's statement from arXiv:1609.08688 (s-increasing r-tuples), the square case: the formal-conjectures solved-PR batch (L3(c) of the claimbox + Lean lane, 2026-11-10).",
+ "polarity": "proves",
+ "claim": {
+  "what": "Daniel Puri's proof (danielpuri1901/erdos-lean-formalization; formal-conjectures PR #7660, open since 2026-10-28, no review yet)",
+  "url": "https://github.com/danielpuri1901/erdos-lean-formalization.git",
+  "commit": "3c85c7da2cf51edc3b6b9ba13adcf395e7f1a3f5",
+  "file": "Solution.lean",
+  "decl": "increasing_triples_square",
+  "license": "MIT (the repository's); still no byte of the file is kept here or in the spec but its declaration's header; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "DeepMind's statement from arXiv:1609.08688 (s-increasing r-tuples), the square case",
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "df3f12d7bd06feb3f71ae37abae0ca7cb798d9b1",
+  "path": "FormalConjectures/Arxiv/1609.08688/sIncreasingrTuples.lean",
+  "decl": "Arxiv.«1609.08688».maximalLength_ge_of_isSquare"
+ },
+ "types": {},
+ "f3": {
+  "values": [
+   "4"
+  ],
+  "why": "a model of the hypotheses proposed from the statement (none when it has no hypotheses)"
+ },
+ "f2NotApplicable": "F n (maximalLength) is a supremum over all s-increasing sequences: noncomputable, so no part is decidable on instances"
+}
