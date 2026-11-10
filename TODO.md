@@ -18,7 +18,7 @@ defects have no recorded answer; the same-class and type-class predictions are c
 rules are right, and only Lean says so. Checked by: every certain prediction met, the F2 ⇒ F1 rule holding, the 14 known
 answers unchanged; a miss is an amendment, dated, never a silent fix.
 
-**L3. The target: AlphaProof Nexus's Erdős solutions — scout first.** Which of the 9 have a finite part (F2), their pins,
+**L3. The target: AlphaProof Nexus's Erdős solutions — SCOUTED 2026-11-09 (cert-machine corpus/targets.json row lean-intake-apn-statement-layer-2026-11: OPEN, not runnable as is). Needed first, here: a namespace port of the self-contained results files (tools/intake_port.py) or, there, a Comparator F1 mode; an "answer flipped" rule for `answer(x) ↔ P`; a reading of a DEFINITION evaluated on finite inputs (#12 IsGood, #125's digit sets, #846). Or the solved-PR batch first. Was: scout first.** Which of the 9 have a finite part (F2), their pins,
 toolchains, closure sizes; one target.json each; each reading written blind (a session given only the sentence and
 lean/READING.md), a person's second reading where possible (two kinds of proposer, commitment 5). Then a formal-conjectures
 "solved" batch; Navier–Stokes last.
