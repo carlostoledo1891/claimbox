@@ -225,7 +225,7 @@ passes. Parked behind a spend decision.
   the same way, so a claim over the two 30,000-value autocorrelation rows — holes here, the receiver's object evaluator being
   quadratic in the count (1,319 values in 7 s) — is decided by the row's exact rational, re-decided against the claim's bar, as the
   platform's rows are through certs/mc100-einstein-arena.json. Until then they are holes `decider` and say so.
-- **The Lean intake reads claimbox's spec** (2026-11-09; lean/INTAKE.md §7–§8; records/intake/erdos-488-spec.json is the first).
+- ~~**The Lean intake reads claimbox's spec**~~ — DONE in cert-machine 1497ad73 (2026-11-09: all four, both earlier records re-derived byte-identically; the spec and table copied there by LIFT-claimbox-intake.json). Was (2026-11-09; lean/INTAKE.md §7–§8; records/intake/erdos-488-spec.json is the first).
   tools/lean-intake.js reads the v1 words of a hand-written spec; claimbox's adds: (a) `expect: "kernel decides"` (the outcome
   recorded, never a miss) and `"NOT ACCEPTED"` (refused or does not elaborate), kinds `changed` and `type`, the controls word
   counting only certain predictions; (b) F2 from `f2.table` (claimbox's reading, one row per instance and reading) in place of

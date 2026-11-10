@@ -437,7 +437,12 @@ def intake(a):
                   f'the record\'s F2 {"reproduced" if nat["reproducesTheRecord"] else "NOT reproduced"}; planted F2 outcomes {nat["planted"]["same"]} of {nat["planted"]["of"]}; '
                   f'misreadings caught {r["plants"]["wrongCaught"]} of {r["plants"]["wrong"]}, same unmoved {r["plants"]["sameUnmoved"]} of {r["plants"]["same"]}'
                   + ('; recorded' if a.record else '; checked' if a.check else ''))
-            return 0 if rec['word']['spec'] == rec['word']['reading'] == 'CALIBRATED' else 1
+            if 'run' in rec:
+                u = rec['run']
+                print(f'run: {rec["word"]["run"]} — cert-machine\'s word {u["verdict"]}; certain predictions {u["certainPredictions"]["met"]} of {u["certainPredictions"]["of"]}; '
+                      f'the hand run\'s answers {u["knownAnswers"]["same"]} of {u["knownAnswers"]["of"]} the same; {u["newAnswers"]["of"]} new answers '
+                      + json.dumps({k: len(v) for k, v in u['newAnswers']['outcomes'].items()}, ensure_ascii=False) + f'; defects caught {sum(1 for r in u["reds"] if r["caught"])} of {len(u["reds"])}')
+            return 0 if rec['word']['spec'] == rec['word']['reading'] == 'CALIBRATED' and rec['word'].get('run', 'EVERY CERTAIN PREDICTION MET') == 'EVERY CERTAIN PREDICTION MET' else 1
     except (L.Refused, Rd.Refused) as e:
         print(f'REFUSED  {e.rule}: {e.msg}')
         return 1

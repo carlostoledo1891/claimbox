@@ -1650,6 +1650,11 @@ ok(_cr['plants']['wrongCaught'] == _cr['plants']['wrong'] == 9 and _cr['plants']
 _pos = next(e for e in _cr['readings'] if e['reading'].startswith('A: finite set of positive integers; n, m: natural'))
 ok(_pos['canonical']['implication']['disagreements'] == 0 and _nat['canonical']['implication']['explainedBy'] == ['0 ∉ A'],
    'intake reading: the fork shows the reason for an added hypothesis — under "A of positive integers" no disagreement; under "naturals" 20, all explained by 0 ∉ A')
+_cu = _cal.get('run') or {}
+ok(_cal['word'].get('run') == 'EVERY CERTAIN PREDICTION MET' and _cu.get('verdict') == 'CERTIFIED' and _cu['certainPredictions'] == {'met': 8, 'of': 8}
+   and _cu['knownAnswers'] == {'same': 14, 'of': 14} and _cu['newAnswers']['of'] == 14 and all(r['caught'] for r in _cu['reds']),
+   'intake: cert-machine\'s run of claimbox\'s own spec (L2) — CERTIFIED there; 8 of 8 certain predictions met, the 14 known answers the same, 14 new, both defects caught',
+   json.dumps({k: len(v) for k, v in _cu.get('newAnswers', {}).get('outcomes', {}).items()}, ensure_ascii=False))
 _rt = IR.parse(open(os.path.join(REPO, 'corpus', 'intake', 'erdos-488', 'erdos-488.reading'), encoding='utf-8').read())
 ok(IR.canonical(IR.parse(IR.canonical(_rt))) == IR.canonical(_rt) and IR.parse(IR.canonical(_rt))['claim'] == _rt['claim'], 'intake reading: printed back canonically and read again, the same tree')
 _ren = [m for m in _s17['mutants'] if m['rule'] in ('verbatim', 'same:rename')]

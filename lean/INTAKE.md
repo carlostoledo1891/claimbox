@@ -202,3 +202,7 @@ spec, record, run facts (Lean's values on 3,024 instances) and hand decider, rea
   planted misreadings, each mirroring a planted Lean statement whose count the record holds, all caught as predicted (P08,
   `[0, m]`, by the anchors alone — F2 cannot see it, as F1 could not see W08; P10, a denominator swapped, by F2 alone); two
   rewordings unmoved.
+- **The run of claimbox's own spec** (cert-machine 8b80b5a5, certs/lean-intake-erdos-488-claimbox.json; 47 min on the Mac): CERTIFIED;
+  8 of 8 certain predictions met; the 20 "kernel decides" answered — 18 refused, 2 accepted (C16, C20: `Icc 0` for `Icc 1`, 0 never
+  in B); the 14 answers already known the same; F2 ⇒ F1 held on 11; F2 CERTIFIED under all nine readings. Both ℕ ↔ ℤ statements
+  did not elaborate (TODO L5). Calibration part 3 reads the record.

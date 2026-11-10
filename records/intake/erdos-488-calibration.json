@@ -4,11 +4,13 @@
   "corpus/lean-intake/erdos-488/spec.json": "257addcced503947ac7cdece4e0a6c7ac147586a8756a5ca0d514a95c83a0277",
   "certs/lean-intake-erdos-488.json": "3d55fa1fe80a8dbf77b7379291eb9d55f1d8895ce9e1af6cf133745be2e8a34e",
   "corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl": "f0da5cfd56aa07a0f8fdc9558857168be02084e5e5b64ff9e78b3064f93e015f",
-  "instruments/intake/erdos-488.js": "a2dc8058927b98413eb74c83f0427efb6c560a0d104ef06ad12596cd12444edb"
+  "instruments/intake/erdos-488.js": "a2dc8058927b98413eb74c83f0427efb6c560a0d104ef06ad12596cd12444edb",
+  "certs/lean-intake-erdos-488-claimbox.json": "e11194055a40ac250f325f212ee415f75dae3cd44eed0c75094bd13da7b80a4b"
  },
  "word": {
   "spec": "CALIBRATED",
-  "reading": "CALIBRATED"
+  "reading": "CALIBRATED",
+  "run": "EVERY CERTAIN PREDICTION MET"
  },
  "spec": {
   "pins": {
@@ -1737,6 +1739,390 @@
    "same": 2,
    "asExpected": 11,
    "of": 11
+  }
+ },
+ "run": {
+  "record": "certs/lean-intake-erdos-488-claimbox.json",
+  "verdict": "CERTIFIED",
+  "words": {
+   "F1": "CERTIFIED",
+   "F1controls": {
+    "same": "6 of 6 accepted (predicted)",
+    "type": "2 of 2 not accepted (predicted)",
+    "changed": "18 refused, 2 accepted, of 20 (kernel decides: no outcome predicted) — accepted: C16, C20 (the rule's change is definitionally invisible there)",
+    "certain": "8 of 8 certain predictions met",
+    "f2ImpliesF1": "holds: 11 aligned statements with a differing part, all refused",
+    "word": "CERTIFIED"
+   },
+   "F3": "CERTIFIED",
+   "plantedClaims": {
+    "caught": "2 of 2",
+    "word": "CERTIFIED"
+   },
+   "kernels": "ACCEPT (3 run)",
+   "F2": {
+    "word": "CERTIFIED",
+    "readings": [
+     "A: finite set of positive integers; n, m: positive integer: AGREES — conclusion 0 disagreements of 1085 (1939 undefined in the reading); implication 0 disagreements; added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of positive integers; n, m: natural: AGREES — conclusion 0 disagreements of 1085 (1939 undefined in the reading); implication 0 disagreements; added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of positive integers; n, m: integer: AGREES — conclusion 0 disagreements of 1085 (1939 undefined in the reading); implication 0 disagreements; added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of naturals; n, m: positive integer: AGREES — conclusion 0 disagreements of 2205 (819 undefined in the reading); implication 20 disagreements, 20 explained by 0 ∉ A (A = [0]); added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of naturals; n, m: natural: AGREES — conclusion 0 disagreements of 2205 (819 undefined in the reading); implication 20 disagreements, 20 explained by 0 ∉ A (A = [0]); added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of naturals; n, m: integer: AGREES — conclusion 0 disagreements of 2205 (819 undefined in the reading); implication 20 disagreements, 20 explained by 0 ∉ A (A = [0]); added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of integers; n, m: positive integer: AGREES — conclusion 0 disagreements of 2205 (819 undefined in the reading); implication 20 disagreements, 20 explained by 0 ∉ A (A = [0]); added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of integers; n, m: natural: AGREES — conclusion 0 disagreements of 2205 (819 undefined in the reading); implication 20 disagreements, 20 explained by 0 ∉ A (A = [0]); added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A",
+     "A: finite set of integers; n, m: integer: AGREES — conclusion 0 disagreements of 2205 (819 undefined in the reading); implication 20 disagreements, 20 explained by 0 ∉ A (A = [0]); added by the formalization: A.Nonempty, 0 ∉ A, 1 ∉ A"
+    ],
+    "kernel": "the kernel confirms all 16 chunks",
+    "f2ImpliesF1": "holds (11 must-refuse)"
+   }
+  },
+  "statements": [
+   {
+    "id": "S0",
+    "rule": "verbatim",
+    "expect": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "met": true,
+    "handRun": [
+     "S0: ACCEPTED",
+     "S2: ACCEPTED"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "S1",
+    "rule": "same:rename",
+    "expect": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "met": true,
+    "handRun": [
+     "S0: ACCEPTED",
+     "S2: ACCEPTED"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "S2",
+    "rule": "same:binder-pred",
+    "expect": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "met": true,
+    "handRun": [
+     "S1: ACCEPTED"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "S3",
+    "rule": "same:not-mem",
+    "expect": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "met": true,
+    "handRun": [
+     "S4: ACCEPTED"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "S4",
+    "rule": "same:not-mem",
+    "expect": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "met": true
+   },
+   {
+    "id": "S5",
+    "rule": "same:zeta",
+    "expect": "ACCEPTED",
+    "outcome": "ACCEPTED",
+    "met": true,
+    "handRun": [
+     "S3: ACCEPTED"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C01",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C02",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W06: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C03",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W05: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C04",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C05",
+    "rule": "changed:drop-hypothesis",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C06",
+    "rule": "changed:strictness",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C07",
+    "rule": "changed:strictness",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W03: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C08",
+    "rule": "changed:strictness",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W07: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C09",
+    "rule": "changed:strictness",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W04: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C10",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C11",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C12",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C13",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W09: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C14",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C15",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "E1: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C16",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "ACCEPTED",
+    "met": true,
+    "handRun": [
+     "W08: ACCEPTED"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C17",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true,
+    "handRun": [
+     "W02: REFUSED by type mismatch"
+    ],
+    "sameAsTheHandRun": true
+   },
+   {
+    "id": "C18",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C19",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "REFUSED by type mismatch",
+    "met": true
+   },
+   {
+    "id": "C20",
+    "rule": "changed:constant",
+    "expect": "kernel decides",
+    "outcome": "ACCEPTED",
+    "met": true
+   },
+   {
+    "id": "N1",
+    "rule": "type:nat-int",
+    "expect": "NOT ACCEPTED",
+    "outcome": "FAILED elsewhere",
+    "met": true
+   },
+   {
+    "id": "N2",
+    "rule": "type:nat-int",
+    "expect": "NOT ACCEPTED",
+    "outcome": "FAILED elsewhere",
+    "met": true
+   }
+  ],
+  "certainPredictions": {
+   "met": 8,
+   "of": 8
+  },
+  "knownAnswers": {
+   "same": 14,
+   "of": 14
+  },
+  "newAnswers": {
+   "of": 14,
+   "outcomes": {
+    "ACCEPTED": [
+     "S4",
+     "C20"
+    ],
+    "FAILED elsewhere": [
+     "N1",
+     "N2"
+    ],
+    "REFUSED by type mismatch": [
+     "C01",
+     "C04",
+     "C05",
+     "C06",
+     "C10",
+     "C11",
+     "C12",
+     "C14",
+     "C18",
+     "C19"
+    ]
+   }
+  },
+  "reds": [
+   {
+    "id": "R1",
+    "caught": true,
+    "how": "the axioms list sorryAx"
+   },
+   {
+    "id": "R2",
+    "caught": true,
+    "how": "the axioms list Erdos488ExactAdapter.intakeRedAxiom"
+   }
+  ],
+  "f2": {
+   "word": "CERTIFIED",
+   "readings": [
+    {
+     "reading": "A: finite set of positive integers; n, m: positive integer",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of positive integers; n, m: natural",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of positive integers; n, m: integer",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of naturals; n, m: positive integer",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of naturals; n, m: natural",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of naturals; n, m: integer",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of integers; n, m: positive integer",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of integers; n, m: natural",
+     "word": "AGREES"
+    },
+    {
+     "reading": "A: finite set of integers; n, m: integer",
+     "word": "AGREES"
+    }
+   ],
+   "f2ImpliesF1": {
+    "mustRefuse": 11,
+    "holds": true,
+    "alignmentMisses": []
+   }
   }
  }
 }

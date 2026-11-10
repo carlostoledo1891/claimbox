@@ -23,6 +23,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**L1 + L2 DONE THE SAME NIGHT (2026-11-09 ~23:55 UTC, branch `lean-intake-l1-l2-2026-11-09`, on the operator's answers: push both,
+L1 + L2, "you write one").** Steps 1 + 2 were merged into main and pushed first (bad0bfb). L1, in cert-machine (1497ad73): its
+tools/lean-intake.js reads claimbox's words (kernel decides, NOT ACCEPTED, kinds changed/type, F2 from the table with every
+reading, F2 ⇒ F1, mutantOpen in F2Eval), both earlier records byte-identical; LIFT-claimbox-intake.json copies the spec and table
+OUT (the pre-registration, committed and pushed before the run). L2 (cert-machine 8b80b5a5): #488 run from claimbox's spec on the
+Mac, 47 min, US$0 — CERTIFIED: 8 of 8 certain predictions met (6 rewordings accepted; both ℕ ↔ ℤ statements not accepted — they do
+not elaborate, so they tested nothing about F1: the type rule should retype consistently, TODO L5); the 20 "kernel decides": 18
+refused, 2 accepted (C16 and C20, Icc 0 for Icc 1 on either side — W08's case); F2 ⇒ F1 held on 11; F3 held with the generated
+tactic; both rule-written defects caught; three kernels; F2 CERTIFIED under all nine readings. Here: PROVENANCE pins the new
+record (20 pins), `intake calibrate` gained part 3 (records/intake/erdos-488-calibration.json: run EVERY CERTAIN PREDICTION MET;
+the 14 known answers the same; 14 new: 2 accepted, 10 refused, 2 do not elaborate). The operator's worksheet,
+corpus/intake/erdos-488/erdos-488.person.reading, is blank and waits for their reading (never overwritten by a tool).
+Battery §17 + 1 (the run): `make test` 643 pass, 0 fail, 186/186 reds; `make drift` 20/20.
+
 **THE LEAN INTAKE LANE, STEPS 1 + 2 (2026-11-09 evening, branch `lean-intake-2026-11-09` from main 4b15165; done from a
 cert-machine session on the operator's "start the claimbox + Lean lane: steps 1 + 2 in claimbox, calibrated on #488"; committed,
 not pushed, not merged).** (1) THE SPEC WRITER — claimbox/intake/lean.py + spec.py, `python3 -m claimbox intake fetch|spec TARGET`:

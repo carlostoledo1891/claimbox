@@ -8,12 +8,12 @@ the operator raised; 11–13 are maintenance. Nothing here spends money or touch
 
 Steps 1 + 2 are built and calibrated on Erdős #488 (records/intake/erdos-488-calibration.json: both CALIBRATED). Next, in order:
 
-**L1. The receiver reads claimbox's spec (a cert-machine chat first; PLAN.md §9).** Why: until tools/lean-intake.js reads
+**L1. DONE 2026-11-09 (cert-machine 1497ad73) — The receiver reads claimbox's spec (a cert-machine chat first; PLAN.md §9).** Why: until tools/lean-intake.js reads
 "kernel decides", "NOT ACCEPTED", the F2 table and the F2 ⇒ F1 rule, a claimbox spec is a proposal there. Checked by: both
 existing records (`record --check` on #488 and #786(i)) byte-identical after the change; a planted spec using each new word
 decided as written.
 
-**L2. #488 again, from claimbox's spec, on the Mac.** Why: 14 of its 28 planted statements and both rule-written planted
+**L2. DONE 2026-11-09 (cert-machine 8b80b5a5: CERTIFIED, 8 of 8 certain predictions met; calibration part 3) — #488 again, from claimbox's spec, on the Mac.** Why: 14 of its 28 planted statements and both rule-written planted
 defects have no recorded answer; the same-class and type-class predictions are certain by construction only if the text
 rules are right, and only Lean says so. Checked by: every certain prediction met, the F2 ⇒ F1 rule holding, the 14 known
 answers unchanged; a miss is an amendment, dated, never a silent fix.
@@ -22,6 +22,14 @@ answers unchanged; a miss is an amendment, dated, never a silent fix.
 toolchains, closure sizes; one target.json each; each reading written blind (a session given only the sentence and
 lean/READING.md), a person's second reading where possible (two kinds of proposer, commitment 5). Then a formal-conjectures
 "solved" batch; Navier–Stokes last.
+
+**L5. The type rule retypes consistently.** Why: on #488 both ℕ ↔ ℤ statements failed to elaborate (A's elements and B's
+numbers, n against A.max), so they met NOT ACCEPTED without testing F1. Retype every ℕ a binder's type reaches (or the whole
+statement) so the planted statement elaborates and the refusal is the kernel's; keep the single-place form as a second,
+labelled "may not elaborate". Checked by: a run where the retyped statements reach F1 and are refused by type mismatch.
+
+**L6. The person's reading of #488 (corpus/intake/erdos-488/erdos-488.person.reading, the operator's).** When written: `intake
+read` it, then compare its table with the blind model reading's (concord between two kinds of proposer, commitment 5).
 
 **L4. The reading language grows only when a sentence needs it** (sums, products, primes, real intervals), each construct
 with its planted misreadings, measured on the targets of L3, never chased.

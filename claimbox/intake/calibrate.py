@@ -23,6 +23,7 @@ REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 ROOT = os.environ.get('CERT_MACHINE', os.path.expanduser('~/Projects/cert-machine'))
 CM = {'spec': 'corpus/lean-intake/erdos-488/spec.json', 'record': 'certs/lean-intake-erdos-488.json',
       'f2eval': 'corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl', 'decider': 'instruments/intake/erdos-488.js'}
+RUN = 'certs/lean-intake-erdos-488-claimbox.json'    # cert-machine's run of claimbox's own spec (L2), once recorded
 NATURALS = 'A: finite set of naturals; n, m: natural'
 REFUSED = ('REFUSED by type mismatch', 'FAILED elsewhere')
 
@@ -289,6 +290,32 @@ def run():
     ok_read = (reading_part['anchors']['word'] == 'anchored and covered' and same_enum and nat['rowsDifferingFromTheHandDecider'] == 0 and nat['reproducesTheRecord']
                and nat['planted']['same'] == nat['planted']['of'] and reading_part['plants']['asExpected'] == reading_part['plants']['of']
                and reading_part['plants']['wrongCaught'] == reading_part['plants']['wrong'])
+    # ---- 3 · the run of claimbox's own spec (cert-machine's record, once it exists): every prediction against its outcome
+    run_part = None
+    if os.path.isfile(os.path.join(ROOT, RUN)):
+        R2 = json.load(open(os.path.join(ROOT, RUN), encoding='utf-8'))
+        if R2['spec']['path'] != 'corpus/lean-intake/erdos-488-claimbox/spec.json':
+            raise L.Refused('run', 'the record is not of claimbox\'s spec')
+        o2 = {m['id']: m for m in R2['mutants']}
+        st = []
+        for m in mine:
+            r2 = o2[m['id']]
+            row = {'id': m['id'], 'rule': m['rule'], 'expect': m['expect'], 'outcome': r2['outcome'], 'met': r2['asExpected']}
+            if m['id'] in known:
+                row['handRun'] = [h + ': ' + oc for h, oc in known[m['id']]]
+                row['sameAsTheHandRun'] = all(oc == r2['outcome'] for _, oc in known[m['id']])
+            st.append(row)
+        new = [r for r in st if 'handRun' not in r]
+        f2 = R2.get('F2') or {}
+        run_part = {
+            'record': RUN, 'verdict': R2['verdict'], 'words': R2['words'], 'statements': st,
+            'certainPredictions': {'met': sum(1 for r in st if r['expect'] != 'kernel decides' and r['met']), 'of': sum(1 for r in st if r['expect'] != 'kernel decides')},
+            'knownAnswers': {'same': sum(1 for r in st if r.get('sameAsTheHandRun')), 'of': sum(1 for r in st if 'handRun' in r)},
+            'newAnswers': {'of': len(new), 'outcomes': {o: [r['id'] for r in new if r['outcome'] == o] for o in sorted({r['outcome'] for r in new})}},
+            'reds': [{'id': r['id'], 'caught': r['caught'], 'how': r['how']} for r in R2['reds']],
+            'f2': {'word': f2.get('word'), 'readings': [{'reading': r['reading'], 'word': r['word']} for r in f2.get('readings', [])],
+                   'f2ImpliesF1': f2.get('f1')}}
+        CM['run'] = RUN
     pinned = {k: L_sha(cm(k)) for k in CM}
     return {
         'what': 'claimbox\'s intake spec (records/intake/erdos-488-spec.json) and its blind reading of the sentence (corpus/intake/erdos-488/erdos-488.reading) '
@@ -296,8 +323,11 @@ def run():
                 'written by hand from the sentence — read in place, pinned below. A calibration of the writer and the reader, not a verdict: the verdict on '
                 '#488 is cert-machine\'s record. Written by python3 -m claimbox intake calibrate erdos-488 --record.',
         'certMachine': {CM[k]: pinned[k] for k in CM},
-        'word': {'spec': 'CALIBRATED' if ok_spec else 'NOT CALIBRATED', 'reading': 'CALIBRATED' if ok_read else 'NOT CALIBRATED'},
-        'spec': spec_part, 'reading': reading_part}
+        'word': dict({'spec': 'CALIBRATED' if ok_spec else 'NOT CALIBRATED', 'reading': 'CALIBRATED' if ok_read else 'NOT CALIBRATED'},
+                     **({'run': 'EVERY CERTAIN PREDICTION MET' if run_part['certainPredictions']['met'] == run_part['certainPredictions']['of']
+                                 and run_part['knownAnswers']['same'] == run_part['knownAnswers']['of'] and all(r['caught'] for r in run_part['reds'])
+                                 and (run_part['f2']['f2ImpliesF1'] or {}).get('holds', True) else 'A PREDICTION MISSED'} if run_part else {})),
+        'spec': spec_part, 'reading': reading_part, **({'run': run_part} if run_part else {})}
 
 
 def L_sha(p):
