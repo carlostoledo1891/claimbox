@@ -162,7 +162,8 @@ of every pre-registration error (#488's W08, the F2 expectations). claimbox now 
   skipped), comments dropped: #488's S0, byte for byte the hand spec's.
 - **The planted statements, by fixed rules** (claimbox/intake/lean.py): same — every bound name renamed, a binder predicate
   written out, `x ∉ S` as `¬ (x ∈ S)`, a `let` inlined: definitional, **ACCEPTED**; type — ℕ ↔ ℤ in a binder's type: **NOT
-  ACCEPTED** (another type; refused, or it does not elaborate); changed — a hypothesis dropped, `<` ↔ `≤` at one place, one
+  ACCEPTED** (another type; in the first format met by a refusal or by a statement that does not elaborate, in format 2
+  only by a refusal by type mismatch — see "The two formats" below); changed — a hypothesis dropped, `<` ↔ `≤` at one place, one
   numeral ±1: **kernel decides** (W08 showed such a change can be definitionally invisible); equivalent — two adjacent
   binders swapped: kernel decides. Nothing else is predicted.
 - **Rule sets** (2026-11-10): a spec records the version it was written with (`writer.rules`, absent for 1) and is written again
@@ -177,9 +178,41 @@ of every pre-registration error (#488's W08, the F2 expectations). claimbox now 
   dependency cone, which only Lean computes: not written by rule.
 - **F2's Lean** (the instance list, its type, the projections, the JSON) from the same declaration the reading enumerates.
 
-The spec is in the receiver's v1 shape; its new words (`kernel decides`, `NOT ACCEPTED`, kinds `changed`/`type`, `aligned`,
-`f2.reading`/`f2.table`, `componentMap: truth-table`) are named in its `vocabulary` and are cert-machine's to read first
-(PLAN.md §9). Until then a claimbox spec is a proposal there, not a pre-registration.
+The spec is in the receiver's shape. cert-machine owns the format and wrote it down on 2026-11-11: its
+`instruments/intake/SPEC.md` (the fields), `instruments/intake/spec.schema.json`, and `tools/check-intake-specs.js`, which
+holds a spec to both (`node $CERT_MACHINE/tools/check-intake-specs.js records/intake/<id>-spec.json`; the battery runs it in
+place). claimbox's words (`kernel decides`, `NOT ACCEPTED`, kinds `changed`/`type`, `aligned`, `f2.reading`/`f2.table`,
+`componentMap: truth-table`) are named in the spec's `vocabulary`; the receiver has read them since 2026-11-09 (L1).
+
+**The two formats (2026-11-11).** A target without `format` writes the first format, exactly as before: every recorded spec
+is written again byte for byte. A target with `"format": 2` writes the receiver's format 2:
+
+- `"format": 2` is the spec's first field, and `vocabulary` is the second version of claimbox's words. What changes is what
+  the words say, not the planted statements: **"NOT ACCEPTED" is met only by the outcome `REFUSED by type mismatch`**, a
+  refusal at the claimant's term. A planted statement that does not elaborate has the outcome **`DID NOT ELABORATE`**: it
+  never reached the check, so it is **not tested** — counted neither as a met prediction nor as a miss. (In the first
+  format such a statement met "NOT ACCEPTED": #488's N1 and N2 did, having tested nothing — the receiver's erratum of
+  2026-11-11.) The single-place retyping's `why` and the spec's `success` say the same.
+- The commits are the full 40 characters, and a target without `f2` says why (`f2NotApplicable`); the writer refuses a
+  target that lacks either (`format`), as the receiver's checker would refuse its spec.
+- **No directory of the machine.** `writer.by`, every `writer.*.path`, `f2.reading.path` and `f2.table.path` (and the
+  table's own words) name a file inside the repository relative to its root, and a file outside it by its name alone, its
+  sha256 beside it. A home-directory path anywhere in the spec (the target's own words included) is refused (`path`).
+
+**The identity-mode fields (the receiver's since 2026-11-10; either format).** A target may carry `canonical.selfContained`
+(true: the claimant's file declares the same names, so F1 reads a copy of the canonical file), `canonical.axioms` (names, or
+`{canonical, claim}` pairs: axioms the canonical file itself declares; the verdict is then conditional on them),
+`claim.module` (the claimant's file is a module of the canonical repository at the same commit), `intakeImports` (modules the
+generated meta-programs import first) and `f3.withClaim`. The writer copies each to the place SPEC.md gives it and changes
+nothing else — it does not port a self-contained file, it only says what the receiver should do. Refused (`identity`):
+`canonical.axioms` without `canonical.selfContained`; `claim.module` when the claimant's url or commit is not the
+canonical's; a field of the wrong type.
+
+**A table already recorded.** `f2.table` in a target names the reading's table another target of the same reading and
+instances wrote. It is not written again: everything in it but its first sentence is held to what the reading derives now
+(else refused, `f2`), and the spec names its bytes by sha256. `corpus/intake/erdos-488-r2/` is the first: the #488 target
+under rule set 2 and in format 2 (TODO L7), with erdos-488's pins and canonical file byte for byte, its blind reading and
+`records/intake/erdos-488-reading.json` — 29 planted statements, rule set 1's 28 and N3, every ℕ made ℤ at once.
 
 ## 8. The reading, F2's independent side (2026-11-09, lean/READING.md, `python3 -m claimbox intake read`)
 

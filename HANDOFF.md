@@ -23,6 +23,26 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**FORMAT 2, THE IDENTITY-MODE FIELDS, THE r2 TARGET (2026-11-11, branch `intake-format2-2026-11-11` from main fb6bd34 — committed
+locally, NOT PUSHED, not merged; done by an agent from a cert-machine session).** cert-machine wrote the intake spec's format
+down today (its instruments/intake/SPEC.md, spec.schema.json, tools/check-intake-specs.js) and added format 2: a planted
+statement that does not ELABORATE is not tested, never a met prediction; "NOT ACCEPTED" is met only by a refusal by type
+mismatch at the claimant's term. Built here (claimbox/intake/spec.py, lean.py; lean/INTAKE.md §7): (1) a target with `"format": 2`
+writes format 2 — the field first, the second vocabulary (it names DID NOT ELABORATE), full 40-character commits and an
+f2NotApplicable reason required; a target without the field writes what it wrote (the nine recorded specs byte for byte). (2)
+In format 2 no path names a directory of the machine: inside the repository relative to it, outside it the file's name alone;
+a home-directory path anywhere in the spec is refused. (3) The identity-mode fields pass through in either format
+(canonical.selfContained, canonical.axioms, claim.module, intakeImports, f3.withClaim), refused where the receiver's checker
+refuses. (4) TODO L7's target: corpus/intake/erdos-488-r2/ (rules 2, format 2; erdos-488's pins and canonical file byte for byte,
+its blind reading, and — by the new target field `f2.table` — its recorded table, not written again) and
+records/intake/erdos-488-r2-spec.json: 29 planted statements (rule set 1's 28, then N3: every ℕ made ℤ at once); the receiver's
+checker says OK, 1 in format 2. NOT RUN in Lean: the lift, the preflight, the pre-registration and the run are cert-machine's.
+The battery runs the receiver's checker in place (node; the three files are not pinned here — pinning them is a `make lift`,
+not done). cert-machine's files pinned in PROVENANCE.json were not changed by this work: `make drift` 20/20, platform 29/29,
+riemann 31/31. `make test` 673 pass, 0 fail, 201/201 reds. Reported to the receiver, not worked around: rule set 2's kind
+`answer` (the answer flipped) is not in the schema's kinds, so a target with `answer(…)` and rules 2 writes a spec the checker
+refuses, in either format; SPEC.md does not say where `reading.json` comes from when a spec reuses another target's table.
+
 **THE 11-10 NIGHT (main, pushed through 5da6acf).** RULE SET 2 (cb7dd1b): a target may ask `"rules": 2` — every ℕ of the
 statement made ℤ at once (L5; the single-place retyping did not elaborate on #488 nor on 3 of the batch's 4) and the answer
 flipped in `answer(True|False) ↔ P`, both NOT ACCEPTED; rule set 1 kept exactly, so every recorded spec is written again byte

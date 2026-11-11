@@ -31,9 +31,15 @@ labelled "may not elaborate". Checked by: a run where the retyped statements rea
 **L6. The person's reading of #488 (corpus/intake/erdos-488/erdos-488.person.reading, the operator's).** When written: `intake
 read` it, then compare its table with the blind model reading's (concord between two kinds of proposer, commitment 5).
 
-**L7. Rule set 2 on #488 (the operator's pick, 2026-11-10).** A target corpus/intake/erdos-488-r2/ (the #488 target with
-`"rules": 2`), its spec, lifted and pre-registered in cert-machine, run there (~45 min). Checked by: the consistent retyping
-elaborates and is refused by type mismatch; the answer flip is absent (#488 has no answer(…)); rule set 1's 28 outcomes the same.
+**L7. Rule set 2 on #488 (the operator's pick, 2026-11-10) — TARGET AND SPEC WRITTEN 2026-11-11 (branch
+`intake-format2-2026-11-11`, not pushed), in the receiver's format 2; THE RUN IS CERT-MACHINE'S.** corpus/intake/erdos-488-r2/
+(the #488 target with `"rules": 2` and `"format": 2`; erdos-488's pins and canonical file byte for byte, its blind reading and
+its recorded table, named by sha256 — nothing fetched, no new reading) and records/intake/erdos-488-r2-spec.json: 29 planted
+statements, rule set 1's 28 and N3 (every ℕ made ℤ at once); cert-machine's tools/check-intake-specs.js holds it (1 in format
+2). Next, there: the lift (the spec, and erdos-488-reading.json beside it as reading.json), its preflight (does N3 elaborate
+alone?), the pre-registration, the run (~45 min). Checked by: the consistent retyping (N3) elaborates and is refused by type
+mismatch; the answer flip is absent (#488 has no answer(…)); rule set 1's 28 outcomes the same — except that format 2 names
+N1 and N2 `DID NOT ELABORATE`, not tested (the first format recorded them `FAILED elsewhere` and counted them as met).
 
 **L4. The reading language grows only when a sentence needs it** (sums, products, primes, real intervals), each construct
 with its planted misreadings, measured on the targets of L3, never chased.
