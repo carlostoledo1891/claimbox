@@ -1633,7 +1633,7 @@ _s17, _ = IS.write(_t488, out_dir=os.path.relpath(_ix17, REPO))
 ok(open(os.path.join(_ix17, 'erdos-488-spec.json'), 'rb').read().replace(os.path.relpath(_ix17, REPO).encode(), b'records/intake') == _before[0]
    and open(os.path.join(_ix17, 'erdos-488-reading.json'), 'rb').read() == _before[1],
    'intake spec: written again from the target, its pins, the canonical bytes and the reading, byte for byte the recorded spec and table')
-_batch = sorted(d for d in os.listdir(os.path.join(REPO, 'corpus', 'intake')) if d not in ('erdos-488', 'erdos-488-r2') and os.path.isfile(os.path.join(REPO, 'corpus', 'intake', d, 'target.json')))
+_batch = sorted(d for d in os.listdir(os.path.join(REPO, 'corpus', 'intake')) if d not in ('erdos-488', 'erdos-488-r2') and not d.startswith('pg186-') and os.path.isfile(os.path.join(REPO, 'corpus', 'intake', d, 'target.json')))
 _same = []
 for _d in _batch:
     _bs, _ = IS.write('corpus/intake/' + _d + '/target.json', out_dir=os.path.relpath(_ix17, REPO))
@@ -1844,6 +1844,156 @@ red(_rc == 1 and 'canonical.axioms needs canonical.selfContained' in _out and 'c
 # a table already recorded: held to what the reading derives now, never taken on its name
 red(_variant(target=lambda o: o['f2']['instances'][1].update(values='0..4'), src='erdos-488-r2')[1] == 'f2', 'intake spec: refused — the recorded table named by the target is of other instances (n to 4, not 5)')
 red(_variant(target=lambda o: o['f2'].update(table='records/intake/erdos-488-no-such-reading.json'), src='erdos-488-r2')[1] == 'f2', 'intake spec: refused — the recorded table named by the target is not on disk')
+# the place of the planted statements (2026-11-11): an axiom's statement, the inside of a definition, F3's proof from the target, the planted
+# defects named as another target's — and the six specs of the prime-gap 186 statement layer written with them, measured against the 45
+# planted statements checked on 2026-11-10 (corpus/intake/pg186-2026-11-10.json; cert-machine's six records name those specs by sha256)
+_PG = IC.PG186
+_pgd = os.path.join(_ix17, 'pg', 'corpus', 'intake')
+def _pg(pid, target=None, pins=None):
+    """the six pg186 targets copied side by side (claimRedsOf reads the folder beside), one edited as JSON, written: (the spec, None) or (None, the rule)"""
+    shutil.rmtree(os.path.join(_ix17, 'pg'), ignore_errors=True)
+    for q in _PG:
+        shutil.copytree(os.path.join(REPO, 'corpus', 'intake', q), os.path.join(_pgd, q))
+    for name, fn in (('target.json', target), ('pins.json', pins)):
+        if fn:
+            o = json.load(open(os.path.join(_pgd, pid, name), encoding='utf-8'))
+            fn(o)
+            with open(os.path.join(_pgd, pid, name), 'w', encoding='utf-8') as f:
+                json.dump(o, f, indent=1, ensure_ascii=False)
+    try:
+        return IS.write(os.path.relpath(os.path.join(_pgd, pid, 'target.json'), REPO), out_dir=os.path.relpath(_ix17, REPO))[0], None
+    except (IL.Refused, IR.Refused) as e:
+        return None, e.rule
+_pgs, _pgsame = {}, []
+for _q in _PG:
+    _pgs[_q], _ = IS.write('corpus/intake/' + _q + '/target.json', out_dir=os.path.relpath(_ix17, REPO))
+    _pgsame.append(open(os.path.join(_ix17, _q + '-spec.json'), 'rb').read() == open(os.path.join(REPO, 'records', 'intake', _q + '-spec.json'), 'rb').read())
+_pgf = [os.path.join(REPO, 'corpus', 'intake', q, f) for q in _PG for f in ('canonical.lean', 'LICENSE-PrimeGaps186')]
+ok(all(_pgsame) and len({hashlib.sha256(open(f, 'rb').read()).hexdigest() for f in _pgf}) == 2 and b'Apache License' in open(_pgf[1], 'rb').read()
+   and all(_pgs[q]['canonical']['sha256'] == hashlib.sha256(open(_pgf[0], 'rb').read()).hexdigest() for q in _PG),
+   'intake spec, pg186: the six specs of the prime-gap 186 statement layer written again from their targets, byte for byte the recorded ones; one canonical file (OpenAI\'s Challenge.lean) and its Apache-2.0 licence beside each target',
+   ', '.join(str(len(_pgs[q]['mutants'])) for q in _PG))
+_rc, _out = _checker(*[os.path.join(REPO, 'records', 'intake', q + '-spec.json') for q in _PG])
+ok(_rc == 0 and '6 specs' in _out and '6 in format 2' in _out, 'intake spec, pg186: cert-machine\'s checker holds the six recorded specs to the written format, all six in format 2', _out[:120])
+_AX3 = ['PrimeGap186.kloosterman3_bound', 'PrimeGap186.kloosterman2_correlation_bound', 'PrimeGap186.physical_integral_bounds']
+ok(all(s['format'] == 2 and s['writer']['rules'] == 2 and s['canonical']['selfContained'] is True and s['claim']['module'] == 'PrimeGaps186' and s['intakeImports'] == ['Mathlib']
+       and s['amendments'] == [] and set(s) <= {'format', 'id', 'what', 'vocabulary', 'writer', 'polarity', 'claim', 'canonical', 'intakeImports', 'mutantNamespace', 'mutantOpen', 'f3',
+                                                'mutants', 'claimReds', 'kernels', 'f2NotApplicable', 'notInScope', 'success', 'amendments', 'predictions'} for s in _pgs.values())
+   and [_pgs[q]['canonical']['axioms'] for q in _PG] == [_AX3, _AX3, _AX3, _AX3[:1], _AX3[1:2], _AX3]
+   and [_pgs[q]['f3'].get('withClaim') for q in _PG] == [True, None, None, None, None, None]
+   and not any(w in json.dumps(_pgs, ensure_ascii=False) for w in ('/Users/', '/home/', '~/')) and not any('receiver' in s for s in _pgs.values()),
+   'intake spec, pg186: the identity-mode fields written by the writer alone, as the 2026-11-10 specs had them (selfContained, the axioms each rests on, claim.module, intakeImports, f3.withClaim on dhl); no field of a bridge script, no path of a machine')
+_csrc = open(_pgf[0], encoding='utf-8').read()
+_a1 = IL.declaration(_csrc, _AX3[0], ('axiom',))
+_a3 = IL.declaration(_csrc, _AX3[2], ('axiom',))
+_syn = 'namespace N\naxiom a (n : ℕ) :\n  0 ≤ n\n\n/-- doc -/\naxiom b : ∀ x : ℕ, x = x\n@[simp] theorem t : True := trivial\naxiom c : 1 = 1\n#print axioms t\naxiom d : (2 : ℕ) = 2\nend N\naxiom N.e : 3 = 3'
+ok(_a1['statement'] == '∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 p c‖ ≤ (3 : ℝ)' and _a1['header'].endswith('≤ (3 : ℝ)') and _a1['headerLines'] == [48, 50]
+   and _a3['statement'].endswith('≤ PrimeGap186.trialJLambdaH') and _a3['headerLines'][0] == 896
+   and [(IL.declaration(_syn, 'N.' + x, ('axiom',))['statement'], IL.declaration(_syn, 'N.' + x, ('axiom',))['binders']) for x in 'abcde']
+   == [('0 ≤ n', '(n : ℕ)'), ('∀ x : ℕ, x = x', ''), ('1 = 1', ''), ('(2 : ℕ) = 2', ''), ('3 = 3', '')],
+   'intake axiom: an axiom\'s type read as the statement, found by its full name — it ends at the next command (another axiom, `end`, a doc comment, an attribute, a #command) or the file\'s end, never at a `:=`')
+_x1 = _pgs['pg186-ax1']
+ok([(m['id'], m['rule'], m['expect']) for m in _x1['mutants']] == [('S0', 'verbatim', 'ACCEPTED'), ('S1', 'same:rename', 'ACCEPTED'), ('C01', 'changed:drop-hypothesis', 'kernel decides'),
+       ('C02', 'changed:strictness', 'kernel decides'), ('C03', 'changed:constant', 'kernel decides'), ('C04', 'changed:constant', 'kernel decides'), ('C05', 'changed:constant', 'kernel decides'), ('N1', 'type:nat-int', 'NOT ACCEPTED')]
+   and _x1['mutants'][0]['statement'] == _a1['statement'] and _x1['claimReds'] == [] and 'the claimant\'s declaration is an axiom' in _x1['notInScope'] and IS.reds({'text': _a1['header'], 'keyword': 'axiom', 'name': _a1['name']}) == []
+   and _x1['f3']['tactic'] == 'intro h\n  exact @h 2 inferInstance 1 (by first | decide | simp | norm_num)' and _x1['writer']['canonicalBytes']['statementLines'] == [48, 50]
+   and len(_pgs['pg186-ax2']['mutants']) == 16 and _pgs['pg186-ax2']['claimReds'] == [],
+   'intake spec, an axiom as the place (pg186-ax1, -ax2): the fixed rules plant in the axiom\'s statement as in a theorem\'s (8 and 16 statements); no defect of the claimant\'s file by rule — an axiom has no proof — and the spec says so; F3 generated through the instance binder')
+red(_pg('pg186-ax1', target=lambda o: o['canonical'].pop('keyword'))[1] == 'declaration', 'intake spec: refused — the canonical declaration is an axiom and the target does not say so (a theorem is looked for, none found)')
+red(_pg('pg186-dhl', target=lambda o: o['canonical'].update(keyword='axiom'))[1] == 'declaration', 'intake spec: refused — the target says axiom and the declaration is a theorem')
+red(_pg('pg186-ax1', target=lambda o: o['canonical'].update(keyword='def'))[1] == 'declaration', 'intake spec: refused — a keyword that is not "axiom" (def)')
+red(_pg('pg186-ax1', target=lambda o: o['claim'].pop('keyword'))[1] == 'pin', 'intake spec: refused — the pins read the claimant\'s declaration as an axiom and the target no longer says so')
+_ad = IL.definition(_csrc, 'PrimeGap186.admissibleTuple')
+_tx, _tp = _pgs['pg186-tuple-x'], _pgs['pg186-tuple']
+_nums = lambda st: [int(x) for x in re.findall(r'\d+', st[st.index('({'):st.index('} : Finset ℕ)')])]
+_u = _tx['mutants'][1]
+ok(_ad['type'] == 'Finset ℕ' and _ad['lines'] == [937, 940] and len(_nums('(' + ' '.join(_ad['body'].split()) + ' : Finset ℕ)')) == 40
+   and (_u['id'], _u['rule'], _u['kind'], _u['expect'], _u['certain']) == ('S1', 'same:unfold', 'same', 'ACCEPTED', True)
+   and _u['statement'] == _tx['mutants'][0]['statement'].replace('admissibleTuple.filter', '(' + ' '.join(_ad['body'].split()) + ' : Finset ℕ).filter') and 'admissibleTuple' not in _u['statement']
+   and _tx['mutants'][0] == _tp['mutants'][0],
+   'intake spec, a definition as the place (pg186-tuple-x, `inside`): admissibleTuple written out where the statement names it — its forty numbers under its type, `({0, 2, …, 186} : Finset ℕ).filter` — as same:unfold, ACCEPTED; S0 is pg186-tuple\'s')
+_in = _tx['mutants'][2:]
+ok(len(_in) == 79 and all(m['rule'] == 'changed:constant' and m['expect'] == 'kernel decides' and m['why'].startswith('inside the definition admissibleTuple, written out: the numeral ') for m in _in)
+   and all(sorted(abs(a - b) for a, b in zip(_nums(m['statement']), _nums(_u['statement'])) if a != b) == [1] and len(_nums(m['statement'])) == 40 for m in _in)
+   and len({m['statement'] for m in _in}) == 79 and not {m['statement'] for m in _tx['mutants']} & {m['statement'] for m in _tp['mutants'][1:]}
+   and [m['rule'] for m in _tp['mutants']] == ['verbatim', 'same:rename', 'changed:strictness', 'changed:constant', 'changed:constant'],
+   'intake spec, `inside`: the fixed rules applied to the definition\'s body alone — each of its forty numerals moved by one (79 statements: 0 has no predecessor), every one "kernel decides"; none of the statement\'s own top-level changes, which stay pg186-tuple\'s')
+ok(_tx['claimReds'] == [] and 'are those of pg186-tuple (the same declaration at the same pin)' in _tx['notInScope'] and [r['rule'] for r in _tp['claimReds']] == ['sorry', 'axiom'],
+   'intake spec, claimRedsOf: the planted defects of the claimant\'s declaration are named as pg186-tuple\'s, held to the same declaration at the same pin, and not planted a second time')
+_ins = lambda name: (lambda o: o.update(inside=name))
+red(_pg('pg186-tuple-x', target=_ins('PrimeGap186.normalizedKloosterman3'))[1] == 'inside', 'intake spec, `inside`: refused — a definition with binders before its colon is not a term to write out')
+red(_pg('pg186-tuple-x', target=_ins('PrimeGap186.primeGapLiminf'))[1] == 'inside', 'intake spec, `inside`: refused — the statement does not name that definition')
+red(_pg('pg186-tuple-x', target=_ins('PrimeGap186.noSuchTuple'))[1] == 'declaration', 'intake spec, `inside`: refused — no such definition in the canonical file')
+red(_pg('pg186-tuple-x', target=_ins(['PrimeGap186.admissibleTuple']))[1] == 'inside', 'intake spec, `inside`: refused — not the name of one definition')
+def _defn_refusal(text, name='c'):
+    try:
+        IL.definition(text, name)
+        return None
+    except IL.Refused as e:
+        return e.rule
+red(_defn_refusal('def c : ℕ := by\n  exact 5\n') == 'inside' and _defn_refusal('def c : ℕ → ℕ\n  | 0 => 1\n  | n + 1 => n\n') == 'inside' and _defn_refusal('def c := 5\n') == 'inside'
+    and _defn_refusal('def c : ℕ := 5\n') is None, 'intake `inside`: refused — a body by tactics, a definition by cases, a definition without its type (the constant `def c : ℕ := 5` is read)')
+try:
+    IL.uses('∀ admissibleTuple : ℕ, admissibleTuple = admissibleTuple', 'PrimeGap186.admissibleTuple', 'PrimeGap186')
+    red(False, 'intake `inside`: refused — the statement binds a variable of the definition\'s name')
+except IL.Refused as _e:
+    red(_e.rule == 'inside', 'intake `inside`: refused — the statement binds a variable of the definition\'s name')
+_ps2 = 'p ∧ ∀ x : ℕ, x < c.succ ∨ x = N.c'
+_pi = IL.planted_inside(_ps2, 'N.c', {'type': 'ℕ', 'body': '2 +\n   3'}, 'N')
+red([m['statement'] for m in _pi[:2]] == ['p ∧ ∀ x : ℕ, x < (2 + 3 : ℕ).succ ∨ x = (2 + 3 : ℕ)', 'p ∧ ∀ x : ℕ, x < (3 + 3 : ℕ).succ ∨ x = (3 + 3 : ℕ)']
+    and [m['rule'] for m in _pi] == ['same:unfold'] + ['changed:constant'] * 4 and all('<' in m['statement'] and 'x : ℕ' in m['statement'] for m in _pi)
+    and not any(m['kind'] in ('type', 'answer') for m in IL.planted_inside('P (N.c)', 'N.c', {'type': 'Prop', 'body': '∀ (n : ℕ) (m : ℕ), answer(True) ↔ n = m'}, 'N', None, 2)),
+    'intake `inside`: both uses written out (in full and as spelled inside the namespace, a field kept), the rules never touch the statement around the body (its < and its ℕ stay), and no retyping or flipped answer is written inside a definition')
+_dh = _pgs['pg186-dhl']
+_dt = json.load(open(os.path.join(REPO, 'corpus', 'intake', 'pg186-dhl', 'target.json'), encoding='utf-8'))
+ok(_dh['f3']['tactic'] == _dt['f3']['tactic'] and _dh['f3']['tactic'].startswith('intro h\n  refine h (_root_.PrimeGap186.admissibleTuple.map') and 'the tactic is the target\'s, not generated' in _dh['f3']['expect']
+   and _dh['f3']['what'].endswith('H = (PrimeGap186.admissibleTuple.map ⟨((↑) : ℕ → ℤ), Nat.cast_injective⟩)') and _dh['f3']['withClaim'] is True
+   and 'the tactic is generated' in _pgs['pg186-tuple']['f3']['expect'] and 'the tactic is generated' in _s17['f3']['expect'],
+   'intake spec, f3.tactic (pg186-dhl): F3\'s proof is the target\'s where no decision procedure proves the hypothesis (admissibility for every prime); the witness value is still the target\'s and the spec says the tactic is not generated')
+_f3 = lambda **kw: (lambda o: o['f3'].update(**kw))
+red(_pg('pg186-dhl', target=_f3(tactic=_dt['f3']['tactic'] + '\n  sorry'))[1] == 'f3', 'intake spec, f3.tactic: refused — a proof that carries sorry')
+red(_pg('pg186-dhl', target=_f3(tactic='intro h\nexact h'))[1] == 'f3', 'intake spec, f3.tactic: refused — a later line not indented under `by`')
+red(_pg('pg186-dhl', target=_f3(tactic=''))[1] == 'f3', 'intake spec, f3.tactic: refused — an empty proof')
+red(_pg('pg186-dhl', target=_f3(values=[]))[1] == 'f3', 'intake spec, f3.tactic: refused — the witness values are still held to the statement\'s binders (none given for H)')
+_ro = lambda v: (lambda o: o.update(claimRedsOf=v))
+red(_pg('pg186-tuple-x', target=_ro('pg186-dhl'))[1] == 'reds', 'intake spec, claimRedsOf: refused — the named target is of another declaration')
+red(_pg('pg186-tuple-x', target=_ro('pg186-none'))[1] == 'reds', 'intake spec, claimRedsOf: refused — no such target beside this one')
+red(_pg('pg186-tuple-x', target=_ro('pg186-tuple-x'))[1] == 'reds', 'intake spec, claimRedsOf: refused — a target naming itself')
+red(_pg('pg186-ax1', target=_ro('pg186-ax2'))[1] == 'reds', 'intake spec, claimRedsOf: refused — the named target plants no defect of its own (an axiom)')
+_cp = subprocess.run([sys.executable, '-m', 'claimbox', 'intake', 'calibrate', 'pg186', '--check'], capture_output=True, text=True, cwd=REPO)
+_pc = json.load(open(os.path.join(REPO, 'records', 'intake', 'pg186-calibration.json'), encoding='utf-8'))
+_pt = _pc['totals']
+ok(_cp.returncode == 0 and _pt == {'recorded': 45, 'exactly': 31, 'upToBoundNames': 1, 'notWritten': 13, 'new': 94, 'byHand': 24, 'byHandWritten': 11, 'writtenAlone': 32}
+   and [_pc['declarations'][q]['recordedWrittenAgain']['not'] for q in _PG] == [0, 0, 0, 2, 6, 5] and [len(_pc['declarations'][q]['new']) for q in _PG] == [0, 0, 0, 2, 13, 79],
+   'intake calibrate pg186 --check: of the 45 planted statements checked on 2026-11-10 the writer writes 32 alone (31 exactly, 1 up to bound names) and 13 not, each with its reason; of the 24 written by hand then, 11; 94 statements are new',
+   _cp.stdout.strip().split('\n')[-1][:160])
+_pref = json.load(open(os.path.join(REPO, IC.PG186_REF), encoding='utf-8'))['declarations']
+ok(all([(m['id'], m['kind'], m['rule'], m['statement'], m['expect']) for m in _pgs[q]['mutants']] == [(m['id'], m['kind'], m['rule'], m['statement'], m['expect']) for m in _pref[q]['mutants']]
+       and [(r['id'], r['rule']) for r in _pgs[q]['claimReds']] == [(r['id'], r['rule']) for r in _pref[q]['claimReds']] and _pgs[q]['f3']['tactic'] == _pref[q]['f3']['tactic'] for q in _PG[:3])
+   and [_pc['declarations'][q]['didNotReachTheCheckThen'] for q in _PG] == [['N1', 'N2'], [], [], ['N1'], ['N1'], []],
+   'intake spec, pg186: the three specs claimbox wrote on 2026-11-10 (dhl, tuple, liminf) are written again statement for statement — the same ids, kinds, rules, texts and predictions, the same defects and F3 proof; the retypings that did not reach the check then (dhl N1 and N2, ax1 N1, ax2 N1) are written as they were')
+_gaps = dict(IC.PG186_GAPS)
+try:
+    del IC.PG186_GAPS[('pg186-ax2', 'W6')]
+    IC.pg186()
+    red(False, 'intake calibrate pg186: refused — a recorded statement that is not written and has no reason on file')
+except IL.Refused as _e:
+    red(_e.rule == 'calibrate', 'intake calibrate pg186: refused — a recorded statement that is not written and has no reason on file')
+IC.PG186_GAPS.update(_gaps)
+_refp, _refo = IC.PG186_REF, json.load(open(os.path.join(REPO, IC.PG186_REF), encoding='utf-8'))
+_w2 = next(m for m in _refo['declarations']['pg186-ax1']['mutants'] if m['id'] == 'W2')
+_w2['statement'] = _w2['statement'].replace('≤ (2 : ℝ)', '≤ (1 : ℝ)')
+with open(os.path.join(_ix17, 'pg186-moved.json'), 'w', encoding='utf-8') as _f:
+    json.dump(_refo, _f, indent=1, ensure_ascii=False)
+try:
+    IC.PG186_REF = os.path.join(_ix17, 'pg186-moved.json')
+    try:
+        _mv = IC.pg186()['totals']
+    except IL.Refused as _e:
+        _mv = _e.rule
+finally:
+    IC.PG186_REF = _refp
+red(_mv == 'calibrate', 'intake calibrate pg186: a recorded statement moved in the reference (ax1\'s bound 2 made 1) is no longer "written again" — and, having no reason on file, is refused, never counted', str(_mv))
 shutil.rmtree(_ix17)
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')

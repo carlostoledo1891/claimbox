@@ -1,0 +1,38 @@
+{
+ "id": "pg186-tuple",
+ "what": "OpenAI's Lean proof (GPT-6 Astra in Codex; openai/PrimeGaps186 at 61340d0b), conditional on three declared axioms, against the statement file of the same release, Challenge.lean: infinitely many two-prime translates of the explicit 40-tuple. The statement layer of the prime-gap 186 audit: checked on 2026-11-10 from a spec that was written by claimbox and completed by a bridge script (the identity-mode fields) (cert-machine's record corpus/prime-gaps-186/intake/lean-intake-pg186-tuple.json); this target asks for the same check with every planted statement written by claimbox's fixed rules, in the receiver's format 2.",
+ "format": 2,
+ "rules": 2,
+ "polarity": "proves",
+ "claim": {
+  "what": "OpenAI's Lean proof (GPT-6 Astra in Codex; openai/PrimeGaps186 at 61340d0b), conditional on three declared axioms",
+  "url": "https://github.com/openai/PrimeGaps186.git",
+  "commit": "61340d0b74163003b32756bb16e91d9209a5e330",
+  "file": "PrimeGaps186.lean",
+  "module": "PrimeGaps186",
+  "decl": "PrimeGap186.infinite_two_prime_translates_admissibleTuple",
+  "license": "Apache-2.0 (the repository's); no byte of the file is kept in the spec but its declaration's header; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "the release's own statement file, Challenge.lean: infinitely many two-prime translates of the explicit 40-tuple",
+  "url": "https://github.com/openai/PrimeGaps186.git",
+  "commit": "61340d0b74163003b32756bb16e91d9209a5e330",
+  "path": "Challenge.lean",
+  "decl": "PrimeGap186.infinite_two_prime_translates_admissibleTuple",
+  "selfContained": true,
+  "axioms": [
+   "PrimeGap186.kloosterman3_bound",
+   "PrimeGap186.kloosterman2_correlation_bound",
+   "PrimeGap186.physical_integral_bounds"
+  ]
+ },
+ "intakeImports": [
+  "Mathlib"
+ ],
+ "types": {},
+ "f3": {
+  "values": [],
+  "why": "the statement has no hypotheses"
+ },
+ "f2NotApplicable": "a closed statement about an infinite set of n: no instance binder to evaluate"
+}

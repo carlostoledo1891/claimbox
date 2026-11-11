@@ -1,0 +1,42 @@
+{
+ "id": "pg186-dhl",
+ "what": "OpenAI's Lean proof (GPT-6 Astra in Codex; openai/PrimeGaps186 at 61340d0b), conditional on three declared axioms, against the statement file of the same release, Challenge.lean: DHL[40,2] for every admissible integer 40-tuple (Theorem 1.1). The statement layer of the prime-gap 186 audit: checked on 2026-11-10 from a spec that was written by claimbox and completed by a bridge script (the identity-mode fields, and for this declaration F3's proof) (cert-machine's record corpus/prime-gaps-186/intake/lean-intake-pg186-dhl.json); this target asks for the same check with every planted statement written by claimbox's fixed rules, in the receiver's format 2.",
+ "format": 2,
+ "rules": 2,
+ "polarity": "proves",
+ "claim": {
+  "what": "OpenAI's Lean proof (GPT-6 Astra in Codex; openai/PrimeGaps186 at 61340d0b), conditional on three declared axioms",
+  "url": "https://github.com/openai/PrimeGaps186.git",
+  "commit": "61340d0b74163003b32756bb16e91d9209a5e330",
+  "file": "PrimeGaps186.lean",
+  "module": "PrimeGaps186",
+  "decl": "PrimeGap186.dhl_40_2",
+  "license": "Apache-2.0 (the repository's); no byte of the file is kept in the spec but its declaration's header; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "the release's own statement file, Challenge.lean: DHL[40,2] for every admissible integer 40-tuple (Theorem 1.1)",
+  "url": "https://github.com/openai/PrimeGaps186.git",
+  "commit": "61340d0b74163003b32756bb16e91d9209a5e330",
+  "path": "Challenge.lean",
+  "decl": "PrimeGap186.dhl_40_2",
+  "selfContained": true,
+  "axioms": [
+   "PrimeGap186.kloosterman3_bound",
+   "PrimeGap186.kloosterman2_correlation_bound",
+   "PrimeGap186.physical_integral_bounds"
+  ]
+ },
+ "intakeImports": [
+  "Mathlib"
+ ],
+ "types": {},
+ "f3": {
+  "values": [
+   "(PrimeGap186.admissibleTuple.map ⟨((↑) : ℕ → ℤ), Nat.cast_injective⟩)"
+  ],
+  "why": "a model of the hypotheses proposed from the statement: the release's own 40-tuple, cast to the integers. The generated proof discharges each hypothesis by `first | decide | simp | norm_num`, which cannot prove admissibility for every prime; the tactic below proves it from the claimant's own lemma admissibleTuple_admissible (hence withClaim). It is the proof the 2026-11-10 run certified.",
+  "withClaim": true,
+  "tactic": "intro h\n  refine h (_root_.PrimeGap186.admissibleTuple.map ⟨((↑) : ℕ → ℤ), Nat.cast_injective⟩)\n    (by rw [Finset.card_map]; exact _root_.PrimeGap186.admissibleTuple_card) ?_\n  intro p hp\n  haveI : NeZero p := ⟨hp.ne_zero⟩\n  obtain ⟨a, ha, hnot⟩ := _root_.PrimeGap186.admissibleTuple_admissible p hp\n  refine ⟨(a : ZMod p), ?_⟩\n  intro z hz heq\n  obtain ⟨n, hn, rfl⟩ := Finset.mem_map.mp hz\n  apply hnot\n  refine Finset.mem_image.mpr ⟨n, hn, ?_⟩\n  have h2 : (n : ZMod p) = (a : ZMod p) := by simpa using heq\n  have h3 := (ZMod.natCast_eq_natCast_iff' n a p).mp h2\n  rwa [Nat.mod_eq_of_lt (Finset.mem_range.mp ha)] at h3"
+ },
+ "f2NotApplicable": "a statement about every admissible 40-set of integers and infinitely many translates: no finite instance decides its conclusion"
+}

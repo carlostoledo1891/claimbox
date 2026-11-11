@@ -1,0 +1,504 @@
+{
+ "what": "The 45 planted statements of the prime-gap 186 statement layer as they were checked on 2026-11-10 (cert-machine's six records, corpus/prime-gaps-186/intake/; the audit's page https://carlostoledo.co/reports/prime-gaps-186.html, its note doi:10.5281/zenodo.24122214). Each record names its spec by sha256 and gives every planted statement's outcome, not its text; the texts are copied here from those six specs, which stayed in the audit's working folder. Three specs were written by claimbox and completed by a bridge script (the identity-mode fields; for dhl, F3's proof); three were written by hand, because the writer could not plant inside an axiom or a definition. The reference the writer is measured against (python3 -m claimbox intake calibrate pg186): which of these statements it now writes alone. Statements of OpenAI's Challenge.lean, Apache-2.0 (LICENSE-PrimeGaps186 in each target's folder).",
+ "declarations": {
+  "pg186-dhl": {
+   "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-dhl.json",
+   "specSha256": "17b8d76e87719679d806253261fd2651a3943c27e50920dd24dfc97fa995cbeb",
+   "verdict": "CERTIFIED",
+   "writtenBy": "claimbox, completed by a bridge script",
+   "f3": {
+    "tactic": "intro h\n  refine h (_root_.PrimeGap186.admissibleTuple.map ⟨((↑) : ℕ → ℤ), Nat.cast_injective⟩)\n    (by rw [Finset.card_map]; exact _root_.PrimeGap186.admissibleTuple_card) ?_\n  intro p hp\n  haveI : NeZero p := ⟨hp.ne_zero⟩\n  obtain ⟨a, ha, hnot⟩ := _root_.PrimeGap186.admissibleTuple_admissible p hp\n  refine ⟨(a : ZMod p), ?_⟩\n  intro z hz heq\n  obtain ⟨n, hn, rfl⟩ := Finset.mem_map.mp hz\n  apply hnot\n  refine Finset.mem_image.mpr ⟨n, hn, ?_⟩\n  have h2 : (n : ZMod p) = (a : ZMod p) := by simpa using heq\n  have h3 := (ZMod.natCast_eq_natCast_iff' n a p).mp h2\n  rwa [Nat.mod_eq_of_lt (Finset.mem_range.mp ha)] at h3",
+    "word": "CERTIFIED"
+   },
+   "claimReds": [
+    {
+     "id": "R1",
+     "rule": "sorry",
+     "caught": true
+    },
+    {
+     "id": "R2",
+     "rule": "axiom",
+     "caught": true
+    }
+   ],
+   "mutants": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "why": "the canonical statement copied verbatim (comments dropped): the baseline",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 40)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "same:rename",
+     "why": "every bound variable renamed (H→H₀, a→a₀, h→h₀, hadm→hadm₀, hcard→hcard₀, n→n₀, p→p₀): alpha-equivalent",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "∀ (H₀ : Finset ℤ) (hcard₀ : H₀.card = 40)\n    (hadm₀ : ∀ p₀ : ℕ, p₀.Prime → ∃ a₀ : ZMod p₀, ∀ h₀ ∈ H₀, (h₀ : ZMod p₀) ≠ a₀),\n    Set.Infinite {n₀ : ℤ | 2 ≤ (H₀.filter (fun h₀ => (n₀ + h₀).toNat.Prime)).card}"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:drop-hypothesis",
+     "why": "the hypothesis `(hcard : H.card = 40)` dropped",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:drop-hypothesis",
+     "why": "the hypothesis `(hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a)` dropped",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 40)\n    ,\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "why": "`≤` made `<` (`| 2 ≤ ( H.filter` → `| 2 < ( H.filter`, line 3)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 40)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 < (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 40 made 41 (`H.card = 40 )` → `H.card = 41 )`, line 1)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 41)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "C05",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 40 made 39 (`H.card = 40 )` → `H.card = 39 )`, line 1)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 39)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "C06",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 2 made 3 (`ℤ | 2 ≤` → `ℤ | 3 ≤`, line 3)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 40)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 3 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "C07",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 2 made 1 (`ℤ | 2 ≤` → `ℤ | 1 ≤`, line 3)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 40)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 1 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "N1",
+     "kind": "type",
+     "rule": "type:nat-int",
+     "why": "`ℤ` made `ℕ` in the type of H: another type, never definitionally equal (refused, or the statement does not elaborate)",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "statement": "∀ (H : Finset ℕ) (hcard : H.card = 40)\n    (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "N2",
+     "kind": "type",
+     "rule": "type:nat-int",
+     "why": "`ℕ` made `ℤ` in the type of hadm: another type, never definitionally equal (refused, or the statement does not elaborate)",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "statement": "∀ (H : Finset ℤ) (hcard : H.card = 40)\n    (hadm : ∀ p : ℤ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    },
+    {
+     "id": "Q1",
+     "kind": "equivalent",
+     "rule": "equivalent:swap-binders",
+     "why": "the binders hcard and hadm swapped: the same logically",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (H : Finset ℤ) (hadm : ∀ p : ℕ, p.Prime → ∃ a : ZMod p, ∀ h ∈ H, (h : ZMod p) ≠ a)\n    (hcard : H.card = 40),\n    Set.Infinite {n : ℤ | 2 ≤ (H.filter (fun h => (n + h).toNat.Prime)).card}"
+    }
+   ]
+  },
+  "pg186-tuple": {
+   "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-tuple.json",
+   "specSha256": "7d6bb28ceca6295972684833e9368a57b8d2012ec509d89e253a114bf0675994",
+   "verdict": "CERTIFIED",
+   "writtenBy": "claimbox, completed by a bridge script",
+   "f3": {
+    "tactic": "intro h\n  exact h",
+    "word": "CERTIFIED"
+   },
+   "claimReds": [
+    {
+     "id": "R1",
+     "rule": "sorry",
+     "caught": true
+    },
+    {
+     "id": "R2",
+     "rule": "axiom",
+     "caught": true
+    }
+   ],
+   "mutants": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "why": "the canonical statement copied verbatim (comments dropped): the baseline",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (admissibleTuple.filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "same:rename",
+     "why": "every bound variable renamed (h→h₀, n→n₀): alpha-equivalent",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "Set.Infinite {n₀ : ℕ |\n      2 ≤ (admissibleTuple.filter (fun h₀ => (n₀ + h₀).Prime)).card}"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "why": "`≤` made `<` (`| 2 ≤ ( admissibleTuple.filter` → `| 2 < ( admissibleTuple.filter`, line 2)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "Set.Infinite {n : ℕ |\n      2 < (admissibleTuple.filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 2 made 3 (`ℕ | 2 ≤` → `ℕ | 3 ≤`, line 2)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "Set.Infinite {n : ℕ |\n      3 ≤ (admissibleTuple.filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 2 made 1 (`ℕ | 2 ≤` → `ℕ | 1 ≤`, line 2)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "Set.Infinite {n : ℕ |\n      1 ≤ (admissibleTuple.filter (fun h => (n + h).Prime)).card}"
+    }
+   ]
+  },
+  "pg186-liminf": {
+   "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-liminf.json",
+   "specSha256": "f0316a2a35dae583912aeadf681b2dd33f5a2dd8b7cccbf206aea3da28a42c9d",
+   "verdict": "CERTIFIED",
+   "writtenBy": "claimbox, completed by a bridge script",
+   "f3": {
+    "tactic": "intro h\n  exact h",
+    "word": "CERTIFIED"
+   },
+   "claimReds": [
+    {
+     "id": "R1",
+     "rule": "sorry",
+     "caught": true
+    },
+    {
+     "id": "R2",
+     "rule": "axiom",
+     "caught": true
+    }
+   ],
+   "mutants": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "why": "the canonical statement copied verbatim (comments dropped): the baseline",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "primeGapLiminf ≤ (186 : EReal)"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "why": "`≤` made `<` (`primeGapLiminf ≤ ( 186` → `primeGapLiminf < ( 186`, line 1)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "primeGapLiminf < (186 : EReal)"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 186 made 187 (`≤ ( 186 : EReal` → `≤ ( 187 : EReal`, line 1)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "primeGapLiminf ≤ (187 : EReal)"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "why": "the numeral 186 made 185 (`≤ ( 186 : EReal` → `≤ ( 185 : EReal`, line 1)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "primeGapLiminf ≤ (185 : EReal)"
+    }
+   ]
+  },
+  "pg186-ax1": {
+   "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-ax1.json",
+   "specSha256": "9c6e25fc0eb097a4426acb695113443cb5ab5f2d7fd3d94835d6e9f4c4496219",
+   "verdict": "CERTIFIED",
+   "writtenBy": "hand",
+   "f3": {
+    "tactic": "intro h\n  exact h 2 1 (by decide)",
+    "word": "CERTIFIED"
+   },
+   "claimReds": [],
+   "mutants": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "why": "the axiom's statement copied verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 p c‖ ≤ (3 : ℝ)"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "why": "bound variables renamed (p→q, c→d)",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "∀ (q : ℕ) [Fact q.Prime] (d : ZMod q),\n    d ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 q d‖ ≤ (3 : ℝ)"
+    },
+    {
+     "id": "W1",
+     "kind": "wrong",
+     "why": "phase A's R1: the 1/p normalization undone (the raw sum bounded by 3)",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖(p : ℂ) * PrimeGap186.normalizedKloosterman3 p c‖ ≤ (3 : ℝ)"
+    },
+    {
+     "id": "W2",
+     "kind": "wrong",
+     "why": "phase A's R3: the constant 3 made 2",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 p c‖ ≤ (2 : ℝ)"
+    },
+    {
+     "id": "W3",
+     "kind": "wrong",
+     "why": "the hypothesis c ≠ 0 dropped",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    ‖PrimeGap186.normalizedKloosterman3 p c‖ ≤ (3 : ℝ)"
+    },
+    {
+     "id": "W4",
+     "kind": "wrong",
+     "why": "≤ made <",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 p c‖ < (3 : ℝ)"
+    },
+    {
+     "id": "W5",
+     "kind": "wrong",
+     "why": "the bound made 3 * p",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 p c‖ ≤ (3 : ℝ) * p"
+    },
+    {
+     "id": "N1",
+     "kind": "wrong",
+     "why": "ℕ made ℤ in the type of p: another type (refused, or the statement does not elaborate)",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "statement": "∀ (p : ℤ) [Fact p.Prime] (c : ZMod p),\n    c ≠ 0 → ‖PrimeGap186.normalizedKloosterman3 p c‖ ≤ (3 : ℝ)"
+    }
+   ]
+  },
+  "pg186-ax2": {
+   "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-ax2.json",
+   "specSha256": "3afce705079a20c7d8f4c6562651baa905d6ca8845beab530a0ba539ffe835d7",
+   "verdict": "CERTIFIED",
+   "writtenBy": "hand",
+   "f3": {
+    "tactic": "intro h\n  exact h 3 1 1 (by decide) (by decide)",
+    "word": "CERTIFIED"
+   },
+   "claimReds": [],
+   "mutants": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "why": "the axiom's statement copied verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "why": "the bound variable t renamed s",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ s : ZMod p, if s ≠ 0 ∧ s ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / s) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (s + 1)) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "W1",
+     "kind": "wrong",
+     "why": "phase A's R2: 8√p for 8p√p",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        8 * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "W2",
+     "kind": "wrong",
+     "why": "phase A's R4: the constant 8 made 4",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        4 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "W3",
+     "kind": "wrong",
+     "why": "the pole t = -1 not excluded",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "W4",
+     "kind": "wrong",
+     "why": "the shift dropped: B / t for B / (t + 1)",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / t) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "W5",
+     "kind": "wrong",
+     "why": "the hypothesis A ≠ 0 dropped",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "W6",
+     "kind": "wrong",
+     "why": "the two sums added, not multiplied",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "∀ (p : ℕ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) +\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    },
+    {
+     "id": "N1",
+     "kind": "wrong",
+     "why": "ℕ made ℤ in the type of p: another type (refused, or the statement does not elaborate)",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "statement": "∀ (p : ℤ) [Fact p.Prime] (A B : ZMod p),\n    A ≠ 0 → B ≠ 0 →\n      ‖∑ t : ZMod p, if t ≠ 0 ∧ t ≠ -1 then\n        PrimeGap186.unnormalizedKloosterman2 p (A / t) *\n          PrimeGap186.unnormalizedKloosterman2 p (B / (t + 1)) else 0‖ ≤\n        8 * (p : ℝ) * Real.sqrt (p : ℝ)"
+    }
+   ]
+  },
+  "pg186-tuple-x": {
+   "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-tuple-x.json",
+   "specSha256": "07549f321bbbfb0c04d6a9fdb1d0200a83e28011d45d6302605a518e9c4cb8d1",
+   "verdict": "CERTIFIED",
+   "writtenBy": "hand",
+   "f3": {
+    "tactic": "intro h\n  exact h",
+    "word": "CERTIFIED"
+   },
+   "claimReds": [],
+   "mutants": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "why": "the canonical statement copied verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (admissibleTuple.filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "hand:tuple",
+     "why": "the definition written out: the forty numbers of Challenge.lean, in its order",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (({0, 2, 6, 12, 20, 26, 30, 32, 36, 42, 48, 50, 56, 60, 68, 72, 78, 86, 90, 92, 98, 102, 110, 116, 120, 126, 132, 138, 140, 146, 152, 156, 158, 162, 168, 170, 176, 180, 182, 186} : Finset ℕ).filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "why": "the last number 186 made 188 (the diameter)",
+     "expect": "kernel decides",
+     "outcome": "FAILED elsewhere",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (({0, 2, 6, 12, 20, 26, 30, 32, 36, 42, 48, 50, 56, 60, 68, 72, 78, 86, 90, 92, 98, 102, 110, 116, 120, 126, 132, 138, 140, 146, 152, 156, 158, 162, 168, 170, 176, 180, 182, 188} : Finset ℕ).filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "why": "the second number 2 made 4",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (({0, 4, 6, 12, 20, 26, 30, 32, 36, 42, 48, 50, 56, 60, 68, 72, 78, 86, 90, 92, 98, 102, 110, 116, 120, 126, 132, 138, 140, 146, 152, 156, 158, 162, 168, 170, 176, 180, 182, 186} : Finset ℕ).filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "why": "the number 98 made 96 (the middle)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (({0, 2, 6, 12, 20, 26, 30, 32, 36, 42, 48, 50, 56, 60, 68, 72, 78, 86, 90, 92, 96, 102, 110, 116, 120, 126, 132, 138, 140, 146, 152, 156, 158, 162, 168, 170, 176, 180, 182, 186} : Finset ℕ).filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "why": "the last number dropped (39 numbers)",
+     "expect": "kernel decides",
+     "outcome": "FAILED elsewhere",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (({0, 2, 6, 12, 20, 26, 30, 32, 36, 42, 48, 50, 56, 60, 68, 72, 78, 86, 90, 92, 98, 102, 110, 116, 120, 126, 132, 138, 140, 146, 152, 156, 158, 162, 168, 170, 176, 180, 182} : Finset ℕ).filter (fun h => (n + h).Prime)).card}"
+    },
+    {
+     "id": "C05",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "why": "the first two numbers swapped (the same set, another term)",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "statement": "Set.Infinite {n : ℕ |\n      2 ≤ (({2, 0, 6, 12, 20, 26, 30, 32, 36, 42, 48, 50, 56, 60, 68, 72, 78, 86, 90, 92, 98, 102, 110, 116, 120, 126, 132, 138, 140, 146, 152, 156, 158, 162, 168, 170, 176, 180, 182, 186} : Finset ℕ).filter (fun h => (n + h).Prime)).card}"
+    }
+   ]
+  }
+ }
+}

@@ -333,3 +333,87 @@ def run():
 def L_sha(p):
     import hashlib
     return hashlib.sha256(open(p, 'rb').read()).hexdigest()
+
+
+# ---- the prime-gap 186 statement layer: the writer against the 45 planted statements checked on 2026-11-10 -----------
+PG186 = ('pg186-dhl', 'pg186-tuple', 'pg186-liminf', 'pg186-ax1', 'pg186-ax2', 'pg186-tuple-x')
+PG186_REF = 'corpus/intake/pg186-2026-11-10.json'
+# why no fixed rule writes a statement of 2026-11-10: each was a choice of the person who wrote it
+PG186_GAPS = {
+    ('pg186-ax1', 'W1'): 'a factor written in front of the bounded term, (p : ℂ) * …: no fixed rule inserts a term',
+    ('pg186-ax1', 'W5'): 'a factor written after the bound, … * p: no fixed rule inserts a term',
+    ('pg186-ax2', 'S1'): 'the variable bound by ∑ renamed: the rename of rule sets 1 and 2 reads the binders of ∀, ∃, fun, a set-builder and let, not of ∑ — it renames p, A and B here and '
+                         'leaves t. Reading ∑ would write the recorded giuga-weak and giuga-strong specs differently, so it needs a rule set of its own',
+    ('pg186-ax2', 'W1'): 'a factor removed from the bound, 8 * p * √p made 8 * √p: no fixed rule removes a term',
+    ('pg186-ax2', 'W2'): 'the numeral 8 made 4: the constant rule moves a numeral by one (8 made 9 and 8 made 7 are written)',
+    ('pg186-ax2', 'W3'): 'a conjunct of the summand\'s condition dropped (t ≠ -1): the drop rule drops a hypothesis of the statement, never a conjunct inside a term',
+    ('pg186-ax2', 'W4'): 'a subterm replaced, B / (t + 1) made B / t: no fixed rule (the constant rule writes t + 2 and t + 0)',
+    ('pg186-ax2', 'W6'): 'an operation changed, * made +: no fixed rule changes an arithmetic operation',
+    ('pg186-tuple-x', 'C01'): 'the numeral 186 made 188: the constant rule moves a numeral by one (186 made 187 and 186 made 185 are written)',
+    ('pg186-tuple-x', 'C02'): 'the numeral 2 made 4: the constant rule moves a numeral by one (2 made 3 and 2 made 1 are written)',
+    ('pg186-tuple-x', 'C03'): 'the numeral 98 made 96: the constant rule moves a numeral by one (98 made 99 and 98 made 97 are written)',
+    ('pg186-tuple-x', 'C04'): 'an element of the set dropped: no fixed rule drops an element of a literal',
+    ('pg186-tuple-x', 'C05'): 'two elements of the set swapped: the swap rule swaps two adjacent binders, never two elements of a literal',
+}
+
+
+def pg186():
+    """claimbox's six specs of the prime-gap 186 statement layer (records/intake/pg186-<id>-spec.json, written by the
+    fixed rules alone) against the 45 planted statements checked on 2026-11-10 (PG186_REF: their texts, and the outcome
+    cert-machine recorded for each). For each recorded statement: written again exactly, up to the names of bound
+    variables, or not written — with the reason; for each written statement that is a recorded one, the recorded outcome
+    a new run can be compared with. Nothing here runs Lean or reads cert-machine; nothing here is a verdict."""
+    ref = json.load(open(os.path.join(REPO, PG186_REF), encoding='utf-8'))
+    out, tot = {}, {'recorded': 0, 'exactly': 0, 'upToBoundNames': 0, 'notWritten': 0, 'new': 0, 'byHand': 0, 'byHandWritten': 0}
+    for did in PG186:
+        old = ref['declarations'][did]
+        sp = os.path.join('records', 'intake', did + '-spec.json')
+        new = json.load(open(os.path.join(REPO, sp), encoding='utf-8'))
+        pair, used = {}, set()
+        for how, key in (('exactly', lambda m: m['statement']), ('upToBoundNames', lambda m: L.alpha(m['statement']))):
+            for m in old['mutants']:
+                if m['id'] in pair:
+                    continue
+                hit = next((n for n in new['mutants'] if n['id'] not in used and key(n) == key(m)), None)
+                if hit:
+                    pair[m['id']] = (how, hit)
+                    used.add(hit['id'])
+        rows, hand = [], old['writtenBy'] == 'hand'
+        for m in old['mutants']:
+            row = {'id': m['id'], 'kind': m['kind'], 'rule': m.get('rule', 'hand'), 'expect': m['expect'], 'outcome': m['outcome']}
+            if m['id'] in pair:
+                how, n = pair[m['id']]
+                row.update(written=how, **{'as': n['id']}, nowRule=n['rule'], nowKind=n['kind'], nowExpect=n['expect'])
+            else:
+                if (did, m['id']) not in PG186_GAPS:
+                    raise L.Refused('calibrate', f'{did} {m["id"]} is not written and no reason is on file')
+                row.update(written=None, why=m['why'], reason=PG186_GAPS[(did, m['id'])])
+            rows.append(row)
+        fresh = [{'id': n['id'], 'kind': n['kind'], 'rule': n['rule'], 'expect': n['expect'], 'why': n['why']} for n in new['mutants'] if n['id'] not in used]
+        kinds = {}
+        for n in new['mutants']:
+            kinds[n['kind']] = kinds.get(n['kind'], 0) + 1
+        ex, up = sum(1 for r in rows if r['written'] == 'exactly'), sum(1 for r in rows if r['written'] == 'upToBoundNames')
+        out[did] = {
+            'spec': {'path': sp, 'sha256': L_sha(os.path.join(REPO, sp))}, 'recorded': {'spec': old['specSha256'], 'record': old['record'], 'writtenBy': old['writtenBy'], 'statements': len(rows)},
+            'written': {'statements': len(new['mutants']), 'byKind': kinds}, 'recordedWrittenAgain': {'exactly': ex, 'upToBoundNames': up, 'not': len(rows) - ex - up, 'of': len(rows)},
+            'statements': rows, 'new': fresh,
+            # for a new run: the recorded outcome of every written statement that is a recorded one, and the ones that did not reach the check then
+            'recordedOutcomes': {r['as']: r['outcome'] for r in rows if r['written']},
+            'didNotReachTheCheckThen': [r['as'] for r in rows if r['written'] and r['outcome'] == 'FAILED elsewhere'],
+            'f3': {'sameTactic': new['f3']['tactic'] == old['f3']['tactic'], 'recorded': old['f3']['word'], 'tacticIs': 'the target\'s' if 'the target' in new['f3']['expect'] else 'generated'},
+            'claimReds': {'recorded': [r['rule'] for r in old['claimReds']], 'written': [r['rule'] for r in new['claimReds']]}}
+        tot['recorded'] += len(rows)
+        tot['exactly'] += ex
+        tot['upToBoundNames'] += up
+        tot['notWritten'] += len(rows) - ex - up
+        tot['new'] += len(fresh)
+        if hand:
+            tot['byHand'] += len(rows)
+            tot['byHandWritten'] += ex + up
+    tot['writtenAlone'] = tot['exactly'] + tot['upToBoundNames']
+    return {'what': 'claimbox\'s six specs of the prime-gap 186 statement layer, written by the fixed rules alone from the targets corpus/intake/pg186-<id>/ (format 2, rule set 2), against the 45 '
+                    'planted statements checked on 2026-11-10 (' + PG186_REF + '): which of them the writer writes again, which it does not and why, and what it writes that was not there. '
+                    'A measure of the writer, not a verdict: no Lean was run on these specs. Written by python3 -m claimbox intake calibrate pg186 --record.',
+            'reference': {'path': PG186_REF, 'sha256': L_sha(os.path.join(REPO, PG186_REF))},
+            'totals': tot, 'declarations': out}

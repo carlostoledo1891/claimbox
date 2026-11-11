@@ -29,6 +29,7 @@
   intake read FILE.reading [--canonical] [--instances SPEC …]   a reading printed back in plain words, its anchors in the sentence;
                                                    --instances: its values on those instances (lean/READING.md)
   intake calibrate erdos-488 [--record | --check]  the spec and the reading against the answers cert-machine recorded for Erdős #488
+  intake calibrate pg186 [--record | --check]      the six specs of the prime-gap 186 statement layer against the 45 statements checked 2026-11-10
 
 Paths are relative to cert-machine's root (CERT_MACHINE, default ~/Projects/cert-machine), which is read-only here:
 its checker verifies what this program emits (--check), and its deciders decide; no code is shared.
@@ -415,8 +416,26 @@ def intake(a):
                         print('  ' + json.dumps(x) + '  ' + row)
             return 0
         if a.action == 'calibrate':
+            if a.target == 'pg186':
+                rec = Cb.pg186()
+                path = os.path.join(Sp.REPO, 'records', 'intake', 'pg186-calibration.json')
+                body = json.dumps(rec, indent=1, ensure_ascii=False) + '\n'
+                if a.check:
+                    if not os.path.isfile(path) or open(path, encoding='utf-8').read() != body:
+                        print('REFUSED  records/intake/pg186-calibration.json differs from what the specs and the reference derive now')
+                        return 1
+                elif a.record:
+                    open(path, 'w', encoding='utf-8').write(body)
+                for did, d in rec['declarations'].items():
+                    w = d['recordedWrittenAgain']
+                    print(f'  {did:<14} {d["written"]["statements"]:>3} written; of the {w["of"]} recorded ({d["recorded"]["writtenBy"]}): {w["exactly"]} exactly, {w["upToBoundNames"]} up to bound names, '
+                          f'{w["not"]} not written' + (' (' + ', '.join(r['id'] for r in d['statements'] if not r['written']) + ')' if w['not'] else '') + f'; {len(d["new"])} new')
+                t = rec['totals']
+                print(f'pg186: of the {t["recorded"]} planted statements of 2026-11-10 the writer writes {t["writtenAlone"]} alone ({t["exactly"]} exactly, {t["upToBoundNames"]} up to bound names), '
+                      f'{t["notWritten"]} not; of the {t["byHand"]} written by hand then, {t["byHandWritten"]}; {t["new"]} statements are new' + ('; recorded' if a.record else '; checked' if a.check else ''))
+                return 0
             if a.target != 'erdos-488':
-                print('REFUSED  only erdos-488 has recorded answers to calibrate against')
+                print('REFUSED  only erdos-488 and pg186 have recorded answers to calibrate against')
                 return 1
             rec = Cb.run()
             path = os.path.join(Sp.REPO, 'records', 'intake', 'erdos-488-calibration.json')

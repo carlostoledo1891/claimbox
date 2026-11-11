@@ -1,0 +1,1495 @@
+{
+ "what": "claimbox's six specs of the prime-gap 186 statement layer, written by the fixed rules alone from the targets corpus/intake/pg186-<id>/ (format 2, rule set 2), against the 45 planted statements checked on 2026-11-10 (corpus/intake/pg186-2026-11-10.json): which of them the writer writes again, which it does not and why, and what it writes that was not there. A measure of the writer, not a verdict: no Lean was run on these specs. Written by python3 -m claimbox intake calibrate pg186 --record.",
+ "reference": {
+  "path": "corpus/intake/pg186-2026-11-10.json",
+  "sha256": "3bb345feccf293345274094893a3dd5654631a91cee1548694ea01aff3fdebc5"
+ },
+ "totals": {
+  "recorded": 45,
+  "exactly": 31,
+  "upToBoundNames": 1,
+  "notWritten": 13,
+  "new": 94,
+  "byHand": 24,
+  "byHandWritten": 11,
+  "writtenAlone": 32
+ },
+ "declarations": {
+  "pg186-dhl": {
+   "spec": {
+    "path": "records/intake/pg186-dhl-spec.json",
+    "sha256": "15eb1d52474d72dcbe7a3994615b2fc9a9a5c1f00485241d3f17803d45de8ab1"
+   },
+   "recorded": {
+    "spec": "17b8d76e87719679d806253261fd2651a3943c27e50920dd24dfc97fa995cbeb",
+    "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-dhl.json",
+    "writtenBy": "claimbox, completed by a bridge script",
+    "statements": 12
+   },
+   "written": {
+    "statements": 12,
+    "byKind": {
+     "same": 2,
+     "changed": 7,
+     "type": 2,
+     "equivalent": 1
+    }
+   },
+   "recordedWrittenAgain": {
+    "exactly": 12,
+    "upToBoundNames": 0,
+    "not": 0,
+    "of": 12
+   },
+   "statements": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S0",
+     "nowRule": "verbatim",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "same:rename",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S1",
+     "nowRule": "same:rename",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:drop-hypothesis",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C01",
+     "nowRule": "changed:drop-hypothesis",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:drop-hypothesis",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C02",
+     "nowRule": "changed:drop-hypothesis",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C03",
+     "nowRule": "changed:strictness",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C04",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C05",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C05",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C06",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C06",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C07",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C07",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "N1",
+     "kind": "type",
+     "rule": "type:nat-int",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "written": "exactly",
+     "as": "N1",
+     "nowRule": "type:nat-int",
+     "nowKind": "type",
+     "nowExpect": "NOT ACCEPTED"
+    },
+    {
+     "id": "N2",
+     "kind": "type",
+     "rule": "type:nat-int",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "written": "exactly",
+     "as": "N2",
+     "nowRule": "type:nat-int",
+     "nowKind": "type",
+     "nowExpect": "NOT ACCEPTED"
+    },
+    {
+     "id": "Q1",
+     "kind": "equivalent",
+     "rule": "equivalent:swap-binders",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "Q1",
+     "nowRule": "equivalent:swap-binders",
+     "nowKind": "equivalent",
+     "nowExpect": "kernel decides"
+    }
+   ],
+   "new": [],
+   "recordedOutcomes": {
+    "S0": "ACCEPTED",
+    "S1": "ACCEPTED",
+    "C01": "REFUSED by type mismatch",
+    "C02": "REFUSED by type mismatch",
+    "C03": "REFUSED by type mismatch",
+    "C04": "REFUSED by type mismatch",
+    "C05": "REFUSED by type mismatch",
+    "C06": "REFUSED by type mismatch",
+    "C07": "REFUSED by type mismatch",
+    "N1": "FAILED elsewhere",
+    "N2": "FAILED elsewhere",
+    "Q1": "REFUSED by type mismatch"
+   },
+   "didNotReachTheCheckThen": [
+    "N1",
+    "N2"
+   ],
+   "f3": {
+    "sameTactic": true,
+    "recorded": "CERTIFIED",
+    "tacticIs": "the target's"
+   },
+   "claimReds": {
+    "recorded": [
+     "sorry",
+     "axiom"
+    ],
+    "written": [
+     "sorry",
+     "axiom"
+    ]
+   }
+  },
+  "pg186-tuple": {
+   "spec": {
+    "path": "records/intake/pg186-tuple-spec.json",
+    "sha256": "2bae854c74e6bec006bf9a368b82dae0a03ac59844853e4809b76ee3fb154ab6"
+   },
+   "recorded": {
+    "spec": "7d6bb28ceca6295972684833e9368a57b8d2012ec509d89e253a114bf0675994",
+    "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-tuple.json",
+    "writtenBy": "claimbox, completed by a bridge script",
+    "statements": 5
+   },
+   "written": {
+    "statements": 5,
+    "byKind": {
+     "same": 2,
+     "changed": 3
+    }
+   },
+   "recordedWrittenAgain": {
+    "exactly": 5,
+    "upToBoundNames": 0,
+    "not": 0,
+    "of": 5
+   },
+   "statements": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S0",
+     "nowRule": "verbatim",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "same:rename",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S1",
+     "nowRule": "same:rename",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C01",
+     "nowRule": "changed:strictness",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C02",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C03",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    }
+   ],
+   "new": [],
+   "recordedOutcomes": {
+    "S0": "ACCEPTED",
+    "S1": "ACCEPTED",
+    "C01": "REFUSED by type mismatch",
+    "C02": "REFUSED by type mismatch",
+    "C03": "REFUSED by type mismatch"
+   },
+   "didNotReachTheCheckThen": [],
+   "f3": {
+    "sameTactic": true,
+    "recorded": "CERTIFIED",
+    "tacticIs": "generated"
+   },
+   "claimReds": {
+    "recorded": [
+     "sorry",
+     "axiom"
+    ],
+    "written": [
+     "sorry",
+     "axiom"
+    ]
+   }
+  },
+  "pg186-liminf": {
+   "spec": {
+    "path": "records/intake/pg186-liminf-spec.json",
+    "sha256": "8fcf2ff146361bf9bf9beb5c0dd8f4e6c20e6732726e67272f3f6b76b2cf971e"
+   },
+   "recorded": {
+    "spec": "f0316a2a35dae583912aeadf681b2dd33f5a2dd8b7cccbf206aea3da28a42c9d",
+    "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-liminf.json",
+    "writtenBy": "claimbox, completed by a bridge script",
+    "statements": 4
+   },
+   "written": {
+    "statements": 4,
+    "byKind": {
+     "same": 1,
+     "changed": 3
+    }
+   },
+   "recordedWrittenAgain": {
+    "exactly": 4,
+    "upToBoundNames": 0,
+    "not": 0,
+    "of": 4
+   },
+   "statements": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S0",
+     "nowRule": "verbatim",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C01",
+     "nowRule": "changed:strictness",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C02",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C03",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    }
+   ],
+   "new": [],
+   "recordedOutcomes": {
+    "S0": "ACCEPTED",
+    "C01": "REFUSED by type mismatch",
+    "C02": "REFUSED by type mismatch",
+    "C03": "REFUSED by type mismatch"
+   },
+   "didNotReachTheCheckThen": [],
+   "f3": {
+    "sameTactic": true,
+    "recorded": "CERTIFIED",
+    "tacticIs": "generated"
+   },
+   "claimReds": {
+    "recorded": [
+     "sorry",
+     "axiom"
+    ],
+    "written": [
+     "sorry",
+     "axiom"
+    ]
+   }
+  },
+  "pg186-ax1": {
+   "spec": {
+    "path": "records/intake/pg186-ax1-spec.json",
+    "sha256": "f776b6e5b86c7d0e403d5a0cc8290c837728d9851837957a34ecd896bdc682f0"
+   },
+   "recorded": {
+    "spec": "9c6e25fc0eb097a4426acb695113443cb5ab5f2d7fd3d94835d6e9f4c4496219",
+    "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-ax1.json",
+    "writtenBy": "hand",
+    "statements": 8
+   },
+   "written": {
+    "statements": 8,
+    "byKind": {
+     "same": 2,
+     "changed": 5,
+     "type": 1
+    }
+   },
+   "recordedWrittenAgain": {
+    "exactly": 5,
+    "upToBoundNames": 1,
+    "not": 2,
+    "of": 8
+   },
+   "statements": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "hand",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S0",
+     "nowRule": "verbatim",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "hand",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "upToBoundNames",
+     "as": "S1",
+     "nowRule": "same:rename",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "W1",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "phase A's R1: the 1/p normalization undone (the raw sum bounded by 3)",
+     "reason": "a factor written in front of the bounded term, (p : ℂ) * …: no fixed rule inserts a term"
+    },
+    {
+     "id": "W2",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C05",
+     "nowRule": "changed:constant",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "W3",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C01",
+     "nowRule": "changed:drop-hypothesis",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "W4",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C02",
+     "nowRule": "changed:strictness",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "W5",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the bound made 3 * p",
+     "reason": "a factor written after the bound, … * p: no fixed rule inserts a term"
+    },
+    {
+     "id": "N1",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "written": "exactly",
+     "as": "N1",
+     "nowRule": "type:nat-int",
+     "nowKind": "type",
+     "nowExpect": "NOT ACCEPTED"
+    }
+   ],
+   "new": [
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 0 made 1 (`c ≠ 0 → ‖` → `c ≠ 1 → ‖`, line 2)"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 3 made 4 (`≤ ( 3 : ℝ` → `≤ ( 4 : ℝ`, line 2)"
+    }
+   ],
+   "recordedOutcomes": {
+    "S0": "ACCEPTED",
+    "S1": "ACCEPTED",
+    "C05": "REFUSED by type mismatch",
+    "C01": "REFUSED by type mismatch",
+    "C02": "REFUSED by type mismatch",
+    "N1": "FAILED elsewhere"
+   },
+   "didNotReachTheCheckThen": [
+    "N1"
+   ],
+   "f3": {
+    "sameTactic": false,
+    "recorded": "CERTIFIED",
+    "tacticIs": "generated"
+   },
+   "claimReds": {
+    "recorded": [],
+    "written": []
+   }
+  },
+  "pg186-ax2": {
+   "spec": {
+    "path": "records/intake/pg186-ax2-spec.json",
+    "sha256": "b1090e459d87470dfff744762e5b5ff097c369ff0e2bb58860ec588b3fa0f1c1"
+   },
+   "recorded": {
+    "spec": "3afce705079a20c7d8f4c6562651baa905d6ca8845beab530a0ba539ffe835d7",
+    "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-ax2.json",
+    "writtenBy": "hand",
+    "statements": 9
+   },
+   "written": {
+    "statements": 16,
+    "byKind": {
+     "same": 2,
+     "changed": 13,
+     "type": 1
+    }
+   },
+   "recordedWrittenAgain": {
+    "exactly": 3,
+    "upToBoundNames": 0,
+    "not": 6,
+    "of": 9
+   },
+   "statements": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "hand",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S0",
+     "nowRule": "verbatim",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "hand",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": null,
+     "why": "the bound variable t renamed s",
+     "reason": "the variable bound by ∑ renamed: the rename of rule sets 1 and 2 reads the binders of ∀, ∃, fun, a set-builder and let, not of ∑ — it renames p, A and B here and leaves t. Reading ∑ would write the recorded giuga-weak and giuga-strong specs differently, so it needs a rule set of its own"
+    },
+    {
+     "id": "W1",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "phase A's R2: 8√p for 8p√p",
+     "reason": "a factor removed from the bound, 8 * p * √p made 8 * √p: no fixed rule removes a term"
+    },
+    {
+     "id": "W2",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "phase A's R4: the constant 8 made 4",
+     "reason": "the numeral 8 made 4: the constant rule moves a numeral by one (8 made 9 and 8 made 7 are written)"
+    },
+    {
+     "id": "W3",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the pole t = -1 not excluded",
+     "reason": "a conjunct of the summand's condition dropped (t ≠ -1): the drop rule drops a hypothesis of the statement, never a conjunct inside a term"
+    },
+    {
+     "id": "W4",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the shift dropped: B / t for B / (t + 1)",
+     "reason": "a subterm replaced, B / (t + 1) made B / t: no fixed rule (the constant rule writes t + 2 and t + 0)"
+    },
+    {
+     "id": "W5",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": "exactly",
+     "as": "C01",
+     "nowRule": "changed:drop-hypothesis",
+     "nowKind": "changed",
+     "nowExpect": "kernel decides"
+    },
+    {
+     "id": "W6",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "REFUSED by type mismatch",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the two sums added, not multiplied",
+     "reason": "an operation changed, * made +: no fixed rule changes an arithmetic operation"
+    },
+    {
+     "id": "N1",
+     "kind": "wrong",
+     "rule": "hand",
+     "expect": "NOT ACCEPTED",
+     "outcome": "FAILED elsewhere",
+     "written": "exactly",
+     "as": "N1",
+     "nowRule": "type:nat-int",
+     "nowKind": "type",
+     "nowExpect": "NOT ACCEPTED"
+    }
+   ],
+   "new": [
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "same:rename",
+     "expect": "ACCEPTED",
+     "why": "every bound variable renamed (A→A₀, B→B₀, p→p₀): alpha-equivalent"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:drop-hypothesis",
+     "expect": "kernel decides",
+     "why": "the hypothesis `B ≠ 0` dropped"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:strictness",
+     "expect": "kernel decides",
+     "why": "`≤` made `<` (`0 ‖ ≤ 8 *` → `0 ‖ < 8 *`, line 5)"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 0 made 1 (`A ≠ 0 → B` → `A ≠ 1 → B`, line 2)"
+    },
+    {
+     "id": "C05",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 0 made 1 (`B ≠ 0 → ‖` → `B ≠ 1 → ‖`, line 2)"
+    },
+    {
+     "id": "C06",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 0 made 1 (`t ≠ 0 ∧ t` → `t ≠ 1 ∧ t`, line 3)"
+    },
+    {
+     "id": "C07",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 1 made 2 (`≠ - 1 then PrimeGap186.unnormalizedKloosterman2` → `≠ - 2 then PrimeGap186.unnormalizedKloosterman2`, line 3)"
+    },
+    {
+     "id": "C08",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 1 made 0 (`≠ - 1 then PrimeGap186.unnormalizedKloosterman2` → `≠ - 0 then PrimeGap186.unnormalizedKloosterman2`, line 3)"
+    },
+    {
+     "id": "C09",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 1 made 2 (`t + 1 ) )` → `t + 2 ) )`, line 5)"
+    },
+    {
+     "id": "C10",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 1 made 0 (`t + 1 ) )` → `t + 0 ) )`, line 5)"
+    },
+    {
+     "id": "C11",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 0 made 1 (`else 0 ‖ ≤` → `else 1 ‖ ≤`, line 5)"
+    },
+    {
+     "id": "C12",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 8 made 9 (`‖ ≤ 8 *` → `‖ ≤ 9 *`, line 6)"
+    },
+    {
+     "id": "C13",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "the numeral 8 made 7 (`‖ ≤ 8 *` → `‖ ≤ 7 *`, line 6)"
+    }
+   ],
+   "recordedOutcomes": {
+    "S0": "ACCEPTED",
+    "C01": "REFUSED by type mismatch",
+    "N1": "FAILED elsewhere"
+   },
+   "didNotReachTheCheckThen": [
+    "N1"
+   ],
+   "f3": {
+    "sameTactic": false,
+    "recorded": "CERTIFIED",
+    "tacticIs": "generated"
+   },
+   "claimReds": {
+    "recorded": [],
+    "written": []
+   }
+  },
+  "pg186-tuple-x": {
+   "spec": {
+    "path": "records/intake/pg186-tuple-x-spec.json",
+    "sha256": "14ed5d41e38c5361b5b8b4c6f5dff6ece9b0c0dd7b8b7dd83cadb08191bb7600"
+   },
+   "recorded": {
+    "spec": "07549f321bbbfb0c04d6a9fdb1d0200a83e28011d45d6302605a518e9c4cb8d1",
+    "record": "corpus/prime-gaps-186/intake/lean-intake-pg186-tuple-x.json",
+    "writtenBy": "hand",
+    "statements": 7
+   },
+   "written": {
+    "statements": 81,
+    "byKind": {
+     "same": 2,
+     "changed": 79
+    }
+   },
+   "recordedWrittenAgain": {
+    "exactly": 2,
+    "upToBoundNames": 0,
+    "not": 5,
+    "of": 7
+   },
+   "statements": [
+    {
+     "id": "S0",
+     "kind": "same",
+     "rule": "verbatim",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S0",
+     "nowRule": "verbatim",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "S1",
+     "kind": "same",
+     "rule": "hand:tuple",
+     "expect": "ACCEPTED",
+     "outcome": "ACCEPTED",
+     "written": "exactly",
+     "as": "S1",
+     "nowRule": "same:unfold",
+     "nowKind": "same",
+     "nowExpect": "ACCEPTED"
+    },
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "expect": "kernel decides",
+     "outcome": "FAILED elsewhere",
+     "written": null,
+     "why": "the last number 186 made 188 (the diameter)",
+     "reason": "the numeral 186 made 188: the constant rule moves a numeral by one (186 made 187 and 186 made 185 are written)"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the second number 2 made 4",
+     "reason": "the numeral 2 made 4: the constant rule moves a numeral by one (2 made 3 and 2 made 1 are written)"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the number 98 made 96 (the middle)",
+     "reason": "the numeral 98 made 96: the constant rule moves a numeral by one (98 made 99 and 98 made 97 are written)"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "expect": "kernel decides",
+     "outcome": "FAILED elsewhere",
+     "written": null,
+     "why": "the last number dropped (39 numbers)",
+     "reason": "an element of the set dropped: no fixed rule drops an element of a literal"
+    },
+    {
+     "id": "C05",
+     "kind": "changed",
+     "rule": "hand:tuple",
+     "expect": "kernel decides",
+     "outcome": "REFUSED by type mismatch",
+     "written": null,
+     "why": "the first two numbers swapped (the same set, another term)",
+     "reason": "two elements of the set swapped: the swap rule swaps two adjacent binders, never two elements of a literal"
+    }
+   ],
+   "new": [
+    {
+     "id": "C01",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 0 made 1 (`{ 0 , 2` → `{ 1 , 2`, line 1)"
+    },
+    {
+     "id": "C02",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 2 made 3 (`0 , 2 , 6` → `0 , 3 , 6`, line 1)"
+    },
+    {
+     "id": "C03",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 2 made 1 (`0 , 2 , 6` → `0 , 1 , 6`, line 1)"
+    },
+    {
+     "id": "C04",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 6 made 7 (`2 , 6 , 12` → `2 , 7 , 12`, line 1)"
+    },
+    {
+     "id": "C05",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 6 made 5 (`2 , 6 , 12` → `2 , 5 , 12`, line 1)"
+    },
+    {
+     "id": "C06",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 12 made 13 (`6 , 12 , 20` → `6 , 13 , 20`, line 1)"
+    },
+    {
+     "id": "C07",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 12 made 11 (`6 , 12 , 20` → `6 , 11 , 20`, line 1)"
+    },
+    {
+     "id": "C08",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 20 made 21 (`12 , 20 , 26` → `12 , 21 , 26`, line 1)"
+    },
+    {
+     "id": "C09",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 20 made 19 (`12 , 20 , 26` → `12 , 19 , 26`, line 1)"
+    },
+    {
+     "id": "C10",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 26 made 27 (`20 , 26 , 30` → `20 , 27 , 30`, line 1)"
+    },
+    {
+     "id": "C11",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 26 made 25 (`20 , 26 , 30` → `20 , 25 , 30`, line 1)"
+    },
+    {
+     "id": "C12",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 30 made 31 (`26 , 30 , 32` → `26 , 31 , 32`, line 1)"
+    },
+    {
+     "id": "C13",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 30 made 29 (`26 , 30 , 32` → `26 , 29 , 32`, line 1)"
+    },
+    {
+     "id": "C14",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 32 made 33 (`30 , 32 , 36` → `30 , 33 , 36`, line 1)"
+    },
+    {
+     "id": "C15",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 32 made 31 (`30 , 32 , 36` → `30 , 31 , 36`, line 1)"
+    },
+    {
+     "id": "C16",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 36 made 37 (`32 , 36 , 42` → `32 , 37 , 42`, line 1)"
+    },
+    {
+     "id": "C17",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 36 made 35 (`32 , 36 , 42` → `32 , 35 , 42`, line 1)"
+    },
+    {
+     "id": "C18",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 42 made 43 (`36 , 42 , 48` → `36 , 43 , 48`, line 1)"
+    },
+    {
+     "id": "C19",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 42 made 41 (`36 , 42 , 48` → `36 , 41 , 48`, line 1)"
+    },
+    {
+     "id": "C20",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 48 made 49 (`42 , 48 , 50` → `42 , 49 , 50`, line 1)"
+    },
+    {
+     "id": "C21",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 48 made 47 (`42 , 48 , 50` → `42 , 47 , 50`, line 1)"
+    },
+    {
+     "id": "C22",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 50 made 51 (`48 , 50 , 56` → `48 , 51 , 56`, line 1)"
+    },
+    {
+     "id": "C23",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 50 made 49 (`48 , 50 , 56` → `48 , 49 , 56`, line 1)"
+    },
+    {
+     "id": "C24",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 56 made 57 (`50 , 56 , 60` → `50 , 57 , 60`, line 1)"
+    },
+    {
+     "id": "C25",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 56 made 55 (`50 , 56 , 60` → `50 , 55 , 60`, line 1)"
+    },
+    {
+     "id": "C26",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 60 made 61 (`56 , 60 , 68` → `56 , 61 , 68`, line 1)"
+    },
+    {
+     "id": "C27",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 60 made 59 (`56 , 60 , 68` → `56 , 59 , 68`, line 1)"
+    },
+    {
+     "id": "C28",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 68 made 69 (`60 , 68 , 72` → `60 , 69 , 72`, line 1)"
+    },
+    {
+     "id": "C29",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 68 made 67 (`60 , 68 , 72` → `60 , 67 , 72`, line 1)"
+    },
+    {
+     "id": "C30",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 72 made 73 (`68 , 72 , 78` → `68 , 73 , 78`, line 1)"
+    },
+    {
+     "id": "C31",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 72 made 71 (`68 , 72 , 78` → `68 , 71 , 78`, line 1)"
+    },
+    {
+     "id": "C32",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 78 made 79 (`72 , 78 , 86` → `72 , 79 , 86`, line 1)"
+    },
+    {
+     "id": "C33",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 78 made 77 (`72 , 78 , 86` → `72 , 77 , 86`, line 1)"
+    },
+    {
+     "id": "C34",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 86 made 87 (`78 , 86 , 90` → `78 , 87 , 90`, line 1)"
+    },
+    {
+     "id": "C35",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 86 made 85 (`78 , 86 , 90` → `78 , 85 , 90`, line 1)"
+    },
+    {
+     "id": "C36",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 90 made 91 (`86 , 90 , 92` → `86 , 91 , 92`, line 1)"
+    },
+    {
+     "id": "C37",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 90 made 89 (`86 , 90 , 92` → `86 , 89 , 92`, line 1)"
+    },
+    {
+     "id": "C38",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 92 made 93 (`90 , 92 , 98` → `90 , 93 , 98`, line 1)"
+    },
+    {
+     "id": "C39",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 92 made 91 (`90 , 92 , 98` → `90 , 91 , 98`, line 1)"
+    },
+    {
+     "id": "C40",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 98 made 99 (`92 , 98 , 102` → `92 , 99 , 102`, line 1)"
+    },
+    {
+     "id": "C41",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 98 made 97 (`92 , 98 , 102` → `92 , 97 , 102`, line 1)"
+    },
+    {
+     "id": "C42",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 102 made 103 (`98 , 102 , 110` → `98 , 103 , 110`, line 1)"
+    },
+    {
+     "id": "C43",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 102 made 101 (`98 , 102 , 110` → `98 , 101 , 110`, line 1)"
+    },
+    {
+     "id": "C44",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 110 made 111 (`102 , 110 , 116` → `102 , 111 , 116`, line 1)"
+    },
+    {
+     "id": "C45",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 110 made 109 (`102 , 110 , 116` → `102 , 109 , 116`, line 1)"
+    },
+    {
+     "id": "C46",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 116 made 117 (`110 , 116 , 120` → `110 , 117 , 120`, line 1)"
+    },
+    {
+     "id": "C47",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 116 made 115 (`110 , 116 , 120` → `110 , 115 , 120`, line 1)"
+    },
+    {
+     "id": "C48",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 120 made 121 (`116 , 120 , 126` → `116 , 121 , 126`, line 1)"
+    },
+    {
+     "id": "C49",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 120 made 119 (`116 , 120 , 126` → `116 , 119 , 126`, line 1)"
+    },
+    {
+     "id": "C50",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 126 made 127 (`120 , 126 , 132` → `120 , 127 , 132`, line 1)"
+    },
+    {
+     "id": "C51",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 126 made 125 (`120 , 126 , 132` → `120 , 125 , 132`, line 1)"
+    },
+    {
+     "id": "C52",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 132 made 133 (`126 , 132 , 138` → `126 , 133 , 138`, line 1)"
+    },
+    {
+     "id": "C53",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 132 made 131 (`126 , 132 , 138` → `126 , 131 , 138`, line 1)"
+    },
+    {
+     "id": "C54",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 138 made 139 (`132 , 138 , 140` → `132 , 139 , 140`, line 1)"
+    },
+    {
+     "id": "C55",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 138 made 137 (`132 , 138 , 140` → `132 , 137 , 140`, line 1)"
+    },
+    {
+     "id": "C56",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 140 made 141 (`138 , 140 , 146` → `138 , 141 , 146`, line 1)"
+    },
+    {
+     "id": "C57",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 140 made 139 (`138 , 140 , 146` → `138 , 139 , 146`, line 1)"
+    },
+    {
+     "id": "C58",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 146 made 147 (`140 , 146 , 152` → `140 , 147 , 152`, line 1)"
+    },
+    {
+     "id": "C59",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 146 made 145 (`140 , 146 , 152` → `140 , 145 , 152`, line 1)"
+    },
+    {
+     "id": "C60",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 152 made 153 (`146 , 152 , 156` → `146 , 153 , 156`, line 1)"
+    },
+    {
+     "id": "C61",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 152 made 151 (`146 , 152 , 156` → `146 , 151 , 156`, line 1)"
+    },
+    {
+     "id": "C62",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 156 made 157 (`152 , 156 , 158` → `152 , 157 , 158`, line 1)"
+    },
+    {
+     "id": "C63",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 156 made 155 (`152 , 156 , 158` → `152 , 155 , 158`, line 1)"
+    },
+    {
+     "id": "C64",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 158 made 159 (`156 , 158 , 162` → `156 , 159 , 162`, line 1)"
+    },
+    {
+     "id": "C65",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 158 made 157 (`156 , 158 , 162` → `156 , 157 , 162`, line 1)"
+    },
+    {
+     "id": "C66",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 162 made 163 (`158 , 162 , 168` → `158 , 163 , 168`, line 1)"
+    },
+    {
+     "id": "C67",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 162 made 161 (`158 , 162 , 168` → `158 , 161 , 168`, line 1)"
+    },
+    {
+     "id": "C68",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 168 made 169 (`162 , 168 , 170` → `162 , 169 , 170`, line 1)"
+    },
+    {
+     "id": "C69",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 168 made 167 (`162 , 168 , 170` → `162 , 167 , 170`, line 1)"
+    },
+    {
+     "id": "C70",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 170 made 171 (`168 , 170 , 176` → `168 , 171 , 176`, line 1)"
+    },
+    {
+     "id": "C71",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 170 made 169 (`168 , 170 , 176` → `168 , 169 , 176`, line 1)"
+    },
+    {
+     "id": "C72",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 176 made 177 (`170 , 176 , 180` → `170 , 177 , 180`, line 1)"
+    },
+    {
+     "id": "C73",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 176 made 175 (`170 , 176 , 180` → `170 , 175 , 180`, line 1)"
+    },
+    {
+     "id": "C74",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 180 made 181 (`176 , 180 , 182` → `176 , 181 , 182`, line 1)"
+    },
+    {
+     "id": "C75",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 180 made 179 (`176 , 180 , 182` → `176 , 179 , 182`, line 1)"
+    },
+    {
+     "id": "C76",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 182 made 183 (`180 , 182 , 186` → `180 , 183 , 186`, line 1)"
+    },
+    {
+     "id": "C77",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 182 made 181 (`180 , 182 , 186` → `180 , 181 , 186`, line 1)"
+    },
+    {
+     "id": "C78",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 186 made 187 (`182 , 186 }` → `182 , 187 }`, line 1)"
+    },
+    {
+     "id": "C79",
+     "kind": "changed",
+     "rule": "changed:constant",
+     "expect": "kernel decides",
+     "why": "inside the definition admissibleTuple, written out: the numeral 186 made 185 (`182 , 186 }` → `182 , 185 }`, line 1)"
+    }
+   ],
+   "recordedOutcomes": {
+    "S0": "ACCEPTED",
+    "S1": "ACCEPTED"
+   },
+   "didNotReachTheCheckThen": [],
+   "f3": {
+    "sameTactic": true,
+    "recorded": "CERTIFIED",
+    "tacticIs": "generated"
+   },
+   "claimReds": {
+    "recorded": [],
+    "written": []
+   }
+  }
+ }
+}
