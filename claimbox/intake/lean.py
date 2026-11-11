@@ -11,7 +11,8 @@ THE RULES AND WHAT THEY PREDICT. A prediction is written only where the kernel's
   same        renaming every bound variable; a binder predicate written out (∀ᵉ (m > n) as ∀ (m : T), n < m →); x ∉ S as
               ¬ (x ∈ S); a let inlined at its uses. Each is definitional (alpha, notation, reducible GT/GE, zeta): ACCEPTED.
   type        ℕ ↔ ℤ in a binder's type: the binder is of another type, never definitionally equal: NOT ACCEPTED (refused,
-              or the planted statement does not elaborate).
+              or the planted statement does not elaborate). In the receiver's format 2 (2026-11-11) NOT ACCEPTED is met only
+              by a refusal by type mismatch at the claimant's term: a statement that does not elaborate is not tested.
   changed     a hypothesis dropped; < ↔ ≤ (and > ↔ ≥) at one place; one numeral shifted by one. The meaning can change, and
               can also stay definitionally the same (Erdős #488's W08: Icc 0 m for Icc 1 m, 0 not in B): the kernel decides.
   equivalent  two adjacent quantifiers of one group swapped: the same statement logically, the kernel decides whether
@@ -551,9 +552,11 @@ def _operand(s, k, back):
 RULES = 2      # the rule set's version; a spec records the version it was written with (absent: 1), and is written again by it
 
 
-def planted(text, types=None, rules=1):
+def planted(text, types=None, rules=1, fmt=1):
     """the planted statements of the fixed rules, deduplicated (whitespace collapsed) and never the statement itself.
     `types`: the Lean types of binders the text leaves to inference (a binder predicate's variable), e.g. {'m': 'ℕ'}.
+    `fmt`: the receiver's spec format the words are for (1, or 2 since 2026-11-11). The statements are the same; in format
+    2 the single-place retyping says what happens to it when it does not elaborate (not tested, never a met prediction).
     `rules`: the version. 1 is the rule set every spec before 2026-11-10 was written with, kept exactly so they are
     written again byte for byte; 2 appends, after them, (L5) every ℕ of the statement made ℤ at once — the single-place
     retyping does not elaborate when a ℕ variable meets a ℕ set (#488's N1, N2), the consistent one can, so its refusal is
@@ -690,7 +693,9 @@ def planted(text, types=None, rules=1):
                 if a0 <= t.start < b0 and t.text in ('ℕ', 'ℤ'):
                     w = 'ℤ' if t.text == 'ℕ' else 'ℕ'
                     add('type:nat-int', 'type', 'NOT ACCEPTED', f'`{t.text}` made `{w}` in the type of {", ".join(x for x, _ in b["names"]) or "an instance binder"}: '
-                        'another type, never definitionally equal (refused, or the statement does not elaborate)', _edit(text, [(t.start, t.end, w)]), True)
+                        'another type, never definitionally equal ' + ('(refused, or the statement does not elaborate)' if fmt < 2 else
+                                                                      '(refused by type mismatch if it elaborates; if it does not, it is not tested)'),
+                        _edit(text, [(t.start, t.end, w)]), True)
     # equivalent: two adjacent binders of one group swapped (neither's type names the other)
     for it in items:
         if it['kind'] != 'forall':

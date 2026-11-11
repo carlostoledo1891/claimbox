@@ -9,8 +9,24 @@
 
 What the target holds (corpus/intake/<id>/target.json, written by a person or a model, a proposal): the pins and the two
 declarations, the polarity, the Lean types the statement leaves to inference, F3's witness values, the reading and the
-instances F2 is run on. Everything else is computed. The spec is in the receiver's v1 shape with what claimbox adds named in
-`vocabulary` (cert-machine reads it once its receiver takes those words; PLAN.md §9)."""
+instances F2 is run on. Everything else is computed. The spec is in the receiver's shape (cert-machine owns the format:
+its instruments/intake/SPEC.md and spec.schema.json, held by its tools/check-intake-specs.js), with claimbox's words named
+in `vocabulary`.
+
+THE TWO FORMATS. A target without `format` writes the first format, exactly as before (every recorded spec is written
+again byte for byte). `"format": 2` (the receiver's, 2026-11-11) writes `"format": 2` first and changes what the words say:
+"NOT ACCEPTED" is met only by a refusal by type mismatch at the claimant's term, and a planted statement that does not
+elaborate is not tested (never a met prediction); the commits are the full 40 characters; a target without f2 says why
+(f2NotApplicable); and no path names a directory of the machine the spec was written on (`public`): a file inside the
+repository is named relative to it, a file outside it by its name alone, its sha256 beside it.
+
+THE IDENTITY-MODE FIELDS (the receiver's since 2026-11-10; either format). A target may carry canonical.selfContained,
+canonical.axioms, claim.module, intakeImports and f3.withClaim; each is copied to the place SPEC.md gives it, refused here
+where the receiver's checker refuses it (`identity`).
+
+A TABLE ALREADY RECORDED. `f2.table` in a target names the reading's table another target of the same reading and
+instances wrote (erdos-488-r2 names erdos-488's): it is not written again, it is held to what the reading derives now
+and the spec names its bytes by sha256."""
 import datetime
 import hashlib
 import html
@@ -31,10 +47,67 @@ VOCABULARY = ('lean-intake spec, claimbox v1 (2026-11-09). Beyond the receiver\'
               'outcome is recorded, never a miss) and "NOT ACCEPTED" (refused by type mismatch, or the statement does not '
               'elaborate); "aligned" (F2 ⇒ F1: an aligned planted statement with a part that differs from the canonical\'s on an '
               'instance must be refused); f2.reading and f2.table in place of f2.decider; f2.componentMap "truth-table"')
+VOCABULARY2 = ('lean-intake spec, claimbox v2 (2026-11-11), in the receiver\'s format 2 (cert-machine instruments/intake/SPEC.md). Kind '
+               '"changed" (a rule that can change the meaning; the kernel decides whether it does) and "type"; expect "kernel decides" (no '
+               'outcome predicted: the outcome is recorded, never a miss) and "NOT ACCEPTED" (met only by the outcome "REFUSED by type '
+               'mismatch", a refusal at the claimant\'s term; a planted statement that does not elaborate has the outcome "DID NOT '
+               'ELABORATE": it never reached the check, it is not tested, and it is counted neither as a met prediction nor as a miss); '
+               '"aligned" (F2 ⇒ F1: an aligned planted statement with a part that differs from the canonical\'s on an instance must be '
+               'refused); f2.reading and f2.table in place of f2.decider; f2.componentMap "truth-table"')
+HOME_PATH = re.compile(r'(^|[\s"\'=:(])(/Users/|/home/|~/)')      # the receiver's rule for format 2 (tools/check-intake-specs.js), refused here first
 
 
 def sha(b):
     return hashlib.sha256(b).hexdigest()
+
+
+def public(path):
+    """a path as a public record may carry it (format 2): relative to the repository when the file is inside it; for a file
+    outside it the file's name alone — its sha256 beside it identifies it — never a directory of the machine"""
+    a, root = os.path.realpath(os.path.join(REPO, path)), os.path.realpath(REPO)
+    return os.path.relpath(a, root) if a.startswith(root + os.sep) else os.path.basename(a)
+
+
+def _home_paths(v, at='$'):
+    """every string of the spec that carries a home-directory path, by its place"""
+    if isinstance(v, str):
+        return [at] if HOME_PATH.search(v) else []
+    if isinstance(v, dict):
+        return [x for k, w in v.items() for x in _home_paths(w, at + '.' + k)]
+    if isinstance(v, list):
+        return [x for k, w in enumerate(v) for x in _home_paths(w, at + '.' + str(k))]
+    return []
+
+
+def identity(T):
+    """the identity-mode fields a target carries (the receiver's intake since 2026-11-10), each of the type SPEC.md gives
+    it and under the two constraints its checker states; returned by the place they are copied to"""
+    C, K, F3 = T['canonical'], T['claim'], T.get('f3', {})
+
+    def want(cond, what):
+        if not cond:
+            raise L.Refused('identity', what)
+    out = {'canonical': {}, 'claim': {}, 'f3': {}, 'top': {}}
+    if 'selfContained' in C:
+        want(isinstance(C['selfContained'], bool), 'canonical.selfContained is true or false')
+        out['canonical']['selfContained'] = C['selfContained']
+    if 'axioms' in C:
+        ax = C['axioms']
+        want(isinstance(ax, list) and all((isinstance(a, str) and a) or (isinstance(a, dict) and set(a) == {'canonical', 'claim'} and all(isinstance(x, str) and x for x in a.values()))
+                                          for a in ax), 'canonical.axioms is a list of names or of {canonical, claim} pairs')
+        want(not ax or C.get('selfContained') is True, 'canonical.axioms needs canonical.selfContained')
+        out['canonical']['axioms'] = ax
+    if 'module' in K:
+        want(isinstance(K['module'], str) and K['module'], 'claim.module is a module name')
+        want(K['url'] == C['url'] and K['commit'] == C['commit'], 'claim.module needs the claimant\'s file in the canonical repository at the same commit')
+        out['claim']['module'] = K['module']
+    if 'intakeImports' in T:
+        want(isinstance(T['intakeImports'], list) and all(isinstance(x, str) and x for x in T['intakeImports']), 'intakeImports is a list of modules')
+        out['top']['intakeImports'] = T['intakeImports']
+    if 'withClaim' in F3:
+        want(isinstance(F3['withClaim'], bool), 'f3.withClaim is true or false')
+        out['f3']['withClaim'] = F3['withClaim']
+    return out
 
 
 def rel(p):
@@ -185,6 +258,17 @@ def _ns(file_text, decl):
 def write(target_path, out_dir='records/intake'):
     T = load(target_path)
     d = os.path.dirname(target_path)
+    if 'format' in T and T['format'] != 2:
+        raise L.Refused('format', 'no format ' + repr(T['format']) + ' (absent for the first format, or 2)')
+    fmt = T.get('format', 1)
+    pub = public if fmt == 2 else (lambda p: p)
+    if fmt == 2:
+        for k in ('canonical', 'claim'):
+            if not re.fullmatch(r'[0-9a-f]{40}', str(T[k]['commit'])):
+                raise L.Refused('format', 'format 2 needs the full 40-character commit: ' + k + '.commit is ' + repr(T[k]['commit']))
+        if not T.get('f2') and not T.get('f2NotApplicable'):
+            raise L.Refused('format', 'format 2: a target without f2 says why (f2NotApplicable)')
+    ident = identity(T)
     pins = load(os.path.join(d, 'pins.json'))
     can_bytes = open(os.path.join(REPO, d, 'canonical.lean'), 'rb').read()
     if sha(can_bytes) != pins['canonical']['sha256']:
@@ -209,7 +293,7 @@ def write(target_path, out_dir='records/intake'):
     rules = T.get('rules', 1)
     if rules not in (1, 2):
         raise L.Refused('rules', 'no rule set ' + repr(rules) + ' (1 or 2)')
-    planted = L.planted(stmt, types, rules)
+    planted = L.planted(stmt, types, rules, fmt)
     counters, mutants = {}, [{'id': 'S0', 'kind': 'same', 'rule': 'verbatim', 'why': 'the canonical statement copied verbatim (comments dropped' + (
                                   '; its local notation written out: ' + ', '.join('%s as %s' % kv for kv in notations.items()) if notations else '') + '): the baseline',
                               'statement': stmt, 'imports': [], 'expect': 'ACCEPTED', 'aligned': True, 'certain': True}]
@@ -221,22 +305,24 @@ def write(target_path, out_dir='records/intake'):
                         'why': m['why'], 'statement': m['statement'], 'imports': [], 'expect': m['expect'], 'aligned': m['aligned'], 'certain': m['certain']})
     ns = _ns(can_bytes.decode('utf-8'), C['decl'])
     opens = re.findall(r'^\s*open\s+([^\n]+)$', can_bytes.decode('utf-8').split(decl['header'])[0], re.M)
-    spec = {'id': T['id'],
+    spec = {**({'format': 2} if fmt == 2 else {}),
+            'id': T['id'],
             'what': T['what'] + ' Written by claimbox (claimbox/intake/spec.py) from the target and its pins: every planted statement by a fixed rule, '
                     'each with the class its rule guarantees or "kernel decides". A pre-registration once committed in cert-machine before any run.',
-            'vocabulary': VOCABULARY,
-            'writer': {'by': 'python3 -m claimbox intake spec ' + target_path, 'target': {'path': target_path, 'sha256': sha(open(os.path.join(REPO, target_path), 'rb').read())},
-                       'pins': {'path': os.path.join(d, 'pins.json'), 'sha256': sha(open(os.path.join(REPO, d, 'pins.json'), 'rb').read())},
-                       'canonicalBytes': {'path': os.path.join(d, 'canonical.lean'), 'sha256': sha(can_bytes), 'statementLines': decl['headerLines']},
+            'vocabulary': VOCABULARY2 if fmt == 2 else VOCABULARY,
+            'writer': {'by': 'python3 -m claimbox intake spec ' + pub(target_path), 'target': {'path': pub(target_path), 'sha256': sha(open(os.path.join(REPO, target_path), 'rb').read())},
+                       'pins': {'path': pub(os.path.join(d, 'pins.json')), 'sha256': sha(open(os.path.join(REPO, d, 'pins.json'), 'rb').read())},
+                       'canonicalBytes': {'path': pub(os.path.join(d, 'canonical.lean')), 'sha256': sha(can_bytes), 'statementLines': decl['headerLines']},
                        **({'rules': rules} if rules > 1 else {})},
             'polarity': T['polarity'],
             'claim': {'what': T['claim']['what'], 'kind': 'git', 'url': T['claim']['url'], 'commit': T['claim']['commit'], 'file': T['claim']['file'],
-                      'sha256': pins['claim']['sha256'], 'decl': T['claim']['decl'], 'license': T['claim'].get('license', 'none stated')},
+                      'sha256': pins['claim']['sha256'], 'decl': T['claim']['decl'], 'license': T['claim'].get('license', 'none stated'), **ident['claim']},
             'canonical': {'what': C['what'], 'url': C['url'], 'commit': C['commit'], 'path': C['path'], 'sha256': pins['canonical']['sha256'],
-                          'module': L.module_of(C['path']), 'decl': C['decl'], 'toolchain': pins['canonical']['toolchain']},
+                          'module': L.module_of(C['path']), 'decl': C['decl'], 'toolchain': pins['canonical']['toolchain'], **ident['canonical']},
+            **ident['top'],
             'mutantNamespace': (ns + '.IntakeMut') if ns else 'Intake.Mut', 'mutantOpen': ([ns] if ns else []) + [o.strip() for o in opens],
             'f3': {'what': 'a model of the canonical statement\'s hypotheses: ' + ', '.join(f'{p[1]} = {v}' for p, v in zip([q for q in L.parts(stmt, types) if q[0] == 'data'], T['f3']['values'])),
-                   'tactic': f3_tactic(stmt, T['f3']['values'], types), 'expect': 'kernel decides (the witness is a proposal; the tactic is generated)'},
+                   'tactic': f3_tactic(stmt, T['f3']['values'], types), 'expect': 'kernel decides (the witness is a proposal; the tactic is generated)', **ident['f3']},
             'mutants': mutants,
             'claimReds': reds(pins['claim']['header']),
             'kernels': KERNELS}
@@ -247,20 +333,30 @@ def write(target_path, out_dir='records/intake'):
         names = [g['name'] for g in tree['given']]
         if names != [a['reading'] for a in F['instances']]:
             raise L.Refused('f2', 'the reading\'s givens are ' + ', '.join(names) + '; the instances name ' + ', '.join(a['reading'] for a in F['instances']))
-        tab_path = os.path.join(out_dir, T['id'] + '-reading.json')
-        tab_doc = {'what': 'the reading ' + F['reading'] + ' evaluated exactly on the instances of ' + target_path + ' (claimbox/intake/reading.py): one row per '
+        tab_path = F.get('table') or os.path.join(out_dir, T['id'] + '-reading.json')
+        tab_doc = {'what': 'the reading ' + pub(F['reading']) + ' evaluated exactly on the instances of ' + pub(target_path) + ' (claimbox/intake/reading.py): one row per '
                            'instance and reading, each part T, F or - (undefined), the claim last. Read by cert-machine\'s F2 in place of a hand-written decider.',
-                   'reading': {'path': F['reading'], 'sha256': sha(open(os.path.join(REPO, F['reading']), 'rb').read())},
+                   'reading': {'path': pub(F['reading']), 'sha256': sha(open(os.path.join(REPO, F['reading']), 'rb').read())},
                    'words': R.words(tree), 'anchors': R.anchors(tree, R.sentence_of(tree, REPO))}
         tab_doc.update(tab)
-        os.makedirs(os.path.join(REPO, out_dir), exist_ok=True)
-        _dump(os.path.join(REPO, tab_path), tab_doc)
+        if F.get('table'):
+            # a table already recorded (another target of the same reading and instances wrote it): never written again —
+            # everything in it but its first sentence (which names the target that wrote it) must be what is derived now
+            if not os.path.isfile(os.path.join(REPO, tab_path)):
+                raise L.Refused('f2', 'no table ' + tab_path)
+            have, now = json.load(open(os.path.join(REPO, tab_path), encoding='utf-8')), json.loads(json.dumps(tab_doc, ensure_ascii=False))
+            diff = [k for k in sorted(set(have) | set(now)) if k != 'what' and (have.get(k) != now.get(k) if k != 'reading' else (have.get(k) or {}).get('sha256') != now[k]['sha256'])]
+            if diff:
+                raise L.Refused('f2', 'the table ' + tab_path + ' is not what the reading derives on these instances (' + ', '.join(diff) + ' differ)')
+        else:
+            os.makedirs(os.path.join(REPO, out_dir), exist_ok=True)
+            _dump(os.path.join(REPO, tab_path), tab_doc)
         spec['f2'] = dict({'what': 'F2, instance agreement: Lean evaluates the canonical statement\'s own parts on every instance below; the reading — an '
                                    'exact program claimbox states from the informal sentence, written without the Lean — evaluates the same instances; '
                                    'cert-machine compares them part by part. Every rule below is fixed before the run.',
-                           'informal': R.sentence_of(tree, REPO), 'reading': {'path': F['reading'], 'sha256': tab_doc['reading']['sha256'],
+                           'informal': R.sentence_of(tree, REPO), 'reading': {'path': pub(F['reading']), 'sha256': tab_doc['reading']['sha256'],
                                                                               'proposed': tree['proposed'], 'readings': [r['reading'] for r in tab['readings']]},
-                           'table': {'path': tab_path, 'sha256': sha(open(os.path.join(REPO, tab_path), 'rb').read())},
+                           'table': {'path': pub(tab_path), 'sha256': sha(open(os.path.join(REPO, tab_path), 'rb').read())},
                            'binders': {a['binder']: a['reading'] for a in F['instances']}},
                           **f2_lean(F['instances'], F.get('chunk', 200)))
         spec['f2'].update({
@@ -280,11 +376,19 @@ def write(target_path, out_dir='records/intake'):
     spec['notInScope'] = ('whether the canonical statement is the informal problem (a reading, F5): F2 tests it on finitely many instances, which is '
                           'evidence, not proof; the planted statements marked "kernel decides" carry no prediction; the claimant\'s file is never copied')
     spec['success'] = 'every certain prediction met (ACCEPTED, NOT ACCEPTED, the F2 ⇒ F1 rule), every planted defect of the claimant\'s file caught, F3 and F2 as their rules say'
+    if fmt == 2:
+        spec['success'] = ('among the planted statements that reach the check, every certain prediction met (ACCEPTED; NOT ACCEPTED, met only by a refusal by type '
+                           'mismatch; the F2 ⇒ F1 rule), at least one changed or retyped statement refused and one rewording accepted; a statement that does not '
+                           'elaborate is not tested and is counted neither way; every planted defect of the claimant\'s file caught, F3 and F2 as their rules say')
     spec['amendments'] = T.get('amendments', [])
     spec['predictions'] = {
         'certain': sum(1 for m in mutants if m['certain']), 'kernelDecides': sum(1 for m in mutants if m['expect'] == 'kernel decides'),
         'byRule': {r: sum(1 for m in mutants if m['rule'] == r) for r in sorted({m['rule'] for m in mutants})},
         'aligned': sum(1 for m in mutants if m['aligned'])}
+    if fmt == 2:
+        home = _home_paths(spec)
+        if home:
+            raise L.Refused('path', 'format 2: a home-directory path at ' + ', '.join(home))
     out = os.path.join(out_dir, T['id'] + '-spec.json')
     _dump(os.path.join(REPO, out), spec)
     return spec, out
