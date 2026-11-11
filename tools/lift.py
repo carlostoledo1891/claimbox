@@ -21,7 +21,8 @@ PINS = ['instruments/claimbox/check.py', 'instruments/claimbox/check.js', 'instr
        ['instruments/claimbox/claims/' + i + '.json' for i in ['optq-1a-atris', 'optq-1a-agentdiscover', 'optq-1b-atris', 'optq-1b-codexprolong', 'optq-1c-rozetyp',
                                                               'optq-1c-rozetyp-k3072', 'optq-1d-cert2026', 'optq-86-pinho', 'optq-82-pinho', 'optq-82-epi']] + \
        ['corpus/lean-intake/erdos-488/spec.json', 'certs/lean-intake-erdos-488.json', 'corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl',
-        'instruments/intake/erdos-488.js', 'certs/lean-intake-erdos-488-claimbox.json']   # the Lean intake's calibration (+ the run of claimbox's own spec, L2) (claimbox/intake/calibrate.py): the hand spec, the record, Lean's values, the hand decider
+        'instruments/intake/erdos-488.js', 'certs/lean-intake-erdos-488-claimbox.json',
+        'instruments/intake/SPEC.md', 'instruments/intake/spec.schema.json', 'tools/check-intake-specs.js']   # the Lean intake's calibration (+ the run of claimbox's own spec, L2) (claimbox/intake/calibrate.py): the hand spec, the record, Lean's values, the hand decider
 
 
 def sha(p):
