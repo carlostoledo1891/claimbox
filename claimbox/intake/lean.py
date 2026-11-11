@@ -2,9 +2,12 @@
 
   tokens(text)            the statement's tokens, with their spans; comments kept as tokens
   clean(text)             comments removed, the lines they emptied dropped (the form the intake pins as S0)
-  declaration(file, decl) the statement of a theorem in a Lean file, found by its full name (namespaces read)
+  declaration(file, decl) the statement of a theorem — or, when the target says so, an axiom — in a Lean file, found by its
+                          full name (namespaces read)
+  definition(file, name)  a constant's type and body, for a target that names the definition as the place (`inside`)
   telescope(text)         the binders, the hypotheses, the lets and the conclusion, read at the top level
   planted(text, types)    the planted statements the fixed rules write, each with its class and what is predicted
+  planted_inside(…)       the same rules applied inside a definition the statement names, the definition written out
   alpha(text)             the statement up to the names of its bound variables (whitespace collapsed)
 
 THE RULES AND WHAT THEY PREDICT. A prediction is written only where the kernel's definitional equality guarantees it:
@@ -161,9 +164,47 @@ class Refused(Exception):
         self.rule, self.msg = rule, msg
 
 
-def declaration(file_text, decl):
-    """the declaration `decl` (its full name) in a Lean file: the keyword's line, its header up to `:=`, the pre-colon
-    binders and the statement (the type after the colon), as written; refused when it is not found exactly once"""
+THEOREM = ('theorem', 'lemma')      # what `declaration` looks for unless the target names another keyword (`axiom`)
+# the words a command starts with: where an axiom's type and a definition's body end, which no `:=` and no keyword closes
+COMMANDS = {'axiom', 'theorem', 'lemma', 'def', 'abbrev', 'instance', 'structure', 'class', 'inductive', 'opaque', 'example', 'namespace', 'section', 'end',
+            'open', 'export', 'universe', 'variable', 'attribute', 'set_option', 'noncomputable', 'private', 'protected', 'public', 'unsafe', 'partial',
+            'nonrec', 'mutual', 'local', 'scoped', 'macro', 'syntax', 'elab', 'notation', 'infix', 'infixl', 'infixr', 'prefix', 'postfix', 'deriving',
+            'include', 'omit', 'import', 'irreducible_def', 'unseal', 'suppress_compilation'}
+
+
+def _command(file_text, s, j):
+    """whether s[j] starts a command: a command's word, a doc or module comment, an attribute `@[`, a `#word` first on its line"""
+    t = s[j]
+    if t.kind == 'comment':
+        return t.text.startswith('/--') or t.text.startswith('/-!')
+    if t.kind == 'ident':
+        return t.text in COMMANDS
+    nxt = s[j + 1] if j + 1 < len(s) else None
+    if t.text == '@':
+        return nxt is not None and nxt.text == '[' and nxt.start == t.end
+    if t.text == '#':
+        return nxt is not None and nxt.kind == 'ident' and nxt.start == t.end and file_text[file_text.rfind('\n', 0, t.start) + 1:t.start].strip() == ''
+    return False
+
+
+def _to_command(file_text, s, j):
+    """the index of the last token before the next command at depth 0, from s[j] on (comments skipped)"""
+    depth, last = 0, None
+    while j < len(s):
+        t = s[j]
+        if depth == 0 and _command(file_text, s, j):
+            break
+        if t.kind != 'comment':
+            depth += t.text in OPEN
+            depth -= t.text in CLOSE
+            last = j
+        j += 1
+    return last
+
+
+def _find(file_text, decl, keywords):
+    """the tokens of the file (no whitespace) and the index of the keyword of the declaration `decl` (its full name,
+    namespaces read); refused when it is not found exactly once under one of `keywords`"""
     toks = tokens(file_text)
     s = [t for t in toks if t.kind != 'ws']
     ns, found = [], []
@@ -174,13 +215,21 @@ def declaration(file_text, decl):
             ns.append(s[k + 1].text)
         elif t.text == 'end' and k + 1 < len(s) and ns and s[k + 1].text.split('.')[-1] == ns[-1].split('.')[-1] and s[k + 1].start == t.end + 1:
             ns.pop()
-        elif t.text in ('theorem', 'lemma') and k + 1 < len(s):
+        elif t.text in keywords and k + 1 < len(s):
             full = '.'.join(ns + [s[k + 1].text])
             if full == decl or (s[k + 1].text.startswith('_root_.') and s[k + 1].text[len('_root_.'):] == decl):
                 found.append(k)
     if len(found) != 1:
         raise Refused('declaration', f'{decl} found {len(found)} times')
-    k = found[0]
+    return s, found[0]
+
+
+def declaration(file_text, decl, keywords=THEOREM):
+    """the declaration `decl` (its full name) in a Lean file: the keyword's line, its header up to `:=`, the pre-colon
+    binders and the statement (the type after the colon), as written; refused when it is not found exactly once.
+    `keywords`: what it is declared with — a theorem or a lemma unless the target says `axiom` (2026-11-11). An axiom has
+    no `:=`: its statement runs to the next command, and its header is the whole declaration."""
+    s, k = _find(file_text, decl, keywords)
     kw, name = s[k], s[k + 1]
     depth, colon, assign, lets = 0, None, None, 0
     j = k + 2
@@ -197,6 +246,8 @@ def declaration(file_text, decl):
             lets += 1                                # a `letI x := v` in the statement: its := is not the declaration's
         elif depth == 0 and t.text == ':' and colon is None:
             colon = j
+            if kw.text == 'axiom':
+                break
         elif depth == 0 and t.text == ':=':
             if lets:
                 lets -= 1
@@ -204,15 +255,60 @@ def declaration(file_text, decl):
                 assign = j
                 break
         j += 1
+    line = file_text.count('\n', 0, kw.start) + 1
+    head_start = file_text.rfind('\n', 0, kw.start) + 1
+    if kw.text == 'axiom':
+        last = _to_command(file_text, s, colon + 1) if colon is not None else None
+        if last is None:
+            raise Refused('declaration', f'{decl}: an axiom with no `:` and a type after it at the top level')
+        return {'line': line, 'keyword': kw.text, 'name': name.text, 'binders': file_text[name.end:s[colon].start].strip(),
+                'statement': file_text[s[colon].end:s[last].end].strip(), 'header': file_text[kw.start:s[last].end],
+                'headerLines': [line, file_text.count('\n', 0, s[last].end) + 1], 'indent': file_text[head_start:kw.start]}
     if colon is None or assign is None:
         raise Refused('declaration', f'{decl}: no `:` and `:=` at the top level of its header')
     binders = file_text[name.end:s[colon].start].strip()
     stmt = file_text[s[colon].end:s[assign].start].strip()
-    line = file_text.count('\n', 0, kw.start) + 1
-    head_start = file_text.rfind('\n', 0, kw.start) + 1
     return {'line': line, 'keyword': kw.text, 'name': name.text, 'binders': binders, 'statement': stmt,
             'header': file_text[kw.start:s[assign].end], 'headerLines': [line, file_text.count('\n', 0, s[assign].end) + 1],
             'indent': file_text[head_start:kw.start]}
+
+
+def definition(file_text, name):
+    """the definition `name` (its full name) in a Lean file, for a target that names it as the place of its planted
+    statements (`inside`): its type and its body as written, and their lines. Only a constant given by a term is read —
+    `def name : T := body`: binders before the colon, no type, a body by tactics or by cases are refused (`inside`),
+    because the body is then not a term that can stand where the name stood."""
+    s, k = _find(file_text, name, ('def', 'abbrev'))
+    kw, nm = s[k], s[k + 1]
+    depth, colon, assign = 0, None, None
+    j = k + 2
+    while j < len(s):
+        t = s[j]
+        if t.kind != 'comment':
+            if t.text in OPEN:
+                depth += 1
+            elif t.text in CLOSE:
+                depth -= 1
+            elif depth == 0 and t.text == ':' and colon is None:
+                colon = j
+            elif depth == 0 and t.text == ':=':
+                assign = j
+                break
+            elif depth == 0 and (t.text == '|' or _command(file_text, s, j)):
+                break
+        j += 1
+    if assign is None:
+        raise Refused('inside', f'{name}: a definition without `:=` (given by cases) is not written out')
+    if colon is None or file_text[nm.end:s[colon].start].strip():
+        raise Refused('inside', f'{name}: only a constant `def name : T := body` is written out (binders before its colon, or no type)')
+    last = _to_command(file_text, s, assign + 1)
+    if last is None or last == assign:
+        raise Refused('inside', f'{name}: no body')
+    first = next(t for t in s[assign + 1:last + 1] if t.kind != 'comment')
+    if first.text == 'by' or any(t.text == 'where' for t in s[assign + 1:last + 1] if t.kind == 'ident'):
+        raise Refused('inside', f'{name}: a body by tactics or with a `where` is not a term to write out')
+    return {'keyword': kw.text, 'name': nm.text, 'type': file_text[s[colon].end:s[assign].start].strip(), 'body': file_text[s[assign].end:s[last].end].strip(),
+            'lines': [file_text.count('\n', 0, kw.start) + 1, file_text.count('\n', 0, s[last].end) + 1]}
 
 
 def closed_statement(d):
@@ -729,6 +825,75 @@ def planted(text, types=None, rules=1, fmt=1):
         seen.add(key)
         try:
             m['aligned'] = shape(m['statement'], declared) == canon_shape and m['kind'] not in ('type', 'answer')
+        except Refused:
+            m['aligned'] = False
+        kept.append(m)
+    return kept
+
+
+def uses(text, name, namespace=None):
+    """the places where the statement names the definition `name` (its full name): the tokens that are the name, or the
+    name followed by a field (`admissibleTuple.filter`), spelled in full or as it is spelled inside `namespace` (the
+    canonical declaration's: a leading part of the name that is a leading part of the namespace may be left out). Each
+    with the spelling it uses. Refused (`inside`) when the statement binds a variable of that spelling."""
+    spell = [name, '_root_.' + name]
+    parts = (namespace or '').split('.') if namespace else []
+    for q in range(len(parts), 0, -1):
+        pre = '.'.join(parts[:q]) + '.'
+        if name.startswith(pre):
+            spell.append(name[len(pre):])
+    spell.sort(key=len, reverse=True)
+    bound = set(bound_names(text))
+    out = []
+    for t in sig(tokens(text)):
+        if t.kind != 'ident':
+            continue
+        c = next((c for c in spell if t.text == c or t.text.startswith(c + '.')), None)
+        if c is None:
+            continue
+        if c.split('.')[0] in bound:
+            raise Refused('inside', f'the statement binds a variable named {c.split(".")[0]}: its uses are not the definition {name}')
+        out.append((t, c))
+    return out
+
+
+def planted_inside(text, name, defn, namespace=None, types=None, rules=1, fmt=1):
+    """the planted statements of a target that names a DEFINITION as their place (`inside`, 2026-11-11): the rules of
+    `planted` never open a definition, so a statement that only names one (the forty numbers of a tuple behind
+    `admissibleTuple`) gives them nothing to change.
+      same:unfold   the definition written out where the statement names it, `(BODY : TYPE)` — its body under its type,
+                    whitespace collapsed: delta, definitional, ACCEPTED;
+      then every fixed rule applied to the BODY ALONE (`planted(body)`), each planted body written out the same way. A
+      rewording of the body (same) is a rewording of the statement: ACCEPTED. A change of it (changed, equivalent) is
+      "kernel decides", as everywhere. A retyping or a flipped answer inside the body is NOT written: the certainty of
+      those rules is the statement's own top-level form, which a term inside a definition does not have.
+    The statement's own top-level rules are not applied here: they belong to the target of the same declaration without
+    `inside`. Refused (`inside`) when the statement does not name the definition."""
+    declared = dict(types or {})
+    at = uses(text, name, namespace)
+    if not at:
+        raise Refused('inside', f'the statement does not name the definition {name}')
+    body, ty = ' '.join(clean(defn['body']).split()), ' '.join(clean(defn['type']).split())
+    short = name.rsplit('.', 1)[-1]
+
+    def out(b):
+        return '\n'.join(line.rstrip() for line in _edit(text, [(t.start, t.end, '(' + b + ' : ' + ty + ')' + t.text[len(c):]) for t, c in at]).split('\n'))
+    res = [{'rule': 'same:unfold', 'kind': 'same', 'expect': 'ACCEPTED', 'certain': True, 'statement': out(body),
+            'why': f'the definition {short} written out at its {len(at)} use{"s" if len(at) != 1 else ""}, its body under its type `(… : {ty})` (delta): definitionally the same'}]
+    for m in planted(body, {}, rules, fmt):
+        if m['kind'] in ('type', 'answer'):
+            continue
+        res.append({'rule': m['rule'], 'kind': m['kind'], 'expect': m['expect'], 'certain': m['certain'], 'statement': out(m['statement']),
+                    'why': f'inside the definition {short}, written out: ' + m['why']})
+    canon_shape = shape(text, declared)
+    seen, kept = {norm(text)}, []
+    for m in res:
+        key = norm(m['statement'])
+        if key in seen:
+            continue
+        seen.add(key)
+        try:
+            m['aligned'] = shape(m['statement'], declared) == canon_shape
         except Refused:
             m['aligned'] = False
         kept.append(m)

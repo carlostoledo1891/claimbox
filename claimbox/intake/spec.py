@@ -26,7 +26,17 @@ where the receiver's checker refuses it (`identity`).
 
 A TABLE ALREADY RECORDED. `f2.table` in a target names the reading's table another target of the same reading and
 instances wrote (erdos-488-r2 names erdos-488's): it is not written again, it is held to what the reading derives now
-and the spec names its bytes by sha256."""
+and the spec names its bytes by sha256.
+
+THE PLACE OF THE PLANTED STATEMENTS (2026-11-11, the prime-gap 186 statement layer). A target may name where they go:
+  canonical.keyword / claim.keyword "axiom"   the declaration is an axiom: its type is the statement, the fixed rules plant
+                  in it as in a theorem's; an axiom claim has no proof, so no defect of its file is planted by rule;
+  inside "<a definition's full name>"         the planted statements go INSIDE that definition: it is written out where the
+                  statement names it (same:unfold, ACCEPTED) and the fixed rules are applied to its body alone;
+  f3.tactic       F3's proof, when the generated one (each hypothesis by a decision procedure) cannot prove a real
+                  hypothesis: the witness values are still the target's, the kernel still decides;
+  claimRedsOf "<target id>"   the planted defects of the claimant's declaration are that target's (the same declaration at
+                  the same pin, checked): they are not planted a second time."""
 import datetime
 import hashlib
 import html
@@ -110,6 +120,17 @@ def identity(T):
     return out
 
 
+def keywords(part, what):
+    """what a target's declaration is declared with: a theorem or a lemma, or — when the target says `"keyword": "axiom"` —
+    an axiom (its type is then the statement the rules plant in)"""
+    kw = part.get('keyword')
+    if kw is None:
+        return L.THEOREM
+    if kw != 'axiom':
+        raise L.Refused('declaration', what + '.keyword is ' + repr(kw) + ' (absent for a theorem or a lemma, or "axiom")')
+    return ('axiom',)
+
+
 def rel(p):
     return os.path.relpath(p, REPO)
 
@@ -144,7 +165,7 @@ def fetch(target_path):
     subprocess.run(['git', '-C', work, 'checkout', '-q', K['commit']], check=True)
     cb = open(os.path.join(work, K['file']), 'rb').read()
     tc = os.path.join(work, 'lean-toolchain')
-    hd = L.declaration(cb.decode('utf-8'), K['decl'])
+    hd = L.declaration(cb.decode('utf-8'), K['decl'], keywords(K, 'claim'))
     pins = {'what': 'what claimbox intake fetch read at the pins (' + datetime.date.today().isoformat() + '): the canonical file, kept beside this file '
                     'byte for byte; the claimant\'s file, read and not kept (its sha256, toolchain and the header of its declaration only)',
             'canonical': {'url': C['url'], 'commit': C['commit'], 'path': C['path'], 'sha256': sha(can), 'toolchain': tool, 'kept': rel(os.path.join(d, 'canonical.lean'))},
@@ -214,6 +235,24 @@ def f2_lean(axes, chunk):
             'instanceJson': 'fun x => Lean.Json.arr #[' + ', '.join(js) + ']', 'chunk': chunk}
 
 
+F3_NEVER = re.compile(r'(?<![\w.])(sorry|admit|native_decide|axiom|sorryAx)(?![\w])')
+
+
+def f3_given(tactic):
+    """F3's proof as the target gives it (`f3.tactic`), for a hypothesis no decision procedure proves (admissibility for
+    every prime, say). It is placed under `theorem Intake.f3 : ¬ target := by`, so every line after the first is
+    indented; it is a proposal the kernel decides, and it may not carry a hole or its own axiom"""
+    if not isinstance(tactic, str) or not tactic.strip():
+        raise L.Refused('f3', 'f3.tactic is a tactic proof, in words Lean reads')
+    lines = tactic.split('\n')
+    if lines[0] != lines[0].strip() or any(ln.strip() and not ln.startswith('  ') for ln in lines[1:]):
+        raise L.Refused('f3', 'f3.tactic stands under `by`: its first line starts at once, every later line is indented by two spaces or more')
+    m = F3_NEVER.search(L.clean(tactic))
+    if m:
+        raise L.Refused('f3', 'f3.tactic carries `' + m.group(1) + '`: a witness is proved, never assumed')
+    return tactic
+
+
 def f3_tactic(stmt, values, types):
     """F3's witness as a term: the data binders' values in the telescope's order, every hypothesis discharged by a decision
     procedure (the kernel decides whether it closes: a proposal's values may not satisfy them)"""
@@ -237,8 +276,10 @@ def reds(header):
     """the planted defects of the claimant's file, by rule, anchored at its declaration's header (the only bytes of the
     file the spec quotes): the declaration's proof made `sorry`, then made an axiom (`{p : Prop} : p`, so binders before the
     colon need nothing) — the original proof kept under another name, so the file still builds. Each is certain: sorryAx,
-    or the axiom, is in the declaration's axioms."""
+    or the axiom, is in the declaration's axioms. None for a claimant's declaration that is itself an axiom."""
     h = header['text']
+    if header['keyword'] == 'axiom':
+        return []        # an axiom has no proof to replace: nothing is planted by rule (the spec's notInScope says so)
     if not h.endswith(':='):
         raise L.Refused('reds', 'the header does not end at :=')
     kw, name = header['keyword'], header['name']
@@ -249,6 +290,24 @@ def reds(header):
         {'id': 'R2', 'why': f'{name} proved by an added axiom (the original kept as intake_was_{name})', 'find': h,
          'replace': 'axiom intakeRedAxiom {p : Prop} : p\n\n' + h + ' intakeRedAxiom\n\n' + renamed, 'all': False, 'expect': 'intakeRedAxiom in the axioms', 'rule': 'axiom'},
     ]
+
+
+def reds_of(T, d):
+    """`claimRedsOf` in a target: the id of another target, in the folder beside this one, whose planted defects are
+    this claimant's declaration's — held to the same url, commit, file and declaration, and to planting them itself"""
+    other = T['claimRedsOf']
+    if not isinstance(other, str) or not re.fullmatch(r'[a-z0-9][a-z0-9-]*', other) or other == T['id']:
+        raise L.Refused('reds', 'claimRedsOf is the id of another target')
+    p = os.path.join(REPO, os.path.dirname(d), other, 'target.json')
+    if not os.path.isfile(p):
+        raise L.Refused('reds', 'claimRedsOf: no target ' + other + ' beside this one')
+    O = json.load(open(p, encoding='utf-8'))
+    if O.get('id') != other or 'claimRedsOf' in O or O['claim'].get('keyword') == 'axiom':
+        raise L.Refused('reds', 'claimRedsOf: the target ' + other + ' plants no defect of its own')
+    for k in ('url', 'commit', 'file', 'decl'):
+        if O['claim'].get(k) != T['claim'].get(k):
+            raise L.Refused('reds', 'claimRedsOf: ' + other + ' is of another claimant ' + k)
+    return other
 
 
 def _ns(file_text, decl):
@@ -280,7 +339,9 @@ def write(target_path, out_dir='records/intake'):
         if pins['claim'][k] != T['claim'][k]:
             raise L.Refused('pin', 'pins.json is for another claimant ' + k)
     C = T['canonical']
-    decl = L.declaration(can_bytes.decode('utf-8'), C['decl'])
+    decl = L.declaration(can_bytes.decode('utf-8'), C['decl'], keywords(C, 'canonical'))
+    if keywords(T['claim'], 'claim') != (('axiom',) if pins['claim']['header']['keyword'] == 'axiom' else L.THEOREM):
+        raise L.Refused('pin', 'pins.json read the claimant\'s declaration as a ' + pins['claim']['header']['keyword'] + ': not what claim.keyword says now')
     stmt = L.closed_statement(decl)
     # a `local notation "X" => Y` before the declaration is invisible outside its file, so a planted statement written in
     # another file cannot use X: every X of the statement is written out as Y (notation, so definitionally the same)
@@ -293,7 +354,15 @@ def write(target_path, out_dir='records/intake'):
     rules = T.get('rules', 1)
     if rules not in (1, 2):
         raise L.Refused('rules', 'no rule set ' + repr(rules) + ' (1 or 2)')
-    planted = L.planted(stmt, types, rules, fmt)
+    ns = _ns(can_bytes.decode('utf-8'), C['decl'])
+    inside = T.get('inside')
+    if inside is None:
+        planted = L.planted(stmt, types, rules, fmt)
+    else:
+        # the place is a definition (`inside`): it is written out where the statement names it, and the rules go in its body
+        if not isinstance(inside, str) or not inside:
+            raise L.Refused('inside', 'inside is the full name of one definition of the canonical file')
+        planted = L.planted_inside(stmt, inside, L.definition(can_bytes.decode('utf-8'), inside), ns, types, rules, fmt)
     counters, mutants = {}, [{'id': 'S0', 'kind': 'same', 'rule': 'verbatim', 'why': 'the canonical statement copied verbatim (comments dropped' + (
                                   '; its local notation written out: ' + ', '.join('%s as %s' % kv for kv in notations.items()) if notations else '') + '): the baseline',
                               'statement': stmt, 'imports': [], 'expect': 'ACCEPTED', 'aligned': True, 'certain': True}]
@@ -303,8 +372,15 @@ def write(target_path, out_dir='records/intake'):
         counters[p] = counters.get(p, 0) + 1
         mutants.append({'id': p + (str(counters[p]) if p == 'S' else f'{counters[p]:02d}' if p == 'C' else str(counters[p])), 'kind': m['kind'], 'rule': m['rule'],
                         'why': m['why'], 'statement': m['statement'], 'imports': [], 'expect': m['expect'], 'aligned': m['aligned'], 'certain': m['certain']})
-    ns = _ns(can_bytes.decode('utf-8'), C['decl'])
     opens = re.findall(r'^\s*open\s+([^\n]+)$', can_bytes.decode('utf-8').split(decl['header'])[0], re.M)
+    f3t = f3_tactic(stmt, T['f3']['values'], types)      # generated first in either case: it holds the witness values to the binders
+    if 'tactic' in T['f3']:
+        f3t = f3_given(T['f3']['tactic'])
+    claim_reds, no_reds = reds(pins['claim']['header']), None
+    if pins['claim']['header']['keyword'] == 'axiom':
+        no_reds = 'the claimant\'s declaration is an axiom: it has no proof to replace, so no defect of its file is planted by rule'
+    if 'claimRedsOf' in T:
+        claim_reds, no_reds = [], 'the planted defects of the claimant\'s declaration are those of ' + reds_of(T, d) + ' (the same declaration at the same pin): not planted a second time here'
     spec = {**({'format': 2} if fmt == 2 else {}),
             'id': T['id'],
             'what': T['what'] + ' Written by claimbox (claimbox/intake/spec.py) from the target and its pins: every planted statement by a fixed rule, '
@@ -322,9 +398,9 @@ def write(target_path, out_dir='records/intake'):
             **ident['top'],
             'mutantNamespace': (ns + '.IntakeMut') if ns else 'Intake.Mut', 'mutantOpen': ([ns] if ns else []) + [o.strip() for o in opens],
             'f3': {'what': 'a model of the canonical statement\'s hypotheses: ' + ', '.join(f'{p[1]} = {v}' for p, v in zip([q for q in L.parts(stmt, types) if q[0] == 'data'], T['f3']['values'])),
-                   'tactic': f3_tactic(stmt, T['f3']['values'], types), 'expect': 'kernel decides (the witness is a proposal; the tactic is generated)', **ident['f3']},
+                   'tactic': f3t, 'expect': 'kernel decides (the witness is a proposal; the tactic is ' + ('the target\'s, not generated)' if 'tactic' in T['f3'] else 'generated)'), **ident['f3']},
             'mutants': mutants,
-            'claimReds': reds(pins['claim']['header']),
+            'claimReds': claim_reds,
             'kernels': KERNELS}
     if T.get('f2'):
         F = T['f2']
@@ -375,6 +451,8 @@ def write(target_path, out_dir='records/intake'):
     spec['kernels'] = KERNELS
     spec['notInScope'] = ('whether the canonical statement is the informal problem (a reading, F5): F2 tests it on finitely many instances, which is '
                           'evidence, not proof; the planted statements marked "kernel decides" carry no prediction; the claimant\'s file is never copied')
+    if no_reds:
+        spec['notInScope'] += '; ' + no_reds
     spec['success'] = 'every certain prediction met (ACCEPTED, NOT ACCEPTED, the F2 ⇒ F1 rule), every planted defect of the claimant\'s file caught, F3 and F2 as their rules say'
     if fmt == 2:
         spec['success'] = ('among the planted statements that reach the check, every certain prediction met (ACCEPTED; NOT ACCEPTED, met only by a refusal by type '
