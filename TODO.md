@@ -1,4 +1,4 @@
-# TODO — the next steps for claimbox, and why (2026-11-02; section L 2026-11-09)
+# TODO — the next steps for claimbox, and why (2026-11-02; section L 2026-11-09, L8 2026-11-11)
 
 The state is HANDOFF.md's START HERE; the roadmap is PLAN.md §7. This is the ordered list of what to build next, each with the
 reason it matters and how it is checked. Items 1–3 close holes the last two days opened; 4–6 are the roadmap; 7–10 are the ideas
@@ -40,6 +40,26 @@ statements, rule set 1's 28 and N3 (every ℕ made ℤ at once); cert-machine's 
 alone?), the pre-registration, the run (~45 min). Checked by: the consistent retyping (N3) elaborates and is refused by type
 mismatch; the answer flip is absent (#488 has no answer(…)); rule set 1's 28 outcomes the same — except that format 2 names
 N1 and N2 `DID NOT ELABORATE`, not tested (the first format recorded them `FAILED elsewhere` and counted them as met).
+
+**L8. The prime-gap 186 statement layer, written by the writer alone — TARGETS AND SPECS WRITTEN 2026-11-11 (branch
+`intake-pg186-2026-11-11`, not pushed), in format 2 and rule set 2; THE PREFLIGHT AND THE RUN ARE CERT-MACHINE'S.** Six
+targets, corpus/intake/pg186-{dhl,tuple,liminf,ax1,ax2,tuple-x}/ (OpenAI's Challenge.lean and its Apache-2.0 licence beside each),
+and their specs, records/intake/pg186-<id>-spec.json; cert-machine's checker holds all six (6 in format 2). The writer gained
+the place of the planted statements (lean/INTAKE.md §7): an axiom's statement (`keyword: "axiom"`), the inside of a definition
+(`inside`, with same:unfold), F3's proof from the target (`f3.tactic`), the planted defects named as another target's
+(`claimRedsOf`). Measured, `intake calibrate pg186` → records/intake/pg186-calibration.json: of the 45 planted statements
+checked on 2026-11-10 the writer writes 32 alone (31 exactly, 1 up to bound names), 13 not, each with its reason; of the 24
+written by hand then, 11; 94 statements are new. Next, there: the lift of the six specs, the preflight (which statements
+elaborate alone), the pre-registration, the run on a rented machine. Checked by: the 32 recorded statements with the outcome
+recorded on 2026-11-10 (the calibration's `recordedOutcomes`), except that format 2 names the four retypings that did not
+elaborate `DID NOT ELABORATE`, not tested; the 94 new ones are answers no record holds. Open, each needing a rule set of its
+own (rule sets 1 and 2 are frozen by the recorded specs) and none built: (a) the rename reads no `∑`/`∏` binder — it says
+"every bound variable" and leaves the summation variable (pg186-ax2; reading it would rewrite giuga-weak and giuga-strong);
+(b) a retyping that casts each use back (`(p : ℤ)` with `p.toNat` at every use), which would let ax1's N1, ax2's N1 and dhl's
+N2 elaborate and be refused by the kernel; (c) the 13 statements no rule writes (insert or remove a term, a numeral moved by
+more than one, an operation changed, a conjunct or an element dropped, two elements swapped) — each a person's choice, kept
+out on purpose. Also seen, not changed: an `open X in` before the declaration is read as an open of the file (`Classical in`
+in mutantOpen; erdos-652 was recorded with it).
 
 **L4. The reading language grows only when a sentence needs it** (sums, products, primes, real intervals), each construct
 with its planted misreadings, measured on the targets of L3, never chased.

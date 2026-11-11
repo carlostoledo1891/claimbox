@@ -214,6 +214,50 @@ instances wrote. It is not written again: everything in it but its first sentenc
 under rule set 2 and in format 2 (TODO L7), with erdos-488's pins and canonical file byte for byte, its blind reading and
 `records/intake/erdos-488-reading.json` — 29 planted statements, rule set 1's 28 and N3, every ℕ made ℤ at once.
 
+**The place of the planted statements (2026-11-11).** The rules above plant in a theorem's statement, at its top level. A
+target may name another place; each field is read by the writer alone and refused when it does not hold:
+
+- **An axiom's statement** — `"keyword": "axiom"` in `canonical` (and in `claim`, when the claimant's declaration is one too).
+  The axiom's type is the statement; it ends at the next command (no `:=` closes it); every fixed rule plants in it as in a
+  theorem's. An axiom claim has no proof to replace, so no defect of the claimant's file is planted by rule: `claimReds` is
+  empty and `notInScope` says why. Refused (`declaration`): the keyword and the declaration disagree, or a keyword other
+  than `axiom`; (`pin`) the pins read the claimant's declaration under another keyword.
+- **The inside of a definition** — `"inside": "<the definition's full name>"`. The rules never open a definition, so a
+  statement that only names one (`admissibleTuple`, forty numbers) gives them nothing to change. With `inside` the
+  definition is written out where the statement names it, `(BODY : TYPE)` — **same:unfold**, delta, **ACCEPTED** — and the
+  fixed rules are applied **to the body alone**, each planted body written out the same way: a rewording of the body is
+  ACCEPTED, a change of it is "kernel decides". No retyping and no flipped answer is written inside a definition (their
+  certainty is the statement's own top-level form). The statement's own top-level rules are not applied: they belong to the
+  target of the same declaration without `inside`. Only a constant given by a term is written out, `def name : T := body`;
+  refused (`inside`): binders before the colon, no type, a body by tactics or by cases, a statement that does not name the
+  definition or binds a variable of its name.
+- **F3's proof** — `f3.tactic`. The generated proof discharges each hypothesis by `first | decide | simp | norm_num`, which
+  cannot prove a real hypothesis (admissibility for every prime). The target may give the proof; the witness values are
+  still the target's and still held to the statement's binders, the spec says the tactic is not generated, and the kernel
+  decides as before. Refused (`f3`): an empty proof, a later line not indented under `by`, a proof carrying `sorry`,
+  `admit`, `native_decide` or an axiom.
+- **The planted defects named as another target's** — `"claimRedsOf": "<target id>"`: two targets of one claimant's
+  declaration (the statement, and the inside of a definition it names) need its defects planted once; each rebuilds the
+  claimant's file. The named target, in the folder beside, is held to the same url, commit, file and declaration and to
+  planting them itself; `claimReds` is then empty and `notInScope` names the target. Refused (`reds`) otherwise.
+
+**The prime-gap 186 statement layer (2026-11-11, `corpus/intake/pg186-<id>/`, `records/intake/pg186-<id>-spec.json`).** Six
+declarations of OpenAI's conditional proof (openai/PrimeGaps186 at 61340d0b: `Challenge.lean` against `PrimeGaps186.lean`,
+self-contained, three declared axioms) were checked on 2026-11-10 from three specs claimbox wrote and a bridge script
+completed, and three written by hand — 24 of the 45 planted statements — because the writer could not plant in an axiom or
+in a definition, nor prove a real F3 hypothesis. The six targets now ask for format 2 and rule set 2 and carry the
+identity-mode fields; the writer writes all six specs alone. `python3 -m claimbox intake calibrate pg186` measures them
+against the 45 statements of that day (`corpus/intake/pg186-2026-11-10.json`: their texts and recorded outcomes) into
+`records/intake/pg186-calibration.json`: **32 of the 45 written again** (31 exactly, 1 up to bound names) — all 21 of the
+three claimbox specs, **11 of the 24 written by hand** — and **13 not written**, each with its reason (a term inserted or
+removed, a numeral moved by more than one, an operation changed, a conjunct or a set's element dropped, two elements
+swapped, the variable of a `∑` renamed); 94 statements are new (the rules' own: 2 in the first axiom, 13 in the second, 79
+inside the tuple — each of its forty numerals moved by one). Nothing was written by hand into a spec. No Lean was run here:
+the preflight, the pre-registration and the run are cert-machine's. Known before any run: rule set 2 adds no statement to
+these six (its consistent retyping needs two ℕ in the statement, one of them in a top-level binder: dhl and the two axioms
+have one ℕ, the tuple theorem's is a set-builder's, the liminf has none), so the four single-place retypings that did not
+elaborate on 2026-11-10 are written as they were and are expected not to be tested.
+
 ## 8. The reading, F2's independent side (2026-11-09, lean/READING.md, `python3 -m claimbox intake read`)
 
 The informal sentence stated as an exact program over finite instances, in the small language of lean/READING.md: parsed,

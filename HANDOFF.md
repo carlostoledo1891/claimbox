@@ -23,6 +23,30 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**THE PRIME-GAP 186 STATEMENT LAYER, WRITTEN BY THE WRITER ALONE (2026-11-11 evening, branch `intake-pg186-2026-11-11` from
+main ada8265 — committed locally, NOT PUSHED, not merged; done by an agent from a cert-machine session).** The six declarations of
+OpenAI's conditional proof that prime gaps are at most 186 (openai/PrimeGaps186 at 61340d0b; checked on 2026-11-10 from three
+claimbox specs completed by a bridge script and three specs written by hand — cert-machine's corpus/prime-gaps-186/intake/) are
+now six targets here, corpus/intake/pg186-{dhl,tuple,liminf,ax1,ax2,tuple-x}/ (format 2, rule set 2, the identity-mode fields;
+pins read again by `intake fetch`, the same bytes as on 11-10; Challenge.lean and its Apache-2.0 licence beside each), and six
+specs, records/intake/pg186-<id>-spec.json, written by `intake spec` with no bridge and nothing by hand: 12, 5, 4, 8, 16 and 81
+planted statements; cert-machine's checker holds all six (6 in format 2). The writer gained the place of the planted
+statements (claimbox/intake/lean.py, spec.py; lean/INTAKE.md §7): an axiom's statement (`"keyword": "axiom"`), the inside of a
+definition (`"inside"`: the definition written out, same:unfold, then the fixed rules in its body alone), F3's proof from the
+target (`f3.tactic`), the planted defects named as another target's (`claimRedsOf`). MEASURED (`intake calibrate pg186`,
+records/intake/pg186-calibration.json, against corpus/intake/pg186-2026-11-10.json — the 45 statements of that day with their
+recorded outcomes): the writer writes 32 of the 45 alone (31 exactly, 1 up to bound names) — all 21 of the three claimbox
+specs and 11 of the 24 written by hand — and 13 not, each with its reason (ax1: W1, W5; ax2: S1, W1, W2, W3, W4, W6; tuple-x:
+C01–C05); 94 statements are new (ax1 2, ax2 13, tuple-x 79: each of the forty numerals moved by one). NOT RUN in Lean: the lift,
+the preflight, the pre-registration and the run are cert-machine's. Known before any run: rule set 2 adds no statement to these
+six, so dhl's N1 and N2 and the two axioms' N1 are written as they were and should come out `DID NOT ELABORATE` (not tested);
+the tuple's last numeral moved (tuple-x C78, C79) should elaborate alone and stop the identity check at the recursion limit, as
+186 → 188 did on 11-10. `make test` 703 pass, 2 fail, 222/222 reds — THE 2 FAILS ARE NOT THIS WORK'S: main had them before it
+(671 pass, 2 fail), because cert-machine moved after the lift ada8265: instruments/intake/SPEC.md (its c0332d42, the rented-machine
+section) and design/WARRANT.md (its 7a7d166b, ddbb0a0b, the new home page) are no longer the pinned bytes. `make drift` says DRIFT
+instruments/intake/SPEC.md, 22/23. Owed, by the operator's word (this session was told not to lift): `make lift`, and the page's
+grammar sources read again (web/PINS.json). NEXT: TODO.md L8.
+
 **FORMAT 2, THE IDENTITY-MODE FIELDS, THE r2 TARGET (2026-11-11, branch `intake-format2-2026-11-11` from main fb6bd34 — committed
 locally, NOT PUSHED, not merged; done by an agent from a cert-machine session).** cert-machine wrote the intake spec's format
 down today (its instruments/intake/SPEC.md, spec.schema.json, tools/check-intake-specs.js) and added format 2: a planted
