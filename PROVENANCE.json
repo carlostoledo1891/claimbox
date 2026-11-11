@@ -21,7 +21,7 @@
   "corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl": "f0da5cfd56aa07a0f8fdc9558857168be02084e5e5b64ff9e78b3064f93e015f",
   "instruments/intake/erdos-488.js": "a2dc8058927b98413eb74c83f0427efb6c560a0d104ef06ad12596cd12444edb",
   "certs/lean-intake-erdos-488-claimbox.json": "e11194055a40ac250f325f212ee415f75dae3cd44eed0c75094bd13da7b80a4b",
-  "instruments/intake/SPEC.md": "67e634ee458832a4731f6103efe7908d0f9974ffd74779a97b01f0d626ae90cd",
+  "instruments/intake/SPEC.md": "c18c30f77ddddde9099968d28122a63256beaf8f9116cdce6b3ce12d4e203173",
   "instruments/intake/spec.schema.json": "d550347628fd630a8f2dc1236a5dc9a7680fc3ffffaf8d8d99b87b203c9cb5f1",
   "tools/check-intake-specs.js": "1a3458e9b22ff0d113188c58681fe978b87b9b31c66f0303d7c793a927c06399"
  },
