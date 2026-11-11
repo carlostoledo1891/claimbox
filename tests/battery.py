@@ -1633,7 +1633,7 @@ _s17, _ = IS.write(_t488, out_dir=os.path.relpath(_ix17, REPO))
 ok(open(os.path.join(_ix17, 'erdos-488-spec.json'), 'rb').read().replace(os.path.relpath(_ix17, REPO).encode(), b'records/intake') == _before[0]
    and open(os.path.join(_ix17, 'erdos-488-reading.json'), 'rb').read() == _before[1],
    'intake spec: written again from the target, its pins, the canonical bytes and the reading, byte for byte the recorded spec and table')
-_batch = sorted(d for d in os.listdir(os.path.join(REPO, 'corpus', 'intake')) if d != 'erdos-488' and os.path.isfile(os.path.join(REPO, 'corpus', 'intake', d, 'target.json')))
+_batch = sorted(d for d in os.listdir(os.path.join(REPO, 'corpus', 'intake')) if d not in ('erdos-488', 'erdos-488-r2') and os.path.isfile(os.path.join(REPO, 'corpus', 'intake', d, 'target.json')))
 _same = []
 for _d in _batch:
     _bs, _ = IS.write('corpus/intake/' + _d + '/target.json', out_dir=os.path.relpath(_ix17, REPO))
@@ -1730,6 +1730,120 @@ _ps = '∀ {n : ℕ} (hn : n.Composite) (h : ℕ → ℕ),\n    n ≤ h n'
 ok(IL.parts(_ps) == [('data', 'n', 'ℕ'), ('hyp', 'hn : n.Composite', None), ('data', 'h', 'ℕ → ℕ'), ('concl', 'n ≤ h n', None)]
    and IS.f3_tactic(_ps, ['4', 'id'], {}) == 'intro h\n  exact @h 4 (by first | decide | simp | norm_num) id',
    'intake spec: a hypothesis before the colon read as one (hn : n.Composite), a function binder named h as data; F3 through @h for an implicit binder')
+# format 2 (the receiver's, 2026-11-11: cert-machine instruments/intake/SPEC.md, held by its tools/check-intake-specs.js, run here in place),
+# the identity-mode fields, and the target for rule set 2 on #488 (TODO L7: corpus/intake/erdos-488-r2)
+_chk = os.path.join(ROOT, 'tools', 'check-intake-specs.js')
+def _checker(*files):
+    r = subprocess.run(['node', _chk] + list(files), capture_output=True, text=True)
+    return r.returncode, (r.stdout + r.stderr).strip()
+def _variant(target=None, pins=None, src='erdos-488', at=None, absolute=False):
+    """a copy of a target's folder, its target.json and pins.json edited as JSON, written: (the spec, None) or (None, the refusal's rule)"""
+    d = at or _d17
+    shutil.rmtree(d, ignore_errors=True)
+    shutil.copytree(os.path.join(REPO, 'corpus', 'intake', src), d)
+    for name, fn in (('target.json', target), ('pins.json', pins)):
+        if fn:
+            o = json.load(open(os.path.join(d, name), encoding='utf-8'))
+            fn(o)
+            with open(os.path.join(d, name), 'w', encoding='utf-8') as f:
+                json.dump(o, f, indent=1, ensure_ascii=False)
+    tp = os.path.join(d, 'target.json')
+    try:
+        return IS.write(tp if absolute else os.path.relpath(tp, REPO), out_dir=_ix17 if absolute else os.path.relpath(_ix17, REPO))[0], None
+    except (IL.Refused, IR.Refused) as e:
+        return None, e.rule
+def _keep(name):
+    shutil.copy(os.path.join(_ix17, 'erdos-488-spec.json'), os.path.join(_ix17, name))
+    return os.path.join(_ix17, name)
+_r2p = os.path.join(REPO, 'records', 'intake', 'erdos-488-r2-spec.json')
+_r2, _ = IS.write('corpus/intake/erdos-488-r2/target.json', out_dir=os.path.relpath(_ix17, REPO))
+ok(open(os.path.join(_ix17, 'erdos-488-r2-spec.json'), 'rb').read() == open(_r2p, 'rb').read() and not os.path.exists(os.path.join(_ix17, 'erdos-488-r2-reading.json'))
+   and open(_tabp, 'rb').read() == _before[1] and _r2['f2']['table'] == {'path': 'records/intake/erdos-488-reading.json', 'sha256': hashlib.sha256(_before[1]).hexdigest()}
+   and {k: v for k, v in _r2['f2'].items() if k != 'table'} == {k: v for k, v in _s17['f2'].items() if k != 'table'},
+   'intake spec, erdos-488-r2 (TODO L7): written again byte for byte the recorded spec; no table written — F2 names erdos-488\'s recorded table by its sha256, held to what the reading derives now',
+   _r2['f2']['table']['sha256'][:12])
+ok(all(open(os.path.join(REPO, 'corpus', 'intake', 'erdos-488-r2', f), 'rb').read() == open(os.path.join(REPO, 'corpus', 'intake', 'erdos-488', f), 'rb').read() for f in ('pins.json', 'canonical.lean', 'LICENSE-formal-conjectures'))
+   and _r2['canonical'] == _s17['canonical'] and _r2['claim'] == _s17['claim'] and _r2['claimReds'] == _s17['claimReds'] and _r2['f3'] == _s17['f3'],
+   'intake spec, erdos-488-r2: the same pins — pins.json and canonical.lean byte for byte erdos-488\'s, the same two declarations, witness and planted defects')
+ok(list(_r2)[0] == 'format' and _r2['format'] == 2 and _r2['writer']['rules'] == 2 and len(_r2['mutants']) == 29
+   and [(m['id'], m['kind'], m['rule'], m['statement'], m['expect'], m['aligned']) for m in _r2['mutants'][:28]] == [(m['id'], m['kind'], m['rule'], m['statement'], m['expect'], m['aligned']) for m in _s17['mutants']]
+   and [(m['id'], m['kind'], m['rule'], m['expect'], m['certain']) for m in _r2['mutants'][28:]] == [('N3', 'type', 'type:nat-int-all', 'NOT ACCEPTED', True)]
+   and _r2['predictions']['certain'] == 9 and _r2['predictions']['kernelDecides'] == 20,
+   'intake spec, erdos-488-r2: format 2, rule set 2 — rule set 1\'s 28 planted statements first (the same ids, statements and predictions), then N3, every ℕ made ℤ at once; 9 certain predictions, 20 "kernel decides"')
+_rc, _out = _checker(_r2p)
+ok(_rc == 0 and 'OK' in _out and '1 in format 2' in _out, 'intake spec, erdos-488-r2: cert-machine\'s checker (tools/check-intake-specs.js, run in place) holds the recorded spec to the written format', _out[:120])
+_r2txt = json.dumps(_r2, ensure_ascii=False)
+ok('"DID NOT ELABORATE"' in _r2['vocabulary'] and 'met only by the outcome "REFUSED by type mismatch"' in _r2['vocabulary'] and 'it is not tested' in _r2['vocabulary']
+   and 'or the statement does not elaborate' not in _r2txt and 'met only by a refusal by type mismatch' in _r2['success']
+   and all('if it does not, it is not tested' in m['why'] for m in _r2['mutants'] if m['rule'] == 'type:nat-int')
+   and 'format' not in _s17 and _s17['vocabulary'] == IS.VOCABULARY and 'or the statement does not elaborate' in _s17['vocabulary'],
+   'intake spec, format 2: its vocabulary states NOT ACCEPTED as met only by a refusal by type mismatch and names DID NOT ELABORATE (not tested, counted neither way); a target without "format" writes the first format\'s words')
+# format 2: no directory of the machine in a public record — a target outside the repository, given by its absolute path, under a folder named home/
+_hd = os.path.join(_ix17, 'home', 'someone', 'corpus', 'intake', 'erdos-488')
+os.makedirs(os.path.dirname(_hd))
+_p1, _ = _variant(at=_hd, absolute=True)
+_p1txt = open(os.path.join(_ix17, 'erdos-488-spec.json'), encoding='utf-8').read()
+_p2, _ = _variant(target=lambda o: o.update(format=2), at=_hd, absolute=True)
+_p2txt = open(os.path.join(_ix17, 'erdos-488-spec.json'), encoding='utf-8').read() + open(os.path.join(_ix17, 'erdos-488-reading.json'), encoding='utf-8').read()
+_p2f = _keep('outside-spec.json')
+red(_p2 is not None and not any(w in _p2txt for w in ('/Users/', '/home/', '~/', _ix17)) and '/home/someone/' in _p1txt
+    and _p2['writer']['by'] == 'python3 -m claimbox intake spec target.json'
+    and [_p2['writer'][k]['path'] for k in ('target', 'pins', 'canonicalBytes')] == ['target.json', 'pins.json', 'canonical.lean']
+    and _p2['f2']['table']['path'] == 'erdos-488-reading.json' and _p2['f2']['reading']['path'] == 'corpus/intake/erdos-488/erdos-488.reading' and _checker(_p2f)[0] == 0,
+    'intake spec, format 2: written from a target outside the repository, the spec and its table carry no /Users/, /home/ or ~/ — each outside file by its name alone, its sha256 beside it (the first format, from the same place, carries the directory)',
+    _p2['writer']['by'] if _p2 else 'refused')
+ok(IS.public(os.path.join(REPO, 'corpus', 'intake', 'erdos-488', 'target.json')) == 'corpus/intake/erdos-488/target.json' and IS.public('corpus/intake/erdos-488/../erdos-488/pins.json') == 'corpus/intake/erdos-488/pins.json'
+   and IS.public(os.path.join(os.path.dirname(REPO), 'elsewhere', 'target.json')) == 'target.json',
+   'intake spec, format 2: a file inside the repository is named relative to it (an absolute path given is made relative), a file outside it by its name')
+red(_variant(target=lambda o: o.update(format=2, what=o['what'] + ' (see ~/Projects/elsewhere/notes.md)'))[1] == 'path', 'intake spec, format 2: refused — the target\'s own words carry a home-directory path')
+_o = json.load(open(_r2p, encoding='utf-8'))
+_o['writer']['by'] = 'python3 -m claimbox intake spec /Users/someone/Projects/elsewhere/target.json'
+with open(os.path.join(_ix17, 'homepath-spec.json'), 'w', encoding='utf-8') as _f:
+    json.dump(_o, _f, indent=1, ensure_ascii=False)
+_rc, _out = _checker(os.path.join(_ix17, 'homepath-spec.json'))
+red(_rc == 1 and 'a home-directory path' in _out, 'intake spec, format 2: the receiver\'s checker refuses the recorded r2 spec once its writer.by names a home directory (the check above is live)')
+red(_variant(target=lambda o: (o.update(format=2), o['canonical'].update(commit=o['canonical']['commit'][:7])))[1] == 'format', 'intake spec, format 2: refused — a commit that is not the full 40 characters')
+red(_variant(target=lambda o: (o.update(format=2), o.pop('f2')))[1] == 'format', 'intake spec, format 2: refused — no f2 and no f2NotApplicable')
+red(_variant(target=lambda o: o.update(format=3))[1] == 'format', 'intake spec: refused — a format that does not exist (3)')
+_na, _ = _variant(target=lambda o: (o.update(format=2, f2NotApplicable='no finite instance decides its parts (a control: #488 has them)'), o.pop('f2')))
+ok(_na is not None and 'f2' not in _na and _na['f2NotApplicable'].startswith('no finite instance') and _checker(_keep('nof2-spec.json'))[0] == 0,
+   'intake spec, format 2: a target without f2 that says why is written with f2NotApplicable, and the receiver\'s checker holds it')
+# the identity-mode fields (the receiver's since 2026-11-10), copied to their places in either format
+_AX = ['Erdos488.someAxiom', {'canonical': 'Erdos488.otherAxiom', 'claim': 'Erdos488ExactAdapter.otherAxiom'}]
+def _idt(o):
+    o['canonical'].update(selfContained=True, axioms=_AX)
+    o['intakeImports'] = ['FormalConjecturesUtil']
+    o['f3']['withClaim'] = True
+_i1, _ = _variant(target=_idt)
+_i1f = _keep('identity1-spec.json') if _i1 else None
+def _mod(o):
+    o['claim'].update(url=o['canonical']['url'], commit=o['canonical']['commit'], module='FormalConjectures.ErdosProblems.«488»')
+_i2, _ = _variant(target=lambda o: (o.update(format=2), _mod(o)), pins=_mod)
+_i2f = _keep('identity2-spec.json') if _i2 else None
+ok(_i1 is not None and 'format' not in _i1 and list(_i1['canonical'])[-2:] == ['selfContained', 'axioms'] and _i1['canonical']['selfContained'] is True and _i1['canonical']['axioms'] == _AX
+   and _i1['intakeImports'] == ['FormalConjecturesUtil'] and list(_i1)[list(_i1).index('canonical') + 1] == 'intakeImports' and _i1['f3']['withClaim'] is True and 'module' not in _i1['claim']
+   and {k: v for k, v in _i1.items() if k not in ('canonical', 'intakeImports', 'f3', 'writer', 'f2')} == {k: v for k, v in _s17.items() if k not in ('canonical', 'f3', 'writer', 'f2')},
+   'intake spec, identity mode (the first format): canonical.selfContained, canonical.axioms (a name and a {canonical, claim} pair), intakeImports and f3.withClaim copied to their places; nothing else moves')
+ok(_i2 is not None and _i2['format'] == 2 and _i2['claim']['module'] == 'FormalConjectures.ErdosProblems.«488»' and _i2['claim']['url'] == _i2['canonical']['url'] and _i2['claim']['commit'] == _i2['canonical']['commit'],
+   'intake spec, identity mode (format 2): claim.module copied — the claimant\'s file a module of the canonical repository at the same commit')
+_rc, _out = _checker(_i1f, _i2f) if _i1f and _i2f else (1, 'not written')
+ok(_rc == 0 and '2 specs' in _out and '1 in format 2, 1 in the first' in _out, 'intake spec, identity mode: the receiver\'s checker holds both specs', _out[:120])
+red(_variant(target=lambda o: o['canonical'].update(axioms=_AX))[1] == 'identity', 'intake spec, identity mode: refused — canonical.axioms without canonical.selfContained')
+red(_variant(target=lambda o: o['claim'].update(module='Erdos488'))[1] == 'identity', 'intake spec, identity mode: refused — claim.module with the claimant\'s file in another repository')
+red(_variant(target=lambda o: (o.update(format=2), _mod(o), o['claim'].update(commit='0' * 40)))[1] == 'identity', 'intake spec, identity mode: refused — claim.module at another commit of the canonical repository')
+red(_variant(target=lambda o: o['canonical'].update(selfContained='yes'))[1] == 'identity', 'intake spec, identity mode: refused — canonical.selfContained that is not true or false')
+_o1, _o2 = json.load(open(_i1f, encoding='utf-8')), json.load(open(_i2f, encoding='utf-8'))
+del _o1['canonical']['selfContained']
+_o2['claim']['commit'] = '0' * 40
+for _n, _o in (('identity1-bad-spec.json', _o1), ('identity2-bad-spec.json', _o2)):
+    with open(os.path.join(_ix17, _n), 'w', encoding='utf-8') as _f:
+        json.dump(_o, _f, indent=1, ensure_ascii=False)
+_rc, _out = _checker(os.path.join(_ix17, 'identity1-bad-spec.json'), os.path.join(_ix17, 'identity2-bad-spec.json'))
+red(_rc == 1 and 'canonical.axioms needs canonical.selfContained' in _out and 'claim.module needs' in _out and '2 of 2' in _out,
+    'intake spec, identity mode: the receiver\'s checker refuses the same two combinations, written by hand into the two specs above')
+# a table already recorded: held to what the reading derives now, never taken on its name
+red(_variant(target=lambda o: o['f2']['instances'][1].update(values='0..4'), src='erdos-488-r2')[1] == 'f2', 'intake spec: refused — the recorded table named by the target is of other instances (n to 4, not 5)')
+red(_variant(target=lambda o: o['f2'].update(table='records/intake/erdos-488-no-such-reading.json'), src='erdos-488-r2')[1] == 'f2', 'intake spec: refused — the recorded table named by the target is not on disk')
 shutil.rmtree(_ix17)
 
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')

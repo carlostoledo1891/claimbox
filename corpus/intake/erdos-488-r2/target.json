@@ -1,0 +1,40 @@
+{
+ "id": "erdos-488-r2",
+ "what": "Declan Gessel's refutation of Erdős #488, with OpenAI's GPT-6 Astra in Codex (google-deepmind/formal-conjectures PR #5297), against DeepMind's statement, again: the erdos-488 target under rule set 2 and in the receiver's format 2. The same pins (pins.json and canonical.lean are erdos-488's, byte for byte: nothing was fetched again), the same sentence, the same blind reading and the same instances, so F2's table is the one already recorded. Rule set 1 retyped one ℕ at a time and neither statement elaborated (N1, N2: they tested nothing); rule set 2 adds every ℕ made ℤ at once (N3), which is the statement this run is for.",
+ "format": 2,
+ "rules": 2,
+ "polarity": "refutes",
+ "claim": {
+  "what": "Declan Gessel's refutation, with OpenAI's GPT-6 Astra in Codex (google-deepmind/formal-conjectures PR #5297)",
+  "url": "https://gist.github.com/d8e15e5ff1b6c7e99e3d86d7c66f1d08.git",
+  "commit": "034be67a5c958e55505bb357f9e4ef3015788465",
+  "file": "Erdos488.lean",
+  "decl": "Erdos488ExactAdapter.refutation",
+  "license": "none stated: no byte of the file is kept here or in the spec but its declaration's header line; the run fetches it at the pin"
+ },
+ "canonical": {
+  "what": "DeepMind's statement of Erdős #488",
+  "url": "https://github.com/google-deepmind/formal-conjectures.git",
+  "commit": "2055e5adadae0b2e392365938faa82ef6f1464f0",
+  "path": "FormalConjectures/ErdosProblems/488.lean",
+  "decl": "Erdos488.erdos_488"
+ },
+ "types": {},
+ "f3": {
+  "values": ["{2}", "2", "3"],
+  "why": "A = {2}, n = 2, m = 3: the witness of cert-machine's hand-written spec, as in the erdos-488 target"
+ },
+ "sentence": {
+  "url": "https://www.erdosproblems.com/488"
+ },
+ "f2": {
+  "reading": "corpus/intake/erdos-488/erdos-488.reading",
+  "table": "records/intake/erdos-488-reading.json",
+  "instances": [
+   {"binder": "A", "reading": "A", "lean": "Finset ℕ", "values": "nonempty subsets of 0..5"},
+   {"binder": "n", "reading": "n", "lean": "ℕ", "values": "0..5"},
+   {"binder": "m", "reading": "m", "lean": "ℕ", "values": "0..7"}
+  ],
+  "chunk": 200
+ }
+}
