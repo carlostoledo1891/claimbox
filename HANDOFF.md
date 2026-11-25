@@ -35,7 +35,10 @@ Green.lean. Both sides read back field for field (HOL4 14/14, Lean 10/10), each 
 three ways). 17/17 planted changes caught, 1/1 green control not flagged. Today the two kernels decide the SAME CERTIFICATE; only
 HOL4 decides the bound — Lean has no soundness theorem (PLAN.md §4, §5). No kernel was run. The Lean run's folder is found by the
 pattern notes/*/astra-lean-slab/work under cert-machine (its name is kept out of this public repository). Battery §18 runs
-`bridge.py --check`. NEXT: PLAN.md §5 (the Lean bound over the same model data, on a pod).
+`bridge.py --check`. `make test` on this branch (run in ~/Projects/claimbox, 21:23–21:30 UTC): 722 pass, 2 fail, 239/239 reds — the 2
+fails are not this work's: drift (instruments/intake/SPEC.md, spec.schema.json, tools/check-intake-specs.js) and web (design/WARRANT.md),
+both because cert-machine moved after the last lift. The battery does not run from a worktree outside ~/Projects: §5 reads its plant as
+../claimbox/.plants/ relative to cert-machine. NEXT: PLAN.md §5 (the Lean bound over the same model data, on a pod).
 
 **THE PRIME-GAP 186 STATEMENT LAYER, WRITTEN BY THE WRITER ALONE (2026-11-11 evening, branch `intake-pg186-2026-11-11` from
 main ada8265 — committed locally, NOT PUSHED, not merged; done by an agent from a cert-machine session).** The six declarations of
