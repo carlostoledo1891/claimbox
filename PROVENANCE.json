@@ -21,9 +21,9 @@
   "corpus/lean-intake/erdos-488/runs/2026-11-09/f2eval.jsonl": "f0da5cfd56aa07a0f8fdc9558857168be02084e5e5b64ff9e78b3064f93e015f",
   "instruments/intake/erdos-488.js": "a2dc8058927b98413eb74c83f0427efb6c560a0d104ef06ad12596cd12444edb",
   "certs/lean-intake-erdos-488-claimbox.json": "e11194055a40ac250f325f212ee415f75dae3cd44eed0c75094bd13da7b80a4b",
-  "instruments/intake/SPEC.md": "c18c30f77ddddde9099968d28122a63256beaf8f9116cdce6b3ce12d4e203173",
-  "instruments/intake/spec.schema.json": "d550347628fd630a8f2dc1236a5dc9a7680fc3ffffaf8d8d99b87b203c9cb5f1",
-  "tools/check-intake-specs.js": "1a3458e9b22ff0d113188c58681fe978b87b9b31c66f0303d7c793a927c06399"
+  "instruments/intake/SPEC.md": "3f431faab8ad7c9f9bb77c72813222be5f2081788c9d9eb4d723ba75d9f3e97b",
+  "instruments/intake/spec.schema.json": "2618584a51515f3b0f255e02638c6614cdfa985e8f83c0e5365e8946c4879714",
+  "tools/check-intake-specs.js": "c2ccde3faa1002f4efac55e0fb97e98432d1d3c7c793a511b5568de6f56fbf4a"
  },
  "corpus": {
   "register-sentences.json": "5d5c7f98e71f6489e26d1cec3d643aed090e37e33b2e70e2388ee400016a211c"
