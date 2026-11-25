@@ -4,6 +4,15 @@ The state is HANDOFF.md's START HERE; the roadmap is PLAN.md §7. This is the or
 reason it matters and how it is checked. Items 1–3 close holes the last two days opened; 4–6 are the roadmap; 7–10 are the ideas
 the operator raised; 11–13 are maintenance. Nothing here spends money or touches cert-machine without the operator's word.
 
+## B. The Lean–HOL4 bridge (2026-11-25; bridge/delta3-slab/PLAN.md)
+
+**B1. DONE 2026-11-25 — the first slab end to end, at the level of the certificate** (record.json: emitted = sides, both read back,
+17/17 plants). **B2. The Lean bound** (PLAN.md §5.1): a Lean semantics over ℝ on the same model data as HOL4, the model joining the
+object, Lean's kernel deciding its derived model equals the data, the soundness theorem, `slabBound` emitted and read back with HOL4's
+template — kernel runs on a pod. Why: until then only HOL4 decides the bound; the two kernels agree on the certificate, not the claim.
+Checked by: the read-back of `slabBound` equal to HOL4's bound field for field, a planted bound refused. **B3.** a_i, b_i compared.
+**B4.** the other slabs and the inner certificate (Lean kernel runs first).
+
 ## L. The Lean intake lane (2026-11-09; lean/INTAKE.md §7–§8; cert-machine's HANDOFF "THE CLAIMBOX + LEAN LANE")
 
 Steps 1 + 2 are built and calibrated on Erdős #488 (records/intake/erdos-488-calibration.json: both CALIBRATED). Next, in order:

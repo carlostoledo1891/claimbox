@@ -23,6 +23,20 @@ LaTeX, to the predicate JSON cert-machine decides — and refuses what its gramm
 
 ## ★ START HERE (2026-11-03, end of the twelfth session) — the state in one screen; the dated entries below are the history
 
+**THE LEAN–HOL4 BRIDGE, FIRST SLAB (2026-11-25, branch `bridge-delta3-slab-2026-11-25` from main bdab35b — committed locally, NOT
+PUSHED, not merged; done by an agent from a cert-machine session on the operator's "Start now").** bridge/delta3-slab/: PLAN.md (the
+object's shape, the emission to HOL4 and to Lean, the read-back, what "the same claim" means and what stays outside), bridge.py,
+claim.json, record.json. One claim object for the smallest δ₃ slab certificate (cert-machine certs/delta3/slab-2_5-9_20-g8_4_0.json,
+HOL4's theory slabC — the brief said slabA, which is [1/5, 3/10] and has no Lean result) emits: the HOL4 data sections (byte-equal to
+hol4/delta3/slabC.d3's; with the outside sections they reproduce its sha256 731af1c2…), the HOL4 acceptance and bound theorems
+(token-equal to slabC.theorem.txt and check.out's slabC_bound_n), Lean's Data.lean (byte-equal, 9d677b1f…) and the theorem line of
+Green.lean. Both sides read back field for field (HOL4 14/14, Lean 10/10), each reader decoding by that side's own definitions
+(form_val; subtractForm, dyad, pairTerm) matched to CERT-FORMAT.md; the model data compared, not claimed (8/8, including the 294 cut areas
+three ways). 17/17 planted changes caught, 1/1 green control not flagged. Today the two kernels decide the SAME CERTIFICATE; only
+HOL4 decides the bound — Lean has no soundness theorem (PLAN.md §4, §5). No kernel was run. The Lean run's folder is found by the
+pattern notes/*/astra-lean-slab/work under cert-machine (its name is kept out of this public repository). Battery §18 runs
+`bridge.py --check`. NEXT: PLAN.md §5 (the Lean bound over the same model data, on a pod).
+
 **THE PRIME-GAP 186 STATEMENT LAYER, WRITTEN BY THE WRITER ALONE (2026-11-11 evening, branch `intake-pg186-2026-11-11` from
 main ada8265 — committed locally, NOT PUSHED, not merged; done by an agent from a cert-machine session).** The six declarations of
 OpenAI's conditional proof that prime gaps are at most 186 (openai/PrimeGaps186 at 61340d0b; checked on 2026-11-10 from three

@@ -142,6 +142,9 @@ corpus/intake/<id>/        target.json (the proposal: pins, declarations, witnes
                            canonical file, Apache-2.0, byte for byte; LICENSE-formal-conjectures beside it), sentence.json (the sentence its page prints), <id>.reading (the reading)
 records/intake/            <id>-spec.json (the spec), <id>-reading.json (the reading's table), erdos-488-calibration.json
 lean/READING.md            the reading language: a file, types, formulas, what every construct means, the anchors
+bridge/delta3-slab/        the Lean–HOL4 bridge (2026-11-25): one claim object for δ₃'s smallest slab certificate emitted to HOL4 and to Lean,
+                           each emitted text compared with what that side states, both read back field by field by that side's own definitions,
+                           planted changes (PLAN.md, bridge.py, claim.json, record.json; battery §18)
 reports/                   xx.md: the x^x = y report as a document whose numbers are claims (87 slots, 10 addresses); xx.built.md its build
 notes/                     research-2026-10-30.md (neighbours, literature, what changes the design); claim-court-2026-10-23.md
 web/                       the landing page, built the Machinidae way: grammar.css (WARRANT re-expressed; sources pinned in PINS.json),

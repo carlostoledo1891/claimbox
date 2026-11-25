@@ -1,0 +1,350 @@
+{
+ "what": "The Lean–HOL4 bridge, first slab: one claim object (claim.json) emitted to HOL4 and to Lean; each emitted text compared with what that side states; each side read back and compared field by field; planted changes. Readings and comparisons only — the kernels' words are quoted from cert-machine's records.",
+ "when": "2026-11-25T21:22:03Z",
+ "object": {
+  "sha256": "de3506a522ac92aaabff989d5d5ce8145da7398d2c66b65b57f3dd0ef4af68c4"
+ },
+ "emitted": {
+  "hol4.data": {
+   "equalsSide": true,
+   "how": "byte for byte, the sections @grid @scal @theta @forms of hol4/delta3/slabC.d3",
+   "withOutsideSectionsSha256": "731af1c2e3bb31a8d119e60e16fe39cf10226fcc701a78f1de0539c2bb77935a",
+   "sideSha256": "731af1c2e3bb31a8d119e60e16fe39cf10226fcc701a78f1de0539c2bb77935a",
+   "kernelInputIsThisPlusOutside": true,
+   "assemblyCopyIdentical": true,
+   "sha256": "d3fe01c87df28077b523cd9889fed641028684f6c763f67584685ec1025d3d40",
+   "bytes": 70541
+  },
+  "hol4.accept": {
+   "equalsSide": true,
+   "how": "token for token (the pretty-printer's line breaks aside), hol4/delta3/slabC.theorem.txt",
+   "assemblyCopyIdentical": true,
+   "sha256": "a96f4b76d62efe6ba7ff4ba4a94e5a7317fc8a37ac65532de16ca2fe2f8f816a",
+   "bytes": 273
+  },
+  "hol4.bound": {
+   "equalsSide": true,
+   "how": "token for token, THM slabC_bound_n in hol4/delta3/assembly/check.out",
+   "sha256": "0258171d1fb3f2a53aa4efda6ab3c90f2ce205c7e1e7e42b0cbada2ffd39b942",
+   "bytes": 202
+  },
+  "lean.data": {
+   "equalsSide": true,
+   "how": "byte for byte, notes/*/astra-lean-slab/work/Data.lean",
+   "sha256": "9d677b1ff8e3e1d10f511a1a833270e4394e59cd12e7133f5adef305dcafd83f",
+   "bytes": 33248
+  },
+  "lean.accept": {
+   "equalsSide": true,
+   "how": "the theorem's line, verbatim in notes/*/astra-lean-slab/work/Green.lean",
+   "sha256": "a250411a9ad9d7e1a821c17f8ef1c88de592bd79217b0219a7cd9c1a7da8c34a",
+   "bytes": 48
+  }
+ },
+ "readBack": {
+  "hol4": {
+   "statement.n": "MATCH",
+   "statement.lo": "MATCH",
+   "statement.hi": "MATCH",
+   "statement.claim": "MATCH",
+   "statement.grid": "MATCH (147)",
+   "statement.theta": "MATCH (294)",
+   "statement.thetaPairs": "MATCH (294)",
+   "proof.B": "MATCH",
+   "proof.eps": "MATCH",
+   "proof.forms": "MATCH (1998, as a multiset)",
+   "bound.n": "MATCH",
+   "bound.lo": "MATCH",
+   "bound.hi": "MATCH",
+   "bound.claim": "MATCH"
+  },
+  "hol4Consistency": {
+   "theoremScalarsEqualScalSection": true,
+   "theoremWitnessEqualsWitSection": true,
+   "formRowsCanonical": true,
+   "boundIsSoundnessAtTheseArguments": true
+  },
+  "hol4AsWritten": {
+   "lo": true,
+   "hi": true,
+   "claim": true,
+   "B": true,
+   "eps": true,
+   "theta": true,
+   "formsInOrder": true
+  },
+  "lean": {
+   "statement.n": "MATCH",
+   "statement.lo": "MATCH",
+   "statement.hi": "MATCH",
+   "statement.claim": "MATCH",
+   "statement.grid": "MATCH (147)",
+   "statement.theta": "MATCH (294)",
+   "statement.thetaPairs": "MATCH (294)",
+   "proof.B": "MATCH",
+   "proof.eps": "MATCH",
+   "proof.forms": "MATCH (1998, as a multiset)"
+  },
+  "leanConsistency": {
+   "cellsContiguous": true,
+   "thetaCountPerCell": true,
+   "checkIsCheckWithWitness": true
+  },
+  "leanTheorem": {
+   "name": "slabAccepted",
+   "prop": "check slabCert = true"
+  }
+ },
+ "readings": {
+  "hol4": {
+   "formCodes": {
+    "0": "yy",
+    "1": "11",
+    "2": "y1",
+    "3": "yd",
+    "4": "11d",
+    "5": "y",
+    "6": "1",
+    "7": "mlo",
+    "8": "mhi",
+    "9": "mm",
+    "10": "mlo_y",
+    "11": "mlo_1",
+    "12": "mhi_y",
+    "13": "mhi_1",
+    "14": "tri"
+   },
+   "from": "hol4/delta3/delta3_semScript.sml form_val (codes 0–13) and form_idx_ok (the three-index code), each branch's polynomial matched to one row of instruments/delta3/CERT-FORMAT.md",
+   "constants": "slabC_<name> := the section <name> of hol4/delta3/slabC.d3 (hol4/delta3/delta3_slabCScript.sml: names, define (thy ^ \"_\" ^ nm))",
+   "thetaBinding": "Ltheta = … + cut_val (ZIP (cut, theta)): θ_t goes to the t-th row (i, j, …) of the section @cut (hol4/delta3/delta3_semScript.sml)"
+  },
+  "lean": {
+   "ctors": {
+    "hiO": "mhi_1",
+    "hiY": "mhi_y",
+    "loY": "mlo_y",
+    "oo": "11",
+    "y1": "y1",
+    "yd": "yd",
+    "yy": "yy"
+   },
+   "from": "Types.lean Form (the arguments) and Checker.lean subtractForm (what each constructor subtracts), matched to instruments/delta3/CERT-FORMAT.md; Cert.mm read by hand from Checker.lean globals (\"subtracted as -mu (m-lo)(hi-m)\")",
+   "scales": "θ and μ in units of 1/dyad, dyad = 68719476736 (Checker.lean); lo20, hi20 in twentieths; Fraction ⟨num, den⟩ = num/den",
+   "thetaBinding": "pairTerm, cell by cell over the cells b in order: 2·b.q ≤ a.p or a.q + U ≤ 2·b.p absent, a.q ≤ 2·b.p and 2·b.q ≤ a.p + U full, else the next θ of the cell (Checker.lean); evaluated here in Python, not in the kernel"
+  }
+ },
+ "model": {
+  "what": "the model constants are outside the claim (data to HOL4, computed by Lean's checker); these compare the HOL4 data with the object's definitions and with the Lean witness — readings of data, not decisions",
+  "geoIsGrid": true,
+  "fullPairsEqualLeanClassification": true,
+  "cutWidths": true,
+  "fullWidths": true,
+  "cutSignsEqualLeanGeo": true,
+  "fullSignsEqualLeanGeo": true,
+  "cutAreasEqualObject": true,
+  "cutAreasEqualLeanWedge": true,
+  "counts": {
+   "cut": 294,
+   "full": 10380,
+   "ab": 146
+  },
+  "notCompared": "a_i, b_i (the section @ab): Lean's bathtub values sit inside its witness's summaries, mixed with the other terms of each row"
+ },
+ "words": {
+  "hol4": [
+   "SOUND slab_check_sound EXACT_S149 true oracles [DISK_THM] axioms [] hyps 0",
+   "THM slabC_bound_n oracles [DISK_THM] axioms [] hyps 0",
+   "CHECK slabC_check oracles [DISK_THM] axioms [] hyps 0 rhs T"
+  ],
+  "lean": [
+   "'slabAccepted' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "certMachine": {
+   "ledger": "certs/delta3-ledger.json",
+   "verdict": "VERIFIED",
+   "bound": "50963377393403307885655938/185520059131196374275938963885"
+  },
+  "from": {
+   "hol4": "hol4/delta3/assembly/check.out",
+   "lean": "notes/*/astra-lean-slab/work/logs/run-0196.log"
+  }
+ },
+ "plants": [
+  {
+   "id": "H1",
+   "what": "HOL4 data: the first form's multiplier numerator + 1",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH 1 only in the object ['[\"yy\", [0, 56], \"7/68719476736\"]'], 1 only on the side ['[\"yy\", [0, 56], \"1/8589934592\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "H2",
+   "what": "HOL4 data: the first form's code 0 → 2 (yy read as y1), multiplier kept",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH 1 only in the object ['[\"yy\", [0, 56], \"7/68719476736\"]'], 1 only on the side ['[\"y1\", [0, 56], \"7/68719476736\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "H3",
+   "what": "HOL4 data: θ_0 numerator + 1",
+   "field": "statement.theta",
+   "caught": true,
+   "reported": "MISMATCH at [0] object \"32321696947/68719476736\" side \"8080424237/17179869184\"",
+   "expect": "caught"
+  },
+  {
+   "id": "H4",
+   "what": "HOL4 data: the first two rows of @cut swapped (θ_0 and θ_1 attached to each other's pair)",
+   "field": "statement.thetaPairs",
+   "caught": true,
+   "reported": "MISMATCH at [0] object [0, 0] side [0, 73]",
+   "expect": "caught"
+  },
+  {
+   "id": "H5",
+   "what": "HOL4 acceptance theorem: the claim's numerator + 1 (the theorem and its @scal section then disagree)",
+   "field": "statement.claim",
+   "caught": true,
+   "reported": "MISMATCH object 50963377393403307885655938/185520059131196374275938963885 side 50963377393403307885655939/185520059131196374275938963885",
+   "expect": "caught"
+  },
+  {
+   "id": "H6",
+   "what": "HOL4 bound theorem: in_box 146 → 145",
+   "field": "bound.n",
+   "caught": true,
+   "reported": "MISMATCH side 145",
+   "expect": "caught"
+  },
+  {
+   "id": "L1",
+   "what": "Lean data: the first multiplier .yy 56 7 → .yy 56 8",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH 1 only in the object ['[\"yy\", [0, 56], \"7/68719476736\"]'], 1 only on the side ['[\"yy\", [0, 56], \"1/8589934592\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "L2",
+   "what": "Lean data: cell0's .hiY 2 → .hiO 2 (another kind, the same coefficient)",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH 1 only in the object ['[\"mhi_y\", 0, \"1/34359738368\"]'], 1 only on the side ['[\"mhi_1\", 0, \"1/34359738368\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "L3",
+   "what": "Lean data: cell0's first θ + 1",
+   "field": "statement.theta",
+   "caught": true,
+   "reported": "MISMATCH at [0] object \"32321696947/68719476736\" side \"8080424237/17179869184\"",
+   "expect": "caught"
+  },
+  {
+   "id": "L4",
+   "what": "Lean data: cell0's last θ moved to the front of cell1's list (the flattened θ list unchanged)",
+   "field": "statement.thetaPairs",
+   "caught": true,
+   "reported": "MISMATCH at [1] object [0, 73] side [1, 0]",
+   "expect": "caught"
+  },
+  {
+   "id": "L5",
+   "what": "Lean data: the claim's numerator + 1",
+   "field": "statement.claim",
+   "caught": true,
+   "reported": "MISMATCH object 50963377393403307885655938/185520059131196374275938963885 side 50963377393403307885655939/185520059131196374275938963885",
+   "expect": "caught"
+  },
+  {
+   "id": "H7",
+   "what": "HOL4 semantics: form_val's branches for codes 0 and 2 swapped — the same data then means another claim",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH 1534 only in the object ['[\"y1\", [0, 107], \"1/68719476736\"]', '[\"y1\", [0, 119], \"1/68719476736\"]'], 1534 only on the side ['[\"y1\", [0, 115], \"756439/68719476736\"]', '[\"y1\", [0, 116], \"248311/8589934592\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "L6",
+   "what": "Lean semantics: subtractForm's .hiY and .loY swapped — the same data then means another claim",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH 128 only in the object ['[\"mhi_y\", 0, \"1/34359738368\"]', '[\"mhi_y\", 1, \"3/68719476736\"]'], 128 only on the side ['[\"mhi_y\", 11, \"1/68719476736\"]', '[\"mhi_y\", 134, \"1/68719476736\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "O1",
+   "what": "the object: the first form's μ + 2^-36 (one coefficient)",
+   "field": "proof.forms",
+   "caught": true,
+   "reported": "MISMATCH MISMATCH 1 only in the object ['[\"yy\", [0, 56], \"1/8589934592\"]'], 1 only on the side ['[\"yy\", [0, 56], \"7/68719476736\"]'] | MISMATCH 1 only in the object ['[\"yy\", [0, 56], \"1/8589934592\"]'], 1 only on the side ['[\"yy\", [0, 56], \"7/68719476736\"]']",
+   "expect": "caught"
+  },
+  {
+   "id": "O2",
+   "what": "the object: the claim + 2^-100",
+   "field": "statement.claim",
+   "caught": true,
+   "reported": "MISMATCH MISMATCH object 64603755942405480403983532603034889137356233972826886573/235174614312037694629864530078578236260602457358811801845760 side 50963377393403307885655938/185520059131196374275938963885 | MISMATCH object 64603755942405480403983532603034889137356233972826886573/235174614312037694629864530078578236260602457358811801845760 side 50963377393403307885655938/185520059131196374275938963885",
+   "expect": "caught"
+  },
+  {
+   "id": "C1",
+   "what": "GREEN control — the object's forms reordered (the first moved last): the same claim, another text",
+   "field": "proof.forms",
+   "caught": false,
+   "reported": "MATCH under the reading (a multiset); the emitted HOL4 text differs from the recorded one in its row order, the Lean text does",
+   "expect": "not caught"
+  },
+  {
+   "id": "R1",
+   "what": "the object with a triangle form: no Lean constructor — the Lean emitter refuses",
+   "field": "emit-lean",
+   "caught": true,
+   "reported": "REFUSED emit-lean: no Lean constructor for the form kind 'tri' (Types.lean: Form)",
+   "expect": "refused"
+  },
+  {
+   "id": "R2",
+   "what": "the object with μ = 1/3: not a natural number of 2^-36 — the Lean emitter refuses",
+   "field": "emit-lean",
+   "caught": true,
+   "reported": "REFUSED emit-lean: μ 1/3 is not a natural number of 1/68719476736 (the Lean Cert encoding)",
+   "expect": "refused"
+  }
+ ],
+ "totals": {
+  "emittedEqualSides": true,
+  "hol4ReadBackMatches": true,
+  "leanReadBackMatches": true,
+  "plantsCaught": 17,
+  "plants": 17,
+  "greenControlsNotFlagged": 1,
+  "greenControls": 1,
+  "modelAgrees": true,
+  "all": true
+ },
+ "pins": {
+  "certs/delta3/slab-2_5-9_20-g8_4_0.json": "bc23d33cb0db48a29e7bde319ef2e20dcd56d18b8ab498c06fec52624537d2c3",
+  "certs/delta3-ledger.json": "81432c07a1b177da134dd73f719e34fb7b0165d08041482cf301f2725e48a05f",
+  "instruments/delta3/CERT-FORMAT.md": "87c27bd6a54766daf1c3bcfb5ca9cb5a5b53430aaaedbd222e8ab74c74260726",
+  "hol4/delta3/slabC.d3": "731af1c2e3bb31a8d119e60e16fe39cf10226fcc701a78f1de0539c2bb77935a",
+  "hol4/delta3/slabC.theorem.txt": "c6f1e72b6429cb275c13bf2f34836a1f1928a547c69703ff006560d1cf4aac02",
+  "hol4/delta3/delta3_slabCScript.sml": "6b304c782d4e10481bab8b628111d54d9b2c856b314051c4298b01d3f9fe9a1f",
+  "hol4/delta3/delta3_semScript.sml": "4622088e77d75c22621892b523f77471c5e951c2ef491a5ac53ad5f87aebbb55",
+  "hol4/delta3/delta3_checkScript.sml": "785e8c08430bc4c00fe9197361c4b58899417a5574577198076c37593406f51f",
+  "hol4/delta3/assembly/check.out": "eb66945951fc135c81c2314578d3f67da261c49abe81958320ff3b137253431b",
+  "hol4/delta3/assembly/certs/slabC.d3": "731af1c2e3bb31a8d119e60e16fe39cf10226fcc701a78f1de0539c2bb77935a",
+  "hol4/delta3/assembly/certs/slabC.theorem.txt": "c6f1e72b6429cb275c13bf2f34836a1f1928a547c69703ff006560d1cf4aac02",
+  "hol4/delta3/assembly/certs/delta3_slabCScript.sml": "6b304c782d4e10481bab8b628111d54d9b2c856b314051c4298b01d3f9fe9a1f",
+  "notes/*/astra-lean-slab/work/Types.lean": "577810289de2aec9e078f74e439d79b67396b2d57f6937439e72334eb1aedb92",
+  "notes/*/astra-lean-slab/work/Checker.lean": "2f653e0852ff2bfd236decaef8f20aefe5d2c203a508778ab6650b83a64f266c",
+  "notes/*/astra-lean-slab/work/Data.lean": "9d677b1ff8e3e1d10f511a1a833270e4394e59cd12e7133f5adef305dcafd83f",
+  "notes/*/astra-lean-slab/work/Instance.lean": "ecf6542fb15deca29fe203a22ec0a94aef2bc07a675d316dd93dca29c09336a9",
+  "notes/*/astra-lean-slab/work/Green.lean": "a2a838af660aeef4c3088efd1f074d5bbb70ebb23b5c580e773c19d672de5589",
+  "notes/*/astra-lean-slab/work/WGeo.lean": "61d1cfaff7023aa1575d7b3c2dce741b22dbf84009328457ff31c9ddafc9fe0e",
+  "notes/*/astra-lean-slab/work/logs/run-0196.log": "2c8f0be6eb47dad206df3b6a9f45e7ea1fcf55e441da5d5d13a92812c5fa0780"
+ }
+}

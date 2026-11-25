@@ -1996,5 +1996,20 @@ finally:
 red(_mv == 'calibrate', 'intake calibrate pg186: a recorded statement moved in the reference (ax1\'s bound 2 made 1) is no longer "written again" — and, having no reason on file, is refused, never counted', str(_mv))
 shutil.rmtree(_ix17)
 
+# ---- 18 · the Lean–HOL4 bridge, first slab (2026-11-25, bridge/delta3-slab: PLAN.md) ---------------------------------------------------------
+_bd = os.path.join(REPO, 'bridge', 'delta3-slab')
+_bc = subprocess.run([sys.executable, os.path.join(_bd, 'bridge.py'), '--check'], capture_output=True, text=True, cwd=REPO)
+_br = json.load(open(os.path.join(_bd, 'record.json'), encoding='utf-8'))
+_bt = _br['totals']
+ok(_bc.returncode == 0 and _bt['all'] and _bt['emittedEqualSides'] and _bt['hol4ReadBackMatches'] and _bt['leanReadBackMatches'] and _bt['modelAgrees'],
+   'bridge delta3-slab --check: one claim object emitted to HOL4 and to Lean equals what each side states (data sections and Data.lean byte for byte, the '
+   'theorems token for token), both read back field for field to the object, the model data agree, the record unchanged',
+   _bc.stdout.strip().split('\n')[-1][:160])
+for _p in _br['plants']:
+    if _p['expect'] == 'not caught':
+        ok(not _p['caught'], 'bridge delta3-slab ' + _p['id'] + ': ' + _p['what'] + ' — not flagged')
+    else:
+        red(_p['caught'], 'bridge delta3-slab ' + _p['id'] + ': ' + _p['what'] + ' — caught', str(_p['reported'])[:100])
+
 print('\n' + str(passes) + ' pass, ' + str(fails) + ' fail; ' + str(reds_fired) + '/' + str(reds) + ' red controls fired — claimbox')
 sys.exit(0 if fails == 0 and reds_fired == reds else 1)
