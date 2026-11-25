@@ -1,0 +1,12 @@
+Wed Nov 25 22:54:14 UTC 2026
+✔ [24/29] Built Model (222ms)
+✔ [26/29] Built HData (4.1s)
+ℹ [28/29] Built ModelCheck (67s)
+info: model/ModelCheck.lean:19:0: 'slabModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (29 jobs).
+
+real	1m11.803s
+user	1m11.752s
+sys	0m2.101s
+EXIT 0
+Wed Nov 25 22:55:26 UTC 2026

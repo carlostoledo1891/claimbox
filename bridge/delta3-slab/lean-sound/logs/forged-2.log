@@ -1,0 +1,10 @@
+Wed Nov 25 23:29:20 UTC 2026
+attempt/ForgedBound.lean:12:67: error: Tactic `decide` proved that the proposition
+  checkWith slabWitness forged = true
+is false
+
+real	1m13.860s
+user	1m10.923s
+sys	0m3.059s
+FORGED-EXIT 1
+Wed Nov 25 23:30:34 UTC 2026

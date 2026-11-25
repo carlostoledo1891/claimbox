@@ -1,0 +1,1912 @@
+Wed Nov 25 22:48:40 UTC 2026
+✔ [3/165] Built Types (158ms)
+✔ [5/165] Built Checker (389ms)
+ℹ [7/165] Built Assemble (175ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.23ms
+	attribute application 0.0166ms
+	elaboration 3.43ms
+	fix level params 0.0213ms
+	instantiate metavars 0.0606ms
+	let-to-have transformation 0.00449ms
+	linting 0.691ms
+	parsing 1.14ms
+	process pre-definitions 0.192ms
+	share common exprs 0.128ms
+	tactic execution 1.85ms
+	type checking 0.382ms
+	typeclass inference 1.35ms
+✔ [9/165] Built Data (686ms)
+✔ [11/165] Built WGeo (269ms)
+✔ [13/165] Built WHeightdata (448ms)
+✔ [15/165] Built WMargindata (1.2s)
+✔ [17/165] Built WFactordata (3.4s)
+✔ [19/165] Built WCoef (3.6s)
+✔ [21/165] Built WMatrixdata (3.6s)
+✔ [23/165] Built Instance (156ms)
+✔ [25/165] Built Support (148ms)
+ℹ [27/165] Built Scalars (1.6s)
+info: astra/Scalars.lean:10:0: type checking took 1.16s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.52ms
+	attribute application 0.0629ms
+	elaboration 15.1ms
+	fix level params 0.027ms
+	instantiate metavars 0.0449ms
+	let-to-have transformation 0.0153ms
+	linting 2.91ms
+	parsing 1.02ms
+	process pre-definitions 1.53ms
+	share common exprs 0.0835ms
+	tactic execution 2.65ms
+	type checking 1.22s
+	typeclass inference 13.3ms
+ℹ [29/165] Built Profiles0 (1.6s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.72ms
+	attribute application 0.483ms
+	elaboration 36.2ms
+	fix level params 0.149ms
+	instantiate metavars 0.215ms
+	let-to-have transformation 0.092ms
+	linting 16.3ms
+	parsing 4.84ms
+	process pre-definitions 18.9ms
+	share common exprs 0.4ms
+	tactic execution 45.8ms
+	type checking 631ms
+	typeclass inference 11.5ms
+ℹ [31/165] Built Profiles128 (1.6s)
+info: astra/Profiles128.lean:23:0: type checking took 105ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.13ms
+	attribute application 0.324ms
+	elaboration 15.9ms
+	fix level params 0.102ms
+	instantiate metavars 0.142ms
+	let-to-have transformation 0.0609ms
+	linting 6.77ms
+	parsing 2.97ms
+	process pre-definitions 5.83ms
+	share common exprs 0.245ms
+	tactic execution 9.4ms
+	type checking 934ms
+	typeclass inference 5.5ms
+ℹ [33/165] Built Coefficients144 (1.8s)
+info: astra/Coefficients144.lean:6:0: type checking took 598ms
+info: astra/Coefficients144.lean:7:0: type checking took 314ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.872ms
+	attribute application 0.036ms
+	elaboration 11.3ms
+	fix level params 0.0135ms
+	instantiate metavars 0.0203ms
+	let-to-have transformation 0.0136ms
+	linting 0.559ms
+	parsing 0.455ms
+	process pre-definitions 0.291ms
+	share common exprs 0.0307ms
+	tactic execution 0.732ms
+	type checking 912ms
+	typeclass inference 0.969ms
+ℹ [35/165] Built Profiles32 (1.0s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 3.08ms
+	attribute application 0.574ms
+	elaboration 44.7ms
+	fix level params 0.191ms
+	instantiate metavars 0.279ms
+	let-to-have transformation 0.111ms
+	linting 26ms
+	parsing 5.38ms
+	process pre-definitions 22.7ms
+	share common exprs 0.48ms
+	tactic execution 66.9ms
+	type checking 1.25s
+	typeclass inference 10.5ms
+ℹ [37/165] Built Coefficients8 (2.2s)
+info: astra/Coefficients8.lean:6:0: type checking took 225ms
+info: astra/Coefficients8.lean:7:0: type checking took 189ms
+info: astra/Coefficients8.lean:8:0: type checking took 325ms
+info: astra/Coefficients8.lean:9:0: type checking took 195ms
+info: astra/Coefficients8.lean:10:0: type checking took 269ms
+info: astra/Coefficients8.lean:11:0: type checking took 178ms
+info: astra/Coefficients8.lean:12:0: type checking took 243ms
+info: astra/Coefficients8.lean:13:0: type checking took 313ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.13ms
+	attribute application 0.134ms
+	elaboration 6.45ms
+	fix level params 0.0505ms
+	instantiate metavars 0.0776ms
+	let-to-have transformation 0.0296ms
+	linting 1.74ms
+	parsing 1.44ms
+	process pre-definitions 1.05ms
+	share common exprs 0.119ms
+	tactic execution 2.6ms
+	type checking 1.94s
+	typeclass inference 2.88ms
+ℹ [39/165] Built Coefficients128 (2.0s)
+info: astra/Coefficients128.lean:6:0: type checking took 388ms
+info: astra/Coefficients128.lean:7:0: type checking took 489ms
+info: astra/Coefficients128.lean:8:0: type checking took 527ms
+info: astra/Coefficients128.lean:9:0: type checking took 210ms
+info: astra/Coefficients128.lean:10:0: type checking took 217ms
+info: astra/Coefficients128.lean:11:0: type checking took 166ms
+info: astra/Coefficients128.lean:12:0: type checking took 195ms
+info: astra/Coefficients128.lean:13:0: type checking took 196ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.13ms
+	attribute application 0.152ms
+	elaboration 10.8ms
+	fix level params 0.0519ms
+	instantiate metavars 0.0678ms
+	let-to-have transformation 0.0307ms
+	linting 2.13ms
+	parsing 1.43ms
+	process pre-definitions 4.16ms
+	share common exprs 0.118ms
+	tactic execution 4.94ms
+	type checking 2.39s
+	typeclass inference 2.77ms
+ℹ [41/165] Built Coefficients48 (3.1s)
+info: astra/Coefficients48.lean:6:0: type checking took 499ms
+info: astra/Coefficients48.lean:7:0: type checking took 361ms
+info: astra/Coefficients48.lean:8:0: type checking took 352ms
+info: astra/Coefficients48.lean:9:0: type checking took 321ms
+info: astra/Coefficients48.lean:10:0: type checking took 436ms
+info: astra/Coefficients48.lean:11:0: type checking took 288ms
+info: astra/Coefficients48.lean:12:0: type checking took 272ms
+info: astra/Coefficients48.lean:13:0: type checking took 174ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.3ms
+	attribute application 0.134ms
+	elaboration 6.44ms
+	fix level params 0.0503ms
+	instantiate metavars 0.071ms
+	let-to-have transformation 0.028ms
+	linting 1.8ms
+	parsing 1.53ms
+	process pre-definitions 1.06ms
+	share common exprs 0.12ms
+	tactic execution 2.58ms
+	type checking 2.7s
+	typeclass inference 2.75ms
+ℹ [43/165] Built Coefficients136 (3.1s)
+info: astra/Coefficients136.lean:6:0: type checking took 178ms
+info: astra/Coefficients136.lean:7:0: type checking took 382ms
+info: astra/Coefficients136.lean:8:0: type checking took 449ms
+info: astra/Coefficients136.lean:9:0: type checking took 418ms
+info: astra/Coefficients136.lean:10:0: type checking took 326ms
+info: astra/Coefficients136.lean:11:0: type checking took 282ms
+info: astra/Coefficients136.lean:12:0: type checking took 240ms
+info: astra/Coefficients136.lean:13:0: type checking took 295ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.37ms
+	attribute application 0.124ms
+	elaboration 5.92ms
+	fix level params 0.0438ms
+	instantiate metavars 0.0634ms
+	let-to-have transformation 0.0243ms
+	linting 1.71ms
+	parsing 1.46ms
+	process pre-definitions 0.777ms
+	share common exprs 0.111ms
+	tactic execution 7.23ms
+	type checking 2.58s
+	typeclass inference 2.61ms
+ℹ [45/165] Built Coefficients80 (3.3s)
+info: astra/Coefficients80.lean:6:0: type checking took 1.03s
+info: astra/Coefficients80.lean:7:0: type checking took 562ms
+info: astra/Coefficients80.lean:8:0: type checking took 357ms
+info: astra/Coefficients80.lean:9:0: type checking took 244ms
+info: astra/Coefficients80.lean:10:0: type checking took 183ms
+info: astra/Coefficients80.lean:11:0: type checking took 235ms
+info: astra/Coefficients80.lean:12:0: type checking took 192ms
+info: astra/Coefficients80.lean:13:0: type checking took 177ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.66ms
+	attribute application 0.145ms
+	elaboration 6.66ms
+	fix level params 0.0512ms
+	instantiate metavars 0.0738ms
+	let-to-have transformation 0.0293ms
+	linting 1.82ms
+	parsing 1.5ms
+	process pre-definitions 1.1ms
+	share common exprs 0.131ms
+	tactic execution 2.69ms
+	type checking 2.98s
+	typeclass inference 2.95ms
+ℹ [47/165] Built Coefficients88 (3.5s)
+info: astra/Coefficients88.lean:6:0: type checking took 1.09s
+info: astra/Coefficients88.lean:7:0: type checking took 266ms
+info: astra/Coefficients88.lean:8:0: type checking took 160ms
+info: astra/Coefficients88.lean:9:0: type checking took 185ms
+info: astra/Coefficients88.lean:10:0: type checking took 268ms
+info: astra/Coefficients88.lean:11:0: type checking took 243ms
+info: astra/Coefficients88.lean:12:0: type checking took 268ms
+info: astra/Coefficients88.lean:13:0: type checking took 313ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.28ms
+	attribute application 0.13ms
+	elaboration 19.6ms
+	fix level params 0.0501ms
+	instantiate metavars 0.0727ms
+	let-to-have transformation 0.0338ms
+	linting 1.78ms
+	parsing 1.5ms
+	process pre-definitions 1.02ms
+	share common exprs 0.121ms
+	tactic execution 2.66ms
+	type checking 2.79s
+	typeclass inference 2.97ms
+ℹ [49/165] Built Coefficients16 (3.6s)
+info: astra/Coefficients16.lean:6:0: type checking took 855ms
+info: astra/Coefficients16.lean:7:0: type checking took 404ms
+info: astra/Coefficients16.lean:8:0: type checking took 298ms
+info: astra/Coefficients16.lean:9:0: type checking took 162ms
+info: astra/Coefficients16.lean:10:0: type checking took 171ms
+info: astra/Coefficients16.lean:11:0: type checking took 153ms
+info: astra/Coefficients16.lean:12:0: type checking took 355ms
+info: astra/Coefficients16.lean:13:0: type checking took 400ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.66ms
+	attribute application 0.138ms
+	elaboration 6.43ms
+	fix level params 0.0473ms
+	instantiate metavars 0.0719ms
+	let-to-have transformation 0.027ms
+	linting 1.8ms
+	parsing 1.55ms
+	process pre-definitions 1.01ms
+	share common exprs 0.129ms
+	tactic execution 12ms
+	type checking 2.8s
+	typeclass inference 5.8ms
+ℹ [51/165] Built Coefficients32 (3.6s)
+info: astra/Coefficients32.lean:6:0: type checking took 301ms
+info: astra/Coefficients32.lean:7:0: type checking took 271ms
+info: astra/Coefficients32.lean:8:0: type checking took 321ms
+info: astra/Coefficients32.lean:9:0: type checking took 283ms
+info: astra/Coefficients32.lean:10:0: type checking took 374ms
+info: astra/Coefficients32.lean:11:0: type checking took 588ms
+info: astra/Coefficients32.lean:12:0: type checking took 580ms
+info: astra/Coefficients32.lean:13:0: type checking took 506ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.89ms
+	attribute application 0.136ms
+	elaboration 6.25ms
+	fix level params 0.0455ms
+	instantiate metavars 0.065ms
+	let-to-have transformation 0.0304ms
+	linting 1.76ms
+	parsing 1.45ms
+	process pre-definitions 0.908ms
+	share common exprs 0.12ms
+	tactic execution 2.48ms
+	type checking 3.22s
+	typeclass inference 2.69ms
+ℹ [53/165] Built Profiles96 (3.8s)
+info: astra/Profiles96.lean:6:0: type checking took 171ms
+info: astra/Profiles96.lean:7:0: type checking took 152ms
+info: astra/Profiles96.lean:9:0: type checking took 109ms
+info: astra/Profiles96.lean:10:0: type checking took 100ms
+info: astra/Profiles96.lean:11:0: type checking took 110ms
+info: astra/Profiles96.lean:15:0: type checking took 107ms
+info: astra/Profiles96.lean:17:0: type checking took 125ms
+info: astra/Profiles96.lean:18:0: type checking took 115ms
+info: astra/Profiles96.lean:23:0: type checking took 212ms
+info: astra/Profiles96.lean:24:0: type checking took 226ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.66ms
+	attribute application 0.544ms
+	elaboration 53.4ms
+	fix level params 0.171ms
+	instantiate metavars 12.3ms
+	let-to-have transformation 0.101ms
+	linting 25.7ms
+	parsing 5.41ms
+	process pre-definitions 14.4ms
+	share common exprs 0.461ms
+	tactic execution 64.6ms
+	type checking 2.56s
+	typeclass inference 21.9ms
+ℹ [55/165] Built Matrix0 (3.8s)
+info: astra/Matrix0.lean:7:0: type checking took 639ms
+info: astra/Matrix0.lean:8:0: type checking took 454ms
+info: astra/Matrix0.lean:9:0: type checking took 482ms
+info: astra/Matrix0.lean:10:0: type checking took 452ms
+info: astra/Matrix0.lean:11:0: type checking took 346ms
+info: astra/Matrix0.lean:12:0: type checking took 405ms
+info: astra/Matrix0.lean:13:0: type checking took 503ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.49ms
+	attribute application 0.129ms
+	elaboration 6.2ms
+	fix level params 0.05ms
+	instantiate metavars 0.0738ms
+	let-to-have transformation 0.0349ms
+	linting 1.71ms
+	parsing 1.41ms
+	process pre-definitions 1.07ms
+	share common exprs 0.116ms
+	tactic execution 9.13ms
+	type checking 3.32s
+	typeclass inference 6.34ms
+ℹ [57/165] Built Coefficients24 (3.9s)
+info: astra/Coefficients24.lean:6:0: type checking took 581ms
+info: astra/Coefficients24.lean:7:0: type checking took 512ms
+info: astra/Coefficients24.lean:8:0: type checking took 705ms
+info: astra/Coefficients24.lean:9:0: type checking took 519ms
+info: astra/Coefficients24.lean:10:0: type checking took 353ms
+info: astra/Coefficients24.lean:11:0: type checking took 151ms
+info: astra/Coefficients24.lean:12:0: type checking took 124ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.958ms
+	attribute application 0.12ms
+	elaboration 9.05ms
+	fix level params 0.0509ms
+	instantiate metavars 0.068ms
+	let-to-have transformation 0.0281ms
+	linting 1.54ms
+	parsing 1.38ms
+	process pre-definitions 0.763ms
+	share common exprs 0.113ms
+	tactic execution 10.8ms
+	type checking 3.03s
+	typeclass inference 2.77ms
+ℹ [59/165] Built Profiles64 (4.7s)
+info: astra/Profiles64.lean:23:0: type checking took 103ms
+info: astra/Profiles64.lean:26:0: type checking took 194ms
+info: astra/Profiles64.lean:27:0: type checking took 191ms
+info: astra/Profiles64.lean:28:0: type checking took 211ms
+info: astra/Profiles64.lean:29:0: type checking took 178ms
+info: astra/Profiles64.lean:30:0: type checking took 190ms
+info: astra/Profiles64.lean:31:0: type checking took 189ms
+info: astra/Profiles64.lean:32:0: type checking took 216ms
+info: astra/Profiles64.lean:33:0: type checking took 190ms
+info: astra/Profiles64.lean:34:0: type checking took 231ms
+info: astra/Profiles64.lean:35:0: type checking took 236ms
+info: astra/Profiles64.lean:36:0: type checking took 243ms
+info: astra/Profiles64.lean:37:0: type checking took 253ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.97ms
+	attribute application 0.49ms
+	elaboration 52ms
+	fix level params 0.161ms
+	instantiate metavars 0.239ms
+	let-to-have transformation 0.0987ms
+	linting 19.3ms
+	parsing 5.63ms
+	process pre-definitions 3.48ms
+	share common exprs 0.433ms
+	tactic execution 94ms
+	type checking 3.58s
+	typeclass inference 47.2ms
+ℹ [61/165] Built Matrix144 (4.7s)
+info: astra/Matrix144.lean:6:0: type checking took 1.75s
+info: astra/Matrix144.lean:7:0: type checking took 1.6s
+info: astra/Matrix144.lean:8:0: type checking took 1.12s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.897ms
+	attribute application 0.0441ms
+	elaboration 2.71ms
+	fix level params 0.0175ms
+	instantiate metavars 0.0262ms
+	let-to-have transformation 0.00987ms
+	linting 0.713ms
+	parsing 0.605ms
+	process pre-definitions 0.377ms
+	share common exprs 0.0461ms
+	tactic execution 1.01ms
+	type checking 4.47s
+	typeclass inference 1.33ms
+ℹ [63/165] Built Profiles (178ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.64ms
+	attribute application 0.00739ms
+	elaboration 10.7ms
+	fix level params 0.0247ms
+	instantiate metavars 0.0407ms
+	let-to-have transformation 0.00259ms
+	linting 0.952ms
+	parsing 2.18ms
+	process pre-definitions 0.223ms
+	share common exprs 0.365ms
+	type checking 1.5ms
+	typeclass inference 2.83ms
+ℹ [65/165] Built Coefficients104 (4.0s)
+info: astra/Coefficients104.lean:6:0: type checking took 447ms
+info: astra/Coefficients104.lean:7:0: type checking took 1.48s
+info: astra/Coefficients104.lean:8:0: type checking took 949ms
+info: astra/Coefficients104.lean:9:0: type checking took 479ms
+info: astra/Coefficients104.lean:10:0: type checking took 359ms
+info: astra/Coefficients104.lean:11:0: type checking took 276ms
+info: astra/Coefficients104.lean:12:0: type checking took 177ms
+info: astra/Coefficients104.lean:13:0: type checking took 197ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.72ms
+	attribute application 0.139ms
+	elaboration 21.5ms
+	fix level params 0.0481ms
+	instantiate metavars 0.0699ms
+	let-to-have transformation 0.0255ms
+	linting 3.54ms
+	parsing 1.45ms
+	process pre-definitions 1.4ms
+	share common exprs 0.126ms
+	tactic execution 9.97ms
+	type checking 4.37s
+	typeclass inference 2.84ms
+ℹ [67/165] Built Coefficients40 (5.3s)
+info: astra/Coefficients40.lean:6:0: type checking took 563ms
+info: astra/Coefficients40.lean:7:0: type checking took 704ms
+info: astra/Coefficients40.lean:8:0: type checking took 623ms
+info: astra/Coefficients40.lean:9:0: type checking took 480ms
+info: astra/Coefficients40.lean:10:0: type checking took 516ms
+info: astra/Coefficients40.lean:11:0: type checking took 885ms
+info: astra/Coefficients40.lean:12:0: type checking took 604ms
+info: astra/Coefficients40.lean:13:0: type checking took 477ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.06ms
+	attribute application 0.146ms
+	elaboration 6.54ms
+	fix level params 0.0513ms
+	instantiate metavars 0.0721ms
+	let-to-have transformation 0.028ms
+	linting 3.4ms
+	parsing 1.52ms
+	process pre-definitions 1.09ms
+	share common exprs 0.129ms
+	tactic execution 2.65ms
+	type checking 4.85s
+	typeclass inference 6.29ms
+ℹ [69/165] Built Dominance144 (5.3s)
+info: astra/Dominance144.lean:17:0: type checking took 104ms
+info: astra/Dominance144.lean:18:0: type checking took 115ms
+info: astra/Dominance144.lean:19:0: type checking took 114ms
+info: astra/Dominance144.lean:20:0: type checking took 120ms
+info: astra/Dominance144.lean:21:0: type checking took 137ms
+info: astra/Dominance144.lean:22:0: type checking took 150ms
+info: astra/Dominance144.lean:23:0: type checking took 149ms
+info: astra/Dominance144.lean:38:0: type checking took 101ms
+info: astra/Dominance144.lean:39:0: type checking took 115ms
+info: astra/Dominance144.lean:40:0: type checking took 118ms
+info: astra/Dominance144.lean:41:0: type checking took 128ms
+info: astra/Dominance144.lean:42:0: type checking took 136ms
+info: astra/Dominance144.lean:43:0: type checking took 148ms
+info: astra/Dominance144.lean:44:0: type checking took 160ms
+info: astra/Dominance144.lean:59:0: type checking took 102ms
+info: astra/Dominance144.lean:60:0: type checking took 116ms
+info: astra/Dominance144.lean:61:0: type checking took 120ms
+info: astra/Dominance144.lean:62:0: type checking took 125ms
+info: astra/Dominance144.lean:63:0: type checking took 134ms
+info: astra/Dominance144.lean:64:0: type checking took 151ms
+info: astra/Dominance144.lean:65:0: type checking took 171ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 3.69ms
+	attribute application 0.982ms
+	elaboration 50.7ms
+	fix level params 0.361ms
+	instantiate metavars 0.537ms
+	let-to-have transformation 0.205ms
+	linting 12.6ms
+	parsing 12.1ms
+	process pre-definitions 10.6ms
+	share common exprs 1.25ms
+	tactic execution 16.5ms
+	type checking 4.88s
+	typeclass inference 15.6ms
+ℹ [71/165] Built Matrix32 (5.9s)
+info: astra/Matrix32.lean:6:0: type checking took 703ms
+info: astra/Matrix32.lean:7:0: type checking took 729ms
+info: astra/Matrix32.lean:8:0: type checking took 838ms
+info: astra/Matrix32.lean:9:0: type checking took 709ms
+info: astra/Matrix32.lean:10:0: type checking took 729ms
+info: astra/Matrix32.lean:11:0: type checking took 534ms
+info: astra/Matrix32.lean:12:0: type checking took 571ms
+info: astra/Matrix32.lean:13:0: type checking took 851ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.26ms
+	attribute application 0.135ms
+	elaboration 6.06ms
+	fix level params 0.049ms
+	instantiate metavars 0.0697ms
+	let-to-have transformation 0.0347ms
+	linting 1.8ms
+	parsing 1.4ms
+	process pre-definitions 1.05ms
+	share common exprs 0.117ms
+	tactic execution 2.52ms
+	type checking 5.66s
+	typeclass inference 2.66ms
+ℹ [73/165] Built Dominance16 (6.1s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 8.84ms
+	attribute application 2.4ms
+	elaboration 184ms
+	fix level params 0.928ms
+	instantiate metavars 1.38ms
+	let-to-have transformation 0.508ms
+	linting 48ms
+	parsing 36.8ms
+	process pre-definitions 34.6ms
+	share common exprs 3.05ms
+	tactic execution 122ms
+	type checking 5.23s
+	typeclass inference 48.4ms
+ℹ [75/165] Built Dominance32 (6.2s)
+info: astra/Dominance32.lean:12:0: type checking took 103ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.28ms
+	attribute application 2.5ms
+	elaboration 140ms
+	fix level params 1.02ms
+	instantiate metavars 1.51ms
+	let-to-have transformation 0.561ms
+	linting 37.4ms
+	parsing 31.4ms
+	process pre-definitions 28.8ms
+	share common exprs 3.26ms
+	tactic execution 54.4ms
+	type checking 5.57s
+	typeclass inference 39.1ms
+ℹ [77/165] Built Matrix8 (6.3s)
+info: astra/Matrix8.lean:6:0: type checking took 1.12s
+info: astra/Matrix8.lean:7:0: type checking took 1.15s
+info: astra/Matrix8.lean:8:0: type checking took 511ms
+info: astra/Matrix8.lean:9:0: type checking took 704ms
+info: astra/Matrix8.lean:10:0: type checking took 801ms
+info: astra/Matrix8.lean:11:0: type checking took 527ms
+info: astra/Matrix8.lean:12:0: type checking took 674ms
+info: astra/Matrix8.lean:13:0: type checking took 544ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.21ms
+	attribute application 0.154ms
+	elaboration 6.22ms
+	fix level params 0.0487ms
+	instantiate metavars 0.0665ms
+	let-to-have transformation 0.0276ms
+	linting 1.59ms
+	parsing 1.41ms
+	process pre-definitions 0.894ms
+	share common exprs 0.12ms
+	tactic execution 5.88ms
+	type checking 6.02s
+	typeclass inference 2.78ms
+ℹ [79/165] Built Coefficients64 (6.7s)
+info: astra/Coefficients64.lean:6:0: type checking took 823ms
+info: astra/Coefficients64.lean:7:0: type checking took 1.97s
+info: astra/Coefficients64.lean:8:0: type checking took 773ms
+info: astra/Coefficients64.lean:9:0: type checking took 511ms
+info: astra/Coefficients64.lean:10:0: type checking took 632ms
+info: astra/Coefficients64.lean:11:0: type checking took 711ms
+info: astra/Coefficients64.lean:12:0: type checking took 394ms
+info: astra/Coefficients64.lean:13:0: type checking took 380ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.14ms
+	attribute application 0.129ms
+	elaboration 6.46ms
+	fix level params 0.0513ms
+	instantiate metavars 0.0721ms
+	let-to-have transformation 0.0336ms
+	linting 5.15ms
+	parsing 1.51ms
+	process pre-definitions 1.04ms
+	share common exprs 0.127ms
+	tactic execution 9.29ms
+	type checking 6.2s
+	typeclass inference 2.74ms
+ℹ [81/165] Built Coefficients112 (6.9s)
+info: astra/Coefficients112.lean:6:0: type checking took 594ms
+info: astra/Coefficients112.lean:7:0: type checking took 846ms
+info: astra/Coefficients112.lean:8:0: type checking took 1.19s
+info: astra/Coefficients112.lean:9:0: type checking took 1.34s
+info: astra/Coefficients112.lean:10:0: type checking took 1.28s
+info: astra/Coefficients112.lean:11:0: type checking took 477ms
+info: astra/Coefficients112.lean:12:0: type checking took 193ms
+info: astra/Coefficients112.lean:13:0: type checking took 336ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.1ms
+	attribute application 0.128ms
+	elaboration 5.74ms
+	fix level params 0.043ms
+	instantiate metavars 0.0701ms
+	let-to-have transformation 0.0265ms
+	linting 7.69ms
+	parsing 1.43ms
+	process pre-definitions 3.67ms
+	share common exprs 0.108ms
+	tactic execution 26.3ms
+	type checking 6.26s
+	typeclass inference 17.6ms
+ℹ [83/165] Built Dominance8 (7.4s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 14.2ms
+	attribute application 2.68ms
+	elaboration 234ms
+	fix level params 1.06ms
+	instantiate metavars 1.61ms
+	let-to-have transformation 0.606ms
+	linting 63.3ms
+	parsing 33.7ms
+	process pre-definitions 72.8ms
+	share common exprs 3.62ms
+	tactic execution 282ms
+	type checking 5.63s
+	typeclass inference 43.9ms
+ℹ [85/165] Built Matrix24 (7.5s)
+info: astra/Matrix24.lean:6:0: type checking took 733ms
+info: astra/Matrix24.lean:7:0: type checking took 641ms
+info: astra/Matrix24.lean:8:0: type checking took 644ms
+info: astra/Matrix24.lean:9:0: type checking took 1.28s
+info: astra/Matrix24.lean:10:0: type checking took 793ms
+info: astra/Matrix24.lean:11:0: type checking took 683ms
+info: astra/Matrix24.lean:12:0: type checking took 1.24s
+info: astra/Matrix24.lean:13:0: type checking took 1s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.27ms
+	attribute application 0.123ms
+	elaboration 12.1ms
+	fix level params 0.0417ms
+	instantiate metavars 0.0636ms
+	let-to-have transformation 0.0232ms
+	linting 1.72ms
+	parsing 1.41ms
+	process pre-definitions 1.06ms
+	share common exprs 0.117ms
+	tactic execution 5.6ms
+	type checking 7.03s
+	typeclass inference 2.7ms
+ℹ [87/165] Built Dominance48 (8.2s)
+info: astra/Dominance48.lean:8:0: type checking took 111ms
+info: astra/Dominance48.lean:9:0: type checking took 132ms
+info: astra/Dominance48.lean:12:0: type checking took 112ms
+info: astra/Dominance48.lean:13:0: type checking took 123ms
+info: astra/Dominance48.lean:14:0: type checking took 117ms
+info: astra/Dominance48.lean:15:0: type checking took 114ms
+info: astra/Dominance48.lean:16:0: type checking took 168ms
+info: astra/Dominance48.lean:17:0: type checking took 175ms
+info: astra/Dominance48.lean:18:0: type checking took 134ms
+info: astra/Dominance48.lean:60:0: type checking took 143ms
+info: astra/Dominance48.lean:61:0: type checking took 183ms
+info: astra/Dominance48.lean:62:0: type checking took 179ms
+info: astra/Dominance48.lean:63:0: type checking took 176ms
+info: astra/Dominance48.lean:64:0: type checking took 209ms
+info: astra/Dominance48.lean:65:0: type checking took 172ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.69ms
+	attribute application 2.16ms
+	elaboration 148ms
+	fix level params 0.872ms
+	instantiate metavars 1.29ms
+	let-to-have transformation 0.482ms
+	linting 34.2ms
+	parsing 30ms
+	process pre-definitions 34.2ms
+	share common exprs 2.79ms
+	tactic execution 88.4ms
+	type checking 7.39s
+	typeclass inference 39.4ms
+ℹ [89/165] Built Coefficients120 (8.6s)
+info: astra/Coefficients120.lean:6:0: type checking took 500ms
+info: astra/Coefficients120.lean:7:0: type checking took 407ms
+info: astra/Coefficients120.lean:8:0: type checking took 609ms
+info: astra/Coefficients120.lean:9:0: type checking took 1.33s
+info: astra/Coefficients120.lean:10:0: type checking took 1.11s
+info: astra/Coefficients120.lean:11:0: type checking took 1.4s
+info: astra/Coefficients120.lean:12:0: type checking took 1.16s
+info: astra/Coefficients120.lean:13:0: type checking took 1s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.39ms
+	attribute application 0.125ms
+	elaboration 41.9ms
+	fix level params 0.041ms
+	instantiate metavars 0.0618ms
+	let-to-have transformation 0.0245ms
+	linting 16.8ms
+	parsing 1.45ms
+	process pre-definitions 0.724ms
+	share common exprs 0.12ms
+	tactic execution 26.8ms
+	type checking 7.52s
+	typeclass inference 2.55ms
+ℹ [91/165] Built Dominance24 (8.7s)
+info: astra/Dominance24.lean:9:0: type checking took 140ms
+info: astra/Dominance24.lean:10:0: type checking took 121ms
+info: astra/Dominance24.lean:11:0: type checking took 103ms
+info: astra/Dominance24.lean:12:0: type checking took 105ms
+info: astra/Dominance24.lean:13:0: type checking took 134ms
+info: astra/Dominance24.lean:14:0: type checking took 134ms
+info: astra/Dominance24.lean:15:0: type checking took 140ms
+info: astra/Dominance24.lean:20:0: type checking took 107ms
+info: astra/Dominance24.lean:21:0: type checking took 197ms
+info: astra/Dominance24.lean:22:0: type checking took 261ms
+info: astra/Dominance24.lean:23:0: type checking took 269ms
+info: astra/Dominance24.lean:24:0: type checking took 175ms
+info: astra/Dominance24.lean:56:0: type checking took 105ms
+info: astra/Dominance24.lean:57:0: type checking took 111ms
+info: astra/Dominance24.lean:58:0: type checking took 102ms
+info: astra/Dominance24.lean:59:0: type checking took 108ms
+info: astra/Dominance24.lean:62:0: type checking took 106ms
+info: astra/Dominance24.lean:63:0: type checking took 108ms
+info: astra/Dominance24.lean:64:0: type checking took 105ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 12.7ms
+	attribute application 2.39ms
+	elaboration 202ms
+	fix level params 0.985ms
+	instantiate metavars 1.38ms
+	let-to-have transformation 0.547ms
+	linting 51.2ms
+	parsing 42.9ms
+	process pre-definitions 58.6ms
+	share common exprs 3.1ms
+	tactic execution 184ms
+	type checking 7.49s
+	typeclass inference 62.1ms
+ℹ [93/165] Built Coefficients72 (8.7s)
+info: astra/Coefficients72.lean:6:0: type checking took 738ms
+info: astra/Coefficients72.lean:7:0: type checking took 2.01s
+info: astra/Coefficients72.lean:8:0: type checking took 3.8s
+info: astra/Coefficients72.lean:9:0: type checking took 475ms
+info: astra/Coefficients72.lean:10:0: type checking took 348ms
+info: astra/Coefficients72.lean:11:0: type checking took 350ms
+info: astra/Coefficients72.lean:12:0: type checking took 330ms
+info: astra/Coefficients72.lean:13:0: type checking took 315ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.18ms
+	attribute application 0.116ms
+	elaboration 21ms
+	fix level params 0.0461ms
+	instantiate metavars 0.0635ms
+	let-to-have transformation 0.0264ms
+	linting 1.52ms
+	parsing 4.41ms
+	process pre-definitions 0.741ms
+	share common exprs 0.104ms
+	tactic execution 5.7ms
+	type checking 8.36s
+	typeclass inference 2.68ms
+ℹ [95/165] Built Matrix96 (9.3s)
+info: astra/Matrix96.lean:6:0: type checking took 1.19s
+info: astra/Matrix96.lean:7:0: type checking took 1.2s
+info: astra/Matrix96.lean:8:0: type checking took 1.24s
+info: astra/Matrix96.lean:9:0: type checking took 1.25s
+info: astra/Matrix96.lean:10:0: type checking took 1.08s
+info: astra/Matrix96.lean:11:0: type checking took 970ms
+info: astra/Matrix96.lean:12:0: type checking took 992ms
+info: astra/Matrix96.lean:13:0: type checking took 965ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.23ms
+	attribute application 0.125ms
+	elaboration 5.63ms
+	fix level params 0.0423ms
+	instantiate metavars 0.0607ms
+	let-to-have transformation 0.0323ms
+	linting 1.49ms
+	parsing 1.34ms
+	process pre-definitions 0.946ms
+	share common exprs 0.105ms
+	tactic execution 2.16ms
+	type checking 8.89s
+	typeclass inference 2.5ms
+ℹ [97/165] Built Dominance88 (9.8s)
+info: astra/Dominance88.lean:10:0: type checking took 145ms
+info: astra/Dominance88.lean:12:0: type checking took 106ms
+info: astra/Dominance88.lean:13:0: type checking took 126ms
+info: astra/Dominance88.lean:14:0: type checking took 158ms
+info: astra/Dominance88.lean:15:0: type checking took 193ms
+info: astra/Dominance88.lean:16:0: type checking took 160ms
+info: astra/Dominance88.lean:22:0: type checking took 177ms
+info: astra/Dominance88.lean:23:0: type checking took 236ms
+info: astra/Dominance88.lean:44:0: type checking took 103ms
+info: astra/Dominance88.lean:65:0: type checking took 107ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.17ms
+	attribute application 2.32ms
+	elaboration 131ms
+	fix level params 0.929ms
+	instantiate metavars 1.37ms
+	let-to-have transformation 0.559ms
+	linting 35.6ms
+	parsing 28.4ms
+	process pre-definitions 27.8ms
+	share common exprs 2.97ms
+	tactic execution 47.7ms
+	type checking 9s
+	typeclass inference 36ms
+ℹ [99/165] Built Coefficients56 (9.9s)
+info: astra/Coefficients56.lean:6:0: type checking took 682ms
+info: astra/Coefficients56.lean:7:0: type checking took 938ms
+info: astra/Coefficients56.lean:8:0: type checking took 537ms
+info: astra/Coefficients56.lean:9:0: type checking took 696ms
+info: astra/Coefficients56.lean:10:0: type checking took 1.62s
+info: astra/Coefficients56.lean:11:0: type checking took 2.05s
+info: astra/Coefficients56.lean:12:0: type checking took 1.96s
+info: astra/Coefficients56.lean:13:0: type checking took 884ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.01ms
+	attribute application 0.12ms
+	elaboration 21.4ms
+	fix level params 0.0433ms
+	instantiate metavars 0.0635ms
+	let-to-have transformation 0.0268ms
+	linting 1.64ms
+	parsing 1.43ms
+	process pre-definitions 0.792ms
+	share common exprs 0.119ms
+	tactic execution 8.24ms
+	type checking 9.36s
+	typeclass inference 28.6ms
+ℹ [101/165] Built Dominance96 (10s)
+info: astra/Dominance96.lean:8:0: type checking took 217ms
+info: astra/Dominance96.lean:9:0: type checking took 216ms
+info: astra/Dominance96.lean:10:0: type checking took 234ms
+info: astra/Dominance96.lean:11:0: type checking took 219ms
+info: astra/Dominance96.lean:12:0: type checking took 245ms
+info: astra/Dominance96.lean:13:0: type checking took 226ms
+info: astra/Dominance96.lean:14:0: type checking took 273ms
+info: astra/Dominance96.lean:15:0: type checking took 241ms
+info: astra/Dominance96.lean:16:0: type checking took 225ms
+info: astra/Dominance96.lean:17:0: type checking took 153ms
+info: astra/Dominance96.lean:18:0: type checking took 109ms
+info: astra/Dominance96.lean:19:0: type checking took 129ms
+info: astra/Dominance96.lean:20:0: type checking took 117ms
+info: astra/Dominance96.lean:21:0: type checking took 109ms
+info: astra/Dominance96.lean:22:0: type checking took 113ms
+info: astra/Dominance96.lean:23:0: type checking took 112ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.62ms
+	attribute application 2.2ms
+	elaboration 117ms
+	fix level params 0.922ms
+	instantiate metavars 1.25ms
+	let-to-have transformation 0.546ms
+	linting 29.7ms
+	parsing 27ms
+	process pre-definitions 34.1ms
+	share common exprs 2.82ms
+	tactic execution 54.7ms
+	type checking 9.46s
+	typeclass inference 35.1ms
+ℹ [103/165] Built Dominance40 (10s)
+info: astra/Dominance40.lean:9:0: type checking took 104ms
+info: astra/Dominance40.lean:11:0: type checking took 103ms
+info: astra/Dominance40.lean:12:0: type checking took 239ms
+info: astra/Dominance40.lean:13:0: type checking took 268ms
+info: astra/Dominance40.lean:14:0: type checking took 318ms
+info: astra/Dominance40.lean:15:0: type checking took 270ms
+info: astra/Dominance40.lean:16:0: type checking took 293ms
+info: astra/Dominance40.lean:17:0: type checking took 344ms
+info: astra/Dominance40.lean:18:0: type checking took 375ms
+info: astra/Dominance40.lean:19:0: type checking took 153ms
+info: astra/Dominance40.lean:20:0: type checking took 110ms
+info: astra/Dominance40.lean:22:0: type checking took 118ms
+info: astra/Dominance40.lean:23:0: type checking took 109ms
+info: astra/Dominance40.lean:52:0: type checking took 109ms
+info: astra/Dominance40.lean:53:0: type checking took 118ms
+info: astra/Dominance40.lean:54:0: type checking took 113ms
+info: astra/Dominance40.lean:58:0: type checking took 126ms
+info: astra/Dominance40.lean:59:0: type checking took 124ms
+info: astra/Dominance40.lean:82:0: type checking took 109ms
+info: astra/Dominance40.lean:83:0: type checking took 119ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.97ms
+	attribute application 2.68ms
+	elaboration 180ms
+	fix level params 1.04ms
+	instantiate metavars 1.57ms
+	let-to-have transformation 0.586ms
+	linting 35.9ms
+	parsing 34.7ms
+	process pre-definitions 60.4ms
+	share common exprs 3.28ms
+	tactic execution 145ms
+	type checking 9.48s
+	typeclass inference 43.2ms
+ℹ [105/165] Built Matrix80 (10s)
+info: astra/Matrix80.lean:6:0: type checking took 1.68s
+info: astra/Matrix80.lean:7:0: type checking took 1.65s
+info: astra/Matrix80.lean:8:0: type checking took 1.31s
+info: astra/Matrix80.lean:9:0: type checking took 1.2s
+info: astra/Matrix80.lean:10:0: type checking took 1.13s
+info: astra/Matrix80.lean:11:0: type checking took 1.12s
+info: astra/Matrix80.lean:12:0: type checking took 1.14s
+info: astra/Matrix80.lean:13:0: type checking took 1.16s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.04ms
+	attribute application 0.16ms
+	elaboration 6.93ms
+	fix level params 0.0503ms
+	instantiate metavars 0.0784ms
+	let-to-have transformation 0.0293ms
+	linting 1.91ms
+	parsing 1.5ms
+	process pre-definitions 1.12ms
+	share common exprs 0.131ms
+	tactic execution 2.61ms
+	type checking 10.4s
+	typeclass inference 3.21ms
+ℹ [107/165] Built Dominance56 (10s)
+info: astra/Dominance56.lean:8:0: type checking took 155ms
+info: astra/Dominance56.lean:9:0: type checking took 199ms
+info: astra/Dominance56.lean:10:0: type checking took 234ms
+info: astra/Dominance56.lean:11:0: type checking took 241ms
+info: astra/Dominance56.lean:12:0: type checking took 227ms
+info: astra/Dominance56.lean:13:0: type checking took 233ms
+info: astra/Dominance56.lean:14:0: type checking took 188ms
+info: astra/Dominance56.lean:15:0: type checking took 198ms
+info: astra/Dominance56.lean:16:0: type checking took 201ms
+info: astra/Dominance56.lean:17:0: type checking took 158ms
+info: astra/Dominance56.lean:32:0: type checking took 115ms
+info: astra/Dominance56.lean:33:0: type checking took 152ms
+info: astra/Dominance56.lean:34:0: type checking took 176ms
+info: astra/Dominance56.lean:97:0: type checking took 113ms
+info: astra/Dominance56.lean:98:0: type checking took 136ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.42ms
+	attribute application 2.65ms
+	elaboration 157ms
+	fix level params 1.1ms
+	instantiate metavars 1.56ms
+	let-to-have transformation 0.553ms
+	linting 39ms
+	parsing 32ms
+	process pre-definitions 41.9ms
+	share common exprs 12.3ms
+	tactic execution 70.3ms
+	type checking 9.73s
+	typeclass inference 47.1ms
+ℹ [109/165] Built Matrix72 (10s)
+info: astra/Matrix72.lean:6:0: type checking took 3.46s
+info: astra/Matrix72.lean:7:0: type checking took 1.02s
+info: astra/Matrix72.lean:8:0: type checking took 792ms
+info: astra/Matrix72.lean:9:0: type checking took 937ms
+info: astra/Matrix72.lean:10:0: type checking took 1.04s
+info: astra/Matrix72.lean:11:0: type checking took 1.06s
+info: astra/Matrix72.lean:12:0: type checking took 1.1s
+info: astra/Matrix72.lean:13:0: type checking took 1.08s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.21ms
+	attribute application 0.138ms
+	elaboration 13.5ms
+	fix level params 0.045ms
+	instantiate metavars 0.0698ms
+	let-to-have transformation 0.0249ms
+	linting 1.8ms
+	parsing 1.49ms
+	process pre-definitions 1.1ms
+	share common exprs 0.122ms
+	tactic execution 2.5ms
+	type checking 10.5s
+	typeclass inference 2.84ms
+ℹ [111/165] Built Matrix56 (11s)
+info: astra/Matrix56.lean:6:0: type checking took 3.28s
+info: astra/Matrix56.lean:7:0: type checking took 1.72s
+info: astra/Matrix56.lean:8:0: type checking took 1.05s
+info: astra/Matrix56.lean:9:0: type checking took 931ms
+info: astra/Matrix56.lean:10:0: type checking took 936ms
+info: astra/Matrix56.lean:11:0: type checking took 955ms
+info: astra/Matrix56.lean:12:0: type checking took 999ms
+info: astra/Matrix56.lean:13:0: type checking took 876ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.31ms
+	attribute application 0.167ms
+	elaboration 6.85ms
+	fix level params 0.0483ms
+	instantiate metavars 0.0735ms
+	let-to-have transformation 0.0345ms
+	linting 1.95ms
+	parsing 4.55ms
+	process pre-definitions 1.16ms
+	share common exprs 0.127ms
+	tactic execution 2.63ms
+	type checking 10.8s
+	typeclass inference 2.9ms
+ℹ [113/165] Built Coefficients0 (11s)
+info: astra/Coefficients0.lean:6:0: type checking took 1.73s
+info: astra/Coefficients0.lean:7:0: type checking took 2.25s
+info: astra/Coefficients0.lean:8:0: type checking took 1.26s
+info: astra/Coefficients0.lean:9:0: type checking took 1.14s
+info: astra/Coefficients0.lean:10:0: type checking took 2.05s
+info: astra/Coefficients0.lean:11:0: type checking took 780ms
+info: astra/Coefficients0.lean:12:0: type checking took 573ms
+info: astra/Coefficients0.lean:13:0: type checking took 835ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.86ms
+	attribute application 0.132ms
+	elaboration 17.8ms
+	fix level params 0.0407ms
+	instantiate metavars 0.0601ms
+	let-to-have transformation 0.0233ms
+	linting 11.2ms
+	parsing 1.43ms
+	process pre-definitions 18.8ms
+	share common exprs 0.12ms
+	tactic execution 43.7ms
+	type checking 10.6s
+	typeclass inference 5.59ms
+ℹ [115/165] Built Dominance80 (11s)
+info: astra/Dominance80.lean:6:0: type checking took 101ms
+info: astra/Dominance80.lean:10:0: type checking took 140ms
+info: astra/Dominance80.lean:11:0: type checking took 182ms
+info: astra/Dominance80.lean:23:0: type checking took 198ms
+info: astra/Dominance80.lean:78:0: type checking took 111ms
+info: astra/Dominance80.lean:81:0: type checking took 117ms
+info: astra/Dominance80.lean:82:0: type checking took 149ms
+info: astra/Dominance80.lean:83:0: type checking took 100ms
+info: astra/Dominance80.lean:84:0: type checking took 103ms
+info: astra/Dominance80.lean:85:0: type checking took 102ms
+info: astra/Dominance80.lean:104:0: type checking took 101ms
+info: astra/Dominance80.lean:106:0: type checking took 101ms
+info: astra/Dominance80.lean:107:0: type checking took 110ms
+info: astra/Dominance80.lean:125:0: type checking took 101ms
+info: astra/Dominance80.lean:128:0: type checking took 102ms
+info: astra/Dominance80.lean:144:0: type checking took 101ms
+info: astra/Dominance80.lean:147:0: type checking took 104ms
+info: astra/Dominance80.lean:148:0: type checking took 102ms
+info: astra/Dominance80.lean:149:0: type checking took 105ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.49ms
+	attribute application 2.71ms
+	elaboration 145ms
+	fix level params 1.02ms
+	instantiate metavars 1.54ms
+	let-to-have transformation 0.593ms
+	linting 35.5ms
+	parsing 31.9ms
+	process pre-definitions 26.7ms
+	share common exprs 3.32ms
+	tactic execution 76.3ms
+	type checking 10.5s
+	typeclass inference 40.7ms
+ℹ [117/165] Built Matrix112 (11s)
+info: astra/Matrix112.lean:6:0: type checking took 1.37s
+info: astra/Matrix112.lean:7:0: type checking took 1.41s
+info: astra/Matrix112.lean:8:0: type checking took 1.51s
+info: astra/Matrix112.lean:9:0: type checking took 1.43s
+info: astra/Matrix112.lean:10:0: type checking took 1.41s
+info: astra/Matrix112.lean:11:0: type checking took 1.4s
+info: astra/Matrix112.lean:12:0: type checking took 1.43s
+info: astra/Matrix112.lean:13:0: type checking took 1.41s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.33ms
+	attribute application 0.169ms
+	elaboration 6.62ms
+	fix level params 0.0513ms
+	instantiate metavars 0.0737ms
+	let-to-have transformation 0.0279ms
+	linting 1.87ms
+	parsing 1.5ms
+	process pre-definitions 1.15ms
+	share common exprs 0.135ms
+	tactic execution 2.65ms
+	type checking 11.4s
+	typeclass inference 2.92ms
+ℹ [119/165] Built Matrix120 (11s)
+info: astra/Matrix120.lean:6:0: type checking took 1.39s
+info: astra/Matrix120.lean:7:0: type checking took 1.47s
+info: astra/Matrix120.lean:8:0: type checking took 1.44s
+info: astra/Matrix120.lean:9:0: type checking took 1.47s
+info: astra/Matrix120.lean:10:0: type checking took 1.49s
+info: astra/Matrix120.lean:11:0: type checking took 1.4s
+info: astra/Matrix120.lean:12:0: type checking took 1.45s
+info: astra/Matrix120.lean:13:0: type checking took 1.38s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.867ms
+	attribute application 0.134ms
+	elaboration 6.69ms
+	fix level params 0.048ms
+	instantiate metavars 0.0765ms
+	let-to-have transformation 0.0373ms
+	linting 1.84ms
+	parsing 1.5ms
+	process pre-definitions 1.28ms
+	share common exprs 0.13ms
+	tactic execution 2.67ms
+	type checking 11.5s
+	typeclass inference 2.88ms
+ℹ [121/165] Built Matrix64 (11s)
+info: astra/Matrix64.lean:6:0: type checking took 2.27s
+info: astra/Matrix64.lean:7:0: type checking took 1.41s
+info: astra/Matrix64.lean:8:0: type checking took 4.49s
+info: astra/Matrix64.lean:9:0: type checking took 587ms
+info: astra/Matrix64.lean:10:0: type checking took 697ms
+info: astra/Matrix64.lean:11:0: type checking took 601ms
+info: astra/Matrix64.lean:12:0: type checking took 601ms
+info: astra/Matrix64.lean:13:0: type checking took 675ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.2ms
+	attribute application 0.135ms
+	elaboration 24.1ms
+	fix level params 0.0468ms
+	instantiate metavars 0.0659ms
+	let-to-have transformation 0.0287ms
+	linting 1.52ms
+	parsing 1.35ms
+	process pre-definitions 0.899ms
+	share common exprs 0.109ms
+	tactic execution 2.18ms
+	type checking 11.3s
+	typeclass inference 2.67ms
+ℹ [123/165] Built Dominance120 (12s)
+info: astra/Dominance120.lean:7:0: type checking took 104ms
+info: astra/Dominance120.lean:9:0: type checking took 120ms
+info: astra/Dominance120.lean:10:0: type checking took 129ms
+info: astra/Dominance120.lean:11:0: type checking took 155ms
+info: astra/Dominance120.lean:12:0: type checking took 219ms
+info: astra/Dominance120.lean:13:0: type checking took 127ms
+info: astra/Dominance120.lean:17:0: type checking took 104ms
+info: astra/Dominance120.lean:18:0: type checking took 114ms
+info: astra/Dominance120.lean:19:0: type checking took 122ms
+info: astra/Dominance120.lean:20:0: type checking took 128ms
+info: astra/Dominance120.lean:21:0: type checking took 130ms
+info: astra/Dominance120.lean:22:0: type checking took 199ms
+info: astra/Dominance120.lean:23:0: type checking took 205ms
+info: astra/Dominance120.lean:30:0: type checking took 136ms
+info: astra/Dominance120.lean:31:0: type checking took 109ms
+info: astra/Dominance120.lean:36:0: type checking took 108ms
+info: astra/Dominance120.lean:37:0: type checking took 143ms
+info: astra/Dominance120.lean:38:0: type checking took 148ms
+info: astra/Dominance120.lean:39:0: type checking took 135ms
+info: astra/Dominance120.lean:40:0: type checking took 126ms
+info: astra/Dominance120.lean:41:0: type checking took 125ms
+info: astra/Dominance120.lean:42:0: type checking took 126ms
+info: astra/Dominance120.lean:43:0: type checking took 151ms
+info: astra/Dominance120.lean:44:0: type checking took 151ms
+info: astra/Dominance120.lean:63:0: type checking took 119ms
+info: astra/Dominance120.lean:64:0: type checking took 133ms
+info: astra/Dominance120.lean:65:0: type checking took 134ms
+info: astra/Dominance120.lean:128:0: type checking took 103ms
+info: astra/Dominance120.lean:145:0: type checking took 101ms
+info: astra/Dominance120.lean:146:0: type checking took 109ms
+info: astra/Dominance120.lean:147:0: type checking took 110ms
+info: astra/Dominance120.lean:148:0: type checking took 125ms
+info: astra/Dominance120.lean:149:0: type checking took 125ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 8.5ms
+	attribute application 2.43ms
+	elaboration 132ms
+	fix level params 0.992ms
+	instantiate metavars 1.44ms
+	let-to-have transformation 0.548ms
+	linting 32.4ms
+	parsing 30.4ms
+	process pre-definitions 29.4ms
+	share common exprs 3.05ms
+	tactic execution 66.6ms
+	type checking 10.8s
+	typeclass inference 37.6ms
+ℹ [125/165] Built Coefficients96 (12s)
+info: astra/Coefficients96.lean:6:0: type checking took 754ms
+info: astra/Coefficients96.lean:7:0: type checking took 620ms
+info: astra/Coefficients96.lean:8:0: type checking took 2.7s
+info: astra/Coefficients96.lean:9:0: type checking took 3.34s
+info: astra/Coefficients96.lean:10:0: type checking took 2.02s
+info: astra/Coefficients96.lean:11:0: type checking took 1.43s
+info: astra/Coefficients96.lean:12:0: type checking took 535ms
+info: astra/Coefficients96.lean:13:0: type checking took 141ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.25ms
+	attribute application 0.126ms
+	elaboration 15.7ms
+	fix level params 0.045ms
+	instantiate metavars 0.0609ms
+	let-to-have transformation 0.0272ms
+	linting 1.6ms
+	parsing 1.45ms
+	process pre-definitions 0.772ms
+	share common exprs 0.11ms
+	tactic execution 2.08ms
+	type checking 11.5s
+	typeclass inference 2.36ms
+ℹ [127/165] Built Dominance0 (12s)
+info: astra/Dominance0.lean:22:0: type checking took 155ms
+info: astra/Dominance0.lean:38:0: type checking took 101ms
+info: astra/Dominance0.lean:41:0: type checking took 109ms
+info: astra/Dominance0.lean:42:0: type checking took 123ms
+info: astra/Dominance0.lean:43:0: type checking took 127ms
+info: astra/Dominance0.lean:44:0: type checking took 127ms
+info: astra/Dominance0.lean:45:0: type checking took 105ms
+info: astra/Dominance0.lean:59:0: type checking took 125ms
+info: astra/Dominance0.lean:60:0: type checking took 125ms
+info: astra/Dominance0.lean:61:0: type checking took 129ms
+info: astra/Dominance0.lean:62:0: type checking took 123ms
+info: astra/Dominance0.lean:63:0: type checking took 107ms
+info: astra/Dominance0.lean:64:0: type checking took 129ms
+info: astra/Dominance0.lean:65:0: type checking took 122ms
+info: astra/Dominance0.lean:66:0: type checking took 106ms
+info: astra/Dominance0.lean:76:0: type checking took 105ms
+info: astra/Dominance0.lean:82:0: type checking took 114ms
+info: astra/Dominance0.lean:85:0: type checking took 108ms
+info: astra/Dominance0.lean:86:0: type checking took 109ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 15.9ms
+	attribute application 2.67ms
+	elaboration 424ms
+	fix level params 0.975ms
+	instantiate metavars 1.48ms
+	let-to-have transformation 0.589ms
+	linting 323ms
+	parsing 52.1ms
+	process pre-definitions 258ms
+	share common exprs 3.25ms
+	tactic execution 533ms
+	type checking 9.51s
+	typeclass inference 88.5ms
+ℹ [129/165] Built Coefficients (177ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.52ms
+	attribute application 0.0135ms
+	elaboration 10.8ms
+	fix level params 0.0318ms
+	instantiate metavars 0.0444ms
+	let-to-have transformation 0.00342ms
+	linting 1ms
+	parsing 2.08ms
+	process pre-definitions 0.215ms
+	share common exprs 0.472ms
+	type checking 1.65ms
+	typeclass inference 2.84ms
+ℹ [131/165] Built Matrix104 (12s)
+info: astra/Matrix104.lean:6:0: type checking took 3.58s
+info: astra/Matrix104.lean:7:0: type checking took 1.4s
+info: astra/Matrix104.lean:8:0: type checking took 1.4s
+info: astra/Matrix104.lean:9:0: type checking took 1.39s
+info: astra/Matrix104.lean:10:0: type checking took 1.32s
+info: astra/Matrix104.lean:11:0: type checking took 1.36s
+info: astra/Matrix104.lean:12:0: type checking took 1.01s
+info: astra/Matrix104.lean:13:0: type checking took 994ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.899ms
+	attribute application 0.125ms
+	elaboration 6.07ms
+	fix level params 0.0472ms
+	instantiate metavars 0.0663ms
+	let-to-have transformation 0.0259ms
+	linting 1.65ms
+	parsing 1.42ms
+	process pre-definitions 0.979ms
+	share common exprs 0.119ms
+	tactic execution 2.19ms
+	type checking 12.5s
+	typeclass inference 2.72ms
+ℹ [133/165] Built Dominance64 (13s)
+info: astra/Dominance64.lean:10:0: type checking took 102ms
+info: astra/Dominance64.lean:11:0: type checking took 154ms
+info: astra/Dominance64.lean:12:0: type checking took 155ms
+info: astra/Dominance64.lean:13:0: type checking took 202ms
+info: astra/Dominance64.lean:14:0: type checking took 369ms
+info: astra/Dominance64.lean:15:0: type checking took 441ms
+info: astra/Dominance64.lean:16:0: type checking took 491ms
+info: astra/Dominance64.lean:17:0: type checking took 508ms
+info: astra/Dominance64.lean:18:0: type checking took 319ms
+info: astra/Dominance64.lean:19:0: type checking took 167ms
+info: astra/Dominance64.lean:20:0: type checking took 162ms
+info: astra/Dominance64.lean:21:0: type checking took 157ms
+info: astra/Dominance64.lean:22:0: type checking took 161ms
+info: astra/Dominance64.lean:23:0: type checking took 245ms
+info: astra/Dominance64.lean:24:0: type checking took 109ms
+info: astra/Dominance64.lean:30:0: type checking took 110ms
+info: astra/Dominance64.lean:39:0: type checking took 146ms
+info: astra/Dominance64.lean:106:0: type checking took 136ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.89ms
+	attribute application 2.85ms
+	elaboration 196ms
+	fix level params 1.06ms
+	instantiate metavars 1.59ms
+	let-to-have transformation 0.6ms
+	linting 40.1ms
+	parsing 40.3ms
+	process pre-definitions 38.4ms
+	share common exprs 3.48ms
+	tactic execution 49.1ms
+	type checking 12.2s
+	typeclass inference 67.5ms
+ℹ [135/165] Built Matrix88 (13s)
+info: astra/Matrix88.lean:6:0: type checking took 3.39s
+info: astra/Matrix88.lean:7:0: type checking took 1.51s
+info: astra/Matrix88.lean:8:0: type checking took 1.54s
+info: astra/Matrix88.lean:9:0: type checking took 1.2s
+info: astra/Matrix88.lean:10:0: type checking took 1.22s
+info: astra/Matrix88.lean:11:0: type checking took 1.29s
+info: astra/Matrix88.lean:12:0: type checking took 1.33s
+info: astra/Matrix88.lean:13:0: type checking took 1.27s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.2ms
+	attribute application 0.134ms
+	elaboration 6.7ms
+	fix level params 0.0502ms
+	instantiate metavars 0.0736ms
+	let-to-have transformation 0.029ms
+	linting 1.91ms
+	parsing 1.55ms
+	process pre-definitions 1.11ms
+	share common exprs 0.13ms
+	tactic execution 2.53ms
+	type checking 12.7s
+	typeclass inference 2.94ms
+ℹ [137/165] Built Matrix16 (14s)
+info: astra/Matrix16.lean:6:0: type checking took 3.27s
+info: astra/Matrix16.lean:7:0: type checking took 4.63s
+info: astra/Matrix16.lean:8:0: type checking took 2.67s
+info: astra/Matrix16.lean:9:0: type checking took 1.44s
+info: astra/Matrix16.lean:10:0: type checking took 363ms
+info: astra/Matrix16.lean:11:0: type checking took 373ms
+info: astra/Matrix16.lean:12:0: type checking took 377ms
+info: astra/Matrix16.lean:13:0: type checking took 394ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.977ms
+	attribute application 0.116ms
+	elaboration 9.97ms
+	fix level params 0.0437ms
+	instantiate metavars 0.0642ms
+	let-to-have transformation 0.0319ms
+	linting 1.59ms
+	parsing 1.39ms
+	process pre-definitions 0.851ms
+	share common exprs 0.103ms
+	tactic execution 11.4ms
+	type checking 13.5s
+	typeclass inference 17.6ms
+ℹ [139/165] Built Matrix48 (14s)
+info: astra/Matrix48.lean:6:0: type checking took 4.31s
+info: astra/Matrix48.lean:7:0: type checking took 5.02s
+info: astra/Matrix48.lean:8:0: type checking took 899ms
+info: astra/Matrix48.lean:9:0: type checking took 935ms
+info: astra/Matrix48.lean:10:0: type checking took 945ms
+info: astra/Matrix48.lean:11:0: type checking took 754ms
+info: astra/Matrix48.lean:12:0: type checking took 572ms
+info: astra/Matrix48.lean:13:0: type checking took 642ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.979ms
+	attribute application 0.143ms
+	elaboration 6.22ms
+	fix level params 0.0461ms
+	instantiate metavars 0.07ms
+	let-to-have transformation 0.0322ms
+	linting 1.68ms
+	parsing 1.42ms
+	process pre-definitions 0.998ms
+	share common exprs 0.115ms
+	tactic execution 2.49ms
+	type checking 14.1s
+	typeclass inference 2.89ms
+ℹ [141/165] Built Matrix40 (14s)
+info: astra/Matrix40.lean:6:0: type checking took 3.42s
+info: astra/Matrix40.lean:7:0: type checking took 5.67s
+info: astra/Matrix40.lean:8:0: type checking took 2.47s
+info: astra/Matrix40.lean:9:0: type checking took 500ms
+info: astra/Matrix40.lean:10:0: type checking took 482ms
+info: astra/Matrix40.lean:11:0: type checking took 525ms
+info: astra/Matrix40.lean:12:0: type checking took 530ms
+info: astra/Matrix40.lean:13:0: type checking took 540ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.936ms
+	attribute application 0.131ms
+	elaboration 5.59ms
+	fix level params 0.0486ms
+	instantiate metavars 0.0665ms
+	let-to-have transformation 0.0344ms
+	linting 13.5ms
+	parsing 1.34ms
+	process pre-definitions 0.819ms
+	share common exprs 0.11ms
+	tactic execution 2.04ms
+	type checking 14.1s
+	typeclass inference 2.45ms
+ℹ [143/165] Built Matrix136 (15s)
+info: astra/Matrix136.lean:6:0: type checking took 4.33s
+info: astra/Matrix136.lean:7:0: type checking took 1.64s
+info: astra/Matrix136.lean:8:0: type checking took 1.74s
+info: astra/Matrix136.lean:9:0: type checking took 1.56s
+info: astra/Matrix136.lean:10:0: type checking took 1.47s
+info: astra/Matrix136.lean:11:0: type checking took 1.37s
+info: astra/Matrix136.lean:12:0: type checking took 1.35s
+info: astra/Matrix136.lean:13:0: type checking took 1.37s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.22ms
+	attribute application 0.161ms
+	elaboration 9.36ms
+	fix level params 0.047ms
+	instantiate metavars 0.0695ms
+	let-to-have transformation 0.0336ms
+	linting 1.74ms
+	parsing 1.43ms
+	process pre-definitions 1.14ms
+	share common exprs 0.122ms
+	tactic execution 5.47ms
+	type checking 14.8s
+	typeclass inference 2.75ms
+ℹ [145/165] Built Dominance72 (15s)
+info: astra/Dominance72.lean:7:0: type checking took 107ms
+info: astra/Dominance72.lean:10:0: type checking took 144ms
+info: astra/Dominance72.lean:11:0: type checking took 135ms
+info: astra/Dominance72.lean:12:0: type checking took 150ms
+info: astra/Dominance72.lean:13:0: type checking took 131ms
+info: astra/Dominance72.lean:33:0: type checking took 130ms
+info: astra/Dominance72.lean:35:0: type checking took 102ms
+info: astra/Dominance72.lean:36:0: type checking took 211ms
+info: astra/Dominance72.lean:37:0: type checking took 219ms
+info: astra/Dominance72.lean:38:0: type checking took 265ms
+info: astra/Dominance72.lean:39:0: type checking took 195ms
+info: astra/Dominance72.lean:40:0: type checking took 150ms
+info: astra/Dominance72.lean:41:0: type checking took 213ms
+info: astra/Dominance72.lean:42:0: type checking took 212ms
+info: astra/Dominance72.lean:43:0: type checking took 220ms
+info: astra/Dominance72.lean:44:0: type checking took 241ms
+info: astra/Dominance72.lean:45:0: type checking took 123ms
+info: astra/Dominance72.lean:53:0: type checking took 166ms
+info: astra/Dominance72.lean:54:0: type checking took 184ms
+info: astra/Dominance72.lean:55:0: type checking took 166ms
+info: astra/Dominance72.lean:56:0: type checking took 592ms
+info: astra/Dominance72.lean:57:0: type checking took 618ms
+info: astra/Dominance72.lean:58:0: type checking took 532ms
+info: astra/Dominance72.lean:83:0: type checking took 101ms
+info: astra/Dominance72.lean:149:0: type checking took 100ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.77ms
+	attribute application 2.86ms
+	elaboration 180ms
+	fix level params 1.08ms
+	instantiate metavars 1.67ms
+	let-to-have transformation 0.604ms
+	linting 44.4ms
+	parsing 33.3ms
+	process pre-definitions 52ms
+	share common exprs 3.65ms
+	tactic execution 80.6ms
+	type checking 14.1s
+	typeclass inference 45.2ms
+ℹ [147/165] Built Dominance136 (15s)
+info: astra/Dominance136.lean:8:0: type checking took 110ms
+info: astra/Dominance136.lean:11:0: type checking took 112ms
+info: astra/Dominance136.lean:12:0: type checking took 174ms
+info: astra/Dominance136.lean:13:0: type checking took 380ms
+info: astra/Dominance136.lean:14:0: type checking took 588ms
+info: astra/Dominance136.lean:15:0: type checking took 704ms
+info: astra/Dominance136.lean:16:0: type checking took 106ms
+info: astra/Dominance136.lean:17:0: type checking took 246ms
+info: astra/Dominance136.lean:18:0: type checking took 197ms
+info: astra/Dominance136.lean:19:0: type checking took 191ms
+info: astra/Dominance136.lean:20:0: type checking took 153ms
+info: astra/Dominance136.lean:21:0: type checking took 141ms
+info: astra/Dominance136.lean:22:0: type checking took 149ms
+info: astra/Dominance136.lean:23:0: type checking took 350ms
+info: astra/Dominance136.lean:37:0: type checking took 130ms
+info: astra/Dominance136.lean:38:0: type checking took 193ms
+info: astra/Dominance136.lean:39:0: type checking took 116ms
+info: astra/Dominance136.lean:40:0: type checking took 253ms
+info: astra/Dominance136.lean:41:0: type checking took 236ms
+info: astra/Dominance136.lean:42:0: type checking took 248ms
+info: astra/Dominance136.lean:43:0: type checking took 150ms
+info: astra/Dominance136.lean:44:0: type checking took 147ms
+info: astra/Dominance136.lean:59:0: type checking took 111ms
+info: astra/Dominance136.lean:60:0: type checking took 118ms
+info: astra/Dominance136.lean:61:0: type checking took 122ms
+info: astra/Dominance136.lean:62:0: type checking took 129ms
+info: astra/Dominance136.lean:63:0: type checking took 137ms
+info: astra/Dominance136.lean:64:0: type checking took 152ms
+info: astra/Dominance136.lean:65:0: type checking took 152ms
+info: astra/Dominance136.lean:80:0: type checking took 102ms
+info: astra/Dominance136.lean:81:0: type checking took 115ms
+info: astra/Dominance136.lean:82:0: type checking took 142ms
+info: astra/Dominance136.lean:83:0: type checking took 142ms
+info: astra/Dominance136.lean:84:0: type checking took 148ms
+info: astra/Dominance136.lean:85:0: type checking took 159ms
+info: astra/Dominance136.lean:86:0: type checking took 157ms
+info: astra/Dominance136.lean:100:0: type checking took 101ms
+info: astra/Dominance136.lean:101:0: type checking took 108ms
+info: astra/Dominance136.lean:102:0: type checking took 118ms
+info: astra/Dominance136.lean:103:0: type checking took 119ms
+info: astra/Dominance136.lean:104:0: type checking took 157ms
+info: astra/Dominance136.lean:105:0: type checking took 152ms
+info: astra/Dominance136.lean:106:0: type checking took 149ms
+info: astra/Dominance136.lean:107:0: type checking took 154ms
+info: astra/Dominance136.lean:119:0: type checking took 132ms
+info: astra/Dominance136.lean:122:0: type checking took 106ms
+info: astra/Dominance136.lean:123:0: type checking took 120ms
+info: astra/Dominance136.lean:124:0: type checking took 117ms
+info: astra/Dominance136.lean:125:0: type checking took 173ms
+info: astra/Dominance136.lean:126:0: type checking took 115ms
+info: astra/Dominance136.lean:127:0: type checking took 103ms
+info: astra/Dominance136.lean:148:0: type checking took 116ms
+info: astra/Dominance136.lean:149:0: type checking took 102ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.58ms
+	attribute application 2.57ms
+	elaboration 135ms
+	fix level params 1.03ms
+	instantiate metavars 1.53ms
+	let-to-have transformation 0.575ms
+	linting 35.6ms
+	parsing 31ms
+	process pre-definitions 32.3ms
+	share common exprs 3.36ms
+	tactic execution 85.8ms
+	type checking 14.9s
+	typeclass inference 42.4ms
+ℹ [149/165] Built Dominance112 (16s)
+info: astra/Dominance112.lean:10:0: type checking took 122ms
+info: astra/Dominance112.lean:11:0: type checking took 152ms
+info: astra/Dominance112.lean:12:0: type checking took 223ms
+info: astra/Dominance112.lean:13:0: type checking took 161ms
+info: astra/Dominance112.lean:14:0: type checking took 156ms
+info: astra/Dominance112.lean:15:0: type checking took 238ms
+info: astra/Dominance112.lean:16:0: type checking took 255ms
+info: astra/Dominance112.lean:17:0: type checking took 485ms
+info: astra/Dominance112.lean:18:0: type checking took 808ms
+info: astra/Dominance112.lean:19:0: type checking took 294ms
+info: astra/Dominance112.lean:20:0: type checking took 265ms
+info: astra/Dominance112.lean:21:0: type checking took 323ms
+info: astra/Dominance112.lean:22:0: type checking took 387ms
+info: astra/Dominance112.lean:23:0: type checking took 331ms
+info: astra/Dominance112.lean:35:0: type checking took 231ms
+info: astra/Dominance112.lean:36:0: type checking took 231ms
+info: astra/Dominance112.lean:37:0: type checking took 109ms
+info: astra/Dominance112.lean:38:0: type checking took 113ms
+info: astra/Dominance112.lean:39:0: type checking took 218ms
+info: astra/Dominance112.lean:40:0: type checking took 235ms
+info: astra/Dominance112.lean:41:0: type checking took 236ms
+info: astra/Dominance112.lean:42:0: type checking took 163ms
+info: astra/Dominance112.lean:43:0: type checking took 220ms
+info: astra/Dominance112.lean:44:0: type checking took 150ms
+info: astra/Dominance112.lean:59:0: type checking took 110ms
+info: astra/Dominance112.lean:60:0: type checking took 128ms
+info: astra/Dominance112.lean:61:0: type checking took 127ms
+info: astra/Dominance112.lean:62:0: type checking took 129ms
+info: astra/Dominance112.lean:63:0: type checking took 137ms
+info: astra/Dominance112.lean:64:0: type checking took 142ms
+info: astra/Dominance112.lean:65:0: type checking took 134ms
+info: astra/Dominance112.lean:78:0: type checking took 102ms
+info: astra/Dominance112.lean:79:0: type checking took 112ms
+info: astra/Dominance112.lean:80:0: type checking took 116ms
+info: astra/Dominance112.lean:81:0: type checking took 120ms
+info: astra/Dominance112.lean:82:0: type checking took 124ms
+info: astra/Dominance112.lean:83:0: type checking took 126ms
+info: astra/Dominance112.lean:84:0: type checking took 130ms
+info: astra/Dominance112.lean:85:0: type checking took 129ms
+info: astra/Dominance112.lean:86:0: type checking took 137ms
+info: astra/Dominance112.lean:100:0: type checking took 110ms
+info: astra/Dominance112.lean:101:0: type checking took 113ms
+info: astra/Dominance112.lean:102:0: type checking took 130ms
+info: astra/Dominance112.lean:103:0: type checking took 124ms
+info: astra/Dominance112.lean:104:0: type checking took 126ms
+info: astra/Dominance112.lean:105:0: type checking took 135ms
+info: astra/Dominance112.lean:106:0: type checking took 132ms
+info: astra/Dominance112.lean:107:0: type checking took 127ms
+info: astra/Dominance112.lean:122:0: type checking took 108ms
+info: astra/Dominance112.lean:123:0: type checking took 118ms
+info: astra/Dominance112.lean:124:0: type checking took 127ms
+info: astra/Dominance112.lean:125:0: type checking took 132ms
+info: astra/Dominance112.lean:126:0: type checking took 140ms
+info: astra/Dominance112.lean:127:0: type checking took 142ms
+info: astra/Dominance112.lean:128:0: type checking took 149ms
+info: astra/Dominance112.lean:141:0: type checking took 102ms
+info: astra/Dominance112.lean:142:0: type checking took 106ms
+info: astra/Dominance112.lean:143:0: type checking took 110ms
+info: astra/Dominance112.lean:144:0: type checking took 118ms
+info: astra/Dominance112.lean:145:0: type checking took 124ms
+info: astra/Dominance112.lean:146:0: type checking took 129ms
+info: astra/Dominance112.lean:147:0: type checking took 128ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.09ms
+	attribute application 2.64ms
+	elaboration 164ms
+	fix level params 1.03ms
+	instantiate metavars 1.58ms
+	let-to-have transformation 0.587ms
+	linting 36.4ms
+	parsing 31.4ms
+	process pre-definitions 39.9ms
+	share common exprs 3.37ms
+	tactic execution 73.2ms
+	type checking 15.9s
+	typeclass inference 61ms
+ℹ [151/165] Built Matrix128 (16s)
+info: astra/Matrix128.lean:6:0: type checking took 7.63s
+info: astra/Matrix128.lean:7:0: type checking took 1.55s
+info: astra/Matrix128.lean:8:0: type checking took 1.39s
+info: astra/Matrix128.lean:9:0: type checking took 1.31s
+info: astra/Matrix128.lean:10:0: type checking took 1.3s
+info: astra/Matrix128.lean:11:0: type checking took 1.31s
+info: astra/Matrix128.lean:12:0: type checking took 986ms
+info: astra/Matrix128.lean:13:0: type checking took 881ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.948ms
+	attribute application 0.122ms
+	elaboration 10.9ms
+	fix level params 0.0459ms
+	instantiate metavars 0.065ms
+	let-to-have transformation 0.0342ms
+	linting 1.62ms
+	parsing 1.41ms
+	process pre-definitions 1.01ms
+	share common exprs 0.117ms
+	tactic execution 2.29ms
+	type checking 16.4s
+	typeclass inference 2.5ms
+ℹ [153/165] Built Matrix (167ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.45ms
+	attribute application 0.0135ms
+	elaboration 10.8ms
+	fix level params 0.0266ms
+	instantiate metavars 0.0432ms
+	let-to-have transformation 0.00326ms
+	linting 0.947ms
+	parsing 2.12ms
+	process pre-definitions 0.245ms
+	share common exprs 0.415ms
+	type checking 1.51ms
+	typeclass inference 2.86ms
+ℹ [155/165] Built Dominance104 (20s)
+info: astra/Dominance104.lean:10:0: type checking took 186ms
+info: astra/Dominance104.lean:11:0: type checking took 145ms
+info: astra/Dominance104.lean:12:0: type checking took 226ms
+info: astra/Dominance104.lean:13:0: type checking took 232ms
+info: astra/Dominance104.lean:14:0: type checking took 269ms
+info: astra/Dominance104.lean:15:0: type checking took 319ms
+info: astra/Dominance104.lean:16:0: type checking took 174ms
+info: astra/Dominance104.lean:17:0: type checking took 116ms
+info: astra/Dominance104.lean:18:0: type checking took 123ms
+info: astra/Dominance104.lean:19:0: type checking took 551ms
+info: astra/Dominance104.lean:20:0: type checking took 997ms
+info: astra/Dominance104.lean:21:0: type checking took 1.06s
+info: astra/Dominance104.lean:22:0: type checking took 1.13s
+info: astra/Dominance104.lean:23:0: type checking took 1.02s
+info: astra/Dominance104.lean:24:0: type checking took 469ms
+info: astra/Dominance104.lean:25:0: type checking took 115ms
+info: astra/Dominance104.lean:27:0: type checking took 127ms
+info: astra/Dominance104.lean:28:0: type checking took 154ms
+info: astra/Dominance104.lean:29:0: type checking took 193ms
+info: astra/Dominance104.lean:30:0: type checking took 290ms
+info: astra/Dominance104.lean:31:0: type checking took 308ms
+info: astra/Dominance104.lean:32:0: type checking took 308ms
+info: astra/Dominance104.lean:33:0: type checking took 351ms
+info: astra/Dominance104.lean:34:0: type checking took 373ms
+info: astra/Dominance104.lean:35:0: type checking took 316ms
+info: astra/Dominance104.lean:36:0: type checking took 408ms
+info: astra/Dominance104.lean:37:0: type checking took 369ms
+info: astra/Dominance104.lean:38:0: type checking took 404ms
+info: astra/Dominance104.lean:39:0: type checking took 366ms
+info: astra/Dominance104.lean:40:0: type checking took 267ms
+info: astra/Dominance104.lean:41:0: type checking took 231ms
+info: astra/Dominance104.lean:42:0: type checking took 102ms
+info: astra/Dominance104.lean:43:0: type checking took 104ms
+info: astra/Dominance104.lean:44:0: type checking took 106ms
+info: astra/Dominance104.lean:63:0: type checking took 107ms
+info: astra/Dominance104.lean:64:0: type checking took 105ms
+info: astra/Dominance104.lean:65:0: type checking took 104ms
+info: astra/Dominance104.lean:81:0: type checking took 113ms
+info: astra/Dominance104.lean:83:0: type checking took 101ms
+info: astra/Dominance104.lean:84:0: type checking took 108ms
+info: astra/Dominance104.lean:85:0: type checking took 107ms
+info: astra/Dominance104.lean:86:0: type checking took 105ms
+info: astra/Dominance104.lean:102:0: type checking took 102ms
+info: astra/Dominance104.lean:104:0: type checking took 100ms
+info: astra/Dominance104.lean:105:0: type checking took 103ms
+info: astra/Dominance104.lean:106:0: type checking took 104ms
+info: astra/Dominance104.lean:107:0: type checking took 106ms
+info: astra/Dominance104.lean:123:0: type checking took 101ms
+info: astra/Dominance104.lean:124:0: type checking took 100ms
+info: astra/Dominance104.lean:125:0: type checking took 103ms
+info: astra/Dominance104.lean:126:0: type checking took 115ms
+info: astra/Dominance104.lean:127:0: type checking took 104ms
+info: astra/Dominance104.lean:147:0: type checking took 103ms
+info: astra/Dominance104.lean:169:0: type checking took 100ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 8.17ms
+	attribute application 2.42ms
+	elaboration 192ms
+	fix level params 0.99ms
+	instantiate metavars 19.5ms
+	let-to-have transformation 9.58ms
+	linting 51.2ms
+	parsing 31.2ms
+	process pre-definitions 61.8ms
+	share common exprs 3.22ms
+	tactic execution 86.4ms
+	type checking 19.7s
+	typeclass inference 38.4ms
+ℹ [157/165] Built Dominance128 (21s)
+info: astra/Dominance128.lean:15:0: type checking took 173ms
+info: astra/Dominance128.lean:16:0: type checking took 218ms
+info: astra/Dominance128.lean:17:0: type checking took 186ms
+info: astra/Dominance128.lean:18:0: type checking took 109ms
+info: astra/Dominance128.lean:19:0: type checking took 122ms
+info: astra/Dominance128.lean:20:0: type checking took 129ms
+info: astra/Dominance128.lean:21:0: type checking took 185ms
+info: astra/Dominance128.lean:22:0: type checking took 446ms
+info: astra/Dominance128.lean:23:0: type checking took 1.24s
+info: astra/Dominance128.lean:24:0: type checking took 605ms
+info: astra/Dominance128.lean:25:0: type checking took 119ms
+info: astra/Dominance128.lean:27:0: type checking took 184ms
+info: astra/Dominance128.lean:28:0: type checking took 237ms
+info: astra/Dominance128.lean:29:0: type checking took 331ms
+info: astra/Dominance128.lean:30:0: type checking took 381ms
+info: astra/Dominance128.lean:31:0: type checking took 462ms
+info: astra/Dominance128.lean:32:0: type checking took 501ms
+info: astra/Dominance128.lean:33:0: type checking took 585ms
+info: astra/Dominance128.lean:34:0: type checking took 579ms
+info: astra/Dominance128.lean:35:0: type checking took 551ms
+info: astra/Dominance128.lean:36:0: type checking took 518ms
+info: astra/Dominance128.lean:37:0: type checking took 491ms
+info: astra/Dominance128.lean:38:0: type checking took 472ms
+info: astra/Dominance128.lean:39:0: type checking took 502ms
+info: astra/Dominance128.lean:40:0: type checking took 534ms
+info: astra/Dominance128.lean:41:0: type checking took 513ms
+info: astra/Dominance128.lean:42:0: type checking took 364ms
+info: astra/Dominance128.lean:43:0: type checking took 327ms
+info: astra/Dominance128.lean:44:0: type checking took 202ms
+info: astra/Dominance128.lean:60:0: type checking took 104ms
+info: astra/Dominance128.lean:62:0: type checking took 107ms
+info: astra/Dominance128.lean:63:0: type checking took 118ms
+info: astra/Dominance128.lean:64:0: type checking took 123ms
+info: astra/Dominance128.lean:65:0: type checking took 130ms
+info: astra/Dominance128.lean:81:0: type checking took 102ms
+info: astra/Dominance128.lean:82:0: type checking took 103ms
+info: astra/Dominance128.lean:83:0: type checking took 112ms
+info: astra/Dominance128.lean:84:0: type checking took 123ms
+info: astra/Dominance128.lean:85:0: type checking took 122ms
+info: astra/Dominance128.lean:86:0: type checking took 125ms
+info: astra/Dominance128.lean:102:0: type checking took 100ms
+info: astra/Dominance128.lean:103:0: type checking took 101ms
+info: astra/Dominance128.lean:104:0: type checking took 107ms
+info: astra/Dominance128.lean:105:0: type checking took 123ms
+info: astra/Dominance128.lean:106:0: type checking took 123ms
+info: astra/Dominance128.lean:107:0: type checking took 130ms
+info: astra/Dominance128.lean:123:0: type checking took 102ms
+info: astra/Dominance128.lean:124:0: type checking took 107ms
+info: astra/Dominance128.lean:125:0: type checking took 112ms
+info: astra/Dominance128.lean:126:0: type checking took 118ms
+info: astra/Dominance128.lean:127:0: type checking took 122ms
+info: astra/Dominance128.lean:128:0: type checking took 123ms
+info: astra/Dominance128.lean:145:0: type checking took 100ms
+info: astra/Dominance128.lean:146:0: type checking took 112ms
+info: astra/Dominance128.lean:147:0: type checking took 119ms
+info: astra/Dominance128.lean:148:0: type checking took 120ms
+info: astra/Dominance128.lean:149:0: type checking took 128ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.77ms
+	attribute application 2.38ms
+	elaboration 268ms
+	fix level params 0.969ms
+	instantiate metavars 1.46ms
+	let-to-have transformation 0.54ms
+	linting 71.5ms
+	parsing 49.7ms
+	process pre-definitions 40.4ms
+	share common exprs 3.2ms
+	tactic execution 78.2ms
+	type checking 20s
+	typeclass inference 37.8ms
+ℹ [159/165] Built Dominance (178ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.7ms
+	attribute application 0.0125ms
+	elaboration 11.3ms
+	fix level params 0.0278ms
+	instantiate metavars 0.0439ms
+	let-to-have transformation 0.00333ms
+	linting 0.984ms
+	parsing 2.17ms
+	process pre-definitions 0.25ms
+	share common exprs 0.432ms
+	type checking 1.62ms
+	typeclass inference 2.92ms
+ℹ [161/165] Built Green (149ms)
+info: astra/Green.lean:14:0: 'slabAccepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.934ms
+	attribute application 0.0141ms
+	elaboration 17.8ms
+	fix level params 0.00548ms
+	instantiate metavars 0.00488ms
+	let-to-have transformation 0.00343ms
+	linting 0.237ms
+	parsing 0.176ms
+	process pre-definitions 0.0946ms
+	share common exprs 0.0177ms
+	type checking 1.81ms
+ℹ [163/165] Built Red (139ms)
+info: astra/Red.lean:8:0: 'forgedRejected' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.15ms
+	attribute application 0.0188ms
+	compilation (IR) 0.0682ms
+	compilation (LCNF base) 0.671ms
+	compilation (LCNF impure) 0.202ms
+	compilation (LCNF mono) 0.332ms
+	elaboration 2.85ms
+	fix level params 0.0104ms
+	instantiate metavars 0.00482ms
+	let-to-have transformation 0.0969ms
+	linting 0.322ms
+	parsing 0.495ms
+	process pre-definitions 0.884ms
+	share common exprs 0.0366ms
+	tactic execution 0.205ms
+	type checking 2.39ms
+	typeclass inference 2.22ms
+Build completed successfully (165 jobs).
+
+real	0m26.577s
+user	6m3.764s
+sys	0m15.719s
+EXIT 0
+Wed Nov 25 22:49:07 UTC 2026

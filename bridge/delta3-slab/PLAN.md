@@ -47,8 +47,10 @@ The statements are emitted as follows.
 - **HOL4, the bound:** `⊢ ∀y. in_box 146 y ∧ qv 2 5 ≤ mval slabC_grid y ∧ mval slabC_grid y ≤ qv 9 20 ⇒ qv claim ≤ Ltheta slabC_ab slabC_cut slabC_full slabC_theta y`.
   The reader checks that this is `slab_check_sound`'s conclusion at the acceptance theorem's own arguments.
 - **Lean, acceptance:** `theorem slabAccepted : check slabCert = true`, with `check := checkWith slabWitness`.
-- **Lean, the bound:** a HOLE. No Lean statement of it exists, because no Lean theorem says that acceptance implies the
-  bound (§5).
+- **Lean, the bound** (branch `bridge-lean-sound-2026-11-25`, `lean-sound/`): `D3.slabC_bound : ∀ (y : List ℝ),
+  D3.in_box 146 y ∧ D3.qv 2 5 ≤ D3.mval hGrid y ∧ D3.mval hGrid y ≤ D3.qv 9 20 → D3.qv <claim> ≤ D3.Ltheta hAB hCut hFull hTheta y`,
+  emitted from the object with HOL4's bound template (a fixed dictionary of notation) and read back with it. `hAB hCut
+  hFull hTheta hGrid` are `HData.lean`, emitted from the object's model part, which is HOL4's `@ab @cut @full` row by row.
 
 The witnesses are not emitted from the object: in HOL4 these are D, T, `@ds` and `@L`; in Lean, `slabWitness`. They
 are untrusted hints. The bridge carries them as each side's bytes, by their sha256.
@@ -87,11 +89,12 @@ When every proof field is also equal, the two statements are about **the same ce
 | | what holds | what is missing |
 |---|---|---|
 | HOL4 | acceptance and the bound | — |
-| Lean | acceptance, through an independently written checker | the bound |
+| Lean | acceptance, through an independently written checker; since 2026-11-25 (`lean-sound/`) the bound, through a general soundness theorem `D3.checkWith_sound` and the kernel's decision `slabModel` that the checker's derived model equals HOL4's data | — |
 
-Today the two kernels decide **the same certificate**: equal fields, two checkers written independently, two kernels.
-Only HOL4 decides **the bound**. Two kernels decide the same claim once Lean has the theorem that acceptance implies the
-bound, stated through this object (§5).
+Two kernels now decide **the same claim** in the sense of (a) and (b): both bound statements read back to the object, over
+the same model data (HOL4's sections, emitted to Lean as `HData.lean`), and Lean's semantics of `qv ldot in_box mval
+cells_val full_val cut_val Ltheta` is a hand transcription of `delta3_semScript.sml` (`lean-sound/Sound/Sem.lean`;
+this program reads the statements' shape and constants, not the definitions' bodies).
 
 Outside the claim:
 
@@ -103,7 +106,8 @@ Outside the claim:
   - every sign against the Lean witness's `geo`, which Lean's kernel checked against `signOn`;
   - the 294 cut areas three ways: HOL4's data, the object's exact areas, and Lean's `wedge` formula.
 
-  a_i and b_i are **not** compared.
+  a_i and b_i are **not** compared by this program; Lean's kernel decides them equal to its checker's bathtub values
+  (`abRowOK` in `lean-sound/Model.lean`, `slabModel`).
 - **The witnesses.**
 - **The analysis.** E(σ) ≥ L(y), the bathtub step, discretisation, the cover of [0, 1/2], E(σ) = E(1 − σ) and PRS
   Lemma 1 are in neither kernel.
@@ -111,14 +115,14 @@ Outside the claim:
 
 ## 5. Next
 
-1. **The Lean bound.** Write a Lean semantics of `Ltheta`, `in_box` and `mval` over ℝ (this needs Mathlib) on the same
+1. **The Lean bound — DONE on branch `bridge-lean-sound-2026-11-25`** (`lean-sound/WORKLOG.md`, LB1). Was: write a Lean semantics of `Ltheta`, `in_box` and `mval` over ℝ (this needs Mathlib) on the same
    data constants that HOL4 uses. Add `@ab @cut @full` to the object as a model part emitted to both sides. Then:
    - let Lean's kernel decide that its derived model equals that data;
    - prove `checkWith w c = true → ∀ y, …` (soundness: dominance, the identity, the bathtub step);
    - emit `slabBound` from the object, then read it back with the same template as HOL4's bound.
 
    Elaboration and kernel runs belong on a pod: the acceptance alone took 807 s of kernel time.
-2. **a_i, b_i**, compared between the HOL4 data and the bathtub values that Lean's witness carries.
+2. **a_i, b_i** — decided by Lean's kernel as part of `modelOK` (item 1).
 3. **The other slabs and the inner certificate.** HOL4 has all five. Lean has only this one; it projects 852–1,225 s of
    kernel time each (pod).
 

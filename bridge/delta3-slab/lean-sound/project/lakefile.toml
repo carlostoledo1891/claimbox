@@ -1,0 +1,24 @@
+name = "bridge"
+version = "0.1.0"
+defaultTargets = ["Astra", "Model", "Sound"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.37.0-rc1"
+
+[[lean_lib]]
+name = "Astra"
+srcDir = "astra"
+globs = ["Assemble", "Checker", "Coefficients", "Coefficients0", "Coefficients104", "Coefficients112", "Coefficients120", "Coefficients128", "Coefficients136", "Coefficients144", "Coefficients16", "Coefficients24", "Coefficients32", "Coefficients40", "Coefficients48", "Coefficients56", "Coefficients64", "Coefficients72", "Coefficients8", "Coefficients80", "Coefficients88", "Coefficients96", "Data", "Dominance", "Dominance0", "Dominance104", "Dominance112", "Dominance120", "Dominance128", "Dominance136", "Dominance144", "Dominance16", "Dominance24", "Dominance32", "Dominance40", "Dominance48", "Dominance56", "Dominance64", "Dominance72", "Dominance8", "Dominance80", "Dominance88", "Dominance96", "Green", "Instance", "Matrix", "Matrix0", "Matrix104", "Matrix112", "Matrix120", "Matrix128", "Matrix136", "Matrix144", "Matrix16", "Matrix24", "Matrix32", "Matrix40", "Matrix48", "Matrix56", "Matrix64", "Matrix72", "Matrix8", "Matrix80", "Matrix88", "Matrix96", "Profiles", "Profiles0", "Profiles128", "Profiles32", "Profiles64", "Profiles96", "Red", "Scalars", "Support", "Types", "WCoef", "WFactordata", "WGeo", "WHeightdata", "WMargindata", "WMatrixdata"]
+
+[[lean_lib]]
+name = "Sound"
+globs = ["Sound.+"]
+leanOptions = { relaxedAutoImplicit = false, maxSynthPendingDepth = 3, profiler = true }
+
+[[lean_lib]]
+name = "Model"
+srcDir = "model"
+leanOptions = { profiler = true }
+globs = ["HData", "Model", "ModelCheck", "PlantedAB", "PlantedFull", "PlantedCut", "PlantedTheta", "PlantedGrid"]

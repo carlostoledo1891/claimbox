@@ -41,6 +41,8 @@ HOL = {'data': 'hol4/delta3/slabC.d3', 'theorem': 'hol4/delta3/slabC.theorem.txt
 LEAN_GLOB = 'notes/*/astra-lean-slab/work'
 LEAN = {'types': 'Types.lean', 'checker': 'Checker.lean', 'data': 'Data.lean', 'instance': 'Instance.lean', 'green': 'Green.lean',
         'geo': 'WGeo.lean', 'log': 'logs/run-0196.log'}
+SOUND = 'bridge/delta3-slab/lean-sound'          # in this repository: the Lean bound (soundness of checkWith), branch bridge-lean-sound-2026-11-25
+SOUND_FILES = {'hdata': 'HData.lean', 'final': 'Sound/Final.lean', 'log': 'logs/clean-build.log'}
 U = 1096
 
 
@@ -139,18 +141,27 @@ def compact(obj, cert_sha):
                                      'count': len(st['thetaPairs']), 'sha256': digest(st['thetaPairs'])}},
         'proof': {'what': 'the certificate\'s reason, checked by each kernel\'s checker; not part of what is claimed',
                   'B': pr['B'], 'eps': pr['eps'], 'forms': dict(lst('forms', pr['forms']), kinds=dict(sorted(Counter(f[0] for f in pr['forms']).items())))},
+        'model': {'what': 'the constants L_θ is built from — a_i, b_i (@ab); the cut pairs (i, j, sign, w_i·w_j, 4·A_in) (@cut); the full pairs '
+                          '(i, j, ±w_i·w_j) (@full) — carried as DATA, not computed from the certificate: read row by row from HOL4\'s data file and '
+                          'emitted to both sides (HOL4: the sections; Lean: HData.lean). Lean\'s kernel decides that the model its checker derives '
+                          'from φ* equals it (modelOK, ' + SOUND + '/ModelCheck.lean)',
+                  'from': {'path': HOL['data'] + ' sections @ab @cut @full', 'sha256': obj['model']['d3sha']},
+                  **{k: {'count': len(obj['model'][k]), 'sha256': digest(obj['model'][k])} for k in ('ab', 'cut', 'full')}},
         'emits': {
             'hol4': {'data': HOL['data'] + ' sections @grid @scal @theta @forms', 'accept': 'theorem ' + THY + '_check (' + HOL['theorem'] + ')',
                      'bound': 'theorem ' + THY + '_bound_n (' + HOL['readback'] + ')'},
             'lean': {'data': LEAN_GLOB + '/' + LEAN['data'], 'accept': 'theorem slabAccepted (' + LEAN_GLOB + '/' + LEAN['green'] + ')',
-                     'bound': 'HOLE: no Lean statement of the bound exists (no soundness theorem for checkWith); PLAN.md §5'}},
+                     'model': SOUND + '/' + SOUND_FILES['hdata'],
+                     'bound': 'theorem D3.slabC_bound (' + SOUND + '/' + SOUND_FILES['final'] + '), through D3.checkWith_sound (' + SOUND + '/Sound/Main.lean)'}},
         'outside': [
             'the model constants: a_i, b_i (bathtub), the signs s_i of φ*, the areas A_in — HOL4 takes them as data (export.js from the JavaScript '
             'verifier\'s gridData), Lean\'s checker computes them from φ*\'s twelve blocks; compared here as data, never part of the claim',
             'the witness: HOL4 D, T, d, Lw; Lean slabWitness (geo, heights, summaries, matrix, scales, factor, margins) — untrusted hints; '
             'a wrong one can only make a checker refuse',
             'the analysis: E(σ) ≥ L(y) (centring, bathtub, discretisation), the cover of [0, 1/2], E(σ) = E(1 − σ), PRS Lemma 1 — in neither kernel',
-            'the meaning of Lean\'s `check slabCert = true`: no Lean theorem says acceptance implies the bound'],
+            'the transcription of HOL4\'s semantics (qv ldot in_box mval cells_val full_val cut_val Ltheta) into Lean over ℝ ('
+            + SOUND + '/Sound/Sem.lean): written by hand from delta3_semScript.sml; this program reads the two bound statements\' shape and '
+            'constants, not the bodies of the definitions'],
     }
 
 
@@ -257,6 +268,103 @@ def emit_lean_data(obj):
 
 def emit_lean_accept(_obj):
     return 'theorem slabAccepted : check slabCert = true :=\n'
+
+
+def model_part(d3_text):
+    """the model part of the object: HOL4's sections @ab @cut @full, each row as written"""
+    sec, _order = parse_d3(d3_text)
+    return {'ab': sec['ab'], 'cut': sec['cut'], 'full': sec['full'], 'd3sha': sha(d3_text.encode())}
+
+
+def emit_hol4_model(obj):
+    out = []
+    for name in ('ab', 'cut', 'full'):
+        rows = obj['model'][name]
+        out += ['@' + name + ' ' + str(len(rows))] + [' '.join(map(str, r)) for r in rows]
+    return '\n'.join(out) + '\n'
+
+
+def emit_lean_model(obj, d3_bytes):
+    """HData.lean, written from the object (an independent writer of the text gen_hdata.py wrote; compared byte for byte)"""
+    st, pr, md = obj['statement'], obj['proof'], obj['model']
+    def chunked(name, ty, rows, size=400):
+        out, parts = [], []
+        for k in range(0, len(rows), size):
+            nm = name + str(k // size)
+            parts.append(nm)
+            out.append('def ' + nm + ' : List (' + ty + ') := [' + ', '.join('(' + ', '.join(map(str, r)) + ')' for r in rows[k:k + size]) + ']')
+        out.append('def ' + name + ' : List (' + ty + ') := ' + ' ++ '.join(parts))
+        return '\n'.join(out)
+    lines = ['/- GENERATED by gen_hdata.py from slabC.d3 (sha256 %s, %d bytes): HOL4\'s data for slab C,' % (sha(d3_bytes), len(d3_bytes)),
+             '   sections @grid @ab @cut @full @theta, each row as written. Core Lean only. -/',
+             'def hGrid : List Nat := [' + ', '.join(map(str, st['grid'])) + ']',
+             chunked('hAB', 'Int × Nat × Int × Nat', md['ab']),
+             chunked('hCut', 'Nat × Nat × Int × Nat × Nat', md['cut']),
+             chunked('hFull', 'Nat × Nat × Int', md['full']),
+             chunked('hTheta', 'Int × Nat', [list(pair(t)) for t in st['theta']]),
+             '/-- @scal: lo, hi, B, eps, claim, each (num, den) as written. -/',
+             'def hScal : List (Int × Nat) := [' + ', '.join('(%d, %d)' % pair(x) for x in (st['lo'], st['hi'], pr['B'], pr['eps'], st['claim'])) + ']']
+    return '\n'.join(lines) + '\n'
+
+
+# the bound's shape, once: HOL4's tokens; the Lean shape is derived from it by a fixed dictionary of notation
+BOUND_TMPL = ['|-', '!y.', 'in_box', 'N', 'y', '/\\', 'qv', 'LP', 'LQ', '<=', 'mval', 'G', 'y', '/\\', 'mval', 'G', 'y', '<=', 'qv', 'HP', 'HQ',
+              '==>', 'qv', 'CP', 'CQ', '<=', 'Ltheta', 'AB', 'CUT', 'FULL', 'TH', 'y']
+LEAN_NOTATION = {'|-': ['D3.slabC_bound', ':'], '!y.': ['∀', '(', 'y', ':', 'List', 'ℝ', ')', ','], '/\\': ['∧'], '<=': ['≤'], '==>': ['→'],
+                 'in_box': ['D3.in_box'], 'qv': ['D3.qv'], 'mval': ['D3.mval'], 'Ltheta': ['D3.Ltheta']}
+LEAN_CONST = {'G': 'hGrid', 'AB': 'hAB', 'CUT': 'hCut', 'FULL': 'hFull', 'TH': 'hTheta'}
+
+
+def lean_bound_tmpl():
+    return [x for t in BOUND_TMPL for x in LEAN_NOTATION.get(t, [t])]
+
+
+def emit_lean_bound(obj):
+    st = obj['statement']
+    fill = {'N': str(st['n']), 'LP': str(pair(st['lo'])[0]), 'LQ': str(pair(st['lo'])[1]), 'HP': str(pair(st['hi'])[0]), 'HQ': str(pair(st['hi'])[1]),
+            'CP': str(pair(st['claim'])[0]), 'CQ': str(pair(st['claim'])[1]), **LEAN_CONST}
+    out = ' '.join(fill.get(t, t) for t in lean_bound_tmpl())
+    return out.replace('( ', '(').replace(' )', ')').replace(' ,', ',').replace(' :', ' :') + '\n'
+
+
+def read_lean_bound(bound_text, hdata_text, final_text, log_text):
+    """the Lean bound read back with HOL4's template: its scalars, its constants (HData.lean's), and how it is proved"""
+    b = toks(bound_text)
+    tmpl = lean_bound_tmpl()
+    if len(b) != len(tmpl):
+        raise Refused('read-lean', 'the Lean bound theorem is not of the slab bound\'s shape')
+    got = {}
+    for want, tok in zip(tmpl, b):
+        if want in ('N', 'LP', 'LQ', 'HP', 'HQ', 'CP', 'CQ', 'G', 'AB', 'CUT', 'FULL', 'TH'):
+            if got.setdefault(want, tok) != tok:
+                raise Refused('read-lean', 'the Lean bound theorem names two ' + want)
+        elif want != tok:
+            raise Refused('read-lean', 'the Lean bound theorem has ' + tok + ' where its shape has ' + want)
+    for k, name in LEAN_CONST.items():
+        if got[k] != name or not re.search(r'^def ' + re.escape(name) + r' : ', hdata_text, re.M):
+            raise Refused('read-lean', 'the Lean bound theorem\'s ' + k + ' is ' + got[k] + ', not HData.lean\'s ' + name)
+    via = 'checkWith_sound slabCert slabWitness hAB hCut hFull hTheta hGrid slabAccepted slabModel'
+    side = {'n': int(got['N']), 'lo': F(int(got['LP']), int(got['LQ'])), 'hi': F(int(got['HP']), int(got['HQ'])),
+            'claim': F(int(got['CP']), int(got['CQ']))}
+    cons = {'provedThroughSoundnessAndAcceptance': via in final_text and 'theorem slabC_bound :' in final_text,
+            'axiomsStandard': "'D3.slabC_bound' depends on axioms: [propext, Classical.choice, Quot.sound]" in log_text,
+            'soundnessAxiomsStandard': "'D3.checkWith_sound' depends on axioms: [propext, Classical.choice, Quot.sound]" in log_text,
+            'acceptanceAxiomsStandard': "'slabAccepted' depends on axioms: [propext, Classical.choice, Quot.sound]" in log_text,
+            'modelCheckAxiomsStandard': "'slabModel' depends on axioms: [propext, Classical.choice, Quot.sound]" in log_text,
+            'noSorry': 'sorry' not in log_text}
+    return side, cons
+
+
+def lean_check_block(log_text, name):
+    """a theorem as `#check` prints it in the build log: from 'info: …: <name> :' to the next 'info:'/'warning:'/'⚠'/'✔' line"""
+    lines = log_text.split('\n')
+    x = next(i for i, l in enumerate(lines) if re.match(r'^info: \S+: ' + re.escape(name) + ' : ', l))
+    body = [re.sub(r'^info: \S+: ', '', lines[x])]
+    for l in lines[x + 1:]:
+        if re.match(r'^(info|warning|error):|^[⚠✔ℹ✖]', l):
+            break
+        body.append(l)
+    return '\n'.join(body)
 
 
 # ---- a small polynomial algebra, for reading what each side's form codes mean -------------------------------------------
@@ -811,26 +919,33 @@ def run():
     lroot, lname = lean_root()
     for k, p in LEAN.items():
         rd('lean.' + k, p, lroot, lname + '/' + p)
+    for k, p in SOUND_FILES.items():
+        rd('sound.' + k, SOUND + '/' + p, REPO)
     ledger_row = next(r for r in json.loads(raw['ledger'])['certificates'] if r['file'] == CERT)
     if ledger_row['sha256'] != sha(cert_bytes):
         raise Refused('pins', 'the ledger row\'s sha256 is not the certificate\'s')
 
     obj = build_object(cert_bytes)
-    o = expand(obj)
     hd3 = raw['hol.data']
+    obj['model'].update(model_part(hd3))
+    o = expand(obj)
     cert_part, tail = hd3.split('\n@ab ', 1)
     cert_part += '\n'
     tail = '@ab ' + tail
     wit = parse_d3(hd3)[0]['wit'][0]
     bound_text, _ = block(raw['hol.readback'], 'THM ' + THY + '_bound_n ')
     sound_text, _ = block(raw['hol.readback'], 'SOUND slab_check_sound ')
+    model_sections = tail.split('\n@wit ', 1)[0] + '\n'
+    lean_bound_text = lean_check_block(raw['sound.log'], 'D3.slabC_bound')
 
     # (1) emit, and compare each emitted text with what the side states
     e = {'hol4.data': emit_hol4_data(obj), 'hol4.accept': emit_hol4_accept(obj, wit), 'hol4.bound': emit_hol4_bound(obj),
-         'lean.data': emit_lean_data(obj), 'lean.accept': emit_lean_accept(obj)}
+         'lean.data': emit_lean_data(obj), 'lean.accept': emit_lean_accept(obj),
+         'hol4.model': emit_hol4_model(obj), 'lean.model': emit_lean_model(obj, hd3.encode()), 'lean.bound': emit_lean_bound(obj)}
     os.makedirs(OUT, exist_ok=True)
     names = {'hol4.data': 'slabC.cert.d3', 'hol4.accept': 'slabC.accept.txt', 'hol4.bound': 'slabC.bound.txt',
-             'lean.data': 'Data.lean', 'lean.accept': 'slabAccepted.lean'}
+             'lean.data': 'Data.lean', 'lean.accept': 'slabAccepted.lean',
+             'hol4.model': 'slabC.model.d3', 'lean.model': 'HData.lean', 'lean.bound': 'slabC_bound.lean.txt'}
     for k, t in e.items():
         with open(os.path.join(OUT, names[k]), 'w', encoding='utf-8') as f:
             f.write(t)
@@ -843,6 +958,10 @@ def run():
         'hol4.bound': {'equalsSide': toks(e['hol4.bound']) == toks(bound_text), 'how': 'token for token, THM ' + THY + '_bound_n in ' + HOL['readback']},
         'lean.data': {'equalsSide': e['lean.data'] == raw['lean.data'], 'how': 'byte for byte, ' + lname + '/' + LEAN['data']},
         'lean.accept': {'equalsSide': e['lean.accept'].rstrip('\n') in green_lines, 'how': 'the theorem\'s line, verbatim in ' + lname + '/' + LEAN['green']},
+        'hol4.model': {'equalsSide': e['hol4.model'] == model_sections, 'how': 'byte for byte, the sections @ab @cut @full of ' + HOL['data']},
+        'lean.model': {'equalsSide': e['lean.model'] == raw['sound.hdata'], 'how': 'byte for byte, ' + SOUND + '/' + SOUND_FILES['hdata']},
+        'lean.bound': {'equalsSide': toks(e['lean.bound']) == toks(lean_bound_text),
+                       'how': 'token for token, D3.slabC_bound as Lean prints it (#check) in ' + SOUND + '/' + SOUND_FILES['log']},
     }
     texts['hol4.data']['assemblyCopyIdentical'] = raw['hol.asmData'] == hd3 and raw['hol.asmScript'] == raw['hol.script']
     texts['hol4.accept']['assemblyCopyIdentical'] = raw['hol.asmTheorem'] == raw['hol.theorem']
@@ -863,6 +982,11 @@ def run():
     hol_cmp['bound.n'] = 'MATCH' if hb['n'] == o['n'] else 'MISMATCH'
     for fld in ('lo', 'hi', 'claim'):
         hol_cmp['bound.' + fld] = 'MATCH' if hb[fld] == o[fld] else 'MISMATCH object ' + fs(o[fld]) + ' side ' + fs(hb[fld])
+    lb, lbc = read_lean_bound(lean_bound_text, raw['sound.hdata'], raw['sound.final'], raw['sound.log'])
+    lean_bound_cmp = {'bound.n': 'MATCH' if lb['n'] == o['n'] else 'MISMATCH side ' + str(lb['n'])}
+    for fld in ('lo', 'hi', 'claim'):
+        lean_bound_cmp['bound.' + fld] = 'MATCH' if lb[fld] == o[fld] else 'MISMATCH object ' + fs(o[fld]) + ' side ' + fs(lb[fld])
+    lean_bound_cmp['bound.model'] = 'MATCH (HData.lean = the object\'s model, emitted)' if texts['lean.model']['equalsSide'] else 'MISMATCH'
     written = {'lo': hs['statement']['loPair'] == list(pair(obj['statement']['lo'])), 'hi': hs['statement']['hiPair'] == list(pair(obj['statement']['hi'])),
                'claim': hs['statement']['claimPair'] == list(pair(obj['statement']['claim'])),
                'B': hs['proof']['BPair'] == list(pair(obj['proof']['B'])), 'eps': hs['proof']['epsPair'] == list(pair(obj['proof']['eps'])),
@@ -909,7 +1033,8 @@ def run():
         'cutAreasEqualLeanWedge': all(r[4] == max(0, wedge(*o['grid'][r[0]:r[0] + 2], *o['grid'][r[1]:r[1] + 2], U) - wedge(*o['grid'][r[0]:r[0] + 2], *o['grid'][r[1]:r[1] + 2], 0))
                                       for r in cut_rows),
         'counts': {'cut': len(cut_rows), 'full': len(full_rows), 'ab': len(hs['model']['ab'])},
-        'notCompared': 'a_i, b_i (the section @ab): Lean\'s bathtub values sit inside its witness\'s summaries, mixed with the other terms of each row',
+        'notCompared': 'a_i, b_i (the section @ab) are not compared by this program; Lean\'s kernel decides them equal to its checker\'s bathtub '
+                       'values (abRowOK in ' + SOUND + '/Model.lean, slabModel in ModelCheck.lean)',
     }
 
     # (4) the kernels' words, quoted from the records (never this program's)
@@ -917,8 +1042,9 @@ def run():
     words = {
         'hol4': [l for l in lines if l.startswith('CHECK ' + THY + '_check ') or l.startswith('THM ' + THY + '_bound_n ') or l.startswith('SOUND slab_check_sound ')],
         'lean': [l for l in raw['lean.log'].split('\n') if "'slabAccepted' depends on axioms" in l],
+        'leanBound': [re.sub(r'^info: \S+: ', '', l) for l in raw['sound.log'].split('\n') if 'depends on axioms' in l],
         'certMachine': {'ledger': LEDGER, 'verdict': ledger_row['verdict'], 'bound': ledger_row['bound']},
-        'from': {'hol4': HOL['readback'], 'lean': lname + '/' + LEAN['log']},
+        'from': {'hol4': HOL['readback'], 'lean': lname + '/' + LEAN['log'], 'leanBound': SOUND + '/' + SOUND_FILES['log']},
     }
 
     # (5) planted changes: each must be caught by the read-back (or the emitted-text comparison)
@@ -967,6 +1093,21 @@ def run():
     plant('L5', 'Lean data: the claim\'s numerator + 1', 'statement.claim',
           lambda: compare(o, lean_side(raw['lean.data'].replace('⟨50963377393403307885655938,', '⟨50963377393403307885655939,', 1))))
 
+    def lean_bound_side(bnd=lean_bound_text, hdata=raw['sound.hdata']):
+        side, _cons = read_lean_bound(bnd, hdata, raw['sound.final'], raw['sound.log'])
+        r = {'bound.n': 'MATCH' if side['n'] == o['n'] else 'MISMATCH side ' + str(side['n'])}
+        for fld in ('lo', 'hi', 'claim'):
+            r['bound.' + fld] = 'MATCH' if side[fld] == o[fld] else 'MISMATCH object ' + fs(o[fld]) + ' side ' + fs(side[fld])
+        r['bound.model'] = 'MATCH' if emit_lean_model(obj, hd3.encode()) == hdata else 'MISMATCH (HData.lean is not the object\'s model)'
+        return r
+    plant('L7', 'Lean bound theorem: D3.in_box 146 → 145', 'bound.n', lambda: lean_bound_side(bnd=lean_bound_text.replace('D3.in_box 146', 'D3.in_box 145')))
+    plant('L8', 'Lean bound theorem: the claim\'s numerator + 1', 'bound.claim',
+          lambda: lean_bound_side(bnd=lean_bound_text.replace('D3.qv 50963377393403307885655938 ', 'D3.qv 50963377393403307885655939 ', 1)))
+    plant('L9', 'Lean bound theorem: Ltheta over hFull0 (one chunk) instead of hFull', 'bound.model',
+          lambda: lean_bound_side(bnd=lean_bound_text.replace(' hFull ', ' hFull0 ', 1)))
+    plant('L10', 'Lean model data: @full row 4 (0, 5, 64) → (0, 5, 65) in HData.lean', 'bound.model',
+          lambda: lean_bound_side(hdata=raw['sound.hdata'].replace('(0, 4, 64), (0, 5, 64),', '(0, 4, 64), (0, 5, 65),', 1)))
+
     def swap(text, a, b):
         if text.count(a) != 1 or text.count(b) != 1:
             raise Refused('plant', 'not found once: ' + a + ' / ' + b)
@@ -1000,6 +1141,27 @@ def run():
         po['statement']['claim'] = fs(val(po['statement']['claim']) + F(1, 2 ** 100))
     plant('O2', 'the object: the claim + 2^-100', 'statement.claim', lambda: both('statement.claim')(object_plant(claim_plus)))
 
+    def ab_plus(po):
+        po['model']['ab'][0][0] += 1
+
+    def model_plant(change):
+        po = copy.deepcopy(obj)
+        change(po)
+        r = {'emitted.hol4.model': 'MATCH' if emit_hol4_model(po) == model_sections else 'MISMATCH',
+             'emitted.lean.model': 'MATCH' if emit_lean_model(po, hd3.encode()) == raw['sound.hdata'] else 'MISMATCH'}
+        return {'model.ab': 'MISMATCH ' + json.dumps(r) if caught(r, 'emitted.hol4.model') and caught(r, 'emitted.lean.model') else 'NOT CAUGHT ' + json.dumps(r)}
+    plant('O3', 'the object\'s model: a_0 numerator + 1 (9/37538 → 10/37538)', 'model.ab', lambda: model_plant(ab_plus))
+
+    def claim_bound(po):
+        claim_plus(po)
+        r = {'emitted.lean.bound': 'MATCH' if toks(emit_lean_bound(po)) == toks(lean_bound_text) else 'MISMATCH',
+             'emitted.hol4.bound': 'MATCH' if toks(emit_hol4_bound(po)) == toks(bound_text) else 'MISMATCH'}
+        return r
+    plant('O4', 'the object: the claim + 2^-100 — both emitted bound statements differ from what each kernel proved', 'emitted.lean.bound',
+          lambda: (lambda r: {'emitted.lean.bound': r['emitted.lean.bound'] + ' | hol4 ' + r['emitted.hol4.bound']
+                              if caught(r, 'emitted.lean.bound') and caught(r, 'emitted.hol4.bound') else 'NOT CAUGHT ' + json.dumps(r)})
+          (claim_bound(copy.deepcopy(obj))))
+
     def reorder(po):
         po['proof']['forms'] = po['proof']['forms'][1:] + po['proof']['forms'][:1]
 
@@ -1026,7 +1188,8 @@ def run():
 
     ok_texts = all(t['equalsSide'] and t.get('assemblyCopyIdentical', True) for t in texts.values()) and texts['hol4.data']['kernelInputIsThisPlusOutside']
     ok_hol = all(v.startswith('MATCH') for v in hol_cmp.values()) and all(hs['consistency'].values()) and all(written.values())
-    ok_lean = all(v.startswith('MATCH') for v in lean_cmp.values()) and all(ls['consistency'].values()) and ls['theorem'] == {'name': 'slabAccepted', 'prop': 'check slabCert = true'}
+    ok_lean = all(v.startswith('MATCH') for v in lean_cmp.values()) and all(ls['consistency'].values()) and ls['theorem'] == {'name': 'slabAccepted', 'prop': 'check slabCert = true'} \
+        and all(v.startswith('MATCH') for v in lean_bound_cmp.values()) and all(lbc.values())
     ok_plants = all(p['caught'] == (p['expect'] != 'not caught') for p in plants)
     record = {
         'what': 'The Lean–HOL4 bridge, first slab: one claim object (claim.json) emitted to HOL4 and to Lean; each emitted text compared with what that '
@@ -1036,7 +1199,8 @@ def run():
         'object': {'sha256': sha(json.dumps(compact(obj, sha(cert_bytes)), indent=1, ensure_ascii=False).encode() + b'\n')},
         'emitted': texts,
         'readBack': {'hol4': hol_cmp, 'hol4Consistency': hs['consistency'], 'hol4AsWritten': written,
-                     'lean': lean_cmp, 'leanConsistency': ls['consistency'], 'leanTheorem': ls['theorem']},
+                     'lean': lean_cmp, 'leanConsistency': ls['consistency'], 'leanTheorem': ls['theorem'],
+                     'leanBound': lean_bound_cmp, 'leanBoundConsistency': lbc},
         'readings': readings,
         'model': model,
         'words': words,
@@ -1061,7 +1225,7 @@ def main(argv):
     print('HOL4 kernel input = emitted certificate sections + the outside sections @ab @cut @full @wit @ds @L, byte for byte: '
           + str(record['emitted']['hol4.data']['kernelInputIsThisPlusOutside']) + '; the assembly\'s copies (data, script, theorem) identical: '
           + str(record['emitted']['hol4.data']['assemblyCopyIdentical'] and record['emitted']['hol4.accept']['assemblyCopyIdentical']))
-    for side in ('hol4', 'lean'):
+    for side in ('hol4', 'lean', 'leanBound'):
         for k, v in record['readBack'][side].items():
             print(side.ljust(5) + ' ' + k.ljust(22) + v)
         for k, v in record['readBack'][side + 'Consistency'].items():
@@ -1078,7 +1242,7 @@ def main(argv):
     print('\nplants caught ' + str(tt['plantsCaught']) + '/' + str(tt['plants']) + ', green controls not flagged ' + str(tt['greenControlsNotFlagged']) + '/'
           + str(tt['greenControls']) + '; emitted = sides: ' + str(tt['emittedEqualSides']) + '; read-back HOL4 ' + str(tt['hol4ReadBackMatches'])
           + ', Lean ' + str(tt['leanReadBackMatches']) + '; model data agree: ' + str(tt['modelAgrees']))
-    print('the kernels\' words (quoted): ' + ' | '.join(record['words']['hol4'] + record['words']['lean']))
+    print('the kernels\' words (quoted): ' + ' | '.join(record['words']['hol4'] + record['words']['lean'] + record['words']['leanBound']))
     status = 0 if tt['all'] else 1
     rec_path, claim_path = os.path.join(HERE, 'record.json'), os.path.join(HERE, 'claim.json')
     if '--write' in argv:

@@ -1,0 +1,31 @@
+Wed Nov 25 23:27:33 UTC 2026
+✔ [28/37] Built PlantedAB (172ms)
+✔ [30/37] Built PlantedGrid (152ms)
+✔ [32/37] Built PlantedFull (5.3s)
+✔ [34/37] Built PlantedCut (5.4s)
+✔ [36/37] Built PlantedTheta (5.7s)
+Build completed successfully (37 jobs).
+
+real	0m6.273s
+user	0m16.260s
+sys	0m1.071s
+EXIT 0
+Wed Nov 25 23:27:39 UTC 2026
+attempt/ForgedBound.lean:10:67: error: Tactic `decide` proved that the proposition
+  checkWith slabWitness forged = true
+is false
+attempt/ForgedBound.lean:18:12: error: Application type mismatch: The argument
+  hy
+has type
+  D3.in_box 146 y ∧ D3.qv 2 5 ≤ D3.mval hGrid y ∧ D3.mval hGrid y ≤ D3.qv 9 20
+but is expected to have type
+  D3.in_box forged.cells.length y ∧
+    D3.qv (↑forged.lo20) 20 ≤ D3.mval hGrid y ∧ D3.mval hGrid y ≤ D3.qv (↑forged.hi20) 20
+in the application
+  h y hy
+
+real	1m10.105s
+user	1m7.296s
+sys	0m2.888s
+FORGED-EXIT 1
+Wed Nov 25 23:28:49 UTC 2026

@@ -48,6 +48,25 @@
    }
   }
  },
+ "model": {
+  "what": "the constants L_θ is built from — a_i, b_i (@ab); the cut pairs (i, j, sign, w_i·w_j, 4·A_in) (@cut); the full pairs (i, j, ±w_i·w_j) (@full) — carried as DATA, not computed from the certificate: read row by row from HOL4's data file and emitted to both sides (HOL4: the sections; Lean: HData.lean). Lean's kernel decides that the model its checker derives from φ* equals it (modelOK, bridge/delta3-slab/lean-sound/ModelCheck.lean)",
+  "from": {
+   "path": "hol4/delta3/slabC.d3 sections @ab @cut @full",
+   "sha256": "731af1c2e3bb31a8d119e60e16fe39cf10226fcc701a78f1de0539c2bb77935a"
+  },
+  "ab": {
+   "count": 146,
+   "sha256": "00698fb68712cc87fbbeec9434a24b11b878a67ee5217edfdd4177abb8d0122e"
+  },
+  "cut": {
+   "count": 294,
+   "sha256": "7def447355cc8c4ea431ef828718d389bda80d82c492712345ed6aaa61e46960"
+  },
+  "full": {
+   "count": 10380,
+   "sha256": "db3e6b51b2de34692034004e2c192bfd495988dec5ca4cd8c89b571789371561"
+  }
+ },
  "emits": {
   "hol4": {
    "data": "hol4/delta3/slabC.d3 sections @grid @scal @theta @forms",
@@ -57,13 +76,14 @@
   "lean": {
    "data": "notes/*/astra-lean-slab/work/Data.lean",
    "accept": "theorem slabAccepted (notes/*/astra-lean-slab/work/Green.lean)",
-   "bound": "HOLE: no Lean statement of the bound exists (no soundness theorem for checkWith); PLAN.md §5"
+   "model": "bridge/delta3-slab/lean-sound/HData.lean",
+   "bound": "theorem D3.slabC_bound (bridge/delta3-slab/lean-sound/Sound/Final.lean), through D3.checkWith_sound (bridge/delta3-slab/lean-sound/Sound/Main.lean)"
   }
  },
  "outside": [
   "the model constants: a_i, b_i (bathtub), the signs s_i of φ*, the areas A_in — HOL4 takes them as data (export.js from the JavaScript verifier's gridData), Lean's checker computes them from φ*'s twelve blocks; compared here as data, never part of the claim",
   "the witness: HOL4 D, T, d, Lw; Lean slabWitness (geo, heights, summaries, matrix, scales, factor, margins) — untrusted hints; a wrong one can only make a checker refuse",
   "the analysis: E(σ) ≥ L(y) (centring, bathtub, discretisation), the cover of [0, 1/2], E(σ) = E(1 − σ), PRS Lemma 1 — in neither kernel",
-  "the meaning of Lean's `check slabCert = true`: no Lean theorem says acceptance implies the bound"
+  "the transcription of HOL4's semantics (qv ldot in_box mval cells_val full_val cut_val Ltheta) into Lean over ℝ (bridge/delta3-slab/lean-sound/Sound/Sem.lean): written by hand from delta3_semScript.sml; this program reads the two bound statements' shape and constants, not the bodies of the definitions"
  ]
 }

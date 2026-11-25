@@ -1,0 +1,2842 @@
+CLEAN-BUILD start 2026-11-25T23:32:06Z
+Lean (version 4.37.0-rc1, x86_64-unknown-linux-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release)
+Lake version 5.0.0-src+0b77e12 (Lean version 4.37.0-rc1)
+32
+--- sources (sha256)
+9e3efde43100437c87faf2c88d852ad85a211868e010fe8c0c6df5d2ab77827b  lakefile.toml
+f11739c25d1640e2b3fda8a98af6d64e97d7b2b1c99840535587a9079b3afee7  lean-toolchain
+688a3f5bf200a856754a62a206af94b4f0e67c92723247c377419d25ecbd7016  lake-manifest.json
+4b3cd873a422fa440ef52f4e4ac34a0310f51531422da6c3b7510a04b49fcf69  astra/Assemble.lean
+2f653e0852ff2bfd236decaef8f20aefe5d2c203a508778ab6650b83a64f266c  astra/Checker.lean
+2752f611dc74a6eef3672217252f67969fbbc632903ed2cfb8b4f1bbd0950631  astra/Coefficients.lean
+6a580e234e25b1ad4256724c4ae6efb3adb6f849cd1aa6a9723b1c8c9d9e4804  astra/Coefficients0.lean
+45e712c9dcd01af0e3d201695fe73cfcc2e516784037d4874bc78416147eaae8  astra/Coefficients104.lean
+e01dab2e83f8ecca10e4606a149a1dfedfc7d1d44bb13064edfaae69b3eb718d  astra/Coefficients112.lean
+0d39c8765135969d466f763f7e227357f280383e1d48f90485d24d6338c40339  astra/Coefficients120.lean
+a18b3a2ad5f03269d9b3b92220dd928c2c529213827f6c9646817d2831efc99a  astra/Coefficients128.lean
+b34b06e9b0f38add73bbd4fc9266718984a180ee57ddbdd8b365d94ab37bd7a9  astra/Coefficients136.lean
+244c707b0c2268438a8933dd75005351d143df7b141f8ec8dac9184e18f53a50  astra/Coefficients144.lean
+fef9a2398372c8218cc702fc2cb922a804b97a51c120a999d4f3f27891a501fe  astra/Coefficients16.lean
+b364f7af5103b419a751d7a9dcebd0227aac669ee1d2aae894b51b61f0882656  astra/Coefficients24.lean
+287d4d36e0ceccf0bd0ee43e222cae20ee4c8a08cd01f828c13590aadb0f3436  astra/Coefficients32.lean
+7c1edc006460c9fc0aa3f86e0b76d28702eddf85472015cb305e06051e454baa  astra/Coefficients40.lean
+09fa42e3562c4fa4a2f46e53f812ad5d45b145e3889add31d019a971e283d379  astra/Coefficients48.lean
+9da2419bd4284367ebca451919d46e4546f25281e6485adb85861a2a0fd66c4d  astra/Coefficients56.lean
+f940b516b38c24ec57b72cb4398f7dcee4394db36b927abfbffd18f6cdc6975c  astra/Coefficients64.lean
+b59707e8d658d72188ea612b9f19fee4b644900a3d7040db0c28034ded214e11  astra/Coefficients72.lean
+f29844fdedfdf5726d20ecf94c19721f60c9d756f4efbd178790aebe53933565  astra/Coefficients8.lean
+02e60095d27f717b931f60dcab865d7fbef4b3f874b14232ad25440cacc31a3d  astra/Coefficients80.lean
+c021e17c899f4572769fd56b211a2d20a2e3a11d51060dac42ab240b85370526  astra/Coefficients88.lean
+d363c18e43de5ac5fb93c455eda5a435b7a63020756026992aa372bda4067a90  astra/Coefficients96.lean
+9d677b1ff8e3e1d10f511a1a833270e4394e59cd12e7133f5adef305dcafd83f  astra/Data.lean
+a0a7096ce62715860f2648e878624c76dbf871bdaa6c46416fe3fa26c38ac36c  astra/Dominance.lean
+5e56d601ac77b65d53ccf5307fbbaecaac48ebe9d8ce10c81dec723caf4d2210  astra/Dominance0.lean
+c4329567e7d7e98ec6ca42030e7c9e5602d35c1b6fd8ea41646cbc3a267f1654  astra/Dominance104.lean
+c934ac092f1f5197d72ecd51403d3bd44e452a7adc1b8508d51ad3ce6aa98c27  astra/Dominance112.lean
+471463d5a3e4b92835a20d090417391cb151cc871fff27ca807e7fd88c18a95c  astra/Dominance120.lean
+b5910a986ac96cb4f2f9e38663ff4cf6f6a4459e43027fe020246843de20340c  astra/Dominance128.lean
+f4e88a7ba9591eccdde334c80c74d48b609f28f3803175ee8bab5df505e6eabc  astra/Dominance136.lean
+e016c045bb06c3c8088a33fe9c8f7e052ecc53286f77ec8222478d6c1ea323ea  astra/Dominance144.lean
+0fed7cebcf8bdbfa094f91be9f6478283642c4db79de10b92143ba133ea7d6c4  astra/Dominance16.lean
+f948abbbb252c0ae590d1af9371ba24e40d7022b8a12c1302afaa3d70ff24e47  astra/Dominance24.lean
+2024ed95bd542f7069e7fc3f7c234bd29abc309dd6be0c20e5fea6f7932668ef  astra/Dominance32.lean
+51724688f3d6f8fb3118fa3683d8758bf049e5c63fb95d10f394c1d3477e457c  astra/Dominance40.lean
+b94f22740ebea87a0f04a2eb0e24bd0c08aa6499ea2b6f6d58358ebe5f696abd  astra/Dominance48.lean
+bf9ded8752fbf5219a99d3ad7f9027d13c40a5ba58298b16a02ed654b22bab32  astra/Dominance56.lean
+aaa157304884015d1302a3cb7671fd7ef58dc6269254f982c6e5c444e6e64e27  astra/Dominance64.lean
+60a9cf4eaef4b38e00177e82a913dda3ed2de0437dc8c17b09494ac4d9df7084  astra/Dominance72.lean
+c4c7b9cefd84a6f9cc83067aeae827bf2da95cfc834a8664c1da520813c1a282  astra/Dominance8.lean
+65a9e0f9368642f64b9f53a0a9fc02a67fb918b4d8e2baef18d36df72905ee00  astra/Dominance80.lean
+437309d1d43a0af79f24b2886960e4c55d2af6f79445dd67f7e10a6757cae673  astra/Dominance88.lean
+caf5bc7c0d93f869fa4ae6fee5d8dabc897113f6273e4d2e925d802f9418314d  astra/Dominance96.lean
+a2a838af660aeef4c3088efd1f074d5bbb70ebb23b5c580e773c19d672de5589  astra/Green.lean
+ecf6542fb15deca29fe203a22ec0a94aef2bc07a675d316dd93dca29c09336a9  astra/Instance.lean
+f965f6f9bf6b92fca2ee44c7d732f2624b92fe1e328809839482a9355549a713  astra/Matrix.lean
+018250fd393f39e9e176bc21c76b26691577ad78a48eeefa462b67abb51f13a5  astra/Matrix0.lean
+b8bf4dff746fdab9de5cc355852b67890971d168c073afbc1aefffeca58e166f  astra/Matrix104.lean
+608e0a6036e32186c7ef08e59a5ba966a6c251231605188b9d08c2a28514ba3e  astra/Matrix112.lean
+ccd6197094b68c5c9b0f0401d33b8c876847859fcf5ac7f5deda2361edddd563  astra/Matrix120.lean
+c72fa9a72702241b27118aad348c04e2310ff6e29b04f0d197a6a51d456bba0f  astra/Matrix128.lean
+b6d5c57697990a5fc625419feddfc359d8932f9b0762cbd348b8ca15df93b3e1  astra/Matrix136.lean
+38e3b1de26640c22eeb3b9441aca41f2e9626615ee3b75187318d9414eedece5  astra/Matrix144.lean
+d517184d1e306a18352311dd59b88d48187f33904031b3a7da42b0b12d7751b6  astra/Matrix16.lean
+cf6f840ab9aa95ea9b0d3ec210b5a9976b8207fa3547d816035e9a17eb83d381  astra/Matrix24.lean
+f24bcc1ccb099cdb76d17e25cafe66db7444026e79cba7ab41592b39a2ee5bb5  astra/Matrix32.lean
+30acdc8f035d2497a8c515d39dfaf8c82d7e1f69bf191c34662160e5e5fe530b  astra/Matrix40.lean
+b46199566d08ddda5148944370ec444cf2f4520dd92fcc2e9cc486c542139c80  astra/Matrix48.lean
+6cb3840a6f06e966e1840f2ae935e1d83e5d33d5deadeae4430d779295e711e3  astra/Matrix56.lean
+06590d2d6a35e655985834ca7b83b6be4ca356388196afb1c9e4b1b53d777d71  astra/Matrix64.lean
+0dab5dbedd2d64697673b18346f0bd174f0934b2ecfcd5aa1f554032809c4951  astra/Matrix72.lean
+d8d6ce100abe428d8622bcfe4b08d407582dd04af899a6cacdbb0cde25c962bc  astra/Matrix8.lean
+507ce2d2942e11e39f7dab5be2446d6507ec835db492b99d59482ad1dd8544f3  astra/Matrix80.lean
+f7abb097c8091c8b641bbaa69b635fed8566db813af2318baf13975d74fb5a3d  astra/Matrix88.lean
+b1deb00bd9b5d4fad1b8ca4a21cdbac85abc30640de5d6f10813682373643ea4  astra/Matrix96.lean
+c43e7d90a77b724926d7439cf7cd50c8cbc7705598638ca98ee7974ac7107cc6  astra/Profiles.lean
+018c98c9db9b5c40c69cfbb5ce297fb8f78e0a9f99f6c37323786bc768a1389f  astra/Profiles0.lean
+824d52cdbf9b8b682f0ff885cf883e304af8c59f6e1eb78b42f8bfccf5f9db0a  astra/Profiles128.lean
+1bdaccbe01b15639e6a6ad929907b3ab459d29b1a4b0dcfc01a04ed0c606c0ed  astra/Profiles32.lean
+98e92205c1f47b3585ac36e7460f8b622dfe83637fe81ba557324f8208ba1edc  astra/Profiles64.lean
+3fcd56f60f65e8ce463cb6e4cec179a3b37a18ba96d80f6738400f947ec1aa55  astra/Profiles96.lean
+26df8dc0b5e2637f563331161252cfcdbd110a806865f3dea866b3e02c40acae  astra/Red.lean
+40952df8485cebe8380b94243b5fa0cb2eccea318c8ba22cffaa907101524c21  astra/Scalars.lean
+92f508db85978e5773a43eb999729920b6a3c7d36ea67c7b5560ced60f7554b9  astra/Support.lean
+577810289de2aec9e078f74e439d79b67396b2d57f6937439e72334eb1aedb92  astra/Types.lean
+63063c5a94820da28a99796d465bab6a0e8cbfb4fc7c7a201a641409b5e98bc2  astra/WCoef.lean
+bb9738c4914c0d588c0997ede7b800c235a221abe321806c4d08796f6b989dc3  astra/WFactordata.lean
+61d1cfaff7023aa1575d7b3c2dce741b22dbf84009328457ff31c9ddafc9fe0e  astra/WGeo.lean
+9c2d01fb1d553457fa392cb8593957def4d8c085dda8dd3e4fc140d877a9336c  astra/WHeightdata.lean
+82f3bc88e9d4c21c2ac35d80c6e6cb72a905ca4680d4762c193224954c0d569b  astra/WMargindata.lean
+604da02a9f4c79029c98955f7090b21ca5cda7d173bc63986aecbda731ff10a3  astra/WMatrixdata.lean
+fee7aa319e43a8652ff4726fc59364397c94126b6ff6e78e25cb9c7cff6755c7  model/HData.lean
+e66eadd0698594a07d87fca0da9dfe898562368d98b41269c28eba6f79bae55e  model/Model.lean
+f3aa406efa107bdd3d8cccec1b1c0b3112f968bec28f27f92bc3cd2fab59b289  model/ModelCheck.lean
+73f0bcf407039ad2c0ed4e7ed7acca5afc46c38bad5019daed90950d1964cb7c  model/PlantedAB.lean
+78e878a9fb8af86a721a30b2bca56a2132c6fedfedec5a639e855cfae15e8c4f  model/PlantedCut.lean
+dd58a0cb6c15de73c41d8b29ef8874908ce88d307c4aea1317e3e4e559cf2857  model/PlantedFull.lean
+df1e4c6db8e21ef88ebe8e734d0a57ba2812ba43d507d83b0c31040f8020d505  model/PlantedGrid.lean
+5402a7fbe0c32c3deebe77201dfc8f3ac3d1767882f87a9ca4cb1894813ecd96  model/PlantedTheta.lean
+0ef0c76373eb7701a00ddd8da466a2db71abe067449f969957ecd9f0a9040b54  Sound/Dominance.lean
+8f1c52e541ad74bc092f510dcae6ffb57373ca0b0518772bc797e53d629abc1f  Sound/Final.lean
+12df8a8f2b0a23502aed64083b2ebcee727d0bc9b238b7f30dd06616db40df1a  Sound/Forms.lean
+19daf622264f86d784298ea21fe8e67129bf1fda2df5dbd5a7d4804b46f6c222  Sound/Lists.lean
+137aa387f698943a96ddfd4fc2f0139b5c3cd11133a8a54aa6c6d1d86666e29c  Sound/Main.lean
+0d8fa51b9df412153bff30870045187b55476262de471120f84906922333cc7c  Sound/Matrix.lean
+4d6ff13706e9afe2a9d5a3a09c5c837d43045958a312f22e02404766f7f44c21  Sound/Merge.lean
+77676a0c9047172547579c68305ba0e8faff00021d73a1017805ec43d0a2b276  Sound/Poly.lean
+1e3f5e7dd90547d0f4d0e8a1060dd616a6e64b0811fbbdca7db2f626c3ba2320  Sound/Row.lean
+9af28dc55041cc89924c8e8cc6fd874109800ab5e361fef7a7548193b773accf  Sound/Sem.lean
+9ed851d050d513881d3928eeb0aaf95af627edcd77ca5ad4bba9c8baab56eef6  attempt/ForgedBound.lean
+--- removed .lake/build; lake build (default targets Astra Model Sound)
+✔ [936/2338] Built Types (186ms)
+✔ [6144/7302] Built Checker (455ms)
+ℹ [7910/9034] Built Assemble (172ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.49ms
+	attribute application 0.01ms
+	elaboration 3.95ms
+	fix level params 0.0244ms
+	instantiate metavars 0.0572ms
+	let-to-have transformation 0.00927ms
+	linting 0.739ms
+	parsing 1.26ms
+	process pre-definitions 0.225ms
+	share common exprs 0.137ms
+	tactic execution 1.63ms
+	type checking 0.455ms
+	typeclass inference 1.69ms
+✔ [8860/9888] Built Data (795ms)
+✔ [8862/9888] Built WGeo (304ms)
+✔ [8864/9888] Built Model (272ms)
+✔ [9716/10842] Built WHeightdata (402ms)
+✔ [18305/18493] Built WMargindata (1.4s)
+✔ [18309/18493] Built WFactordata (3.9s)
+✔ [18311/18493] Built HData (4.6s)
+✔ [18313/18493] Built WCoef (4.0s)
+✔ [18315/18493] Built WMatrixdata (4.1s)
+✔ [18317/18493] Built Instance (159ms)
+✔ [18319/18493] Built Support (160ms)
+✔ [18321/18493] Built PlantedGrid (160ms)
+✔ [18323/18493] Built PlantedAB (246ms)
+ℹ [18324/18493] Built Scalars (731ms)
+info: astra/Scalars.lean:10:0: type checking took 434ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.17ms
+	attribute application 0.0578ms
+	elaboration 5.05ms
+	fix level params 0.0267ms
+	instantiate metavars 0.0376ms
+	let-to-have transformation 0.0213ms
+	linting 0.941ms
+	parsing 0.995ms
+	process pre-definitions 0.34ms
+	share common exprs 0.0776ms
+	tactic execution 1.2ms
+	type checking 458ms
+	typeclass inference 3.77ms
+⚠ [18325/18493] Built Sound.Lists (2.7s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18326/18493] Built Profiles32 (1.4s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 3.04ms
+	attribute application 0.511ms
+	elaboration 27.8ms
+	fix level params 0.173ms
+	instantiate metavars 0.242ms
+	let-to-have transformation 0.101ms
+	linting 11ms
+	parsing 5.21ms
+	process pre-definitions 14.5ms
+	share common exprs 0.441ms
+	tactic execution 49.3ms
+	type checking 934ms
+	typeclass inference 9.51ms
+ℹ [18327/18493] Built Profiles0 (1.5s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.91ms
+	attribute application 0.522ms
+	elaboration 28ms
+	fix level params 0.174ms
+	instantiate metavars 0.244ms
+	let-to-have transformation 0.099ms
+	linting 38ms
+	parsing 5.28ms
+	process pre-definitions 7.44ms
+	share common exprs 0.445ms
+	tactic execution 73.4ms
+	type checking 880ms
+	typeclass inference 9.25ms
+ℹ [18328/18493] Built Profiles128 (1.5s)
+info: astra/Profiles128.lean:22:0: type checking took 107ms
+info: astra/Profiles128.lean:23:0: type checking took 130ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.49ms
+	attribute application 0.301ms
+	elaboration 16.9ms
+	fix level params 0.103ms
+	instantiate metavars 0.144ms
+	let-to-have transformation 0.065ms
+	linting 10ms
+	parsing 3ms
+	process pre-definitions 2.7ms
+	share common exprs 0.261ms
+	tactic execution 21.4ms
+	type checking 1.08s
+	typeclass inference 5.36ms
+⚠ [18329/18493] Built Sound.Sem (4.1s)
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18330/18493] Built Coefficients136 (2.1s)
+info: astra/Coefficients136.lean:6:0: type checking took 292ms
+info: astra/Coefficients136.lean:7:0: type checking took 298ms
+info: astra/Coefficients136.lean:8:0: type checking took 347ms
+info: astra/Coefficients136.lean:9:0: type checking took 160ms
+info: astra/Coefficients136.lean:10:0: type checking took 131ms
+info: astra/Coefficients136.lean:11:0: type checking took 219ms
+info: astra/Coefficients136.lean:12:0: type checking took 117ms
+info: astra/Coefficients136.lean:13:0: type checking took 136ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.08ms
+	attribute application 0.147ms
+	elaboration 6.63ms
+	fix level params 0.0463ms
+	instantiate metavars 0.0708ms
+	let-to-have transformation 0.033ms
+	linting 1.75ms
+	parsing 1.53ms
+	process pre-definitions 0.954ms
+	share common exprs 0.127ms
+	tactic execution 9.35ms
+	type checking 1.7s
+	typeclass inference 3.06ms
+ℹ [18331/18493] Built Coefficients144 (2.3s)
+info: astra/Coefficients144.lean:6:0: type checking took 632ms
+info: astra/Coefficients144.lean:7:0: type checking took 1.16s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.942ms
+	attribute application 0.0362ms
+	elaboration 17.2ms
+	fix level params 0.0144ms
+	instantiate metavars 0.0193ms
+	let-to-have transformation 0.00836ms
+	linting 0.57ms
+	parsing 0.445ms
+	process pre-definitions 0.239ms
+	share common exprs 0.0388ms
+	tactic execution 0.65ms
+	type checking 1.79s
+	typeclass inference 0.924ms
+ℹ [18332/18493] Built Coefficients112 (2.2s)
+info: astra/Coefficients112.lean:6:0: type checking took 115ms
+info: astra/Coefficients112.lean:7:0: type checking took 137ms
+info: astra/Coefficients112.lean:8:0: type checking took 138ms
+info: astra/Coefficients112.lean:9:0: type checking took 134ms
+info: astra/Coefficients112.lean:10:0: type checking took 137ms
+info: astra/Coefficients112.lean:11:0: type checking took 259ms
+info: astra/Coefficients112.lean:12:0: type checking took 382ms
+info: astra/Coefficients112.lean:13:0: type checking took 549ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.23ms
+	attribute application 0.123ms
+	elaboration 5.93ms
+	fix level params 0.0523ms
+	instantiate metavars 0.0628ms
+	let-to-have transformation 0.0361ms
+	linting 5.08ms
+	parsing 1.42ms
+	process pre-definitions 1.02ms
+	share common exprs 0.115ms
+	tactic execution 5.84ms
+	type checking 1.85s
+	typeclass inference 2.62ms
+ℹ [18333/18493] Built Profiles64 (4.0s)
+info: astra/Profiles64.lean:12:0: type checking took 127ms
+info: astra/Profiles64.lean:26:0: type checking took 101ms
+info: astra/Profiles64.lean:28:0: type checking took 107ms
+info: astra/Profiles64.lean:29:0: type checking took 133ms
+info: astra/Profiles64.lean:30:0: type checking took 144ms
+info: astra/Profiles64.lean:31:0: type checking took 160ms
+info: astra/Profiles64.lean:32:0: type checking took 131ms
+info: astra/Profiles64.lean:33:0: type checking took 156ms
+info: astra/Profiles64.lean:34:0: type checking took 133ms
+info: astra/Profiles64.lean:35:0: type checking took 153ms
+info: astra/Profiles64.lean:36:0: type checking took 157ms
+info: astra/Profiles64.lean:37:0: type checking took 164ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 3.02ms
+	attribute application 0.538ms
+	elaboration 56ms
+	fix level params 0.189ms
+	instantiate metavars 0.298ms
+	let-to-have transformation 0.111ms
+	linting 25.6ms
+	parsing 8.8ms
+	process pre-definitions 11.1ms
+	share common exprs 0.493ms
+	tactic execution 42.6ms
+	type checking 3.06s
+	typeclass inference 36.9ms
+ℹ [18334/18493] Built Coefficients104 (3.1s)
+info: astra/Coefficients104.lean:6:0: type checking took 575ms
+info: astra/Coefficients104.lean:7:0: type checking took 327ms
+info: astra/Coefficients104.lean:8:0: type checking took 320ms
+info: astra/Coefficients104.lean:9:0: type checking took 377ms
+info: astra/Coefficients104.lean:10:0: type checking took 391ms
+info: astra/Coefficients104.lean:11:0: type checking took 282ms
+info: astra/Coefficients104.lean:12:0: type checking took 181ms
+info: astra/Coefficients104.lean:13:0: type checking took 195ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.24ms
+	attribute application 0.148ms
+	elaboration 12.9ms
+	fix level params 0.0504ms
+	instantiate metavars 0.0798ms
+	let-to-have transformation 0.0342ms
+	linting 1.87ms
+	parsing 1.52ms
+	process pre-definitions 1.09ms
+	share common exprs 0.123ms
+	tactic execution 2.71ms
+	type checking 2.65s
+	typeclass inference 3.03ms
+ℹ [18339/18493] Built Dominance0 (3.8s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 10.9ms
+	attribute application 2.68ms
+	elaboration 158ms
+	fix level params 1.07ms
+	instantiate metavars 1.57ms
+	let-to-have transformation 0.599ms
+	linting 55.5ms
+	parsing 34.1ms
+	process pre-definitions 38.1ms
+	share common exprs 3.43ms
+	tactic execution 113ms
+	type checking 2.55s
+	typeclass inference 42.4ms
+⚠ [18347/18493] Ran Sound.Lists:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18348/18493] Ran Sound.Sem:irArts
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18349/18493] Built Dominance8 (4.4s)
+info: astra/Dominance8.lean:169:0: type checking took 135ms
+info: astra/Dominance8.lean:170:0: type checking took 180ms
+info: astra/Dominance8.lean:171:0: type checking took 121ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 12.8ms
+	attribute application 2.68ms
+	elaboration 172ms
+	fix level params 1.08ms
+	instantiate metavars 1.56ms
+	let-to-have transformation 0.587ms
+	linting 43ms
+	parsing 63.1ms
+	process pre-definitions 24.8ms
+	share common exprs 3.31ms
+	tactic execution 46.7ms
+	type checking 3.65s
+	typeclass inference 41.4ms
+ℹ [18351/18493] Built Coefficients120 (4.3s)
+info: astra/Coefficients120.lean:6:0: type checking took 820ms
+info: astra/Coefficients120.lean:7:0: type checking took 448ms
+info: astra/Coefficients120.lean:8:0: type checking took 398ms
+info: astra/Coefficients120.lean:9:0: type checking took 549ms
+info: astra/Coefficients120.lean:10:0: type checking took 351ms
+info: astra/Coefficients120.lean:11:0: type checking took 441ms
+info: astra/Coefficients120.lean:12:0: type checking took 463ms
+info: astra/Coefficients120.lean:13:0: type checking took 390ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.77ms
+	attribute application 0.145ms
+	elaboration 18.8ms
+	fix level params 0.0507ms
+	instantiate metavars 0.0738ms
+	let-to-have transformation 0.0273ms
+	linting 13.9ms
+	parsing 1.56ms
+	process pre-definitions 0.811ms
+	share common exprs 0.129ms
+	tactic execution 8.41ms
+	type checking 3.86s
+	typeclass inference 8.08ms
+ℹ [18353/18493] Built Coefficients88 (4.3s)
+info: astra/Coefficients88.lean:6:0: type checking took 353ms
+info: astra/Coefficients88.lean:7:0: type checking took 343ms
+info: astra/Coefficients88.lean:8:0: type checking took 519ms
+info: astra/Coefficients88.lean:9:0: type checking took 499ms
+info: astra/Coefficients88.lean:10:0: type checking took 427ms
+info: astra/Coefficients88.lean:11:0: type checking took 485ms
+info: astra/Coefficients88.lean:12:0: type checking took 553ms
+info: astra/Coefficients88.lean:13:0: type checking took 753ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.29ms
+	attribute application 0.134ms
+	elaboration 6.63ms
+	fix level params 0.0477ms
+	instantiate metavars 0.0706ms
+	let-to-have transformation 0.0259ms
+	linting 5.5ms
+	parsing 1.51ms
+	process pre-definitions 4.65ms
+	share common exprs 0.126ms
+	tactic execution 8.64ms
+	type checking 3.93s
+	typeclass inference 2.9ms
+ℹ [18355/18493] Built Coefficients8 (2.2s)
+info: astra/Coefficients8.lean:6:0: type checking took 234ms
+info: astra/Coefficients8.lean:7:0: type checking took 179ms
+info: astra/Coefficients8.lean:8:0: type checking took 303ms
+info: astra/Coefficients8.lean:9:0: type checking took 175ms
+info: astra/Coefficients8.lean:10:0: type checking took 244ms
+info: astra/Coefficients8.lean:11:0: type checking took 157ms
+info: astra/Coefficients8.lean:12:0: type checking took 208ms
+info: astra/Coefficients8.lean:13:0: type checking took 290ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.23ms
+	attribute application 0.147ms
+	elaboration 6.77ms
+	fix level params 0.0517ms
+	instantiate metavars 0.0757ms
+	let-to-have transformation 0.0363ms
+	linting 1.71ms
+	parsing 1.54ms
+	process pre-definitions 1.11ms
+	share common exprs 0.122ms
+	tactic execution 2.68ms
+	type checking 1.79s
+	typeclass inference 3.09ms
+ℹ [18357/18493] Built Coefficients24 (2.6s)
+info: astra/Coefficients24.lean:6:0: type checking took 183ms
+info: astra/Coefficients24.lean:7:0: type checking took 400ms
+info: astra/Coefficients24.lean:8:0: type checking took 452ms
+info: astra/Coefficients24.lean:9:0: type checking took 366ms
+info: astra/Coefficients24.lean:10:0: type checking took 361ms
+info: astra/Coefficients24.lean:11:0: type checking took 258ms
+info: astra/Coefficients24.lean:12:0: type checking took 197ms
+info: astra/Coefficients24.lean:13:0: type checking took 105ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.4ms
+	attribute application 0.15ms
+	elaboration 7.1ms
+	fix level params 0.0509ms
+	instantiate metavars 0.0758ms
+	let-to-have transformation 0.0351ms
+	linting 1.76ms
+	parsing 1.48ms
+	process pre-definitions 1.05ms
+	share common exprs 0.121ms
+	tactic execution 2.73ms
+	type checking 2.32s
+	typeclass inference 3.32ms
+ℹ [18359/18493] Built Coefficients56 (3.2s)
+info: astra/Coefficients56.lean:6:0: type checking took 693ms
+info: astra/Coefficients56.lean:7:0: type checking took 697ms
+info: astra/Coefficients56.lean:8:0: type checking took 289ms
+info: astra/Coefficients56.lean:9:0: type checking took 330ms
+info: astra/Coefficients56.lean:10:0: type checking took 243ms
+info: astra/Coefficients56.lean:11:0: type checking took 223ms
+info: astra/Coefficients56.lean:12:0: type checking took 267ms
+info: astra/Coefficients56.lean:13:0: type checking took 118ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.73ms
+	attribute application 0.137ms
+	elaboration 6.38ms
+	fix level params 0.0519ms
+	instantiate metavars 0.0727ms
+	let-to-have transformation 0.0343ms
+	linting 1.71ms
+	parsing 1.52ms
+	process pre-definitions 0.986ms
+	share common exprs 0.12ms
+	tactic execution 2.5ms
+	type checking 2.86s
+	typeclass inference 5.85ms
+ℹ [18361/18493] Built Coefficients16 (2.3s)
+info: astra/Coefficients16.lean:6:0: type checking took 410ms
+info: astra/Coefficients16.lean:7:0: type checking took 321ms
+info: astra/Coefficients16.lean:8:0: type checking took 214ms
+info: astra/Coefficients16.lean:9:0: type checking took 174ms
+info: astra/Coefficients16.lean:10:0: type checking took 196ms
+info: astra/Coefficients16.lean:11:0: type checking took 178ms
+info: astra/Coefficients16.lean:12:0: type checking took 306ms
+info: astra/Coefficients16.lean:13:0: type checking took 281ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.66ms
+	attribute application 0.155ms
+	elaboration 7.06ms
+	fix level params 0.0532ms
+	instantiate metavars 0.0786ms
+	let-to-have transformation 0.0287ms
+	linting 1.93ms
+	parsing 1.54ms
+	process pre-definitions 1.16ms
+	share common exprs 0.145ms
+	tactic execution 2.86ms
+	type checking 2.08s
+	typeclass inference 3.2ms
+ℹ [18363/18493] Built Matrix16 (6.3s)
+info: astra/Matrix16.lean:6:0: type checking took 587ms
+info: astra/Matrix16.lean:7:0: type checking took 583ms
+info: astra/Matrix16.lean:8:0: type checking took 595ms
+info: astra/Matrix16.lean:9:0: type checking took 985ms
+info: astra/Matrix16.lean:10:0: type checking took 1.03s
+info: astra/Matrix16.lean:11:0: type checking took 655ms
+info: astra/Matrix16.lean:12:0: type checking took 672ms
+info: astra/Matrix16.lean:13:0: type checking took 660ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.43ms
+	attribute application 0.161ms
+	elaboration 6.98ms
+	fix level params 0.0507ms
+	instantiate metavars 0.0756ms
+	let-to-have transformation 0.0297ms
+	linting 1.95ms
+	parsing 1.56ms
+	process pre-definitions 4.46ms
+	share common exprs 0.122ms
+	tactic execution 2.69ms
+	type checking 5.76s
+	typeclass inference 3.13ms
+ℹ [18365/18493] Built Coefficients128 (5.3s)
+info: astra/Coefficients128.lean:6:0: type checking took 255ms
+info: astra/Coefficients128.lean:7:0: type checking took 740ms
+info: astra/Coefficients128.lean:8:0: type checking took 533ms
+info: astra/Coefficients128.lean:9:0: type checking took 372ms
+info: astra/Coefficients128.lean:10:0: type checking took 284ms
+info: astra/Coefficients128.lean:11:0: type checking took 782ms
+info: astra/Coefficients128.lean:12:0: type checking took 1.1s
+info: astra/Coefficients128.lean:13:0: type checking took 881ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.28ms
+	attribute application 0.14ms
+	elaboration 12.5ms
+	fix level params 0.0477ms
+	instantiate metavars 0.0693ms
+	let-to-have transformation 0.0327ms
+	linting 7.94ms
+	parsing 10.5ms
+	process pre-definitions 0.833ms
+	share common exprs 0.121ms
+	tactic execution 2.34ms
+	type checking 4.95s
+	typeclass inference 2.89ms
+ℹ [18367/18493] Built Profiles96 (7.1s)
+info: astra/Profiles96.lean:8:0: type checking took 109ms
+info: astra/Profiles96.lean:9:0: type checking took 117ms
+info: astra/Profiles96.lean:10:0: type checking took 119ms
+info: astra/Profiles96.lean:11:0: type checking took 146ms
+info: astra/Profiles96.lean:12:0: type checking took 137ms
+info: astra/Profiles96.lean:13:0: type checking took 112ms
+info: astra/Profiles96.lean:14:0: type checking took 130ms
+info: astra/Profiles96.lean:15:0: type checking took 103ms
+info: astra/Profiles96.lean:16:0: type checking took 104ms
+info: astra/Profiles96.lean:17:0: type checking took 117ms
+info: astra/Profiles96.lean:18:0: type checking took 114ms
+info: astra/Profiles96.lean:19:0: type checking took 144ms
+info: astra/Profiles96.lean:20:0: type checking took 157ms
+info: astra/Profiles96.lean:21:0: type checking took 188ms
+info: astra/Profiles96.lean:22:0: type checking took 185ms
+info: astra/Profiles96.lean:23:0: type checking took 196ms
+info: astra/Profiles96.lean:24:0: type checking took 203ms
+info: astra/Profiles96.lean:25:0: type checking took 202ms
+info: astra/Profiles96.lean:26:0: type checking took 222ms
+info: astra/Profiles96.lean:27:0: type checking took 206ms
+info: astra/Profiles96.lean:28:0: type checking took 141ms
+info: astra/Profiles96.lean:29:0: type checking took 214ms
+info: astra/Profiles96.lean:30:0: type checking took 227ms
+info: astra/Profiles96.lean:31:0: type checking took 240ms
+info: astra/Profiles96.lean:32:0: type checking took 366ms
+info: astra/Profiles96.lean:33:0: type checking took 309ms
+info: astra/Profiles96.lean:34:0: type checking took 309ms
+info: astra/Profiles96.lean:35:0: type checking took 344ms
+info: astra/Profiles96.lean:36:0: type checking took 348ms
+info: astra/Profiles96.lean:37:0: type checking took 364ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.81ms
+	attribute application 0.591ms
+	elaboration 84.9ms
+	fix level params 0.195ms
+	instantiate metavars 0.3ms
+	let-to-have transformation 0.116ms
+	linting 34.1ms
+	parsing 5.79ms
+	process pre-definitions 60.2ms
+	share common exprs 0.529ms
+	tactic execution 159ms
+	type checking 6.01s
+	typeclass inference 10.8ms
+ℹ [18369/18493] Built Profiles (269ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.09ms
+	attribute application 0.0135ms
+	elaboration 19.6ms
+	fix level params 0.0459ms
+	instantiate metavars 0.0587ms
+	let-to-have transformation 0.00296ms
+	linting 1.71ms
+	parsing 3.04ms
+	process pre-definitions 0.326ms
+	share common exprs 0.597ms
+	type checking 2.5ms
+	typeclass inference 5.76ms
+ℹ [18371/18493] Built Matrix32 (7.5s)
+info: astra/Matrix32.lean:6:0: type checking took 1.62s
+info: astra/Matrix32.lean:7:0: type checking took 750ms
+info: astra/Matrix32.lean:8:0: type checking took 751ms
+info: astra/Matrix32.lean:9:0: type checking took 744ms
+info: astra/Matrix32.lean:10:0: type checking took 763ms
+info: astra/Matrix32.lean:11:0: type checking took 803ms
+info: astra/Matrix32.lean:12:0: type checking took 787ms
+info: astra/Matrix32.lean:13:0: type checking took 819ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.16ms
+	attribute application 0.154ms
+	elaboration 10ms
+	fix level params 0.0514ms
+	instantiate metavars 0.0847ms
+	let-to-have transformation 0.0288ms
+	linting 1.88ms
+	parsing 1.56ms
+	process pre-definitions 1.13ms
+	share common exprs 0.127ms
+	tactic execution 2.64ms
+	type checking 7.04s
+	typeclass inference 3.18ms
+ℹ [18373/18493] Built Coefficients96 (6.2s)
+info: astra/Coefficients96.lean:6:0: type checking took 766ms
+info: astra/Coefficients96.lean:7:0: type checking took 586ms
+info: astra/Coefficients96.lean:8:0: type checking took 645ms
+info: astra/Coefficients96.lean:9:0: type checking took 694ms
+info: astra/Coefficients96.lean:10:0: type checking took 685ms
+info: astra/Coefficients96.lean:11:0: type checking took 813ms
+info: astra/Coefficients96.lean:12:0: type checking took 897ms
+info: astra/Coefficients96.lean:13:0: type checking took 718ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.46ms
+	attribute application 0.135ms
+	elaboration 9.76ms
+	fix level params 0.0476ms
+	instantiate metavars 0.0715ms
+	let-to-have transformation 0.026ms
+	linting 1.86ms
+	parsing 1.56ms
+	process pre-definitions 0.982ms
+	share common exprs 0.133ms
+	tactic execution 15.9ms
+	type checking 5.81s
+	typeclass inference 2.78ms
+ℹ [18375/18493] Built Dominance16 (8.2s)
+info: astra/Dominance16.lean:122:0: type checking took 105ms
+info: astra/Dominance16.lean:123:0: type checking took 105ms
+info: astra/Dominance16.lean:124:0: type checking took 128ms
+info: astra/Dominance16.lean:136:0: type checking took 114ms
+info: astra/Dominance16.lean:137:0: type checking took 125ms
+info: astra/Dominance16.lean:138:0: type checking took 160ms
+info: astra/Dominance16.lean:139:0: type checking took 142ms
+info: astra/Dominance16.lean:140:0: type checking took 124ms
+info: astra/Dominance16.lean:141:0: type checking took 150ms
+info: astra/Dominance16.lean:142:0: type checking took 168ms
+info: astra/Dominance16.lean:143:0: type checking took 157ms
+info: astra/Dominance16.lean:144:0: type checking took 146ms
+info: astra/Dominance16.lean:145:0: type checking took 144ms
+info: astra/Dominance16.lean:146:0: type checking took 138ms
+info: astra/Dominance16.lean:147:0: type checking took 133ms
+info: astra/Dominance16.lean:148:0: type checking took 160ms
+info: astra/Dominance16.lean:149:0: type checking took 148ms
+info: astra/Dominance16.lean:168:0: type checking took 122ms
+info: astra/Dominance16.lean:169:0: type checking took 140ms
+info: astra/Dominance16.lean:170:0: type checking took 153ms
+info: astra/Dominance16.lean:171:0: type checking took 108ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.19ms
+	attribute application 17.5ms
+	elaboration 244ms
+	fix level params 0.989ms
+	instantiate metavars 1.46ms
+	let-to-have transformation 0.525ms
+	linting 43.6ms
+	parsing 48.8ms
+	process pre-definitions 52.1ms
+	share common exprs 3.14ms
+	tactic execution 137ms
+	type checking 7.06s
+	typeclass inference 61.5ms
+ℹ [18377/18493] Built Coefficients40 (5.5s)
+info: astra/Coefficients40.lean:6:0: type checking took 793ms
+info: astra/Coefficients40.lean:7:0: type checking took 703ms
+info: astra/Coefficients40.lean:8:0: type checking took 701ms
+info: astra/Coefficients40.lean:9:0: type checking took 541ms
+info: astra/Coefficients40.lean:10:0: type checking took 601ms
+info: astra/Coefficients40.lean:11:0: type checking took 565ms
+info: astra/Coefficients40.lean:12:0: type checking took 680ms
+info: astra/Coefficients40.lean:13:0: type checking took 551ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.36ms
+	attribute application 0.166ms
+	elaboration 6.95ms
+	fix level params 0.0522ms
+	instantiate metavars 0.0785ms
+	let-to-have transformation 0.0303ms
+	linting 1.96ms
+	parsing 1.55ms
+	process pre-definitions 1.16ms
+	share common exprs 0.135ms
+	tactic execution 2.77ms
+	type checking 5.14s
+	typeclass inference 3.03ms
+⚠ [18379/18493] Built Sound.Row (4.2s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18380/18493] Ran Sound.Row:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18381/18493] Built Matrix56 (9.3s)
+info: astra/Matrix56.lean:6:0: type checking took 914ms
+info: astra/Matrix56.lean:7:0: type checking took 838ms
+info: astra/Matrix56.lean:8:0: type checking took 1.54s
+info: astra/Matrix56.lean:9:0: type checking took 1.01s
+info: astra/Matrix56.lean:10:0: type checking took 955ms
+info: astra/Matrix56.lean:11:0: type checking took 963ms
+info: astra/Matrix56.lean:12:0: type checking took 846ms
+info: astra/Matrix56.lean:13:0: type checking took 1.97s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.975ms
+	attribute application 0.147ms
+	elaboration 6.58ms
+	fix level params 0.0492ms
+	instantiate metavars 0.0818ms
+	let-to-have transformation 0.0329ms
+	linting 1.87ms
+	parsing 1.44ms
+	process pre-definitions 1.12ms
+	share common exprs 0.118ms
+	tactic execution 2.53ms
+	type checking 9.03s
+	typeclass inference 2.92ms
+⚠ [18383/18493] Built Sound.Dominance (4.8s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Dominance.lean:43:10: `ite_cond_eq_false` has been deprecated: Use `ite_eq_right_of_eq_false` instead
+
+Hint: Replace the deprecated name:
+  i̵t̵e̵_̵c̵o̵n̵d̵_̵e̵q̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲_̲o̲f̲_̲e̲q̲_̲f̲a̲l̲s̲e̲
+warning: Sound/Dominance.lean:43:46: `ite_cond_eq_false` has been deprecated: Use `ite_eq_right_of_eq_false` instead
+
+Hint: Replace the deprecated name:
+  i̵t̵e̵_̵c̵o̵n̵d̵_̵e̵q̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲_̲o̲f̲_̲e̲q̲_̲f̲a̲l̲s̲e̲
+⚠ [18384/18493] Ran Sound.Dominance:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18385/18493] Built Coefficients0 (4.9s)
+info: astra/Coefficients0.lean:6:0: type checking took 2.02s
+info: astra/Coefficients0.lean:7:0: type checking took 421ms
+info: astra/Coefficients0.lean:8:0: type checking took 240ms
+info: astra/Coefficients0.lean:9:0: type checking took 138ms
+info: astra/Coefficients0.lean:10:0: type checking took 511ms
+info: astra/Coefficients0.lean:11:0: type checking took 202ms
+info: astra/Coefficients0.lean:12:0: type checking took 205ms
+info: astra/Coefficients0.lean:13:0: type checking took 220ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.38ms
+	attribute application 0.146ms
+	elaboration 23.6ms
+	fix level params 0.0485ms
+	instantiate metavars 0.0695ms
+	let-to-have transformation 0.0324ms
+	linting 1.68ms
+	parsing 1.5ms
+	process pre-definitions 0.832ms
+	share common exprs 0.118ms
+	tactic execution 2.38ms
+	type checking 3.96s
+	typeclass inference 2.94ms
+ℹ [18387/18493] Built Matrix0 (9.4s)
+info: astra/Matrix0.lean:7:0: type checking took 602ms
+info: astra/Matrix0.lean:8:0: type checking took 978ms
+info: astra/Matrix0.lean:9:0: type checking took 2.5s
+info: astra/Matrix0.lean:10:0: type checking took 3.09s
+info: astra/Matrix0.lean:11:0: type checking took 639ms
+info: astra/Matrix0.lean:12:0: type checking took 549ms
+info: astra/Matrix0.lean:13:0: type checking took 546ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.31ms
+	attribute application 0.142ms
+	elaboration 7ms
+	fix level params 0.0517ms
+	instantiate metavars 0.0835ms
+	let-to-have transformation 0.0302ms
+	linting 1.94ms
+	parsing 1.55ms
+	process pre-definitions 3.02ms
+	share common exprs 0.128ms
+	tactic execution 2.68ms
+	type checking 8.95s
+	typeclass inference 15.3ms
+ℹ [18389/18493] Built Matrix48 (9.5s)
+info: astra/Matrix48.lean:6:0: type checking took 1.63s
+info: astra/Matrix48.lean:7:0: type checking took 1.22s
+info: astra/Matrix48.lean:8:0: type checking took 977ms
+info: astra/Matrix48.lean:9:0: type checking took 1.03s
+info: astra/Matrix48.lean:10:0: type checking took 997ms
+info: astra/Matrix48.lean:11:0: type checking took 1.02s
+info: astra/Matrix48.lean:12:0: type checking took 1.02s
+info: astra/Matrix48.lean:13:0: type checking took 1.02s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.28ms
+	attribute application 0.146ms
+	elaboration 6.94ms
+	fix level params 0.0524ms
+	instantiate metavars 0.0808ms
+	let-to-have transformation 0.0359ms
+	linting 1.92ms
+	parsing 1.57ms
+	process pre-definitions 1.3ms
+	share common exprs 0.135ms
+	tactic execution 2.8ms
+	type checking 8.91s
+	typeclass inference 2.95ms
+ℹ [18391/18493] Built Matrix144 (9.5s)
+info: astra/Matrix144.lean:6:0: type checking took 1.64s
+info: astra/Matrix144.lean:7:0: type checking took 4.04s
+info: astra/Matrix144.lean:8:0: type checking took 3.28s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.04ms
+	attribute application 0.051ms
+	elaboration 2.78ms
+	fix level params 0.0203ms
+	instantiate metavars 0.03ms
+	let-to-have transformation 0.0114ms
+	linting 4.39ms
+	parsing 0.585ms
+	process pre-definitions 0.448ms
+	share common exprs 0.0533ms
+	tactic execution 4.47ms
+	type checking 8.97s
+	typeclass inference 1.29ms
+ℹ [18393/18493] Built Coefficients72 (7.4s)
+info: astra/Coefficients72.lean:6:0: type checking took 728ms
+info: astra/Coefficients72.lean:7:0: type checking took 885ms
+info: astra/Coefficients72.lean:8:0: type checking took 1.25s
+info: astra/Coefficients72.lean:9:0: type checking took 873ms
+info: astra/Coefficients72.lean:10:0: type checking took 834ms
+info: astra/Coefficients72.lean:11:0: type checking took 908ms
+info: astra/Coefficients72.lean:12:0: type checking took 784ms
+info: astra/Coefficients72.lean:13:0: type checking took 792ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.39ms
+	attribute application 0.145ms
+	elaboration 6.8ms
+	fix level params 0.0507ms
+	instantiate metavars 0.073ms
+	let-to-have transformation 0.036ms
+	linting 1.83ms
+	parsing 1.53ms
+	process pre-definitions 8.12ms
+	share common exprs 0.135ms
+	tactic execution 6.36ms
+	type checking 7.05s
+	typeclass inference 5.06ms
+ℹ [18395/18493] Built Dominance80 (9.9s)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 11.2ms
+	attribute application 2.54ms
+	elaboration 136ms
+	fix level params 1.05ms
+	instantiate metavars 1.53ms
+	let-to-have transformation 0.554ms
+	linting 32.5ms
+	parsing 31.5ms
+	process pre-definitions 29.2ms
+	share common exprs 3.26ms
+	tactic execution 45.4ms
+	type checking 9.16s
+	typeclass inference 39.4ms
+ℹ [18397/18493] Built Matrix24 (9.9s)
+info: astra/Matrix24.lean:6:0: type checking took 664ms
+info: astra/Matrix24.lean:7:0: type checking took 710ms
+info: astra/Matrix24.lean:8:0: type checking took 738ms
+info: astra/Matrix24.lean:9:0: type checking took 745ms
+info: astra/Matrix24.lean:10:0: type checking took 766ms
+info: astra/Matrix24.lean:11:0: type checking took 980ms
+info: astra/Matrix24.lean:12:0: type checking took 2.32s
+info: astra/Matrix24.lean:13:0: type checking took 2.51s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.986ms
+	attribute application 0.132ms
+	elaboration 6.29ms
+	fix level params 0.0475ms
+	instantiate metavars 0.0696ms
+	let-to-have transformation 0.0284ms
+	linting 10.9ms
+	parsing 1.46ms
+	process pre-definitions 1.12ms
+	share common exprs 0.122ms
+	tactic execution 2.54ms
+	type checking 9.43s
+	typeclass inference 2.86ms
+ℹ [18399/18493] Built Matrix96 (9.9s)
+info: astra/Matrix96.lean:6:0: type checking took 1.25s
+info: astra/Matrix96.lean:7:0: type checking took 1.32s
+info: astra/Matrix96.lean:8:0: type checking took 1.27s
+info: astra/Matrix96.lean:9:0: type checking took 1.27s
+info: astra/Matrix96.lean:10:0: type checking took 1.28s
+info: astra/Matrix96.lean:11:0: type checking took 1.2s
+info: astra/Matrix96.lean:12:0: type checking took 1.11s
+info: astra/Matrix96.lean:13:0: type checking took 985ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.947ms
+	attribute application 0.147ms
+	elaboration 6.76ms
+	fix level params 0.0546ms
+	instantiate metavars 0.0756ms
+	let-to-have transformation 0.0283ms
+	linting 1.75ms
+	parsing 1.49ms
+	process pre-definitions 1.04ms
+	share common exprs 0.126ms
+	tactic execution 2.47ms
+	type checking 9.69s
+	typeclass inference 3.08ms
+⚠ [18401/18493] Built Sound.Merge (5.4s)
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Merge.lean:50:17: This simp argument is unused:
+  U_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [U_nat_real] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Sound/Merge.lean:56:17: This simp argument is unused:
+  U_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [U_nat_real] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Sound/Merge.lean:71:17: This simp argument is unused:
+  U_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [U_nat_real] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Sound/Merge.lean:76:17: This simp argument is unused:
+  U_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [U_nat_real] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Sound/Merge.lean:94:15: This simp argument is unused:
+  U_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [U_nat_real] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [18402/18493] Ran Sound.Merge:irArts
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18403/18493] Built Dominance24 (10s)
+info: astra/Dominance24.lean:13:0: type checking took 154ms
+info: astra/Dominance24.lean:14:0: type checking took 101ms
+info: astra/Dominance24.lean:30:0: type checking took 155ms
+info: astra/Dominance24.lean:31:0: type checking took 176ms
+info: astra/Dominance24.lean:32:0: type checking took 174ms
+info: astra/Dominance24.lean:33:0: type checking took 208ms
+info: astra/Dominance24.lean:34:0: type checking took 177ms
+info: astra/Dominance24.lean:35:0: type checking took 191ms
+info: astra/Dominance24.lean:36:0: type checking took 202ms
+info: astra/Dominance24.lean:37:0: type checking took 227ms
+info: astra/Dominance24.lean:38:0: type checking took 220ms
+info: astra/Dominance24.lean:39:0: type checking took 227ms
+info: astra/Dominance24.lean:40:0: type checking took 242ms
+info: astra/Dominance24.lean:41:0: type checking took 289ms
+info: astra/Dominance24.lean:42:0: type checking took 324ms
+info: astra/Dominance24.lean:43:0: type checking took 345ms
+info: astra/Dominance24.lean:44:0: type checking took 379ms
+info: astra/Dominance24.lean:45:0: type checking took 243ms
+info: astra/Dominance24.lean:48:0: type checking took 103ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 10.7ms
+	attribute application 2.6ms
+	elaboration 279ms
+	fix level params 1.04ms
+	instantiate metavars 1.55ms
+	let-to-have transformation 0.62ms
+	linting 60.5ms
+	parsing 45.2ms
+	process pre-definitions 34.3ms
+	share common exprs 3.3ms
+	tactic execution 80.3ms
+	type checking 8.95s
+	typeclass inference 69ms
+ℹ [18405/18493] Built Dominance48 (10s)
+info: astra/Dominance48.lean:15:0: type checking took 126ms
+info: astra/Dominance48.lean:16:0: type checking took 170ms
+info: astra/Dominance48.lean:17:0: type checking took 167ms
+info: astra/Dominance48.lean:19:0: type checking took 175ms
+info: astra/Dominance48.lean:20:0: type checking took 184ms
+info: astra/Dominance48.lean:21:0: type checking took 156ms
+info: astra/Dominance48.lean:23:0: type checking took 121ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.02ms
+	attribute application 2.62ms
+	elaboration 159ms
+	fix level params 1.12ms
+	instantiate metavars 1.68ms
+	let-to-have transformation 0.632ms
+	linting 35.3ms
+	parsing 33.8ms
+	process pre-definitions 33.2ms
+	share common exprs 3.56ms
+	tactic execution 76.8ms
+	type checking 9.35s
+	typeclass inference 43.1ms
+ℹ [18407/18493] Built Dominance96 (10s)
+info: astra/Dominance96.lean:20:0: type checking took 105ms
+info: astra/Dominance96.lean:43:0: type checking took 102ms
+info: astra/Dominance96.lean:44:0: type checking took 104ms
+info: astra/Dominance96.lean:60:0: type checking took 100ms
+info: astra/Dominance96.lean:64:0: type checking took 102ms
+info: astra/Dominance96.lean:65:0: type checking took 103ms
+info: astra/Dominance96.lean:83:0: type checking took 101ms
+info: astra/Dominance96.lean:85:0: type checking took 103ms
+info: astra/Dominance96.lean:86:0: type checking took 102ms
+info: astra/Dominance96.lean:103:0: type checking took 103ms
+info: astra/Dominance96.lean:104:0: type checking took 104ms
+info: astra/Dominance96.lean:106:0: type checking took 105ms
+info: astra/Dominance96.lean:107:0: type checking took 105ms
+info: astra/Dominance96.lean:124:0: type checking took 104ms
+info: astra/Dominance96.lean:125:0: type checking took 102ms
+info: astra/Dominance96.lean:126:0: type checking took 100ms
+info: astra/Dominance96.lean:127:0: type checking took 105ms
+info: astra/Dominance96.lean:128:0: type checking took 106ms
+info: astra/Dominance96.lean:145:0: type checking took 106ms
+info: astra/Dominance96.lean:146:0: type checking took 106ms
+info: astra/Dominance96.lean:147:0: type checking took 100ms
+info: astra/Dominance96.lean:148:0: type checking took 102ms
+info: astra/Dominance96.lean:149:0: type checking took 105ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.48ms
+	attribute application 2.61ms
+	elaboration 134ms
+	fix level params 1.02ms
+	instantiate metavars 1.52ms
+	let-to-have transformation 0.582ms
+	linting 32.5ms
+	parsing 31.2ms
+	process pre-definitions 28.6ms
+	share common exprs 3.24ms
+	tactic execution 47.3ms
+	type checking 9.89s
+	typeclass inference 39.2ms
+ℹ [18409/18493] Built Coefficients80 (9.1s)
+info: astra/Coefficients80.lean:6:0: type checking took 965ms
+info: astra/Coefficients80.lean:7:0: type checking took 1.84s
+info: astra/Coefficients80.lean:8:0: type checking took 2.62s
+info: astra/Coefficients80.lean:9:0: type checking took 1.26s
+info: astra/Coefficients80.lean:10:0: type checking took 676ms
+info: astra/Coefficients80.lean:11:0: type checking took 598ms
+info: astra/Coefficients80.lean:12:0: type checking took 420ms
+info: astra/Coefficients80.lean:13:0: type checking took 364ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.76ms
+	attribute application 0.145ms
+	elaboration 15.8ms
+	fix level params 0.0518ms
+	instantiate metavars 0.078ms
+	let-to-have transformation 0.0341ms
+	linting 1.83ms
+	parsing 1.57ms
+	process pre-definitions 0.88ms
+	share common exprs 0.127ms
+	tactic execution 17.6ms
+	type checking 8.74s
+	typeclass inference 9.29ms
+⚠ [18411/18493] Built Sound.Forms (2.7s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18412/18493] Ran Sound.Forms:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18413/18493] Built Dominance40 (11s)
+info: astra/Dominance40.lean:32:0: type checking took 136ms
+info: astra/Dominance40.lean:33:0: type checking took 136ms
+info: astra/Dominance40.lean:34:0: type checking took 138ms
+info: astra/Dominance40.lean:35:0: type checking took 156ms
+info: astra/Dominance40.lean:36:0: type checking took 155ms
+info: astra/Dominance40.lean:37:0: type checking took 144ms
+info: astra/Dominance40.lean:38:0: type checking took 175ms
+info: astra/Dominance40.lean:39:0: type checking took 261ms
+info: astra/Dominance40.lean:40:0: type checking took 271ms
+info: astra/Dominance40.lean:41:0: type checking took 242ms
+info: astra/Dominance40.lean:42:0: type checking took 252ms
+info: astra/Dominance40.lean:43:0: type checking took 267ms
+info: astra/Dominance40.lean:44:0: type checking took 235ms
+info: astra/Dominance40.lean:45:0: type checking took 160ms
+info: astra/Dominance40.lean:50:0: type checking took 126ms
+info: astra/Dominance40.lean:51:0: type checking took 179ms
+info: astra/Dominance40.lean:52:0: type checking took 232ms
+info: astra/Dominance40.lean:53:0: type checking took 228ms
+info: astra/Dominance40.lean:54:0: type checking took 216ms
+info: astra/Dominance40.lean:55:0: type checking took 288ms
+info: astra/Dominance40.lean:56:0: type checking took 267ms
+info: astra/Dominance40.lean:57:0: type checking took 275ms
+info: astra/Dominance40.lean:58:0: type checking took 235ms
+info: astra/Dominance40.lean:59:0: type checking took 268ms
+info: astra/Dominance40.lean:60:0: type checking took 281ms
+info: astra/Dominance40.lean:61:0: type checking took 275ms
+info: astra/Dominance40.lean:62:0: type checking took 239ms
+info: astra/Dominance40.lean:63:0: type checking took 111ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.94ms
+	attribute application 2.78ms
+	elaboration 176ms
+	fix level params 0.99ms
+	instantiate metavars 1.49ms
+	let-to-have transformation 0.533ms
+	linting 47.3ms
+	parsing 70.7ms
+	process pre-definitions 59.6ms
+	share common exprs 3.25ms
+	tactic execution 103ms
+	type checking 10.7s
+	typeclass inference 51.8ms
+ℹ [18415/18493] Built Matrix72 (12s)
+info: astra/Matrix72.lean:6:0: type checking took 1.64s
+info: astra/Matrix72.lean:7:0: type checking took 1.28s
+info: astra/Matrix72.lean:8:0: type checking took 1.07s
+info: astra/Matrix72.lean:9:0: type checking took 1.08s
+info: astra/Matrix72.lean:10:0: type checking took 1.09s
+info: astra/Matrix72.lean:11:0: type checking took 1.14s
+info: astra/Matrix72.lean:12:0: type checking took 3.3s
+info: astra/Matrix72.lean:13:0: type checking took 1.13s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.892ms
+	attribute application 0.144ms
+	elaboration 9.87ms
+	fix level params 0.0508ms
+	instantiate metavars 0.0799ms
+	let-to-have transformation 0.0302ms
+	linting 1.79ms
+	parsing 1.5ms
+	process pre-definitions 1.07ms
+	share common exprs 0.127ms
+	tactic execution 2.52ms
+	type checking 11.7s
+	typeclass inference 3.09ms
+ℹ [18417/18493] Built Coefficients64 (9.1s)
+info: astra/Coefficients64.lean:6:0: type checking took 584ms
+info: astra/Coefficients64.lean:7:0: type checking took 564ms
+info: astra/Coefficients64.lean:8:0: type checking took 1.79s
+info: astra/Coefficients64.lean:9:0: type checking took 1.69s
+info: astra/Coefficients64.lean:10:0: type checking took 1.64s
+info: astra/Coefficients64.lean:11:0: type checking took 946ms
+info: astra/Coefficients64.lean:12:0: type checking took 821ms
+info: astra/Coefficients64.lean:13:0: type checking took 724ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.4ms
+	attribute application 0.145ms
+	elaboration 9.83ms
+	fix level params 0.0499ms
+	instantiate metavars 0.075ms
+	let-to-have transformation 0.0285ms
+	linting 7.86ms
+	parsing 10.6ms
+	process pre-definitions 0.874ms
+	share common exprs 0.134ms
+	tactic execution 11.7ms
+	type checking 8.76s
+	typeclass inference 3.1ms
+ℹ [18419/18493] Built Matrix8 (12s)
+info: astra/Matrix8.lean:6:0: type checking took 1.27s
+info: astra/Matrix8.lean:7:0: type checking took 1.36s
+info: astra/Matrix8.lean:8:0: type checking took 2.56s
+info: astra/Matrix8.lean:9:0: type checking took 2.61s
+info: astra/Matrix8.lean:10:0: type checking took 2.14s
+info: astra/Matrix8.lean:11:0: type checking took 574ms
+info: astra/Matrix8.lean:12:0: type checking took 585ms
+info: astra/Matrix8.lean:13:0: type checking took 675ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.07ms
+	attribute application 0.16ms
+	elaboration 28ms
+	fix level params 0.0519ms
+	instantiate metavars 0.0789ms
+	let-to-have transformation 0.0284ms
+	linting 1.85ms
+	parsing 1.52ms
+	process pre-definitions 1.06ms
+	share common exprs 0.129ms
+	tactic execution 2.59ms
+	type checking 11.8s
+	typeclass inference 9.15ms
+ℹ [18421/18493] Built Matrix136 (12s)
+info: astra/Matrix136.lean:6:0: type checking took 1.53s
+info: astra/Matrix136.lean:7:0: type checking took 1.85s
+info: astra/Matrix136.lean:8:0: type checking took 1.46s
+info: astra/Matrix136.lean:9:0: type checking took 1.43s
+info: astra/Matrix136.lean:10:0: type checking took 1.64s
+info: astra/Matrix136.lean:11:0: type checking took 1.3s
+info: astra/Matrix136.lean:12:0: type checking took 1.34s
+info: astra/Matrix136.lean:13:0: type checking took 1.52s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.18ms
+	attribute application 0.158ms
+	elaboration 12.8ms
+	fix level params 0.051ms
+	instantiate metavars 0.0792ms
+	let-to-have transformation 0.0344ms
+	linting 1.86ms
+	parsing 1.5ms
+	process pre-definitions 1.08ms
+	share common exprs 0.132ms
+	tactic execution 2.5ms
+	type checking 12.1s
+	typeclass inference 3.05ms
+ℹ [18423/18493] Built Dominance32 (12s)
+info: astra/Dominance32.lean:19:0: type checking took 142ms
+info: astra/Dominance32.lean:20:0: type checking took 160ms
+info: astra/Dominance32.lean:21:0: type checking took 104ms
+info: astra/Dominance32.lean:22:0: type checking took 124ms
+info: astra/Dominance32.lean:23:0: type checking took 148ms
+info: astra/Dominance32.lean:32:0: type checking took 103ms
+info: astra/Dominance32.lean:38:0: type checking took 104ms
+info: astra/Dominance32.lean:42:0: type checking took 111ms
+info: astra/Dominance32.lean:56:0: type checking took 109ms
+info: astra/Dominance32.lean:61:0: type checking took 108ms
+info: astra/Dominance32.lean:62:0: type checking took 110ms
+info: astra/Dominance32.lean:63:0: type checking took 114ms
+info: astra/Dominance32.lean:75:0: type checking took 107ms
+info: astra/Dominance32.lean:76:0: type checking took 103ms
+info: astra/Dominance32.lean:77:0: type checking took 104ms
+info: astra/Dominance32.lean:81:0: type checking took 110ms
+info: astra/Dominance32.lean:82:0: type checking took 110ms
+info: astra/Dominance32.lean:83:0: type checking took 115ms
+info: astra/Dominance32.lean:84:0: type checking took 117ms
+info: astra/Dominance32.lean:85:0: type checking took 120ms
+info: astra/Dominance32.lean:86:0: type checking took 123ms
+info: astra/Dominance32.lean:95:0: type checking took 103ms
+info: astra/Dominance32.lean:96:0: type checking took 110ms
+info: astra/Dominance32.lean:97:0: type checking took 115ms
+info: astra/Dominance32.lean:98:0: type checking took 114ms
+info: astra/Dominance32.lean:99:0: type checking took 134ms
+info: astra/Dominance32.lean:100:0: type checking took 131ms
+info: astra/Dominance32.lean:104:0: type checking took 116ms
+info: astra/Dominance32.lean:105:0: type checking took 117ms
+info: astra/Dominance32.lean:120:0: type checking took 102ms
+info: astra/Dominance32.lean:121:0: type checking took 103ms
+info: astra/Dominance32.lean:122:0: type checking took 109ms
+info: astra/Dominance32.lean:123:0: type checking took 108ms
+info: astra/Dominance32.lean:124:0: type checking took 122ms
+info: astra/Dominance32.lean:125:0: type checking took 116ms
+info: astra/Dominance32.lean:126:0: type checking took 108ms
+info: astra/Dominance32.lean:144:0: type checking took 110ms
+info: astra/Dominance32.lean:145:0: type checking took 125ms
+info: astra/Dominance32.lean:149:0: type checking took 114ms
+info: astra/Dominance32.lean:160:0: type checking took 110ms
+info: astra/Dominance32.lean:161:0: type checking took 113ms
+info: astra/Dominance32.lean:162:0: type checking took 108ms
+info: astra/Dominance32.lean:163:0: type checking took 105ms
+info: astra/Dominance32.lean:167:0: type checking took 112ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 10.6ms
+	attribute application 2.93ms
+	elaboration 217ms
+	fix level params 1.07ms
+	instantiate metavars 1.67ms
+	let-to-have transformation 0.604ms
+	linting 79.2ms
+	parsing 37.8ms
+	process pre-definitions 69.6ms
+	share common exprs 9.76ms
+	tactic execution 232ms
+	type checking 11.2s
+	typeclass inference 48.3ms
+ℹ [18425/18493] Built Coefficients48 (9.4s)
+info: astra/Coefficients48.lean:6:0: type checking took 3.05s
+info: astra/Coefficients48.lean:7:0: type checking took 1.34s
+info: astra/Coefficients48.lean:8:0: type checking took 1.53s
+info: astra/Coefficients48.lean:9:0: type checking took 816ms
+info: astra/Coefficients48.lean:10:0: type checking took 726ms
+info: astra/Coefficients48.lean:11:0: type checking took 464ms
+info: astra/Coefficients48.lean:12:0: type checking took 349ms
+info: astra/Coefficients48.lean:13:0: type checking took 260ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.81ms
+	attribute application 0.135ms
+	elaboration 9.86ms
+	fix level params 0.0529ms
+	instantiate metavars 0.0765ms
+	let-to-have transformation 0.0281ms
+	linting 8.72ms
+	parsing 1.56ms
+	process pre-definitions 4.43ms
+	share common exprs 0.142ms
+	tactic execution 13ms
+	type checking 8.55s
+	typeclass inference 9.03ms
+ℹ [18427/18493] Built Dominance144 (12s)
+info: astra/Dominance144.lean:7:0: type checking took 110ms
+info: astra/Dominance144.lean:8:0: type checking took 140ms
+info: astra/Dominance144.lean:9:0: type checking took 190ms
+info: astra/Dominance144.lean:10:0: type checking took 229ms
+info: astra/Dominance144.lean:11:0: type checking took 151ms
+info: astra/Dominance144.lean:12:0: type checking took 193ms
+info: astra/Dominance144.lean:13:0: type checking took 220ms
+info: astra/Dominance144.lean:14:0: type checking took 270ms
+info: astra/Dominance144.lean:15:0: type checking took 377ms
+info: astra/Dominance144.lean:16:0: type checking took 493ms
+info: astra/Dominance144.lean:17:0: type checking took 610ms
+info: astra/Dominance144.lean:18:0: type checking took 553ms
+info: astra/Dominance144.lean:19:0: type checking took 717ms
+info: astra/Dominance144.lean:20:0: type checking took 349ms
+info: astra/Dominance144.lean:21:0: type checking took 364ms
+info: astra/Dominance144.lean:22:0: type checking took 389ms
+info: astra/Dominance144.lean:23:0: type checking took 431ms
+info: astra/Dominance144.lean:24:0: type checking took 196ms
+info: astra/Dominance144.lean:29:0: type checking took 101ms
+info: astra/Dominance144.lean:30:0: type checking took 124ms
+info: astra/Dominance144.lean:31:0: type checking took 143ms
+info: astra/Dominance144.lean:32:0: type checking took 168ms
+info: astra/Dominance144.lean:33:0: type checking took 261ms
+info: astra/Dominance144.lean:34:0: type checking took 172ms
+info: astra/Dominance144.lean:35:0: type checking took 158ms
+info: astra/Dominance144.lean:36:0: type checking took 108ms
+info: astra/Dominance144.lean:37:0: type checking took 186ms
+info: astra/Dominance144.lean:38:0: type checking took 159ms
+info: astra/Dominance144.lean:39:0: type checking took 290ms
+info: astra/Dominance144.lean:40:0: type checking took 242ms
+info: astra/Dominance144.lean:41:0: type checking took 229ms
+info: astra/Dominance144.lean:42:0: type checking took 234ms
+info: astra/Dominance144.lean:43:0: type checking took 214ms
+info: astra/Dominance144.lean:44:0: type checking took 307ms
+info: astra/Dominance144.lean:45:0: type checking took 126ms
+info: astra/Dominance144.lean:52:0: type checking took 139ms
+info: astra/Dominance144.lean:54:0: type checking took 117ms
+info: astra/Dominance144.lean:56:0: type checking took 182ms
+info: astra/Dominance144.lean:57:0: type checking took 108ms
+info: astra/Dominance144.lean:58:0: type checking took 201ms
+info: astra/Dominance144.lean:59:0: type checking took 129ms
+info: astra/Dominance144.lean:60:0: type checking took 210ms
+info: astra/Dominance144.lean:61:0: type checking took 258ms
+info: astra/Dominance144.lean:62:0: type checking took 162ms
+info: astra/Dominance144.lean:63:0: type checking took 316ms
+info: astra/Dominance144.lean:64:0: type checking took 128ms
+info: astra/Dominance144.lean:65:0: type checking took 136ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 5.8ms
+	attribute application 7.07ms
+	elaboration 99.2ms
+	fix level params 0.378ms
+	instantiate metavars 0.621ms
+	let-to-have transformation 0.214ms
+	linting 23.1ms
+	parsing 13.4ms
+	process pre-definitions 20.8ms
+	share common exprs 1.41ms
+	tactic execution 58.8ms
+	type checking 12s
+	typeclass inference 28.8ms
+ℹ [18429/18493] Built Coefficients32 (9.2s)
+info: astra/Coefficients32.lean:6:0: type checking took 985ms
+info: astra/Coefficients32.lean:7:0: type checking took 1.64s
+info: astra/Coefficients32.lean:8:0: type checking took 1.31s
+info: astra/Coefficients32.lean:9:0: type checking took 1.48s
+info: astra/Coefficients32.lean:10:0: type checking took 1.41s
+info: astra/Coefficients32.lean:11:0: type checking took 791ms
+info: astra/Coefficients32.lean:12:0: type checking took 573ms
+info: astra/Coefficients32.lean:13:0: type checking took 492ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.14ms
+	attribute application 0.184ms
+	elaboration 15.8ms
+	fix level params 0.0521ms
+	instantiate metavars 0.0747ms
+	let-to-have transformation 0.0264ms
+	linting 13.9ms
+	parsing 1.55ms
+	process pre-definitions 0.875ms
+	share common exprs 0.128ms
+	tactic execution 2.55ms
+	type checking 8.68s
+	typeclass inference 3.09ms
+ℹ [18431/18493] Built Coefficients (189ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.85ms
+	attribute application 0.0112ms
+	elaboration 10.2ms
+	fix level params 0.026ms
+	instantiate metavars 0.0398ms
+	let-to-have transformation 0.00347ms
+	linting 0.939ms
+	parsing 2.06ms
+	process pre-definitions 0.202ms
+	share common exprs 0.35ms
+	type checking 1.49ms
+	typeclass inference 2.75ms
+⚠ [18433/18493] Built Sound.Matrix (3.9s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Matrix.lean:51:27: Variable name `hj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Sound/Matrix.lean:225:2: Unused tactic linter: `push_cast` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [18434/18493] Ran Sound.Matrix:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18435/18493] Built Dominance56 (13s)
+info: astra/Dominance56.lean:31:0: type checking took 101ms
+info: astra/Dominance56.lean:37:0: type checking took 101ms
+info: astra/Dominance56.lean:41:0: type checking took 182ms
+info: astra/Dominance56.lean:42:0: type checking took 204ms
+info: astra/Dominance56.lean:43:0: type checking took 203ms
+info: astra/Dominance56.lean:44:0: type checking took 232ms
+info: astra/Dominance56.lean:45:0: type checking took 108ms
+info: astra/Dominance56.lean:52:0: type checking took 104ms
+info: astra/Dominance56.lean:53:0: type checking took 121ms
+info: astra/Dominance56.lean:54:0: type checking took 164ms
+info: astra/Dominance56.lean:55:0: type checking took 147ms
+info: astra/Dominance56.lean:56:0: type checking took 179ms
+info: astra/Dominance56.lean:57:0: type checking took 194ms
+info: astra/Dominance56.lean:58:0: type checking took 208ms
+info: astra/Dominance56.lean:59:0: type checking took 165ms
+info: astra/Dominance56.lean:60:0: type checking took 159ms
+info: astra/Dominance56.lean:61:0: type checking took 171ms
+info: astra/Dominance56.lean:62:0: type checking took 155ms
+info: astra/Dominance56.lean:63:0: type checking took 142ms
+info: astra/Dominance56.lean:64:0: type checking took 161ms
+info: astra/Dominance56.lean:65:0: type checking took 162ms
+info: astra/Dominance56.lean:74:0: type checking took 109ms
+info: astra/Dominance56.lean:75:0: type checking took 117ms
+info: astra/Dominance56.lean:76:0: type checking took 134ms
+info: astra/Dominance56.lean:79:0: type checking took 144ms
+info: astra/Dominance56.lean:80:0: type checking took 147ms
+info: astra/Dominance56.lean:81:0: type checking took 152ms
+info: astra/Dominance56.lean:82:0: type checking took 147ms
+info: astra/Dominance56.lean:83:0: type checking took 155ms
+info: astra/Dominance56.lean:84:0: type checking took 157ms
+info: astra/Dominance56.lean:85:0: type checking took 154ms
+info: astra/Dominance56.lean:86:0: type checking took 160ms
+info: astra/Dominance56.lean:95:0: type checking took 104ms
+info: astra/Dominance56.lean:96:0: type checking took 121ms
+info: astra/Dominance56.lean:97:0: type checking took 126ms
+info: astra/Dominance56.lean:104:0: type checking took 105ms
+info: astra/Dominance56.lean:106:0: type checking took 107ms
+info: astra/Dominance56.lean:116:0: type checking took 105ms
+info: astra/Dominance56.lean:121:0: type checking took 138ms
+info: astra/Dominance56.lean:122:0: type checking took 113ms
+info: astra/Dominance56.lean:125:0: type checking took 128ms
+info: astra/Dominance56.lean:127:0: type checking took 133ms
+info: astra/Dominance56.lean:128:0: type checking took 112ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 10.9ms
+	attribute application 2.95ms
+	elaboration 194ms
+	fix level params 1.06ms
+	instantiate metavars 1.65ms
+	let-to-have transformation 0.589ms
+	linting 66.4ms
+	parsing 39.3ms
+	process pre-definitions 80.3ms
+	share common exprs 3.49ms
+	tactic execution 162ms
+	type checking 12.5s
+	typeclass inference 45.8ms
+ℹ [18437/18493] Built Matrix80 (14s)
+info: astra/Matrix80.lean:6:0: type checking took 1.76s
+info: astra/Matrix80.lean:7:0: type checking took 2.67s
+info: astra/Matrix80.lean:8:0: type checking took 2.33s
+info: astra/Matrix80.lean:9:0: type checking took 2.24s
+info: astra/Matrix80.lean:10:0: type checking took 1.41s
+info: astra/Matrix80.lean:11:0: type checking took 1.2s
+info: astra/Matrix80.lean:12:0: type checking took 1.2s
+info: astra/Matrix80.lean:13:0: type checking took 1.2s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.25ms
+	attribute application 0.133ms
+	elaboration 9.43ms
+	fix level params 0.0469ms
+	instantiate metavars 0.0707ms
+	let-to-have transformation 0.0271ms
+	linting 1.83ms
+	parsing 1.5ms
+	process pre-definitions 4.19ms
+	share common exprs 0.126ms
+	tactic execution 2.45ms
+	type checking 14s
+	typeclass inference 4.87ms
+✔ [18439/18493] Built PlantedCut (14s)
+ℹ [18441/18493] Built Dominance104 (14s)
+info: astra/Dominance104.lean:18:0: type checking took 139ms
+info: astra/Dominance104.lean:19:0: type checking took 203ms
+info: astra/Dominance104.lean:20:0: type checking took 124ms
+info: astra/Dominance104.lean:21:0: type checking took 136ms
+info: astra/Dominance104.lean:22:0: type checking took 144ms
+info: astra/Dominance104.lean:23:0: type checking took 157ms
+info: astra/Dominance104.lean:36:0: type checking took 109ms
+info: astra/Dominance104.lean:37:0: type checking took 112ms
+info: astra/Dominance104.lean:38:0: type checking took 121ms
+info: astra/Dominance104.lean:39:0: type checking took 141ms
+info: astra/Dominance104.lean:40:0: type checking took 132ms
+info: astra/Dominance104.lean:41:0: type checking took 144ms
+info: astra/Dominance104.lean:42:0: type checking took 143ms
+info: astra/Dominance104.lean:43:0: type checking took 143ms
+info: astra/Dominance104.lean:44:0: type checking took 148ms
+info: astra/Dominance104.lean:45:0: type checking took 138ms
+info: astra/Dominance104.lean:57:0: type checking took 111ms
+info: astra/Dominance104.lean:58:0: type checking took 121ms
+info: astra/Dominance104.lean:59:0: type checking took 128ms
+info: astra/Dominance104.lean:60:0: type checking took 139ms
+info: astra/Dominance104.lean:61:0: type checking took 148ms
+info: astra/Dominance104.lean:62:0: type checking took 143ms
+info: astra/Dominance104.lean:63:0: type checking took 149ms
+info: astra/Dominance104.lean:64:0: type checking took 150ms
+info: astra/Dominance104.lean:65:0: type checking took 149ms
+info: astra/Dominance104.lean:78:0: type checking took 118ms
+info: astra/Dominance104.lean:79:0: type checking took 125ms
+info: astra/Dominance104.lean:80:0: type checking took 125ms
+info: astra/Dominance104.lean:81:0: type checking took 148ms
+info: astra/Dominance104.lean:82:0: type checking took 142ms
+info: astra/Dominance104.lean:83:0: type checking took 147ms
+info: astra/Dominance104.lean:84:0: type checking took 148ms
+info: astra/Dominance104.lean:85:0: type checking took 152ms
+info: astra/Dominance104.lean:86:0: type checking took 154ms
+info: astra/Dominance104.lean:99:0: type checking took 115ms
+info: astra/Dominance104.lean:100:0: type checking took 120ms
+info: astra/Dominance104.lean:101:0: type checking took 101ms
+info: astra/Dominance104.lean:104:0: type checking took 102ms
+info: astra/Dominance104.lean:106:0: type checking took 104ms
+info: astra/Dominance104.lean:107:0: type checking took 103ms
+info: astra/Dominance104.lean:120:0: type checking took 109ms
+info: astra/Dominance104.lean:121:0: type checking took 116ms
+info: astra/Dominance104.lean:122:0: type checking took 229ms
+info: astra/Dominance104.lean:123:0: type checking took 138ms
+info: astra/Dominance104.lean:124:0: type checking took 138ms
+info: astra/Dominance104.lean:125:0: type checking took 150ms
+info: astra/Dominance104.lean:126:0: type checking took 148ms
+info: astra/Dominance104.lean:127:0: type checking took 148ms
+info: astra/Dominance104.lean:128:0: type checking took 155ms
+info: astra/Dominance104.lean:141:0: type checking took 199ms
+info: astra/Dominance104.lean:142:0: type checking took 115ms
+info: astra/Dominance104.lean:143:0: type checking took 112ms
+info: astra/Dominance104.lean:144:0: type checking took 121ms
+info: astra/Dominance104.lean:145:0: type checking took 126ms
+info: astra/Dominance104.lean:146:0: type checking took 130ms
+info: astra/Dominance104.lean:147:0: type checking took 128ms
+info: astra/Dominance104.lean:148:0: type checking took 131ms
+info: astra/Dominance104.lean:149:0: type checking took 129ms
+info: astra/Dominance104.lean:163:0: type checking took 110ms
+info: astra/Dominance104.lean:164:0: type checking took 112ms
+info: astra/Dominance104.lean:165:0: type checking took 121ms
+info: astra/Dominance104.lean:166:0: type checking took 120ms
+info: astra/Dominance104.lean:167:0: type checking took 130ms
+info: astra/Dominance104.lean:168:0: type checking took 139ms
+info: astra/Dominance104.lean:169:0: type checking took 136ms
+info: astra/Dominance104.lean:170:0: type checking took 145ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 10.5ms
+	attribute application 2.95ms
+	elaboration 161ms
+	fix level params 1.08ms
+	instantiate metavars 1.7ms
+	let-to-have transformation 0.618ms
+	linting 35.7ms
+	parsing 34.2ms
+	process pre-definitions 36.6ms
+	share common exprs 3.65ms
+	tactic execution 53.2ms
+	type checking 14.2s
+	typeclass inference 44.7ms
+ℹ [18443/18493] Built Matrix64 (15s)
+info: astra/Matrix64.lean:6:0: type checking took 1.36s
+info: astra/Matrix64.lean:7:0: type checking took 2.45s
+info: astra/Matrix64.lean:8:0: type checking took 3.53s
+info: astra/Matrix64.lean:9:0: type checking took 3.49s
+info: astra/Matrix64.lean:10:0: type checking took 1.02s
+info: astra/Matrix64.lean:11:0: type checking took 861ms
+info: astra/Matrix64.lean:12:0: type checking took 1.02s
+info: astra/Matrix64.lean:13:0: type checking took 1.02s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.22ms
+	attribute application 0.148ms
+	elaboration 12ms
+	fix level params 0.0458ms
+	instantiate metavars 0.0718ms
+	let-to-have transformation 0.0267ms
+	linting 1.73ms
+	parsing 1.36ms
+	process pre-definitions 10ms
+	share common exprs 0.118ms
+	tactic execution 2.27ms
+	type checking 14.8s
+	typeclass inference 2.71ms
+ℹ [18445/18493] Built Matrix40 (15s)
+info: astra/Matrix40.lean:6:0: type checking took 1.51s
+info: astra/Matrix40.lean:7:0: type checking took 1.74s
+info: astra/Matrix40.lean:8:0: type checking took 4.46s
+info: astra/Matrix40.lean:9:0: type checking took 2.85s
+info: astra/Matrix40.lean:10:0: type checking took 1.47s
+info: astra/Matrix40.lean:11:0: type checking took 947ms
+info: astra/Matrix40.lean:12:0: type checking took 888ms
+info: astra/Matrix40.lean:13:0: type checking took 882ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.35ms
+	attribute application 0.148ms
+	elaboration 6.7ms
+	fix level params 0.0502ms
+	instantiate metavars 0.0753ms
+	let-to-have transformation 0.0283ms
+	linting 1.74ms
+	parsing 1.54ms
+	process pre-definitions 4.64ms
+	share common exprs 0.126ms
+	tactic execution 5.45ms
+	type checking 14.8s
+	typeclass inference 9.09ms
+ℹ [18447/18493] Built Matrix88 (15s)
+info: astra/Matrix88.lean:6:0: type checking took 1.13s
+info: astra/Matrix88.lean:7:0: type checking took 1.6s
+info: astra/Matrix88.lean:8:0: type checking took 3.05s
+info: astra/Matrix88.lean:9:0: type checking took 2.82s
+info: astra/Matrix88.lean:10:0: type checking took 2.4s
+info: astra/Matrix88.lean:11:0: type checking took 1.46s
+info: astra/Matrix88.lean:12:0: type checking took 1.21s
+info: astra/Matrix88.lean:13:0: type checking took 1.26s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.24ms
+	attribute application 0.139ms
+	elaboration 6.65ms
+	fix level params 0.048ms
+	instantiate metavars 0.071ms
+	let-to-have transformation 0.029ms
+	linting 8.5ms
+	parsing 1.45ms
+	process pre-definitions 1.13ms
+	share common exprs 0.121ms
+	tactic execution 5.54ms
+	type checking 15s
+	typeclass inference 2.97ms
+✔ [18449/18493] Built PlantedFull (15s)
+✔ [18451/18493] Built PlantedTheta (15s)
+⚠ [18453/18493] Built Sound.Poly (2.2s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18454/18493] Ran Sound.Poly:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18455/18493] Built Matrix104 (15s)
+info: astra/Matrix104.lean:6:0: type checking took 1.43s
+info: astra/Matrix104.lean:7:0: type checking took 5.88s
+info: astra/Matrix104.lean:8:0: type checking took 1.81s
+info: astra/Matrix104.lean:9:0: type checking took 1.07s
+info: astra/Matrix104.lean:10:0: type checking took 1.07s
+info: astra/Matrix104.lean:11:0: type checking took 1.27s
+info: astra/Matrix104.lean:12:0: type checking took 1.38s
+info: astra/Matrix104.lean:13:0: type checking took 1.27s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.27ms
+	attribute application 0.133ms
+	elaboration 6.5ms
+	fix level params 0.0478ms
+	instantiate metavars 0.07ms
+	let-to-have transformation 0.0326ms
+	linting 1.71ms
+	parsing 4.67ms
+	process pre-definitions 0.999ms
+	share common exprs 0.112ms
+	tactic execution 2.33ms
+	type checking 15.2s
+	typeclass inference 2.96ms
+ℹ [18457/18493] Built Matrix128 (16s)
+info: astra/Matrix128.lean:6:0: type checking took 1.43s
+info: astra/Matrix128.lean:7:0: type checking took 3.04s
+info: astra/Matrix128.lean:8:0: type checking took 3.38s
+info: astra/Matrix128.lean:9:0: type checking took 2.62s
+info: astra/Matrix128.lean:10:0: type checking took 1.88s
+info: astra/Matrix128.lean:11:0: type checking took 1.37s
+info: astra/Matrix128.lean:12:0: type checking took 1.05s
+info: astra/Matrix128.lean:13:0: type checking took 1.05s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.03ms
+	attribute application 0.126ms
+	elaboration 6.12ms
+	fix level params 0.0483ms
+	instantiate metavars 0.0704ms
+	let-to-have transformation 0.0324ms
+	linting 1.62ms
+	parsing 1.42ms
+	process pre-definitions 1.01ms
+	share common exprs 0.117ms
+	tactic execution 8.93ms
+	type checking 15.8s
+	typeclass inference 2.76ms
+ℹ [18459/18493] Built Dominance72 (16s)
+info: astra/Dominance72.lean:8:0: type checking took 145ms
+info: astra/Dominance72.lean:9:0: type checking took 147ms
+info: astra/Dominance72.lean:10:0: type checking took 298ms
+info: astra/Dominance72.lean:11:0: type checking took 201ms
+info: astra/Dominance72.lean:12:0: type checking took 112ms
+info: astra/Dominance72.lean:13:0: type checking took 138ms
+info: astra/Dominance72.lean:14:0: type checking took 165ms
+info: astra/Dominance72.lean:15:0: type checking took 180ms
+info: astra/Dominance72.lean:17:0: type checking took 174ms
+info: astra/Dominance72.lean:21:0: type checking took 126ms
+info: astra/Dominance72.lean:22:0: type checking took 102ms
+info: astra/Dominance72.lean:32:0: type checking took 129ms
+info: astra/Dominance72.lean:33:0: type checking took 104ms
+info: astra/Dominance72.lean:35:0: type checking took 296ms
+info: astra/Dominance72.lean:36:0: type checking took 384ms
+info: astra/Dominance72.lean:37:0: type checking took 515ms
+info: astra/Dominance72.lean:38:0: type checking took 538ms
+info: astra/Dominance72.lean:39:0: type checking took 440ms
+info: astra/Dominance72.lean:40:0: type checking took 350ms
+info: astra/Dominance72.lean:41:0: type checking took 471ms
+info: astra/Dominance72.lean:42:0: type checking took 750ms
+info: astra/Dominance72.lean:43:0: type checking took 504ms
+info: astra/Dominance72.lean:44:0: type checking took 535ms
+info: astra/Dominance72.lean:45:0: type checking took 240ms
+info: astra/Dominance72.lean:49:0: type checking took 120ms
+info: astra/Dominance72.lean:50:0: type checking took 139ms
+info: astra/Dominance72.lean:51:0: type checking took 175ms
+info: astra/Dominance72.lean:52:0: type checking took 193ms
+info: astra/Dominance72.lean:53:0: type checking took 141ms
+info: astra/Dominance72.lean:63:0: type checking took 101ms
+info: astra/Dominance72.lean:75:0: type checking took 148ms
+info: astra/Dominance72.lean:77:0: type checking took 124ms
+info: astra/Dominance72.lean:86:0: type checking took 108ms
+info: astra/Dominance72.lean:98:0: type checking took 128ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.54ms
+	attribute application 2.73ms
+	elaboration 233ms
+	fix level params 1.02ms
+	instantiate metavars 1.55ms
+	let-to-have transformation 0.601ms
+	linting 44.3ms
+	parsing 40.6ms
+	process pre-definitions 33.7ms
+	share common exprs 3.27ms
+	tactic execution 113ms
+	type checking 15.2s
+	typeclass inference 49.7ms
+ℹ [18461/18493] Built Dominance64 (16s)
+info: astra/Dominance64.lean:8:0: type checking took 106ms
+info: astra/Dominance64.lean:9:0: type checking took 150ms
+info: astra/Dominance64.lean:10:0: type checking took 264ms
+info: astra/Dominance64.lean:11:0: type checking took 279ms
+info: astra/Dominance64.lean:12:0: type checking took 198ms
+info: astra/Dominance64.lean:13:0: type checking took 241ms
+info: astra/Dominance64.lean:14:0: type checking took 290ms
+info: astra/Dominance64.lean:15:0: type checking took 401ms
+info: astra/Dominance64.lean:16:0: type checking took 461ms
+info: astra/Dominance64.lean:17:0: type checking took 441ms
+info: astra/Dominance64.lean:18:0: type checking took 523ms
+info: astra/Dominance64.lean:19:0: type checking took 528ms
+info: astra/Dominance64.lean:20:0: type checking took 729ms
+info: astra/Dominance64.lean:21:0: type checking took 731ms
+info: astra/Dominance64.lean:22:0: type checking took 771ms
+info: astra/Dominance64.lean:23:0: type checking took 545ms
+info: astra/Dominance64.lean:24:0: type checking took 217ms
+info: astra/Dominance64.lean:28:0: type checking took 127ms
+info: astra/Dominance64.lean:29:0: type checking took 157ms
+info: astra/Dominance64.lean:30:0: type checking took 193ms
+info: astra/Dominance64.lean:31:0: type checking took 252ms
+info: astra/Dominance64.lean:32:0: type checking took 295ms
+info: astra/Dominance64.lean:33:0: type checking took 292ms
+info: astra/Dominance64.lean:34:0: type checking took 260ms
+info: astra/Dominance64.lean:42:0: type checking took 112ms
+info: astra/Dominance64.lean:80:0: type checking took 118ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.97ms
+	attribute application 2.7ms
+	elaboration 170ms
+	fix level params 0.987ms
+	instantiate metavars 1.53ms
+	let-to-have transformation 0.583ms
+	linting 53.4ms
+	parsing 31.2ms
+	process pre-definitions 58.8ms
+	share common exprs 3.22ms
+	tactic execution 103ms
+	type checking 15.6s
+	typeclass inference 58.4ms
+ℹ [18463/18493] Built Dominance120 (16s)
+info: astra/Dominance120.lean:9:0: type checking took 129ms
+info: astra/Dominance120.lean:10:0: type checking took 138ms
+info: astra/Dominance120.lean:11:0: type checking took 257ms
+info: astra/Dominance120.lean:12:0: type checking took 226ms
+info: astra/Dominance120.lean:13:0: type checking took 185ms
+info: astra/Dominance120.lean:14:0: type checking took 215ms
+info: astra/Dominance120.lean:15:0: type checking took 252ms
+info: astra/Dominance120.lean:16:0: type checking took 132ms
+info: astra/Dominance120.lean:17:0: type checking took 142ms
+info: astra/Dominance120.lean:18:0: type checking took 141ms
+info: astra/Dominance120.lean:19:0: type checking took 156ms
+info: astra/Dominance120.lean:20:0: type checking took 167ms
+info: astra/Dominance120.lean:21:0: type checking took 153ms
+info: astra/Dominance120.lean:22:0: type checking took 172ms
+info: astra/Dominance120.lean:23:0: type checking took 180ms
+info: astra/Dominance120.lean:35:0: type checking took 102ms
+info: astra/Dominance120.lean:36:0: type checking took 116ms
+info: astra/Dominance120.lean:37:0: type checking took 128ms
+info: astra/Dominance120.lean:38:0: type checking took 128ms
+info: astra/Dominance120.lean:40:0: type checking took 114ms
+info: astra/Dominance120.lean:41:0: type checking took 796ms
+info: astra/Dominance120.lean:42:0: type checking took 624ms
+info: astra/Dominance120.lean:43:0: type checking took 598ms
+info: astra/Dominance120.lean:44:0: type checking took 349ms
+info: astra/Dominance120.lean:45:0: type checking took 156ms
+info: astra/Dominance120.lean:51:0: type checking took 117ms
+info: astra/Dominance120.lean:52:0: type checking took 161ms
+info: astra/Dominance120.lean:53:0: type checking took 278ms
+info: astra/Dominance120.lean:54:0: type checking took 284ms
+info: astra/Dominance120.lean:55:0: type checking took 272ms
+info: astra/Dominance120.lean:56:0: type checking took 280ms
+info: astra/Dominance120.lean:57:0: type checking took 355ms
+info: astra/Dominance120.lean:58:0: type checking took 469ms
+info: astra/Dominance120.lean:59:0: type checking took 462ms
+info: astra/Dominance120.lean:60:0: type checking took 478ms
+info: astra/Dominance120.lean:61:0: type checking took 444ms
+info: astra/Dominance120.lean:62:0: type checking took 255ms
+info: astra/Dominance120.lean:63:0: type checking took 309ms
+info: astra/Dominance120.lean:64:0: type checking took 306ms
+info: astra/Dominance120.lean:65:0: type checking took 139ms
+info: astra/Dominance120.lean:170:0: type checking took 108ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.71ms
+	attribute application 2.41ms
+	elaboration 136ms
+	fix level params 0.925ms
+	instantiate metavars 1.34ms
+	let-to-have transformation 0.515ms
+	linting 48.4ms
+	parsing 31.1ms
+	process pre-definitions 29.5ms
+	share common exprs 2.94ms
+	tactic execution 78.2ms
+	type checking 16s
+	typeclass inference 50ms
+ℹ [18465/18493] Built Matrix112 (17s)
+info: astra/Matrix112.lean:6:0: type checking took 1.42s
+info: astra/Matrix112.lean:7:0: type checking took 4.14s
+info: astra/Matrix112.lean:8:0: type checking took 5.36s
+info: astra/Matrix112.lean:9:0: type checking took 977ms
+info: astra/Matrix112.lean:10:0: type checking took 1.22s
+info: astra/Matrix112.lean:11:0: type checking took 1.28s
+info: astra/Matrix112.lean:12:0: type checking took 1.31s
+info: astra/Matrix112.lean:13:0: type checking took 1.36s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.08ms
+	attribute application 0.154ms
+	elaboration 15.4ms
+	fix level params 0.0499ms
+	instantiate metavars 0.0728ms
+	let-to-have transformation 0.0288ms
+	linting 1.72ms
+	parsing 1.45ms
+	process pre-definitions 0.933ms
+	share common exprs 0.123ms
+	tactic execution 2.3ms
+	type checking 17.1s
+	typeclass inference 2.83ms
+ℹ [18467/18493] Built Dominance112 (17s)
+info: astra/Dominance112.lean:13:0: type checking took 170ms
+info: astra/Dominance112.lean:14:0: type checking took 109ms
+info: astra/Dominance112.lean:15:0: type checking took 110ms
+info: astra/Dominance112.lean:16:0: type checking took 200ms
+info: astra/Dominance112.lean:17:0: type checking took 141ms
+info: astra/Dominance112.lean:18:0: type checking took 243ms
+info: astra/Dominance112.lean:19:0: type checking took 355ms
+info: astra/Dominance112.lean:20:0: type checking took 335ms
+info: astra/Dominance112.lean:21:0: type checking took 303ms
+info: astra/Dominance112.lean:22:0: type checking took 343ms
+info: astra/Dominance112.lean:23:0: type checking took 174ms
+info: astra/Dominance112.lean:24:0: type checking took 165ms
+info: astra/Dominance112.lean:33:0: type checking took 175ms
+info: astra/Dominance112.lean:34:0: type checking took 131ms
+info: astra/Dominance112.lean:36:0: type checking took 188ms
+info: astra/Dominance112.lean:37:0: type checking took 115ms
+info: astra/Dominance112.lean:38:0: type checking took 282ms
+info: astra/Dominance112.lean:39:0: type checking took 317ms
+info: astra/Dominance112.lean:40:0: type checking took 322ms
+info: astra/Dominance112.lean:41:0: type checking took 314ms
+info: astra/Dominance112.lean:42:0: type checking took 329ms
+info: astra/Dominance112.lean:43:0: type checking took 355ms
+info: astra/Dominance112.lean:44:0: type checking took 346ms
+info: astra/Dominance112.lean:45:0: type checking took 164ms
+info: astra/Dominance112.lean:51:0: type checking took 105ms
+info: astra/Dominance112.lean:54:0: type checking took 178ms
+info: astra/Dominance112.lean:55:0: type checking took 188ms
+info: astra/Dominance112.lean:57:0: type checking took 248ms
+info: astra/Dominance112.lean:58:0: type checking took 263ms
+info: astra/Dominance112.lean:59:0: type checking took 139ms
+info: astra/Dominance112.lean:60:0: type checking took 204ms
+info: astra/Dominance112.lean:61:0: type checking took 221ms
+info: astra/Dominance112.lean:62:0: type checking took 182ms
+info: astra/Dominance112.lean:63:0: type checking took 190ms
+info: astra/Dominance112.lean:64:0: type checking took 312ms
+info: astra/Dominance112.lean:65:0: type checking took 180ms
+info: astra/Dominance112.lean:66:0: type checking took 169ms
+info: astra/Dominance112.lean:72:0: type checking took 111ms
+info: astra/Dominance112.lean:73:0: type checking took 144ms
+info: astra/Dominance112.lean:74:0: type checking took 154ms
+info: astra/Dominance112.lean:75:0: type checking took 174ms
+info: astra/Dominance112.lean:76:0: type checking took 135ms
+info: astra/Dominance112.lean:78:0: type checking took 245ms
+info: astra/Dominance112.lean:79:0: type checking took 201ms
+info: astra/Dominance112.lean:80:0: type checking took 117ms
+info: astra/Dominance112.lean:81:0: type checking took 261ms
+info: astra/Dominance112.lean:82:0: type checking took 179ms
+info: astra/Dominance112.lean:83:0: type checking took 185ms
+info: astra/Dominance112.lean:84:0: type checking took 154ms
+info: astra/Dominance112.lean:86:0: type checking took 107ms
+info: astra/Dominance112.lean:147:0: type checking took 101ms
+info: astra/Dominance112.lean:168:0: type checking took 102ms
+info: astra/Dominance112.lean:169:0: type checking took 100ms
+info: astra/Dominance112.lean:170:0: type checking took 113ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 9.68ms
+	attribute application 2.45ms
+	elaboration 155ms
+	fix level params 0.921ms
+	instantiate metavars 1.4ms
+	let-to-have transformation 0.532ms
+	linting 51.8ms
+	parsing 37ms
+	process pre-definitions 51.4ms
+	share common exprs 3.26ms
+	tactic execution 135ms
+	type checking 16.8s
+	typeclass inference 40.1ms
+ℹ [18469/18493] Built Dominance128 (17s)
+info: astra/Dominance128.lean:8:0: type checking took 144ms
+info: astra/Dominance128.lean:9:0: type checking took 170ms
+info: astra/Dominance128.lean:10:0: type checking took 147ms
+info: astra/Dominance128.lean:16:0: type checking took 105ms
+info: astra/Dominance128.lean:17:0: type checking took 194ms
+info: astra/Dominance128.lean:18:0: type checking took 172ms
+info: astra/Dominance128.lean:19:0: type checking took 235ms
+info: astra/Dominance128.lean:20:0: type checking took 239ms
+info: astra/Dominance128.lean:21:0: type checking took 346ms
+info: astra/Dominance128.lean:22:0: type checking took 306ms
+info: astra/Dominance128.lean:23:0: type checking took 429ms
+info: astra/Dominance128.lean:24:0: type checking took 194ms
+info: astra/Dominance128.lean:30:0: type checking took 116ms
+info: astra/Dominance128.lean:31:0: type checking took 124ms
+info: astra/Dominance128.lean:32:0: type checking took 151ms
+info: astra/Dominance128.lean:33:0: type checking took 177ms
+info: astra/Dominance128.lean:34:0: type checking took 195ms
+info: astra/Dominance128.lean:35:0: type checking took 224ms
+info: astra/Dominance128.lean:36:0: type checking took 254ms
+info: astra/Dominance128.lean:37:0: type checking took 261ms
+info: astra/Dominance128.lean:38:0: type checking took 254ms
+info: astra/Dominance128.lean:39:0: type checking took 261ms
+info: astra/Dominance128.lean:40:0: type checking took 210ms
+info: astra/Dominance128.lean:41:0: type checking took 236ms
+info: astra/Dominance128.lean:42:0: type checking took 273ms
+info: astra/Dominance128.lean:43:0: type checking took 244ms
+info: astra/Dominance128.lean:44:0: type checking took 285ms
+info: astra/Dominance128.lean:45:0: type checking took 104ms
+info: astra/Dominance128.lean:54:0: type checking took 140ms
+info: astra/Dominance128.lean:55:0: type checking took 151ms
+info: astra/Dominance128.lean:56:0: type checking took 174ms
+info: astra/Dominance128.lean:57:0: type checking took 153ms
+info: astra/Dominance128.lean:58:0: type checking took 171ms
+info: astra/Dominance128.lean:59:0: type checking took 229ms
+info: astra/Dominance128.lean:60:0: type checking took 180ms
+info: astra/Dominance128.lean:61:0: type checking took 327ms
+info: astra/Dominance128.lean:62:0: type checking took 263ms
+info: astra/Dominance128.lean:63:0: type checking took 198ms
+info: astra/Dominance128.lean:64:0: type checking took 161ms
+info: astra/Dominance128.lean:65:0: type checking took 172ms
+info: astra/Dominance128.lean:78:0: type checking took 101ms
+info: astra/Dominance128.lean:79:0: type checking took 107ms
+info: astra/Dominance128.lean:80:0: type checking took 119ms
+info: astra/Dominance128.lean:81:0: type checking took 148ms
+info: astra/Dominance128.lean:82:0: type checking took 140ms
+info: astra/Dominance128.lean:83:0: type checking took 139ms
+info: astra/Dominance128.lean:84:0: type checking took 153ms
+info: astra/Dominance128.lean:85:0: type checking took 162ms
+info: astra/Dominance128.lean:86:0: type checking took 166ms
+info: astra/Dominance128.lean:100:0: type checking took 107ms
+info: astra/Dominance128.lean:101:0: type checking took 121ms
+info: astra/Dominance128.lean:102:0: type checking took 124ms
+info: astra/Dominance128.lean:103:0: type checking took 139ms
+info: astra/Dominance128.lean:104:0: type checking took 134ms
+info: astra/Dominance128.lean:105:0: type checking took 162ms
+info: astra/Dominance128.lean:106:0: type checking took 165ms
+info: astra/Dominance128.lean:107:0: type checking took 165ms
+info: astra/Dominance128.lean:126:0: type checking took 101ms
+info: astra/Dominance128.lean:127:0: type checking took 101ms
+info: astra/Dominance128.lean:128:0: type checking took 104ms
+info: astra/Dominance128.lean:147:0: type checking took 105ms
+info: astra/Dominance128.lean:148:0: type checking took 112ms
+info: astra/Dominance128.lean:149:0: type checking took 117ms
+info: astra/Dominance128.lean:168:0: type checking took 111ms
+info: astra/Dominance128.lean:169:0: type checking took 103ms
+info: astra/Dominance128.lean:170:0: type checking took 111ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 7.44ms
+	attribute application 2.53ms
+	elaboration 169ms
+	fix level params 0.96ms
+	instantiate metavars 1.43ms
+	let-to-have transformation 0.537ms
+	linting 35.2ms
+	parsing 31.4ms
+	process pre-definitions 48.4ms
+	share common exprs 3.33ms
+	tactic execution 112ms
+	type checking 17s
+	typeclass inference 38.6ms
+ℹ [18471/18493] Built Matrix120 (17s)
+info: astra/Matrix120.lean:6:0: type checking took 2.81s
+info: astra/Matrix120.lean:7:0: type checking took 6.01s
+info: astra/Matrix120.lean:8:0: type checking took 3.04s
+info: astra/Matrix120.lean:9:0: type checking took 1.33s
+info: astra/Matrix120.lean:10:0: type checking took 1.29s
+info: astra/Matrix120.lean:11:0: type checking took 1.14s
+info: astra/Matrix120.lean:12:0: type checking took 897ms
+info: astra/Matrix120.lean:13:0: type checking took 1.06s
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.3ms
+	attribute application 0.125ms
+	elaboration 6.21ms
+	fix level params 0.0466ms
+	instantiate metavars 0.0662ms
+	let-to-have transformation 0.0262ms
+	linting 7.83ms
+	parsing 1.45ms
+	process pre-definitions 0.913ms
+	share common exprs 0.112ms
+	tactic execution 8.2ms
+	type checking 17.6s
+	typeclass inference 6.69ms
+ℹ [18473/18493] Built Matrix (184ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.77ms
+	attribute application 0.00915ms
+	elaboration 11.9ms
+	fix level params 0.0292ms
+	instantiate metavars 0.0452ms
+	let-to-have transformation 0.00331ms
+	linting 1.04ms
+	parsing 2.58ms
+	process pre-definitions 0.267ms
+	share common exprs 0.464ms
+	type checking 1.61ms
+	typeclass inference 2.98ms
+⚠ [18475/18493] Built Sound.Main (5.6s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Main.lean:399:16: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Sound/Main.lean:399:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [18476/18493] Ran Sound.Main:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [18477/18493] Built Dominance88 (21s)
+info: astra/Dominance88.lean:9:0: type checking took 101ms
+info: astra/Dominance88.lean:10:0: type checking took 187ms
+info: astra/Dominance88.lean:11:0: type checking took 173ms
+info: astra/Dominance88.lean:12:0: type checking took 363ms
+info: astra/Dominance88.lean:13:0: type checking took 292ms
+info: astra/Dominance88.lean:14:0: type checking took 301ms
+info: astra/Dominance88.lean:15:0: type checking took 446ms
+info: astra/Dominance88.lean:16:0: type checking took 616ms
+info: astra/Dominance88.lean:17:0: type checking took 670ms
+info: astra/Dominance88.lean:18:0: type checking took 681ms
+info: astra/Dominance88.lean:19:0: type checking took 857ms
+info: astra/Dominance88.lean:20:0: type checking took 956ms
+info: astra/Dominance88.lean:21:0: type checking took 1.02s
+info: astra/Dominance88.lean:22:0: type checking took 579ms
+info: astra/Dominance88.lean:23:0: type checking took 672ms
+info: astra/Dominance88.lean:24:0: type checking took 287ms
+info: astra/Dominance88.lean:28:0: type checking took 108ms
+info: astra/Dominance88.lean:29:0: type checking took 152ms
+info: astra/Dominance88.lean:30:0: type checking took 200ms
+info: astra/Dominance88.lean:31:0: type checking took 243ms
+info: astra/Dominance88.lean:32:0: type checking took 232ms
+info: astra/Dominance88.lean:33:0: type checking took 173ms
+info: astra/Dominance88.lean:34:0: type checking took 184ms
+info: astra/Dominance88.lean:35:0: type checking took 201ms
+info: astra/Dominance88.lean:36:0: type checking took 238ms
+info: astra/Dominance88.lean:37:0: type checking took 296ms
+info: astra/Dominance88.lean:38:0: type checking took 247ms
+info: astra/Dominance88.lean:39:0: type checking took 117ms
+info: astra/Dominance88.lean:40:0: type checking took 241ms
+info: astra/Dominance88.lean:41:0: type checking took 113ms
+info: astra/Dominance88.lean:42:0: type checking took 245ms
+info: astra/Dominance88.lean:43:0: type checking took 129ms
+info: astra/Dominance88.lean:44:0: type checking took 117ms
+info: astra/Dominance88.lean:59:0: type checking took 102ms
+info: astra/Dominance88.lean:60:0: type checking took 109ms
+info: astra/Dominance88.lean:61:0: type checking took 105ms
+info: astra/Dominance88.lean:62:0: type checking took 109ms
+info: astra/Dominance88.lean:63:0: type checking took 106ms
+info: astra/Dominance88.lean:64:0: type checking took 110ms
+info: astra/Dominance88.lean:65:0: type checking took 111ms
+info: astra/Dominance88.lean:80:0: type checking took 103ms
+info: astra/Dominance88.lean:81:0: type checking took 104ms
+info: astra/Dominance88.lean:82:0: type checking took 113ms
+info: astra/Dominance88.lean:83:0: type checking took 109ms
+info: astra/Dominance88.lean:84:0: type checking took 109ms
+info: astra/Dominance88.lean:85:0: type checking took 111ms
+info: astra/Dominance88.lean:86:0: type checking took 112ms
+info: astra/Dominance88.lean:101:0: type checking took 103ms
+info: astra/Dominance88.lean:102:0: type checking took 115ms
+info: astra/Dominance88.lean:103:0: type checking took 114ms
+info: astra/Dominance88.lean:104:0: type checking took 115ms
+info: astra/Dominance88.lean:105:0: type checking took 112ms
+info: astra/Dominance88.lean:106:0: type checking took 117ms
+info: astra/Dominance88.lean:107:0: type checking took 117ms
+info: astra/Dominance88.lean:123:0: type checking took 108ms
+info: astra/Dominance88.lean:124:0: type checking took 105ms
+info: astra/Dominance88.lean:125:0: type checking took 109ms
+info: astra/Dominance88.lean:126:0: type checking took 103ms
+info: astra/Dominance88.lean:127:0: type checking took 108ms
+info: astra/Dominance88.lean:128:0: type checking took 111ms
+info: astra/Dominance88.lean:144:0: type checking took 102ms
+info: astra/Dominance88.lean:145:0: type checking took 105ms
+info: astra/Dominance88.lean:146:0: type checking took 105ms
+info: astra/Dominance88.lean:147:0: type checking took 102ms
+info: astra/Dominance88.lean:148:0: type checking took 110ms
+info: astra/Dominance88.lean:149:0: type checking took 111ms
+info: astra/Dominance88.lean:165:0: type checking took 100ms
+info: astra/Dominance88.lean:167:0: type checking took 101ms
+info: astra/Dominance88.lean:169:0: type checking took 105ms
+info: astra/Dominance88.lean:170:0: type checking took 106ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.36ms
+	attribute application 2.75ms
+	elaboration 215ms
+	fix level params 1.01ms
+	instantiate metavars 1.6ms
+	let-to-have transformation 0.576ms
+	linting 66.9ms
+	parsing 40.7ms
+	process pre-definitions 57.7ms
+	share common exprs 3.49ms
+	tactic execution 123ms
+	type checking 20.5s
+	typeclass inference 41.4ms
+ℹ [18479/18493] Built Dominance136 (22s)
+info: astra/Dominance136.lean:7:0: type checking took 136ms
+info: astra/Dominance136.lean:8:0: type checking took 143ms
+info: astra/Dominance136.lean:9:0: type checking took 192ms
+info: astra/Dominance136.lean:12:0: type checking took 128ms
+info: astra/Dominance136.lean:14:0: type checking took 227ms
+info: astra/Dominance136.lean:15:0: type checking took 343ms
+info: astra/Dominance136.lean:16:0: type checking took 332ms
+info: astra/Dominance136.lean:17:0: type checking took 528ms
+info: astra/Dominance136.lean:18:0: type checking took 630ms
+info: astra/Dominance136.lean:19:0: type checking took 599ms
+info: astra/Dominance136.lean:20:0: type checking took 748ms
+info: astra/Dominance136.lean:21:0: type checking took 738ms
+info: astra/Dominance136.lean:22:0: type checking took 758ms
+info: astra/Dominance136.lean:23:0: type checking took 803ms
+info: astra/Dominance136.lean:24:0: type checking took 439ms
+info: astra/Dominance136.lean:27:0: type checking took 101ms
+info: astra/Dominance136.lean:28:0: type checking took 142ms
+info: astra/Dominance136.lean:29:0: type checking took 192ms
+info: astra/Dominance136.lean:30:0: type checking took 278ms
+info: astra/Dominance136.lean:31:0: type checking took 321ms
+info: astra/Dominance136.lean:32:0: type checking took 315ms
+info: astra/Dominance136.lean:33:0: type checking took 322ms
+info: astra/Dominance136.lean:34:0: type checking took 363ms
+info: astra/Dominance136.lean:35:0: type checking took 335ms
+info: astra/Dominance136.lean:36:0: type checking took 253ms
+info: astra/Dominance136.lean:37:0: type checking took 290ms
+info: astra/Dominance136.lean:38:0: type checking took 300ms
+info: astra/Dominance136.lean:39:0: type checking took 354ms
+info: astra/Dominance136.lean:40:0: type checking took 198ms
+info: astra/Dominance136.lean:41:0: type checking took 190ms
+info: astra/Dominance136.lean:42:0: type checking took 362ms
+info: astra/Dominance136.lean:43:0: type checking took 220ms
+info: astra/Dominance136.lean:44:0: type checking took 171ms
+info: astra/Dominance136.lean:57:0: type checking took 103ms
+info: astra/Dominance136.lean:58:0: type checking took 111ms
+info: astra/Dominance136.lean:59:0: type checking took 119ms
+info: astra/Dominance136.lean:60:0: type checking took 129ms
+info: astra/Dominance136.lean:61:0: type checking took 137ms
+info: astra/Dominance136.lean:62:0: type checking took 145ms
+info: astra/Dominance136.lean:63:0: type checking took 160ms
+info: astra/Dominance136.lean:64:0: type checking took 171ms
+info: astra/Dominance136.lean:65:0: type checking took 173ms
+info: astra/Dominance136.lean:78:0: type checking took 102ms
+info: astra/Dominance136.lean:79:0: type checking took 109ms
+info: astra/Dominance136.lean:80:0: type checking took 115ms
+info: astra/Dominance136.lean:81:0: type checking took 134ms
+info: astra/Dominance136.lean:82:0: type checking took 140ms
+info: astra/Dominance136.lean:83:0: type checking took 145ms
+info: astra/Dominance136.lean:84:0: type checking took 151ms
+info: astra/Dominance136.lean:85:0: type checking took 179ms
+info: astra/Dominance136.lean:86:0: type checking took 177ms
+info: astra/Dominance136.lean:99:0: type checking took 108ms
+info: astra/Dominance136.lean:100:0: type checking took 115ms
+info: astra/Dominance136.lean:101:0: type checking took 127ms
+info: astra/Dominance136.lean:102:0: type checking took 134ms
+info: astra/Dominance136.lean:103:0: type checking took 133ms
+info: astra/Dominance136.lean:104:0: type checking took 140ms
+info: astra/Dominance136.lean:105:0: type checking took 151ms
+info: astra/Dominance136.lean:106:0: type checking took 159ms
+info: astra/Dominance136.lean:107:0: type checking took 159ms
+info: astra/Dominance136.lean:121:0: type checking took 107ms
+info: astra/Dominance136.lean:122:0: type checking took 114ms
+info: astra/Dominance136.lean:123:0: type checking took 123ms
+info: astra/Dominance136.lean:124:0: type checking took 125ms
+info: astra/Dominance136.lean:125:0: type checking took 131ms
+info: astra/Dominance136.lean:126:0: type checking took 142ms
+info: astra/Dominance136.lean:127:0: type checking took 155ms
+info: astra/Dominance136.lean:128:0: type checking took 153ms
+info: astra/Dominance136.lean:142:0: type checking took 100ms
+info: astra/Dominance136.lean:143:0: type checking took 108ms
+info: astra/Dominance136.lean:144:0: type checking took 117ms
+info: astra/Dominance136.lean:145:0: type checking took 122ms
+info: astra/Dominance136.lean:146:0: type checking took 127ms
+info: astra/Dominance136.lean:147:0: type checking took 122ms
+info: astra/Dominance136.lean:148:0: type checking took 103ms
+info: astra/Dominance136.lean:149:0: type checking took 104ms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 6.47ms
+	attribute application 2.76ms
+	elaboration 173ms
+	fix level params 0.993ms
+	instantiate metavars 1.55ms
+	let-to-have transformation 0.552ms
+	linting 65.9ms
+	parsing 32.4ms
+	process pre-definitions 71ms
+	share common exprs 3.5ms
+	tactic execution 113ms
+	type checking 21.8s
+	typeclass inference 40.5ms
+ℹ [18481/18493] Built Dominance (176ms)
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.67ms
+	attribute application 0.0123ms
+	elaboration 11ms
+	fix level params 0.0269ms
+	instantiate metavars 0.042ms
+	let-to-have transformation 0.00353ms
+	linting 0.964ms
+	parsing 2.19ms
+	process pre-definitions 0.219ms
+	share common exprs 0.367ms
+	type checking 1.52ms
+	typeclass inference 2.95ms
+ℹ [18483/18493] Built Green (155ms)
+info: astra/Green.lean:14:0: 'slabAccepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	.olean serialization 0.969ms
+	attribute application 0.0151ms
+	elaboration 18.7ms
+	fix level params 0.00636ms
+	instantiate metavars 0.00554ms
+	let-to-have transformation 0.00743ms
+	linting 0.245ms
+	parsing 0.178ms
+	process pre-definitions 0.0957ms
+	share common exprs 0.0145ms
+	type checking 2.01ms
+ℹ [18485/18493] Built Red (147ms)
+info: astra/Red.lean:8:0: 'forgedRejected' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.18ms
+	attribute application 0.0202ms
+	compilation (IR) 0.0638ms
+	compilation (LCNF base) 0.696ms
+	compilation (LCNF impure) 0.216ms
+	compilation (LCNF mono) 0.352ms
+	elaboration 2.98ms
+	fix level params 0.0108ms
+	instantiate metavars 0.00498ms
+	let-to-have transformation 0.102ms
+	linting 0.325ms
+	parsing 0.495ms
+	process pre-definitions 0.945ms
+	share common exprs 0.0405ms
+	tactic execution 0.21ms
+	type checking 2.52ms
+	typeclass inference 2.4ms
+ℹ [18488/18493] Built ModelCheck (79s)
+info: model/ModelCheck.lean:19:0: 'slabModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [18491/18493] Built Sound.Final (2.1s)
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Sound/Final.lean:41:0: 'D3.checkWith_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sound/Final.lean:42:0: 'D3.slabC_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sound/Final.lean:43:0: D3.slabC_bound : ∀ (y : List ℝ),
+  D3.in_box 146 y ∧ D3.qv 2 5 ≤ D3.mval hGrid y ∧ D3.mval hGrid y ≤ D3.qv 9 20 →
+    D3.qv 50963377393403307885655938 185520059131196374275938963885 ≤ D3.Ltheta hAB hCut hFull hTheta y
+info: Sound/Final.lean:44:0: D3.checkWith_sound : ∀ (c : Cert) (w : Witness) (ab : List (ℤ × ℕ × ℤ × ℕ)) (cut : List (ℕ × ℕ × ℤ × ℕ × ℕ))
+  (full : List (ℕ × ℕ × ℤ)) (theta : List (ℤ × ℕ)) (grid : List ℕ),
+  checkWith w c = true →
+    modelOK c w ab cut full theta grid = true →
+      ∀ (y : List ℝ),
+        D3.in_box c.cells.length y ∧ D3.qv (↑c.lo20) 20 ≤ D3.mval grid y ∧ D3.mval grid y ≤ D3.qv (↑c.hi20) 20 →
+          D3.qv c.claim.num c.claim.den ≤ D3.Ltheta ab cut full theta y
+⚠ [18492/18493] Ran Sound.Final:irArts
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Sem.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Sound/Lists.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (18493 jobs).
+CLEAN-BUILD lake build exit 0, wall 87 s, end 2026-11-25T23:33:33Z
+--- kernel (type checking) seconds summed over the profiler lines
+KERNEL-SUM 560.7 s over 70 lines

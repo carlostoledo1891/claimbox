@@ -1,8 +1,8 @@
 {
  "what": "The Lean–HOL4 bridge, first slab: one claim object (claim.json) emitted to HOL4 and to Lean; each emitted text compared with what that side states; each side read back and compared field by field; planted changes. Readings and comparisons only — the kernels' words are quoted from cert-machine's records.",
- "when": "2026-11-25T21:22:03Z",
+ "when": "2026-11-25T23:38:49Z",
  "object": {
-  "sha256": "de3506a522ac92aaabff989d5d5ce8145da7398d2c66b65b57f3dd0ef4af68c4"
+  "sha256": "6d89a2e44cdfda5e3496ce1c64cc45674d795f84cc1abb29b9cddfdd908d563a"
  },
  "emitted": {
   "hol4.data": {
@@ -39,6 +39,24 @@
    "how": "the theorem's line, verbatim in notes/*/astra-lean-slab/work/Green.lean",
    "sha256": "a250411a9ad9d7e1a821c17f8ef1c88de592bd79217b0219a7cd9c1a7da8c34a",
    "bytes": 48
+  },
+  "hol4.model": {
+   "equalsSide": true,
+   "how": "byte for byte, the sections @ab @cut @full of hol4/delta3/slabC.d3",
+   "sha256": "a8ea38e144bb6b57a6a83205bd69547504a0a743accf9f0862ec0638956b779e",
+   "bytes": 110354
+  },
+  "lean.model": {
+   "equalsSide": true,
+   "how": "byte for byte, bridge/delta3-slab/lean-sound/HData.lean",
+   "sha256": "fee7aa319e43a8652ff4726fc59364397c94126b6ff6e78e25cb9c7cff6755c7",
+   "bytes": 175243
+  },
+  "lean.bound": {
+   "equalsSide": true,
+   "how": "token for token, D3.slabC_bound as Lean prints it (#check) in bridge/delta3-slab/lean-sound/logs/clean-build.log",
+   "sha256": "266cf0b315197f1318e7440a8c42f1c17f8ec1b9e33a83e29ab3e10542d4e14c",
+   "bytes": 228
   }
  },
  "readBack": {
@@ -93,6 +111,21 @@
   "leanTheorem": {
    "name": "slabAccepted",
    "prop": "check slabCert = true"
+  },
+  "leanBound": {
+   "bound.n": "MATCH",
+   "bound.lo": "MATCH",
+   "bound.hi": "MATCH",
+   "bound.claim": "MATCH",
+   "bound.model": "MATCH (HData.lean = the object's model, emitted)"
+  },
+  "leanBoundConsistency": {
+   "provedThroughSoundnessAndAcceptance": true,
+   "axiomsStandard": true,
+   "soundnessAxiomsStandard": true,
+   "acceptanceAxiomsStandard": true,
+   "modelCheckAxiomsStandard": true,
+   "noSorry": true
   }
  },
  "readings": {
@@ -148,7 +181,7 @@
    "full": 10380,
    "ab": 146
   },
-  "notCompared": "a_i, b_i (the section @ab): Lean's bathtub values sit inside its witness's summaries, mixed with the other terms of each row"
+  "notCompared": "a_i, b_i (the section @ab) are not compared by this program; Lean's kernel decides them equal to its checker's bathtub values (abRowOK in bridge/delta3-slab/lean-sound/Model.lean, slabModel in ModelCheck.lean)"
  },
  "words": {
   "hol4": [
@@ -159,6 +192,13 @@
   "lean": [
    "'slabAccepted' depends on axioms: [propext, Classical.choice, Quot.sound]"
   ],
+  "leanBound": [
+   "'slabAccepted' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "'forgedRejected' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "'slabModel' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "'D3.checkWith_sound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "'D3.slabC_bound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
   "certMachine": {
    "ledger": "certs/delta3-ledger.json",
    "verdict": "VERIFIED",
@@ -166,7 +206,8 @@
   },
   "from": {
    "hol4": "hol4/delta3/assembly/check.out",
-   "lean": "notes/*/astra-lean-slab/work/logs/run-0196.log"
+   "lean": "notes/*/astra-lean-slab/work/logs/run-0196.log",
+   "leanBound": "bridge/delta3-slab/lean-sound/logs/clean-build.log"
   }
  },
  "plants": [
@@ -259,6 +300,38 @@
    "expect": "caught"
   },
   {
+   "id": "L7",
+   "what": "Lean bound theorem: D3.in_box 146 → 145",
+   "field": "bound.n",
+   "caught": true,
+   "reported": "MISMATCH side 145",
+   "expect": "caught"
+  },
+  {
+   "id": "L8",
+   "what": "Lean bound theorem: the claim's numerator + 1",
+   "field": "bound.claim",
+   "caught": true,
+   "reported": "MISMATCH object 50963377393403307885655938/185520059131196374275938963885 side 50963377393403307885655939/185520059131196374275938963885",
+   "expect": "caught"
+  },
+  {
+   "id": "L9",
+   "what": "Lean bound theorem: Ltheta over hFull0 (one chunk) instead of hFull",
+   "field": "bound.model",
+   "caught": true,
+   "reported": "REFUSED read-lean: the Lean bound theorem's FULL is hFull0, not HData.lean's hFull",
+   "expect": "caught"
+  },
+  {
+   "id": "L10",
+   "what": "Lean model data: @full row 4 (0, 5, 64) → (0, 5, 65) in HData.lean",
+   "field": "bound.model",
+   "caught": true,
+   "reported": "MISMATCH (HData.lean is not the object's model)",
+   "expect": "caught"
+  },
+  {
    "id": "H7",
    "what": "HOL4 semantics: form_val's branches for codes 0 and 2 swapped — the same data then means another claim",
    "field": "proof.forms",
@@ -291,6 +364,22 @@
    "expect": "caught"
   },
   {
+   "id": "O3",
+   "what": "the object's model: a_0 numerator + 1 (9/37538 → 10/37538)",
+   "field": "model.ab",
+   "caught": true,
+   "reported": "MISMATCH {\"emitted.hol4.model\": \"MISMATCH\", \"emitted.lean.model\": \"MISMATCH\"}",
+   "expect": "caught"
+  },
+  {
+   "id": "O4",
+   "what": "the object: the claim + 2^-100 — both emitted bound statements differ from what each kernel proved",
+   "field": "emitted.lean.bound",
+   "caught": true,
+   "reported": "MISMATCH | hol4 MISMATCH",
+   "expect": "caught"
+  },
+  {
    "id": "C1",
    "what": "GREEN control — the object's forms reordered (the first moved last): the same claim, another text",
    "field": "proof.forms",
@@ -319,8 +408,8 @@
   "emittedEqualSides": true,
   "hol4ReadBackMatches": true,
   "leanReadBackMatches": true,
-  "plantsCaught": 17,
-  "plants": 17,
+  "plantsCaught": 23,
+  "plants": 23,
   "greenControlsNotFlagged": 1,
   "greenControls": 1,
   "modelAgrees": true,
@@ -345,6 +434,9 @@
   "notes/*/astra-lean-slab/work/Instance.lean": "ecf6542fb15deca29fe203a22ec0a94aef2bc07a675d316dd93dca29c09336a9",
   "notes/*/astra-lean-slab/work/Green.lean": "a2a838af660aeef4c3088efd1f074d5bbb70ebb23b5c580e773c19d672de5589",
   "notes/*/astra-lean-slab/work/WGeo.lean": "61d1cfaff7023aa1575d7b3c2dce741b22dbf84009328457ff31c9ddafc9fe0e",
-  "notes/*/astra-lean-slab/work/logs/run-0196.log": "2c8f0be6eb47dad206df3b6a9f45e7ea1fcf55e441da5d5d13a92812c5fa0780"
+  "notes/*/astra-lean-slab/work/logs/run-0196.log": "2c8f0be6eb47dad206df3b6a9f45e7ea1fcf55e441da5d5d13a92812c5fa0780",
+  "bridge/delta3-slab/lean-sound/HData.lean": "fee7aa319e43a8652ff4726fc59364397c94126b6ff6e78e25cb9c7cff6755c7",
+  "bridge/delta3-slab/lean-sound/Sound/Final.lean": "8f1c52e541ad74bc092f510dcae6ffb57373ca0b0518772bc797e53d629abc1f",
+  "bridge/delta3-slab/lean-sound/logs/clean-build.log": "c9b56d889260ca0d5acf1f063bfa449e305ac5a4f6daf8b7ff1d3732f96f4584"
  }
 }
